@@ -60,7 +60,6 @@ void __initTMRFlags( void )
 
     /* ERCLKEN = 1; RES; EREFSTEN = 1; RES; SC2P = **; SC4P = **; SC8P = **; SC16P = ** */
     OSC0_BASE_PTR->CR |= OSC_CR_ERCLKEN(0x1u) | OSC_CR_EREFSTEN( 0x1u );    // enable OSCERCLK; OSCERCLK does keep running in stop mode
-
 }
 
 #ifdef _PITUSED_
@@ -172,11 +171,6 @@ void startPITCalibrationWithTPM( void )
 
 void endPITCalibrationWithTPM( void )
 {
-//uint32_t currPITTime = READ_PIT;
-//uint32_t g_calibrationFactorCalc;
-//g_calibrationFactorCalc =  (uint32_t) ( READ_PIT - g_PITStartTime - (uint32_t) 1000) ;
-//g_calibrationFactorCalc -= (uint32_t) 1000;
-//g_calibrationFactorCalc /= (float) 1000;
     g_calibrationFactorPIT += (uint32_t) ( READ_PIT() - g_PITStartTime
                                            - (uint32_t) 1000 );
     installIrq( &dummyFkt, TPM1_IRQ_INDEX, (uint8_t) 0x0u );
@@ -184,27 +178,6 @@ void endPITCalibrationWithTPM( void )
 }
 
 #endif
-
-///*
-// ** ===================================================================
-// *   Method      :  enablePITInterrupt
-// *
-// *   Parameters: none
-// *
-// *   Return value: none
-// *
-// *   Description :
-// *       enable interrupts for the PIT timer
-// ** ===================================================================
-// */
-//void enablePITInterrupt( void )
-//{
-//    PIT_BASE_PTR->CHANNEL[1].TCTRL &= ~PIT_TCTRL_TEN_MASK;    // disable timer
-//    PIT_BASE_PTR->CHANNEL[1].TFLG |= PIT_TFLG_TIF_MASK;    // Clear interrupt flag
-//    /* RES[31:3]; CHN = **; TIE = 1; TEN = **;*/
-//    PIT_BASE_PTR->CHANNEL[1].TCTRL |= PIT_TCTRL_TIE_MASK;    // enable interrupt
-//    PIT_BASE_PTR->CHANNEL[1].TCTRL |= PIT_TCTRL_TEN_MASK;    // enable timer
-//}
 
 /*
  ** ===================================================================
@@ -270,62 +243,6 @@ void wait_ms( const uint32_t ms )
         ;
     }
 }
-//
-//#ifdef _RTCUSED_
-///*
-// ** ===================================================================
-// *   Method      :  calibratePIT
-// *
-// *   Parameters:
-// *      calibrationCycles       Cycles the calibration process shall take - more cycles -> more accuracy / more time
-// *
-// *   Return value: none
-// *
-// *   Description :
-// *      Calibrate the PIT timer in reference to the RTC clock
-// *      RTC clock is clocked by an external quarz, which is more accurate than the internal IRC
-// *      read and save the current value of the PIT timer as soon as the next RTC seconds interrupt occurs
-// *      by the second RTC seconds interrupt read the PIT timer again
-// *      apply an algorithm to calculate the delay and set an compensation variable
-// ** ===================================================================
-// */
-//void calibratePIT( uint8_t calibrationCycles )
-//{
-//    if ( gTMRFlags.g_PITtimerInitialized == (uint8_t)0 )
-//    {
-//        __init_PIT();
-//    }
-//
-//    while ( calibrationCycles-- )
-//    {
-//        foo = &startPITCalibration;    // set function pointer for the RTC interrupt routine to startPITCalibration function -> calibration starts with the next RTC interrupt
-//        gTMRFlags.g_calibrationOngoing = (uint8_t)1u;
-//        while ( gTMRFlags.g_calibrationOngoing )
-//        {    // wait until calibration is done
-//            ;
-//        }
-//        __init_PIT();    // initialize with newly found calibration factor
-//    }
-//}
-//
-//void startPITCalibration( void )
-//{
-//    g_PITStartTime = readPIT();
-//    foo = &endPITCalibration;
-//}
-//
-//void endPITCalibration( void )
-//{
-//    uint32_t currPITTime = readPIT();
-//    float g_calibrationFactorCalc;
-//    g_calibrationFactorCalc = ( (float) ( currPITTime - g_PITStartTime ) );
-//    g_calibrationFactorCalc -= (float)1000;
-//    g_calibrationFactorCalc /= (float)1000;
-//    g_calibrationFactorPIT += ( g_calibrationFactorCalc );
-//    foo = NULL;
-//    gTMRFlags.g_calibrationOngoing = 0u;
-//}
-//#endif
 #endif
 
 #if ( defined( __LP__MODE__ ) ||  defined( _LPTMRUSED_ ) )
@@ -467,64 +384,6 @@ uint16_t readLPTMR( void )
     return ( (uint16_t) LPTMR0_BASE_PTR->CNR );
 }
 
-//#ifdef _RTCUSED_
-///*
-// ** ===================================================================
-// *   Method      :  calibrateLPTMR
-// *
-// *   Parameters:
-// *      calibrationCycles       Cycles the calibration process shall take - more cycles -> more accuracy / more time
-// *
-// *   Return value: none
-// *
-// *   Description :
-// *      Calibrate the LPTMR timer in reference to the RTC clock
-// *      RTC clock is clocked by an external quarz, which is more accurate than the internal IRC
-// *      Start LPTMR timer set to 1500 ms as soon as the next RTC seconds interrupt occurs
-// *      by the second RTC seconds interrupt stop read the LPMTR CNT register
-// *      apply an algorithm to calculate the delay and set an compensation variable
-// ** ===================================================================
-// */
-//void calibrateLPTMR( uint8_t calibrationCycles )
-//{
-//    if ( gTMRFlags.g_LMPTRtimerInitialized == (uint8_t)0 )
-//    {
-//        __init_LPTMR();
-//    }
-//
-//    while ( calibrationCycles-- )
-//    {
-//        foo = &startLPTMRCalibration;
-//        gTMRFlags.g_calibrationOngoing = (uint8_t)1u;
-//        while ( gTMRFlags.g_calibrationOngoing )
-//        {
-//            ;
-//        }
-//
-//        LPTMR0_BASE_PTR->CSR &= ~LPTMR_CSR_TEN_MASK;
-//    }
-//    g_TimerAlarm = (uint16_t)0;
-//}
-//
-//void startLPTMRCalibration( void )
-//{
-//    g_TimerAlarm = 0;
-//    setLPTMR( 1500u );
-//    foo = &endLPTMRCalibration;
-//}
-//
-//void endLPTMRCalibration( void )
-//{
-//    float g_calibrationFactorCalc;
-//    g_calibrationFactorCalc = ( (float) ( (uint16_t)1000 - g_TimerAlarm ) );    // subtract current timer counter from expected timer counter (1000)
-//    g_calibrationFactorCalc *= 1.5f;// multiply result with set timerValue (to get delay in us)
-//    g_calibrationFactorCalc = (float)500 - g_calibrationFactorCalc;// subtract result from 500 (to find out how many us we are early/late)
-//    g_calibrationFactorCalc /= (float)1500;// divide with set us (timerValue) to get delay per timerValue
-//    g_calibrationFactorLPTMR += g_calibrationFactorCalc;// correct calibration factor
-//    foo = NULL;
-//    gTMRFlags.g_calibrationOngoing = (uint8_t)0u;
-//}
-//#endif
 #endif
 
 #ifdef _RTCUSED_

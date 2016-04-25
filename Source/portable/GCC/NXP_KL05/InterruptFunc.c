@@ -16,15 +16,6 @@
 #include <stdlib.h>
 #endif
 
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-extern char gSysMsg[SYS_MSG_LEN];
-#endif
-
-#ifdef _RTOSUSED_
-extern volatile BitsOSFlags gOS_FLAGS;
-#endif
 
 #ifdef __LP__DEBUG__
 extern uint16_t timeToWake;
