@@ -1,2 +1,2 @@
 # R_RTOS
-Real Time Operating System for ARM Cortex processor architectures.
+Real Time Operating System for ARM Cortex M processor architectures.
