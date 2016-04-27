@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['nr_5fof_5ftsks',['NR_OF_TSKS',['../_r___r_t_o_s__inc_8h.html#afcdedf016cd24aa690ce763ad17294e2',1,'R_RTOS_inc.h']]],
-  ['null',['NULL',['../_r___r_t_o_s__inc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4',1,'R_RTOS_inc.h']]]
+  ['offsetof',['OFFSETOF',['../_r___r_t_o_s__inc_8h.html#acb21ad94f6838e4efff16f79bf84e6d6',1,'R_RTOS_inc.h']]],
+  ['os_5fdispatch_5fneeded',['OS_DISPATCH_NEEDED',['../_r___r_t_o_s__inc_8h.html#a6064915be1e6573e5a9dc667dda4b954',1,'R_RTOS_inc.h']]],
+  ['os_5ffull_5fdispatch',['OS_FULL_DISPATCH',['../_r___r_t_o_s__inc_8h.html#ae0aa946bc649a044f82016bdfd42795d',1,'R_RTOS_inc.h']]],
+  ['output_5farg',['OUTPUT_ARG',['../_r___r_t_o_s__services_8h.html#aad603ebbd6b62c80d67c8ada7c63ef9c',1,'R_RTOS_services.h']]]
 ];

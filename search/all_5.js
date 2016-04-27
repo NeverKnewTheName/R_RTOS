@@ -1,7 +1,6 @@
 var searchData=
 [
   ['element',['element',['../structmq_dummy_elmnt.html#a1696434313e41ab14d024b0eafacebad',1,'mqDummyElmnt']]],
-  ['entry',['ENTRY',['../struct_r_o_m___type.html#a5989ed4bd007dd1cbdc1e2b60b7e4b6c',1,'ROM_Type']]],
   ['evt',['Evt',['../_r___r_t_o_s__inc_8h.html#a25ee42413add8f56055a838152e54551',1,'R_RTOS_inc.h']]],
   ['evt_5fgiveuponevts',['evt_GiveUpOnEvts',['../_r___r_t_o_s__events_8h.html#ab2d1a8c185e341eacf4b807cdf6c5882',1,'evt_GiveUpOnEvts(PTskTCB const tsk):&#160;R_RTOS_events.c'],['../_r___r_t_o_s__events_8c.html#ab2d1a8c185e341eacf4b807cdf6c5882',1,'evt_GiveUpOnEvts(PTskTCB const tsk):&#160;R_RTOS_events.c']]],
   ['evt_5finit',['evt_INIT',['../_r___r_t_o_s__events_8h.html#a140bb00beece8646c1162b2321aec29e',1,'evt_INIT(void):&#160;R_RTOS_events.c'],['../_r___r_t_o_s__events_8c.html#a140bb00beece8646c1162b2321aec29e',1,'evt_INIT(void):&#160;R_RTOS_events.c']]],
@@ -23,6 +22,5 @@ var searchData=
   ['evtsyncele',['EvtSyncEle',['../unionsync_ele_struc_1_1sync_ele_handle.html#a7bd0bbf46a6d98a3cba66adfe1e6a914',1,'syncEleStruc::syncEleHandle']]],
   ['evttmr',['EvtTMR',['../_r___r_t_o_s__inc_8h.html#a7c1688de451e0dea1e11617bce3ec450ae9ae15c893bb3bf605c9669f9c9736fa',1,'R_RTOS_inc.h']]],
   ['evttype',['evtType',['../_r___r_t_o_s__inc_8h.html#a7c1688de451e0dea1e11617bce3ec450',1,'evtType():&#160;R_RTOS_inc.h'],['../_r___r_t_o_s__inc_8h.html#a61b474d3516ee47b9a737c0c28600a15',1,'EvtType():&#160;R_RTOS_inc.h']]],
-  ['exccnt',['EXCCNT',['../struct_d_w_t___type.html#ac0801a2328f3431e4706fed91c828f82',1,'DWT_Type']]],
   ['expirationtime',['expirationTime',['../structtmr_fkt_call_struc.html#a57e15c65371692927e68912f05333983',1,'tmrFktCallStruc::expirationTime()'],['../structtimer_struc.html#adf184bd4a92558c47914dbcf93b326a8',1,'timerStruc::expirationTime()']]]
 ];

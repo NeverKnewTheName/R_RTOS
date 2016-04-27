@@ -2,15 +2,9 @@ var files =
 [
     [ "ClockFunc.c", "_clock_func_8c.html", null ],
     [ "ClockFunc.h", "_clock_func_8h.html", null ],
-    [ "core_cm0plus.h", "core__cm0plus_8h.html", "core__cm0plus_8h" ],
-    [ "core_cm4.h", "core__cm4_8h.html", "core__cm4_8h" ],
-    [ "core_cm4_simd.h", "core__cm4__simd_8h.html", null ],
-    [ "core_cmFunc.h", "core__cm_func_8h.html", null ],
-    [ "core_cmInstr.h", "core__cm_instr_8h.html", null ],
     [ "InterruptFunc.c", "_interrupt_func_8c.html", null ],
     [ "InterruptFunc.h", "_interrupt_func_8h.html", null ],
     [ "main.c", "main_8c.html", "main_8c" ],
-    [ "MKL05Z4.h", "_m_k_l05_z4_8h.html", "_m_k_l05_z4_8h" ],
     [ "PortFunc.c", "_port_func_8c.html", null ],
     [ "PortFunc.h", "_port_func_8h.html", null ],
     [ "R_RTOS_BitMagic.c", "_r___r_t_o_s___bit_magic_8c.html", "_r___r_t_o_s___bit_magic_8c" ],
@@ -40,7 +34,6 @@ var files =
     [ "R_RTOS_task.h", "_r___r_t_o_s__task_8h.html", "_r___r_t_o_s__task_8h" ],
     [ "R_RTOS_timer.c", "_r___r_t_o_s__timer_8c.html", "_r___r_t_o_s__timer_8c" ],
     [ "R_RTOS_timer.h", "_r___r_t_o_s__timer_8h.html", "_r___r_t_o_s__timer_8h" ],
-    [ "system_MKL05Z4.h", "system___m_k_l05_z4_8h_source.html", null ],
     [ "TimerFunc.c", "_timer_func_8c.html", null ],
     [ "TimerFunc.h", "_timer_func_8h.html", null ]
 ];

@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['gpio_5ftype',['GPIO_Type',['../struct_g_p_i_o___type.html',1,'']]],
-  ['gstruc_5fos_5fflags',['gStruc_OS_FLAGS',['../structg_struc___o_s___f_l_a_g_s.html',1,'']]]
+  ['semstruc',['semStruc',['../structsem_struc.html',1,'']]],
+  ['syncelehandle',['syncEleHandle',['../unionsync_ele_struc_1_1sync_ele_handle.html',1,'syncEleStruc']]],
+  ['syncelestruc',['syncEleStruc',['../structsync_ele_struc.html',1,'']]],
+  ['sysfkt',['sysFkt',['../structsys_fkt.html',1,'']]],
+  ['sysmsgprovstruc',['sysMsgProvStruc',['../structsys_msg_prov_struc.html',1,'']]],
+  ['systckfktcallstruc',['sysTckFktCallstruc',['../structsys_tck_fkt_callstruc.html',1,'']]],
+  ['systickeleidunion',['sysTickEleIDUnion',['../unionsys_tick_ele_i_d_union.html',1,'']]],
+  ['systicktmrstruc',['sysTickTMRStruc',['../structsys_tick_t_m_r_struc.html',1,'']]],
+  ['systimerstruc',['sysTimerStruc',['../structsys_timer_struc.html',1,'']]]
 ];

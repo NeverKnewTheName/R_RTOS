@@ -1,11 +1,8 @@
 var unionx_p_s_r___type =
 [
     [ "_reserved0", "unionx_p_s_r___type.html#af438e0f407357e914a70b5bd4d6a97c5", null ],
-    [ "_reserved1", "unionx_p_s_r___type.html#a790056bb6f20ea16cecc784b0dd19ad6", null ],
     [ "b", "unionx_p_s_r___type.html#a477983eb9f0417d63288ddf538d7060b", null ],
-    [ "b", "unionx_p_s_r___type.html#a35f742ca1c07eab4859f2b004b7061c8", null ],
     [ "C", "unionx_p_s_r___type.html#a40213a6b5620410cac83b0d89564609d", null ],
-    [ "GE", "unionx_p_s_r___type.html#a2d0ec4ccae337c1df5658f8cf4632e76", null ],
     [ "ISR", "unionx_p_s_r___type.html#a3e9120dcf1a829fc8d2302b4d0673970", null ],
     [ "IT", "unionx_p_s_r___type.html#a3200966922a194d84425e2807a7f1328", null ],
     [ "N", "unionx_p_s_r___type.html#a2db9a52f6d42809627d1a7a607c5dbc5", null ],

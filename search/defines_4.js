@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['evt_5fqueue_5fsize',['EVT_QUEUE_SIZE',['../_r___r_t_o_s__inc_8h.html#addf244a62d3c4d00211ef400ea5ec9e1',1,'R_RTOS_inc.h']]]
+  ['free',['free',['../_r___r_t_o_s__mem_mngr_8h.html#a2c6efa7679f8cd9f61af96e105017560',1,'R_RTOS_memMngr.h']]]
 ];

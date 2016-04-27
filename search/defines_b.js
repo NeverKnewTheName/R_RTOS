@@ -1,19 +1,12 @@
 var searchData=
 [
-  ['realloc',['realloc',['../_r___r_t_o_s__mem_mngr_8h.html#a1b739878adcdb46fb5d209af7ce79628',1,'R_RTOS_memMngr.h']]],
-  ['ret_5fmem_5falloc_5ffail_5fstack',['RET_MEM_ALLOC_FAIL_STACK',['../_r___r_t_o_s__inc_8h.html#a5b8718c5fef877dc7547bcf7fed5f2f1',1,'R_RTOS_inc.h']]],
-  ['ret_5fmem_5falloc_5ffail_5ftcb',['RET_MEM_ALLOC_FAIL_TCB',['../_r___r_t_o_s__inc_8h.html#a194486ef580da71b89b69c03d36161cb',1,'R_RTOS_inc.h']]],
-  ['ret_5fnok',['RET_NOK',['../_r___r_t_o_s__inc_8h.html#a99e73667f3ffd6ea8c3a732a82dc3116',1,'R_RTOS_inc.h']]],
-  ['ret_5fok',['RET_OK',['../_r___r_t_o_s__inc_8h.html#a76117585e8ddc62f21ca0e3061b7830e',1,'R_RTOS_inc.h']]],
-  ['ret_5fstck_5ferr_5fempty',['RET_STCK_ERR_EMPTY',['../_r___r_t_o_s__inc_8h.html#af9b759793d0a380c136ea190ae78f6b6',1,'R_RTOS_inc.h']]],
-  ['ret_5fstck_5ferr_5ffull',['RET_STCK_ERR_FULL',['../_r___r_t_o_s__inc_8h.html#add8ab7039a5e22e1e30bcd015b52f01a',1,'R_RTOS_inc.h']]],
-  ['ret_5fstck_5ferr_5findex_5foverflow',['RET_STCK_ERR_INDEX_OVERFLOW',['../_r___r_t_o_s__inc_8h.html#ae1b15300e9138f5ae3350c56af76ec14',1,'R_RTOS_inc.h']]],
-  ['ret_5fstck_5ferr_5findex_5funderflow',['RET_STCK_ERR_INDEX_UNDERFLOW',['../_r___r_t_o_s__inc_8h.html#a4439e986c60af9777176029ac459752d',1,'R_RTOS_inc.h']]],
-  ['ret_5fstck_5fno_5fstckelem_5fptr',['RET_STCK_NO_STCKELEM_PTR',['../_r___r_t_o_s__inc_8h.html#a1b2572e790b7606a0f08e7eeb879e60c',1,'R_RTOS_inc.h']]],
-  ['ret_5fstck_5fno_5fstckptr',['RET_STCK_NO_STCKPTR',['../_r___r_t_o_s__inc_8h.html#a5a1f676b62b573d2eb6f2ec16ae5201f',1,'R_RTOS_inc.h']]],
-  ['ret_5ftsk_5fconflicting_5fidle_5ftsk',['RET_TSK_CONFLICTING_IDLE_TSK',['../_r___r_t_o_s__inc_8h.html#ae36b467bf6a5b552a42c6176dff0d750',1,'R_RTOS_inc.h']]],
-  ['ret_5ftsk_5fis_5fabout_5fto_5frun',['RET_TSK_IS_ABOUT_TO_RUN',['../_r___r_t_o_s__inc_8h.html#a17a2199bb62752929fbc923d83581518',1,'R_RTOS_inc.h']]],
-  ['ret_5ftsk_5fno_5fidle_5ftsk',['RET_TSK_NO_IDLE_TSK',['../_r___r_t_o_s__inc_8h.html#ab1c3de817d17809f5a75aee30d8369f1',1,'R_RTOS_inc.h']]],
-  ['ret_5ftsk_5fstill_5frunning',['RET_TSK_STILL_RUNNING',['../_r___r_t_o_s__inc_8h.html#a45a7f3a8ae4909f18f68e61dcdf486cb',1,'R_RTOS_inc.h']]],
-  ['ret_5ftsk_5ftoo_5fmany',['RET_TSK_TOO_MANY',['../_r___r_t_o_s__inc_8h.html#a0e31a9c98c532e2d75722c38b6bb87a9',1,'R_RTOS_inc.h']]]
+  ['smaller_5fblck_5fdivisor',['SMALLER_BLCK_DIVISOR',['../_r___r_t_o_s__mem_mngr_8h.html#adf59e67b443ce5f091d7c9b6be66db1c',1,'R_RTOS_memMngr.h']]],
+  ['smaller_5fblck_5fmsk',['SMALLER_BLCK_MSK',['../_r___r_t_o_s__mem_mngr_8h.html#a9fa793b67a572377552189c6a7765185',1,'R_RTOS_memMngr.h']]],
+  ['smallest_5fblck',['SMALLEST_BLCK',['../_r___r_t_o_s__mem_mngr_8h.html#a359dc7027f36b533d6a4e00cb9be1287',1,'R_RTOS_memMngr.h']]],
+  ['stack_5fblock_5fsize',['STACK_BLOCK_SIZE',['../_r___r_t_o_s__inc_8h.html#a76f35d0ad6fa660c3688a9347eaf525f',1,'R_RTOS_inc.h']]],
+  ['svc',['SVC',['../_r___r_t_o_s__services_8h.html#a8df378d78deb90290bd58c6eb08168d6',1,'R_RTOS_services.h']]],
+  ['sys_5fid_5fmsk',['SYS_ID_MSK',['../_r___r_t_o_s__inc_8h.html#a3de7ee31b53560bfd15f87e64c75ec86',1,'R_RTOS_inc.h']]],
+  ['sysfkt_5finvalid_5fsysfkt_5fid',['SYSFKT_INVALID_SYSFKT_ID',['../_r___r_t_o_s__inc_8h.html#ae1bdf4c1eef45de6e8ee3c713b99d232',1,'R_RTOS_inc.h']]],
+  ['systck_5far_5fres',['SYSTCK_AR_RES',['../_r___r_t_o_s__inc_8h.html#afce034f59710aa935b86b72d56296456',1,'R_RTOS_inc.h']]],
+  ['systck_5far_5fres_5fmsk',['SYSTCK_AR_RES_MSK',['../_r___r_t_o_s__inc_8h.html#ae6e5ab0f046f9c96e16e4994f3842d96',1,'R_RTOS_inc.h']]]
 ];

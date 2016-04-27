@@ -1,31 +1,11 @@
 var searchData=
 [
-  ['a1',['A1',['../struct_i2_c___type.html#a5f4adcc09ad475b811d37f1462e82c74',1,'I2C_Type']]],
-  ['a2',['A2',['../struct_i2_c___type.html#a25bd966a745df11edd849836e17a2457',1,'I2C_Type']]],
   ['abs',['ABS',['../_r___r_t_o_s__inc_8h.html#a996f7be338ccb40d1a2a5abc1ad61759',1,'R_RTOS_inc.h']]],
-  ['acpr',['ACPR',['../struct_t_p_i___type.html#ad75832a669eb121f6fce3c28d36b7fab',1,'TPI_Type']]],
-  ['actlr',['ACTLR',['../struct_s_cn_s_c_b___type.html#aacadedade30422fed705e8dfc8e6cd8d',1,'SCnSCB_Type']]],
-  ['adc0',['ADC0',['../group___a_d_c___peripheral___access___layer.html#ga0d2ea0f4a8dd17bf08e69d05deacbcb5',1,'MKL05Z4.h']]],
-  ['adc0_5fbase',['ADC0_BASE',['../group___a_d_c___peripheral___access___layer.html#ga0aa6c0c068af7a61c770bc6d4322d63e',1,'MKL05Z4.h']]],
-  ['adc0_5firqn',['ADC0_IRQn',['../group___interrupt__vector__numbers.html#gga666eb0caeb12ec0e281415592ae89083a08b6c660bfe015ac0842ca95510420eb',1,'MKL05Z4.h']]],
-  ['adc_5fbase_5faddrs',['ADC_BASE_ADDRS',['../group___a_d_c___peripheral___access___layer.html#gaf635223a5796d02fc2f731139925696d',1,'MKL05Z4.h']]],
-  ['adc_5fbase_5fptrs',['ADC_BASE_PTRS',['../group___a_d_c___peripheral___access___layer.html#gaaa8175a3a2f4efaceeed5bd26c0b2d3f',1,'MKL05Z4.h']]],
-  ['adc_20peripheral_20access_20layer',['ADC Peripheral Access Layer',['../group___a_d_c___peripheral___access___layer.html',1,'']]],
-  ['adc_20_2d_20register_20accessor_20macros',['ADC - Register accessor macros',['../group___a_d_c___register___accessor___macros.html',1,'']]],
-  ['adc_20register_20masks',['ADC Register Masks',['../group___a_d_c___register___masks.html',1,'']]],
-  ['adc_5ftype',['ADC_Type',['../struct_a_d_c___type.html',1,'']]],
   ['addblcktocache',['addBlckToCache',['../_r___r_t_o_s__mem_mngr_8c.html#a2abedb3bd0e43ce448ea9b82ef8f5347',1,'R_RTOS_memMngr.c']]],
   ['additionalflags',['additionalFlags',['../structmem_mngr_head.html#a70a2aa1a4e2cae596f4f8b6b936a5634',1,'memMngrHead::additionalFlags()'],['../structmem_blckhead.html#afa06109a16c981cf21d41b9cb4dcfb72',1,'memBlckhead::additionalFlags()']]],
-  ['adr',['ADR',['../struct_s_c_b___type.html#aaedf846e435ed05c68784b40d3db2bf2',1,'SCB_Type']]],
-  ['afsr',['AFSR',['../struct_s_c_b___type.html#aeb77053c84f49c261ab5b8374e8958ef',1,'SCB_Type']]],
-  ['aircr',['AIRCR',['../struct_s_c_b___type.html#a6ed3c9064013343ea9fd0a73a734f29d',1,'SCB_Type']]],
   ['amount_5fof_5fevts',['AMOUNT_OF_EVTS',['../_r___r_t_o_s__inc_8h.html#a33609db10cb3c2cecc5f8f620b464a1c',1,'R_RTOS_inc.h']]],
   ['amount_5fof_5fmsgq',['AMOUNT_OF_MSGQ',['../_r___r_t_o_s__inc_8h.html#a52faf4aa7e06cbb5ac31f24977abafee',1,'R_RTOS_inc.h']]],
   ['amount_5fof_5fsems',['AMOUNT_OF_SEMS',['../_r___r_t_o_s__inc_8h.html#ae9dd548797f86260b3017bbc083d3c9e',1,'R_RTOS_inc.h']]],
   ['amount_5fsys_5ffkt',['AMOUNT_SYS_FKT',['../_r___r_t_o_s__inc_8h.html#a28070ebfec32f7a6990d77bbf8f60ee7',1,'R_RTOS_inc.h']]],
-  ['apsr_5ftype',['APSR_Type',['../union_a_p_s_r___type.html',1,'']]],
-  ['ar_5fsems',['ar_Sems',['../_r___r_t_o_s__sem_8c.html#aa79a678b448ba335e9ea783203fed6c9',1,'R_RTOS_sem.c']]],
-  ['atcvh',['ATCVH',['../struct_m_c_g___type.html#a57e6ec0cad8ae0e723d21531a184b6e7',1,'MCG_Type']]],
-  ['atcvl',['ATCVL',['../struct_m_c_g___type.html#ae8fea9d52f23143b72c9916e66b252d3',1,'MCG_Type']]],
-  ['authstat',['AUTHSTAT',['../struct_m_t_b___type.html#a42fdb6887fa68d8210e845e35dd2a3f1',1,'MTB_Type']]]
+  ['ar_5fsems',['ar_Sems',['../_r___r_t_o_s__sem_8c.html#aa79a678b448ba335e9ea783203fed6c9',1,'R_RTOS_sem.c']]]
 ];

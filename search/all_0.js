@@ -1,23 +1,4 @@
 var searchData=
 [
-  ['_5f_5fcm0plus_5fcmsis_5fversion',['__CM0PLUS_CMSIS_VERSION',['../core__cm0plus_8h.html#afbc98e5d6904c90236f737adb89af711',1,'core_cm0plus.h']]],
-  ['_5f_5fcm0plus_5fcmsis_5fversion_5fmain',['__CM0PLUS_CMSIS_VERSION_MAIN',['../core__cm0plus_8h.html#a31329dc8c47fc34ca3cacbfd4c66a19a',1,'core_cm0plus.h']]],
-  ['_5f_5fcm0plus_5fcmsis_5fversion_5fsub',['__CM0PLUS_CMSIS_VERSION_SUB',['../core__cm0plus_8h.html#a70604168ca42eff80802c151188a59d1',1,'core_cm0plus.h']]],
-  ['_5f_5fcm0plus_5frev',['__CM0PLUS_REV',['../group___cortex___core___configuration.html#ga2b7180ed347a0e902c5765deb46e650e',1,'MKL05Z4.h']]],
-  ['_5f_5fcm4_5fcmsis_5fversion',['__CM4_CMSIS_VERSION',['../core__cm4_8h.html#acb6f5d2c3271c95d0a02fd06723af25d',1,'core_cm4.h']]],
-  ['_5f_5fcm4_5fcmsis_5fversion_5fmain',['__CM4_CMSIS_VERSION_MAIN',['../core__cm4_8h.html#a90ffc8179476f80347379bfe29639edc',1,'core_cm4.h']]],
-  ['_5f_5fcm4_5fcmsis_5fversion_5fsub',['__CM4_CMSIS_VERSION_SUB',['../core__cm4_8h.html#afc7392964da961a44e916fcff7add532',1,'core_cm4.h']]],
-  ['_5f_5fcore_5fcm4_5fh_5fdependant',['__CORE_CM4_H_DEPENDANT',['../core__cm4_8h.html#a65104fb6a96df4ec7f7e72781b561060',1,'core_cm4.h']]],
-  ['_5f_5fcortex_5fm',['__CORTEX_M',['../core__cm0plus_8h.html#a63ea62503c88acab19fcf3d5743009e3',1,'__CORTEX_M():&#160;core_cm0plus.h'],['../core__cm4_8h.html#a63ea62503c88acab19fcf3d5743009e3',1,'__CORTEX_M():&#160;core_cm4.h']]],
-  ['_5f_5ffpu_5fused',['__FPU_USED',['../core__cm0plus_8h.html#aa167d0f532a7c2b2e3a6395db2fa0776',1,'core_cm0plus.h']]],
-  ['_5f_5fi',['__I',['../core__cm0plus_8h.html#af63697ed9952cc71e1225efe205f6cd3',1,'__I():&#160;core_cm0plus.h'],['../core__cm4_8h.html#af63697ed9952cc71e1225efe205f6cd3',1,'__I():&#160;core_cm4.h']]],
-  ['_5f_5finitos',['__initOS',['../_r___r_t_o_s__system_8h.html#a333770d2e9246de596bb74b44e2966e0',1,'__initOS(void):&#160;R_RTOS_system.c'],['../_r___r_t_o_s__system_8c.html#a333770d2e9246de596bb74b44e2966e0',1,'__initOS(void):&#160;R_RTOS_system.c']]],
-  ['_5f_5fio',['__IO',['../core__cm0plus_8h.html#aec43007d9998a0a0e01faede4133d6be',1,'__IO():&#160;core_cm0plus.h'],['../core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be',1,'__IO():&#160;core_cm4.h']]],
-  ['_5f_5fmpu_5fpresent',['__MPU_PRESENT',['../group___cortex___core___configuration.html#ga4127d1b31aaf336fab3d7329d117f448',1,'MKL05Z4.h']]],
-  ['_5f_5fnvic_5fprio_5fbits',['__NVIC_PRIO_BITS',['../group___cortex___core___configuration.html#gae3fe3587d5100c787e02102ce3944460',1,'MKL05Z4.h']]],
-  ['_5f_5fo',['__O',['../core__cm0plus_8h.html#a7e25d9380f9ef903923964322e71f2f6',1,'__O():&#160;core_cm0plus.h'],['../core__cm4_8h.html#a7e25d9380f9ef903923964322e71f2f6',1,'__O():&#160;core_cm4.h']]],
-  ['_5f_5fvendor_5fsystickconfig',['__Vendor_SysTickConfig',['../group___cortex___core___configuration.html#gab58771b4ec03f9bdddc84770f7c95c68',1,'MKL05Z4.h']]],
-  ['_5f_5fvtor_5fpresent',['__VTOR_PRESENT',['../group___cortex___core___configuration.html#gaddbae1a1b57539f398eb5546a17de8f6',1,'MKL05Z4.h']]],
-  ['_5freserved0',['_reserved0',['../union_a_p_s_r___type.html#afbce95646fd514c10aa85ec0a33db728',1,'APSR_Type::_reserved0()'],['../union_i_p_s_r___type.html#ad2eb0a06de4f03f58874a727716aa9aa',1,'IPSR_Type::_reserved0()'],['../unionx_p_s_r___type.html#af438e0f407357e914a70b5bd4d6a97c5',1,'xPSR_Type::_reserved0()'],['../union_c_o_n_t_r_o_l___type.html#af8c314273a1e4970a5671bd7f8184f50',1,'CONTROL_Type::_reserved0()']]],
-  ['_5freserved1',['_reserved1',['../union_a_p_s_r___type.html#ac681f266e20b3b3591b961e13633ae13',1,'APSR_Type::_reserved1()'],['../unionx_p_s_r___type.html#a790056bb6f20ea16cecc784b0dd19ad6',1,'xPSR_Type::_reserved1()']]]
+  ['_5f_5finitos',['__initOS',['../_r___r_t_o_s__system_8h.html#a333770d2e9246de596bb74b44e2966e0',1,'__initOS(void):&#160;R_RTOS_system.c'],['../_r___r_t_o_s__system_8c.html#a333770d2e9246de596bb74b44e2966e0',1,'__initOS(void):&#160;R_RTOS_system.c']]]
 ];

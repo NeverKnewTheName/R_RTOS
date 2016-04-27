@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['u16',['u16',['../struct_i_t_m___type.html#a12aa4eb4d9dcb589a5d953c836f4e8f4',1,'ITM_Type']]],
-  ['u32',['u32',['../struct_i_t_m___type.html#a6882fa5af67ef5c5dfb433b3b68939df',1,'ITM_Type']]],
-  ['u8',['u8',['../struct_i_t_m___type.html#abea77b06775d325e5f6f46203f582433',1,'ITM_Type']]],
-  ['uidl',['UIDL',['../struct_s_i_m___type.html#a7e55725c1aeddef811d669f56c978529',1,'SIM_Type']]],
-  ['uidmh',['UIDMH',['../struct_s_i_m___type.html#a3673a8cdd4cf80d15491e56214ee3124',1,'SIM_Type']]],
-  ['uidml',['UIDML',['../struct_s_i_m___type.html#a1995ae7c6cbcede0825d67e2fc3505ca',1,'SIM_Type']]]
+  ['w',['w',['../union_a_p_s_r___type.html#ae4c2ef8c9430d7b7bef5cbfbbaed3a94',1,'APSR_Type::w()'],['../union_i_p_s_r___type.html#a4adca999d3a0bc1ae682d73ea7cfa879',1,'IPSR_Type::w()'],['../unionx_p_s_r___type.html#a1a47176768f45f79076c4f5b1b534bc2',1,'xPSR_Type::w()'],['../union_c_o_n_t_r_o_l___type.html#a6b642cca3d96da660b1198c133ca2a1f',1,'CONTROL_Type::w()']]]
 ];
