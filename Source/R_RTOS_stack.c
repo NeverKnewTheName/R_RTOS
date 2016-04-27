@@ -47,9 +47,9 @@ RetCode stk_StackCreate(
         tsk->pStckTop = stckPtr;
         tsk->pStckPtr = (volatile StackPtrT) stckPtr;
         tsk->stckSze = desiredStackSize;
-        /*///DEBUG///*/
+        /* DEBUG */
         //stck_TSTStck(tsk);
-        /*///DEBUG///*/
+        /* DEBUG */
         return RET_OK;
     }
     else
