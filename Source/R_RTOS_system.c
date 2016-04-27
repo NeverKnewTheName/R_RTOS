@@ -28,21 +28,15 @@
 #include "R_RTOS_monitor.h"
 #include "R_RTOS_msgQueuing.h"
 
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-extern char gSysMsg[SYS_MSG_LEN ];
-#endif
-
 extern void OS_START( void );
 
 extern void updateTimersAfterSleep( void );
 
-extern TskTCB *pIDLETsk;    // address of IDLE Tsk -> also the start node of the XORed linked list!
+extern PTskTCB const pIDLETsk;    // address of IDLE Tsk -> also the start node of the XORed linked list!
 extern TskTCB tsk_AR[NR_OF_TSKS];
 
-extern volatile TskTCB *p_cur_tsk_tcb;
-extern volatile TskTCB *p_nxt_tsk_tcb;
+extern volatile PTskTCB p_cur_tsk_tcb;
+extern volatile PTskTCB p_nxt_tsk_tcb;
 extern volatile BitsOSFlags gOS_FLAGS;
 extern volatile TimerFlags gTMRFlags;
 
@@ -52,6 +46,11 @@ extern uint16_t timeToWake;
 
 const uint8_t offsetOfTskState = OFFSETOF( TskTCB, tskState );
 
+/** \var sys_SysFkt
+ *  \brief System function array to hold various kinds of system functions.
+ *  System functions can be referenced by their index in this array.
+ *
+ */
 SysFkt sys_SysFkt[AMOUNT_SYS_FKT ];
 
 /** \var svc_EXCReturn
@@ -71,25 +70,6 @@ SysFkt sys_SysFkt[AMOUNT_SYS_FKT ];
  *
  */
 volatile uint32_t svc_EXCReturn;
-
-// /* \var llwu_EXCReturn
-// *  \brief EXC_RETURN value for the LLWU exception.
-// *
-// *  The return from the LLWU interrupt routine can be influenced by setting this variable.
-// *  According to its value the stack pointer used for unstacking and the mode to return to are altered.
-// *
-// *  Possible Values:
-// *
-// *  VALUE       |   MEANING
-// *  ----------- |  -------------------------------------------------------
-// *  0xFFFFFFF1  |   Return to Handler mode ( e.g. for nested exceptions )
-// *  0xFFFFFFF9  |   Return to Thread mode using Main Stack Pointer
-// *  0xFFFFFFFD  |   Return to Thread mode using Process Stack Pointer
-// *
-// *  might be obsolete
-// *
-// */
-//volatile uint32_t llwu_EXCReturn;
 
 RetCode __initOS( void )
 {
@@ -173,11 +153,6 @@ void tskIdle( void )
     {
         __NOP();
     }
-#endif
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "TIWU" );
-#endif
 #endif
     //}
     // IDLE TASK IS MUST NOT BE 'TERMINATED'

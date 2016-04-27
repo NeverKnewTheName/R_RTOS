@@ -16,12 +16,6 @@
 #include "R_RTOS_task.h"
 #include "R_RTOS_memMngr.h"
 
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-extern char gSysMsg[SYS_MSG_LEN ];
-#endif
-
 extern void os_SCHEDULE( void );
 extern TskTCB tsk_AR[];
 extern SysFkt sys_SysFkt[];
@@ -50,23 +44,6 @@ static void BREAK( void )
         ;
     };
 }
-// /** \fn RetCode tmr_updateStrtTMR( Timer **strt );
-// *  \brief Delete and free the StartNode and then set the StartNode to the next next.
-// *
-// *  \param [in]     strt                Pointer to the Pointer to the current start of the Timer queue
-// *  \return         RetCode             Return the success of the operation
-// *
-// *  Adjust the startTMRNode to the next node in the list. Freeing of ressouces is done automatically.
-// *
-// */
-//static inline RetCode tmr_updateStrtTMR( Timer **strt )
-//{
-//    Timer * nxtNode = ( *strt )->ptrNxtTmr;
-//    //free( *strt );
-//    memMngr_MemPoolFree( *strt, memPoolID_TMR );
-//    ( *strt ) = nxtNode;
-//    return RET_OK;
-//}
 
 static RetCode tmr_InsertSysTmrQ( TmrFktCall * sysFktTmr, LifeTime expires )
 {

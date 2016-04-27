@@ -18,12 +18,6 @@ void tsk4( void );
 
 void tsk1( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T1" );
-#endif
-#endif
-
     SET_PIN_LOW( PIN_LED0 );
     svc_tmr_SetTimer( (WaitTime) 15, &tsk_AR[1] );
     SET_PIN_HIGH( PIN_LED0 );
@@ -36,11 +30,6 @@ void tsk1( void )
 }
 void tsk2( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T2" );
-#endif
-#endif
     SET_PIN_LOW( PIN_LED1 );
     svc_tmr_SetTimer( (WaitTime) 10, &tsk_AR[2] );
     SET_PIN_HIGH( PIN_LED1 );
@@ -53,12 +42,6 @@ void tsk2( void )
 }
 void tsk3( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T3" );
-#endif
-#endif
-
     SET_PIN_LOW( PIN_LED2 );
     svc_tmr_SetTimer( (WaitTime) 15, &tsk_AR[3] );
     SET_PIN_HIGH( PIN_LED2 );
@@ -71,12 +54,6 @@ void tsk3( void )
 }
 void tsk4( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T4" );
-#endif
-#endif
-
     SET_PIN_LOW( PIN_LED3 );
     svc_tmr_SetTimer( (WaitTime) 100, &tsk_AR[4] );
     SET_PIN_HIGH( PIN_LED3 );
@@ -123,16 +100,4 @@ void OS_START( void )
     tmr_setSysTimer( 1, 230u, 0x1u );
     tmr_setSysTimer( 2, 200u, 0x1u );
     tmr_setSysTimer( 3, 2000u, 0x1u );
-
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
 }

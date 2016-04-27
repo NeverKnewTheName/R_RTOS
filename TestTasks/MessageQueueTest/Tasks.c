@@ -20,11 +20,6 @@ void tsk4( void );
 
 void tsk1( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T1" );
-#endif
-#endif
     /*
      * Producer Task
      */
@@ -43,11 +38,6 @@ void tsk1( void )
 }
 void tsk2( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T2" );
-#endif
-#endif
     /*
      * Producer Task
      */
@@ -65,11 +55,6 @@ void tsk2( void )
 }
 void tsk3( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T3" );
-#endif
-#endif
     /*
      * Consumer Task
      */
@@ -130,11 +115,6 @@ void tsk3( void )
 }
 void tsk4( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T4" );
-#endif
-#endif
     /*
      * Consumer Task
      */
@@ -193,15 +173,4 @@ void OS_START( void )
     tmr_setSysTimer( 2, 120u, 0x0u );
     tmr_setSysTimer( 3, 100u, 0x0u );
     msgQ_initQueue( (QID) 0x1u );
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
 }

@@ -15,20 +15,10 @@
 #include "R_RTOS_services.h"
 #include "R_RTOS_system.h"
 
-#include "R_RTOS_irqMngr.h"
-
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-char gSysMsg[SYS_MSG_LEN ];
-#endif
-
+/** \fn void portInit( void );
+  * \brief User provided function to initialize the port pins.
+  */
 void portInit( void );
-
-void someFkt( void )
-{
-    while(1){/*DOSOMEWORK*/;}
-}
 
 /** \fn main
  *  \brief Function that is called after start up
@@ -38,14 +28,9 @@ void someFkt( void )
 int main( void )
 {
     __disable_irq();
-//    SIM_CLKDIV1 &= ~ SIM_CLKDIV1_OUTDIV1_MASK;
-//    SIM_CLKDIV1 |= SIM_CLKDIV1_OUTDIV1(0xFu);
-//    SystemCoreClockUpdate();
-//    SystemCoreClock;
 
     portInit();
-    irqMngr_INIT();
-    //irqMngr_installISR(&someFkt, 0x22, 0);
+
 #ifdef __LP__MODE__
     /* WAKE UP SOURCES */
     addWakeUpSource( LLWU_LPTMR0, 0x0u );
@@ -53,7 +38,6 @@ int main( void )
     addWakeUpSource( LLWU_PTB2, INT_FALL );
     /* WAKE UP SOURCES \ */
 #endif
-
     __initOS();
     __enable_irq();
 

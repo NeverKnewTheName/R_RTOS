@@ -3,7 +3,7 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    15.12.2015
  *
- * \brief Functions for creating, initializing, maintaining and handling a task timers.
+ * \brief Functions for creating, initializing, maintaining and handling Semaphores.
  */
 
 #ifndef HEADERS_R_RTOS_SEM_H_

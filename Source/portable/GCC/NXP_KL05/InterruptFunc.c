@@ -2,7 +2,8 @@
  * \file    InterruptFunc.c
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    12.10.2015
- *
+ * 
+ *  \note OUTDATED...NEEDS REWORK
  */
 
 #include "MKL05Z4.h"

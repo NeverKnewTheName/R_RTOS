@@ -1,10 +1,11 @@
-/*
- * iSMG_RTOS_monitor.h
+/**
+ * \file    R_RTOS_monitor.h
+ * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
+ * \date    21.02.2016
  *
- *  Created on: 21.02.2016
- *      Author: Christian
+ * \brief Functions for creating, initializing, maintaining and handling monitors.
  */
-
+ 
 #ifndef HEADERS_R_RTOS_MONITOR_H_
 #define HEADERS_R_RTOS_MONITOR_H_
 

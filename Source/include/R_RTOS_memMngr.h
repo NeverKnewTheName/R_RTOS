@@ -3,14 +3,15 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    18.12.2015
  *
- * \brief Functions for creating, initializing, maintaining and handling a task timers.
+ * \brief Modified Best Buddy Memory Allocator.
+ *
+ *  Modified -> Can use adjacent blocks to fit memory needs -> reduce internal fragmentation
+ *
+ *  Objejt Cache -> Objects are put into an object cache upon freeing them -> alleviates frequent allocations of same size objects
  */
 
 #ifndef HEADERS_R_RTOS_MEMMNGR_H_
 #define HEADERS_R_RTOS_MEMMNGR_H_
-//#ifndef _RTOS_MEMMNGR_
-//#include <stdlib.h>
-//#else
 #include "R_RTOS_inc.h"
 #include <stdint.h>
 /** \def malloc

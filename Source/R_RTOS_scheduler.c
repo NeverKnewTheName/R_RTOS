@@ -14,11 +14,6 @@
 
 #include "R_RTOS_BitMagic.h"
 
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-extern char gSysMsg[SYS_MSG_LEN ];
-#endif
 
 extern PTskTCB pIDLETsk;    // address of IDLE Tsk -> also the start node of the XORed linked list!
 extern uint8_t numTsks;
@@ -307,12 +302,6 @@ void os_INIT_Scheduler( void )
 
 void os_SCHEDULE( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "SD" );
-    printXORList( pIDLETsk, &gSysMsg );
-#endif
-#endif
     if ( gOS_FLAGS.g_tskCriticalExecution )    // One task is in a critical part of its execution which has to be concurrend... do not kill it
     {
         return;
@@ -332,12 +321,7 @@ void os_SCHEDULE( void )
             BREAK();
         }
         //p_nxt_tsk_tcb->tskState = TSK_STATE_ACTIVE_RUNNING;    // set to running, because it will be scheduled next task anyway.
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-        WRITE_TO_MSG_BUFF( gSysMsg, "SDT" );
-        CONCAT_NUM_TO_MSG_BUFF( gSysMsg, p_nxt_tsk_tcb->tskInfo.taskID );
-#endif
-#endif
+
         // check if there is a current task or if it was already deleted; then check if the next task is also the current task
         if ( /*( p_cur_tsk_tcb == (TskTCB *) NULL ) || */( p_nxt_tsk_tcb
                 != p_cur_tsk_tcb ) )
