@@ -31,3 +31,8 @@
 # Debug files
 *.dSYM/
 *.su
+
+# Eclipse specific
+.cproject
+.settings
+.project

@@ -1189,9 +1189,6 @@ typedef struct syncEleStruc
         ACCSSType mntrAccssType;    //!< ACCSSType for the Mntr access
         uint8_t someDummy;
     } MultiPurposeByte;    //!< Multipurpose byte for use by any synchronization mechanism
-//    PSysTickTMR sysTckTmr;
-
-//     * \union synEleHandle
 
     union syncEleHandle
     {
@@ -1205,13 +1202,6 @@ typedef struct syncEleStruc
         {
             LifeTime expireTime;    //!< Timer expiration time as LifeTime
         } TmrSyncEle;    //!< Timer synchronization object
-//        struct sysTckEle
-//        {
-//            uint8_t dummy1;
-//            uint8_t dummy2;
-//            uint8_t dummy3;
-//            uint8_t dummy4;
-//        } SysTckEle;    //!< SysTickTMR synchronization object
         //SEMAPHORE
         struct semSyncEle
         {
