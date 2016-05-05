@@ -10,7 +10,6 @@
 #define HEADERS_R_RTOS_SERVICES_H_
 
 #include "R_RTOS_inc.h"
-#include "DevFunc.h"
 
 #ifndef __STATIC_INLINE
 #define __STATIC_INLINE  static inline

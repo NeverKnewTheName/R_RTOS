@@ -4,13 +4,8 @@
  *
  * This is the introduction.
  *
- * \section install_sec Boot
- *
- * \subsection step1 Step 1: Start the system
- *
- * \subsection step2 Step 2: Be happy.
  *  
- * \section task_sec Tasks
+ * \section task_sec                    Tasks
  * \section task_creation               Creating a task
  * \section task_activation             Activating a task
  * \section task_layout                 Layout of a task
@@ -18,7 +13,7 @@
  * \subsection task_states_descrip      Description of Task states
  * \subsection task_states_events       Task events
  * 
- * \section service_sec Services
+ * \section service_sec                 Services
  * \subsection service_service_calls    Service Calls
  * \subsection service_semaphore        Semaphores
  * \subsection service_timer            Timers

@@ -15,11 +15,6 @@
 
 #include "R_RTOS_memMngr.h"
 
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-extern char gSysMsg[SYS_MSG_LEN ];
-#endif
 
 extern void os_SCHEDULE( void );
 

@@ -9,12 +9,6 @@
 #include "R_RTOS_stack.h"
 #include "R_RTOS_memMngr.h"
 
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-extern char gSysMsg[SYS_MSG_LEN];
-#endif
-
 /** \def portINITIAL_XPSR
  *  \brief initial XPSR value for a task.
  */
@@ -32,11 +26,6 @@ RetCode stk_StackCreate(
                          register PTskTCB tsk,
                          register StackSize desiredStackSize )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "StkCRT" );
-#endif
-#endif
     // allocate memory for the stack bytes
     register StackPtrT stckPtr = (volatile StackPtrT) malloc(
             (MemSize) desiredStackSize );
@@ -47,9 +36,9 @@ RetCode stk_StackCreate(
         tsk->pStckTop = stckPtr;
         tsk->pStckPtr = (volatile StackPtrT) stckPtr;
         tsk->stckSze = desiredStackSize;
-        /*///DEBUG///*/
+        /* DEBUG */
         //stck_TSTStck(tsk);
-        /*///DEBUG///*/
+        /* DEBUG */
         return RET_OK;
     }
     else
@@ -65,11 +54,6 @@ RetCode stk_StackCreate(
 
 RetCode stk_StackInit( register PTskTCB tsk, void *fktParam )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "StkINI" );
-#endif
-#endif
     register volatile StackPtrT stckPtr = (volatile StackPtrT) tsk->pStckTop;
     if ( (uint32_t) stckPtr != (uint32_t) NULL )
     {
@@ -121,20 +105,10 @@ RetCode stk_StackInit( register PTskTCB tsk, void *fktParam )
          *       v
          *      R11     -- 0
          */
-#ifdef __DEBUG__
-#ifdef __DEBUG__DETAILED__
-        WRITE_TO_MSG_BUFF( gSysMsg, "StkINI_StkPtrSet" );
-#endif
-#endif
         return RET_OK;
     }
     else
     {
-#ifdef __DEBUG__
-#ifdef __DEBUG__ERR__
-        WRITE_TO_MSG_BUFF( gSysMsg, "StkINI_NStkBTPtr" );
-#endif
-#endif
         BREAK();
         return RET_NOK;
     }
@@ -143,11 +117,6 @@ RetCode stk_StackInit( register PTskTCB tsk, void *fktParam )
 //delete the stack and free the memory
 RetCode stk_StackDestroy( register PTskTCB tsk )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "StkDS" );
-#endif
-#endif
     register volatile StackPtrT stckPtr = (volatile StackPtrT) tsk->pStckTop;
     if ( (uint32_t) stckPtr != (uint32_t) NULL )
     {

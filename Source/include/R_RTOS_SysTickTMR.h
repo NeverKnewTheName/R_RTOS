@@ -1,9 +1,11 @@
-/*
- * R_RTOS_SysTickTMR.h
+/**
+ * \file    R_RTOS_SysTickTMR.h
+ * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
+ * \date    06.04.2016
  *
- *  Created on: 06.04.2016
- *      Author: neubergerch50344
+ * \brief System Tick Timer handling and system time maintenance.
  */
+
 
 #ifndef HEADERS_R_RTOS_SYSTICKTMR_H_
 #define HEADERS_R_RTOS_SYSTICKTMR_H_

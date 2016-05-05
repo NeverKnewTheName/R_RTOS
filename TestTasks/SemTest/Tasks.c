@@ -17,12 +17,6 @@ void tsk4( void );
 
 void tsk1( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T1" );
-#endif
-#endif
-
     SET_PIN_LOW(PIN_LED0);
     svc_sem_TakeSem( (SemNr) 0x1u, &tsk_AR[1], 100 );
     SET_PIN_HIGH(PIN_LED0);
@@ -42,11 +36,6 @@ void tsk1( void )
 }
 void tsk2( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T2" );
-#endif
-#endif
     svc_sem_TakeSem( (SemNr) 0x1u, &tsk_AR[2], 100 );
 
     //SET_PIN_LOW( PIN_LED3 );
@@ -69,12 +58,6 @@ void tsk2( void )
 }
 void tsk3( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T3" );
-#endif
-#endif
-
     svc_sem_TakeSem( (SemNr) 0x1u, &tsk_AR[3], 100 );
     SET_PIN_HIGH( PIN_LED3 );
     SET_PIN_HIGH( PIN_LED2 );
@@ -85,12 +68,6 @@ void tsk3( void )
 }
 void tsk4( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T4" );
-#endif
-#endif
-
     svc_sem_TakeSem( (SemNr) 0x2u, &tsk_AR[4], 100 );
 
     //SET_PIN_HIGH( PIN_LED3 );
@@ -136,16 +113,4 @@ void OS_START( void )
     tmr_setSysTimer( 1, 200u, 0x1u );
     //tmr_setSysTimer( &actvTsk3, 750u );
     //tmr_setSysTimer( &actvTsk4, 200u );
-
-    SET_PIN_LOW( PIN_LED1 );
-    WAIT_MS( (uint8_t ) 500u );
-    SET_PIN_HIGH( PIN_LED1 );
-    WAIT_MS( (uint8_t ) 10u );
-    SET_PIN_LOW( PIN_LED1 );
-    WAIT_MS( (uint8_t ) 10u );
-    SET_PIN_HIGH( PIN_LED1 );
-    WAIT_MS( (uint8_t ) 10u );
-    SET_PIN_LOW( PIN_LED1 );
-    WAIT_MS( (uint8_t ) 10u );
-    SET_PIN_HIGH( PIN_LED1 );
 }

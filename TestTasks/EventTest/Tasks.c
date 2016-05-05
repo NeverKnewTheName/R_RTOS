@@ -18,12 +18,6 @@ void tsk4( void );
 
 void tsk1( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T1" );
-#endif
-#endif
-
     svc_tsk_InitTsk( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
     svc_tsk_ActvTsk( (TskID) 0x2u );
 
@@ -39,12 +33,6 @@ void tsk1( void )
 }
 void tsk2( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T2" );
-#endif
-#endif
-
     svc_tsk_InitTsk( (TskID) 0x3u, &tsk3, &tsk_EndTheTask, MY_STACK_SIZE );
     svc_tsk_SetTskPrio( (TskID) 0x3u, TSK_PRIO_LOW );
     svc_tsk_ActvTsk( (TskID) 0x3u );
@@ -59,11 +47,6 @@ void tsk2( void )
 }
 void tsk3( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T3" );
-#endif
-#endif
 
     svc_evt_SendEvt( (EvtNr) 0x1u );
 
@@ -71,12 +54,6 @@ void tsk3( void )
 }
 void tsk4( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T4" );
-#endif
-#endif
-
     svc_evt_RecvEvt( &tsk_AR[4], CREATE_EVT_MSK(0x0u)|CREATE_EVT_MSK(0x1u)|CREATE_EVT_MSK(0x2u), 100 );
     TOGGLE_PIN( PIN_LED3 );
     svc_tsk_KillTsk( &tsk_AR[4] );
@@ -120,15 +97,4 @@ void OS_START( void )
     //    tmr_setSysTimer( 2, 200u, 0x1u );
     tmr_setSysTimer( 3, 200u, 0x1u );
 
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_LOW( PIN_LED1 );
-//    WAIT_MS( (uint8_t ) 100u );
-//    SET_PIN_HIGH( PIN_LED1 );
 }

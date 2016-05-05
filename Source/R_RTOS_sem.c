@@ -11,11 +11,6 @@
 
 #include "R_RTOS_memMngr.h"
 
-#ifdef __DEBUG__
-#include <string.h>
-#include "DevFunc.h"
-extern char gSysMsg[SYS_MSG_LEN ];
-#endif
 
 extern TskTCB* pIDLETsk;
 extern void os_SCHEDULE( void );
@@ -44,11 +39,6 @@ RetCode sem_InitSems( void )
 
 static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "S_Ins" );
-#endif
-#endif
 
     if ( ( (uint32_t) pSem == (uint32_t) NULL ) || ( (uint32_t) pTskToIns
             == (uint32_t) NULL ) )
@@ -86,11 +76,6 @@ static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
 
 static RetCode sem_GetNextTskSemQ( PSem pSem )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "S_Gn" );
-#endif
-#endif
     if ( (uint32_t) pSem == (uint32_t) NULL )
     {
         // NO START NODE
@@ -174,14 +159,6 @@ RetCode sem_TakeSem(
 
 RetCode sem_GiveSem( PTskTCB const tsk, const SemNr semNr )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "GvSem" );
-    CONCAT_NUM_TO_MSG_BUFF( gSysMsg, semNr);
-    CONCAT_NUM_TO_MSG_BUFF( gSysMsg, tsk->tskInfo.taskID );
-    printXORSEMList( ar_Sems[semNr].strtOfLst, &gSysMsg );
-#endif
-#endif
     if ( semNr >= AMOUNT_OF_SEMS )
         return RET_NOK;
 
@@ -206,13 +183,6 @@ RetCode sem_GiveSem( PTskTCB const tsk, const SemNr semNr )
 
 RetCode sem_GiveUpOnSem( PTskTCB const tsk )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "GvUpSem" );
-    CONCAT_NUM_TO_MSG_BUFF( gSysMsg, tsk->tskInfo.taskID );
-    printXORSEMList( ar_Sems[semNr].strtOfLst, &gSysMsg );
-#endif
-#endif
     PSem sem;
     uint8_t semArCnt = (uint8_t) 0x0u;
 

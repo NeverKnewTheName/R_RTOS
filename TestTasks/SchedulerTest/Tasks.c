@@ -20,11 +20,6 @@ void tsk5( void );
 
 void tsk1( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T1" );
-#endif
-#endif
     SET_PIN_LOW( PIN_LED0 );
 
     svc_tsk_InitTsk( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
@@ -35,12 +30,6 @@ void tsk1( void )
 }
 void tsk2( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T2" );
-#endif
-#endif
-
     SET_PIN_HIGH( PIN_LED0 );
     SET_PIN_LOW( PIN_LED1 );
 
@@ -52,12 +41,6 @@ void tsk2( void )
 }
 void tsk3( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T3" );
-#endif
-#endif
-
     SET_PIN_HIGH( PIN_LED1 );
 
     svc_tsk_InitTsk( (TskID) 0x1u, &tsk1, &tsk_EndTheTask, MY_STACK_SIZE );
@@ -69,12 +52,6 @@ void tsk3( void )
 
 void tsk4( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T4" );
-#endif
-#endif
-
     TOGGLE_PIN( PIN_LED3 );
 
     svc_tsk_KillTsk( &tsk_AR[4] );
@@ -82,12 +59,6 @@ void tsk4( void )
 
 void tsk5( void )
 {
-#ifdef __DEBUG__
-#ifdef __DEBUG__FLOW__
-    WRITE_TO_MSG_BUFF( gSysMsg, "T4" );
-#endif
-#endif
-
     TOGGLE_PIN( PIN_LED3 );
 
     svc_tsk_KillTsk( &tsk_AR[5] );

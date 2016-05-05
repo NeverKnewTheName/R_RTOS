@@ -1,8 +1,9 @@
-/*
- * R_RTOS_SysTickTMR.c
+ /**
+ * \file    R_RTOS_SysTickTMR.c
+ * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
+ * \date    06.04.2016
  *
- *  Created on: 06.04.2016
- *      Author: neubergerch50344
+ * \brief System Tick Timer handling and system time maintenance.
  */
 
 #include "PortFunc.h"
@@ -35,8 +36,21 @@ static volatile SysTime os_SysTicks;
  */
 static volatile SysTime os_TimeSlice;
 
+/** \var ar_PSysTickTMR
+ *  \brief System Tick Timer slot array.
+ *
+ *  To achieve a 'balanced' System Tick Timer the array provides
+ *  slots to hold a list of elements. Thus timers do not have to be
+ *  decremented at each System Tick, but are decremented by the amount
+ *  of passed SysTicks at once.
+ *
+ */
 static volatile PSysTickTMR ar_PSysTickTMR[SYSTCK_AR_RES ];
 
+/** \var memPoolID_SysTckTMR
+ *  \brief MemoryPoolID for the System Tick Timer memory pool.
+ *
+ */
 static MemPoolID memPoolID_SysTckTMR;
 
 static RetCode sysTck_UpdateSysTckTMRs( SysTicks sysTcksDecr )
