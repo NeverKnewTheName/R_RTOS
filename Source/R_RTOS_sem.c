@@ -1,9 +1,50 @@
 /**
- * \file    R_RTOS_sem.c
- * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
- * \date    15.12.2015
+ *  \file    R_RTOS_sem.c
+ *  \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
+ *  \date    15.12.2015
  *
- * \brief Functions for creating, initializing, maintaining and handling a task timers.
+ *  \brief Functions for creating, initializing, maintaining Semaphores.
+ *
+ *
+ *  <h2>Priority Inheritance</h2>
+ *  When access to a specific resource is requested, but cannot be granted, the requesting consumer is put into a wait queue.
+ *  These wait queues are sorted according to the priority of their entities. Therefore a waiting high priority task will be granted
+ *  access to the resource before a waiting low priority task receives the resource. But if the resouce is taken by a lower priority
+ *  task and a high priority task requests access, the resource remains at the lower priority task. Therefore the high priority task
+ *  is put into a waiting queue and its execution is suspended. If the lower priority task occupying the resource is suspended, because
+ *  e.g. a medium priority task is activated, this medium priority task would receive processor time before the high priority task, that
+ *  is currently waiting on the resource. This is called <i>Priority Inversion</i>.</br>
+ *  To avoid that a lower priority task is executed before a high priority task <i>Priority Inheritance</i> is introduced. If a lower priority
+ *  prority task is occupying a resouce while a high priority task requests access to said resource the lower priority task inherits the priority
+ *  of the high priority task for the duration of the access to the protected resource. Hence a medium priority task cannot preempt the actually
+ *  lower priority task while it is occupying the resource and the high priority task is waiting for this resouce.
+ *
+ *
+ *  <h2>Semaphores</h2>
+ *  Semaphores are a signaling mechanism to allow multiple access to a protected resource.
+ *  A consumer does not get ownership of the semaphore. If a consumer is granted access the semaphore counter is decremented.
+ *  When the consumer is done with accessing the protected resource the semaphore is then incremented again.
+ *  As soon as the counter reaches 0 no more accesses to the protected resource will be granted. All incoming consumers
+ *  are put into a wait queue and must wait for the counter to increment again and therefore for another consumer, who
+ *  was previously granted access to the resource, to release the resource and hence increment the semaphore counter.
+ *
+ *  <h3>Counting Semaphores</h3>
+ *  Counting semaphores contain a counter which can be set to a specific value are incremented variably and decremented by one.
+ *  This is used to limit access to a resource to the counter value.
+ *
+ *  <h3>Binary Semaphores</h3>
+ *  Contrary to counting semaphores, binary semaphores can only take the values 0 or 1 (taken or free). Much like mutexes they can be used
+ *  for mutual exclusion, but unlike mutexes the consumer, which is granted access, does not receive the ownership of the semaphore.
+ *
+ *
+ *  <h2>Mutexes</h2>
+ *  Mutexes are a synchronization mechanism for mutual exclusion. As soon as a consumer accesses the mutex and therefore the
+ *  protected data, it is granted ownership of the mutex, if the mutex is still available. In case of the mutex being already
+ *  owned by another consumer, the current consumer is denied access and put into a wait queue until the currently owning consumer
+ *  gives the mutex back to the system. The next consumer in the waiting queue is now granted access and therefore it receives
+ *  ownership of the mutex.
+ *
+ *
  */
 
 #include "R_RTOS_sem.h"
@@ -11,9 +52,7 @@
 
 #include "R_RTOS_memMngr.h"
 
-
-extern TskTCB* pIDLETsk;
-extern void os_SCHEDULE( void );
+//extern void os_SCHEDULE( void );
 extern TskTCB tsk_AR[NR_OF_TSKS];
 
 /** \var ar_Sems
@@ -21,6 +60,9 @@ extern TskTCB tsk_AR[NR_OF_TSKS];
  */
 static Sem ar_Sems[AMOUNT_OF_SEMS ];
 
+/** \var memPoolID_SEM
+ *  \brief ID of the memory pool memory allocation request of semaphores are served from.
+ */
 static MemPoolID memPoolID_SEM;
 
 RetCode sem_InitSems( void )
@@ -37,9 +79,18 @@ RetCode sem_InitSems( void )
     return RET_OK;
 }
 
+//ToDO
+RetCode mtx_InitMutexs( void )
+{
+    uint8_t i = (uint8_t) 0x0u;
+    for( ; i < AMOUNT_OF_MTXS ; ++i )
+    {
+        //ar_Mutxs[i].SomeThing = SomeThing;
+    }
+}
+
 static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
 {
-
     if ( ( (uint32_t) pSem == (uint32_t) NULL ) || ( (uint32_t) pTskToIns
             == (uint32_t) NULL ) )
         return RET_NOK;
@@ -56,7 +107,6 @@ static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
     else
     {
         // THERE IS A QUEUE => INSERT ACCORDING TO PRIORITY
-
         PTskTCB curTsk = &tsk_AR[pSem->semQTskID];
         while ( curTsk->tskPrio >= pTskToIns->tskPrio )
         {

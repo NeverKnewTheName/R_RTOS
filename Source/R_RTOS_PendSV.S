@@ -29,6 +29,8 @@
   */
 
 #define TSK_STATE_OFFSET 28
+//extern PTskTCB p_cur_tsk_tcb
+//extern PTskTCB p_nxt_tsk_tcb
 
     .thumb_func
     .align 4
