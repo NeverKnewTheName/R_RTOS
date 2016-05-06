@@ -31,7 +31,7 @@ ADEFS = $(DADEFS) $(UADEFS)
 # flags and other settings
 ARMCPU := cortex-m0plus
 CCFLAGS := -mcpu=$(ARMCPU) -mthumb -g3 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall -Wextra -Wmissing-declarations -Wconversion -Wfloat-equal
-COMPFLAGS :=  -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" 
+COMPFLAGS :=  -MMD -MP -MF"$(@:%.o=%.d)"
 LDSCRIPT := $(LINKER_FILE_PATH)/MKL05Z32xxx4_flash.ld
 #DEFINES = 
 
