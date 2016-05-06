@@ -115,10 +115,9 @@ $(document).ready(function(){initNavTree('_r___r_t_o_s__system_8c.html','');});
 <p>Functions for system functionality (system maintenance).  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;MKL05Z4.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="_port_func_8h_source.html">PortFunc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_timer_func_8h_source.html">TimerFunc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_interrupt_func_8h_source.html">InterruptFunc.h</a>&quot;</code><br />
-<code>#include &quot;LPFunc.h&quot;</code><br />
+<code>#include &quot;PortFunc.h&quot;</code><br />
+<code>#include &quot;TimerFunc.h&quot;</code><br />
+<code>#include &quot;InterruptFunc.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__system_8h_source.html">R_RTOS_system.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__inc_8h_source.html">R_RTOS_inc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__task_8h_source.html">R_RTOS_task.h</a>&quot;</code><br />
@@ -126,15 +125,18 @@ $(document).ready(function(){initNavTree('_r___r_t_o_s__system_8c.html','');});
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__scheduler_8h_source.html">R_RTOS_scheduler.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__sem_8h_source.html">R_RTOS_sem.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__timer_8h_source.html">R_RTOS_timer.h</a>&quot;</code><br />
-<code>#include &quot;R_RTOS_SysTickTMR.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h_source.html">R_RTOS_SysTickTMR.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__mem_mngr_8h_source.html">R_RTOS_memMngr.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__services_8h_source.html">R_RTOS_services.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__events_8h_source.html">R_RTOS_events.h</a>&quot;</code><br />
-<code>#include &quot;R_RTOS_monitor.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_r___r_t_o_s__monitor_8h_source.html">R_RTOS_monitor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_r___r_t_o_s__msg_queuing_8h_source.html">R_RTOS_msgQueuing.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a5e81cd5201e21f9ce950ec42d66fdd53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#a5e81cd5201e21f9ce950ec42d66fdd53">updateTimersAfterSleep</a> (void)</td></tr>
+<tr class="memdesc:a5e81cd5201e21f9ce950ec42d66fdd53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all used timers after a wake up.  <a href="#a5e81cd5201e21f9ce950ec42d66fdd53">More...</a><br /></td></tr>
+<tr class="separator:a5e81cd5201e21f9ce950ec42d66fdd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a333770d2e9246de596bb74b44e2966e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_r___r_t_o_s__inc_8h.html#ae652fbd48bfccbcc4f573e8d45529404">RetCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#a333770d2e9246de596bb74b44e2966e0">__initOS</a> (void)</td></tr>
 <tr class="memdesc:a333770d2e9246de596bb74b44e2966e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the operating system.  <a href="#a333770d2e9246de596bb74b44e2966e0">More...</a><br /></td></tr>
 <tr class="separator:a333770d2e9246de596bb74b44e2966e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,18 +152,22 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:afd3a7b44a07ad502617fbc3dbe9edd2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_r___r_t_o_s__inc_8h.html#abf73076e6fa046f3519a37e9ad34ad7d">TskTCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#afd3a7b44a07ad502617fbc3dbe9edd2f">pIDLETsk</a></td></tr>
-<tr class="memdesc:afd3a7b44a07ad502617fbc3dbe9edd2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant pointer to the IDLE Task's <a class="el" href="structtsk_t_c_b.html" title="Task Control Block. ">tskTCB</a>.  <a href="#afd3a7b44a07ad502617fbc3dbe9edd2f">More...</a><br /></td></tr>
-<tr class="separator:afd3a7b44a07ad502617fbc3dbe9edd2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99b95d90cf6034a88dcd8c542fc93871"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#abf73076e6fa046f3519a37e9ad34ad7d">TskTCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#a99b95d90cf6034a88dcd8c542fc93871">p_cur_tsk_tcb</a></td></tr>
-<tr class="memdesc:a99b95d90cf6034a88dcd8c542fc93871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to currently running task's <a class="el" href="structtsk_t_c_b.html" title="Task Control Block. ">tskTCB</a>.  <a href="#a99b95d90cf6034a88dcd8c542fc93871">More...</a><br /></td></tr>
-<tr class="separator:a99b95d90cf6034a88dcd8c542fc93871"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a483ee19314b9f933bbb9a33d02e9ba13"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#abf73076e6fa046f3519a37e9ad34ad7d">TskTCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#a483ee19314b9f933bbb9a33d02e9ba13">p_nxt_tsk_tcb</a></td></tr>
-<tr class="memdesc:a483ee19314b9f933bbb9a33d02e9ba13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to task's <a class="el" href="structtsk_t_c_b.html" title="Task Control Block. ">tskTCB</a>, which is scheduled to run next.  <a href="#a483ee19314b9f933bbb9a33d02e9ba13">More...</a><br /></td></tr>
-<tr class="separator:a483ee19314b9f933bbb9a33d02e9ba13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dae7ec16a8c57a4afbb2b95e42d47bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_r___r_t_o_s__inc_8h.html#ac82ec54129091dcecd0e68cacf585078">PTskTCB</a> const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#a3dae7ec16a8c57a4afbb2b95e42d47bb">pIDLETsk</a></td></tr>
+<tr class="memdesc:a3dae7ec16a8c57a4afbb2b95e42d47bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant pointer to the IDLE Task's <a class="el" href="structtsk_t_c_b.html" title="Task Control Block. ">tskTCB</a>.  <a href="#a3dae7ec16a8c57a4afbb2b95e42d47bb">More...</a><br /></td></tr>
+<tr class="separator:a3dae7ec16a8c57a4afbb2b95e42d47bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad08d994fae2733c5867cfd3aa526e829"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#ac82ec54129091dcecd0e68cacf585078">PTskTCB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#ad08d994fae2733c5867cfd3aa526e829">p_cur_tsk_tcb</a></td></tr>
+<tr class="memdesc:ad08d994fae2733c5867cfd3aa526e829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to currently running task's <a class="el" href="structtsk_t_c_b.html" title="Task Control Block. ">tskTCB</a>.  <a href="#ad08d994fae2733c5867cfd3aa526e829">More...</a><br /></td></tr>
+<tr class="separator:ad08d994fae2733c5867cfd3aa526e829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac599eb16a7d1ab0d6d26e75ce3177e39"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#ac82ec54129091dcecd0e68cacf585078">PTskTCB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#ac599eb16a7d1ab0d6d26e75ce3177e39">p_nxt_tsk_tcb</a></td></tr>
+<tr class="memdesc:ac599eb16a7d1ab0d6d26e75ce3177e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to task's <a class="el" href="structtsk_t_c_b.html" title="Task Control Block. ">tskTCB</a>, which is scheduled to run next.  <a href="#ac599eb16a7d1ab0d6d26e75ce3177e39">More...</a><br /></td></tr>
+<tr class="separator:ac599eb16a7d1ab0d6d26e75ce3177e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a258531e50eb608f1ef96c1bdb0e2380a"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#a52651e50bfc8071dd043015ea2fe9343">BitsOSFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#a258531e50eb608f1ef96c1bdb0e2380a">gOS_FLAGS</a></td></tr>
 <tr class="memdesc:a258531e50eb608f1ef96c1bdb0e2380a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags used for maintaining the OS.  <a href="#a258531e50eb608f1ef96c1bdb0e2380a">More...</a><br /></td></tr>
 <tr class="separator:a258531e50eb608f1ef96c1bdb0e2380a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a63c85ee4063bc95e297952b3644e16"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a63c85ee4063bc95e297952b3644e16"></a>
+<a class="el" href="_r___r_t_o_s__inc_8h.html#a827136f3233fd732876ecea0f2c81253">SysFkt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#a4a63c85ee4063bc95e297952b3644e16">sys_SysFkt</a> [<a class="el" href="_r___r_t_o_s__inc_8h.html#a28070ebfec32f7a6990d77bbf8f60ee7">AMOUNT_SYS_FKT</a>]</td></tr>
+<tr class="memdesc:a4a63c85ee4063bc95e297952b3644e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">System function array to hold various kinds of system functions. System functions can be referenced by their index in this array. <br /></td></tr>
+<tr class="separator:a4a63c85ee4063bc95e297952b3644e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab17c3cded85dfa4ec0ad55ef9a41f655"><td class="memItemLeft" align="right" valign="top">volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_r___r_t_o_s__system_8c.html#ab17c3cded85dfa4ec0ad55ef9a41f655">svc_EXCReturn</a></td></tr>
 <tr class="memdesc:ab17c3cded85dfa4ec0ad55ef9a41f655"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXC_RETURN value for the SVC Call.  <a href="#ab17c3cded85dfa4ec0ad55ef9a41f655">More...</a><br /></td></tr>
 <tr class="separator:ab17c3cded85dfa4ec0ad55ef9a41f655"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,6 +261,25 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5e81cd5201e21f9ce950ec42d66fdd53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateTimersAfterSleep </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates all used timers after a wake up. </p>
+<p>Every HW timer in use is updated/adjusted according to the time spent in the low power mode. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a class="anchor" id="a258531e50eb608f1ef96c1bdb0e2380a"></a>
 <div class="memitem">
@@ -272,12 +297,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a99b95d90cf6034a88dcd8c542fc93871"></a>
+<a class="anchor" id="ad08d994fae2733c5867cfd3aa526e829"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#abf73076e6fa046f3519a37e9ad34ad7d">TskTCB</a>* p_cur_tsk_tcb</td>
+          <td class="memname">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#ac82ec54129091dcecd0e68cacf585078">PTskTCB</a> p_cur_tsk_tcb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -288,12 +313,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a483ee19314b9f933bbb9a33d02e9ba13"></a>
+<a class="anchor" id="ac599eb16a7d1ab0d6d26e75ce3177e39"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#abf73076e6fa046f3519a37e9ad34ad7d">TskTCB</a>* p_nxt_tsk_tcb</td>
+          <td class="memname">volatile <a class="el" href="_r___r_t_o_s__inc_8h.html#ac82ec54129091dcecd0e68cacf585078">PTskTCB</a> p_nxt_tsk_tcb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -304,12 +329,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afd3a7b44a07ad502617fbc3dbe9edd2f"></a>
+<a class="anchor" id="a3dae7ec16a8c57a4afbb2b95e42d47bb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_r___r_t_o_s__inc_8h.html#abf73076e6fa046f3519a37e9ad34ad7d">TskTCB</a>* pIDLETsk</td>
+          <td class="memname"><a class="el" href="_r___r_t_o_s__inc_8h.html#ac82ec54129091dcecd0e68cacf585078">PTskTCB</a> const pIDLETsk</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -351,7 +376,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="_r___r_t_o_s__system_8c.html">R_RTOS_system.c</a></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_5b182b6f231f21fd86d2065ca687932b.html">R_RTOS</a></li><li class="navelem"><a class="el" href="_r___r_t_o_s__system_8c.html">R_RTOS_system.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

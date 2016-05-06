@@ -1,12 +1,6 @@
 var files =
 [
-    [ "ClockFunc.c", "_clock_func_8c.html", null ],
-    [ "ClockFunc.h", "_clock_func_8h.html", null ],
-    [ "InterruptFunc.c", "_interrupt_func_8c.html", null ],
-    [ "InterruptFunc.h", "_interrupt_func_8h.html", null ],
     [ "main.c", "main_8c.html", "main_8c" ],
-    [ "PortFunc.c", "_port_func_8c.html", null ],
-    [ "PortFunc.h", "_port_func_8h.html", null ],
     [ "R_RTOS_BitMagic.c", "_r___r_t_o_s___bit_magic_8c.html", "_r___r_t_o_s___bit_magic_8c" ],
     [ "R_RTOS_BitMagic.h", "_r___r_t_o_s___bit_magic_8h.html", "_r___r_t_o_s___bit_magic_8h" ],
     [ "R_RTOS_events.c", "_r___r_t_o_s__events_8c.html", "_r___r_t_o_s__events_8c" ],
@@ -14,7 +8,7 @@ var files =
     [ "R_RTOS_inc.h", "_r___r_t_o_s__inc_8h.html", "_r___r_t_o_s__inc_8h" ],
     [ "R_RTOS_memMngr.c", "_r___r_t_o_s__mem_mngr_8c.html", "_r___r_t_o_s__mem_mngr_8c" ],
     [ "R_RTOS_memMngr.h", "_r___r_t_o_s__mem_mngr_8h.html", "_r___r_t_o_s__mem_mngr_8h" ],
-    [ "R_RTOS_monitor.h", "_r___r_t_o_s__monitor_8h_source.html", null ],
+    [ "R_RTOS_monitor.h", "_r___r_t_o_s__monitor_8h.html", "_r___r_t_o_s__monitor_8h" ],
     [ "R_RTOS_msgQueuing.c", "_r___r_t_o_s__msg_queuing_8c.html", "_r___r_t_o_s__msg_queuing_8c" ],
     [ "R_RTOS_msgQueuing.h", "_r___r_t_o_s__msg_queuing_8h.html", "_r___r_t_o_s__msg_queuing_8h" ],
     [ "R_RTOS_PendSV.S", "_r___r_t_o_s___pend_s_v_8_s.html", "_r___r_t_o_s___pend_s_v_8_s" ],
@@ -29,11 +23,10 @@ var files =
     [ "R_RTOS_SVC.S", "_r___r_t_o_s___s_v_c_8_s.html", null ],
     [ "R_RTOS_system.c", "_r___r_t_o_s__system_8c.html", "_r___r_t_o_s__system_8c" ],
     [ "R_RTOS_system.h", "_r___r_t_o_s__system_8h.html", "_r___r_t_o_s__system_8h" ],
-    [ "R_RTOS_SysTickTMR.h", "_r___r_t_o_s___sys_tick_t_m_r_8h_source.html", null ],
+    [ "R_RTOS_SysTickTMR.c", "_r___r_t_o_s___sys_tick_t_m_r_8c.html", "_r___r_t_o_s___sys_tick_t_m_r_8c" ],
+    [ "R_RTOS_SysTickTMR.h", "_r___r_t_o_s___sys_tick_t_m_r_8h.html", "_r___r_t_o_s___sys_tick_t_m_r_8h" ],
     [ "R_RTOS_task.c", "_r___r_t_o_s__task_8c.html", "_r___r_t_o_s__task_8c" ],
     [ "R_RTOS_task.h", "_r___r_t_o_s__task_8h.html", "_r___r_t_o_s__task_8h" ],
     [ "R_RTOS_timer.c", "_r___r_t_o_s__timer_8c.html", "_r___r_t_o_s__timer_8c" ],
-    [ "R_RTOS_timer.h", "_r___r_t_o_s__timer_8h.html", "_r___r_t_o_s__timer_8h" ],
-    [ "TimerFunc.c", "_timer_func_8c.html", null ],
-    [ "TimerFunc.h", "_timer_func_8h.html", null ]
+    [ "R_RTOS_timer.h", "_r___r_t_o_s__timer_8h.html", "_r___r_t_o_s__timer_8h" ]
 ];
