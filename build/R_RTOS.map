@@ -164,7 +164,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x1c8 ./source/R_RTOS/R_RTOS_monitor.o
  .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_monitor.o
  .debug_line    0x00000000      0x2bd ./source/R_RTOS/R_RTOS_monitor.o
- .debug_str     0x00000000     0x633c ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_str     0x00000000     0x630e ./source/R_RTOS/R_RTOS_monitor.o
  .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_monitor.o
  .ARM.attributes
                 0x00000000       0x32 ./source/R_RTOS/R_RTOS_monitor.o
@@ -260,7 +260,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x1c8 ./source/R_RTOS/R_RTOS_services.o
  .debug_macro   0x00000000       0x2e ./source/R_RTOS/R_RTOS_services.o
  .debug_line    0x00000000      0x1a3 ./source/R_RTOS/R_RTOS_services.o
- .debug_str     0x00000000     0x3cf4 ./source/R_RTOS/R_RTOS_services.o
+ .debug_str     0x00000000     0x3cc6 ./source/R_RTOS/R_RTOS_services.o
  .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_services.o
  .ARM.attributes
                 0x00000000       0x32 ./source/R_RTOS/R_RTOS_services.o
@@ -1516,7 +1516,7 @@ LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data overflowed with stack and heap)
 OUTPUT(R_RTOS.elf elf32-littlearm)
 
-.debug_info     0x00000000     0xbe64
+.debug_info     0x00000000     0xbdda
  .debug_info    0x00000000      0x267 ./source/main.o
  .debug_info    0x00000267      0x109 ./source/R_RTOS/R_RTOS_BitMagic.o
  .debug_info    0x00000370      0xa78 ./source/R_RTOS/R_RTOS_events.o
@@ -1529,15 +1529,15 @@ OUTPUT(R_RTOS.elf elf32-littlearm)
  .debug_info    0x00005d83     0x102e ./source/R_RTOS/R_RTOS_SysTickTMR.o
  .debug_info    0x00006db1      0xaa9 ./source/R_RTOS/R_RTOS_task.o
  .debug_info    0x0000785a     0x1230 ./source/R_RTOS/R_RTOS_timer.o
- .debug_info    0x00008a8a       0x8b ./source/R_RTOS/R_RTOS_PendSV.o
- .debug_info    0x00008b15       0x88 ./source/R_RTOS/R_RTOS_SVC.o
- .debug_info    0x00008b9d      0x2ad ./hal/mcu/NXP_KL05/source/ClockFunc.o
- .debug_info    0x00008e4a      0x5ca ./hal/mcu/NXP_KL05/source/InterruptFunc.o
- .debug_info    0x00009414      0x4e4 ./hal/mcu/NXP_KL05/source/PortFunc.o
- .debug_info    0x000098f8      0xf30 ./hal/mcu/NXP_KL05/source/TimerFunc.o
- .debug_info    0x0000a828      0x3bb ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
- .debug_info    0x0000abe3       0x9c ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
- .debug_info    0x0000ac7f     0x11e5 ./Tasks/Tasks.o
+ .debug_info    0x00008a8a       0x5d ./source/R_RTOS/R_RTOS_PendSV.o
+ .debug_info    0x00008ae7       0x5a ./source/R_RTOS/R_RTOS_SVC.o
+ .debug_info    0x00008b41      0x2ad ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_info    0x00008dee      0x5ca ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_info    0x000093b8      0x4e4 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_info    0x0000989c      0xf30 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_info    0x0000a7cc      0x3bb ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_info    0x0000ab87       0x6e ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .debug_info    0x0000abf5     0x11e5 ./Tasks/Tasks.o
 
 .debug_abbrev   0x00000000     0x2144
  .debug_abbrev  0x00000000       0xea ./source/main.o
@@ -1699,43 +1699,43 @@ OUTPUT(R_RTOS.elf elf32-littlearm)
  .debug_line    0x00003e1a       0x7a ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
  .debug_line    0x00003e94      0x561 ./Tasks/Tasks.o
 
-.debug_str      0x00000000    0x2d7fd
- .debug_str     0x00000000    0x284fe ./source/main.o
-                              0x28911 (size before relaxing)
- .debug_str     0x000284fe      0x379 ./source/R_RTOS/R_RTOS_BitMagic.o
-                               0x3e65 (size before relaxing)
- .debug_str     0x00028877     0x2e48 ./source/R_RTOS/R_RTOS_events.o
-                               0x6cc1 (size before relaxing)
- .debug_str     0x0002b6bf      0x4e5 ./source/R_RTOS/R_RTOS_memMngr.o
-                               0x682c (size before relaxing)
- .debug_str     0x0002bba4      0x663 ./source/R_RTOS/R_RTOS_msgQueuing.o
-                               0x7209 (size before relaxing)
- .debug_str     0x0002c207      0x218 ./source/R_RTOS/R_RTOS_scheduler.o
-                              0x28030 (size before relaxing)
- .debug_str     0x0002c41f      0x15f ./source/R_RTOS/R_RTOS_sem.o
-                               0x69da (size before relaxing)
- .debug_str     0x0002c57e       0xdb ./source/R_RTOS/R_RTOS_stack.o
-                               0x691f (size before relaxing)
- .debug_str     0x0002c659      0x42c ./source/R_RTOS/R_RTOS_system.o
-                              0x2bec1 (size before relaxing)
- .debug_str     0x0002ca85      0x182 ./source/R_RTOS/R_RTOS_SysTickTMR.o
-                              0x2b257 (size before relaxing)
- .debug_str     0x0002cc07       0xd6 ./source/R_RTOS/R_RTOS_task.o
-                               0x6a92 (size before relaxing)
- .debug_str     0x0002ccdd      0x254 ./source/R_RTOS/R_RTOS_timer.o
-                              0x2ac84 (size before relaxing)
- .debug_str     0x0002cf31      0x107 ./hal/mcu/NXP_KL05/source/ClockFunc.o
-                              0x26632 (size before relaxing)
- .debug_str     0x0002d038      0x20f ./hal/mcu/NXP_KL05/source/InterruptFunc.o
-                              0x2ac64 (size before relaxing)
- .debug_str     0x0002d247       0x7e ./hal/mcu/NXP_KL05/source/PortFunc.o
-                              0x2736d (size before relaxing)
- .debug_str     0x0002d2c5      0x3f6 ./hal/mcu/NXP_KL05/source/TimerFunc.o
-                              0x27fe6 (size before relaxing)
- .debug_str     0x0002d6bb       0x66 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
-                              0x2667a (size before relaxing)
- .debug_str     0x0002d721       0xdc ./Tasks/Tasks.o
-                              0x2b866 (size before relaxing)
+.debug_str      0x00000000    0x2d7cf
+ .debug_str     0x00000000    0x284d0 ./source/main.o
+                              0x288e3 (size before relaxing)
+ .debug_str     0x000284d0      0x379 ./source/R_RTOS/R_RTOS_BitMagic.o
+                               0x3e37 (size before relaxing)
+ .debug_str     0x00028849     0x2e48 ./source/R_RTOS/R_RTOS_events.o
+                               0x6c93 (size before relaxing)
+ .debug_str     0x0002b691      0x4e5 ./source/R_RTOS/R_RTOS_memMngr.o
+                               0x67fe (size before relaxing)
+ .debug_str     0x0002bb76      0x663 ./source/R_RTOS/R_RTOS_msgQueuing.o
+                               0x71db (size before relaxing)
+ .debug_str     0x0002c1d9      0x218 ./source/R_RTOS/R_RTOS_scheduler.o
+                              0x28002 (size before relaxing)
+ .debug_str     0x0002c3f1      0x15f ./source/R_RTOS/R_RTOS_sem.o
+                               0x69ac (size before relaxing)
+ .debug_str     0x0002c550       0xdb ./source/R_RTOS/R_RTOS_stack.o
+                               0x68f1 (size before relaxing)
+ .debug_str     0x0002c62b      0x42c ./source/R_RTOS/R_RTOS_system.o
+                              0x2be93 (size before relaxing)
+ .debug_str     0x0002ca57      0x182 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                              0x2b229 (size before relaxing)
+ .debug_str     0x0002cbd9       0xd6 ./source/R_RTOS/R_RTOS_task.o
+                               0x6a64 (size before relaxing)
+ .debug_str     0x0002ccaf      0x254 ./source/R_RTOS/R_RTOS_timer.o
+                              0x2ac56 (size before relaxing)
+ .debug_str     0x0002cf03      0x107 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+                              0x26604 (size before relaxing)
+ .debug_str     0x0002d00a      0x20f ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                              0x2ac36 (size before relaxing)
+ .debug_str     0x0002d219       0x7e ./hal/mcu/NXP_KL05/source/PortFunc.o
+                              0x2733f (size before relaxing)
+ .debug_str     0x0002d297      0x3f6 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                              0x27fb8 (size before relaxing)
+ .debug_str     0x0002d68d       0x66 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+                              0x2664c (size before relaxing)
+ .debug_str     0x0002d6f3       0xdc ./Tasks/Tasks.o
+                              0x2b838 (size before relaxing)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 ./source/main.o
