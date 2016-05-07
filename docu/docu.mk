@@ -1,0 +1,1 @@
+DOXYFILES += ../docu/R_RTOS.doxyfile

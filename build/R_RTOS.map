@@ -1,0 +1,1749 @@
+Archive member included because of file (symbol)
+
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+                              ./hal/mcu/NXP_KL05/source/ClockFunc.o (__aeabi_uidiv)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_aeabi_uldivmod.o)
+                              ./source/R_RTOS/R_RTOS_system.o (__aeabi_uldivmod)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_muldi3.o)
+                              ./source/R_RTOS/R_RTOS_system.o (__aeabi_lmul)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_aeabi_uldivmod.o) (__gnu_uldivmod_helper)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o) (__divdi3)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o) (__udivdi3)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o) (__clzsi2)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o (exit)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o) (_global_impure_ptr)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o (__libc_init_array)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+                              ./source/R_RTOS/R_RTOS_memMngr.o (memcpy)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
+c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+                              c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o) (_exit)
+
+Allocating common symbols
+Common symbol       size              file
+
+IDLE_TSK_STCK       0x60              ./source/R_RTOS/R_RTOS_task.o
+svc_EXCReturn       0x4               ./source/R_RTOS/R_RTOS_system.o
+gTMRFlags           0x1               ./hal/mcu/NXP_KL05/source/TimerFunc.o
+tsk_AR              0x18c             ./source/R_RTOS/R_RTOS_task.o
+sys_SysFkt          0x60              ./source/R_RTOS/R_RTOS_system.o
+gOS_FLAGS           0x1               ./source/R_RTOS/R_RTOS_scheduler.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+ .data          0x00000000        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .group         0x00000000        0x8 ./source/main.o
+ .text          0x00000000        0x0 ./source/main.o
+ .data          0x00000000        0x0 ./source/main.o
+ .bss           0x00000000        0x0 ./source/main.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_events.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_events.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_events.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_events.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_events.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_events.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_events.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_events.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_events.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_events.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_events.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_events.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_events.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_memMngr.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_memMngr.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_memMngr.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_memMngr.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_memMngr.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_memMngr.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_memMngr.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_memMngr.o
+ .rodata.memoryHEAPBASE
+                0x00000000        0x4 ./source/R_RTOS/R_RTOS_memMngr.o
+ .rodata.failMemIndex
+                0x00000000        0x2 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.rCalloc  0x00000000       0x5c ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.memMngr_DeleteMemPool
+                0x00000000       0x18 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_macro   0x00000000       0x4c ./source/R_RTOS/R_RTOS_memMngr.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_monitor.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_monitor.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_monitor.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_monitor.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_monitor.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_monitor.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_monitor.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_monitor.o
+ .bss.memPoolID_MNTR
+                0x00000000        0x1 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_appendToWaitrList
+                0x00000000       0x14 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_getNextWaitr
+                0x00000000       0x14 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_INIT
+                0x00000000       0x1c ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_CreateMntr
+                0x00000000       0x3c ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_InitMntr
+                0x00000000       0x30 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_DelMntr
+                0x00000000       0x10 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_DestrMntr
+                0x00000000       0x54 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_ReqstReadAccssMntr
+                0x00000000       0x70 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_RelsReadAccssMntr
+                0x00000000       0x48 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_ReqstWriteAccssMntr
+                0x00000000       0x48 ./source/R_RTOS/R_RTOS_monitor.o
+ .text.mntr_RelsWriteAccssMntr
+                0x00000000       0x20 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_info    0x00000000      0x4aa ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_abbrev  0x00000000      0x15a ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_aranges
+                0x00000000       0x70 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_ranges  0x00000000       0x60 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_macro   0x00000000      0x946 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_line    0x00000000      0x2bd ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_str     0x00000000     0x6362 ./source/R_RTOS/R_RTOS_monitor.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_monitor.o
+ .ARM.attributes
+                0x00000000       0x32 ./source/R_RTOS/R_RTOS_monitor.o
+ .debug_frame   0x00000000      0x16c ./source/R_RTOS/R_RTOS_monitor.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_emptyMsgQ
+                0x00000000       0x34 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_unSub
+                0x00000000       0xb0 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_popCircBuff
+                0x00000000       0x54 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x00000000       0x4c ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_scheduler.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_scheduler.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x3a ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x3a ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x1f ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000      0x250 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x57 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000     0x62f9 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000      0x1cf ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x00000000       0x4c ./source/R_RTOS/R_RTOS_scheduler.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_sem.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_sem.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_sem.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_sem.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_sem.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_sem.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_sem.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_sem.o
+ .text.sem_DeleteTskSemQ
+                0x00000000       0xfc ./source/R_RTOS/R_RTOS_sem.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_sem.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_services.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_services.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_services.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_services.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_services.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_services.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_services.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_services.o
+ .debug_info    0x00000000       0x6f ./source/R_RTOS/R_RTOS_services.o
+ .debug_abbrev  0x00000000       0x29 ./source/R_RTOS/R_RTOS_services.o
+ .debug_aranges
+                0x00000000       0x18 ./source/R_RTOS/R_RTOS_services.o
+ .debug_macro   0x00000000      0x92e ./source/R_RTOS/R_RTOS_services.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_services.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_services.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_services.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_services.o
+ .debug_macro   0x00000000       0x2e ./source/R_RTOS/R_RTOS_services.o
+ .debug_line    0x00000000      0x1a3 ./source/R_RTOS/R_RTOS_services.o
+ .debug_str     0x00000000     0x3d1a ./source/R_RTOS/R_RTOS_services.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_services.o
+ .ARM.attributes
+                0x00000000       0x32 ./source/R_RTOS/R_RTOS_services.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_stack.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_stack.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_stack.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_stack.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_stack.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_stack.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_stack.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_stack.o
+ .text.stk_TSTStck
+                0x00000000       0x50 ./source/R_RTOS/R_RTOS_stack.o
+ .text.stk_StackClear
+                0x00000000       0x18 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_stack.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_system.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_system.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_system.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x3a ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x3a ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x1f ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000      0x250 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x57 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000     0x62f9 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000      0x214 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x58 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x56 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000      0x1cf ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x00000000       0x17 ./source/R_RTOS/R_RTOS_system.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .text.sysTck_getSysTicks
+                0x00000000       0x14 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000       0x3a ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000       0x3a ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000       0x1f ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000      0x250 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000       0x57 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000     0x62f9 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000      0x214 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000      0x1cf ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_task.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_task.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000      0x1c9 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000       0x10 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000       0x1c ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000       0x10 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_task.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .group         0x00000000        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .text          0x00000000        0x0 ./source/R_RTOS/R_RTOS_timer.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_timer.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000       0x16 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000       0x44 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000      0x209 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000       0x3a ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000       0x1f ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000      0x250 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000       0x57 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000     0x62f9 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000       0x56 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000      0x1cf ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x00000000      0x3a2 ./source/R_RTOS/R_RTOS_timer.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_PendSV.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_PendSV.o
+ .data          0x00000000        0x0 ./source/R_RTOS/R_RTOS_SVC.o
+ .bss           0x00000000        0x0 ./source/R_RTOS/R_RTOS_SVC.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .text          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .data          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .bss           0x00000000        0x0 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000       0x44 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000      0x209 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000       0x1f ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000      0x250 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000       0x57 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x00000000     0x62f9 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .text          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .bss           0x00000000        0x0 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .text.setSensingForPin
+                0x00000000       0xb8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x44 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000      0x209 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x1f ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000      0x250 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x57 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000     0x62f9 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x56 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000       0x58 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000      0x214 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000      0x1cf ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x00000000      0x39c ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .text          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .data          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .bss           0x00000000        0x0 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .text.setPin   0x00000000       0x90 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .text.togglePin
+                0x00000000       0x74 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .text.readPin  0x00000000       0xac ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000       0x44 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000      0x209 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000       0x1f ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000      0x250 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000       0x57 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000     0x62f9 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x00000000      0x214 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .data          0x00000000        0x0 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .bss           0x00000000        0x0 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.NVIC_EnableIRQ
+                0x00000000       0x2c ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.NVIC_ClearPendingIRQ
+                0x00000000       0x34 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.NVIC_SetPriority
+                0x00000000       0xe0 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .bss.g_RTCtimestamp
+                0x00000000        0x4 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .bss.foo       0x00000000        0x4 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .data.g_calibrationFactorLPTMR
+                0x00000000        0x4 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.disablePITInterrupt
+                0x00000000       0x50 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.readPIT  0x00000000       0x34 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.wait_ms  0x00000000       0x34 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.__init_LPTMR
+                0x00000000       0x88 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.setLPTMR
+                0x00000000       0x50 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.readLPTMR
+                0x00000000       0x1c ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.__init_RTC
+                0x00000000       0xa8 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.rtcIntHandler
+                0x00000000       0x28 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.enableRTCInterrupt
+                0x00000000       0x24 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.disableRTCInterrupt
+                0x00000000       0x18 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.readRTC  0x00000000       0x14 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.setRTC   0x00000000       0x3c ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.re_setTPMTimer
+                0x00000000       0x28 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.getTPMCHRemTime
+                0x00000000       0x70 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.correctTPMChannel
+                0x00000000      0x118 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.__disableTPMTimers
+                0x00000000       0x6c ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.__enableTPMTimers
+                0x00000000       0x54 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.findShortesTPM
+                0x00000000      0x100 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x44 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000      0x209 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x1f ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000      0x250 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x57 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000     0x62f9 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x58 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000       0x56 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00000000      0x214 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .group         0x00000000        0x8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .text          0x00000000        0x0 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .data          0x00000000        0x0 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .bss           0x00000000        0x0 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000       0x16 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000       0x44 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000      0x209 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000       0x4c ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000       0x3a ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000       0x1f ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000      0x250 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000       0x57 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x00000000     0x62f9 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .data          0x00000000        0x0 ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .bss           0x00000000        0x0 ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .group         0x00000000        0x8 ./Tasks/Tasks.o
+ .text          0x00000000        0x0 ./Tasks/Tasks.o
+ .data          0x00000000        0x0 ./Tasks/Tasks.o
+ .bss           0x00000000        0x0 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x16 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x16 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x44 ./Tasks/Tasks.o
+ .debug_macro   0x00000000      0x209 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x3a ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x3a ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x1f ./Tasks/Tasks.o
+ .debug_macro   0x00000000      0x250 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x57 ./Tasks/Tasks.o
+ .debug_macro   0x00000000     0x62f9 ./Tasks/Tasks.o
+ .debug_macro   0x00000000      0x214 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x58 ./Tasks/Tasks.o
+ .debug_macro   0x00000000      0x1cf ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x28 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x1c ./Tasks/Tasks.o
+ .debug_macro   0x00000000      0x3a2 ./Tasks/Tasks.o
+ .debug_macro   0x00000000       0x17 ./Tasks/Tasks.o
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_muldi3.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_muldi3.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x00000000        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+ .eh_frame      0x00000000        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+ .text          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+ .data          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+ .bss           0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+m_interrupts     0x00000000         0x00000100         xr
+m_flash_config   0x00000400         0x00000010         xr
+m_text           0x00000410         0x00007bf0         xr
+m_data           0x1ffffc00         0x00001000         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+LOAD ./source/main.o
+LOAD ./source/R_RTOS/R_RTOS_BitMagic.o
+LOAD ./source/R_RTOS/R_RTOS_events.o
+LOAD ./source/R_RTOS/R_RTOS_memMngr.o
+LOAD ./source/R_RTOS/R_RTOS_monitor.o
+LOAD ./source/R_RTOS/R_RTOS_msgQueuing.o
+LOAD ./source/R_RTOS/R_RTOS_scheduler.o
+LOAD ./source/R_RTOS/R_RTOS_sem.o
+LOAD ./source/R_RTOS/R_RTOS_services.o
+LOAD ./source/R_RTOS/R_RTOS_stack.o
+LOAD ./source/R_RTOS/R_RTOS_system.o
+LOAD ./source/R_RTOS/R_RTOS_SysTickTMR.o
+LOAD ./source/R_RTOS/R_RTOS_task.o
+LOAD ./source/R_RTOS/R_RTOS_timer.o
+LOAD ./source/R_RTOS/R_RTOS_PendSV.o
+LOAD ./source/R_RTOS/R_RTOS_SVC.o
+LOAD ./hal/mcu/NXP_KL05/source/ClockFunc.o
+LOAD ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+LOAD ./hal/mcu/NXP_KL05/source/PortFunc.o
+LOAD ./hal/mcu/NXP_KL05/source/TimerFunc.o
+LOAD ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+LOAD ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+LOAD ./Tasks/Tasks.o
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libstdc++_s.a
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libm.a
+START GROUP
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libc_s.a
+END GROUP
+START GROUP
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libc_s.a
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a
+END GROUP
+START GROUP
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libc_s.a
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a
+END GROUP
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+LOAD c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+                0x00000600                HEAP_SIZE = DEFINED (__heap_size__)?__heap_size__:0x600
+                0x00000140                STACK_SIZE = DEFINED (__stack_size__)?__stack_size__:0x140
+
+.interrupts     0x00000000       0xc0
+                0x00000000                __VECTOR_TABLE = .
+                0x00000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x00000000       0xc0 ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+                0x00000000                __isr_vector
+                0x000000c0                . = ALIGN (0x4)
+
+.flash_config   0x00000400       0x10
+                0x00000400                . = ALIGN (0x4)
+ *(.FlashConfig)
+ .FlashConfig   0x00000400       0x10 ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+                0x00000410                . = ALIGN (0x4)
+
+.text           0x00000410     0x5cf0
+                0x00000410                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000410       0x60 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ .text          0x00000470       0x78 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+                0x00000470                _start
+                0x00000470                _mainCRTStartup
+ *fill*         0x000004e8        0x8 
+ .text          0x000004f0       0x70 ./source/R_RTOS/R_RTOS_PendSV.o
+                0x000004f0                PendSV_Handler
+                0x000004f0                _p_nxt_tsk_tcb
+                0x000004f0                _offsetOfTskState
+                0x000004f0                _p_cur_tsk_tcb
+ .text          0x00000560       0x50 ./source/R_RTOS/R_RTOS_SVC.o
+                0x00000560                SVC_Handler
+                0x00000590                SVC_AdjustTskSP
+ .text          0x000005b0       0x34 ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+                0x000005b0                Reset_Handler
+                0x000005dc                HardFault_Handler
+                0x000005dc                NMI_Handler
+                0x000005dc                DMA2_IRQHandler
+                0x000005dc                Reserved29_IRQHandler
+                0x000005dc                LLWU_IRQHandler
+                0x000005dc                TSI0_IRQHandler
+                0x000005dc                UART0_IRQHandler
+                0x000005dc                ADC0_IRQHandler
+                0x000005dc                Reserved39_IRQHandler
+                0x000005dc                DefaultISR
+                0x000005dc                Reserved25_IRQHandler
+                0x000005dc                RTC_IRQHandler
+                0x000005dc                I2C0_IRQHandler
+                0x000005dc                Reserved27_IRQHandler
+                0x000005dc                RTC_Seconds_IRQHandler
+                0x000005dc                MCG_IRQHandler
+                0x000005dc                Reserved35_IRQHandler
+                0x000005dc                Reserved20_IRQHandler
+                0x000005dc                DMA3_IRQHandler
+                0x000005dc                DMA0_IRQHandler
+                0x000005dc                DAC0_IRQHandler
+                0x000005dc                Reserved45_IRQHandler
+                0x000005dc                Reserved30_IRQHandler
+                0x000005dc                LVD_LVW_IRQHandler
+                0x000005dc                SPI0_IRQHandler
+                0x000005dc                FTFA_IRQHandler
+                0x000005dc                Reserved40_IRQHandler
+                0x000005dc                LPTMR0_IRQHandler
+                0x000005dc                CMP0_IRQHandler
+                0x000005dc                DMA1_IRQHandler
+ .text          0x000005e4       0x9c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+                0x000005e4                __aeabi_uidiv
+                0x000005e4                __udivsi3
+                0x0000066c                __aeabi_uidivmod
+ .text          0x00000680        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00000680                __aeabi_idiv0
+                0x00000680                __aeabi_ldiv0
+ .text          0x00000684       0x40 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_aeabi_uldivmod.o)
+                0x00000684                __aeabi_uldivmod
+ .text          0x000006c4       0x44 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_muldi3.o)
+                0x000006c4                __muldi3
+                0x000006c4                __aeabi_lmul
+ .text          0x00000708       0x6c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o)
+                0x00000708                __gnu_ldivmod_helper
+                0x00000740                __gnu_uldivmod_helper
+ .text          0x00000774      0x3b8 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+                0x00000774                __divdi3
+ .text          0x00000b2c      0x384 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+                0x00000b2c                __udivdi3
+ .text          0x00000eb0       0x3c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
+                0x00000eb0                __clzsi2
+ *(.text*)
+ .text.main     0x00000eec       0x14 ./source/main.o
+                0x00000eec                main
+ .text.portInit
+                0x00000f00       0xbc ./source/main.o
+                0x00000f00                portInit
+ .text.bitM_bitPos
+                0x00000fbc       0x30 ./source/R_RTOS/R_RTOS_BitMagic.o
+                0x00000fbc                bitM_bitPos
+ .text.BREAK    0x00000fec        0x8 ./source/R_RTOS/R_RTOS_events.o
+ .text.evt_INIT
+                0x00000ff4       0x54 ./source/R_RTOS/R_RTOS_events.o
+                0x00000ff4                evt_INIT
+ .text.evt_WaitForEvts
+                0x00001048       0xc0 ./source/R_RTOS/R_RTOS_events.o
+                0x00001048                evt_WaitForEvts
+ .text.evt_SendEvt
+                0x00001108       0xdc ./source/R_RTOS/R_RTOS_events.o
+                0x00001108                evt_SendEvt
+ .text.evt_GiveUpOnEvts
+                0x000011e4       0xbc ./source/R_RTOS/R_RTOS_events.o
+                0x000011e4                evt_GiveUpOnEvts
+ .text.BREAK    0x000012a0        0x8 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.setBlckMemSize
+                0x000012a8       0x78 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.setPRVBlckMemSize
+                0x00001320       0x4c ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.initMEM  0x0000136c      0x10c ./source/R_RTOS/R_RTOS_memMngr.o
+                0x0000136c                initMEM
+ .text.delMemBlck
+                0x00001478       0x60 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.getAdjacentPrevBlck
+                0x000014d8       0x38 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.getAdjacentNxtBlck
+                0x00001510       0x38 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.getBuddyBlck
+                0x00001548       0x34 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.getIndex
+                0x0000157c       0x38 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.fitBlckBackIntoFreeLst
+                0x000015b4       0xe4 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.mergeMemBlck
+                0x00001698      0x20c ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.reMergeMemBlck
+                0x000018a4       0x34 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.splitMemBlck
+                0x000018d8      0x100 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.unMergeUnevenBlcks
+                0x000019d8      0x158 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.mergeUnevenBlocks
+                0x00001b30       0xb0 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.shrinkCacheFIFO
+                0x00001be0       0x88 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.addBlckToCache
+                0x00001c68       0x90 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.findBestFitInCache
+                0x00001cf8      0x114 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.findBestFitFree
+                0x00001e0c      0x1cc ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.cpyMemBlock
+                0x00001fd8       0x80 ./source/R_RTOS/R_RTOS_memMngr.o
+ .text.rMalloc  0x00002058       0xb4 ./source/R_RTOS/R_RTOS_memMngr.o
+                0x00002058                rMalloc
+ .text.rRealloc
+                0x0000210c      0x114 ./source/R_RTOS/R_RTOS_memMngr.o
+                0x0000210c                rRealloc
+ .text.rFree    0x00002220       0x44 ./source/R_RTOS/R_RTOS_memMngr.o
+                0x00002220                rFree
+ .text.rFullyFree
+                0x00002264       0x64 ./source/R_RTOS/R_RTOS_memMngr.o
+                0x00002264                rFullyFree
+ .text.memMngr_CreateMemPool
+                0x000022c8      0x110 ./source/R_RTOS/R_RTOS_memMngr.o
+                0x000022c8                memMngr_CreateMemPool
+ .text.memMngr_MemPoolMalloc
+                0x000023d8       0x84 ./source/R_RTOS/R_RTOS_memMngr.o
+                0x000023d8                memMngr_MemPoolMalloc
+ .text.memMngr_MemPoolFree
+                0x0000245c       0x98 ./source/R_RTOS/R_RTOS_memMngr.o
+                0x0000245c                memMngr_MemPoolFree
+ .text.BREAK    0x000024f4        0x8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_getPartFrmLst
+                0x000024fc       0x38 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_emptyPublshrLst
+                0x00002534       0x30 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_emptySubscrbrLst
+                0x00002564       0x60 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_regPrtcpntInQ
+                0x000025c4       0x24 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_notifySubscrbrs
+                0x000025e8       0x6c ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_initQueue
+                0x00002654       0xa8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x00002654                msgQ_initQueue
+ .text.msgQ_delQueue
+                0x000026fc       0x84 ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x000026fc                msgQ_delQueue
+ .text.msgQ_regTskPub
+                0x00002780       0x8c ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x00002780                msgQ_regTskPub
+ .text.msgQ_regTskSub
+                0x0000280c       0xe8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x0000280c                msgQ_regTskSub
+ .text.msgQ_regSysSub
+                0x000028f4       0xcc ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x000028f4                msgQ_regSysSub
+ .text.msgQ_pushCircBuff
+                0x000029c0       0x74 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .text.msgQ_pubDataToQ
+                0x00002a34       0x5c ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x00002a34                msgQ_pubDataToQ
+ .text.msgQ_readDataFrmQ
+                0x00002a90       0x98 ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x00002a90                msgQ_readDataFrmQ
+ .text.msgQ_takeDataFrmQ
+                0x00002b28       0x34 ./source/R_RTOS/R_RTOS_msgQueuing.o
+                0x00002b28                msgQ_takeDataFrmQ
+ .text.BREAK    0x00002b5c        0x8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .text.tsk_GetNxtActvTsk
+                0x00002b64       0x38 ./source/R_RTOS/R_RTOS_scheduler.o
+ .text.tsk_rmvTskActvTskLst
+                0x00002b9c      0x12c ./source/R_RTOS/R_RTOS_scheduler.o
+                0x00002b9c                tsk_rmvTskActvTskLst
+ .text.tsk_insrtTskActvTskLst
+                0x00002cc8      0x1c4 ./source/R_RTOS/R_RTOS_scheduler.o
+                0x00002cc8                tsk_insrtTskActvTskLst
+ .text.os_INIT_Scheduler
+                0x00002e8c       0x50 ./source/R_RTOS/R_RTOS_scheduler.o
+                0x00002e8c                os_INIT_Scheduler
+ .text.os_SCHEDULE
+                0x00002edc       0xa0 ./source/R_RTOS/R_RTOS_scheduler.o
+                0x00002edc                os_SCHEDULE
+ .text.sem_InitSems
+                0x00002f7c       0x74 ./source/R_RTOS/R_RTOS_sem.o
+                0x00002f7c                sem_InitSems
+ .text.sem_InsertTskSemQ
+                0x00002ff0       0xc0 ./source/R_RTOS/R_RTOS_sem.o
+ .text.sem_GetNextTskSemQ
+                0x000030b0       0x90 ./source/R_RTOS/R_RTOS_sem.o
+ .text.sem_TakeSem
+                0x00003140      0x110 ./source/R_RTOS/R_RTOS_sem.o
+                0x00003140                sem_TakeSem
+ .text.sem_GiveSem
+                0x00003250       0x84 ./source/R_RTOS/R_RTOS_sem.o
+                0x00003250                sem_GiveSem
+ .text.sem_GiveUpOnSem
+                0x000032d4       0x64 ./source/R_RTOS/R_RTOS_sem.o
+                0x000032d4                sem_GiveUpOnSem
+ .text.BREAK    0x00003338        0x8 ./source/R_RTOS/R_RTOS_stack.o
+ .text.stk_StackCreate
+                0x00003340       0x44 ./source/R_RTOS/R_RTOS_stack.o
+                0x00003340                stk_StackCreate
+ .text.stk_StackInit
+                0x00003384       0x64 ./source/R_RTOS/R_RTOS_stack.o
+                0x00003384                stk_StackInit
+ .text.stk_StackDestroy
+                0x000033e8       0x44 ./source/R_RTOS/R_RTOS_stack.o
+                0x000033e8                stk_StackDestroy
+ .text.NVIC_EnableIRQ
+                0x0000342c       0x2c ./source/R_RTOS/R_RTOS_system.o
+ .text.NVIC_DisableIRQ
+                0x00003458       0x30 ./source/R_RTOS/R_RTOS_system.o
+ .text.NVIC_ClearPendingIRQ
+                0x00003488       0x34 ./source/R_RTOS/R_RTOS_system.o
+ .text.NVIC_SetPriority
+                0x000034bc       0xe0 ./source/R_RTOS/R_RTOS_system.o
+ .text.SysTick_Config
+                0x0000359c       0x48 ./source/R_RTOS/R_RTOS_system.o
+ *fill*         0x000035e4        0x4 
+ .text.__initOS
+                0x000035e8      0x100 ./source/R_RTOS/R_RTOS_system.o
+                0x000035e8                __initOS
+ .text.tskIdle  0x000036e8       0x2c ./source/R_RTOS/R_RTOS_system.o
+                0x000036e8                tskIdle
+ .text.tsk_EndTheTask
+                0x00003714        0x8 ./source/R_RTOS/R_RTOS_system.o
+                0x00003714                tsk_EndTheTask
+ .text.SVC_HandlerMain
+                0x0000371c      0x380 ./source/R_RTOS/R_RTOS_system.o
+                0x0000371c                SVC_HandlerMain
+ .text.NVIC_SetPriority
+                0x00003a9c       0xe0 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .text.SysTick_Config
+                0x00003b7c       0x48 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .text.sysTck_UpdateSysTckTMRs
+                0x00003bc4      0x244 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .text.SysTick_Handler
+                0x00003e08       0x40 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                0x00003e08                SysTick_Handler
+ .text.sysTck_INIT
+                0x00003e48       0x48 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                0x00003e48                sysTck_INIT
+ .text.sysTck_setSysTckTMR
+                0x00003e90      0x110 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                0x00003e90                sysTck_setSysTckTMR
+ .text.sysTck_resetSysTicks
+                0x00003fa0       0x18 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                0x00003fa0                sysTck_resetSysTicks
+ .text.sysTck_GetTimeSlice
+                0x00003fb8       0x14 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                0x00003fb8                sysTck_GetTimeSlice
+ .text.sysTck_SetTimeSlice
+                0x00003fcc       0x1c ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                0x00003fcc                sysTck_SetTimeSlice
+ .text.BREAK    0x00003fe8        0x8 ./source/R_RTOS/R_RTOS_task.o
+ .text.tsk_initTsks
+                0x00003ff0      0x138 ./source/R_RTOS/R_RTOS_task.o
+                0x00003ff0                tsk_initTsks
+ .text.tsk_tskInit
+                0x00004128       0xc4 ./source/R_RTOS/R_RTOS_task.o
+                0x00004128                tsk_tskInit
+ .text.os_IDLETskInit
+                0x000041ec       0x70 ./source/R_RTOS/R_RTOS_task.o
+                0x000041ec                os_IDLETskInit
+ .text.tsk_tskDestroy
+                0x0000425c       0xa8 ./source/R_RTOS/R_RTOS_task.o
+                0x0000425c                tsk_tskDestroy
+ .text.tsk_ClrEvt
+                0x00004304       0x48 ./source/R_RTOS/R_RTOS_task.o
+                0x00004304                tsk_ClrEvt
+ .text.tsk_SetEvt
+                0x0000434c       0x28 ./source/R_RTOS/R_RTOS_task.o
+                0x0000434c                tsk_SetEvt
+ .text.tsk_SetInactive
+                0x00004374       0x48 ./source/R_RTOS/R_RTOS_task.o
+                0x00004374                tsk_SetInactive
+ .text.tsk_ActvTsk
+                0x000043bc       0x58 ./source/R_RTOS/R_RTOS_task.o
+                0x000043bc                tsk_ActvTsk
+ .text.tsk_ChngePrio
+                0x00004414       0x7c ./source/R_RTOS/R_RTOS_task.o
+                0x00004414                tsk_ChngePrio
+ .text.NVIC_EnableIRQ
+                0x00004490       0x2c ./source/R_RTOS/R_RTOS_timer.o
+ .text.NVIC_ClearPendingIRQ
+                0x000044bc       0x34 ./source/R_RTOS/R_RTOS_timer.o
+ .text.NVIC_SetPriority
+                0x000044f0       0xe0 ./source/R_RTOS/R_RTOS_timer.o
+ .text.BREAK    0x000045d0        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .text.tmr_InsertSysTmrQ
+                0x000045d8       0xb4 ./source/R_RTOS/R_RTOS_timer.o
+ .text.tmr_InsertTskTmrQ
+                0x0000468c      0x148 ./source/R_RTOS/R_RTOS_timer.o
+ .text.tmr_INIT
+                0x000047d4       0x88 ./source/R_RTOS/R_RTOS_timer.o
+                0x000047d4                tmr_INIT
+ .text.tmr_setSysTimer
+                0x0000485c       0xd8 ./source/R_RTOS/R_RTOS_timer.o
+                0x0000485c                tmr_setSysTimer
+ .text.tmr_setTskTimer
+                0x00004934      0x118 ./source/R_RTOS/R_RTOS_timer.o
+                0x00004934                tmr_setTskTimer
+ .text.tmr_SysTimerElapsed
+                0x00004a4c      0x110 ./source/R_RTOS/R_RTOS_timer.o
+                0x00004a4c                tmr_SysTimerElapsed
+ .text.tmr_TskTimerElapsed
+                0x00004b5c      0x114 ./source/R_RTOS/R_RTOS_timer.o
+                0x00004b5c                tmr_TskTimerElapsed
+ .text.tmr_GiveUpOnTMR
+                0x00004c70      0x154 ./source/R_RTOS/R_RTOS_timer.o
+                0x00004c70                tmr_GiveUpOnTMR
+ .text.getBusClk
+                0x00004dc4       0x38 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+                0x00004dc4                getBusClk
+ .text.installIrq
+                0x00004dfc       0xd4 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                0x00004dfc                installIrq
+ .text.TPM0_IRQHandler
+                0x00004ed0      0x174 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                0x00004ed0                TPM0_IRQHandler
+ .text.TPM1_IRQHandler
+                0x00005044       0x9c ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                0x00005044                TPM1_IRQHandler
+ .text.PIT_IRQHandler
+                0x000050e0       0x30 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                0x000050e0                PIT_IRQHandler
+ .text.PORTA_IRQHandler
+                0x00005110       0x8c ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                0x00005110                PORTA_IRQHandler
+ .text.PORTB_IRQHandler
+                0x0000519c       0x8c ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                0x0000519c                PORTB_IRQHandler
+ .text.initPin  0x00005228      0x16c ./hal/mcu/NXP_KL05/source/PortFunc.o
+                0x00005228                initPin
+ .text.__initTMRFlags
+                0x00005394       0x74 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005394                __initTMRFlags
+ .text.__init_PIT
+                0x00005408       0x50 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005408                __init_PIT
+ .text.resetPIT
+                0x00005458       0xf0 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005458                resetPIT
+ .text.calibratePITWithTPM
+                0x00005548       0xac ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005548                calibratePITWithTPM
+ .text.dummyFkt
+                0x000055f4        0xc ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .text.startPITCalibrationWithTPM
+                0x00005600       0x30 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005600                startPITCalibrationWithTPM
+ .text.endPITCalibrationWithTPM
+                0x00005630       0x54 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005630                endPITCalibrationWithTPM
+ .text.__init_TPM
+                0x00005684       0xb4 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005684                __init_TPM
+ .text.__init_TPMChannel
+                0x00005738       0x80 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005738                __init_TPMChannel
+ .text.stopTPMChannel
+                0x000057b8       0x7c ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x000057b8                stopTPMChannel
+ .text.startTPMChannel
+                0x00005834       0xd4 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x00005834                startTPMChannel
+ .text.SystemInit
+                0x00005908       0x18 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+                0x00005908                SystemInit
+ .text.SystemCoreClockUpdate
+                0x00005920      0x1e8 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+                0x00005920                SystemCoreClockUpdate
+ .text.tsk1     0x00005b08       0x74 ./Tasks/Tasks.o
+                0x00005b08                tsk1
+ .text.tsk2     0x00005b7c       0x78 ./Tasks/Tasks.o
+                0x00005b7c                tsk2
+ .text.tsk3     0x00005bf4      0x1f0 ./Tasks/Tasks.o
+                0x00005bf4                tsk3
+ .text.tsk4     0x00005de4       0x88 ./Tasks/Tasks.o
+                0x00005de4                tsk4
+ .text.actvTsk1
+                0x00005e6c       0x30 ./Tasks/Tasks.o
+                0x00005e6c                actvTsk1
+ .text.actvTsk2
+                0x00005e9c       0x30 ./Tasks/Tasks.o
+                0x00005e9c                actvTsk2
+ .text.actvTsk3
+                0x00005ecc       0x30 ./Tasks/Tasks.o
+                0x00005ecc                actvTsk3
+ .text.actvTsk4
+                0x00005efc       0x30 ./Tasks/Tasks.o
+                0x00005efc                actvTsk4
+ .text.OS_START
+                0x00005f2c       0x64 ./Tasks/Tasks.o
+                0x00005f2c                OS_START
+ .text.exit     0x00005f90       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+                0x00005f90                exit
+ .text.__libc_init_array
+                0x00005fbc       0x4c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+                0x00005fbc                __libc_init_array
+ .text.memcpy   0x00006008       0x12 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+                0x00006008                memcpy
+ .text.memset   0x0000601a       0x10 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+                0x0000601a                memset
+ *fill*         0x0000602a        0x2 
+ .text._exit    0x0000602c        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+                0x0000602c                _exit
+ *(.rodata)
+ *(.rodata*)
+ .rodata.bit32PosNrs
+                0x00006030       0x20 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .rodata.offsetOfTskState
+                0x00006050        0x1 ./source/R_RTOS/R_RTOS_system.o
+                0x00006050                offsetOfTskState
+ *fill*         0x00006051        0x3 
+ .rodata.SVC_HandlerMain
+                0x00006054       0x74 ./source/R_RTOS/R_RTOS_system.o
+ .rodata.sysTck_UpdateSysTckTMRs
+                0x000060c8       0x14 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .rodata.pIDLETsk
+                0x000060dc        0x4 ./source/R_RTOS/R_RTOS_task.o
+                0x000060dc                pIDLETsk
+ .rodata.str1.1
+                0x000060e0        0x2 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ *fill*         0x000060e2        0x2 
+ .rodata._global_impure_ptr
+                0x000060e4        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+                0x000060e4                _global_impure_ptr
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x000060e8        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ *(.init)
+ .init          0x000060e8        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+                0x000060e8                _init
+ .init          0x000060ec        0x8 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+ *(.fini)
+ .fini          0x000060f4        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+                0x000060f4                _fini
+ .fini          0x000060f8        0x8 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+                0x00006100                . = ALIGN (0x4)
+
+.vfp11_veneer   0x00006100        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00006100        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00006100        0x0
+ .iplt          0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x00006100        0x8
+                0x00006100                __exidx_start = .
+ *(.ARM.exidx*)
+ .ARM.exidx     0x00006100        0x8 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x00006108        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx     0x00006108        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+                                  0x8 (size before relaxing)
+                0x00006108                __exidx_end = .
+
+.rel.dyn        0x00006108        0x0
+ .rel.iplt      0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+
+.ctors          0x00006108        0x0
+                0x00006108                __CTOR_LIST__ = .
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0x00006108                __CTOR_END__ = .
+
+.dtors          0x00006108        0x0
+                0x00006108                __DTOR_LIST__ = .
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0x00006108                __DTOR_END__ = .
+
+.preinit_array  0x00006108        0x0
+                0x00006108                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x00006108                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x00006108        0x4
+                0x00006108                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+ .init_array    0x00006108        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+                0x0000610c                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000610c        0x4
+                0x0000610c                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x0000610c        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+                0x00006110                PROVIDE (__fini_array_end, .)
+                0x00006110                __etext = .
+                0x00006110                __DATA_ROM = .
+
+.mtb            0x1ffffc00        0x0
+                0x1ffffc00                . = ALIGN (0x8)
+                0x1ffffc00                _mtb_start = .
+ *(.mtb_buf)
+                0x1ffffc00                . = ALIGN (0x8)
+                0x1ffffc00                _mtb_end = .
+
+.data           0x1ffffc00       0xbc load address 0x00006110
+                0x1ffffc00                . = ALIGN (0x4)
+                0x1ffffc00                __DATA_RAM = .
+                0x1ffffc00                __data_start__ = .
+ *(.data)
+ *(.data*)
+ .data.g_ISRFktNr_TPM0
+                0x1ffffc00        0x8 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data.g_ISRFktNr_TPM1
+                0x1ffffc08        0x4 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data.g_ISRFktNr_PIT
+                0x1ffffc0c        0x4 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data.g_ISRFktNr_LPTPMR0
+                0x1ffffc10        0x4 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data.g_ISRFktNr_PORTA
+                0x1ffffc14       0x10 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data.g_ISRFktNr_PORTB
+                0x1ffffc24       0x10 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data.g_ISRFktNr_Modules
+                0x1ffffc34       0x1c ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .data.g_calibrationFactorPIT
+                0x1ffffc50        0x4 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .data.SystemCoreClock
+                0x1ffffc54        0x4 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+                0x1ffffc54                SystemCoreClock
+ .data.impure_data
+                0x1ffffc58       0x60 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ *(.jcr*)
+ .jcr           0x1ffffcb8        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ .jcr           0x1ffffcb8        0x4 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+                0x1ffffcbc                . = ALIGN (0x4)
+                0x1ffffcbc                __data_end__ = .
+                0x000061cc                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
+
+.igot.plt       0x1ffffcbc        0x0 load address 0x000061cc
+ .igot.plt      0x00000000        0x0 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+
+.bss            0x1ffffcbc      0x45c load address 0x000061cc
+                0x1ffffcbc                . = ALIGN (0x4)
+                0x1ffffcbc                __START_BSS = .
+                0x1ffffcbc                __bss_start__ = .
+ *(.bss)
+ .bss           0x1ffffcbc       0x1c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ *(.bss*)
+ .bss.gEvts     0x1ffffcd8       0x30 ./source/R_RTOS/R_RTOS_events.o
+ .bss.memPoolID_EVT
+                0x1ffffd08        0x1 ./source/R_RTOS/R_RTOS_events.o
+ *fill*         0x1ffffd09        0x3 
+ .bss.freeMemLst
+                0x1ffffd0c        0x4 ./source/R_RTOS/R_RTOS_memMngr.o
+ .bss.objCache  0x1ffffd10        0x4 ./source/R_RTOS/R_RTOS_memMngr.o
+ .bss.objCacheEnd
+                0x1ffffd14        0x4 ./source/R_RTOS/R_RTOS_memMngr.o
+ .bss.buddyOffset
+                0x1ffffd18        0x1 ./source/R_RTOS/R_RTOS_memMngr.o
+ .bss.cacheSize
+                0x1ffffd19        0x1 ./source/R_RTOS/R_RTOS_memMngr.o
+ *fill*         0x1ffffd1a        0x2 
+ .bss.memPoolsInUse
+                0x1ffffd1c        0x4 ./source/R_RTOS/R_RTOS_memMngr.o
+ .bss.memPools  0x1ffffd20       0x14 ./source/R_RTOS/R_RTOS_memMngr.o
+ .bss.msgQ_AR   0x1ffffd34       0xe4 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .bss.p_cur_tsk_tcb
+                0x1ffffe18        0x4 ./source/R_RTOS/R_RTOS_scheduler.o
+                0x1ffffe18                p_cur_tsk_tcb
+ .bss.p_nxt_tsk_tcb
+                0x1ffffe1c        0x4 ./source/R_RTOS/R_RTOS_scheduler.o
+                0x1ffffe1c                p_nxt_tsk_tcb
+ .bss.prioSlots
+                0x1ffffe20        0x2 ./source/R_RTOS/R_RTOS_scheduler.o
+ *fill*         0x1ffffe22        0x2 
+ .bss.ar_TskActvPrioSorted
+                0x1ffffe24       0x20 ./source/R_RTOS/R_RTOS_scheduler.o
+ .bss.ar_Sems   0x1ffffe44       0x18 ./source/R_RTOS/R_RTOS_sem.o
+ .bss.memPoolID_SEM
+                0x1ffffe5c        0x1 ./source/R_RTOS/R_RTOS_sem.o
+ *fill*         0x1ffffe5d        0x3 
+ .bss.os_SysTicks
+                0x1ffffe60        0x4 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .bss.os_TimeSlice
+                0x1ffffe64        0x4 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .bss.ar_PSysTickTMR
+                0x1ffffe68       0x20 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .bss.memPoolID_SysTckTMR
+                0x1ffffe88        0x1 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .bss.memPoolID_TMR
+                0x1ffffe89        0x1 ./source/R_RTOS/R_RTOS_timer.o
+ *fill*         0x1ffffe8a        0x2 
+ .bss.tskTMR    0x1ffffe8c        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .bss.sysTMR    0x1ffffe94        0x8 ./source/R_RTOS/R_RTOS_timer.o
+ .bss.g_IRQArr  0x1ffffe9c        0x4 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .bss.g_IRQArrSize
+                0x1ffffea0        0x1 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ *fill*         0x1ffffea1        0x3 
+ .bss.g_PITStartTime
+                0x1ffffea4        0x4 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .bss.gAr_TPMTimers
+                0x1ffffea8       0x18 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x1ffffea8                gAr_TPMTimers
+ *(COMMON)
+ COMMON         0x1ffffec0        0x1 ./source/R_RTOS/R_RTOS_scheduler.o
+                0x1ffffec0                gOS_FLAGS
+ *fill*         0x1ffffec1        0x3 
+ COMMON         0x1ffffec4       0x64 ./source/R_RTOS/R_RTOS_system.o
+                0x1ffffec4                svc_EXCReturn
+                0x1ffffec8                sys_SysFkt
+ COMMON         0x1fffff28      0x1ec ./source/R_RTOS/R_RTOS_task.o
+                0x1fffff28                IDLE_TSK_STCK
+                0x1fffff88                tsk_AR
+ COMMON         0x20000114        0x1 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                0x20000114                gTMRFlags
+                0x20000118                . = ALIGN (0x4)
+ *fill*         0x20000115        0x3 
+                0x20000118                __bss_end__ = .
+                0x20000118                __END_BSS = .
+
+.heap           0x20000118      0x600 load address 0x00006628
+                0x20000118                . = ALIGN (0x8)
+                0x20000118                __end__ = .
+                0x20000118                PROVIDE (end, .)
+                0x20000118                __HeapBase = .
+                0x20000718                . = (. + HEAP_SIZE)
+ *fill*         0x20000118      0x600 
+                0x20000718                __HeapLimit = .
+
+.stack          0x20000718      0x140 load address 0x00006c28
+                0x20000718                . = ALIGN (0x8)
+                0x20000858                . = (. + STACK_SIZE)
+ *fill*         0x20000718      0x140 
+                0x20000c00                __StackTop = (ORIGIN (m_data) + 0x1000)
+                0x20000ac0                __StackLimit = (__StackTop - STACK_SIZE)
+                0x20000c00                PROVIDE (__stack, __StackTop)
+
+.ARM.attributes
+                0x00000000       0x28
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1e c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crti.o
+ .ARM.attributes
+                0x0000001e       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x32 ./source/main.o
+ .ARM.attributes
+                0x00000097       0x32 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .ARM.attributes
+                0x000000c9       0x32 ./source/R_RTOS/R_RTOS_events.o
+ .ARM.attributes
+                0x000000fb       0x32 ./source/R_RTOS/R_RTOS_memMngr.o
+ .ARM.attributes
+                0x0000012d       0x32 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .ARM.attributes
+                0x0000015f       0x32 ./source/R_RTOS/R_RTOS_scheduler.o
+ .ARM.attributes
+                0x00000191       0x32 ./source/R_RTOS/R_RTOS_sem.o
+ .ARM.attributes
+                0x000001c3       0x32 ./source/R_RTOS/R_RTOS_stack.o
+ .ARM.attributes
+                0x000001f5       0x32 ./source/R_RTOS/R_RTOS_system.o
+ .ARM.attributes
+                0x00000227       0x32 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .ARM.attributes
+                0x00000259       0x32 ./source/R_RTOS/R_RTOS_task.o
+ .ARM.attributes
+                0x0000028b       0x32 ./source/R_RTOS/R_RTOS_timer.o
+ .ARM.attributes
+                0x000002bd       0x22 ./source/R_RTOS/R_RTOS_PendSV.o
+ .ARM.attributes
+                0x000002df       0x22 ./source/R_RTOS/R_RTOS_SVC.o
+ .ARM.attributes
+                0x00000301       0x32 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .ARM.attributes
+                0x00000333       0x32 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .ARM.attributes
+                0x00000365       0x32 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .ARM.attributes
+                0x00000397       0x32 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .ARM.attributes
+                0x000003c9       0x32 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .ARM.attributes
+                0x000003fb       0x1b ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .ARM.attributes
+                0x00000416       0x32 ./Tasks/Tasks.o
+ .ARM.attributes
+                0x00000448       0x1e c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000466       0x1e c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000484       0x1e c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x000004a2       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_muldi3.o)
+ .ARM.attributes
+                0x000004ce       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o)
+ .ARM.attributes
+                0x000004fa       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+ .ARM.attributes
+                0x00000526       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+ .ARM.attributes
+                0x00000552       0x1e c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_clzsi2.o)
+ .ARM.attributes
+                0x00000570       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000059c       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000005c8       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+ .ARM.attributes
+                0x000005f4       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000620       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000064c       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000678       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtend.o
+ .ARM.attributes
+                0x000006a4       0x1e c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtn.o
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data overflowed with stack and heap)
+OUTPUT(R_RTOS.elf elf32-littlearm)
+
+.debug_info     0x00000000     0xbe64
+ .debug_info    0x00000000      0x267 ./source/main.o
+ .debug_info    0x00000267      0x109 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_info    0x00000370      0xa78 ./source/R_RTOS/R_RTOS_events.o
+ .debug_info    0x00000de8      0xa53 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_info    0x0000183b     0x12e8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_info    0x00002b23      0xba8 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_info    0x000036cb      0xb00 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_info    0x000041cb      0x955 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_info    0x00004b20     0x1263 ./source/R_RTOS/R_RTOS_system.o
+ .debug_info    0x00005d83     0x102e ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_info    0x00006db1      0xaa9 ./source/R_RTOS/R_RTOS_task.o
+ .debug_info    0x0000785a     0x1230 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_info    0x00008a8a       0x8b ./source/R_RTOS/R_RTOS_PendSV.o
+ .debug_info    0x00008b15       0x88 ./source/R_RTOS/R_RTOS_SVC.o
+ .debug_info    0x00008b9d      0x2ad ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_info    0x00008e4a      0x5ca ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_info    0x00009414      0x4e4 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_info    0x000098f8      0xf30 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_info    0x0000a828      0x3bb ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_info    0x0000abe3       0x9c ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .debug_info    0x0000ac7f     0x11e5 ./Tasks/Tasks.o
+
+.debug_abbrev   0x00000000     0x2144
+ .debug_abbrev  0x00000000       0xea ./source/main.o
+ .debug_abbrev  0x000000ea       0x9a ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_abbrev  0x00000184      0x17c ./source/R_RTOS/R_RTOS_events.o
+ .debug_abbrev  0x00000300      0x20d ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_abbrev  0x0000050d      0x28c ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_abbrev  0x00000799      0x233 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_abbrev  0x000009cc      0x1c3 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_abbrev  0x00000b8f      0x16d ./source/R_RTOS/R_RTOS_stack.o
+ .debug_abbrev  0x00000cfc      0x2b7 ./source/R_RTOS/R_RTOS_system.o
+ .debug_abbrev  0x00000fb3      0x2e2 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_abbrev  0x00001295      0x18f ./source/R_RTOS/R_RTOS_task.o
+ .debug_abbrev  0x00001424      0x2fa ./source/R_RTOS/R_RTOS_timer.o
+ .debug_abbrev  0x0000171e       0x14 ./source/R_RTOS/R_RTOS_PendSV.o
+ .debug_abbrev  0x00001732       0x14 ./source/R_RTOS/R_RTOS_SVC.o
+ .debug_abbrev  0x00001746       0xc6 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_abbrev  0x0000180c      0x189 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_abbrev  0x00001995      0x12a ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_abbrev  0x00001abf      0x317 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_abbrev  0x00001dd6      0x109 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_abbrev  0x00001edf       0x14 ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .debug_abbrev  0x00001ef3      0x251 ./Tasks/Tasks.o
+
+.debug_aranges  0x00000000      0x760
+ .debug_aranges
+                0x00000000       0x28 ./source/main.o
+ .debug_aranges
+                0x00000028       0x20 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_aranges
+                0x00000048       0x40 ./source/R_RTOS/R_RTOS_events.o
+ .debug_aranges
+                0x00000088      0x100 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_aranges
+                0x00000188       0xa8 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_aranges
+                0x00000230       0x48 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_aranges
+                0x00000278       0x50 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_aranges
+                0x000002c8       0x48 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_aranges
+                0x00000310       0x60 ./source/R_RTOS/R_RTOS_system.o
+ .debug_aranges
+                0x00000370       0x68 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_aranges
+                0x000003d8       0x68 ./source/R_RTOS/R_RTOS_task.o
+ .debug_aranges
+                0x00000440       0x78 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_aranges
+                0x000004b8       0x20 ./source/R_RTOS/R_RTOS_PendSV.o
+ .debug_aranges
+                0x000004d8       0x20 ./source/R_RTOS/R_RTOS_SVC.o
+ .debug_aranges
+                0x000004f8       0x20 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_aranges
+                0x00000518       0x50 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_aranges
+                0x00000568       0x38 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_aranges
+                0x000005a0      0x118 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_aranges
+                0x000006b8       0x28 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_aranges
+                0x000006e0       0x20 ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .debug_aranges
+                0x00000700       0x60 ./Tasks/Tasks.o
+
+.debug_ranges   0x00000000      0x5f8
+ .debug_ranges  0x00000000       0x18 ./source/main.o
+ .debug_ranges  0x00000018       0x10 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_ranges  0x00000028       0x30 ./source/R_RTOS/R_RTOS_events.o
+ .debug_ranges  0x00000058      0x108 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_ranges  0x00000160       0x98 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_ranges  0x000001f8       0x38 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_ranges  0x00000230       0x40 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_ranges  0x00000270       0x38 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_ranges  0x000002a8       0x50 ./source/R_RTOS/R_RTOS_system.o
+ .debug_ranges  0x000002f8       0x58 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_ranges  0x00000350       0x58 ./source/R_RTOS/R_RTOS_task.o
+ .debug_ranges  0x000003a8       0x68 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_ranges  0x00000410       0x10 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_ranges  0x00000420       0x40 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_ranges  0x00000460       0x28 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_ranges  0x00000488      0x108 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_ranges  0x00000590       0x18 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_ranges  0x000005a8       0x50 ./Tasks/Tasks.o
+
+.debug_macro    0x00000000    0x12281
+ .debug_macro   0x00000000      0x99e ./source/main.o
+ .debug_macro   0x0000099e       0x16 ./source/main.o
+ .debug_macro   0x000009b4       0x16 ./source/main.o
+ .debug_macro   0x000009ca       0x44 ./source/main.o
+ .debug_macro   0x00000a0e      0x209 ./source/main.o
+ .debug_macro   0x00000c17       0x3a ./source/main.o
+ .debug_macro   0x00000c51       0x3a ./source/main.o
+ .debug_macro   0x00000c8b       0x1f ./source/main.o
+ .debug_macro   0x00000caa      0x250 ./source/main.o
+ .debug_macro   0x00000efa       0x57 ./source/main.o
+ .debug_macro   0x00000f51     0x62f9 ./source/main.o
+ .debug_macro   0x0000724a      0x214 ./source/main.o
+ .debug_macro   0x0000745e       0x58 ./source/main.o
+ .debug_macro   0x000074b6       0x56 ./source/main.o
+ .debug_macro   0x0000750c      0x1cf ./source/main.o
+ .debug_macro   0x000076db       0x28 ./source/main.o
+ .debug_macro   0x00007703      0x934 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_macro   0x00008037      0x1c9 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_macro   0x00008200       0x46 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_macro   0x00008246      0x94f ./source/R_RTOS/R_RTOS_events.o
+ .debug_macro   0x00008b95      0x3a2 ./source/R_RTOS/R_RTOS_events.o
+ .debug_macro   0x00008f37       0x4c ./source/R_RTOS/R_RTOS_events.o
+ .debug_macro   0x00008f83      0x937 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_macro   0x000098ba      0x39c ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_macro   0x00009c56      0x958 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x0000a5ae       0x17 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_macro   0x0000a5c5      0x97b ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_macro   0x0000af40      0x942 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_macro   0x0000b882      0x938 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_macro   0x0000c1ba      0xa12 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x0000cbcc       0x10 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x0000cbdc       0x1c ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x0000cbf8       0x10 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x0000cc08       0x2e ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x0000cc36       0x10 ./source/R_RTOS/R_RTOS_system.o
+ .debug_macro   0x0000cc46      0x990 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_macro   0x0000d5d6      0x961 ./source/R_RTOS/R_RTOS_task.o
+ .debug_macro   0x0000df37      0x995 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x0000e8cc       0x52 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x0000e91e       0x4c ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x0000e96a       0x16 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_macro   0x0000e980      0x95b ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_macro   0x0000f2db      0x9aa ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_macro   0x0000fc85      0x964 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_macro   0x000105e9      0x990 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_macro   0x00010f79      0x94c ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_macro   0x000118c5      0x9bc ./Tasks/Tasks.o
+
+.debug_line     0x00000000     0x43f5
+ .debug_line    0x00000000      0x2e3 ./source/main.o
+ .debug_line    0x000002e3      0x1c2 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_line    0x000004a5      0x2a6 ./source/R_RTOS/R_RTOS_events.o
+ .debug_line    0x0000074b      0x604 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_line    0x00000d4f      0x401 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_line    0x00001150      0x321 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_line    0x00001471      0x2d0 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_line    0x00001741      0x254 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_line    0x00001995      0x50d ./source/R_RTOS/R_RTOS_system.o
+ .debug_line    0x00001ea2      0x412 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_line    0x000022b4      0x32a ./source/R_RTOS/R_RTOS_task.o
+ .debug_line    0x000025de      0x475 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_line    0x00002a53       0x80 ./source/R_RTOS/R_RTOS_PendSV.o
+ .debug_line    0x00002ad3       0x6a ./source/R_RTOS/R_RTOS_SVC.o
+ .debug_line    0x00002b3d      0x248 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_line    0x00002d85      0x3d1 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_line    0x00003156      0x37e ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_line    0x000034d4      0x6cf ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_line    0x00003ba3      0x277 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_line    0x00003e1a       0x7a ./hal/mcu/NXP_KL05/BSP/startup/startup_MKL05Z4.o
+ .debug_line    0x00003e94      0x561 ./Tasks/Tasks.o
+
+.debug_str      0x00000000    0x2d823
+ .debug_str     0x00000000    0x28524 ./source/main.o
+                              0x28937 (size before relaxing)
+ .debug_str     0x00028524      0x379 ./source/R_RTOS/R_RTOS_BitMagic.o
+                               0x3e8b (size before relaxing)
+ .debug_str     0x0002889d     0x2e48 ./source/R_RTOS/R_RTOS_events.o
+                               0x6ce7 (size before relaxing)
+ .debug_str     0x0002b6e5      0x4e5 ./source/R_RTOS/R_RTOS_memMngr.o
+                               0x6852 (size before relaxing)
+ .debug_str     0x0002bbca      0x663 ./source/R_RTOS/R_RTOS_msgQueuing.o
+                               0x722f (size before relaxing)
+ .debug_str     0x0002c22d      0x218 ./source/R_RTOS/R_RTOS_scheduler.o
+                              0x28056 (size before relaxing)
+ .debug_str     0x0002c445      0x15f ./source/R_RTOS/R_RTOS_sem.o
+                               0x6a00 (size before relaxing)
+ .debug_str     0x0002c5a4       0xdb ./source/R_RTOS/R_RTOS_stack.o
+                               0x6945 (size before relaxing)
+ .debug_str     0x0002c67f      0x42c ./source/R_RTOS/R_RTOS_system.o
+                              0x2bee7 (size before relaxing)
+ .debug_str     0x0002caab      0x182 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+                              0x2b27d (size before relaxing)
+ .debug_str     0x0002cc2d       0xd6 ./source/R_RTOS/R_RTOS_task.o
+                               0x6ab8 (size before relaxing)
+ .debug_str     0x0002cd03      0x254 ./source/R_RTOS/R_RTOS_timer.o
+                              0x2acaa (size before relaxing)
+ .debug_str     0x0002cf57      0x107 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+                              0x26658 (size before relaxing)
+ .debug_str     0x0002d05e      0x20f ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+                              0x2ac8a (size before relaxing)
+ .debug_str     0x0002d26d       0x7e ./hal/mcu/NXP_KL05/source/PortFunc.o
+                              0x27393 (size before relaxing)
+ .debug_str     0x0002d2eb      0x3f6 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+                              0x2800c (size before relaxing)
+ .debug_str     0x0002d6e1       0x66 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+                              0x266a0 (size before relaxing)
+ .debug_str     0x0002d747       0xdc ./Tasks/Tasks.o
+                              0x2b88c (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 ./source/main.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_events.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_memMngr.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_scheduler.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_sem.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_stack.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_system.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_task.o
+ .comment       0x00000000       0x71 ./source/R_RTOS/R_RTOS_timer.o
+ .comment       0x00000000       0x71 ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .comment       0x00000000       0x71 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .comment       0x00000000       0x71 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .comment       0x00000000       0x71 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .comment       0x00000000       0x71 ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .comment       0x00000000       0x71 ./Tasks/Tasks.o
+
+.debug_frame    0x00000000     0x181c
+ .debug_frame   0x00000000       0x48 ./source/main.o
+ .debug_frame   0x00000048       0x30 ./source/R_RTOS/R_RTOS_BitMagic.o
+ .debug_frame   0x00000078       0xb8 ./source/R_RTOS/R_RTOS_events.o
+ .debug_frame   0x00000130      0x3c4 ./source/R_RTOS/R_RTOS_memMngr.o
+ .debug_frame   0x000004f4      0x24c ./source/R_RTOS/R_RTOS_msgQueuing.o
+ .debug_frame   0x00000740       0xd0 ./source/R_RTOS/R_RTOS_scheduler.o
+ .debug_frame   0x00000810       0xf4 ./source/R_RTOS/R_RTOS_sem.o
+ .debug_frame   0x00000904       0xd8 ./source/R_RTOS/R_RTOS_stack.o
+ .debug_frame   0x000009dc      0x138 ./source/R_RTOS/R_RTOS_system.o
+ .debug_frame   0x00000b14      0x148 ./source/R_RTOS/R_RTOS_SysTickTMR.o
+ .debug_frame   0x00000c5c      0x14c ./source/R_RTOS/R_RTOS_task.o
+ .debug_frame   0x00000da8      0x198 ./source/R_RTOS/R_RTOS_timer.o
+ .debug_frame   0x00000f40       0x2c ./hal/mcu/NXP_KL05/source/ClockFunc.o
+ .debug_frame   0x00000f6c       0xf0 ./hal/mcu/NXP_KL05/source/InterruptFunc.o
+ .debug_frame   0x0000105c       0x94 ./hal/mcu/NXP_KL05/source/PortFunc.o
+ .debug_frame   0x000010f0      0x3f0 ./hal/mcu/NXP_KL05/source/TimerFunc.o
+ .debug_frame   0x000014e0       0x4c ./hal/mcu/NXP_KL05/BSP/startup/system_MKL05Z4.o
+ .debug_frame   0x0000152c      0x11c ./Tasks/Tasks.o
+ .debug_frame   0x00001648       0x20 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001668       0x30 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_muldi3.o)
+ .debug_frame   0x00001698       0x50 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(bpabi.o)
+ .debug_frame   0x000016e8       0x3c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_divdi3.o)
+ .debug_frame   0x00001724       0x3c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m\libgcc.a(_udivdi3.o)
+ .debug_frame   0x00001760       0x28 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-exit.o)
+ .debug_frame   0x00001788       0x2c c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-init.o)
+ .debug_frame   0x000017b4       0x28 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000017dc       0x20 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libg_s.a(lib_a-memset.o)
+ .debug_frame   0x000017fc       0x20 c:/freescale/kds_3.0.0/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv6-m\libnosys.a(_exit.o)
