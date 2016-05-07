@@ -41,13 +41,13 @@ OBJS += \
 source/R_RTOS/%.o: ../source/R_RTOS/%.S
 	@echo 'Building target: $@'
 	@echo 'Invoking: $(AS)'
-	$(AS) $(CCFLAGS) $(COMPFLAGS) $(ADEFS) $(INC_PATH) -o $@ -c $<
+	$(AS) $(CCFLAGS) $(ADEFS) $(INC_PATH) -o $@ -c $<
 	@echo 'Done building target: $@'
 	@echo ' '
 	
 source/R_RTOS/%.o: ../source/R_RTOS/%.c
 	@echo 'Building target: $@'
 	@echo 'Invoking: $(CC)'
-	$(CC) $(CCFLAGS) $(COMPFLAGS) -std=c99 $(CDEFS) $(INC_PATH) -o $@ -c $<
+	$(CC) $(CCFLAGS) $(COMPFLAGS) $(CDEFS) $(INC_PATH) -o $@ -c $<
 	@echo 'Done building target: $@'
 	@echo ' '

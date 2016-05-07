@@ -31,7 +31,7 @@ ADEFS = $(DADEFS) $(UADEFS)
 # flags and other settings
 ARMCPU := cortex-m0plus
 CCFLAGS := -mcpu=$(ARMCPU) -mthumb -g3 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall -Wextra -Wmissing-declarations -Wconversion -Wfloat-equal
-COMPFLAGS :=  -MMD -MP -MF"$(@:%.o=%.d)"
+COMPFLAGS := -std=c99 -Wa,-adhlns=$@.lst --save-temps -fstack-usage -MMD -MP -MF$(@:%.o=%.d) -MT$@
 LDSCRIPT := $(LINKER_FILE_PATH)/MKL05Z32xxx4_flash.ld
 #DEFINES = 
 
@@ -46,12 +46,16 @@ OBJCOPY := $(ARMGCC)/$(TCPRFX)objcopy
 SZ		:= $(ARMGCC)/$(TCPRFX)size
 RM		:= rm -rf
 MKDIR   := mkdir
+DOXY	:= doxygen
 
 LIBS =
 TARGET_EXT = elf
 SIZE_EXT = siz
 TARGET =  $(PROJECT).$(TARGET_EXT)
 SIZE = $(PROJECT).$(SIZE_EXT)
+
+DOXYFILES += 
+POSTBUILD += $(SIZE) docu
 
 #included makefiles
 -include ../source/source.mk
@@ -66,6 +70,9 @@ SIZE = $(PROJECT).$(SIZE_EXT)
 #-include ../Tasks/SemTest/source.mk
 #-include ../Tasks/SysTickTest/source.mk
 #-include ../Tasks/TimerTest/source.mk
+
+#include doxygen documentation
+-include ../docu/docu.mk
 
 all : build_directory_tree $(TARGET) secondary_build
 	@echo Target $(TARGET) done
@@ -102,14 +109,24 @@ build_directory_tree:
 	$(shell $(MKDIR) hal\proc)
 	$(shell $(MKDIR) hal\proc\$(PROC))
 
-secondary_build : $(SIZE)
+secondary_build : $(POSTBUILD)
 
+docu: 
+	@echo 'Building documentation'
+	@echo 'Invoking: $@'
+	cd ../docu && $(DOXY) $(DOXYFILES)
+	@echo 'Built documentation'
+	@echo ' '
+	
 clean:
 	@echo 'invoking $@'
 #	$(RM) $(COBJS) 
 #	$(RM) $(AOBJS)
 #	$(RM) $(TARGET)
-	$(RM) $(SIZE) $(TARGET) $(OBJS)
+#	$(RM) $(SIZE) 
+	$(RM) $(TARGET) 
+	$(RM) $(OBJS) 
+	$(RM) *.s *.i *.map
 	@echo '$@ done'
 	@echo ' '
 	

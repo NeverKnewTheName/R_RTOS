@@ -10,8 +10,6 @@
 #include "TimerFunc.h"
 #include "InterruptFunc.h"
 
-#include "MKL05Z4.h"
-
 #include "R_RTOS_services.h"
 #include "R_RTOS_system.h"
 

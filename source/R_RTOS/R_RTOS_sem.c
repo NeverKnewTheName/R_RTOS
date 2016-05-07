@@ -13,7 +13,7 @@
  *  task and a high priority task requests access, the resource remains at the lower priority task. Therefore the high priority task
  *  is put into a waiting queue and its execution is suspended. If the lower priority task occupying the resource is suspended, because
  *  e.g. a medium priority task is activated, this medium priority task would receive processor time before the high priority task, that
- *  is currently waiting on the resource. This is called <i>Priority Inversion</i>.</br>
+ *  is currently waiting on the resource. This is called <i>Priority Inversion</i>.<br>
  *  To avoid that a lower priority task is executed before a high priority task <i>Priority Inheritance</i> is introduced. If a lower priority
  *  prority task is occupying a resouce while a high priority task requests access to said resource the lower priority task inherits the priority
  *  of the high priority task for the duration of the access to the protected resource. Hence a medium priority task cannot preempt the actually

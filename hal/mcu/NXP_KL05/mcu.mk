@@ -35,13 +35,13 @@ hal/mcu/$(MCU)/BSP/startup/%.o: ../hal/mcu/$(MCU)/BSP/startup/%.S
 hal/mcu/$(MCU)/BSP/startup/%.o: ../hal/mcu/$(MCU)/BSP/startup/%.c
 	@echo 'Building target: $@'
 	@echo 'Invoking: $(CC)'
-	$(CC) $(CCFLAGS) $(COMPFLAGS) -std=c99  $(CDEFS) $(INC_PATH) -o $@ -c $<
+	$(CC) $(CCFLAGS) $(COMPFLAGS) $(CDEFS) $(INC_PATH) -o $@ -c $<
 	@echo 'Done building target: $@'
 	@echo ' '
 
 hal/mcu/$(MCU)/source/%.o: ../hal/mcu/$(MCU)/source/%.c
 	@echo 'Building target: $@'
 	@echo 'Invoking: $(CC)'
-	$(CC) $(CCFLAGS) $(COMPFLAGS) -std=c99 $(CDEFS) $(INC_PATH) -o $@ -c $<
+	$(CC) $(CCFLAGS) $(COMPFLAGS) $(CDEFS) $(INC_PATH) -o $@ -c $<
 	@echo 'Done building target: $@'
 	@echo ' '
