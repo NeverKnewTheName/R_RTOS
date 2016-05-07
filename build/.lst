@@ -1,0 +1,1757 @@
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Tasks.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.tsk1,"ax",%progbits
+  18              		.align	2
+  19              		.global	tsk1
+  20              		.code	16
+  21              		.thumb_func
+  23              	tsk1:
+  24              	.LFB62:
+  25              		.file 1 "../Tasks/MessageQueueTest/Tasks.c"
+   1:../Tasks/MessageQueueTest/Tasks.c **** #include "PortFunc.h"
+   2:../Tasks/MessageQueueTest/Tasks.c **** #include "TimerFunc.h"
+   3:../Tasks/MessageQueueTest/Tasks.c **** 
+   4:../Tasks/MessageQueueTest/Tasks.c **** #include "R_RTOS_services.h"
+   5:../Tasks/MessageQueueTest/Tasks.c **** 
+   6:../Tasks/MessageQueueTest/Tasks.c **** #include "R_RTOS_task.h"
+   7:../Tasks/MessageQueueTest/Tasks.c **** #include "R_RTOS_timer.h"
+   8:../Tasks/MessageQueueTest/Tasks.c **** #include "R_RTOS_msgQueuing.h"
+   9:../Tasks/MessageQueueTest/Tasks.c **** 
+  10:../Tasks/MessageQueueTest/Tasks.c **** extern void tsk_EndTheTask( void );
+  11:../Tasks/MessageQueueTest/Tasks.c **** 
+  12:../Tasks/MessageQueueTest/Tasks.c **** extern TskTCB tsk_AR[];
+  13:../Tasks/MessageQueueTest/Tasks.c **** extern SysFkt sys_SysFkt[];
+  14:../Tasks/MessageQueueTest/Tasks.c **** extern PTskTCB p_cur_tsk_tcb;
+  15:../Tasks/MessageQueueTest/Tasks.c **** 
+  16:../Tasks/MessageQueueTest/Tasks.c **** void tsk1( void );
+  17:../Tasks/MessageQueueTest/Tasks.c **** void tsk2( void );
+  18:../Tasks/MessageQueueTest/Tasks.c **** void tsk3( void );
+  19:../Tasks/MessageQueueTest/Tasks.c **** void tsk4( void );
+  20:../Tasks/MessageQueueTest/Tasks.c **** 
+  21:../Tasks/MessageQueueTest/Tasks.c **** void tsk1( void )
+  22:../Tasks/MessageQueueTest/Tasks.c **** {
+  26              		.loc 1 22 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 88B0     		sub	sp, sp, #32
+  33              		.cfi_def_cfa_offset 40
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  23:../Tasks/MessageQueueTest/Tasks.c ****     /*
+  24:../Tasks/MessageQueueTest/Tasks.c ****      * Producer Task
+  25:../Tasks/MessageQueueTest/Tasks.c ****      */
+  26:../Tasks/MessageQueueTest/Tasks.c ****     uint32_t dataToPub = 0x0u;
+  36              		.loc 1 26 0
+  37 0006 0023     		mov	r3, #0
+  38 0008 FB61     		str	r3, [r7, #28]
+  27:../Tasks/MessageQueueTest/Tasks.c ****     svc_msgq_RegPub( p_cur_tsk_tcb, (const QID) 0x1u );
+  39              		.loc 1 27 0
+  40 000a 194B     		ldr	r3, .L6
+  41 000c 1B68     		ldr	r3, [r3]
+  42 000e BB61     		str	r3, [r7, #24]
+  43              	.LBB28:
+  44              	.LBB29:
+  45              		.file 2 "../include/R_RTOS_services.h"
+   1:../include/R_RTOS_services.h **** /**
+   2:../include/R_RTOS_services.h ****  * \file    R_RTOS_services.h
+   3:../include/R_RTOS_services.h ****  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
+   4:../include/R_RTOS_services.h ****  * \date    18.12.2015
+   5:../include/R_RTOS_services.h ****  *
+   6:../include/R_RTOS_services.h ****  * \brief Service calls, which can be used by/inside tasks
+   7:../include/R_RTOS_services.h ****  */
+   8:../include/R_RTOS_services.h **** 
+   9:../include/R_RTOS_services.h **** #ifndef HEADERS_R_RTOS_SERVICES_H_
+  10:../include/R_RTOS_services.h **** #define HEADERS_R_RTOS_SERVICES_H_
+  11:../include/R_RTOS_services.h **** 
+  12:../include/R_RTOS_services.h **** #include "R_RTOS_inc.h"
+  13:../include/R_RTOS_services.h **** 
+  14:../include/R_RTOS_services.h **** #ifndef __STATIC_INLINE
+  15:../include/R_RTOS_services.h **** #define __STATIC_INLINE  static inline
+  16:../include/R_RTOS_services.h **** #endif
+  17:../include/R_RTOS_services.h **** 
+  18:../include/R_RTOS_services.h **** /** \def INPUT_ARG_1(input)
+  19:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the first input argument for a following function call.
+  20:../include/R_RTOS_services.h ****  *
+  21:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  22:../include/R_RTOS_services.h ****  *
+  23:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  24:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  25:../include/R_RTOS_services.h ****  *
+  26:../include/R_RTOS_services.h ****  *  The first argument will be stored in R0.
+  27:../include/R_RTOS_services.h ****  */
+  28:../include/R_RTOS_services.h **** #define INPUT_ARG_1(input)  __asm volatile( "movs r0, %0 \n"::"l"(input) :)
+  29:../include/R_RTOS_services.h **** 
+  30:../include/R_RTOS_services.h **** /** \def INPUT_ARG_2(input)
+  31:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the second input argument for a following function call.
+  32:../include/R_RTOS_services.h ****  *
+  33:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  34:../include/R_RTOS_services.h ****  *
+  35:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  36:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  37:../include/R_RTOS_services.h ****  *
+  38:../include/R_RTOS_services.h ****  *  The second argument will be stored in R1.
+  39:../include/R_RTOS_services.h ****  */
+  40:../include/R_RTOS_services.h **** #define INPUT_ARG_2(input)  __asm volatile( "movs r1, %0 \n"::"l"(input) :)
+  41:../include/R_RTOS_services.h **** 
+  42:../include/R_RTOS_services.h **** /** \def INPUT_ARG_3(input)
+  43:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the third input argument for a following function call.
+  44:../include/R_RTOS_services.h ****  *
+  45:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  46:../include/R_RTOS_services.h ****  *
+  47:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  48:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  49:../include/R_RTOS_services.h ****  *
+  50:../include/R_RTOS_services.h ****  *  The third argument will be stored in R2.
+  51:../include/R_RTOS_services.h ****  */
+  52:../include/R_RTOS_services.h **** #define INPUT_ARG_3(input)  __asm volatile( "movs r2, %0 \n"::"l"(input) :)
+  53:../include/R_RTOS_services.h **** 
+  54:../include/R_RTOS_services.h **** /** \def INPUT_ARG_4(input)
+  55:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the fourth input argument for a following function call.
+  56:../include/R_RTOS_services.h ****  *
+  57:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  58:../include/R_RTOS_services.h ****  *
+  59:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  60:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  61:../include/R_RTOS_services.h ****  *
+  62:../include/R_RTOS_services.h ****  *  The fourth argument will be stored in R3.
+  63:../include/R_RTOS_services.h ****  */
+  64:../include/R_RTOS_services.h **** #define INPUT_ARG_4(input)  __asm volatile( "movs r3, %0 \n"::"l"(input) :)
+  65:../include/R_RTOS_services.h **** 
+  66:../include/R_RTOS_services.h **** /** \def OUTPUT_ARG(output)
+  67:../include/R_RTOS_services.h ****  *  \brief Retrieves an return value from a preceding function call and stores it into \a output.
+  68:../include/R_RTOS_services.h ****  *
+  69:../include/R_RTOS_services.h ****  *  \param  [out]   output  output argument - max uint32_t
+  70:../include/R_RTOS_services.h ****  *
+  71:../include/R_RTOS_services.h ****  *  When a function returns the return value is stored in r0.
+  72:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function return, one can manually retrieve the return v
+  73:../include/R_RTOS_services.h ****  *  Register r0 is the last valued pushed onto the stack, thus it is the first value to pop off the
+  74:../include/R_RTOS_services.h ****  */
+  75:../include/R_RTOS_services.h **** #define OUTPUT_ARG(output)  __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n"
+  76:../include/R_RTOS_services.h **** 
+  77:../include/R_RTOS_services.h **** /** \def SVC( svcCode )
+  78:../include/R_RTOS_services.h ****  *  \brief SVC Call with the given \a svcCode.
+  79:../include/R_RTOS_services.h ****  *
+  80:../include/R_RTOS_services.h ****  *  \param  [in]    svcCode  number of the SVC Call to be called
+  81:../include/R_RTOS_services.h ****  *
+  82:../include/R_RTOS_services.h ****  *  To make a SuperVisorCall the svc instruction has to be executed.
+  83:../include/R_RTOS_services.h ****  *  A byte value can be passed alongside to further distinct the requested service.
+  84:../include/R_RTOS_services.h ****  */
+  85:../include/R_RTOS_services.h **** #define SVC( svcCode )      __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(svcCode) : )
+  86:../include/R_RTOS_services.h **** 
+  87:../include/R_RTOS_services.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void svc_os_StartOS( void )
+  88:../include/R_RTOS_services.h **** {
+  89:../include/R_RTOS_services.h ****     SVC( SVC_OS_START );
+  90:../include/R_RTOS_services.h ****     while ( 1 )
+  91:../include/R_RTOS_services.h ****     {
+  92:../include/R_RTOS_services.h ****         ;
+  93:../include/R_RTOS_services.h ****     }
+  94:../include/R_RTOS_services.h **** }
+  95:../include/R_RTOS_services.h **** 
+  96:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_InitTsk(
+  97:../include/R_RTOS_services.h ****                                                                          const TskID tskID,
+  98:../include/R_RTOS_services.h ****                                                                          const TskStartAddr const t
+  99:../include/R_RTOS_services.h ****                                                                          const TskStartAddr const t
+ 100:../include/R_RTOS_services.h ****                                                                          const StackSize stckSze )
+ 101:../include/R_RTOS_services.h **** {
+ 102:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 103:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskAddr );
+ 104:../include/R_RTOS_services.h ****     INPUT_ARG_3( tskEndAddr );
+ 105:../include/R_RTOS_services.h ****     INPUT_ARG_4( stckSze );
+ 106:../include/R_RTOS_services.h ****     SVC( SVC_TSK_INIT );
+ 107:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 108:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 109:../include/R_RTOS_services.h ****     return returnVal;
+ 110:../include/R_RTOS_services.h **** }
+ 111:../include/R_RTOS_services.h **** 
+ 112:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_SetTskPrio(
+ 113:../include/R_RTOS_services.h ****                                                                             const TskID tskID,
+ 114:../include/R_RTOS_services.h ****                                                                             const TskPrio tskPrio )
+ 115:../include/R_RTOS_services.h **** {
+ 116:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 117:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskPrio );
+ 118:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SETPRIO );
+ 119:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 120:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 121:../include/R_RTOS_services.h ****     return returnVal;
+ 122:../include/R_RTOS_services.h **** }
+ 123:../include/R_RTOS_services.h **** 
+ 124:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_ActvTsk(
+ 125:../include/R_RTOS_services.h ****                                                                          const TskID tskID )
+ 126:../include/R_RTOS_services.h **** {
+ 127:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 128:../include/R_RTOS_services.h ****     SVC( SVC_TSK_ACTV );
+ 129:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 130:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 131:../include/R_RTOS_services.h ****     return returnVal;
+ 132:../include/R_RTOS_services.h **** }
+ 133:../include/R_RTOS_services.h **** 
+ 134:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_KillTsk(
+ 135:../include/R_RTOS_services.h ****                                                                          TskTCB* const tsk )
+ 136:../include/R_RTOS_services.h **** {
+ 137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
+ 139:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 141:../include/R_RTOS_services.h ****     return returnVal;
+ 142:../include/R_RTOS_services.h **** }
+ 143:../include/R_RTOS_services.h **** 
+ 144:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_setTskCriticalState(
+ 145:../include/R_RTOS_services.h ****                                                                                      void )
+ 146:../include/R_RTOS_services.h **** {
+ 147:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SET_CRIT );
+ 148:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 149:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 150:../include/R_RTOS_services.h ****     return returnVal;
+ 151:../include/R_RTOS_services.h **** }
+ 152:../include/R_RTOS_services.h **** 
+ 153:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_resetTskCriticalState(
+ 154:../include/R_RTOS_services.h ****                                                                                        void )
+ 155:../include/R_RTOS_services.h **** {
+ 156:../include/R_RTOS_services.h ****     SVC( SVC_TSK_RESET_CRIT );
+ 157:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 158:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 159:../include/R_RTOS_services.h ****     return returnVal;
+ 160:../include/R_RTOS_services.h **** }
+ 161:../include/R_RTOS_services.h **** 
+ 162:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_TakeSem(
+ 163:../include/R_RTOS_services.h ****                                                                          const SemNr semNr,
+ 164:../include/R_RTOS_services.h ****                                                                          TskTCB* const tsk,
+ 165:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
+ 166:../include/R_RTOS_services.h **** {
+ 167:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
+ 168:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 169:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
+ 170:../include/R_RTOS_services.h ****     SVC( SVC_SEM_TAKE );
+ 171:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 172:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 173:../include/R_RTOS_services.h ****     return returnVal;
+ 174:../include/R_RTOS_services.h **** }
+ 175:../include/R_RTOS_services.h **** 
+ 176:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_GiveSem(
+ 177:../include/R_RTOS_services.h ****                                                                          const SemNr semNr,
+ 178:../include/R_RTOS_services.h ****                                                                          TskTCB* const tsk )
+ 179:../include/R_RTOS_services.h **** {
+ 180:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
+ 181:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 182:../include/R_RTOS_services.h ****     SVC( SVC_SEM_GIVE );
+ 183:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 184:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 185:../include/R_RTOS_services.h ****     return returnVal;
+ 186:../include/R_RTOS_services.h **** }
+ 187:../include/R_RTOS_services.h **** 
+ 188:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_SendEvt(
+ 189:../include/R_RTOS_services.h ****                                                                          const EvtNr evt )
+ 190:../include/R_RTOS_services.h **** {
+ 191:../include/R_RTOS_services.h ****     INPUT_ARG_1( evt );
+ 192:../include/R_RTOS_services.h ****     SVC( SVC_EVT_SEND );
+ 193:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 194:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 195:../include/R_RTOS_services.h ****     return returnVal;
+ 196:../include/R_RTOS_services.h **** }
+ 197:../include/R_RTOS_services.h **** 
+ 198:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_RecvEvt(
+ 199:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk,
+ 200:../include/R_RTOS_services.h ****                                                                          EVTQSlots evtMask,
+ 201:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
+ 202:../include/R_RTOS_services.h **** {
+ 203:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 204:../include/R_RTOS_services.h ****     INPUT_ARG_2( evtMask );
+ 205:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
+ 206:../include/R_RTOS_services.h ****     SVC( SVC_EVT_RECV );
+ 207:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 208:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 209:../include/R_RTOS_services.h ****     return returnVal;
+ 210:../include/R_RTOS_services.h **** }
+ 211:../include/R_RTOS_services.h **** 
+ 212:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tmr_SetTimer(
+ 213:../include/R_RTOS_services.h ****                                                                           const WaitTime msToWait,
+ 214:../include/R_RTOS_services.h ****                                                                           TskTCB* const tsk )
+ 215:../include/R_RTOS_services.h **** {
+ 216:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 217:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 218:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 219:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 220:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 221:../include/R_RTOS_services.h ****     return returnVal;
+ 222:../include/R_RTOS_services.h **** }
+ 223:../include/R_RTOS_services.h **** 
+ 224:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sysTck_SetTimer(
+ 225:../include/R_RTOS_services.h ****                                                                              const SysTicks ticksTo
+ 226:../include/R_RTOS_services.h ****                                                                              TskID const tskID )
+ 227:../include/R_RTOS_services.h **** {
+ 228:../include/R_RTOS_services.h ****     INPUT_ARG_1( ticksToWait );
+ 229:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskID );
+ 230:../include/R_RTOS_services.h ****     SVC( SVC_SYSTCK_SET );
+ 231:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 232:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 233:../include/R_RTOS_services.h ****     return returnVal;
+ 234:../include/R_RTOS_services.h **** }
+ 235:../include/R_RTOS_services.h **** 
+ 236:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_msgq_CrtQ(
+ 237:../include/R_RTOS_services.h ****                                                                        const QID msgQID )
+ 238:../include/R_RTOS_services.h **** {
+ 239:../include/R_RTOS_services.h ****     INPUT_ARG_1( msgQID );
+ 240:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_CRT_Q );
+ 241:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 242:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 243:../include/R_RTOS_services.h ****     return returnVal;
+ 244:../include/R_RTOS_services.h **** }
+ 245:../include/R_RTOS_services.h **** 
+ 246:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_msgq_DelQ(
+ 247:../include/R_RTOS_services.h ****                                                                        const QID msgQID )
+ 248:../include/R_RTOS_services.h **** {
+ 249:../include/R_RTOS_services.h ****     INPUT_ARG_1( msgQID );
+ 250:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_DEL_Q );
+ 251:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 252:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 253:../include/R_RTOS_services.h ****     return returnVal;
+ 254:../include/R_RTOS_services.h **** }
+ 255:../include/R_RTOS_services.h **** 
+ 256:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_msgq_RegPub(
+ 257:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk,
+ 258:../include/R_RTOS_services.h ****                                                                          const QID msgQID )
+ 259:../include/R_RTOS_services.h **** {
+ 260:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+  46              		.loc 2 260 0
+  47 0010 BB69     		ldr	r3, [r7, #24]
+  48              	@ 260 "../include/R_RTOS_services.h" 1
+  49 0012 181C     		movs r0, r3 
+  50              	
+  51              	@ 0 "" 2
+ 261:../include/R_RTOS_services.h ****     INPUT_ARG_2( msgQID );
+  52              		.loc 2 261 0
+  53              		.code	16
+  54 0014 0123     		mov	r3, #1
+  55              	@ 261 "../include/R_RTOS_services.h" 1
+  56 0016 191C     		movs r1, r3 
+  57              	
+  58              	@ 0 "" 2
+ 262:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_REG_PUB );
+  59              		.loc 2 262 0
+  60              	@ 262 "../include/R_RTOS_services.h" 1
+  61 0018 0FDF     		svc #15 
+  62              	
+  63              	@ 0 "" 2
+ 263:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 264:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+  64              		.loc 2 264 0
+  65              	@ 264 "../include/R_RTOS_services.h" 1
+  66 001a EFF30881 		mrs     r1,     msp 
+  67 001e 0868     	 ldr r0, [r1] 
+  68 0020 021C     	 movs r2, r0 
+  69              	
+  70              	@ 0 "" 2
+  71              		.code	16
+  72 0022 3B1C     		mov	r3, r7
+  73 0024 1733     		add	r3, r3, #23
+  74 0026 1A70     		strb	r2, [r3]
+  75              	.L5:
+  76              	.LBE29:
+  77              	.LBE28:
+  28:../Tasks/MessageQueueTest/Tasks.c ****     while ( 1 )
+  29:../Tasks/MessageQueueTest/Tasks.c ****     {
+  30:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_PubMsg(
+  78              		.loc 1 30 0 discriminator 1
+  79 0028 FB69     		ldr	r3, [r7, #28]
+  80 002a 3B61     		str	r3, [r7, #16]
+  81              	.LBB30:
+  82              	.LBB31:
+ 265:../include/R_RTOS_services.h ****     return returnVal;
+ 266:../include/R_RTOS_services.h **** }
+ 267:../include/R_RTOS_services.h **** 
+ 268:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_msgq_RegTskSub(
+ 269:../include/R_RTOS_services.h ****                                                                             PTskTCB const tsk,
+ 270:../include/R_RTOS_services.h ****                                                                             const QID msgQID )
+ 271:../include/R_RTOS_services.h **** {
+ 272:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 273:../include/R_RTOS_services.h ****     INPUT_ARG_2( msgQID );
+ 274:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_REG_TSK_SUB );
+ 275:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 276:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 277:../include/R_RTOS_services.h ****     return returnVal;
+ 278:../include/R_RTOS_services.h **** }
+ 279:../include/R_RTOS_services.h **** 
+ 280:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_msgq_RegSysSub(
+ 281:../include/R_RTOS_services.h ****                                                                             const SysFktID sysID,
+ 282:../include/R_RTOS_services.h ****                                                                             const QID msgQID )
+ 283:../include/R_RTOS_services.h **** {
+ 284:../include/R_RTOS_services.h ****     INPUT_ARG_1( sysID );
+ 285:../include/R_RTOS_services.h ****     INPUT_ARG_2( msgQID );
+ 286:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_REG_SYS_SUB );
+ 287:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 288:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 289:../include/R_RTOS_services.h ****     return returnVal;
+ 290:../include/R_RTOS_services.h **** }
+ 291:../include/R_RTOS_services.h **** 
+ 292:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_msgq_PubMsg(
+ 293:../include/R_RTOS_services.h ****                                                                          const QID msgQID,
+ 294:../include/R_RTOS_services.h ****                                                                          const DataSize dataSize,
+ 295:../include/R_RTOS_services.h ****                                                                          const DataType dataType,
+ 296:../include/R_RTOS_services.h ****                                                                          CData const data )
+ 297:../include/R_RTOS_services.h **** {
+ 298:../include/R_RTOS_services.h ****     INPUT_ARG_1( msgQID );
+  83              		.loc 2 298 0 discriminator 1
+  84 002c 0123     		mov	r3, #1
+  85              	@ 298 "../include/R_RTOS_services.h" 1
+  86 002e 181C     		movs r0, r3 
+  87              	
+  88              	@ 0 "" 2
+ 299:../include/R_RTOS_services.h ****     INPUT_ARG_2( dataSize );
+  89              		.loc 2 299 0 discriminator 1
+  90              		.code	16
+  91 0030 0423     		mov	r3, #4
+  92              	@ 299 "../include/R_RTOS_services.h" 1
+  93 0032 191C     		movs r1, r3 
+  94              	
+  95              	@ 0 "" 2
+ 300:../include/R_RTOS_services.h ****     INPUT_ARG_3( dataType );
+  96              		.loc 2 300 0 discriminator 1
+  97              		.code	16
+  98 0034 0123     		mov	r3, #1
+  99              	@ 300 "../include/R_RTOS_services.h" 1
+ 100 0036 1A1C     		movs r2, r3 
+ 101              	
+ 102              	@ 0 "" 2
+ 301:../include/R_RTOS_services.h ****     INPUT_ARG_4( data );
+ 103              		.loc 2 301 0 discriminator 1
+ 104              		.code	16
+ 105 0038 3B69     		ldr	r3, [r7, #16]
+ 106              	@ 301 "../include/R_RTOS_services.h" 1
+ 107 003a 1B1C     		movs r3, r3 
+ 108              	
+ 109              	@ 0 "" 2
+ 302:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_MSG_PUB );
+ 110              		.loc 2 302 0 discriminator 1
+ 111              	@ 302 "../include/R_RTOS_services.h" 1
+ 112 003c 12DF     		svc #18 
+ 113              	
+ 114              	@ 0 "" 2
+ 303:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 304:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 115              		.loc 2 304 0 discriminator 1
+ 116              	@ 304 "../include/R_RTOS_services.h" 1
+ 117 003e EFF30881 		mrs     r1,     msp 
+ 118 0042 0868     	 ldr r0, [r1] 
+ 119 0044 021C     	 movs r2, r0 
+ 120              	
+ 121              	@ 0 "" 2
+ 122              		.code	16
+ 123 0046 3B1C     		mov	r3, r7
+ 124 0048 0F33     		add	r3, r3, #15
+ 125 004a 1A70     		strb	r2, [r3]
+ 126              	.LBE31:
+ 127              	.LBE30:
+  31:../Tasks/MessageQueueTest/Tasks.c ****                 (const QID) 0x1u, (const DataSize) 0x4u, DataT_Int,
+  32:../Tasks/MessageQueueTest/Tasks.c ****                 (CData) dataToPub );
+  33:../Tasks/MessageQueueTest/Tasks.c ****         ++dataToPub;
+ 128              		.loc 1 33 0 discriminator 1
+ 129 004c FB69     		ldr	r3, [r7, #28]
+ 130 004e 0133     		add	r3, r3, #1
+ 131 0050 FB61     		str	r3, [r7, #28]
+  34:../Tasks/MessageQueueTest/Tasks.c ****         svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
+ 132              		.loc 1 34 0 discriminator 1
+ 133 0052 074B     		ldr	r3, .L6
+ 134 0054 1B68     		ldr	r3, [r3]
+ 135 0056 BB60     		str	r3, [r7, #8]
+ 136              	.LBB32:
+ 137              	.LBB33:
+ 216:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 138              		.loc 2 216 0 discriminator 1
+ 139 0058 6423     		mov	r3, #100
+ 140              	@ 216 "../include/R_RTOS_services.h" 1
+ 141 005a 181C     		movs r0, r3 
+ 142              	
+ 143              	@ 0 "" 2
+ 217:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 144              		.loc 2 217 0 discriminator 1
+ 145              		.code	16
+ 146 005c BB68     		ldr	r3, [r7, #8]
+ 147              	@ 217 "../include/R_RTOS_services.h" 1
+ 148 005e 191C     		movs r1, r3 
+ 149              	
+ 150              	@ 0 "" 2
+ 218:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 151              		.loc 2 218 0 discriminator 1
+ 152              	@ 218 "../include/R_RTOS_services.h" 1
+ 153 0060 0BDF     		svc #11 
+ 154              	
+ 155              	@ 0 "" 2
+ 220:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 156              		.loc 2 220 0 discriminator 1
+ 157              	@ 220 "../include/R_RTOS_services.h" 1
+ 158 0062 EFF30881 		mrs     r1,     msp 
+ 159 0066 0868     	 ldr r0, [r1] 
+ 160 0068 021C     	 movs r2, r0 
+ 161              	
+ 162              	@ 0 "" 2
+ 163              		.code	16
+ 164 006a FB1D     		add	r3, r7, #7
+ 165 006c 1A70     		strb	r2, [r3]
+ 166              	.LBE33:
+ 167              	.LBE32:
+  35:../Tasks/MessageQueueTest/Tasks.c ****     }
+ 168              		.loc 1 35 0 discriminator 1
+ 169 006e DBE7     		b	.L5
+ 170              	.L7:
+ 171              		.align	2
+ 172              	.L6:
+ 173 0070 00000000 		.word	p_cur_tsk_tcb
+ 174              		.cfi_endproc
+ 175              	.LFE62:
+ 177              		.section	.text.tsk2,"ax",%progbits
+ 178              		.align	2
+ 179              		.global	tsk2
+ 180              		.code	16
+ 181              		.thumb_func
+ 183              	tsk2:
+ 184              	.LFB63:
+  36:../Tasks/MessageQueueTest/Tasks.c **** 
+  37:../Tasks/MessageQueueTest/Tasks.c ****     svc_tsk_KillTsk( p_cur_tsk_tcb );
+  38:../Tasks/MessageQueueTest/Tasks.c **** }
+  39:../Tasks/MessageQueueTest/Tasks.c **** void tsk2( void )
+  40:../Tasks/MessageQueueTest/Tasks.c **** {
+ 185              		.loc 1 40 0
+ 186              		.cfi_startproc
+ 187 0000 80B5     		push	{r7, lr}
+ 188              		.cfi_def_cfa_offset 8
+ 189              		.cfi_offset 7, -8
+ 190              		.cfi_offset 14, -4
+ 191 0002 88B0     		sub	sp, sp, #32
+ 192              		.cfi_def_cfa_offset 40
+ 193 0004 00AF     		add	r7, sp, #0
+ 194              		.cfi_def_cfa_register 7
+  41:../Tasks/MessageQueueTest/Tasks.c ****     /*
+  42:../Tasks/MessageQueueTest/Tasks.c ****      * Producer Task
+  43:../Tasks/MessageQueueTest/Tasks.c ****      */
+  44:../Tasks/MessageQueueTest/Tasks.c ****     uint32_t dataToPub = 0xFFFFFFFFu;
+ 195              		.loc 1 44 0
+ 196 0006 0123     		mov	r3, #1
+ 197 0008 5B42     		neg	r3, r3
+ 198 000a FB61     		str	r3, [r7, #28]
+  45:../Tasks/MessageQueueTest/Tasks.c ****     svc_msgq_RegPub( p_cur_tsk_tcb, (const QID) 0x1u );
+ 199              		.loc 1 45 0
+ 200 000c 194B     		ldr	r3, .L13
+ 201 000e 1B68     		ldr	r3, [r3]
+ 202 0010 BB61     		str	r3, [r7, #24]
+ 203              	.LBB34:
+ 204              	.LBB35:
+ 260:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 205              		.loc 2 260 0
+ 206 0012 BB69     		ldr	r3, [r7, #24]
+ 207              	@ 260 "../include/R_RTOS_services.h" 1
+ 208 0014 181C     		movs r0, r3 
+ 209              	
+ 210              	@ 0 "" 2
+ 261:../include/R_RTOS_services.h ****     INPUT_ARG_2( msgQID );
+ 211              		.loc 2 261 0
+ 212              		.code	16
+ 213 0016 0123     		mov	r3, #1
+ 214              	@ 261 "../include/R_RTOS_services.h" 1
+ 215 0018 191C     		movs r1, r3 
+ 216              	
+ 217              	@ 0 "" 2
+ 262:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_REG_PUB );
+ 218              		.loc 2 262 0
+ 219              	@ 262 "../include/R_RTOS_services.h" 1
+ 220 001a 0FDF     		svc #15 
+ 221              	
+ 222              	@ 0 "" 2
+ 264:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 223              		.loc 2 264 0
+ 224              	@ 264 "../include/R_RTOS_services.h" 1
+ 225 001c EFF30881 		mrs     r1,     msp 
+ 226 0020 0868     	 ldr r0, [r1] 
+ 227 0022 021C     	 movs r2, r0 
+ 228              	
+ 229              	@ 0 "" 2
+ 230              		.code	16
+ 231 0024 3B1C     		mov	r3, r7
+ 232 0026 1733     		add	r3, r3, #23
+ 233 0028 1A70     		strb	r2, [r3]
+ 234              	.L12:
+ 235              	.LBE35:
+ 236              	.LBE34:
+  46:../Tasks/MessageQueueTest/Tasks.c ****     while ( 1 )
+  47:../Tasks/MessageQueueTest/Tasks.c ****     {
+  48:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_PubMsg(
+ 237              		.loc 1 48 0 discriminator 1
+ 238 002a FB69     		ldr	r3, [r7, #28]
+ 239 002c 3B61     		str	r3, [r7, #16]
+ 240              	.LBB36:
+ 241              	.LBB37:
+ 298:../include/R_RTOS_services.h ****     INPUT_ARG_1( msgQID );
+ 242              		.loc 2 298 0 discriminator 1
+ 243 002e 0123     		mov	r3, #1
+ 244              	@ 298 "../include/R_RTOS_services.h" 1
+ 245 0030 181C     		movs r0, r3 
+ 246              	
+ 247              	@ 0 "" 2
+ 299:../include/R_RTOS_services.h ****     INPUT_ARG_2( dataSize );
+ 248              		.loc 2 299 0 discriminator 1
+ 249              		.code	16
+ 250 0032 0423     		mov	r3, #4
+ 251              	@ 299 "../include/R_RTOS_services.h" 1
+ 252 0034 191C     		movs r1, r3 
+ 253              	
+ 254              	@ 0 "" 2
+ 300:../include/R_RTOS_services.h ****     INPUT_ARG_3( dataType );
+ 255              		.loc 2 300 0 discriminator 1
+ 256              		.code	16
+ 257 0036 0123     		mov	r3, #1
+ 258              	@ 300 "../include/R_RTOS_services.h" 1
+ 259 0038 1A1C     		movs r2, r3 
+ 260              	
+ 261              	@ 0 "" 2
+ 301:../include/R_RTOS_services.h ****     INPUT_ARG_4( data );
+ 262              		.loc 2 301 0 discriminator 1
+ 263              		.code	16
+ 264 003a 3B69     		ldr	r3, [r7, #16]
+ 265              	@ 301 "../include/R_RTOS_services.h" 1
+ 266 003c 1B1C     		movs r3, r3 
+ 267              	
+ 268              	@ 0 "" 2
+ 302:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_MSG_PUB );
+ 269              		.loc 2 302 0 discriminator 1
+ 270              	@ 302 "../include/R_RTOS_services.h" 1
+ 271 003e 12DF     		svc #18 
+ 272              	
+ 273              	@ 0 "" 2
+ 274              		.loc 2 304 0 discriminator 1
+ 275              	@ 304 "../include/R_RTOS_services.h" 1
+ 276 0040 EFF30881 		mrs     r1,     msp 
+ 277 0044 0868     	 ldr r0, [r1] 
+ 278 0046 021C     	 movs r2, r0 
+ 279              	
+ 280              	@ 0 "" 2
+ 281              		.code	16
+ 282 0048 3B1C     		mov	r3, r7
+ 283 004a 0F33     		add	r3, r3, #15
+ 284 004c 1A70     		strb	r2, [r3]
+ 285              	.LBE37:
+ 286              	.LBE36:
+  49:../Tasks/MessageQueueTest/Tasks.c ****                 (const QID) 0x1u, (const DataSize) 0x4u, DataT_Int,
+  50:../Tasks/MessageQueueTest/Tasks.c ****                 (const Data) dataToPub );
+  51:../Tasks/MessageQueueTest/Tasks.c ****         --dataToPub;
+ 287              		.loc 1 51 0 discriminator 1
+ 288 004e FB69     		ldr	r3, [r7, #28]
+ 289 0050 013B     		sub	r3, r3, #1
+ 290 0052 FB61     		str	r3, [r7, #28]
+  52:../Tasks/MessageQueueTest/Tasks.c ****         svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
+ 291              		.loc 1 52 0 discriminator 1
+ 292 0054 074B     		ldr	r3, .L13
+ 293 0056 1B68     		ldr	r3, [r3]
+ 294 0058 BB60     		str	r3, [r7, #8]
+ 295              	.LBB38:
+ 296              	.LBB39:
+ 216:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 297              		.loc 2 216 0 discriminator 1
+ 298 005a 6423     		mov	r3, #100
+ 299              	@ 216 "../include/R_RTOS_services.h" 1
+ 300 005c 181C     		movs r0, r3 
+ 301              	
+ 302              	@ 0 "" 2
+ 217:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 303              		.loc 2 217 0 discriminator 1
+ 304              		.code	16
+ 305 005e BB68     		ldr	r3, [r7, #8]
+ 306              	@ 217 "../include/R_RTOS_services.h" 1
+ 307 0060 191C     		movs r1, r3 
+ 308              	
+ 309              	@ 0 "" 2
+ 218:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 310              		.loc 2 218 0 discriminator 1
+ 311              	@ 218 "../include/R_RTOS_services.h" 1
+ 312 0062 0BDF     		svc #11 
+ 313              	
+ 314              	@ 0 "" 2
+ 220:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 315              		.loc 2 220 0 discriminator 1
+ 316              	@ 220 "../include/R_RTOS_services.h" 1
+ 317 0064 EFF30881 		mrs     r1,     msp 
+ 318 0068 0868     	 ldr r0, [r1] 
+ 319 006a 021C     	 movs r2, r0 
+ 320              	
+ 321              	@ 0 "" 2
+ 322              		.code	16
+ 323 006c FB1D     		add	r3, r7, #7
+ 324 006e 1A70     		strb	r2, [r3]
+ 325              	.LBE39:
+ 326              	.LBE38:
+  53:../Tasks/MessageQueueTest/Tasks.c ****     }
+ 327              		.loc 1 53 0 discriminator 1
+ 328 0070 DBE7     		b	.L12
+ 329              	.L14:
+ 330 0072 C046     		.align	2
+ 331              	.L13:
+ 332 0074 00000000 		.word	p_cur_tsk_tcb
+ 333              		.cfi_endproc
+ 334              	.LFE63:
+ 336              		.section	.text.tsk3,"ax",%progbits
+ 337              		.align	2
+ 338              		.global	tsk3
+ 339              		.code	16
+ 340              		.thumb_func
+ 342              	tsk3:
+ 343              	.LFB64:
+  54:../Tasks/MessageQueueTest/Tasks.c ****     svc_tsk_KillTsk( p_cur_tsk_tcb );
+  55:../Tasks/MessageQueueTest/Tasks.c **** }
+  56:../Tasks/MessageQueueTest/Tasks.c **** void tsk3( void )
+  57:../Tasks/MessageQueueTest/Tasks.c **** {
+ 344              		.loc 1 57 0
+ 345              		.cfi_startproc
+ 346 0000 80B5     		push	{r7, lr}
+ 347              		.cfi_def_cfa_offset 8
+ 348              		.cfi_offset 7, -8
+ 349              		.cfi_offset 14, -4
+ 350 0002 8AB0     		sub	sp, sp, #40
+ 351              		.cfi_def_cfa_offset 48
+ 352 0004 00AF     		add	r7, sp, #0
+ 353              		.cfi_def_cfa_register 7
+  58:../Tasks/MessageQueueTest/Tasks.c ****     /*
+  59:../Tasks/MessageQueueTest/Tasks.c ****      * Consumer Task
+  60:../Tasks/MessageQueueTest/Tasks.c ****      */
+  61:../Tasks/MessageQueueTest/Tasks.c ****     const PMQData dataBuffer = (const PMQData) NULL;
+ 354              		.loc 1 61 0
+ 355 0006 0023     		mov	r3, #0
+ 356 0008 3B60     		str	r3, [r7]
+  62:../Tasks/MessageQueueTest/Tasks.c ****     uint32_t retrievedData;
+  63:../Tasks/MessageQueueTest/Tasks.c ****     svc_msgq_RegTskSub( p_cur_tsk_tcb, (const QID) 0x1u );
+ 357              		.loc 1 63 0
+ 358 000a 774B     		ldr	r3, .L49
+ 359 000c 1B68     		ldr	r3, [r3]
+ 360 000e 3B62     		str	r3, [r7, #32]
+ 361              	.LBB40:
+ 362              	.LBB41:
+ 272:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 363              		.loc 2 272 0
+ 364 0010 3B6A     		ldr	r3, [r7, #32]
+ 365              	@ 272 "../include/R_RTOS_services.h" 1
+ 366 0012 181C     		movs r0, r3 
+ 367              	
+ 368              	@ 0 "" 2
+ 273:../include/R_RTOS_services.h ****     INPUT_ARG_2( msgQID );
+ 369              		.loc 2 273 0
+ 370              		.code	16
+ 371 0014 0123     		mov	r3, #1
+ 372              	@ 273 "../include/R_RTOS_services.h" 1
+ 373 0016 191C     		movs r1, r3 
+ 374              	
+ 375              	@ 0 "" 2
+ 274:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_REG_TSK_SUB );
+ 376              		.loc 2 274 0
+ 377              	@ 274 "../include/R_RTOS_services.h" 1
+ 378 0018 10DF     		svc #16 
+ 379              	
+ 380              	@ 0 "" 2
+ 276:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 381              		.loc 2 276 0
+ 382              	@ 276 "../include/R_RTOS_services.h" 1
+ 383 001a EFF30881 		mrs     r1,     msp 
+ 384 001e 0868     	 ldr r0, [r1] 
+ 385 0020 021C     	 movs r2, r0 
+ 386              	
+ 387              	@ 0 "" 2
+ 388              		.code	16
+ 389 0022 3B1C     		mov	r3, r7
+ 390 0024 1F33     		add	r3, r3, #31
+ 391 0026 1A70     		strb	r2, [r3]
+ 392              	.L46:
+ 393              	.LBE41:
+ 394              	.LBE40:
+  64:../Tasks/MessageQueueTest/Tasks.c ****     while ( 1 )
+  65:../Tasks/MessageQueueTest/Tasks.c ****     {
+  66:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_MsgRead(
+  67:../Tasks/MessageQueueTest/Tasks.c ****                 (const QID) 0x1u, (const TskID) p_cur_tsk_tcb->tskID,
+ 395              		.loc 1 67 0
+ 396 0028 6F4B     		ldr	r3, .L49
+ 397 002a 1A68     		ldr	r2, [r3]
+  66:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_MsgRead(
+ 398              		.loc 1 66 0
+ 399 002c 2123     		mov	r3, #33
+ 400 002e D25C     		ldrb	r2, [r2, r3]
+ 401 0030 3B1C     		mov	r3, r7
+ 402 0032 1E33     		add	r3, r3, #30
+ 403 0034 1A70     		strb	r2, [r3]
+ 404 0036 3B1C     		mov	r3, r7
+ 405 0038 BB61     		str	r3, [r7, #24]
+ 406              	.LBB42:
+ 407              	.LBB43:
+ 305:../include/R_RTOS_services.h ****     return returnVal;
+ 306:../include/R_RTOS_services.h **** }
+ 307:../include/R_RTOS_services.h **** 
+ 308:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_msgq_MsgRead(
+ 309:../include/R_RTOS_services.h ****                                                                           const QID msgQID,
+ 310:../include/R_RTOS_services.h ****                                                                           const TskID tskID,
+ 311:../include/R_RTOS_services.h ****                                                                           const PMQData * dataBuffe
+ 312:../include/R_RTOS_services.h **** {
+ 313:../include/R_RTOS_services.h ****     INPUT_ARG_1( msgQID );
+ 408              		.loc 2 313 0
+ 409 003a 0123     		mov	r3, #1
+ 410              	@ 313 "../include/R_RTOS_services.h" 1
+ 411 003c 181C     		movs r0, r3 
+ 412              	
+ 413              	@ 0 "" 2
+ 314:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskID );
+ 414              		.loc 2 314 0
+ 415              		.code	16
+ 416 003e 3B1C     		mov	r3, r7
+ 417 0040 1E33     		add	r3, r3, #30
+ 418 0042 1B78     		ldrb	r3, [r3]
+ 419              	@ 314 "../include/R_RTOS_services.h" 1
+ 420 0044 191C     		movs r1, r3 
+ 421              	
+ 422              	@ 0 "" 2
+ 315:../include/R_RTOS_services.h ****     INPUT_ARG_3( dataBuffer );
+ 423              		.loc 2 315 0
+ 424              		.code	16
+ 425 0046 BB69     		ldr	r3, [r7, #24]
+ 426              	@ 315 "../include/R_RTOS_services.h" 1
+ 427 0048 1A1C     		movs r2, r3 
+ 428              	
+ 429              	@ 0 "" 2
+ 316:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_MSG_READ );
+ 430              		.loc 2 316 0
+ 431              	@ 316 "../include/R_RTOS_services.h" 1
+ 432 004a 13DF     		svc #19 
+ 433              	
+ 434              	@ 0 "" 2
+ 317:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 318:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 435              		.loc 2 318 0
+ 436              	@ 318 "../include/R_RTOS_services.h" 1
+ 437 004c EFF30881 		mrs     r1,     msp 
+ 438 0050 0868     	 ldr r0, [r1] 
+ 439 0052 021C     	 movs r2, r0 
+ 440              	
+ 441              	@ 0 "" 2
+ 442              		.code	16
+ 443 0054 3B1C     		mov	r3, r7
+ 444 0056 1733     		add	r3, r3, #23
+ 445 0058 1A70     		strb	r2, [r3]
+ 446              	.LBE43:
+ 447              	.LBE42:
+  68:../Tasks/MessageQueueTest/Tasks.c ****                 (const PMQData *) &dataBuffer );
+  69:../Tasks/MessageQueueTest/Tasks.c ****         if ( (uint32_t) dataBuffer != (uint32_t) NULL )
+ 448              		.loc 1 69 0
+ 449 005a 3B68     		ldr	r3, [r7]
+ 450 005c 002B     		cmp	r3, #0
+ 451 005e 4BD0     		beq	.L18
+  70:../Tasks/MessageQueueTest/Tasks.c ****         {
+  71:../Tasks/MessageQueueTest/Tasks.c ****             retrievedData = dataBuffer->data;
+ 452              		.loc 1 71 0
+ 453 0060 3B68     		ldr	r3, [r7]
+ 454 0062 1B68     		ldr	r3, [r3]
+ 455 0064 7B62     		str	r3, [r7, #36]
+  72:../Tasks/MessageQueueTest/Tasks.c ****             retrievedData &= 0x3u;
+ 456              		.loc 1 72 0
+ 457 0066 7A6A     		ldr	r2, [r7, #36]
+ 458 0068 0323     		mov	r3, #3
+ 459 006a 1340     		and	r3, r2
+ 460 006c 7B62     		str	r3, [r7, #36]
+  73:../Tasks/MessageQueueTest/Tasks.c ****             switch ( retrievedData )
+ 461              		.loc 1 73 0
+ 462 006e 7B6A     		ldr	r3, [r7, #36]
+ 463 0070 012B     		cmp	r3, #1
+ 464 0072 14D0     		beq	.L19
+ 465 0074 04D3     		bcc	.L20
+ 466 0076 022B     		cmp	r3, #2
+ 467 0078 20D0     		beq	.L21
+ 468 007a 032B     		cmp	r3, #3
+ 469 007c 2DD0     		beq	.L22
+ 470 007e 3BE0     		b	.L18
+ 471              	.L20:
+  74:../Tasks/MessageQueueTest/Tasks.c ****             {
+  75:../Tasks/MessageQueueTest/Tasks.c ****                 case 0:
+  76:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED0 );
+ 472              		.loc 1 76 0
+ 473 0080 5A4B     		ldr	r3, .L49+4
+ 474 0082 5A69     		ldr	r2, [r3, #20]
+ 475 0084 8023     		mov	r3, #128
+ 476 0086 5B00     		lsl	r3, r3, #1
+ 477 0088 1340     		and	r3, r2
+ 478 008a 07D0     		beq	.L23
+ 479              		.loc 1 76 0 is_stmt 0 discriminator 1
+ 480 008c 574B     		ldr	r3, .L49+4
+ 481 008e 574A     		ldr	r2, .L49+4
+ 482 0090 D268     		ldr	r2, [r2, #12]
+ 483 0092 8021     		mov	r1, #128
+ 484 0094 4900     		lsl	r1, r1, #1
+ 485 0096 0A43     		orr	r2, r1
+ 486 0098 DA60     		str	r2, [r3, #12]
+  77:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 487              		.loc 1 77 0 is_stmt 1 discriminator 1
+ 488 009a 2DE0     		b	.L18
+ 489              	.L23:
+ 490              		.loc 1 77 0 is_stmt 0 discriminator 2
+ 491 009c 2CE0     		b	.L18
+ 492              	.L19:
+  78:../Tasks/MessageQueueTest/Tasks.c ****                 case 1:
+  79:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED1 );
+ 493              		.loc 1 79 0 is_stmt 1
+ 494 009e 534B     		ldr	r3, .L49+4
+ 495 00a0 5A69     		ldr	r2, [r3, #20]
+ 496 00a2 8023     		mov	r3, #128
+ 497 00a4 9B00     		lsl	r3, r3, #2
+ 498 00a6 1340     		and	r3, r2
+ 499 00a8 07D0     		beq	.L25
+ 500              		.loc 1 79 0 is_stmt 0 discriminator 1
+ 501 00aa 504B     		ldr	r3, .L49+4
+ 502 00ac 4F4A     		ldr	r2, .L49+4
+ 503 00ae D268     		ldr	r2, [r2, #12]
+ 504 00b0 8021     		mov	r1, #128
+ 505 00b2 8900     		lsl	r1, r1, #2
+ 506 00b4 0A43     		orr	r2, r1
+ 507 00b6 DA60     		str	r2, [r3, #12]
+  80:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 508              		.loc 1 80 0 is_stmt 1 discriminator 1
+ 509 00b8 1EE0     		b	.L18
+ 510              	.L25:
+ 511              		.loc 1 80 0 is_stmt 0 discriminator 2
+ 512 00ba 1DE0     		b	.L18
+ 513              	.L21:
+  81:../Tasks/MessageQueueTest/Tasks.c ****                 case 2:
+  82:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED2 );
+ 514              		.loc 1 82 0 is_stmt 1
+ 515 00bc 4B4B     		ldr	r3, .L49+4
+ 516 00be 5A69     		ldr	r2, [r3, #20]
+ 517 00c0 8023     		mov	r3, #128
+ 518 00c2 DB00     		lsl	r3, r3, #3
+ 519 00c4 1340     		and	r3, r2
+ 520 00c6 07D0     		beq	.L27
+ 521              		.loc 1 82 0 is_stmt 0 discriminator 1
+ 522 00c8 484B     		ldr	r3, .L49+4
+ 523 00ca 484A     		ldr	r2, .L49+4
+ 524 00cc D268     		ldr	r2, [r2, #12]
+ 525 00ce 8021     		mov	r1, #128
+ 526 00d0 C900     		lsl	r1, r1, #3
+ 527 00d2 0A43     		orr	r2, r1
+ 528 00d4 DA60     		str	r2, [r3, #12]
+  83:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 529              		.loc 1 83 0 is_stmt 1 discriminator 1
+ 530 00d6 0FE0     		b	.L18
+ 531              	.L27:
+ 532              		.loc 1 83 0 is_stmt 0 discriminator 2
+ 533 00d8 0EE0     		b	.L18
+ 534              	.L22:
+  84:../Tasks/MessageQueueTest/Tasks.c ****                 case 3:
+  85:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED3 );
+ 535              		.loc 1 85 0 is_stmt 1
+ 536 00da 444B     		ldr	r3, .L49+4
+ 537 00dc 5A69     		ldr	r2, [r3, #20]
+ 538 00de 8023     		mov	r3, #128
+ 539 00e0 1B01     		lsl	r3, r3, #4
+ 540 00e2 1340     		and	r3, r2
+ 541 00e4 07D0     		beq	.L29
+ 542              		.loc 1 85 0 is_stmt 0 discriminator 1
+ 543 00e6 414B     		ldr	r3, .L49+4
+ 544 00e8 404A     		ldr	r2, .L49+4
+ 545 00ea D268     		ldr	r2, [r2, #12]
+ 546 00ec 8021     		mov	r1, #128
+ 547 00ee 0901     		lsl	r1, r1, #4
+ 548 00f0 0A43     		orr	r2, r1
+ 549 00f2 DA60     		str	r2, [r3, #12]
+  86:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 550              		.loc 1 86 0 is_stmt 1 discriminator 1
+ 551 00f4 FFE7     		b	.L47
+ 552              	.L29:
+ 553              	.L47:
+ 554              		.loc 1 86 0 is_stmt 0
+ 555 00f6 C046     		mov	r8, r8
+ 556              	.L18:
+  87:../Tasks/MessageQueueTest/Tasks.c ****             }
+  88:../Tasks/MessageQueueTest/Tasks.c ****         }
+  89:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_MsgRead(
+  90:../Tasks/MessageQueueTest/Tasks.c ****                 (const QID) 0x1u, (const TskID) p_cur_tsk_tcb->tskID,
+ 557              		.loc 1 90 0 is_stmt 1
+ 558 00f8 3B4B     		ldr	r3, .L49
+ 559 00fa 1A68     		ldr	r2, [r3]
+  89:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_MsgRead(
+ 560              		.loc 1 89 0
+ 561 00fc 2123     		mov	r3, #33
+ 562 00fe D25C     		ldrb	r2, [r2, r3]
+ 563 0100 3B1C     		mov	r3, r7
+ 564 0102 1633     		add	r3, r3, #22
+ 565 0104 1A70     		strb	r2, [r3]
+ 566 0106 3B1C     		mov	r3, r7
+ 567 0108 3B61     		str	r3, [r7, #16]
+ 568              	.LBB44:
+ 569              	.LBB45:
+ 313:../include/R_RTOS_services.h ****     INPUT_ARG_1( msgQID );
+ 570              		.loc 2 313 0
+ 571 010a 0123     		mov	r3, #1
+ 572              	@ 313 "../include/R_RTOS_services.h" 1
+ 573 010c 181C     		movs r0, r3 
+ 574              	
+ 575              	@ 0 "" 2
+ 314:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskID );
+ 576              		.loc 2 314 0
+ 577              		.code	16
+ 578 010e 3B1C     		mov	r3, r7
+ 579 0110 1633     		add	r3, r3, #22
+ 580 0112 1B78     		ldrb	r3, [r3]
+ 581              	@ 314 "../include/R_RTOS_services.h" 1
+ 582 0114 191C     		movs r1, r3 
+ 583              	
+ 584              	@ 0 "" 2
+ 315:../include/R_RTOS_services.h ****     INPUT_ARG_3( dataBuffer );
+ 585              		.loc 2 315 0
+ 586              		.code	16
+ 587 0116 3B69     		ldr	r3, [r7, #16]
+ 588              	@ 315 "../include/R_RTOS_services.h" 1
+ 589 0118 1A1C     		movs r2, r3 
+ 590              	
+ 591              	@ 0 "" 2
+ 316:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_MSG_READ );
+ 592              		.loc 2 316 0
+ 593              	@ 316 "../include/R_RTOS_services.h" 1
+ 594 011a 13DF     		svc #19 
+ 595              	
+ 596              	@ 0 "" 2
+ 597              		.loc 2 318 0
+ 598              	@ 318 "../include/R_RTOS_services.h" 1
+ 599 011c EFF30881 		mrs     r1,     msp 
+ 600 0120 0868     	 ldr r0, [r1] 
+ 601 0122 021C     	 movs r2, r0 
+ 602              	
+ 603              	@ 0 "" 2
+ 604              		.code	16
+ 605 0124 3B1C     		mov	r3, r7
+ 606 0126 0F33     		add	r3, r3, #15
+ 607 0128 1A70     		strb	r2, [r3]
+ 608              	.LBE45:
+ 609              	.LBE44:
+  91:../Tasks/MessageQueueTest/Tasks.c ****                 (const PMQData *) &dataBuffer );
+  92:../Tasks/MessageQueueTest/Tasks.c ****         if ( (uint32_t) dataBuffer != (uint32_t) NULL )
+ 610              		.loc 1 92 0
+ 611 012a 3B68     		ldr	r3, [r7]
+ 612 012c 002B     		cmp	r3, #0
+ 613 012e 4BD0     		beq	.L32
+  93:../Tasks/MessageQueueTest/Tasks.c ****         {
+  94:../Tasks/MessageQueueTest/Tasks.c ****             retrievedData = dataBuffer->data;
+ 614              		.loc 1 94 0
+ 615 0130 3B68     		ldr	r3, [r7]
+ 616 0132 1B68     		ldr	r3, [r3]
+ 617 0134 7B62     		str	r3, [r7, #36]
+  95:../Tasks/MessageQueueTest/Tasks.c ****             retrievedData &= 0x3u;
+ 618              		.loc 1 95 0
+ 619 0136 7A6A     		ldr	r2, [r7, #36]
+ 620 0138 0323     		mov	r3, #3
+ 621 013a 1340     		and	r3, r2
+ 622 013c 7B62     		str	r3, [r7, #36]
+  96:../Tasks/MessageQueueTest/Tasks.c ****             switch ( retrievedData )
+ 623              		.loc 1 96 0
+ 624 013e 7B6A     		ldr	r3, [r7, #36]
+ 625 0140 012B     		cmp	r3, #1
+ 626 0142 14D0     		beq	.L33
+ 627 0144 04D3     		bcc	.L34
+ 628 0146 022B     		cmp	r3, #2
+ 629 0148 20D0     		beq	.L35
+ 630 014a 032B     		cmp	r3, #3
+ 631 014c 2DD0     		beq	.L36
+ 632 014e 3BE0     		b	.L32
+ 633              	.L34:
+  97:../Tasks/MessageQueueTest/Tasks.c ****             {
+  98:../Tasks/MessageQueueTest/Tasks.c ****                 case 0:
+  99:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED0 );
+ 634              		.loc 1 99 0
+ 635 0150 264B     		ldr	r3, .L49+4
+ 636 0152 5A69     		ldr	r2, [r3, #20]
+ 637 0154 8023     		mov	r3, #128
+ 638 0156 5B00     		lsl	r3, r3, #1
+ 639 0158 1340     		and	r3, r2
+ 640 015a 07D0     		beq	.L37
+ 641              		.loc 1 99 0 is_stmt 0 discriminator 1
+ 642 015c 234B     		ldr	r3, .L49+4
+ 643 015e 234A     		ldr	r2, .L49+4
+ 644 0160 D268     		ldr	r2, [r2, #12]
+ 645 0162 8021     		mov	r1, #128
+ 646 0164 4900     		lsl	r1, r1, #1
+ 647 0166 0A43     		orr	r2, r1
+ 648 0168 DA60     		str	r2, [r3, #12]
+ 100:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 649              		.loc 1 100 0 is_stmt 1 discriminator 1
+ 650 016a 2DE0     		b	.L32
+ 651              	.L37:
+ 652              		.loc 1 100 0 is_stmt 0 discriminator 2
+ 653 016c 2CE0     		b	.L32
+ 654              	.L33:
+ 101:../Tasks/MessageQueueTest/Tasks.c ****                 case 1:
+ 102:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED1 );
+ 655              		.loc 1 102 0 is_stmt 1
+ 656 016e 1F4B     		ldr	r3, .L49+4
+ 657 0170 5A69     		ldr	r2, [r3, #20]
+ 658 0172 8023     		mov	r3, #128
+ 659 0174 9B00     		lsl	r3, r3, #2
+ 660 0176 1340     		and	r3, r2
+ 661 0178 07D0     		beq	.L39
+ 662              		.loc 1 102 0 is_stmt 0 discriminator 1
+ 663 017a 1C4B     		ldr	r3, .L49+4
+ 664 017c 1B4A     		ldr	r2, .L49+4
+ 665 017e D268     		ldr	r2, [r2, #12]
+ 666 0180 8021     		mov	r1, #128
+ 667 0182 8900     		lsl	r1, r1, #2
+ 668 0184 0A43     		orr	r2, r1
+ 669 0186 DA60     		str	r2, [r3, #12]
+ 103:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 670              		.loc 1 103 0 is_stmt 1 discriminator 1
+ 671 0188 1EE0     		b	.L32
+ 672              	.L39:
+ 673              		.loc 1 103 0 is_stmt 0 discriminator 2
+ 674 018a 1DE0     		b	.L32
+ 675              	.L35:
+ 104:../Tasks/MessageQueueTest/Tasks.c ****                 case 2:
+ 105:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED2 );
+ 676              		.loc 1 105 0 is_stmt 1
+ 677 018c 174B     		ldr	r3, .L49+4
+ 678 018e 5A69     		ldr	r2, [r3, #20]
+ 679 0190 8023     		mov	r3, #128
+ 680 0192 DB00     		lsl	r3, r3, #3
+ 681 0194 1340     		and	r3, r2
+ 682 0196 07D0     		beq	.L41
+ 683              		.loc 1 105 0 is_stmt 0 discriminator 1
+ 684 0198 144B     		ldr	r3, .L49+4
+ 685 019a 144A     		ldr	r2, .L49+4
+ 686 019c D268     		ldr	r2, [r2, #12]
+ 687 019e 8021     		mov	r1, #128
+ 688 01a0 C900     		lsl	r1, r1, #3
+ 689 01a2 0A43     		orr	r2, r1
+ 690 01a4 DA60     		str	r2, [r3, #12]
+ 106:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 691              		.loc 1 106 0 is_stmt 1 discriminator 1
+ 692 01a6 0FE0     		b	.L32
+ 693              	.L41:
+ 694              		.loc 1 106 0 is_stmt 0 discriminator 2
+ 695 01a8 0EE0     		b	.L32
+ 696              	.L36:
+ 107:../Tasks/MessageQueueTest/Tasks.c ****                 case 3:
+ 108:../Tasks/MessageQueueTest/Tasks.c ****                     TOGGLE_PIN( PIN_LED3 );
+ 697              		.loc 1 108 0 is_stmt 1
+ 698 01aa 104B     		ldr	r3, .L49+4
+ 699 01ac 5A69     		ldr	r2, [r3, #20]
+ 700 01ae 8023     		mov	r3, #128
+ 701 01b0 1B01     		lsl	r3, r3, #4
+ 702 01b2 1340     		and	r3, r2
+ 703 01b4 07D0     		beq	.L43
+ 704              		.loc 1 108 0 is_stmt 0 discriminator 1
+ 705 01b6 0D4B     		ldr	r3, .L49+4
+ 706 01b8 0C4A     		ldr	r2, .L49+4
+ 707 01ba D268     		ldr	r2, [r2, #12]
+ 708 01bc 8021     		mov	r1, #128
+ 709 01be 0901     		lsl	r1, r1, #4
+ 710 01c0 0A43     		orr	r2, r1
+ 711 01c2 DA60     		str	r2, [r3, #12]
+ 109:../Tasks/MessageQueueTest/Tasks.c ****                     break;
+ 712              		.loc 1 109 0 is_stmt 1 discriminator 1
+ 713 01c4 FFE7     		b	.L48
+ 714              	.L43:
+ 715              	.L48:
+ 716              		.loc 1 109 0 is_stmt 0
+ 717 01c6 C046     		mov	r8, r8
+ 718              	.L32:
+ 110:../Tasks/MessageQueueTest/Tasks.c ****             }
+ 111:../Tasks/MessageQueueTest/Tasks.c ****         }
+ 112:../Tasks/MessageQueueTest/Tasks.c ****         svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
+ 719              		.loc 1 112 0 is_stmt 1
+ 720 01c8 074B     		ldr	r3, .L49
+ 721 01ca 1B68     		ldr	r3, [r3]
+ 722 01cc BB60     		str	r3, [r7, #8]
+ 723              	.LBB46:
+ 724              	.LBB47:
+ 216:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 725              		.loc 2 216 0
+ 726 01ce 6423     		mov	r3, #100
+ 727              	@ 216 "../include/R_RTOS_services.h" 1
+ 728 01d0 181C     		movs r0, r3 
+ 729              	
+ 730              	@ 0 "" 2
+ 217:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 731              		.loc 2 217 0
+ 732              		.code	16
+ 733 01d2 BB68     		ldr	r3, [r7, #8]
+ 734              	@ 217 "../include/R_RTOS_services.h" 1
+ 735 01d4 191C     		movs r1, r3 
+ 736              	
+ 737              	@ 0 "" 2
+ 218:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 738              		.loc 2 218 0
+ 739              	@ 218 "../include/R_RTOS_services.h" 1
+ 740 01d6 0BDF     		svc #11 
+ 741              	
+ 742              	@ 0 "" 2
+ 220:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 743              		.loc 2 220 0
+ 744              	@ 220 "../include/R_RTOS_services.h" 1
+ 745 01d8 EFF30881 		mrs     r1,     msp 
+ 746 01dc 0868     	 ldr r0, [r1] 
+ 747 01de 021C     	 movs r2, r0 
+ 748              	
+ 749              	@ 0 "" 2
+ 750              		.code	16
+ 751 01e0 FB1D     		add	r3, r7, #7
+ 752 01e2 1A70     		strb	r2, [r3]
+ 753              	.LBE47:
+ 754              	.LBE46:
+ 113:../Tasks/MessageQueueTest/Tasks.c ****     }
+ 755              		.loc 1 113 0
+ 756 01e4 20E7     		b	.L46
+ 757              	.L50:
+ 758 01e6 C046     		.align	2
+ 759              	.L49:
+ 760 01e8 00000000 		.word	p_cur_tsk_tcb
+ 761 01ec 00F00F40 		.word	1074786304
+ 762              		.cfi_endproc
+ 763              	.LFE64:
+ 765              		.section	.text.tsk4,"ax",%progbits
+ 766              		.align	2
+ 767              		.global	tsk4
+ 768              		.code	16
+ 769              		.thumb_func
+ 771              	tsk4:
+ 772              	.LFB65:
+ 114:../Tasks/MessageQueueTest/Tasks.c ****     svc_tsk_KillTsk( p_cur_tsk_tcb );
+ 115:../Tasks/MessageQueueTest/Tasks.c **** }
+ 116:../Tasks/MessageQueueTest/Tasks.c **** void tsk4( void )
+ 117:../Tasks/MessageQueueTest/Tasks.c **** {
+ 773              		.loc 1 117 0
+ 774              		.cfi_startproc
+ 775 0000 80B5     		push	{r7, lr}
+ 776              		.cfi_def_cfa_offset 8
+ 777              		.cfi_offset 7, -8
+ 778              		.cfi_offset 14, -4
+ 779 0002 88B0     		sub	sp, sp, #32
+ 780              		.cfi_def_cfa_offset 40
+ 781 0004 00AF     		add	r7, sp, #0
+ 782              		.cfi_def_cfa_register 7
+ 118:../Tasks/MessageQueueTest/Tasks.c ****     /*
+ 119:../Tasks/MessageQueueTest/Tasks.c ****      * Consumer Task
+ 120:../Tasks/MessageQueueTest/Tasks.c ****      */
+ 121:../Tasks/MessageQueueTest/Tasks.c ****     const PMQData dataBuffer = (const PMQData) NULL;
+ 783              		.loc 1 121 0
+ 784 0006 0023     		mov	r3, #0
+ 785 0008 3B60     		str	r3, [r7]
+ 122:../Tasks/MessageQueueTest/Tasks.c ****     ;
+ 123:../Tasks/MessageQueueTest/Tasks.c ****     uint32_t retrievedData;
+ 124:../Tasks/MessageQueueTest/Tasks.c ****     svc_msgq_RegTskSub( p_cur_tsk_tcb, (const QID) 0x1u );
+ 786              		.loc 1 124 0
+ 787 000a 1E4B     		ldr	r3, .L57
+ 788 000c 1B68     		ldr	r3, [r3]
+ 789 000e BB61     		str	r3, [r7, #24]
+ 790              	.LBB48:
+ 791              	.LBB49:
+ 272:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 792              		.loc 2 272 0
+ 793 0010 BB69     		ldr	r3, [r7, #24]
+ 794              	@ 272 "../include/R_RTOS_services.h" 1
+ 795 0012 181C     		movs r0, r3 
+ 796              	
+ 797              	@ 0 "" 2
+ 273:../include/R_RTOS_services.h ****     INPUT_ARG_2( msgQID );
+ 798              		.loc 2 273 0
+ 799              		.code	16
+ 800 0014 0123     		mov	r3, #1
+ 801              	@ 273 "../include/R_RTOS_services.h" 1
+ 802 0016 191C     		movs r1, r3 
+ 803              	
+ 804              	@ 0 "" 2
+ 274:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_REG_TSK_SUB );
+ 805              		.loc 2 274 0
+ 806              	@ 274 "../include/R_RTOS_services.h" 1
+ 807 0018 10DF     		svc #16 
+ 808              	
+ 809              	@ 0 "" 2
+ 276:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 810              		.loc 2 276 0
+ 811              	@ 276 "../include/R_RTOS_services.h" 1
+ 812 001a EFF30881 		mrs     r1,     msp 
+ 813 001e 0868     	 ldr r0, [r1] 
+ 814 0020 021C     	 movs r2, r0 
+ 815              	
+ 816              	@ 0 "" 2
+ 817              		.code	16
+ 818 0022 3B1C     		mov	r3, r7
+ 819 0024 1733     		add	r3, r3, #23
+ 820 0026 1A70     		strb	r2, [r3]
+ 821              	.L56:
+ 822              	.LBE49:
+ 823              	.LBE48:
+ 125:../Tasks/MessageQueueTest/Tasks.c ****     while ( 1 )
+ 126:../Tasks/MessageQueueTest/Tasks.c ****     {
+ 127:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_MsgRead(
+ 128:../Tasks/MessageQueueTest/Tasks.c ****                 (const QID) 0x1u, (const TskID) p_cur_tsk_tcb->tskID,
+ 824              		.loc 1 128 0
+ 825 0028 164B     		ldr	r3, .L57
+ 826 002a 1A68     		ldr	r2, [r3]
+ 127:../Tasks/MessageQueueTest/Tasks.c ****         svc_msgq_MsgRead(
+ 827              		.loc 1 127 0
+ 828 002c 2123     		mov	r3, #33
+ 829 002e D25C     		ldrb	r2, [r2, r3]
+ 830 0030 3B1C     		mov	r3, r7
+ 831 0032 1633     		add	r3, r3, #22
+ 832 0034 1A70     		strb	r2, [r3]
+ 833 0036 3B1C     		mov	r3, r7
+ 834 0038 3B61     		str	r3, [r7, #16]
+ 835              	.LBB50:
+ 836              	.LBB51:
+ 313:../include/R_RTOS_services.h ****     INPUT_ARG_1( msgQID );
+ 837              		.loc 2 313 0
+ 838 003a 0123     		mov	r3, #1
+ 839              	@ 313 "../include/R_RTOS_services.h" 1
+ 840 003c 181C     		movs r0, r3 
+ 841              	
+ 842              	@ 0 "" 2
+ 314:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskID );
+ 843              		.loc 2 314 0
+ 844              		.code	16
+ 845 003e 3B1C     		mov	r3, r7
+ 846 0040 1633     		add	r3, r3, #22
+ 847 0042 1B78     		ldrb	r3, [r3]
+ 848              	@ 314 "../include/R_RTOS_services.h" 1
+ 849 0044 191C     		movs r1, r3 
+ 850              	
+ 851              	@ 0 "" 2
+ 315:../include/R_RTOS_services.h ****     INPUT_ARG_3( dataBuffer );
+ 852              		.loc 2 315 0
+ 853              		.code	16
+ 854 0046 3B69     		ldr	r3, [r7, #16]
+ 855              	@ 315 "../include/R_RTOS_services.h" 1
+ 856 0048 1A1C     		movs r2, r3 
+ 857              	
+ 858              	@ 0 "" 2
+ 316:../include/R_RTOS_services.h ****     SVC( SVC_MSGQ_MSG_READ );
+ 859              		.loc 2 316 0
+ 860              	@ 316 "../include/R_RTOS_services.h" 1
+ 861 004a 13DF     		svc #19 
+ 862              	
+ 863              	@ 0 "" 2
+ 864              		.loc 2 318 0
+ 865              	@ 318 "../include/R_RTOS_services.h" 1
+ 866 004c EFF30881 		mrs     r1,     msp 
+ 867 0050 0868     	 ldr r0, [r1] 
+ 868 0052 021C     	 movs r2, r0 
+ 869              	
+ 870              	@ 0 "" 2
+ 871              		.code	16
+ 872 0054 3B1C     		mov	r3, r7
+ 873 0056 0F33     		add	r3, r3, #15
+ 874 0058 1A70     		strb	r2, [r3]
+ 875              	.LBE51:
+ 876              	.LBE50:
+ 129:../Tasks/MessageQueueTest/Tasks.c ****                 (const PMQData *) &dataBuffer );
+ 130:../Tasks/MessageQueueTest/Tasks.c ****         if ( (uint32_t) dataBuffer != (uint32_t) NULL )
+ 877              		.loc 1 130 0
+ 878 005a 3B68     		ldr	r3, [r7]
+ 879 005c 002B     		cmp	r3, #0
+ 880 005e 02D0     		beq	.L54
+ 131:../Tasks/MessageQueueTest/Tasks.c ****         {
+ 132:../Tasks/MessageQueueTest/Tasks.c ****             retrievedData = dataBuffer->data;
+ 881              		.loc 1 132 0
+ 882 0060 3B68     		ldr	r3, [r7]
+ 883 0062 1B68     		ldr	r3, [r3]
+ 884 0064 FB61     		str	r3, [r7, #28]
+ 885              	.L54:
+ 133:../Tasks/MessageQueueTest/Tasks.c **** //            TOGGLE_PIN( PIN_LED0 );
+ 134:../Tasks/MessageQueueTest/Tasks.c ****         }
+ 135:../Tasks/MessageQueueTest/Tasks.c ****         svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
+ 886              		.loc 1 135 0
+ 887 0066 074B     		ldr	r3, .L57
+ 888 0068 1B68     		ldr	r3, [r3]
+ 889 006a BB60     		str	r3, [r7, #8]
+ 890              	.LBB52:
+ 891              	.LBB53:
+ 216:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 892              		.loc 2 216 0
+ 893 006c 6423     		mov	r3, #100
+ 894              	@ 216 "../include/R_RTOS_services.h" 1
+ 895 006e 181C     		movs r0, r3 
+ 896              	
+ 897              	@ 0 "" 2
+ 217:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 898              		.loc 2 217 0
+ 899              		.code	16
+ 900 0070 BB68     		ldr	r3, [r7, #8]
+ 901              	@ 217 "../include/R_RTOS_services.h" 1
+ 902 0072 191C     		movs r1, r3 
+ 903              	
+ 904              	@ 0 "" 2
+ 218:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 905              		.loc 2 218 0
+ 906              	@ 218 "../include/R_RTOS_services.h" 1
+ 907 0074 0BDF     		svc #11 
+ 908              	
+ 909              	@ 0 "" 2
+ 220:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 910              		.loc 2 220 0
+ 911              	@ 220 "../include/R_RTOS_services.h" 1
+ 912 0076 EFF30881 		mrs     r1,     msp 
+ 913 007a 0868     	 ldr r0, [r1] 
+ 914 007c 021C     	 movs r2, r0 
+ 915              	
+ 916              	@ 0 "" 2
+ 917              		.code	16
+ 918 007e FB1D     		add	r3, r7, #7
+ 919 0080 1A70     		strb	r2, [r3]
+ 920              	.LBE53:
+ 921              	.LBE52:
+ 136:../Tasks/MessageQueueTest/Tasks.c ****     }
+ 922              		.loc 1 136 0
+ 923 0082 D1E7     		b	.L56
+ 924              	.L58:
+ 925              		.align	2
+ 926              	.L57:
+ 927 0084 00000000 		.word	p_cur_tsk_tcb
+ 928              		.cfi_endproc
+ 929              	.LFE65:
+ 931              		.section	.text.actvTsk1,"ax",%progbits
+ 932              		.align	2
+ 933              		.global	actvTsk1
+ 934              		.code	16
+ 935              		.thumb_func
+ 937              	actvTsk1:
+ 938              	.LFB66:
+ 137:../Tasks/MessageQueueTest/Tasks.c ****     svc_tsk_KillTsk( p_cur_tsk_tcb );
+ 138:../Tasks/MessageQueueTest/Tasks.c **** }
+ 139:../Tasks/MessageQueueTest/Tasks.c **** 
+ 140:../Tasks/MessageQueueTest/Tasks.c **** void actvTsk1( void )
+ 141:../Tasks/MessageQueueTest/Tasks.c **** {
+ 939              		.loc 1 141 0
+ 940              		.cfi_startproc
+ 941 0000 80B5     		push	{r7, lr}
+ 942              		.cfi_def_cfa_offset 8
+ 943              		.cfi_offset 7, -8
+ 944              		.cfi_offset 14, -4
+ 945 0002 00AF     		add	r7, sp, #0
+ 946              		.cfi_def_cfa_register 7
+ 142:../Tasks/MessageQueueTest/Tasks.c ****     tsk_tskInit( (TskID) 0x1u, &tsk1, &tsk_EndTheTask, MY_STACK_SIZE );
+ 947              		.loc 1 142 0
+ 948 0004 074A     		ldr	r2, .L60
+ 949 0006 084B     		ldr	r3, .L60+4
+ 950 0008 0120     		mov	r0, #1
+ 951 000a 111C     		mov	r1, r2
+ 952 000c 1A1C     		mov	r2, r3
+ 953 000e 8023     		mov	r3, #128
+ 954 0010 FFF7FEFF 		bl	tsk_tskInit
+ 143:../Tasks/MessageQueueTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x1u] );
+ 955              		.loc 1 143 0
+ 956 0014 054B     		ldr	r3, .L60+8
+ 957 0016 181C     		mov	r0, r3
+ 958 0018 FFF7FEFF 		bl	tsk_ActvTsk
+ 144:../Tasks/MessageQueueTest/Tasks.c ****     os_SCHEDULE();
+ 959              		.loc 1 144 0
+ 960 001c FFF7FEFF 		bl	os_SCHEDULE
+ 145:../Tasks/MessageQueueTest/Tasks.c **** }
+ 961              		.loc 1 145 0
+ 962 0020 BD46     		mov	sp, r7
+ 963              		@ sp needed
+ 964 0022 80BD     		pop	{r7, pc}
+ 965              	.L61:
+ 966              		.align	2
+ 967              	.L60:
+ 968 0024 00000000 		.word	tsk1
+ 969 0028 00000000 		.word	tsk_EndTheTask
+ 970 002c 24000000 		.word	tsk_AR+36
+ 971              		.cfi_endproc
+ 972              	.LFE66:
+ 974              		.section	.text.actvTsk2,"ax",%progbits
+ 975              		.align	2
+ 976              		.global	actvTsk2
+ 977              		.code	16
+ 978              		.thumb_func
+ 980              	actvTsk2:
+ 981              	.LFB67:
+ 146:../Tasks/MessageQueueTest/Tasks.c **** void actvTsk2( void )
+ 147:../Tasks/MessageQueueTest/Tasks.c **** {
+ 982              		.loc 1 147 0
+ 983              		.cfi_startproc
+ 984 0000 80B5     		push	{r7, lr}
+ 985              		.cfi_def_cfa_offset 8
+ 986              		.cfi_offset 7, -8
+ 987              		.cfi_offset 14, -4
+ 988 0002 00AF     		add	r7, sp, #0
+ 989              		.cfi_def_cfa_register 7
+ 148:../Tasks/MessageQueueTest/Tasks.c ****     tsk_tskInit( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
+ 990              		.loc 1 148 0
+ 991 0004 074A     		ldr	r2, .L63
+ 992 0006 084B     		ldr	r3, .L63+4
+ 993 0008 0220     		mov	r0, #2
+ 994 000a 111C     		mov	r1, r2
+ 995 000c 1A1C     		mov	r2, r3
+ 996 000e 8023     		mov	r3, #128
+ 997 0010 FFF7FEFF 		bl	tsk_tskInit
+ 149:../Tasks/MessageQueueTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x2u] );
+ 998              		.loc 1 149 0
+ 999 0014 054B     		ldr	r3, .L63+8
+ 1000 0016 181C     		mov	r0, r3
+ 1001 0018 FFF7FEFF 		bl	tsk_ActvTsk
+ 150:../Tasks/MessageQueueTest/Tasks.c ****     os_SCHEDULE();
+ 1002              		.loc 1 150 0
+ 1003 001c FFF7FEFF 		bl	os_SCHEDULE
+ 151:../Tasks/MessageQueueTest/Tasks.c **** }
+ 1004              		.loc 1 151 0
+ 1005 0020 BD46     		mov	sp, r7
+ 1006              		@ sp needed
+ 1007 0022 80BD     		pop	{r7, pc}
+ 1008              	.L64:
+ 1009              		.align	2
+ 1010              	.L63:
+ 1011 0024 00000000 		.word	tsk2
+ 1012 0028 00000000 		.word	tsk_EndTheTask
+ 1013 002c 48000000 		.word	tsk_AR+72
+ 1014              		.cfi_endproc
+ 1015              	.LFE67:
+ 1017              		.section	.text.actvTsk3,"ax",%progbits
+ 1018              		.align	2
+ 1019              		.global	actvTsk3
+ 1020              		.code	16
+ 1021              		.thumb_func
+ 1023              	actvTsk3:
+ 1024              	.LFB68:
+ 152:../Tasks/MessageQueueTest/Tasks.c **** void actvTsk3( void )
+ 153:../Tasks/MessageQueueTest/Tasks.c **** {
+ 1025              		.loc 1 153 0
+ 1026              		.cfi_startproc
+ 1027 0000 80B5     		push	{r7, lr}
+ 1028              		.cfi_def_cfa_offset 8
+ 1029              		.cfi_offset 7, -8
+ 1030              		.cfi_offset 14, -4
+ 1031 0002 00AF     		add	r7, sp, #0
+ 1032              		.cfi_def_cfa_register 7
+ 154:../Tasks/MessageQueueTest/Tasks.c ****     tsk_tskInit( (TskID) 0x3u, &tsk3, &tsk_EndTheTask, MY_STACK_SIZE );
+ 1033              		.loc 1 154 0
+ 1034 0004 074A     		ldr	r2, .L66
+ 1035 0006 084B     		ldr	r3, .L66+4
+ 1036 0008 0320     		mov	r0, #3
+ 1037 000a 111C     		mov	r1, r2
+ 1038 000c 1A1C     		mov	r2, r3
+ 1039 000e 8023     		mov	r3, #128
+ 1040 0010 FFF7FEFF 		bl	tsk_tskInit
+ 155:../Tasks/MessageQueueTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x3u] );
+ 1041              		.loc 1 155 0
+ 1042 0014 054B     		ldr	r3, .L66+8
+ 1043 0016 181C     		mov	r0, r3
+ 1044 0018 FFF7FEFF 		bl	tsk_ActvTsk
+ 156:../Tasks/MessageQueueTest/Tasks.c ****     os_SCHEDULE();
+ 1045              		.loc 1 156 0
+ 1046 001c FFF7FEFF 		bl	os_SCHEDULE
+ 157:../Tasks/MessageQueueTest/Tasks.c **** }
+ 1047              		.loc 1 157 0
+ 1048 0020 BD46     		mov	sp, r7
+ 1049              		@ sp needed
+ 1050 0022 80BD     		pop	{r7, pc}
+ 1051              	.L67:
+ 1052              		.align	2
+ 1053              	.L66:
+ 1054 0024 00000000 		.word	tsk3
+ 1055 0028 00000000 		.word	tsk_EndTheTask
+ 1056 002c 6C000000 		.word	tsk_AR+108
+ 1057              		.cfi_endproc
+ 1058              	.LFE68:
+ 1060              		.section	.text.actvTsk4,"ax",%progbits
+ 1061              		.align	2
+ 1062              		.global	actvTsk4
+ 1063              		.code	16
+ 1064              		.thumb_func
+ 1066              	actvTsk4:
+ 1067              	.LFB69:
+ 158:../Tasks/MessageQueueTest/Tasks.c **** void actvTsk4( void )
+ 159:../Tasks/MessageQueueTest/Tasks.c **** {
+ 1068              		.loc 1 159 0
+ 1069              		.cfi_startproc
+ 1070 0000 80B5     		push	{r7, lr}
+ 1071              		.cfi_def_cfa_offset 8
+ 1072              		.cfi_offset 7, -8
+ 1073              		.cfi_offset 14, -4
+ 1074 0002 00AF     		add	r7, sp, #0
+ 1075              		.cfi_def_cfa_register 7
+ 160:../Tasks/MessageQueueTest/Tasks.c ****     tsk_tskInit( (TskID) 0x4u, &tsk4, &tsk_EndTheTask, MY_STACK_SIZE );
+ 1076              		.loc 1 160 0
+ 1077 0004 074A     		ldr	r2, .L69
+ 1078 0006 084B     		ldr	r3, .L69+4
+ 1079 0008 0420     		mov	r0, #4
+ 1080 000a 111C     		mov	r1, r2
+ 1081 000c 1A1C     		mov	r2, r3
+ 1082 000e 8023     		mov	r3, #128
+ 1083 0010 FFF7FEFF 		bl	tsk_tskInit
+ 161:../Tasks/MessageQueueTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x4u] );
+ 1084              		.loc 1 161 0
+ 1085 0014 054B     		ldr	r3, .L69+8
+ 1086 0016 181C     		mov	r0, r3
+ 1087 0018 FFF7FEFF 		bl	tsk_ActvTsk
+ 162:../Tasks/MessageQueueTest/Tasks.c ****     os_SCHEDULE();
+ 1088              		.loc 1 162 0
+ 1089 001c FFF7FEFF 		bl	os_SCHEDULE
+ 163:../Tasks/MessageQueueTest/Tasks.c **** }
+ 1090              		.loc 1 163 0
+ 1091 0020 BD46     		mov	sp, r7
+ 1092              		@ sp needed
+ 1093 0022 80BD     		pop	{r7, pc}
+ 1094              	.L70:
+ 1095              		.align	2
+ 1096              	.L69:
+ 1097 0024 00000000 		.word	tsk4
+ 1098 0028 00000000 		.word	tsk_EndTheTask
+ 1099 002c 90000000 		.word	tsk_AR+144
+ 1100              		.cfi_endproc
+ 1101              	.LFE69:
+ 1103              		.section	.text.OS_START,"ax",%progbits
+ 1104              		.align	2
+ 1105              		.global	OS_START
+ 1106              		.code	16
+ 1107              		.thumb_func
+ 1109              	OS_START:
+ 1110              	.LFB70:
+ 164:../Tasks/MessageQueueTest/Tasks.c **** 
+ 165:../Tasks/MessageQueueTest/Tasks.c **** void OS_START( void )
+ 166:../Tasks/MessageQueueTest/Tasks.c **** {
+ 1111              		.loc 1 166 0
+ 1112              		.cfi_startproc
+ 1113 0000 80B5     		push	{r7, lr}
+ 1114              		.cfi_def_cfa_offset 8
+ 1115              		.cfi_offset 7, -8
+ 1116              		.cfi_offset 14, -4
+ 1117 0002 00AF     		add	r7, sp, #0
+ 1118              		.cfi_def_cfa_register 7
+ 167:../Tasks/MessageQueueTest/Tasks.c ****     msgQ_initQueue( (QID) 0x1u );
+ 1119              		.loc 1 167 0
+ 1120 0004 0120     		mov	r0, #1
+ 1121 0006 FFF7FEFF 		bl	msgQ_initQueue
+ 168:../Tasks/MessageQueueTest/Tasks.c ****     sys_SysFkt[0].fktCallType.tmrFktCall.sysFktCall = &actvTsk1;
+ 1122              		.loc 1 168 0
+ 1123 000a 114B     		ldr	r3, .L72
+ 1124 000c 114A     		ldr	r2, .L72+4
+ 1125 000e 1A60     		str	r2, [r3]
+ 169:../Tasks/MessageQueueTest/Tasks.c ****     sys_SysFkt[1].fktCallType.tmrFktCall.sysFktCall = &actvTsk2;
+ 1126              		.loc 1 169 0
+ 1127 0010 0F4B     		ldr	r3, .L72
+ 1128 0012 114A     		ldr	r2, .L72+8
+ 1129 0014 DA60     		str	r2, [r3, #12]
+ 170:../Tasks/MessageQueueTest/Tasks.c ****     sys_SysFkt[2].fktCallType.tmrFktCall.sysFktCall = &actvTsk3;
+ 1130              		.loc 1 170 0
+ 1131 0016 0E4B     		ldr	r3, .L72
+ 1132 0018 104A     		ldr	r2, .L72+12
+ 1133 001a 9A61     		str	r2, [r3, #24]
+ 171:../Tasks/MessageQueueTest/Tasks.c ****     sys_SysFkt[3].fktCallType.tmrFktCall.sysFktCall = &actvTsk4;
+ 1134              		.loc 1 171 0
+ 1135 001c 0C4B     		ldr	r3, .L72
+ 1136 001e 104A     		ldr	r2, .L72+16
+ 1137 0020 5A62     		str	r2, [r3, #36]
+ 172:../Tasks/MessageQueueTest/Tasks.c ****     tmr_setSysTimer( 0, 160u, 0x0u );
+ 1138              		.loc 1 172 0
+ 1139 0022 0020     		mov	r0, #0
+ 1140 0024 A021     		mov	r1, #160
+ 1141 0026 0022     		mov	r2, #0
+ 1142 0028 FFF7FEFF 		bl	tmr_setSysTimer
+ 173:../Tasks/MessageQueueTest/Tasks.c ****     tmr_setSysTimer( 1, 140u, 0x0u );
+ 1143              		.loc 1 173 0
+ 1144 002c 0120     		mov	r0, #1
+ 1145 002e 8C21     		mov	r1, #140
+ 1146 0030 0022     		mov	r2, #0
+ 1147 0032 FFF7FEFF 		bl	tmr_setSysTimer
+ 174:../Tasks/MessageQueueTest/Tasks.c ****     tmr_setSysTimer( 2, 120u, 0x0u );
+ 1148              		.loc 1 174 0
+ 1149 0036 0220     		mov	r0, #2
+ 1150 0038 7821     		mov	r1, #120
+ 1151 003a 0022     		mov	r2, #0
+ 1152 003c FFF7FEFF 		bl	tmr_setSysTimer
+ 175:../Tasks/MessageQueueTest/Tasks.c ****     tmr_setSysTimer( 3, 100u, 0x0u );
+ 1153              		.loc 1 175 0
+ 1154 0040 0320     		mov	r0, #3
+ 1155 0042 6421     		mov	r1, #100
+ 1156 0044 0022     		mov	r2, #0
+ 1157 0046 FFF7FEFF 		bl	tmr_setSysTimer
+ 176:../Tasks/MessageQueueTest/Tasks.c **** }
+ 1158              		.loc 1 176 0
+ 1159 004a BD46     		mov	sp, r7
+ 1160              		@ sp needed
+ 1161 004c 80BD     		pop	{r7, pc}
+ 1162              	.L73:
+ 1163 004e C046     		.align	2
+ 1164              	.L72:
+ 1165 0050 00000000 		.word	sys_SysFkt
+ 1166 0054 00000000 		.word	actvTsk1
+ 1167 0058 00000000 		.word	actvTsk2
+ 1168 005c 00000000 		.word	actvTsk3
+ 1169 0060 00000000 		.word	actvTsk4
+ 1170              		.cfi_endproc
+ 1171              	.LFE70:
+ 1173              		.text
+ 1174              	.Letext0:
+ 1175              		.file 3 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1176              		.file 4 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\stdint.h"
+ 1177              		.file 5 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h"
+ 1178              		.file 6 "../hal/mcu/NXP_KL05/include/PortFunc.h"
+ 1179              		.file 7 "../include/R_RTOS_inc.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Tasks.c
+             Tasks.s:18     .text.tsk1:00000000 $t
+             Tasks.s:23     .text.tsk1:00000000 tsk1
+             Tasks.s:173    .text.tsk1:00000070 $d
+             Tasks.s:178    .text.tsk2:00000000 $t
+             Tasks.s:183    .text.tsk2:00000000 tsk2
+             Tasks.s:332    .text.tsk2:00000074 $d
+             Tasks.s:337    .text.tsk3:00000000 $t
+             Tasks.s:342    .text.tsk3:00000000 tsk3
+             Tasks.s:760    .text.tsk3:000001e8 $d
+             Tasks.s:766    .text.tsk4:00000000 $t
+             Tasks.s:771    .text.tsk4:00000000 tsk4
+             Tasks.s:927    .text.tsk4:00000084 $d
+             Tasks.s:932    .text.actvTsk1:00000000 $t
+             Tasks.s:937    .text.actvTsk1:00000000 actvTsk1
+             Tasks.s:968    .text.actvTsk1:00000024 $d
+             Tasks.s:975    .text.actvTsk2:00000000 $t
+             Tasks.s:980    .text.actvTsk2:00000000 actvTsk2
+             Tasks.s:1011   .text.actvTsk2:00000024 $d
+             Tasks.s:1018   .text.actvTsk3:00000000 $t
+             Tasks.s:1023   .text.actvTsk3:00000000 actvTsk3
+             Tasks.s:1054   .text.actvTsk3:00000024 $d
+             Tasks.s:1061   .text.actvTsk4:00000000 $t
+             Tasks.s:1066   .text.actvTsk4:00000000 actvTsk4
+             Tasks.s:1097   .text.actvTsk4:00000024 $d
+             Tasks.s:1104   .text.OS_START:00000000 $t
+             Tasks.s:1109   .text.OS_START:00000000 OS_START
+             Tasks.s:1165   .text.OS_START:00000050 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.MKL05Z4.h.103.f68bb2c385f84d89dfea36d27f6bce5b
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.MKL05Z4.h.116.5814b45345fcb3a5729634de577cb2e4
+                           .group:00000000 wm4.core_cm0plus.h.43.8a4a713129c4559638c90873d349aea7
+                           .group:00000000 wm4.core_cmInstr.h.39.983ab10f37e3e59f2988e58e0e4c2ffe
+                           .group:00000000 wm4.core_cm0plus.h.155.59f470bcbcb3497af7bb725005dd1359
+                           .group:00000000 wm4.system_MKL05Z4.h.101.1304ea5d52ecf5deae71ccb0772f8612
+                           .group:00000000 wm4.MKL05Z4.h.274.69d105c645fb54a4873c1961c705a2ed
+                           .group:00000000 wm4.PortFunc.h.29.2889e345d9a6356c605a78c7f6468978
+                           .group:00000000 wm4.TimerFunc.h.9.adbda7f7862aad2ad31a4542ce2fb01d
+                           .group:00000000 wm4.R_RTOS_inc.h.10.926edc6cbd061ce8c711a04429e20efd
+                           .group:00000000 wm4.R_RTOS_services.h.28.43fdbccf94f85d01bd038cc8d5c88380
+                           .group:00000000 wm4.R_RTOS_timer.h.10.320a5c95a3ff82b6cc9c2ca1b54c86a1
+                           .group:00000000 wm4.R_RTOS_memMngr.h.14.e71363defcaed3db880eddd5ae4849f6
+                           .group:00000000 wm4.R_RTOS_msgQueuing.h.20.e4019651b87f7c8cee8d91e1184b95db
+
+UNDEFINED SYMBOLS
+p_cur_tsk_tcb
+tsk_tskInit
+tsk_ActvTsk
+os_SCHEDULE
+tsk_EndTheTask
+tsk_AR
+msgQ_initQueue
+tmr_setSysTimer
+sys_SysFkt
