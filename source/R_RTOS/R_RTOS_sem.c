@@ -214,8 +214,9 @@ RetCode sem_GiveSem( PTskTCB const tsk, const SemNr semNr )
 
     PSem sem = &( ar_Sems[semNr] );
 
-    if ( sem->takenCntr == (uint8_t) 0x0u )    // SEMAPHORE IS NOT TAKEN
-        return RET_NOK;
+    //ToDO QUICKFIX... binary semphore counter reaches zero when still taken, but no task waiting...
+//    if ( sem->takenCntr == (uint8_t) 0x0u )    // SEMAPHORE IS NOT TAKEN
+//        return RET_NOK;
 
     if ( sem->semOccTskID == TSK_ID_NO_TSK )    // THERE SHOULD BE A STRT OF LIST IF THE SEMAPHORE WAS TAKEN
         return RET_NOK;
@@ -283,6 +284,7 @@ RetCode sem_DeleteTskSemQ( PTskTCB const tsk )
     }
 
     memMngr_MemPoolFree( tsk->tskSync, memPoolID_SEM );    // FREE CURRENT NODE
+    tsk->tskSync = (PSyncEle)NULL;
 
     return RET_OK;
 }
