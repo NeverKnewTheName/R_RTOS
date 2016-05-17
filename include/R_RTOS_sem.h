@@ -17,6 +17,9 @@
  *  \note User defined
  */
 #define MEM_OBJECTS_SEM (uint8_t)0x4u
+#define MEM_OBJECTS_MTX (uint8_t)0x4u
+
+#define AMOUNT_OF_MTXS (uint8_t)0x4u
 
 /** \fn RetCode sem_InitSems( void );
  *  \brief Initialize the semaphore functionality.

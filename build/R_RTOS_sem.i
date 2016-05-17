@@ -344,7 +344,7 @@
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
 # 1 "../source/R_RTOS/R_RTOS_sem.c"
-# 50 "../source/R_RTOS/R_RTOS_sem.c"
+# 52 "../source/R_RTOS/R_RTOS_sem.c"
 # 1 "../include/R_RTOS_sem.h" 1
 # 10 "../include/R_RTOS_sem.h"
 #define HEADERS_R_RTOS_SEM_H_ 
@@ -990,6 +990,11 @@ typedef uint8_t SemNr;
 
 
 
+typedef uint8_t MtxNr;
+
+
+
+
 typedef uint8_t SemCntr;
 
 
@@ -1064,9 +1069,9 @@ typedef FktCall TskStartAddr;
 
 
 typedef FktCall TskEndAddr;
-# 525 "../include/R_RTOS_inc.h"
+# 530 "../include/R_RTOS_inc.h"
 typedef uint8_t SyncEleID;
-# 588 "../include/R_RTOS_inc.h"
+# 593 "../include/R_RTOS_inc.h"
 typedef enum mntrAccssType
 {
     MNTR_ACCESS_NONE = (uint8_t) 0x0u,
@@ -1090,14 +1095,14 @@ typedef enum dataTypes
     DataT_String,
     DataT_FunCall = (uint8_t) 0x8u
 } DataType;
-# 626 "../include/R_RTOS_inc.h"
+# 631 "../include/R_RTOS_inc.h"
 typedef enum timerTypeEn
 {
     SysTimerType = (uint8_t) 0x0u,
     TskTimerType = (uint8_t) 0x1u,
     SysTickTimerType = (uint8_t) 0x2u
 } TimerType;
-# 642 "../include/R_RTOS_inc.h"
+# 647 "../include/R_RTOS_inc.h"
 typedef enum tskPrio
 {
     TSK_PRIO_ERROR = (TskPrioLvl) 0x0u,
@@ -1128,7 +1133,7 @@ typedef enum evtType
     EvtSEM = (uint8_t) 0x42u,
     EvtMNTR = (uint8_t) 0x48u
 } EvtType;
-# 704 "../include/R_RTOS_inc.h"
+# 709 "../include/R_RTOS_inc.h"
 typedef enum tskState
 {
     TSK_STATE_ERROR = (tskStateT) 0x00u,
@@ -1170,16 +1175,18 @@ typedef enum tskSettings
     TskSet_DUMMY_4 = (uint8_t) 0x40u,
     TskSet_DUMMY_5 = (uint8_t) 0x80u
 } TskSettings;
-# 757 "../include/R_RTOS_inc.h"
+# 762 "../include/R_RTOS_inc.h"
 typedef enum syncEleType
 {
     SyncEle_TYPE_NOID = (uint8_t) 0x0u,
     SyncEle_TYPE_TMR = (uint8_t) 0x1u,
     SyncEle_TYPE_EVT = (uint8_t) 0x2u,
-    SyncEle_TYPE_SEM = (uint8_t) 0x3u,
-    SyncEle_TYPE_MNTR = (uint8_t) 0x4u
+    SyncEle_TYPE_BinSEM = (uint8_t) 0x3u,
+    SyncEle_TYPE_CntSEM = (uint8_t) 0x4u,
+    SyncEle_TYPE_MTX = (uint8_t) 0x5u,
+    SyncEle_TYPE_MNTR = (uint8_t) 0x6u
 } SyncEleType;
-# 789 "../include/R_RTOS_inc.h"
+# 796 "../include/R_RTOS_inc.h"
 typedef enum sysTckObjTypeEnum
 {
     SysTckObj_Err = (uint8_t) 0x0u,
@@ -1190,13 +1197,13 @@ typedef enum sysTckObjTypeEnum
     SysTckObj_SysFktBlck = (uint8_t) 0x21u,
     SysTckObj_SysFktWait = (uint8_t) 0x22u,
 } SysTckEleType;
-# 808 "../include/R_RTOS_inc.h"
+# 815 "../include/R_RTOS_inc.h"
 typedef union sysTickEleIDUnion
 {
     TskID tskID;
     SysFktID sysFktID;
 } SysTickEleID;
-# 823 "../include/R_RTOS_inc.h"
+# 830 "../include/R_RTOS_inc.h"
 typedef struct sysTickTMRStruc
 {
     struct sysTickTMRStruc * nxtSysTickTMR;
@@ -1217,7 +1224,7 @@ typedef const uint32_t * CData;
 
 
 typedef CData *PCData;
-# 862 "../include/R_RTOS_inc.h"
+# 869 "../include/R_RTOS_inc.h"
 typedef struct mqData
 {
     CData data;
@@ -1225,7 +1232,7 @@ typedef struct mqData
     DataType dataType;
     DataSize dataSize;
 } MQData, *PMQData;
-# 880 "../include/R_RTOS_inc.h"
+# 887 "../include/R_RTOS_inc.h"
 typedef struct msgQMsgProvStruc
 {
     QID msgQID;
@@ -1237,13 +1244,13 @@ typedef struct msgQMsgProvStruc
 
 
 typedef uint8_t MsgID;
-# 905 "../include/R_RTOS_inc.h"
+# 912 "../include/R_RTOS_inc.h"
 typedef struct tskMsgProvStruc
 {
     volatile TskID tskProvID;
     volatile MsgID msgID;
 } TskMsgProv, *PTskMsgProv;
-# 925 "../include/R_RTOS_inc.h"
+# 932 "../include/R_RTOS_inc.h"
 typedef struct sysMsgProvStruc
 {
     volatile SysFktID sysProvID;
@@ -1255,7 +1262,7 @@ typedef struct dummyMsgProvStruc
     uint8_t dummyID;
     uint8_t dummyDummy;
 } DummyMsgProv, *PDummyMsgProv;
-# 945 "../include/R_RTOS_inc.h"
+# 952 "../include/R_RTOS_inc.h"
 typedef enum msgProvTypeEnum
 {
     MsgQ_Prov = (uint8_t) 0x0u,
@@ -1263,7 +1270,7 @@ typedef enum msgProvTypeEnum
     Sys_Prov = (uint8_t) 0x2u,
     Dummy_Prov = (uint8_t) 0xFFu
 } MsgProvType;
-# 962 "../include/R_RTOS_inc.h"
+# 969 "../include/R_RTOS_inc.h"
 typedef union msgPrvdrsUnion
 {
     MsgQMsgProv msgQMsgProv;
@@ -1271,7 +1278,7 @@ typedef union msgPrvdrsUnion
     SysMsgProv sysMsgProv;
     DummyMsgProv dummyMsgProv;
 } MsgPrvdrs, *PMsgPrvdrs;
-# 983 "../include/R_RTOS_inc.h"
+# 990 "../include/R_RTOS_inc.h"
 typedef struct tskMailBox
 {
     volatile struct tskMailBox *nxtTskMB;
@@ -1281,7 +1288,7 @@ typedef struct tskMailBox
     MsgProvType msgProvType;
     MsgPrvdrs msgProv;
 } TskMB, *PTskMB;
-# 1005 "../include/R_RTOS_inc.h"
+# 1012 "../include/R_RTOS_inc.h"
 typedef struct tmrFktCallStruc
 {
     FktCall sysFktCall;
@@ -1290,7 +1297,7 @@ typedef struct tmrFktCallStruc
     SysFktID nxtFktCall;
     SysFktID fktID;
 } TmrFktCall, *PTmrFktCall;
-# 1022 "../include/R_RTOS_inc.h"
+# 1029 "../include/R_RTOS_inc.h"
 typedef struct sysTckFktCallstruc
 {
     FktCall sysFktCall;
@@ -1299,14 +1306,14 @@ typedef struct sysTckFktCallstruc
     uint8_t dummy8;
     uint16_t dummy16;
 } SysTckFktCall, *PSysTckFktCall;
-# 1039 "../include/R_RTOS_inc.h"
+# 1046 "../include/R_RTOS_inc.h"
 typedef struct msgFktCallStruc
 {
     FktCallOneArg sysFktCall;
     MsgPrvdrs msgProv;
     MsgProvType msgProvType;
 } MsgFktCall, *PMsgFktCall;
-# 1055 "../include/R_RTOS_inc.h"
+# 1062 "../include/R_RTOS_inc.h"
 typedef struct dummyFktCallStruc
 {
     void * sysFktCall;
@@ -1315,7 +1322,7 @@ typedef struct dummyFktCallStruc
     uint8_t dummy8_1;
     uint8_t dummy8_2;
 } DummyFktCall, *PDummyFktCall;
-# 1076 "../include/R_RTOS_inc.h"
+# 1083 "../include/R_RTOS_inc.h"
 typedef struct sysFkt
 {
 
@@ -1327,31 +1334,52 @@ typedef struct sysFkt
         DummyFktCall dummyfktCall;
     } fktCallType;
 } SysFkt, *PSysFkt;
-# 1102 "../include/R_RTOS_inc.h"
+
+
+
+
+typedef enum semTypeEnum
+{
+    SemBin = (uint8_t)0x0u,
+    SemCnt = (uint8_t)0x1u
+}SemType;
+# 1115 "../include/R_RTOS_inc.h"
 typedef struct semStruc
 {
-    TskID semQTskID;
-    TskID semOccTskID;
-    TskPrio svdPrio;
-    SemCntr takenCntr;
+    TskID semQStrtTskID;
+    TskPrio svdTskPrio;
+    SemType semType;
+    union
+    {
+        SemCntr semCntrSig;
+        SemCntr semBinSig;
+    }semSignal;
 } Sem, *PSem;
-# 1124 "../include/R_RTOS_inc.h"
+
+typedef struct mtxStruc
+{
+    TskID mtxQStrtTskID;
+    TskID mtxOccTskID;
+    TskPrio svdTskPrio;
+    uint8_t isOcc;
+}Mtx, *PMtx;
+# 1150 "../include/R_RTOS_inc.h"
 typedef struct evtStruc
 {
     EVTQSlots evtQ_Slots;
     TskID evtObjs[(uint8_t)0x4u ];
 } Evt, *PEvt;
-# 1142 "../include/R_RTOS_inc.h"
+# 1168 "../include/R_RTOS_inc.h"
 typedef struct sysTimerStruc
 {
     SysFktID sysFktIDQStrt;
 } SysTimer, *PSysTimer;
-# 1155 "../include/R_RTOS_inc.h"
+# 1181 "../include/R_RTOS_inc.h"
 typedef struct tskTimerStruc
 {
     TskID tskIDQStrt;
 } TskTimer, *PTskTimer;
-# 1169 "../include/R_RTOS_inc.h"
+# 1195 "../include/R_RTOS_inc.h"
 typedef struct timerStruc
 {
     LifeTime expirationTime;
@@ -1362,7 +1390,7 @@ typedef struct timerStruc
         TskTimer tskTimer;
     } specTimer;
 } Timer, *PTimer;
-# 1212 "../include/R_RTOS_inc.h"
+# 1238 "../include/R_RTOS_inc.h"
 typedef struct syncEleStruc
 {
     SyncEleType syncEleType;
@@ -1402,32 +1430,32 @@ typedef struct syncEleStruc
         } MntrSyncEle;
     } SyncEleHandle;
 } SyncEle, *PSyncEle;
-# 1267 "../include/R_RTOS_inc.h"
+# 1293 "../include/R_RTOS_inc.h"
 typedef struct tskTCB
 {
-    volatile StackPtrT pStckPtr;
-    StackPtrT pStckTop;
+            volatile StackPtrT pStckPtr;
+            StackPtrT pStckTop;
 
-    TskStartAddr pTskStrt;
-    TskEndAddr pTskEnd;
+            TskStartAddr pTskStrt;
+            TskEndAddr pTskEnd;
 
-    volatile PTskMB tskMailBox;
+            volatile PTskMB tskMailBox;
 
-    volatile PSysTickTMR sysTckTmr;
-    volatile PSyncEle tskSync;
+            volatile PSysTickTMR sysTckTmr;
+            volatile PSyncEle tskSync;
 
-    StackSize stckSze;
+            StackSize stckSze;
 
-    volatile TskSettings tskSets;
+            volatile TskSettings tskSets;
 
-    volatile TskPrio tskPrio;
-    volatile TskState tskState;
+            volatile TskPrio tskPrio;
+            volatile TskState tskState;
 
-    TskID tskID;
-    volatile TskID nxtTsk;
-    volatile TskID prvTsk;
+            TskID tskID;
+            volatile TskID nxtTsk;
+            volatile TskID prvTsk;
 } TskTCB, *PTskTCB;
-# 1339 "../include/R_RTOS_inc.h"
+# 1365 "../include/R_RTOS_inc.h"
 #define TIME_SLICE_AMOUNT (uint16_t)500u
 
 
@@ -1444,7 +1472,7 @@ typedef struct tskTCB
 
 
 #define NR_OF_MEMPOOLS (uint8_t)0x5u
-# 1363 "../include/R_RTOS_inc.h"
+# 1389 "../include/R_RTOS_inc.h"
 typedef uint8_t OsCode;
 
 
@@ -1527,7 +1555,7 @@ typedef uint8_t RetCode;
 
 
 typedef uint16_t MemSize;
-# 1457 "../include/R_RTOS_inc.h"
+# 1483 "../include/R_RTOS_inc.h"
 typedef struct gStruc_OS_FLAGS
 {
     volatile uint8_t g_DispatchFlag :2;
@@ -1536,7 +1564,7 @@ typedef struct gStruc_OS_FLAGS
     volatile uint8_t gLPExit :1;
     volatile uint8_t gWokenUp :1;
 } BitsOSFlags;
-# 1476 "../include/R_RTOS_inc.h"
+# 1502 "../include/R_RTOS_inc.h"
 typedef enum svcCode
 {
     SVC_OS_START = (uint8_t) 0x0u,
@@ -1578,20 +1606,23 @@ typedef enum svcCode
 
 
 #define MEM_OBJECTS_SEM (uint8_t)0x4u
-# 29 "../include/R_RTOS_sem.h"
+#define MEM_OBJECTS_MTX (uint8_t)0x4u
+
+#define AMOUNT_OF_MTXS (uint8_t)0x4u
+# 32 "../include/R_RTOS_sem.h"
 RetCode sem_InitSems( void );
-# 50 "../include/R_RTOS_sem.h"
+# 53 "../include/R_RTOS_sem.h"
 RetCode sem_TakeSem(
                      PTskTCB const tsk,
                      const SemNr semNr,
                      const SysTicks maxSysTicksToWait );
-# 66 "../include/R_RTOS_sem.h"
+# 69 "../include/R_RTOS_sem.h"
 RetCode sem_GiveSem( PTskTCB const tsk, const SemNr semNr );
-# 77 "../include/R_RTOS_sem.h"
+# 80 "../include/R_RTOS_sem.h"
 RetCode sem_GiveUpOnSem( PTskTCB const tsk );
-# 86 "../include/R_RTOS_sem.h"
+# 89 "../include/R_RTOS_sem.h"
 RetCode sem_DeleteTskSemQ( PTskTCB const tsk );
-# 51 "../source/R_RTOS/R_RTOS_sem.c" 2
+# 53 "../source/R_RTOS/R_RTOS_sem.c" 2
 # 1 "../include/R_RTOS_task.h" 1
 # 10 "../include/R_RTOS_task.h"
 #define HEADERS_R_RTOS_TASK_H_ 
@@ -1618,7 +1649,7 @@ RetCode tsk_SetInactive( PTskTCB const tsk, TskState tskInactvState );
 RetCode tsk_ActvTsk( PTskTCB const tsk );
 
 RetCode tsk_ChngePrio( PTskTCB const tsk, const TskPrio newTskPrio );
-# 52 "../source/R_RTOS/R_RTOS_sem.c" 2
+# 54 "../source/R_RTOS/R_RTOS_sem.c" 2
 
 # 1 "../include/R_RTOS_memMngr.h" 1
 # 14 "../include/R_RTOS_memMngr.h"
@@ -1923,7 +1954,7 @@ RetCode memMngr_MemPoolMalloc( void ** ptrToMem, const MemPoolID memPoolID );
 
 
 RetCode memMngr_MemPoolFree( void * ptrToMem, const MemPoolID memPoolID );
-# 54 "../source/R_RTOS/R_RTOS_sem.c" 2
+# 56 "../source/R_RTOS/R_RTOS_sem.c" 2
 
 
 extern TskTCB tsk_AR[((uint8_t)0xBu)];
@@ -1936,33 +1967,57 @@ static Sem ar_Sems[(uint8_t)0x6u ];
 
 
 
+static Mtx ar_Mtxs[(uint8_t)0x4u ];
+
+
+
+
 static MemPoolID memPoolID_SEM;
+
+static MemPoolID memPoolID_MTX;
 
 RetCode sem_InitSems( void )
 {
     uint8_t i = (uint8_t) 0x0u;
     for ( ; i < (uint8_t)0x6u ; ++i )
     {
-        ar_Sems[i].semOccTskID = ((TskID)0x0u);
-        ar_Sems[i].semQTskID = ((TskID)0x0u);
-        ar_Sems[i].svdPrio = TSK_PRIO_ERROR;
-        ar_Sems[i].takenCntr = (SemCntr) 0x0u;
+
+
+
+
+
     }
     memMngr_CreateMemPool( sizeof(SyncEle), (uint8_t)0x4u, &memPoolID_SEM );
     return ((RetCode)0x1u);
 }
-# 92 "../source/R_RTOS/R_RTOS_sem.c"
-static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
+
+
+RetCode mtx_InitMtxs( void )
 {
-    if ( ( (uint32_t) pSem == (uint32_t) ((void *)0x0u) ) || ( (uint32_t) pTskToIns
-            == (uint32_t) ((void *)0x0u) ) )
+    uint8_t i = (uint8_t) 0x0u;
+    for ( ; i < (uint8_t)0x4u ; ++i )
+    {
+        ar_Mtxs[i].mtxOccTskID = ((TskID)0x0u);
+        ar_Mtxs[i].mtxQStrtTskID = ((TskID)0x0u);
+        ar_Mtxs[i].svdTskPrio = TSK_PRIO_ERROR;
+    }
+    memMngr_CreateMemPool( sizeof(SyncEle), (uint8_t)0x4u, &memPoolID_MTX );
+    return ((RetCode)0x1u);
+}
+
+static RetCode mtx_InsertTskMtxQ( PMtx pMtx, PTskTCB pTskToIns )
+{
+
+    if ( ( (uint32_t) pMtx == ( uint32_t ) ((void *)0x0u) ) || ( (uint32_t) pTskToIns
+            == ( uint32_t ) ((void *)0x0u) ) )
         return ((RetCode)0x0u);
 
-    if ( pSem->semQTskID == ((TskID)0x0u) )
+
+    if ( pMtx->mtxQStrtTskID == ((TskID)0x0u) )
     {
 
 
-        pSem->semQTskID = pTskToIns->tskID;
+        pMtx->mtxQStrtTskID = pTskToIns->tskID;
 
         pTskToIns->nxtTsk = ((TskID)0x0u);
         pTskToIns->prvTsk = ((TskID)0x0u);
@@ -1970,7 +2025,7 @@ static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
     else
     {
 
-        PTskTCB curTsk = &tsk_AR[pSem->semQTskID];
+        PTskTCB curTsk = &tsk_AR[pMtx->mtxQStrtTskID];
         while ( curTsk->tskPrio >= pTskToIns->tskPrio )
         {
             if ( curTsk->nxtTsk == ((TskID)0x0u) )
@@ -1987,165 +2042,114 @@ static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
     return ((RetCode)0x1u);
 }
 
-static RetCode sem_GetNextTskSemQ( PSem pSem )
+static RetCode mtx_GetNextTskMtxQ( PMtx pMtx )
 {
-    if ( (uint32_t) pSem == (uint32_t) ((void *)0x0u) )
+
+    if ( (uint32_t) pMtx == ( uint32_t ) ((void *)0x0u) )
     {
 
         return ((RetCode)0x0u);
     }
 
-    pSem->semOccTskID = pSem->semQTskID;
 
-    if ( pSem->semQTskID != ((TskID)0x0u) )
+    pMtx->mtxOccTskID = pMtx->mtxQStrtTskID;
+
+    if ( pMtx->mtxQStrtTskID != ((TskID)0x0u) )
     {
-        PTskTCB nxtTsk = &tsk_AR[pSem->semQTskID];
-        pSem->semQTskID = nxtTsk->nxtTsk;
-        pSem->svdPrio = nxtTsk->tskPrio;
+        PTskTCB nxtTsk = &tsk_AR[pMtx->mtxQStrtTskID];
+        pMtx->mtxQStrtTskID = nxtTsk->nxtTsk;
+        pMtx->svdTskPrio = nxtTsk->tskPrio;
         tsk_ClrEvt( nxtTsk, nxtTsk->tskSync );
-        memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_SEM );
-        nxtTsk->tskSync = (PSyncEle)((void *)0x0u);
+        memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_MTX );
+        nxtTsk->tskSync = (PSyncEle) ((void *)0x0u);
     }
-
-    --( pSem->takenCntr );
 
     return ((RetCode)0x1u);
 }
 
-
-RetCode sem_TakeSem(
-                    PTskTCB const tsk,
-                     const SemNr semNr,
+RetCode mtx_TakeMtx(
+                     PTskTCB const tsk,
+                     const MtxNr mtxNr,
                      const SysTicks maxSysTicksToWait )
 {
-    if ( semNr >= (uint8_t)0x6u )
+
+    if ( mtxNr >= (uint8_t)0x4u )
         return ((RetCode)0x0u);
 
-    PSem sem = &ar_Sems[semNr];
 
-    if ( sem->takenCntr != (uint8_t) 0x0u )
+    PMtx pMtx = &ar_Mtxs[mtxNr];
+
+
+    if ( pMtx->mtxOccTskID != ((TskID)0x0u) )
     {
 
-        if ( (uint32_t) tsk->tskSync != (uint32_t) ((void *)0x0u) )
+
+        if ( (uint32_t) tsk->tskSync != ( uint32_t ) ((void *)0x0u) )
             return ((RetCode)0x0u);
 
 
-        if ( sem->semOccTskID == tsk->tskID )
-        {
-            return ((RetCode)0x0u);
-        }
-
-
-
-        PSyncEle semSync;
-        memMngr_MemPoolMalloc( &semSync, memPoolID_SEM );
-        if ( (uint32_t) semSync == (uint32_t) ((void *)0x0u) )
+        PSyncEle mtxSync;
+        memMngr_MemPoolMalloc( &mtxSync, memPoolID_MTX );
+        if ( (uint32_t) mtxSync == ( uint32_t ) ((void *)0x0u) )
         {
             tsk->tskState = TSK_STATE_ERROR;
             return ((RetCode)0x0u);
         }
 
 
-        semSync->syncEleID = semNr;
-        semSync->syncEleType = SyncEle_TYPE_SEM;
+        mtxSync->syncEleID = mtxNr;
+        mtxSync->syncEleType = SyncEle_TYPE_MTX;
 
-        tsk->tskSync = semSync;
-        tsk_SetEvt( tsk, semSync );
+        tsk->tskSync = mtxSync;
+        tsk_SetEvt( tsk, mtxSync );
 
-        PTskTCB occTsk = &( tsk_AR[sem->semOccTskID] );
+        PTskTCB occTsk = &( tsk_AR[pMtx->mtxOccTskID] );
         if ( occTsk->tskPrio < tsk->tskPrio )
         {
 
             tsk_ChngePrio( occTsk, tsk->tskPrio );
         }
-        return sem_InsertTskSemQ( sem, tsk );
+        return sem_InsertTskSemQ( pMtx, tsk );
     }
     else
     {
-        ++( sem->takenCntr );
-        sem->semOccTskID = tsk->tskID;
-        sem->svdPrio = tsk->tskPrio;
-        sem->semQTskID = ((TskID)0x0u);
+        pMtx->mtxOccTskID = tsk->tskID;
+        pMtx->svdTskPrio = tsk->tskPrio;
+
+        pMtx->mtxQStrtTskID = ((TskID)0x0u);
         return ((RetCode)0x1u);
     }
 }
 
-RetCode sem_GiveSem( PTskTCB const tsk, const SemNr semNr )
+RetCode mtx_GiveMtx( PTskTCB const tsk, const MtxNr mtxNr )
 {
-    if ( semNr >= (uint8_t)0x6u )
+
+    if ( mtxNr >= (uint8_t)0x4u )
         return ((RetCode)0x0u);
 
-    PSem sem = &( ar_Sems[semNr] );
 
-    if ( sem->takenCntr == (uint8_t) 0x0u )
+    PMtx pMtx = &( ar_Mtxs[mtxNr] );
+
+    if ( pMtx->mtxOccTskID != tsk->tskID )
         return ((RetCode)0x0u);
 
-    if ( sem->semOccTskID == ((TskID)0x0u) )
-        return ((RetCode)0x0u);
-
-    if ( sem->semOccTskID != tsk->tskID )
-        return ((RetCode)0x0u);
-
-    if ( tsk->tskPrio != sem->svdPrio )
+    if ( tsk->tskPrio != pMtx->svdTskPrio )
     {
-        tsk_ChngePrio( tsk, sem->svdPrio );
+        tsk_ChngePrio( tsk, pMtx->svdTskPrio );
     }
 
-    return sem_GetNextTskSemQ( sem );
+    return mtx_GetNextTskMtxQ( pMtx );
 }
 
 RetCode sem_GiveUpOnSem( PTskTCB const tsk )
 {
-    PSem sem;
-    uint8_t semArCnt = (uint8_t) 0x0u;
-
-    for ( ; semArCnt < (uint8_t)0x6u ; semArCnt++ )
-    {
-        sem = &ar_Sems[semArCnt];
-
-        if ( sem->takenCntr )
-        {
-            if ( sem->semOccTskID == tsk->tskID )
-            {
-
-                sem_GetNextTskSemQ( sem );
-            }
-        }
-    }
+# 262 "../source/R_RTOS/R_RTOS_sem.c"
     return ((RetCode)0x1u);
 }
 
 
-
 RetCode sem_DeleteTskSemQ( PTskTCB const tsk )
 {
-    if ( ( (uint32_t) tsk->tskSync == (uint32_t) ((void *)0x0u) ) || ( tsk->tskSync->syncEleType
-            != SyncEle_TYPE_SEM ) )
-        return ((RetCode)0x0u);
-
-    PSem sem = &ar_Sems[tsk->tskSync->syncEleID];
-
-    if ( sem->semQTskID == tsk->tskID )
-    {
-        sem->semQTskID = tsk->nxtTsk;
-        if ( tsk->nxtTsk != ((TskID)0x0u) )
-        {
-            tsk_AR[tsk->nxtTsk].prvTsk = ((TskID)0x0u);
-        }
-    }
-    else
-    {
-        if ( tsk->nxtTsk != ((TskID)0x0u) )
-        {
-            tsk_AR[tsk->nxtTsk].prvTsk = tsk->prvTsk;
-        }
-        if ( tsk->prvTsk != ((TskID)0x0u) )
-        {
-            tsk_AR[tsk->prvTsk].nxtTsk = tsk->nxtTsk;
-        }
-    }
-
-    memMngr_MemPoolFree( tsk->tskSync, memPoolID_SEM );
-
+# 297 "../source/R_RTOS/R_RTOS_sem.c"
     return ((RetCode)0x1u);
 }

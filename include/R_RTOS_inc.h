@@ -433,6 +433,11 @@ typedef union partID
  */
 typedef uint8_t SemNr;
 
+/** \typedef MtxNr
+ *  \brief   Number of a Mutex.
+ */
+typedef uint8_t MtxNr;
+
 /** \typedef SemCntr
  *  \brief Used as a counter variable for semaphores.
  */
@@ -759,8 +764,10 @@ typedef enum syncEleType
     SyncEle_TYPE_NOID = (uint8_t) 0x0u,//!< No ID of the synchronization element (Probably error)
     SyncEle_TYPE_TMR = (uint8_t) 0x1u, //!< ID of the software timer synchronization mechanism
     SyncEle_TYPE_EVT = (uint8_t) 0x2u, //!< ID of the event synchronization mechanism
-    SyncEle_TYPE_SEM = (uint8_t) 0x3u, //!< ID of the semaphore synchronization mechanism
-    SyncEle_TYPE_MNTR = (uint8_t) 0x4u //!< ID of the monitor synchronization mechanism
+    SyncEle_TYPE_BinSEM = (uint8_t) 0x3u, //!< ID of the binary semaphore synchronization mechanism
+    SyncEle_TYPE_CntSEM = (uint8_t) 0x4u, //!< ID of the counting semaphore synchronization mechanism
+    SyncEle_TYPE_MTX = (uint8_t) 0x5u, //!< ID of the mutex synchronization mechanism
+    SyncEle_TYPE_MNTR = (uint8_t) 0x6u //!< ID of the monitor synchronization mechanism
 } SyncEleType;
 /* END SYNC */
 /*
@@ -1088,6 +1095,12 @@ typedef struct sysFkt
 /* END FKT */
 /* SEMAPHORES */
 
+typedef enum semTypeEnum
+{
+    SemBin = (uint8_t)0x0u,
+    SemCnt = (uint8_t)0x1u
+}SemType;
+
 /** \struct semStruc
  *  \brief Struct for semaphore maintenance.
  *
@@ -1101,11 +1114,23 @@ typedef struct sysFkt
  */
 typedef struct semStruc
 {
-    TskID semQTskID;        //!< TskID of the first task in the queue
-    TskID semOccTskID;    //!< TskID of the task currently occupying the semaphore
-    TskPrio svdPrio;    //!< Initial priority of the task currently occupying the semaphore
-    SemCntr takenCntr;      //!< Indicates whether the semaphore is taken or not
+    TskID semQStrtTskID;        //!< TskID of the first task in the waiting queue
+    TskPrio svdTskPrio;         //!< Initial priority of the task currently occupying the semaphore
+    SemType semType;            //!< Indicates the type of semaphore (binary or counting)
+    union
+    {
+        SemCntr semCntrSig;     //!< Counting Semaphore - signaling counter
+        SemCntr semBinSig;      //!< Binary Semaphore - signaled/not signaled
+    }semSignal;  //!< signaling counter for each type of semaphore
 } Sem, *PSem;
+
+typedef struct mtxStruc
+{
+    TskID mtxQStrtTskID;    //!< TskID of the first task in the waiting queue
+    TskID mtxOccTskID;      //!< TskID of the task currently occupying the semaphore
+    TskPrio svdTskPrio;     //!< Saved task priority of the occupying task
+    uint8_t isOcc;  //ToDO Do we really need this? might as well check mtxOccTskID for valid task ID...
+}Mtx, *PMtx;
 
 /* END SEMAPHORES */
 
@@ -1114,6 +1139,7 @@ typedef struct semStruc
  *  \brief Struct for Event maintenance.
  *
  *  Contains information about the event.
+ *  \note The design limits the number of entities, which can be notified by the event, to 32.
  */
 /** \typedef Evt
  *  \brief evtStruc
@@ -1266,27 +1292,27 @@ typedef struct syncEleStruc
  */
 typedef struct tskTCB
 {
-    volatile StackPtrT pStckPtr;/*4*/    //!< current stack pointer
-    StackPtrT pStckTop;/*4*/            //!< top of the stack
+    /*STCK*/volatile StackPtrT pStckPtr;/*4*/    //!< current stack pointer
+    /*STCK*/StackPtrT pStckTop;/*4*/            //!< top of the stack
 
-    TskStartAddr pTskStrt;/*4*/        //!< Pointer to task's function's address
-    TskEndAddr pTskEnd;/*4*/    //!< Pointer to task's ending function, which is executed at the end of the task (usually tsk_EndTheTask)
+    /*STAT*/TskStartAddr pTskStrt;/*4*/        //!< Pointer to task's function's address
+    /*STAT*/TskEndAddr pTskEnd;/*4*/    //!< Pointer to task's ending function, which is executed at the end of the task (usually tsk_EndTheTask)
 
-    volatile PTskMB tskMailBox;/*4*/     //!< pointer to task mailbox
+    /*MSGG*/volatile PTskMB tskMailBox;/*4*/     //!< pointer to task mailbox
 
-    volatile PSysTickTMR sysTckTmr;/*4*/    //!< Pointer to SysTickTMR for various SysTick events
-    volatile PSyncEle tskSync;/*4*/    //!< Pointer to SyncEle the task is currently being blocked by
+    /*SYNC*/volatile PSysTickTMR sysTckTmr;/*4*/    //!< Pointer to SysTickTMR for various SysTick events
+    /*SYNC*/volatile PSyncEle tskSync;/*4*/    //!< Pointer to SyncEle the task is currently being blocked by
 
-    StackSize stckSze;/*2*/        //!< size of the task's stack
+    /*STCK*/StackSize stckSze;/*2*/        //!< size of the task's stack
 
-    volatile TskSettings tskSets;/*1*/ //!< Settings for the task
+    /*STAT*/volatile TskSettings tskSets;/*1*/ //!< Settings for the task
 
-    volatile TskPrio tskPrio;/*1*/       //!< Current priority of the task
-    volatile TskState tskState;/*1*/     //!< Current state of the task
+    /*SCHD*/volatile TskPrio tskPrio;/*1*/       //!< Current priority of the task
+    /*STAT*/volatile TskState tskState;/*1*/     //!< Current state of the task
 
-    TskID tskID;/*1*/                    //!< ID of the task
-    volatile TskID nxtTsk;/*1*/         //!< TskID of the child task to the left
-    volatile TskID prvTsk;/*1*/        //!< TskID of the child task to the right
+    /*SCHD*/TskID tskID;/*1*/                    //!< ID of the task
+    /*SCHD*/volatile TskID nxtTsk;/*1*/         //!< TskID of the child task to the left
+    /*SCHD*/volatile TskID prvTsk;/*1*/        //!< TskID of the child task to the right
 } TskTCB, *PTskTCB;/*36*/
 /* END TASK */
 
