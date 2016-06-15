@@ -21,7 +21,7 @@
 	.thumb_func
 	.type	main, %function
 main:
-.LFB62:
+.LFB64:
 	.file 1 "../source/main.c"
 	.loc 1 24 0
 	.cfi_startproc
@@ -68,7 +68,7 @@ main:
 .LBE13:
 .LBE12:
 	.cfi_endproc
-.LFE62:
+.LFE64:
 	.size	main, .-main
 	.section	.text.portInit,"ax",%progbits
 	.align	2
@@ -77,7 +77,7 @@ main:
 	.thumb_func
 	.type	portInit, %function
 portInit:
-.LFB63:
+.LFB65:
 	.loc 1 51 0
 	.cfi_startproc
 	push	{r7, lr}
@@ -194,7 +194,7 @@ portInit:
 	.word	4116
 	.word	1074786304
 	.cfi_endproc
-.LFE63:
+.LFE65:
 	.size	portInit, .-portInit
 	.text
 .Letext0:
@@ -205,15 +205,15 @@ portInit:
 	.file 8 "../include/R_RTOS_inc.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x263
+	.4byte	0x26f
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF4423
-	.byte	0x1
-	.4byte	.LASF4424
 	.4byte	.LASF4425
+	.byte	0x1
+	.4byte	.LASF4426
+	.4byte	.LASF4427
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -349,11 +349,11 @@ portInit:
 	.byte	0x1a
 	.4byte	0x9b
 	.uleb128 0xa
-	.4byte	.LASF4426
+	.4byte	.LASF4428
 	.byte	0x1
 	.byte	0x8
-	.2byte	0x5c4
-	.4byte	0x1f4
+	.2byte	0x5e6
+	.4byte	0x200
 	.uleb128 0xb
 	.4byte	.LASF4390
 	.sleb128 0
@@ -443,58 +443,64 @@ portInit:
 	.sleb128 28
 	.uleb128 0xb
 	.4byte	.LASF4419
+	.sleb128 29
+	.uleb128 0xb
+	.4byte	.LASF4420
+	.sleb128 30
+	.uleb128 0xb
+	.4byte	.LASF4421
 	.sleb128 255
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF4420
+	.4byte	.LASF4422
 	.byte	0x2
 	.2byte	0x148
 	.byte	0x3
 	.uleb128 0xc
-	.4byte	.LASF4421
+	.4byte	.LASF4423
 	.byte	0x2
 	.2byte	0x13d
 	.byte	0x3
 	.uleb128 0xd
-	.4byte	.LASF4422
+	.4byte	.LASF4424
 	.byte	0x3
 	.byte	0x57
 	.byte	0x3
 	.uleb128 0xe
-	.4byte	.LASF4427
+	.4byte	.LASF4429
 	.byte	0x1
 	.byte	0x17
 	.4byte	0x82
-	.4byte	.LFB62
-	.4byte	.LFE62-.LFB62
+	.4byte	.LFB64
+	.4byte	.LFE64-.LFB64
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x255
+	.4byte	0x261
 	.uleb128 0xf
-	.4byte	0x1f4
+	.4byte	0x200
 	.4byte	.LBB8
 	.4byte	.LBE8-.LBB8
 	.byte	0x1
 	.byte	0x19
 	.uleb128 0xf
-	.4byte	0x1fd
+	.4byte	0x209
 	.4byte	.LBB10
 	.4byte	.LBE10-.LBB10
 	.byte	0x1
 	.byte	0x25
 	.uleb128 0xf
-	.4byte	0x206
+	.4byte	0x212
 	.4byte	.LBB12
 	.4byte	.LBE12-.LBB12
 	.byte	0x1
 	.byte	0x28
 	.byte	0
 	.uleb128 0x10
-	.4byte	.LASF4428
+	.4byte	.LASF4430
 	.byte	0x1
 	.byte	0x32
-	.4byte	.LFB63
-	.4byte	.LFE63-.LFB63
+	.4byte	.LFB65
+	.4byte	.LFE65-.LFB65
 	.uleb128 0x1
 	.byte	0x9c
 	.byte	0
@@ -739,18 +745,18 @@ portInit:
 	.byte	0
 	.2byte	0
 	.2byte	0
-	.4byte	.LFB62
-	.4byte	.LFE62-.LFB62
-	.4byte	.LFB63
-	.4byte	.LFE63-.LFB63
+	.4byte	.LFB64
+	.4byte	.LFE64-.LFB64
+	.4byte	.LFB65
+	.4byte	.LFE65-.LFB65
 	.4byte	0
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
 .Ldebug_ranges0:
-	.4byte	.LFB62
-	.4byte	.LFE62
-	.4byte	.LFB63
-	.4byte	.LFE63
+	.4byte	.LFB64
+	.4byte	.LFE64
+	.4byte	.LFB65
+	.4byte	.LFE65
 	.4byte	0
 	.4byte	0
 	.section	.debug_macro,"",%progbits
@@ -13806,7 +13812,7 @@ portInit:
 	.uleb128 0xb5
 	.4byte	.LASF4289
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.926edc6cbd061ce8c711a04429e20efd,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.e20ad093e597e8d0ba535fac3f58656b,comdat
 .Ldebug_macro14:
 	.2byte	0x4
 	.byte	0
@@ -13952,67 +13958,67 @@ portInit:
 	.uleb128 0x13f
 	.4byte	.LASF4337
 	.byte	0x5
-	.uleb128 0x53b
+	.uleb128 0x55d
 	.4byte	.LASF4338
 	.byte	0x5
-	.uleb128 0x540
+	.uleb128 0x562
 	.4byte	.LASF4339
 	.byte	0x5
-	.uleb128 0x547
+	.uleb128 0x569
 	.4byte	.LASF4340
 	.byte	0x5
-	.uleb128 0x54a
+	.uleb128 0x56c
 	.4byte	.LASF4341
 	.byte	0x5
-	.uleb128 0x558
+	.uleb128 0x57a
 	.4byte	.LASF4342
 	.byte	0x5
-	.uleb128 0x55d
+	.uleb128 0x57f
 	.4byte	.LASF4343
 	.byte	0x5
-	.uleb128 0x566
+	.uleb128 0x588
 	.4byte	.LASF4344
 	.byte	0x5
-	.uleb128 0x56a
+	.uleb128 0x58c
 	.4byte	.LASF4345
 	.byte	0x5
-	.uleb128 0x56e
+	.uleb128 0x590
 	.4byte	.LASF4346
 	.byte	0x5
-	.uleb128 0x572
+	.uleb128 0x594
 	.4byte	.LASF4347
 	.byte	0x5
-	.uleb128 0x576
+	.uleb128 0x598
 	.4byte	.LASF4348
 	.byte	0x5
-	.uleb128 0x57a
+	.uleb128 0x59c
 	.4byte	.LASF4349
 	.byte	0x5
-	.uleb128 0x57e
+	.uleb128 0x5a0
 	.4byte	.LASF4350
 	.byte	0x5
-	.uleb128 0x582
+	.uleb128 0x5a4
 	.4byte	.LASF4351
 	.byte	0x5
-	.uleb128 0x586
+	.uleb128 0x5a8
 	.4byte	.LASF4352
 	.byte	0x5
-	.uleb128 0x58a
+	.uleb128 0x5ac
 	.4byte	.LASF4353
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x5b0
 	.4byte	.LASF4354
 	.byte	0x5
-	.uleb128 0x592
+	.uleb128 0x5b4
 	.4byte	.LASF4355
 	.byte	0x5
-	.uleb128 0x596
+	.uleb128 0x5b8
 	.4byte	.LASF4356
 	.byte	0x5
-	.uleb128 0x59a
+	.uleb128 0x5bc
 	.4byte	.LASF4357
 	.byte	0x5
-	.uleb128 0x59e
+	.uleb128 0x5c0
 	.4byte	.LASF4358
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_services.h.28.43fdbccf94f85d01bd038cc8d5c88380,comdat
@@ -14543,6 +14549,8 @@ portInit:
 	.ascii	"MCG_C2_IRCS_SHIFT 0\000"
 .LASF88:
 	.ascii	"__UINT16_MAX__ 65535\000"
+.LASF2134:
+	.ascii	"MTB_PERIPHID_PERIPHID_MASK 0xFFFFFFFFu\000"
 .LASF4063:
 	.ascii	"UARTLP_S2_RWUID_SHIFT UART0_S2_RWUID_SHIFT\000"
 .LASF2843:
@@ -14669,9 +14677,8 @@ portInit:
 	.ascii	"RTC_CR_SWR_MASK 0x1u\000"
 .LASF1650:
 	.ascii	"LLWU_F1_WUF3_MASK 0x8u\000"
-.LASF1046:
-	.ascii	"DMA_DCR_ERQ(x) (((uint32_t)(((uint32_t)(x))<<DMA_DC"
-	.ascii	"R_ERQ_SHIFT))&DMA_DCR_ERQ_MASK)\000"
+.LASF1664:
+	.ascii	"LLWU_F1_WUF6_WIDTH 1\000"
 .LASF1928:
 	.ascii	"MCG_BASE_ADDRS { MCG_BASE }\000"
 .LASF1256:
@@ -14750,7 +14757,7 @@ portInit:
 	.ascii	"LLWU_FILT1_REG(base) ((base)->FILT1)\000"
 .LASF3268:
 	.ascii	"SMC_PMCTRL_RUNM_WIDTH 2\000"
-.LASF4409:
+.LASF4411:
 	.ascii	"SVC_MSGQ_MSG_READ\000"
 .LASF1588:
 	.ascii	"LLWU_PE1_WUPE3_WIDTH 2\000"
@@ -14768,9 +14775,8 @@ portInit:
 	.ascii	"SPI_D_Bits_WIDTH 8\000"
 .LASF208:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
-.LASF1717:
-	.ascii	"LLWU_FILT2_FILTSEL(x) (((uint8_t)(((uint8_t)(x))<<L"
-	.ascii	"LWU_FILT2_FILTSEL_SHIFT))&LLWU_FILT2_FILTSEL_MASK)\000"
+.LASF3683:
+	.ascii	"UART0_BDH_SBNS_SHIFT 5\000"
 .LASF1264:
 	.ascii	"FTFA_FCCOBB_CCOBn_SHIFT 0\000"
 .LASF3347:
@@ -14796,8 +14802,6 @@ portInit:
 	.ascii	"DMA_DCR_SSIZE_WIDTH 2\000"
 .LASF4154:
 	.ascii	"MCM_BASES MCM_BASE_PTRS\000"
-.LASF4304:
-	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x6u\000"
 .LASF311:
 	.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 1\000"
 .LASF3569:
@@ -14861,7 +14865,7 @@ portInit:
 	.ascii	"LLWU_F1_WUF0_MASK 0x1u\000"
 .LASF2642:
 	.ascii	"PORTA_PCR11 PORT_PCR_REG(PORTA,11)\000"
-.LASF4428:
+.LASF4430:
 	.ascii	"portInit\000"
 .LASF2157:
 	.ascii	"MTB_DEVICEARCH MTB_DEVICEARCH_REG(MTB)\000"
@@ -15019,8 +15023,8 @@ portInit:
 	.ascii	"FGPIOA_BASE (0xF80FF000u)\000"
 .LASF3443:
 	.ascii	"TPM_MOD_MOD_WIDTH 16\000"
-.LASF2584:
-	.ascii	"PORT_PCR_PFE_SHIFT 4\000"
+.LASF1883:
+	.ascii	"MCG_S_OSCINIT0_WIDTH 1\000"
 .LASF3152:
 	.ascii	"SIM_SCGC6_ADC0_WIDTH 1\000"
 .LASF975:
@@ -15178,7 +15182,7 @@ portInit:
 	.ascii	"SysTick ((SysTick_Type *) SysTick_BASE )\000"
 .LASF2833:
 	.ascii	"ROM_BASE_ADDRS { ROM_BASE }\000"
-.LASF4399:
+.LASF4401:
 	.ascii	"SVC_EVT_SEND\000"
 .LASF2112:
 	.ascii	"MTB_AUTHSTAT_BIT1_WIDTH 1\000"
@@ -15218,16 +15222,16 @@ portInit:
 .LASF1693:
 	.ascii	"LLWU_F3_MWUF5(x) (((uint8_t)(((uint8_t)(x))<<LLWU_F"
 	.ascii	"3_MWUF5_SHIFT))&LLWU_F3_MWUF5_MASK)\000"
-.LASF4404:
+.LASF4406:
 	.ascii	"SVC_MSGQ_DEL_Q\000"
 .LASF4340:
 	.ascii	"MAX_TASKS NR_OF_TSKS\000"
 .LASF765:
 	.ascii	"CMP_CR1_OPE_WIDTH 1\000"
-.LASF4407:
+.LASF4409:
 	.ascii	"SVC_MSGQ_REG_SYS_SUB\000"
-.LASF1334:
-	.ascii	"GPIO_PCOR_PTCO_MASK 0xFFFFFFFFu\000"
+.LASF0:
+	.ascii	"__STDC__ 1\000"
 .LASF2158:
 	.ascii	"MTB_DEVICECFG MTB_DEVICECFG_REG(MTB)\000"
 .LASF3771:
@@ -15245,8 +15249,6 @@ portInit:
 	.ascii	"NV_FPROT1 NV_FPROT1_REG(FTFA_FlashConfig)\000"
 .LASF3108:
 	.ascii	"SIM_SCGC4_CMP_WIDTH 1\000"
-.LASF660:
-	.ascii	"ADC_SC2_ADACT_SHIFT 7\000"
 .LASF2100:
 	.ascii	"MTB_LOCKACCESS_LOCKACCESS_WIDTH 32\000"
 .LASF2126:
@@ -15379,6 +15381,8 @@ portInit:
 	.ascii	"MTBDWT_BASE_ADDRS { MTBDWT_BASE }\000"
 .LASF201:
 	.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
+.LASF3966:
+	.ascii	"MCM_MATCR_RO1_MASK This_symbol_has_been_deprecated\000"
 .LASF839:
 	.ascii	"CMP_MUXCR_PSTM_MASK 0x80u\000"
 .LASF2998:
@@ -15438,7 +15442,7 @@ portInit:
 .LASF1118:
 	.ascii	"FGPIO_PSOR_PTSO(x) (((uint32_t)(((uint32_t)(x))<<FG"
 	.ascii	"PIO_PSOR_PTSO_SHIFT))&FGPIO_PSOR_PTSO_MASK)\000"
-.LASF4423:
+.LASF4425:
 	.ascii	"GNU C 4.8.4 20140725 (release) [ARM/embedded-4_8-br"
 	.ascii	"anch revision 213147] -fpreprocessed -mcpu=cortex-m"
 	.ascii	"0plus -mthumb -g3 -std=c99 -fmessage-length=0 -fsig"
@@ -15456,8 +15460,10 @@ portInit:
 	.ascii	"SIM_FCFG1_FLASHDOZE_SHIFT 1\000"
 .LASF2672:
 	.ascii	"PORTB_PCR6 PORT_PCR_REG(PORTB,6)\000"
-.LASF3843:
-	.ascii	"UART0_C3_TXINV_SHIFT 4\000"
+.LASF2097:
+	.ascii	"MTB_TAGCLEAR_TAGCLEAR(x) (((uint32_t)(((uint32_t)(x"
+	.ascii	"))<<MTB_TAGCLEAR_TAGCLEAR_SHIFT))&MTB_TAGCLEAR_TAGC"
+	.ascii	"LEAR_MASK)\000"
 .LASF3664:
 	.ascii	"TSI0_DATA TSI_DATA_REG(TSI0)\000"
 .LASF976:
@@ -15474,7 +15480,7 @@ portInit:
 	.ascii	"SIM_UIDMH_REG(base) ((base)->UIDMH)\000"
 .LASF1381:
 	.ascii	"I2C_SLTL_REG(base) ((base)->SLTL)\000"
-.LASF4403:
+.LASF4405:
 	.ascii	"SVC_MSGQ_CRT_Q\000"
 .LASF4121:
 	.ascii	"UARTLP_C5_BOTHEDGE_MASK UART0_C5_BOTHEDGE_MASK\000"
@@ -15678,10 +15684,12 @@ portInit:
 	.ascii	"NV_BACKKEY3_KEY_SHIFT 0\000"
 .LASF2536:
 	.ascii	"PMC_LVDSC2_LVWACK_WIDTH 1\000"
-.LASF257:
-	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
+.LASF660:
+	.ascii	"ADC_SC2_ADACT_SHIFT 7\000"
 .LASF170:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+.LASF4304:
+	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x2u\000"
 .LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
 .LASF3528:
@@ -15724,7 +15732,7 @@ portInit:
 .LASF3141:
 	.ascii	"SIM_SCGC6_PIT(x) (((uint32_t)(((uint32_t)(x))<<SIM_"
 	.ascii	"SCGC6_PIT_SHIFT))&SIM_SCGC6_PIT_MASK)\000"
-.LASF4420:
+.LASF4422:
 	.ascii	"__disable_irq\000"
 .LASF713:
 	.ascii	"ADC_CLP1_CLP1_WIDTH 7\000"
@@ -15853,7 +15861,7 @@ portInit:
 	.ascii	"SIM_SCGC6_DAC0_MASK 0x80000000u\000"
 .LASF4294:
 	.ascii	"ABS(x) (((x)<0) ? (-1*(x)) : (x))\000"
-.LASF4422:
+.LASF4424:
 	.ascii	"svc_os_StartOS\000"
 .LASF1318:
 	.ascii	"FTFA_FPROT1 FTFA_FPROT1_REG(FTFA)\000"
@@ -15880,7 +15888,7 @@ portInit:
 	.ascii	"I2C_A1_AD_MASK 0xFEu\000"
 .LASF1915:
 	.ascii	"MCG_SC_ATME_WIDTH 1\000"
-.LASF4414:
+.LASF4416:
 	.ascii	"SVC_MSGQ_MSG_TAKEALL\000"
 .LASF587:
 	.ascii	"ADC_CFG1_ADICLK_MASK 0x3u\000"
@@ -16317,13 +16325,10 @@ portInit:
 	.ascii	"PORTB_PCR11 PORT_PCR_REG(PORTB,11)\000"
 .LASF592:
 	.ascii	"ADC_CFG1_MODE_SHIFT 2\000"
-.LASF881:
-	.ascii	"DAC_C0_DACBBIEN(x) (((uint8_t)(((uint8_t)(x))<<DAC_"
-	.ascii	"C0_DACBBIEN_SHIFT))&DAC_C0_DACBBIEN_MASK)\000"
 .LASF1361:
 	.ascii	"GPIOA_PTOR GPIO_PTOR_REG(GPIOA)\000"
-.LASF1402:
-	.ascii	"I2C_C1_RSTA_MASK 0x4u\000"
+.LASF4397:
+	.ascii	"SVC_MTX_TAKE\000"
 .LASF1058:
 	.ascii	"DMA_DSR_BCR0 DMA_DSR_BCR_REG(DMA0,0)\000"
 .LASF4046:
@@ -16345,10 +16350,8 @@ portInit:
 	.ascii	"TPM1_CNT TPM_CNT_REG(TPM1)\000"
 .LASF1584:
 	.ascii	"LLWU_PE1_WUPE2_WIDTH 2\000"
-.LASF2097:
-	.ascii	"MTB_TAGCLEAR_TAGCLEAR(x) (((uint32_t)(((uint32_t)(x"
-	.ascii	"))<<MTB_TAGCLEAR_TAGCLEAR_SHIFT))&MTB_TAGCLEAR_TAGC"
-	.ascii	"LEAR_MASK)\000"
+.LASF349:
+	.ascii	"__GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)\000"
 .LASF1558:
 	.ascii	"I2C0_S I2C_S_REG(I2C0)\000"
 .LASF2864:
@@ -16879,7 +16882,7 @@ portInit:
 	.ascii	"LLWU_FILT1_FILTE_MASK 0x60u\000"
 .LASF2322:
 	.ascii	"NV_BACKKEY5_KEY_MASK 0xFFu\000"
-.LASF4427:
+.LASF4429:
 	.ascii	"main\000"
 .LASF903:
 	.ascii	"DAC_C0_DACEN_SHIFT 7\000"
@@ -16887,6 +16890,8 @@ portInit:
 	.ascii	"UART0_BDL_SBR_SHIFT 0\000"
 .LASF61:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
+.LASF2874:
+	.ascii	"RTC_TCR_TCR_MASK 0xFFu\000"
 .LASF2072:
 	.ascii	"MTB_FLOW_AUTOSTOP_WIDTH 1\000"
 .LASF661:
@@ -17033,7 +17038,7 @@ portInit:
 	.ascii	"MCM_PLACR_CFCC_MASK 0x400u\000"
 .LASF3652:
 	.ascii	"TSI_TSHD_THRESL_WIDTH 16\000"
-.LASF4400:
+.LASF4402:
 	.ascii	"SVC_EVT_RECV\000"
 .LASF1036:
 	.ascii	"DMA_DCR_AA_SHIFT 28\000"
@@ -17070,7 +17075,7 @@ portInit:
 	.ascii	"SMB_SIICAEN_SHIFT))&I2C_SMB_SIICAEN_MASK)\000"
 .LASF2448:
 	.ascii	"PIT_MCR_MDIS_SHIFT 1\000"
-.LASF4418:
+.LASF4420:
 	.ascii	"SVC_TRC_OUPUT\000"
 .LASF323:
 	.ascii	"__arm__ 1\000"
@@ -17217,6 +17222,8 @@ portInit:
 	.ascii	"__SHRT_MAX__ 32767\000"
 .LASF1000:
 	.ascii	"DMA_DCR_D_REQ_SHIFT 7\000"
+.LASF2584:
+	.ascii	"PORT_PCR_PFE_SHIFT 4\000"
 .LASF4199:
 	.ascii	"PTB3 ((PortPIN)0x100cu)\000"
 .LASF2663:
@@ -17264,7 +17271,7 @@ portInit:
 .LASF3213:
 	.ascii	"SIM_COPC_COPT(x) (((uint32_t)(((uint32_t)(x))<<SIM_"
 	.ascii	"COPC_COPT_SHIFT))&SIM_COPC_COPT_MASK)\000"
-.LASF4416:
+.LASF4418:
 	.ascii	"SVC_CALL_FKT_PRIV\000"
 .LASF4260:
 	.ascii	"GET_PIN_LVL(pin) GET_PIN_LVL_PORT(pin, ((PORTNR((Po"
@@ -17453,7 +17460,7 @@ portInit:
 .LASF3101:
 	.ascii	"SIM_SCGC4_I2C0(x) (((uint32_t)(((uint32_t)(x))<<SIM"
 	.ascii	"_SCGC4_I2C0_SHIFT))&SIM_SCGC4_I2C0_MASK)\000"
-.LASF4411:
+.LASF4413:
 	.ascii	"SVC_MSGQ_MSG_READALL\000"
 .LASF36:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
@@ -17494,7 +17501,7 @@ portInit:
 .LASF4333:
 	.ascii	"TSK_STATE_IS_WAITING_MNTR(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_WAITING_MNTR)\000"
-.LASF4415:
+.LASF4417:
 	.ascii	"SVC_OS_SCHEDULE\000"
 .LASF2699:
 	.ascii	"PORTB_GPCHR PORT_GPCHR_REG(PORTB)\000"
@@ -17597,6 +17604,8 @@ portInit:
 	.ascii	"ASK)\000"
 .LASF2649:
 	.ascii	"PORTA_PCR18 PORT_PCR_REG(PORTA,18)\000"
+.LASF4398:
+	.ascii	"SVC_MTX_GIVE\000"
 .LASF763:
 	.ascii	"CMP_CR1_OPE_MASK 0x2u\000"
 .LASF2211:
@@ -17942,7 +17951,7 @@ portInit:
 .LASF3205:
 	.ascii	"SIM_COPC_COPW(x) (((uint32_t)(((uint32_t)(x))<<SIM_"
 	.ascii	"COPC_COPW_SHIFT))&SIM_COPC_COPW_MASK)\000"
-.LASF4412:
+.LASF4414:
 	.ascii	"SVC_MSGQ_MSG_TAKE\000"
 .LASF78:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
@@ -18207,6 +18216,8 @@ portInit:
 	.ascii	"ADC0_SC1B ADC_SC1_REG(ADC0,1)\000"
 .LASF2544:
 	.ascii	"PMC_REGSC_BGBE_WIDTH 1\000"
+.LASF3843:
+	.ascii	"UART0_C3_TXINV_SHIFT 4\000"
 .LASF249:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF4136:
@@ -18346,6 +18357,9 @@ portInit:
 	.ascii	"SMC_STOPCTRL SMC_STOPCTRL_REG(SMC)\000"
 .LASF1618:
 	.ascii	"LLWU_ME_WUME3_MASK 0x8u\000"
+.LASF1824:
+	.ascii	"MCG_C1_FRDIV(x) (((uint8_t)(((uint8_t)(x))<<MCG_C1_"
+	.ascii	"FRDIV_SHIFT))&MCG_C1_FRDIV_MASK)\000"
 .LASF2462:
 	.ascii	"PIT_LDVAL_TSV(x) (((uint32_t)(((uint32_t)(x))<<PIT_"
 	.ascii	"LDVAL_TSV_SHIFT))&PIT_LDVAL_TSV_MASK)\000"
@@ -18531,8 +18545,9 @@ portInit:
 	.ascii	"TPM_CnSC_CHIE_MASK 0x40u\000"
 .LASF2382:
 	.ascii	"FTFA_FlashConfig_BASE (0x400u)\000"
-.LASF2691:
-	.ascii	"PORTB_PCR25 PORT_PCR_REG(PORTB,25)\000"
+.LASF881:
+	.ascii	"DAC_C0_DACBBIEN(x) (((uint8_t)(((uint8_t)(x))<<DAC_"
+	.ascii	"C0_DACBBIEN_SHIFT))&DAC_C0_DACBBIEN_MASK)\000"
 .LASF2339:
 	.ascii	"NV_FPROT1_PROT_SHIFT 0\000"
 .LASF3022:
@@ -18674,6 +18689,9 @@ portInit:
 	.ascii	"DMA_DCR_DMOD_MASK 0xF00u\000"
 .LASF848:
 	.ascii	"CMP0_CR0 CMP_CR0_REG(CMP0)\000"
+.LASF1046:
+	.ascii	"DMA_DCR_ERQ(x) (((uint32_t)(((uint32_t)(x))<<DMA_DC"
+	.ascii	"R_ERQ_SHIFT))&DMA_DCR_ERQ_MASK)\000"
 .LASF598:
 	.ascii	"ADC_CFG1_ADLSMP(x) (((uint32_t)(((uint32_t)(x))<<AD"
 	.ascii	"C_CFG1_ADLSMP_SHIFT))&ADC_CFG1_ADLSMP_MASK)\000"
@@ -18835,7 +18853,7 @@ portInit:
 	.ascii	"I2C_SMB_SHTF1_WIDTH 1\000"
 .LASF1994:
 	.ascii	"MCM_PLACR_ESFC_WIDTH 1\000"
-.LASF4405:
+.LASF4407:
 	.ascii	"SVC_MSGQ_REG_PUB\000"
 .LASF4367:
 	.ascii	"unsigned char\000"
@@ -19303,7 +19321,7 @@ portInit:
 	.ascii	"_CPO_CPOREQ_SHIFT))&MCM_CPO_CPOREQ_MASK)\000"
 .LASF2570:
 	.ascii	"PORT_ISFR_REG(base) ((base)->ISFR)\000"
-.LASF4417:
+.LASF4419:
 	.ascii	"SVC_LP_ENTER\000"
 .LASF1749:
 	.ascii	"LPTMR_CSR_TMS(x) (((uint32_t)(((uint32_t)(x))<<LPTM"
@@ -19355,7 +19373,7 @@ portInit:
 	.ascii	"MTBDWT_PERIPHID1 MTBDWT_PERIPHID_REG(MTBDWT,5)\000"
 .LASF3747:
 	.ascii	"UART0_C2_ILIE_SHIFT 4\000"
-.LASF4413:
+.LASF4415:
 	.ascii	"SVC_MSGQ_MSG_TAKEALLNEW\000"
 .LASF3270:
 	.ascii	"SMC_STOPCTRL_VLLSM_MASK 0x7u\000"
@@ -19497,7 +19515,7 @@ portInit:
 	.ascii	"MTB_AUTHSTAT_BIT3_WIDTH 1\000"
 .LASF2856:
 	.ascii	"RTC_TAR_REG(base) ((base)->TAR)\000"
-.LASF4401:
+.LASF4403:
 	.ascii	"SVC_TMR_SET\000"
 .LASF2042:
 	.ascii	"MTB_MASTER_MASK_MASK 0x1Fu\000"
@@ -19598,9 +19616,6 @@ portInit:
 	.ascii	"_SDID_DIEID_SHIFT))&SIM_SDID_DIEID_MASK)\000"
 .LASF4169:
 	.ascii	"UART0_BASES UART0_BASE_PTRS\000"
-.LASF3420:
-	.ascii	"TPM_SC_CMOD(x) (((uint32_t)(((uint32_t)(x))<<TPM_SC"
-	.ascii	"_CMOD_SHIFT))&TPM_SC_CMOD_MASK)\000"
 .LASF3237:
 	.ascii	"SIM_UIDMH SIM_UIDMH_REG(SIM)\000"
 .LASF1109:
@@ -19621,8 +19636,9 @@ portInit:
 	.ascii	"DMA_BASE_PTR (DMA0)\000"
 .LASF3663:
 	.ascii	"TSI0_GENCS TSI_GENCS_REG(TSI0)\000"
-.LASF2874:
-	.ascii	"RTC_TCR_TCR_MASK 0xFFu\000"
+.LASF1717:
+	.ascii	"LLWU_FILT2_FILTSEL(x) (((uint8_t)(((uint8_t)(x))<<L"
+	.ascii	"LWU_FILT2_FILTSEL_SHIFT))&LLWU_FILT2_FILTSEL_MASK)\000"
 .LASF2220:
 	.ascii	"MTBDWT_FCT_MATCHED_MASK 0x1000000u\000"
 .LASF2565:
@@ -19869,6 +19885,8 @@ portInit:
 	.ascii	"SOE_SHIFT))&SPI_C1_SSOE_MASK)\000"
 .LASF863:
 	.ascii	"DAC_DATL_DATA0_SHIFT 0\000"
+.LASF1402:
+	.ascii	"I2C_C1_RSTA_MASK 0x4u\000"
 .LASF2959:
 	.ascii	"RTC_LR_LRL_SHIFT 6\000"
 .LASF66:
@@ -19966,8 +19984,6 @@ portInit:
 	.ascii	"MCG_C4_FCTRIM_WIDTH 4\000"
 .LASF3517:
 	.ascii	"TPM_CONF_CSOT_MASK 0x10000u\000"
-.LASF3683:
-	.ascii	"UART0_BDH_SBNS_SHIFT 5\000"
 .LASF3459:
 	.ascii	"TPM_CnSC_MSA_WIDTH 1\000"
 .LASF330:
@@ -19993,7 +20009,7 @@ portInit:
 	.ascii	"CMP_CR1_INV_MASK 0x8u\000"
 .LASF983:
 	.ascii	"DMA_DSR_BCR_CE_MASK 0x40000000u\000"
-.LASF4398:
+.LASF4400:
 	.ascii	"SVC_SEM_GIVE\000"
 .LASF1933:
 	.ascii	"MCG_C4 MCG_C4_REG(MCG)\000"
@@ -20552,7 +20568,7 @@ portInit:
 	.ascii	"PORTB_PCR22 PORT_PCR_REG(PORTB,22)\000"
 .LASF2432:
 	.ascii	"PIT_MCR_REG(base) ((base)->MCR)\000"
-.LASF4402:
+.LASF4404:
 	.ascii	"SVC_SYSTCK_SET\000"
 .LASF946:
 	.ascii	"DMA_DSR_BCR_COUNT 4\000"
@@ -20763,8 +20779,8 @@ portInit:
 	.ascii	"DAC_C0_DACBBIEN_MASK 0x1u\000"
 .LASF2591:
 	.ascii	"PORT_PCR_MUX_MASK 0x700u\000"
-.LASF3966:
-	.ascii	"MCM_MATCR_RO1_MASK This_symbol_has_been_deprecated\000"
+.LASF257:
+	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
 .LASF177:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
 .LASF4131:
@@ -20836,8 +20852,8 @@ portInit:
 .LASF2933:
 	.ascii	"RTC_SR_TIF(x) (((uint32_t)(((uint32_t)(x))<<RTC_SR_"
 	.ascii	"TIF_SHIFT))&RTC_SR_TIF_MASK)\000"
-.LASF2134:
-	.ascii	"MTB_PERIPHID_PERIPHID_MASK 0xFFFFFFFFu\000"
+.LASF1207:
+	.ascii	"FTFA_FCNFG_CCIE_MASK 0x80u\000"
 .LASF3395:
 	.ascii	"SPI0_BASE_PTR (SPI0)\000"
 .LASF2080:
@@ -21108,7 +21124,7 @@ portInit:
 	.ascii	"sizetype\000"
 .LASF4008:
 	.ascii	"UARTLP_C1_PT_MASK UART0_C1_PT_MASK\000"
-.LASF4425:
+.LASF4427:
 	.ascii	"C:\\\\Users\\\\Christian\\\\Documents\\\\OHM\\\\MAP"
 	.ascii	"R\\\\Projekt\\\\WRKSPC\\\\R_RTOS\\\\build\000"
 .LASF937:
@@ -21165,9 +21181,9 @@ portInit:
 .LASF646:
 	.ascii	"ADC_SC2_ACREN(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"SC2_ACREN_SHIFT))&ADC_SC2_ACREN_MASK)\000"
-.LASF4421:
+.LASF4423:
 	.ascii	"__enable_irq\000"
-.LASF4424:
+.LASF4426:
 	.ascii	"../source/main.c\000"
 .LASF3494:
 	.ascii	"TPM_STATUS_CH4F_SHIFT 4\000"
@@ -21183,7 +21199,7 @@ portInit:
 	.ascii	"POL_SHIFT))&SPI_C1_CPOL_MASK)\000"
 .LASF2127:
 	.ascii	"MTB_DEVICECFG_DEVICECFG_SHIFT 0\000"
-.LASF4397:
+.LASF4399:
 	.ascii	"SVC_SEM_TAKE\000"
 .LASF2396:
 	.ascii	"NV_FPROT2 NV_FPROT2_REG(FTFA_FlashConfig)\000"
@@ -21326,8 +21342,8 @@ portInit:
 	.ascii	"LPTMR_CSR_TPS_SHIFT 4\000"
 .LASF2138:
 	.ascii	"MTB_COMPID_COMPID_MASK 0xFFFFFFFFu\000"
-.LASF882:
-	.ascii	"DAC_C0_DACBTIEN_MASK 0x2u\000"
+.LASF3292:
+	.ascii	"SMC_PMCTRL SMC_PMCTRL_REG(SMC)\000"
 .LASF2792:
 	.ascii	"ROM_SYSACCESS_SYSACCESS_WIDTH 32\000"
 .LASF3913:
@@ -21457,8 +21473,8 @@ portInit:
 	.ascii	"I2C_SLTL_SSLT_WIDTH 8\000"
 .LASF1980:
 	.ascii	"MCM_PLACR_DFCC_MASK 0x2000u\000"
-.LASF0:
-	.ascii	"__STDC__ 1\000"
+.LASF882:
+	.ascii	"DAC_C0_DACBTIEN_MASK 0x2u\000"
 .LASF185:
 	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
 .LASF210:
@@ -21549,6 +21565,8 @@ portInit:
 	.ascii	"FTFA_FCNFG_ERSAREQ_WIDTH 1\000"
 .LASF2639:
 	.ascii	"PORTA_PCR8 PORT_PCR_REG(PORTA,8)\000"
+.LASF1334:
+	.ascii	"GPIO_PCOR_PTCO_MASK 0xFFFFFFFFu\000"
 .LASF1126:
 	.ascii	"FGPIO_PTOR_PTTO(x) (((uint32_t)(((uint32_t)(x))<<FG"
 	.ascii	"PIO_PTOR_PTTO_SHIFT))&FGPIO_PTOR_PTTO_MASK)\000"
@@ -21966,7 +21984,7 @@ portInit:
 	.ascii	"MTB_AUTHSTAT_BIT1_MASK 0x2u\000"
 .LASF2205:
 	.ascii	"MTBDWT_FCT_FUNCTION_SHIFT 0\000"
-.LASF4408:
+.LASF4410:
 	.ascii	"SVC_MSGQ_MSG_PUB\000"
 .LASF1731:
 	.ascii	"LLWU_PE1 LLWU_PE1_REG(LLWU)\000"
@@ -22029,8 +22047,6 @@ portInit:
 	.ascii	"M_CONF_DOZEEN_SHIFT))&TPM_CONF_DOZEEN_MASK)\000"
 .LASF828:
 	.ascii	"CMP_DACCR_DACEN_SHIFT 7\000"
-.LASF1883:
-	.ascii	"MCG_S_OSCINIT0_WIDTH 1\000"
 .LASF3401:
 	.ascii	"SPI0_S SPI_S_REG(SPI0)\000"
 .LASF3336:
@@ -22235,8 +22251,6 @@ portInit:
 	.ascii	"TPM1_CHANNELS (uint8_t)0x2u\000"
 .LASF2256:
 	.ascii	"MTBDWT_BASE_PTRS { MTBDWT }\000"
-.LASF1207:
-	.ascii	"FTFA_FCNFG_CCIE_MASK 0x80u\000"
 .LASF4379:
 	.ascii	"uint16_t\000"
 .LASF2115:
@@ -22329,9 +22343,8 @@ portInit:
 	.ascii	"DMA_DCR_DINC_MASK 0x80000u\000"
 .LASF1586:
 	.ascii	"LLWU_PE1_WUPE3_MASK 0xC0u\000"
-.LASF1824:
-	.ascii	"MCG_C1_FRDIV(x) (((uint8_t)(((uint8_t)(x))<<MCG_C1_"
-	.ascii	"FRDIV_SHIFT))&MCG_C1_FRDIV_MASK)\000"
+.LASF2691:
+	.ascii	"PORTB_PCR25 PORT_PCR_REG(PORTB,25)\000"
 .LASF378:
 	.ascii	"INT8_MIN (-__INT8_MAX__ - 1)\000"
 .LASF1685:
@@ -22531,8 +22544,9 @@ portInit:
 	.ascii	"I2C_FLT_STOPIE_SHIFT 5\000"
 .LASF3822:
 	.ascii	"UART0_S2_LBKDIF_MASK 0x80u\000"
-.LASF3292:
-	.ascii	"SMC_PMCTRL SMC_PMCTRL_REG(SMC)\000"
+.LASF3420:
+	.ascii	"TPM_SC_CMOD(x) (((uint32_t)(((uint32_t)(x))<<TPM_SC"
+	.ascii	"_CMOD_SHIFT))&TPM_SC_CMOD_MASK)\000"
 .LASF4247:
 	.ascii	"PINNR(pin) ((uint8_t)((( (PortPIN)pin & (PortPIN)0x"
 	.ascii	"F0FFu ) & (PortPIN)0x7C) >> 0x2u ))\000"
@@ -22862,10 +22876,6 @@ portInit:
 .LASF1413:
 	.ascii	"I2C_C1_TX(x) (((uint8_t)(((uint8_t)(x))<<I2C_C1_TX_"
 	.ascii	"SHIFT))&I2C_C1_TX_MASK)\000"
-.LASF349:
-	.ascii	"__GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)\000"
-.LASF1664:
-	.ascii	"LLWU_F1_WUF6_WIDTH 1\000"
 .LASF1854:
 	.ascii	"MCG_C3_SCTRIM_SHIFT 0\000"
 .LASF2274:
@@ -23145,7 +23155,7 @@ portInit:
 	.ascii	"TSI_GENCS_PS_WIDTH 3\000"
 .LASF1163:
 	.ascii	"FTFA_FCCOB7_REG(base) ((base)->FCCOB7)\000"
-.LASF4406:
+.LASF4408:
 	.ascii	"SVC_MSGQ_REG_TSK_SUB\000"
 .LASF1241:
 	.ascii	"FTFA_FCCOB1_CCOBn_WIDTH 8\000"
@@ -23225,7 +23235,7 @@ portInit:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
 .LASF1635:
 	.ascii	"LLWU_ME_WUME7_SHIFT 7\000"
-.LASF4410:
+.LASF4412:
 	.ascii	"SVC_MSGQ_MSG_READALLNEW\000"
 .LASF3848:
 	.ascii	"UART0_C3_TXDIR_WIDTH 1\000"
@@ -23487,7 +23497,7 @@ portInit:
 	.ascii	"PMC_BASE_ADDRS { PMC_BASE }\000"
 .LASF2880:
 	.ascii	"RTC_TCR_CIR_WIDTH 8\000"
-.LASF4419:
+.LASF4421:
 	.ascii	"SVC_OS_ERROR\000"
 .LASF3379:
 	.ascii	"SPI_S_SPMF_WIDTH 1\000"
@@ -23502,7 +23512,7 @@ portInit:
 	.ascii	"rtPIN)pin)) ? GPIOB : GPIOA))\000"
 .LASF3979:
 	.ascii	"SIM_FCFG2_MAXADDR_SHIFT SIM_FCFG2_MAXADDR0_SHIFT\000"
-.LASF4426:
+.LASF4428:
 	.ascii	"svcCode\000"
 .LASF2430:
 	.ascii	"OSC_BASE_PTRS { OSC0 }\000"

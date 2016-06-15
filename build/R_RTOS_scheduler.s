@@ -763,15 +763,15 @@ os_SCHEDULE:
 	.file 6 "../include/R_RTOS_scheduler.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0xba4
+	.4byte	0xbb6
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF4474
+	.4byte	.LASF4477
 	.byte	0x1
-	.4byte	.LASF4475
-	.4byte	.LASF4476
+	.4byte	.LASF4478
+	.4byte	.LASF4479
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -975,53 +975,53 @@ os_SCHEDULE:
 	.uleb128 0xc
 	.4byte	.LASF4285
 	.byte	0x5
-	.2byte	0x1c4
+	.2byte	0x1c9
 	.4byte	0xa6
 	.uleb128 0xc
 	.4byte	.LASF4286
 	.byte	0x5
-	.2byte	0x1da
+	.2byte	0x1df
 	.4byte	0x90
 	.uleb128 0xc
 	.4byte	.LASF4287
 	.byte	0x5
-	.2byte	0x1e4
+	.2byte	0x1e9
 	.4byte	0xa6
 	.uleb128 0xc
 	.4byte	.LASF4288
 	.byte	0x5
-	.2byte	0x1eb
+	.2byte	0x1f0
 	.4byte	0x90
 	.uleb128 0xc
 	.4byte	.LASF4289
 	.byte	0x5
-	.2byte	0x1f1
+	.2byte	0x1f6
 	.4byte	0x90
 	.uleb128 0xc
 	.4byte	.LASF4290
 	.byte	0x5
-	.2byte	0x1f6
+	.2byte	0x1fb
 	.4byte	0x90
 	.uleb128 0xc
 	.4byte	.LASF4291
 	.byte	0x5
-	.2byte	0x1fb
+	.2byte	0x200
 	.4byte	0x167
 	.uleb128 0xc
 	.4byte	.LASF4292
 	.byte	0x5
-	.2byte	0x200
+	.2byte	0x205
 	.4byte	0x167
 	.uleb128 0xc
 	.4byte	.LASF4293
 	.byte	0x5
-	.2byte	0x20d
+	.2byte	0x212
 	.4byte	0x90
 	.uleb128 0x10
 	.4byte	.LASF4300
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x24c
+	.2byte	0x251
 	.4byte	0x260
 	.uleb128 0x11
 	.4byte	.LASF4294
@@ -1042,13 +1042,13 @@ os_SCHEDULE:
 	.uleb128 0xc
 	.4byte	.LASF4299
 	.byte	0x5
-	.2byte	0x253
+	.2byte	0x258
 	.4byte	0x234
 	.uleb128 0x10
 	.4byte	.LASF4301
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x282
+	.2byte	0x287
 	.4byte	0x2bc
 	.uleb128 0x11
 	.4byte	.LASF4302
@@ -1087,13 +1087,13 @@ os_SCHEDULE:
 	.uleb128 0xc
 	.4byte	.LASF4313
 	.byte	0x5
-	.2byte	0x28f
+	.2byte	0x294
 	.4byte	0x26c
 	.uleb128 0x10
 	.4byte	.LASF4314
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x2c0
+	.2byte	0x2c5
 	.4byte	0x352
 	.uleb128 0x11
 	.4byte	.LASF4315
@@ -1156,13 +1156,13 @@ os_SCHEDULE:
 	.uleb128 0xc
 	.4byte	.LASF4334
 	.byte	0x5
-	.2byte	0x2d5
+	.2byte	0x2da
 	.4byte	0x2c8
 	.uleb128 0x10
 	.4byte	.LASF4335
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x2dd
+	.2byte	0x2e2
 	.4byte	0x3a4
 	.uleb128 0x11
 	.4byte	.LASF4336
@@ -1195,14 +1195,14 @@ os_SCHEDULE:
 	.uleb128 0xc
 	.4byte	.LASF4345
 	.byte	0x5
-	.2byte	0x2e8
+	.2byte	0x2ed
 	.4byte	0x35e
 	.uleb128 0x10
 	.4byte	.LASF4346
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x2f5
-	.4byte	0x3dc
+	.2byte	0x2fa
+	.4byte	0x3ee
 	.uleb128 0x11
 	.4byte	.LASF4347
 	.sleb128 0
@@ -1217,572 +1217,581 @@ os_SCHEDULE:
 	.sleb128 3
 	.uleb128 0x11
 	.4byte	.LASF4351
-	.sleb128 4
-	.byte	0
-	.uleb128 0xc
+	.sleb128 3
+	.uleb128 0x11
 	.4byte	.LASF4352
-	.byte	0x5
-	.2byte	0x2fc
-	.4byte	0x3b0
-	.uleb128 0x10
+	.sleb128 4
+	.uleb128 0x11
 	.4byte	.LASF4353
-	.byte	0x1
-	.byte	0x5
-	.2byte	0x315
-	.4byte	0x420
+	.sleb128 5
 	.uleb128 0x11
 	.4byte	.LASF4354
-	.sleb128 0
-	.uleb128 0x11
-	.4byte	.LASF4355
-	.sleb128 16
-	.uleb128 0x11
-	.4byte	.LASF4356
-	.sleb128 17
-	.uleb128 0x11
-	.4byte	.LASF4357
-	.sleb128 18
-	.uleb128 0x11
-	.4byte	.LASF4358
-	.sleb128 32
-	.uleb128 0x11
-	.4byte	.LASF4359
-	.sleb128 33
-	.uleb128 0x11
-	.4byte	.LASF4360
-	.sleb128 34
+	.sleb128 6
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF4361
+	.4byte	.LASF4355
 	.byte	0x5
-	.2byte	0x31e
-	.4byte	0x3e8
-	.uleb128 0x12
-	.4byte	.LASF4395
+	.2byte	0x304
+	.4byte	0x3b0
+	.uleb128 0x10
+	.4byte	.LASF4356
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x328
-	.4byte	0x452
-	.uleb128 0x13
+	.2byte	0x31d
+	.4byte	0x432
+	.uleb128 0x11
+	.4byte	.LASF4357
+	.sleb128 0
+	.uleb128 0x11
+	.4byte	.LASF4358
+	.sleb128 16
+	.uleb128 0x11
+	.4byte	.LASF4359
+	.sleb128 17
+	.uleb128 0x11
+	.4byte	.LASF4360
+	.sleb128 18
+	.uleb128 0x11
+	.4byte	.LASF4361
+	.sleb128 32
+	.uleb128 0x11
 	.4byte	.LASF4362
-	.byte	0x5
-	.2byte	0x32a
-	.4byte	0x1ec
-	.uleb128 0x13
+	.sleb128 33
+	.uleb128 0x11
 	.4byte	.LASF4363
-	.byte	0x5
-	.2byte	0x32b
-	.4byte	0x17a
+	.sleb128 34
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF4364
 	.byte	0x5
-	.2byte	0x32c
-	.4byte	0x42c
-	.uleb128 0x14
-	.4byte	.LASF4372
-	.byte	0xc
+	.2byte	0x326
+	.4byte	0x3fa
+	.uleb128 0x12
+	.4byte	.LASF4398
+	.byte	0x1
 	.byte	0x5
-	.2byte	0x337
-	.4byte	0x4ba
-	.uleb128 0x6
+	.2byte	0x330
+	.4byte	0x464
+	.uleb128 0x13
 	.4byte	.LASF4365
 	.byte	0x5
-	.2byte	0x339
-	.4byte	0x4ba
-	.byte	0
-	.uleb128 0x6
+	.2byte	0x332
+	.4byte	0x1ec
+	.uleb128 0x13
 	.4byte	.LASF4366
 	.byte	0x5
-	.2byte	0x33a
-	.4byte	0x4ba
-	.byte	0x4
-	.uleb128 0x6
+	.2byte	0x333
+	.4byte	0x17a
+	.byte	0
+	.uleb128 0xc
 	.4byte	.LASF4367
 	.byte	0x5
-	.2byte	0x33b
-	.4byte	0x420
-	.byte	0x8
+	.2byte	0x334
+	.4byte	0x43e
+	.uleb128 0x14
+	.4byte	.LASF4375
+	.byte	0xc
+	.byte	0x5
+	.2byte	0x33f
+	.4byte	0x4cc
 	.uleb128 0x6
 	.4byte	.LASF4368
 	.byte	0x5
-	.2byte	0x33c
-	.4byte	0x452
-	.byte	0x9
+	.2byte	0x341
+	.4byte	0x4cc
+	.byte	0
 	.uleb128 0x6
 	.4byte	.LASF4369
 	.byte	0x5
-	.2byte	0x33d
-	.4byte	0x1d4
-	.byte	0xa
+	.2byte	0x342
+	.4byte	0x4cc
+	.byte	0x4
 	.uleb128 0x6
 	.4byte	.LASF4370
 	.byte	0x5
-	.2byte	0x33e
+	.2byte	0x343
+	.4byte	0x432
+	.byte	0x8
+	.uleb128 0x6
+	.4byte	.LASF4371
+	.byte	0x5
+	.2byte	0x344
+	.4byte	0x464
+	.byte	0x9
+	.uleb128 0x6
+	.4byte	.LASF4372
+	.byte	0x5
+	.2byte	0x345
+	.4byte	0x1d4
+	.byte	0xa
+	.uleb128 0x6
+	.4byte	.LASF4373
+	.byte	0x5
+	.2byte	0x346
 	.4byte	0x1d4
 	.byte	0xb
 	.byte	0
 	.uleb128 0xd
 	.byte	0x4
-	.4byte	0x45e
+	.4byte	0x470
 	.uleb128 0xc
-	.4byte	.LASF4371
-	.byte	0x5
-	.2byte	0x33f
-	.4byte	0x4ba
-	.uleb128 0x14
-	.4byte	.LASF4373
-	.byte	0x2
-	.byte	0x5
-	.2byte	0x370
-	.4byte	0x4f4
-	.uleb128 0x6
 	.4byte	.LASF4374
 	.byte	0x5
-	.2byte	0x372
+	.2byte	0x347
+	.4byte	0x4cc
+	.uleb128 0x14
+	.4byte	.LASF4376
+	.byte	0x2
+	.byte	0x5
+	.2byte	0x378
+	.4byte	0x506
+	.uleb128 0x6
+	.4byte	.LASF4377
+	.byte	0x5
+	.2byte	0x37a
 	.4byte	0x1b0
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF4375
+	.4byte	.LASF4378
 	.byte	0x5
-	.2byte	0x373
-	.4byte	0x4f4
+	.2byte	0x37b
+	.4byte	0x506
 	.byte	0x1
 	.byte	0
 	.uleb128 0x9
 	.4byte	0x1bc
 	.uleb128 0xc
-	.4byte	.LASF4376
-	.byte	0x5
-	.2byte	0x374
-	.4byte	0x4cc
-	.uleb128 0xc
-	.4byte	.LASF4377
-	.byte	0x5
-	.2byte	0x37a
-	.4byte	0x90
-	.uleb128 0x14
-	.4byte	.LASF4378
-	.byte	0x2
-	.byte	0x5
-	.2byte	0x389
-	.4byte	0x539
-	.uleb128 0x6
 	.4byte	.LASF4379
 	.byte	0x5
-	.2byte	0x38b
-	.4byte	0x539
-	.byte	0
-	.uleb128 0x6
+	.2byte	0x37c
+	.4byte	0x4de
+	.uleb128 0xc
 	.4byte	.LASF4380
 	.byte	0x5
-	.2byte	0x38c
-	.4byte	0x53e
+	.2byte	0x382
+	.4byte	0x90
+	.uleb128 0x14
+	.4byte	.LASF4381
+	.byte	0x2
+	.byte	0x5
+	.2byte	0x391
+	.4byte	0x54b
+	.uleb128 0x6
+	.4byte	.LASF4382
+	.byte	0x5
+	.2byte	0x393
+	.4byte	0x54b
+	.byte	0
+	.uleb128 0x6
+	.4byte	.LASF4383
+	.byte	0x5
+	.2byte	0x394
+	.4byte	0x550
 	.byte	0x1
 	.byte	0
 	.uleb128 0x9
 	.4byte	0x1ec
 	.uleb128 0x9
-	.4byte	0x505
+	.4byte	0x517
 	.uleb128 0xc
-	.4byte	.LASF4381
+	.4byte	.LASF4384
 	.byte	0x5
-	.2byte	0x38d
-	.4byte	0x511
+	.2byte	0x395
+	.4byte	0x523
 	.uleb128 0x14
-	.4byte	.LASF4382
+	.4byte	.LASF4385
 	.byte	0x2
 	.byte	0x5
-	.2byte	0x39d
-	.4byte	0x577
+	.2byte	0x3a5
+	.4byte	0x589
+	.uleb128 0x6
+	.4byte	.LASF4386
+	.byte	0x5
+	.2byte	0x3a7
+	.4byte	0x589
+	.byte	0
 	.uleb128 0x6
 	.4byte	.LASF4383
 	.byte	0x5
-	.2byte	0x39f
-	.4byte	0x577
-	.byte	0
-	.uleb128 0x6
-	.4byte	.LASF4380
-	.byte	0x5
-	.2byte	0x3a0
-	.4byte	0x53e
+	.2byte	0x3a8
+	.4byte	0x550
 	.byte	0x1
 	.byte	0
 	.uleb128 0x9
 	.4byte	0x17a
 	.uleb128 0xc
-	.4byte	.LASF4384
+	.4byte	.LASF4387
 	.byte	0x5
-	.2byte	0x3a1
-	.4byte	0x54f
+	.2byte	0x3a9
+	.4byte	0x561
 	.uleb128 0x14
-	.4byte	.LASF4385
+	.4byte	.LASF4388
 	.byte	0x2
 	.byte	0x5
-	.2byte	0x3a3
-	.4byte	0x5b0
+	.2byte	0x3ab
+	.4byte	0x5c2
 	.uleb128 0x6
-	.4byte	.LASF4386
+	.4byte	.LASF4389
 	.byte	0x5
-	.2byte	0x3a5
+	.2byte	0x3ad
 	.4byte	0x90
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF4387
+	.4byte	.LASF4390
 	.byte	0x5
-	.2byte	0x3a6
+	.2byte	0x3ae
 	.4byte	0x90
 	.byte	0x1
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF4388
+	.4byte	.LASF4391
 	.byte	0x5
-	.2byte	0x3a7
-	.4byte	0x588
+	.2byte	0x3af
+	.4byte	0x59a
 	.uleb128 0x10
-	.4byte	.LASF4389
+	.4byte	.LASF4392
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x3b1
-	.4byte	0x5e3
-	.uleb128 0x11
-	.4byte	.LASF4390
-	.sleb128 0
-	.uleb128 0x11
-	.4byte	.LASF4391
-	.sleb128 1
-	.uleb128 0x11
-	.4byte	.LASF4392
-	.sleb128 2
+	.2byte	0x3b9
+	.4byte	0x5f5
 	.uleb128 0x11
 	.4byte	.LASF4393
+	.sleb128 0
+	.uleb128 0x11
+	.4byte	.LASF4394
+	.sleb128 1
+	.uleb128 0x11
+	.4byte	.LASF4395
+	.sleb128 2
+	.uleb128 0x11
+	.4byte	.LASF4396
 	.sleb128 255
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF4394
-	.byte	0x5
-	.2byte	0x3b7
-	.4byte	0x5bc
-	.uleb128 0x12
-	.4byte	.LASF4396
-	.byte	0x2
-	.byte	0x5
-	.2byte	0x3c2
-	.4byte	0x62d
-	.uleb128 0x13
 	.4byte	.LASF4397
 	.byte	0x5
-	.2byte	0x3c4
-	.4byte	0x4f9
-	.uleb128 0x13
-	.4byte	.LASF4398
-	.byte	0x5
-	.2byte	0x3c5
-	.4byte	0x543
-	.uleb128 0x13
+	.2byte	0x3bf
+	.4byte	0x5ce
+	.uleb128 0x12
 	.4byte	.LASF4399
+	.byte	0x2
 	.byte	0x5
-	.2byte	0x3c6
-	.4byte	0x57c
+	.2byte	0x3ca
+	.4byte	0x63f
 	.uleb128 0x13
 	.4byte	.LASF4400
 	.byte	0x5
-	.2byte	0x3c7
-	.4byte	0x5b0
-	.byte	0
-	.uleb128 0xc
+	.2byte	0x3cc
+	.4byte	0x50b
+	.uleb128 0x13
 	.4byte	.LASF4401
 	.byte	0x5
-	.2byte	0x3c8
-	.4byte	0x5ef
-	.uleb128 0x14
+	.2byte	0x3cd
+	.4byte	0x555
+	.uleb128 0x13
 	.4byte	.LASF4402
-	.byte	0x8
 	.byte	0x5
-	.2byte	0x3d7
-	.4byte	0x67b
-	.uleb128 0x6
+	.2byte	0x3ce
+	.4byte	0x58e
+	.uleb128 0x13
 	.4byte	.LASF4403
 	.byte	0x5
-	.2byte	0x3d9
-	.4byte	0x67b
+	.2byte	0x3cf
+	.4byte	0x5c2
 	.byte	0
-	.uleb128 0x6
+	.uleb128 0xc
 	.4byte	.LASF4404
 	.byte	0x5
-	.2byte	0x3dc
-	.4byte	0x90
-	.byte	0x4
-	.uleb128 0x6
+	.2byte	0x3d0
+	.4byte	0x601
+	.uleb128 0x14
 	.4byte	.LASF4405
+	.byte	0x8
 	.byte	0x5
-	.2byte	0x3dd
-	.4byte	0x5e3
-	.byte	0x5
+	.2byte	0x3df
+	.4byte	0x68d
 	.uleb128 0x6
 	.4byte	.LASF4406
 	.byte	0x5
-	.2byte	0x3de
-	.4byte	0x62d
+	.2byte	0x3e1
+	.4byte	0x68d
+	.byte	0
+	.uleb128 0x6
+	.4byte	.LASF4407
+	.byte	0x5
+	.2byte	0x3e4
+	.4byte	0x90
+	.byte	0x4
+	.uleb128 0x6
+	.4byte	.LASF4408
+	.byte	0x5
+	.2byte	0x3e5
+	.4byte	0x5f5
+	.byte	0x5
+	.uleb128 0x6
+	.4byte	.LASF4409
+	.byte	0x5
+	.2byte	0x3e6
+	.4byte	0x63f
 	.byte	0x6
 	.byte	0
 	.uleb128 0xd
 	.byte	0x4
-	.4byte	0x681
+	.4byte	0x693
 	.uleb128 0x9
-	.4byte	0x639
+	.4byte	0x64b
 	.uleb128 0xc
-	.4byte	.LASF4407
+	.4byte	.LASF4410
 	.byte	0x5
-	.2byte	0x3df
-	.4byte	0x692
+	.2byte	0x3e7
+	.4byte	0x6a4
 	.uleb128 0xd
 	.byte	0x4
-	.4byte	0x639
+	.4byte	0x64b
 	.uleb128 0x9
-	.4byte	0x4c0
+	.4byte	0x4d2
 	.uleb128 0x12
-	.4byte	.LASF4408
+	.4byte	.LASF4411
 	.byte	0x1
 	.byte	0x5
-	.2byte	0x4c2
-	.4byte	0x6c3
+	.2byte	0x4dd
+	.4byte	0x6d5
 	.uleb128 0x13
 	.4byte	.LASF4300
 	.byte	0x5
-	.2byte	0x4c4
+	.2byte	0x4df
 	.4byte	0x260
 	.uleb128 0x13
-	.4byte	.LASF4409
+	.4byte	.LASF4412
 	.byte	0x5
-	.2byte	0x4c5
+	.2byte	0x4e0
 	.4byte	0x90
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF4410
+	.4byte	.LASF4413
 	.byte	0x4
 	.byte	0x5
-	.2byte	0x4cb
-	.4byte	0x6de
+	.2byte	0x4e6
+	.4byte	0x6f0
 	.uleb128 0x6
-	.4byte	.LASF4411
+	.4byte	.LASF4414
 	.byte	0x5
-	.2byte	0x4cd
+	.2byte	0x4e8
 	.4byte	0x1c8
 	.byte	0
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF4412
+	.4byte	.LASF4415
 	.byte	0x4
 	.byte	0x5
-	.2byte	0x4d0
-	.4byte	0x6f9
+	.2byte	0x4eb
+	.4byte	0x70b
 	.uleb128 0x6
-	.4byte	.LASF4413
+	.4byte	.LASF4416
 	.byte	0x5
-	.2byte	0x4d2
+	.2byte	0x4ed
 	.4byte	0x1e0
 	.byte	0
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF4414
+	.4byte	.LASF4417
 	.byte	0x4
 	.byte	0x5
-	.2byte	0x4d5
-	.4byte	0x73b
-	.uleb128 0x6
-	.4byte	.LASF4415
-	.byte	0x5
-	.2byte	0x4d7
-	.4byte	0x90
-	.byte	0
-	.uleb128 0x6
-	.4byte	.LASF4416
-	.byte	0x5
-	.2byte	0x4d8
-	.4byte	0x90
-	.byte	0x1
-	.uleb128 0x6
-	.4byte	.LASF4417
-	.byte	0x5
-	.2byte	0x4d9
-	.4byte	0x90
-	.byte	0x2
+	.2byte	0x4f0
+	.4byte	0x74d
 	.uleb128 0x6
 	.4byte	.LASF4418
 	.byte	0x5
-	.2byte	0x4da
+	.2byte	0x4f2
+	.4byte	0x90
+	.byte	0
+	.uleb128 0x6
+	.4byte	.LASF4419
+	.byte	0x5
+	.2byte	0x4f3
+	.4byte	0x90
+	.byte	0x1
+	.uleb128 0x6
+	.4byte	.LASF4420
+	.byte	0x5
+	.2byte	0x4f4
+	.4byte	0x90
+	.byte	0x2
+	.uleb128 0x6
+	.4byte	.LASF4421
+	.byte	0x5
+	.2byte	0x4f5
 	.4byte	0x90
 	.byte	0x3
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF4477
+	.4byte	.LASF4480
 	.byte	0
 	.byte	0x5
-	.2byte	0x4dd
+	.2byte	0x4ff
 	.uleb128 0x12
-	.4byte	.LASF4419
+	.4byte	.LASF4422
 	.byte	0x4
 	.byte	0x5
-	.2byte	0x4c8
-	.4byte	0x782
-	.uleb128 0x13
-	.4byte	.LASF4420
-	.byte	0x5
-	.2byte	0x4ce
-	.4byte	0x6c3
-	.uleb128 0x13
-	.4byte	.LASF4421
-	.byte	0x5
-	.2byte	0x4d3
-	.4byte	0x6de
-	.uleb128 0x13
-	.4byte	.LASF4422
-	.byte	0x5
-	.2byte	0x4db
-	.4byte	0x6f9
+	.2byte	0x4e3
+	.4byte	0x794
 	.uleb128 0x13
 	.4byte	.LASF4423
 	.byte	0x5
-	.2byte	0x4e0
-	.4byte	0x73b
+	.2byte	0x4e9
+	.4byte	0x6d5
+	.uleb128 0x13
+	.4byte	.LASF4424
+	.byte	0x5
+	.2byte	0x4ee
+	.4byte	0x6f0
+	.uleb128 0x13
+	.4byte	.LASF4425
+	.byte	0x5
+	.2byte	0x4f6
+	.4byte	0x70b
+	.uleb128 0x13
+	.4byte	.LASF4426
+	.byte	0x5
+	.2byte	0x502
+	.4byte	0x74d
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF4424
+	.4byte	.LASF4427
 	.byte	0x8
 	.byte	0x5
-	.2byte	0x4bc
-	.4byte	0x7c4
+	.2byte	0x4d7
+	.4byte	0x7d6
 	.uleb128 0x6
 	.4byte	.LASF4346
 	.byte	0x5
-	.2byte	0x4be
-	.4byte	0x3dc
+	.2byte	0x4d9
+	.4byte	0x3ee
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF4425
+	.4byte	.LASF4428
 	.byte	0x5
-	.2byte	0x4bf
+	.2byte	0x4da
 	.4byte	0x228
 	.byte	0x1
 	.uleb128 0x6
-	.4byte	.LASF4426
-	.byte	0x5
-	.2byte	0x4c6
-	.4byte	0x69d
-	.byte	0x2
-	.uleb128 0x6
-	.4byte	.LASF4427
+	.4byte	.LASF4429
 	.byte	0x5
 	.2byte	0x4e1
-	.4byte	0x744
-	.byte	0x4
-	.byte	0
-	.uleb128 0xc
-	.4byte	.LASF4428
-	.byte	0x5
-	.2byte	0x4e2
-	.4byte	0x7d0
-	.uleb128 0xd
-	.byte	0x4
-	.4byte	0x782
-	.uleb128 0x14
-	.4byte	.LASF4429
-	.byte	0x24
-	.byte	0x5
-	.2byte	0x4f3
-	.4byte	0x89a
+	.4byte	0x6af
+	.byte	0x2
 	.uleb128 0x6
 	.4byte	.LASF4430
 	.byte	0x5
-	.2byte	0x4f5
-	.4byte	0x89a
+	.2byte	0x503
+	.4byte	0x756
+	.byte	0x4
 	.byte	0
-	.uleb128 0x6
+	.uleb128 0xc
 	.4byte	.LASF4431
 	.byte	0x5
-	.2byte	0x4f6
-	.4byte	0x19e
+	.2byte	0x504
+	.4byte	0x7e2
+	.uleb128 0xd
 	.byte	0x4
-	.uleb128 0x6
+	.4byte	0x794
+	.uleb128 0x14
 	.4byte	.LASF4432
+	.byte	0x24
 	.byte	0x5
-	.2byte	0x4f8
-	.4byte	0x210
-	.byte	0x8
+	.2byte	0x515
+	.4byte	0x8ac
 	.uleb128 0x6
 	.4byte	.LASF4433
 	.byte	0x5
-	.2byte	0x4f9
-	.4byte	0x21c
-	.byte	0xc
-	.uleb128 0x6
-	.4byte	.LASF4402
-	.byte	0x5
-	.2byte	0x4fb
-	.4byte	0x89f
-	.byte	0x10
+	.2byte	0x517
+	.4byte	0x8ac
+	.byte	0
 	.uleb128 0x6
 	.4byte	.LASF4434
 	.byte	0x5
-	.2byte	0x4fd
-	.4byte	0x698
-	.byte	0x14
+	.2byte	0x518
+	.4byte	0x19e
+	.byte	0x4
 	.uleb128 0x6
 	.4byte	.LASF4435
 	.byte	0x5
-	.2byte	0x4fe
-	.4byte	0x8a4
-	.byte	0x18
+	.2byte	0x51a
+	.4byte	0x210
+	.byte	0x8
 	.uleb128 0x6
 	.4byte	.LASF4436
 	.byte	0x5
-	.2byte	0x500
-	.4byte	0x186
-	.byte	0x1c
+	.2byte	0x51b
+	.4byte	0x21c
+	.byte	0xc
+	.uleb128 0x6
+	.4byte	.LASF4405
+	.byte	0x5
+	.2byte	0x51d
+	.4byte	0x8b1
+	.byte	0x10
 	.uleb128 0x6
 	.4byte	.LASF4437
 	.byte	0x5
-	.2byte	0x502
-	.4byte	0x8a9
+	.2byte	0x51f
+	.4byte	0x6aa
+	.byte	0x14
+	.uleb128 0x6
+	.4byte	.LASF4438
+	.byte	0x5
+	.2byte	0x520
+	.4byte	0x8b6
+	.byte	0x18
+	.uleb128 0x6
+	.4byte	.LASF4439
+	.byte	0x5
+	.2byte	0x522
+	.4byte	0x186
+	.byte	0x1c
+	.uleb128 0x6
+	.4byte	.LASF4440
+	.byte	0x5
+	.2byte	0x524
+	.4byte	0x8bb
 	.byte	0x1e
 	.uleb128 0x6
 	.4byte	.LASF4301
 	.byte	0x5
-	.2byte	0x504
-	.4byte	0x8ae
+	.2byte	0x526
+	.4byte	0x8c0
 	.byte	0x1f
 	.uleb128 0x6
 	.4byte	.LASF4314
 	.byte	0x5
-	.2byte	0x505
-	.4byte	0x8b3
+	.2byte	0x527
+	.4byte	0x8c5
 	.byte	0x20
 	.uleb128 0x6
-	.4byte	.LASF4362
+	.4byte	.LASF4365
 	.byte	0x5
-	.2byte	0x507
+	.2byte	0x529
 	.4byte	0x1ec
 	.byte	0x21
 	.uleb128 0x6
-	.4byte	.LASF4438
+	.4byte	.LASF4441
 	.byte	0x5
-	.2byte	0x508
-	.4byte	0x539
+	.2byte	0x52a
+	.4byte	0x54b
 	.byte	0x22
 	.uleb128 0x6
-	.4byte	.LASF4439
+	.4byte	.LASF4442
 	.byte	0x5
-	.2byte	0x509
-	.4byte	0x539
+	.2byte	0x52b
+	.4byte	0x54b
 	.byte	0x23
 	.byte	0
 	.uleb128 0x9
 	.4byte	0x19e
 	.uleb128 0x9
-	.4byte	0x686
+	.4byte	0x698
 	.uleb128 0x9
-	.4byte	0x7c4
+	.4byte	0x7d6
 	.uleb128 0x9
 	.4byte	0x3a4
 	.uleb128 0x9
@@ -1790,74 +1799,74 @@ os_SCHEDULE:
 	.uleb128 0x9
 	.4byte	0x352
 	.uleb128 0xc
-	.4byte	.LASF4440
-	.byte	0x5
-	.2byte	0x50a
-	.4byte	0x7d6
-	.uleb128 0xc
-	.4byte	.LASF4441
-	.byte	0x5
-	.2byte	0x50a
-	.4byte	0x8d0
-	.uleb128 0xd
-	.byte	0x4
-	.4byte	0x7d6
-	.uleb128 0xc
-	.4byte	.LASF4442
-	.byte	0x5
-	.2byte	0x553
-	.4byte	0x90
-	.uleb128 0xc
 	.4byte	.LASF4443
 	.byte	0x5
-	.2byte	0x562
-	.4byte	0x90
-	.uleb128 0x14
+	.2byte	0x52c
+	.4byte	0x7e8
+	.uleb128 0xc
 	.4byte	.LASF4444
-	.byte	0x1
 	.byte	0x5
-	.2byte	0x5b1
-	.4byte	0x94c
-	.uleb128 0x16
+	.2byte	0x52c
+	.4byte	0x8e2
+	.uleb128 0xd
+	.byte	0x4
+	.4byte	0x7e8
+	.uleb128 0xc
 	.4byte	.LASF4445
 	.byte	0x5
-	.2byte	0x5b3
+	.2byte	0x575
+	.4byte	0x90
+	.uleb128 0xc
+	.4byte	.LASF4446
+	.byte	0x5
+	.2byte	0x584
+	.4byte	0x90
+	.uleb128 0x14
+	.4byte	.LASF4447
+	.byte	0x1
+	.byte	0x5
+	.2byte	0x5d3
+	.4byte	0x95e
+	.uleb128 0x16
+	.4byte	.LASF4448
+	.byte	0x5
+	.2byte	0x5d5
 	.4byte	0x162
 	.byte	0x1
 	.byte	0x2
 	.byte	0x6
 	.byte	0
 	.uleb128 0x16
-	.4byte	.LASF4446
+	.4byte	.LASF4449
 	.byte	0x5
-	.2byte	0x5b4
+	.2byte	0x5d6
 	.4byte	0x162
 	.byte	0x1
 	.byte	0x1
 	.byte	0x5
 	.byte	0
 	.uleb128 0x16
-	.4byte	.LASF4447
+	.4byte	.LASF4450
 	.byte	0x5
-	.2byte	0x5b5
+	.2byte	0x5d7
 	.4byte	0x162
 	.byte	0x1
 	.byte	0x1
 	.byte	0x4
 	.byte	0
 	.uleb128 0x16
-	.4byte	.LASF4448
+	.4byte	.LASF4451
 	.byte	0x5
-	.2byte	0x5b6
+	.2byte	0x5d8
 	.4byte	0x162
 	.byte	0x1
 	.byte	0x1
 	.byte	0x3
 	.byte	0
 	.uleb128 0x16
-	.4byte	.LASF4449
+	.4byte	.LASF4452
 	.byte	0x5
-	.2byte	0x5b7
+	.2byte	0x5d9
 	.4byte	0x162
 	.byte	0x1
 	.byte	0x1
@@ -1865,49 +1874,49 @@ os_SCHEDULE:
 	.byte	0
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF4450
+	.4byte	.LASF4453
 	.byte	0x5
-	.2byte	0x5b8
-	.4byte	0x8ee
+	.2byte	0x5da
+	.4byte	0x900
 	.uleb128 0x17
-	.4byte	.LASF4451
+	.4byte	.LASF4454
 	.byte	0x2
 	.byte	0x6
 	.byte	0x17
-	.4byte	0x97d
+	.4byte	0x98f
 	.uleb128 0x18
-	.4byte	.LASF4452
+	.4byte	.LASF4455
 	.byte	0x6
 	.byte	0x19
 	.4byte	0x1ec
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF4453
+	.4byte	.LASF4456
 	.byte	0x6
 	.byte	0x1a
 	.4byte	0x1ec
 	.byte	0x1
 	.byte	0
 	.uleb128 0x3
-	.4byte	.LASF4454
+	.4byte	.LASF4457
 	.byte	0x6
 	.byte	0x1b
-	.4byte	0x958
+	.4byte	0x96a
 	.uleb128 0x3
-	.4byte	.LASF4455
+	.4byte	.LASF4458
 	.byte	0x6
 	.byte	0x1b
-	.4byte	0x993
+	.4byte	0x9a5
 	.uleb128 0xd
 	.byte	0x4
-	.4byte	0x958
+	.4byte	0x96a
 	.uleb128 0x3
-	.4byte	.LASF4456
+	.4byte	.LASF4459
 	.byte	0x6
 	.byte	0x20
 	.4byte	0x9b
 	.uleb128 0x19
-	.4byte	.LASF4478
+	.4byte	.LASF4481
 	.byte	0x1
 	.byte	0x3e
 	.4byte	.LFB33
@@ -1915,42 +1924,42 @@ os_SCHEDULE:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x1a
-	.4byte	.LASF4479
+	.4byte	.LASF4482
 	.byte	0x1
 	.byte	0x46
-	.4byte	0x8e2
+	.4byte	0x8f4
 	.4byte	.LFB34
 	.4byte	.LFE34-.LFB34
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9dd
+	.4byte	0x9ef
 	.uleb128 0x1b
-	.4byte	.LASF4457
+	.4byte	.LASF4460
 	.byte	0x1
 	.byte	0x46
-	.4byte	0x9dd
+	.4byte	0x9ef
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
 	.uleb128 0xd
 	.byte	0x4
-	.4byte	0x8c4
+	.4byte	0x8d6
 	.uleb128 0x1c
-	.4byte	.LASF4459
+	.4byte	.LASF4462
 	.byte	0x1
 	.byte	0x4e
-	.4byte	0x8e2
+	.4byte	0x8f4
 	.4byte	.LFB35
 	.4byte	.LFE35-.LFB35
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa35
+	.4byte	0xa47
 	.uleb128 0x1d
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0x4e
-	.4byte	0xa35
+	.4byte	0xa47
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -28
@@ -1963,7 +1972,7 @@ os_SCHEDULE:
 	.byte	0x91
 	.sleb128 -17
 	.uleb128 0x1e
-	.4byte	.LASF4362
+	.4byte	.LASF4365
 	.byte	0x1
 	.byte	0x53
 	.4byte	0x1ec
@@ -1971,42 +1980,42 @@ os_SCHEDULE:
 	.byte	0x91
 	.sleb128 -18
 	.uleb128 0x1e
-	.4byte	.LASF4458
+	.4byte	.LASF4461
 	.byte	0x1
 	.byte	0x58
-	.4byte	0xa3a
+	.4byte	0xa4c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
 	.byte	0
 	.uleb128 0x8
-	.4byte	0x8c4
+	.4byte	0x8d6
 	.uleb128 0xd
 	.byte	0x4
-	.4byte	0x97d
+	.4byte	0x98f
 	.uleb128 0x1f
-	.4byte	.LASF4460
+	.4byte	.LASF4463
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0x8e2
+	.4byte	0x8f4
 	.4byte	.LFB36
 	.4byte	.LFE36-.LFB36
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xad5
+	.4byte	0xae7
 	.uleb128 0x1d
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xa35
+	.4byte	0xa47
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -44
 	.uleb128 0x1e
-	.4byte	.LASF4461
+	.4byte	.LASF4464
 	.byte	0x1
 	.byte	0x9f
-	.4byte	0x8c4
+	.4byte	0x8d6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -32
@@ -2019,15 +2028,15 @@ os_SCHEDULE:
 	.byte	0x91
 	.sleb128 -17
 	.uleb128 0x1e
-	.4byte	.LASF4462
+	.4byte	.LASF4465
 	.byte	0x1
 	.byte	0xa4
-	.4byte	0x988
+	.4byte	0x99a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
 	.uleb128 0x1e
-	.4byte	.LASF4362
+	.4byte	.LASF4365
 	.byte	0x1
 	.byte	0xa6
 	.4byte	0x1ec
@@ -2035,18 +2044,18 @@ os_SCHEDULE:
 	.byte	0x91
 	.sleb128 -25
 	.uleb128 0x1e
-	.4byte	.LASF4463
+	.4byte	.LASF4466
 	.byte	0x1
 	.byte	0xa8
-	.4byte	0x999
+	.4byte	0x9ab
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -28
 	.uleb128 0x1e
-	.4byte	.LASF4464
+	.4byte	.LASF4467
 	.byte	0x1
 	.byte	0xaa
-	.4byte	0x999
+	.4byte	0x9ab
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -34
@@ -2054,7 +2063,7 @@ os_SCHEDULE:
 	.4byte	.LBB2
 	.4byte	.LBE2-.LBB2
 	.uleb128 0x21
-	.4byte	.LASF4465
+	.4byte	.LASF4468
 	.byte	0x1
 	.2byte	0x116
 	.4byte	0x2bc
@@ -2064,16 +2073,16 @@ os_SCHEDULE:
 	.byte	0
 	.byte	0
 	.uleb128 0x22
-	.4byte	.LASF4480
+	.4byte	.LASF4483
 	.byte	0x1
 	.2byte	0x125
 	.4byte	.LFB37
 	.4byte	.LFE37-.LFB37
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xafb
+	.4byte	0xb0d
 	.uleb128 0x21
-	.4byte	.LASF4466
+	.4byte	.LASF4469
 	.byte	0x1
 	.2byte	0x127
 	.4byte	0x90
@@ -2082,7 +2091,7 @@ os_SCHEDULE:
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x23
-	.4byte	.LASF4481
+	.4byte	.LASF4484
 	.byte	0x1
 	.2byte	0x130
 	.4byte	.LFB38
@@ -2090,75 +2099,75 @@ os_SCHEDULE:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x1e
-	.4byte	.LASF4467
+	.4byte	.LASF4470
 	.byte	0x1
 	.byte	0x39
-	.4byte	0xb1e
+	.4byte	0xb30
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	prioSlots
 	.uleb128 0x9
-	.4byte	0x999
+	.4byte	0x9ab
 	.uleb128 0xa
-	.4byte	0x97d
-	.4byte	0xb33
+	.4byte	0x98f
+	.4byte	0xb45
 	.uleb128 0xb
 	.4byte	0xb1
 	.byte	0xe
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF4468
+	.4byte	.LASF4471
 	.byte	0x1
 	.byte	0x3c
-	.4byte	0xb23
+	.4byte	0xb35
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	ar_TskActvPrioSorted
 	.uleb128 0x24
-	.4byte	.LASF4469
+	.4byte	.LASF4472
 	.byte	0x1
 	.byte	0x12
-	.4byte	0x8c4
+	.4byte	0x8d6
 	.uleb128 0xa
-	.4byte	0x8b8
-	.4byte	0xb5f
+	.4byte	0x8ca
+	.4byte	0xb71
 	.uleb128 0xb
 	.4byte	0xb1
 	.byte	0xa
 	.byte	0
 	.uleb128 0x24
-	.4byte	.LASF4470
+	.4byte	.LASF4473
 	.byte	0x1
 	.byte	0x14
-	.4byte	0xb4f
+	.4byte	0xb61
 	.uleb128 0x25
-	.4byte	.LASF4471
+	.4byte	.LASF4474
 	.byte	0x1
 	.byte	0x20
-	.4byte	0xb7b
+	.4byte	0xb8d
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	p_cur_tsk_tcb
 	.uleb128 0x9
-	.4byte	0x8c4
+	.4byte	0x8d6
 	.uleb128 0x25
-	.4byte	.LASF4472
+	.4byte	.LASF4475
 	.byte	0x1
 	.byte	0x2c
-	.4byte	0xb7b
+	.4byte	0xb8d
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	p_nxt_tsk_tcb
 	.uleb128 0x25
-	.4byte	.LASF4473
+	.4byte	.LASF4476
 	.byte	0x1
 	.byte	0x36
-	.4byte	0xba2
+	.4byte	0xbb4
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	gOS_FLAGS
 	.uleb128 0x9
-	.4byte	0x94c
+	.4byte	0x95e
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -15432,7 +15441,7 @@ os_SCHEDULE:
 	.uleb128 0x19ac
 	.4byte	.LASF4173
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.926edc6cbd061ce8c711a04429e20efd,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.e20ad093e597e8d0ba535fac3f58656b,comdat
 .Ldebug_macro11:
 	.2byte	0x4
 	.byte	0
@@ -15578,67 +15587,67 @@ os_SCHEDULE:
 	.uleb128 0x13f
 	.4byte	.LASF4220
 	.byte	0x5
-	.uleb128 0x53b
+	.uleb128 0x55d
 	.4byte	.LASF4221
 	.byte	0x5
-	.uleb128 0x540
+	.uleb128 0x562
 	.4byte	.LASF4222
 	.byte	0x5
-	.uleb128 0x547
+	.uleb128 0x569
 	.4byte	.LASF4223
 	.byte	0x5
-	.uleb128 0x54a
+	.uleb128 0x56c
 	.4byte	.LASF4224
 	.byte	0x5
-	.uleb128 0x558
+	.uleb128 0x57a
 	.4byte	.LASF4225
 	.byte	0x5
-	.uleb128 0x55d
+	.uleb128 0x57f
 	.4byte	.LASF4226
 	.byte	0x5
-	.uleb128 0x566
+	.uleb128 0x588
 	.4byte	.LASF4227
 	.byte	0x5
-	.uleb128 0x56a
+	.uleb128 0x58c
 	.4byte	.LASF4228
 	.byte	0x5
-	.uleb128 0x56e
+	.uleb128 0x590
 	.4byte	.LASF4229
 	.byte	0x5
-	.uleb128 0x572
+	.uleb128 0x594
 	.4byte	.LASF4230
 	.byte	0x5
-	.uleb128 0x576
+	.uleb128 0x598
 	.4byte	.LASF4231
 	.byte	0x5
-	.uleb128 0x57a
+	.uleb128 0x59c
 	.4byte	.LASF4232
 	.byte	0x5
-	.uleb128 0x57e
+	.uleb128 0x5a0
 	.4byte	.LASF4233
 	.byte	0x5
-	.uleb128 0x582
+	.uleb128 0x5a4
 	.4byte	.LASF4234
 	.byte	0x5
-	.uleb128 0x586
+	.uleb128 0x5a8
 	.4byte	.LASF4235
 	.byte	0x5
-	.uleb128 0x58a
+	.uleb128 0x5ac
 	.4byte	.LASF4236
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x5b0
 	.4byte	.LASF4237
 	.byte	0x5
-	.uleb128 0x592
+	.uleb128 0x5b4
 	.4byte	.LASF4238
 	.byte	0x5
-	.uleb128 0x596
+	.uleb128 0x5b8
 	.4byte	.LASF4239
 	.byte	0x5
-	.uleb128 0x59a
+	.uleb128 0x5bc
 	.4byte	.LASF4240
 	.byte	0x5
-	.uleb128 0x59e
+	.uleb128 0x5c0
 	.4byte	.LASF4241
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_BitMagic.h.10.5eef9f1775bd73a198e75c05d1ef6bb9,comdat
@@ -15691,7 +15700,7 @@ os_SCHEDULE:
 	.ascii	"MTBDWT_MASK_MASK_WIDTH 5\000"
 .LASF774:
 	.ascii	"CMP_CR1_PMODE_MASK 0x10u\000"
-.LASF4432:
+.LASF4435:
 	.ascii	"pTskStrt\000"
 .LASF351:
 	.ascii	"___int16_t_defined 1\000"
@@ -15761,7 +15770,7 @@ os_SCHEDULE:
 	.ascii	"FTFA_FSEC_FSLACC_WIDTH 2\000"
 .LASF3899:
 	.ascii	"UART0_C4_OSR_WIDTH 5\000"
-.LASF4374:
+.LASF4377:
 	.ascii	"msgQID\000"
 .LASF2453:
 	.ascii	"PIT_LTMR64H_LTH(x) (((uint32_t)(((uint32_t)(x))<<PI"
@@ -15781,7 +15790,7 @@ os_SCHEDULE:
 .LASF3604:
 	.ascii	"TSI_GENCS_NSCN(x) (((uint32_t)(((uint32_t)(x))<<TSI"
 	.ascii	"_GENCS_NSCN_SHIFT))&TSI_GENCS_NSCN_MASK)\000"
-.LASF4398:
+.LASF4401:
 	.ascii	"tskMsgProv\000"
 .LASF2804:
 	.ascii	"ROM_PERIPHID6_PERIPHID(x) (((uint32_t)(((uint32_t)("
@@ -15789,8 +15798,8 @@ os_SCHEDULE:
 	.ascii	"ERIPHID_MASK)\000"
 .LASF1028:
 	.ascii	"DMA_DCR_SINC_WIDTH 1\000"
-.LASF1030:
-	.ascii	"DMA_DCR_EADREQ_MASK 0x800000u\000"
+.LASF4416:
+	.ascii	"expireTime\000"
 .LASF2701:
 	.ascii	"PORTB_PCR(index) PORT_PCR_REG(PORTB,index)\000"
 .LASF1735:
@@ -15863,7 +15872,7 @@ os_SCHEDULE:
 	.ascii	"MCM_MATCR_ATC3(x) This_symbol_has_been_deprecated\000"
 .LASF2151:
 	.ascii	"MTB_TAGSET MTB_TAGSET_REG(MTB)\000"
-.LASF4465:
+.LASF4468:
 	.ascii	"nxtHghrPrio\000"
 .LASF2934:
 	.ascii	"RTC_SR_TOF_SHIFT 1\000"
@@ -15981,7 +15990,7 @@ os_SCHEDULE:
 	.ascii	"DACCR_VOSEL_SHIFT))&CMP_DACCR_VOSEL_MASK)\000"
 .LASF2752:
 	.ascii	"RCM_RPFC_RSTFLTSS_WIDTH 1\000"
-.LASF4453:
+.LASF4456:
 	.ascii	"lstTsk\000"
 .LASF2029:
 	.ascii	"MTB_PERIPHID_REG(base,index) ((base)->PERIPHID[inde"
@@ -16076,7 +16085,7 @@ os_SCHEDULE:
 	.ascii	"DAC_C1_REG(base) ((base)->C1)\000"
 .LASF1267:
 	.ascii	"FTFA_FCCOBA_CCOBn_SHIFT 0\000"
-.LASF4391:
+.LASF4394:
 	.ascii	"Tsk_Prov\000"
 .LASF1012:
 	.ascii	"DMA_DCR_START_WIDTH 1\000"
@@ -16274,12 +16283,12 @@ os_SCHEDULE:
 	.ascii	"ACCSSType\000"
 .LASF1050:
 	.ascii	"DMA_BASE (0x40008000u)\000"
-.LASF1701:
-	.ascii	"LLWU_FILT1_FILTSEL_MASK 0xFu\000"
+.LASF157:
+	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
 .LASF4230:
 	.ascii	"RET_MEM_ALLOC_FAIL_STACK ((RetCode)0x1Cu)\000"
-.LASF1006:
-	.ascii	"DMA_DCR_SMOD_MASK 0xF000u\000"
+.LASF3902:
+	.ascii	"UART0_C4_M10_SHIFT 5\000"
 .LASF1398:
 	.ascii	"I2C_C1_WUEN_SHIFT 1\000"
 .LASF3220:
@@ -16379,7 +16388,7 @@ os_SCHEDULE:
 .LASF2896:
 	.ascii	"RTC_CR_WPE(x) (((uint32_t)(((uint32_t)(x))<<RTC_CR_"
 	.ascii	"WPE_SHIFT))&RTC_CR_WPE_MASK)\000"
-.LASF4355:
+.LASF4358:
 	.ascii	"SysTckObj_Tsk\000"
 .LASF1765:
 	.ascii	"LPTMR_CSR_TCF_MASK 0x80u\000"
@@ -16401,7 +16410,7 @@ os_SCHEDULE:
 	.ascii	"ASK)\000"
 .LASF3702:
 	.ascii	"UART0_C1_PE_SHIFT 1\000"
-.LASF4401:
+.LASF4404:
 	.ascii	"MsgPrvdrs\000"
 .LASF4270:
 	.ascii	"uint32_t\000"
@@ -16428,8 +16437,8 @@ os_SCHEDULE:
 	.ascii	")\000"
 .LASF1761:
 	.ascii	"LPTMR_CSR_TIE_MASK 0x40u\000"
-.LASF1415:
-	.ascii	"I2C_C1_MST_WIDTH 1\000"
+.LASF869:
+	.ascii	"DAC_SR_DACBFRPBF_MASK 0x1u\000"
 .LASF1571:
 	.ascii	"LLWU_FILT1_REG(base) ((base)->FILT1)\000"
 .LASF3267:
@@ -16444,8 +16453,8 @@ os_SCHEDULE:
 	.ascii	"LLWU_ME_WUME4_MASK 0x10u\000"
 .LASF1944:
 	.ascii	"MCG_C2_HGO_SHIFT (MCG_C2_HGO0_SHIFT)\000"
-.LASF1058:
-	.ascii	"DMA_DSR0 DMA_DSR_REG(DMA0,0)\000"
+.LASF4351:
+	.ascii	"SyncEle_TYPE_BinSEM\000"
 .LASF3615:
 	.ascii	"TSI_GENCS_DVOLT_WIDTH 2\000"
 .LASF3386:
@@ -16479,8 +16488,6 @@ os_SCHEDULE:
 	.ascii	"DMA_DCR_SSIZE_WIDTH 2\000"
 .LASF4153:
 	.ascii	"MCM_BASES MCM_BASE_PTRS\000"
-.LASF4187:
-	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x6u\000"
 .LASF311:
 	.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 1\000"
 .LASF3568:
@@ -16488,8 +16495,6 @@ os_SCHEDULE:
 .LASF3104:
 	.ascii	"SIM_SCGC4_UART0(x) (((uint32_t)(((uint32_t)(x))<<SI"
 	.ascii	"M_SCGC4_UART0_SHIFT))&SIM_SCGC4_UART0_MASK)\000"
-.LASF3224:
-	.ascii	"SIM_SOPT2 SIM_SOPT2_REG(SIM)\000"
 .LASF3979:
 	.ascii	"SIM_FCFG2_MAXADDR SIM_FCFG2_MAXADDR0\000"
 .LASF2202:
@@ -16531,7 +16536,7 @@ os_SCHEDULE:
 	.ascii	"RTC_CR_SC8P_WIDTH 1\000"
 .LASF1740:
 	.ascii	"LPTMR_CNR_REG(base) ((base)->CNR)\000"
-.LASF4407:
+.LASF4410:
 	.ascii	"PTskMB\000"
 .LASF2686:
 	.ascii	"PORTB_PCR21 PORT_PCR_REG(PORTB,21)\000"
@@ -16581,15 +16586,15 @@ os_SCHEDULE:
 	.ascii	"I2C_FLT_FLT_WIDTH 5\000"
 .LASF3376:
 	.ascii	"SPI_S_SPMF_MASK 0x40u\000"
-.LASF4426:
+.LASF4429:
 	.ascii	"MultiPurposeByte\000"
 .LASF1668:
 	.ascii	"LLWU_F1_WUF7(x) (((uint8_t)(((uint8_t)(x))<<LLWU_F1"
 	.ascii	"_WUF7_SHIFT))&LLWU_F1_WUF7_MASK)\000"
 .LASF1350:
 	.ascii	"GPIOA ((GPIO_Type *)GPIOA_BASE)\000"
-.LASF3629:
-	.ascii	"TSI_GENCS_OUTRGF_MASK 0x80000000u\000"
+.LASF474:
+	.ascii	"SCB_ICSR_PENDSVSET_Pos 28\000"
 .LASF345:
 	.ascii	"_MACHINE__DEFAULT_TYPES_H \000"
 .LASF1606:
@@ -16691,7 +16696,7 @@ os_SCHEDULE:
 .LASF1492:
 	.ascii	"I2C_FLT_STOPIE(x) (((uint8_t)(((uint8_t)(x))<<I2C_F"
 	.ascii	"LT_STOPIE_SHIFT))&I2C_FLT_STOPIE_MASK)\000"
-.LASF4443:
+.LASF4446:
 	.ascii	"RetCode\000"
 .LASF1519:
 	.ascii	"I2C_SMB_SLTF_WIDTH 1\000"
@@ -16701,8 +16706,8 @@ os_SCHEDULE:
 	.ascii	"FGPIOA_BASE (0xF80FF000u)\000"
 .LASF3442:
 	.ascii	"TPM_MOD_MOD_WIDTH 16\000"
-.LASF1882:
-	.ascii	"MCG_S_OSCINIT0_WIDTH 1\000"
+.LASF2583:
+	.ascii	"PORT_PCR_PFE_SHIFT 4\000"
 .LASF3151:
 	.ascii	"SIM_SCGC6_ADC0_WIDTH 1\000"
 .LASF974:
@@ -16766,7 +16771,7 @@ os_SCHEDULE:
 	.ascii	"RTC_SR_REG(base) ((base)->SR)\000"
 .LASF2883:
 	.ascii	"RTC_TCR_TCV_WIDTH 8\000"
-.LASF4379:
+.LASF4382:
 	.ascii	"tskProvID\000"
 .LASF1422:
 	.ascii	"I2C_C1_IICEN_SHIFT 7\000"
@@ -16862,7 +16867,7 @@ os_SCHEDULE:
 	.ascii	"MTB_AUTHSTAT_BIT1_WIDTH 1\000"
 .LASF27:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
-.LASF4408:
+.LASF4411:
 	.ascii	"multipurposeByte\000"
 .LASF4312:
 	.ascii	"TSK_PRIO_IDLE\000"
@@ -16999,7 +17004,7 @@ os_SCHEDULE:
 .LASF904:
 	.ascii	"DAC_C0_DACEN(x) (((uint8_t)(((uint8_t)(x))<<DAC_C0_"
 	.ascii	"DACEN_SHIFT))&DAC_C0_DACEN_MASK)\000"
-.LASF4411:
+.LASF4414:
 	.ascii	"evtMsk\000"
 .LASF3249:
 	.ascii	"SMC_PMPROT_ALLS_MASK 0x8u\000"
@@ -17010,7 +17015,7 @@ os_SCHEDULE:
 	.ascii	"Y_Pos)\000"
 .LASF366:
 	.ascii	"__int32_t_defined 1\000"
-.LASF4459:
+.LASF4462:
 	.ascii	"tsk_rmvTskActvTskLst\000"
 .LASF1470:
 	.ascii	"I2C_C2_SBRC_SHIFT 4\000"
@@ -17036,7 +17041,7 @@ os_SCHEDULE:
 	.ascii	"PIT_TFLG(index) PIT_TFLG_REG(PIT,index)\000"
 .LASF3448:
 	.ascii	"TPM_CnSC_ELSA_MASK 0x4u\000"
-.LASF4373:
+.LASF4376:
 	.ascii	"msgQMsgProvStruc\000"
 .LASF3128:
 	.ascii	"SIM_SCGC5_PORTB(x) (((uint32_t)(((uint32_t)(x))<<SI"
@@ -17051,9 +17056,9 @@ os_SCHEDULE:
 	.ascii	"DMA_DSR1 DMA_DSR_REG(DMA0,1)\000"
 .LASF839:
 	.ascii	"CMP_MUXCR_PSTM_SHIFT 7\000"
-.LASF4460:
+.LASF4463:
 	.ascii	"tsk_insrtTskActvTskLst\000"
-.LASF4384:
+.LASF4387:
 	.ascii	"SysMsgProv\000"
 .LASF3965:
 	.ascii	"MCM_MATCR_RO1_MASK This_symbol_has_been_deprecated\000"
@@ -17114,7 +17119,7 @@ os_SCHEDULE:
 .LASF1117:
 	.ascii	"FGPIO_PSOR_PTSO(x) (((uint32_t)(((uint32_t)(x))<<FG"
 	.ascii	"PIO_PSOR_PTSO_SHIFT))&FGPIO_PSOR_PTSO_MASK)\000"
-.LASF4474:
+.LASF4477:
 	.ascii	"GNU C 4.8.4 20140725 (release) [ARM/embedded-4_8-br"
 	.ascii	"anch revision 213147] -fpreprocessed -mcpu=cortex-m"
 	.ascii	"0plus -mthumb -g3 -std=c99 -fmessage-length=0 -fsig"
@@ -17157,7 +17162,7 @@ os_SCHEDULE:
 	.ascii	"UARTLP_C5_BOTHEDGE_MASK UART0_C5_BOTHEDGE_MASK\000"
 .LASF244:
 	.ascii	"__LACCUM_IBIT__ 32\000"
-.LASF4427:
+.LASF4430:
 	.ascii	"SyncEleHandle\000"
 .LASF3845:
 	.ascii	"UART0_C3_TXDIR_MASK 0x20u\000"
@@ -17200,17 +17205,17 @@ os_SCHEDULE:
 	.ascii	"__UINT_LEAST64_MAX__ 18446744073709551615ULL\000"
 .LASF3743:
 	.ascii	"UART0_C2_TE_WIDTH 1\000"
-.LASF4454:
+.LASF4457:
 	.ascii	"TskPrioArEle\000"
 .LASF3676:
 	.ascii	"UART0_C5_REG(base) ((base)->C5)\000"
 .LASF3791:
 	.ascii	"UART0_S1_TDRE_WIDTH 1\000"
-.LASF3983:
-	.ascii	"UARTLP_BDH_REG UART0_BDH_REG\000"
-.LASF4452:
+.LASF2789:
+	.ascii	"ROM_SYSACCESS_SYSACCESS_MASK 0xFFFFFFFFu\000"
+.LASF4455:
 	.ascii	"fstTsk\000"
-.LASF4471:
+.LASF4474:
 	.ascii	"p_cur_tsk_tcb\000"
 .LASF491:
 	.ascii	"SCB_VTOR_TBLOFF_Msk (0xFFFFFFUL << SCB_VTOR_TBLOFF_"
@@ -17361,6 +17366,8 @@ os_SCHEDULE:
 	.ascii	"ADC_SC2_ADACT_SHIFT 7\000"
 .LASF170:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+.LASF4187:
+	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x2u\000"
 .LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
 .LASF3527:
@@ -17425,6 +17432,8 @@ os_SCHEDULE:
 	.ascii	"C1_IREFSTEN_SHIFT))&MCG_C1_IREFSTEN_MASK)\000"
 .LASF2318:
 	.ascii	"NV_BACKKEY6_KEY_SHIFT 0\000"
+.LASF3983:
+	.ascii	"UARTLP_BDH_REG UART0_BDH_REG\000"
 .LASF4124:
 	.ascii	"UARTLP_C5_TDMAE_MASK UART0_C5_TDMAE_MASK\000"
 .LASF797:
@@ -17438,6 +17447,8 @@ os_SCHEDULE:
 	.ascii	"SCB_ICSR_VECTPENDING_Pos 12\000"
 .LASF2291:
 	.ascii	"NV_FPROT3_REG(base) ((base)->FPROT3)\000"
+.LASF1701:
+	.ascii	"LLWU_FILT1_FILTSEL_MASK 0xFu\000"
 .LASF1685:
 	.ascii	"LLWU_F3_MWUF4_MASK 0x10u\000"
 .LASF2227:
@@ -17538,7 +17549,7 @@ os_SCHEDULE:
 .LASF4212:
 	.ascii	"TSK_STATE_IS_WAITING_MSGRCV(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_WAITING_MSGRCV)\000"
-.LASF4434:
+.LASF4437:
 	.ascii	"sysTckTmr\000"
 .LASF1317:
 	.ascii	"FTFA_FPROT1 FTFA_FPROT1_REG(FTFA)\000"
@@ -17604,7 +17615,7 @@ os_SCHEDULE:
 	.ascii	"TPM_CnSC_CHF_MASK 0x80u\000"
 .LASF620:
 	.ascii	"ADC_CFG2_MUXSEL_WIDTH 1\000"
-.LASF4375:
+.LASF4378:
 	.ascii	"msgsNew\000"
 .LASF2573:
 	.ascii	"PORT_PCR_PS(x) (((uint32_t)(((uint32_t)(x))<<PORT_P"
@@ -17640,7 +17651,7 @@ os_SCHEDULE:
 	.ascii	"UART0_D_R0T0_SHIFT 0\000"
 .LASF1475:
 	.ascii	"I2C_C2_HDRS_WIDTH 1\000"
-.LASF4351:
+.LASF4354:
 	.ascii	"SyncEle_TYPE_MNTR\000"
 .LASF459:
 	.ascii	"__I volatile const\000"
@@ -17711,7 +17722,7 @@ os_SCHEDULE:
 .LASF3628:
 	.ascii	"TSI_GENCS_ESOR(x) (((uint32_t)(((uint32_t)(x))<<TSI"
 	.ascii	"_GENCS_ESOR_SHIFT))&TSI_GENCS_ESOR_MASK)\000"
-.LASF4361:
+.LASF4364:
 	.ascii	"SysTckEleType\000"
 .LASF3886:
 	.ascii	"UART0_D_R7T7_SHIFT 7\000"
@@ -17720,6 +17731,8 @@ os_SCHEDULE:
 .LASF2952:
 	.ascii	"RTC_LR_CRL(x) (((uint32_t)(((uint32_t)(x))<<RTC_LR_"
 	.ascii	"CRL_SHIFT))&RTC_LR_CRL_MASK)\000"
+.LASF3262:
+	.ascii	"SMC_PMCTRL_STOPA_SHIFT 3\000"
 .LASF773:
 	.ascii	"CMP_CR1_INV(x) (((uint8_t)(((uint8_t)(x))<<CMP_CR1_"
 	.ascii	"INV_SHIFT))&CMP_CR1_INV_MASK)\000"
@@ -17965,7 +17978,7 @@ os_SCHEDULE:
 	.ascii	"DMAEN_SHIFT))&DAC_C1_DMAEN_MASK)\000"
 .LASF569:
 	.ascii	"ADC_CLP4_REG(base) ((base)->CLP4)\000"
-.LASF4463:
+.LASF4466:
 	.ascii	"curPrioPos\000"
 .LASF2828:
 	.ascii	"ROM_COMPID_COMPID(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -18010,6 +18023,9 @@ os_SCHEDULE:
 	.ascii	"PORTB_PCR11 PORT_PCR_REG(PORTB,11)\000"
 .LASF591:
 	.ascii	"ADC_CFG1_MODE_SHIFT 2\000"
+.LASF880:
+	.ascii	"DAC_C0_DACBBIEN(x) (((uint8_t)(((uint8_t)(x))<<DAC_"
+	.ascii	"C0_DACBBIEN_SHIFT))&DAC_C0_DACBBIEN_MASK)\000"
 .LASF1360:
 	.ascii	"GPIOA_PTOR GPIO_PTOR_REG(GPIOA)\000"
 .LASF1401:
@@ -18063,7 +18079,7 @@ os_SCHEDULE:
 .LASF912:
 	.ascii	"DAC_C1_DACBFMD(x) (((uint8_t)(((uint8_t)(x))<<DAC_C"
 	.ascii	"1_DACBFMD_SHIFT))&DAC_C1_DACBFMD_MASK)\000"
-.LASF4406:
+.LASF4409:
 	.ascii	"msgProv\000"
 .LASF404:
 	.ascii	"INT_FAST16_MIN (-__INT_FAST16_MAX__ - 1)\000"
@@ -18094,7 +18110,7 @@ os_SCHEDULE:
 	.ascii	"TskSet_DUMMY_4\000"
 .LASF4344:
 	.ascii	"TskSet_DUMMY_5\000"
-.LASF4435:
+.LASF4438:
 	.ascii	"tskSync\000"
 .LASF3580:
 	.ascii	"TSI_GENCS_EOSF(x) (((uint32_t)(((uint32_t)(x))<<TSI"
@@ -18116,7 +18132,7 @@ os_SCHEDULE:
 .LASF3776:
 	.ascii	"UART0_S1_OR(x) (((uint8_t)(((uint8_t)(x))<<UART0_S1"
 	.ascii	"_OR_SHIFT))&UART0_S1_OR_MASK)\000"
-.LASF4359:
+.LASF4362:
 	.ascii	"SysTckObj_SysFktBlck\000"
 .LASF3577:
 	.ascii	"TSI_GENCS_EOSF_MASK 0x4u\000"
@@ -18249,14 +18265,10 @@ os_SCHEDULE:
 	.ascii	"MTBDWT_DEVICECFG_DEVICECFG_WIDTH 32\000"
 .LASF1690:
 	.ascii	"LLWU_F3_MWUF5_SHIFT 5\000"
-.LASF3061:
-	.ascii	"SIM_SOPT7_ADC0PRETRGSEL_MASK 0x10u\000"
 .LASF1553:
 	.ascii	"I2C_BASE_PTRS { I2C0 }\000"
 .LASF3846:
 	.ascii	"UART0_C3_TXDIR_SHIFT 5\000"
-.LASF3902:
-	.ascii	"UART0_C4_M10_SHIFT 5\000"
 .LASF577:
 	.ascii	"ADC_SC1_ADCH(x) (((uint32_t)(((uint32_t)(x))<<ADC_S"
 	.ascii	"C1_ADCH_SHIFT))&ADC_SC1_ADCH_MASK)\000"
@@ -18283,9 +18295,6 @@ os_SCHEDULE:
 	.ascii	"DMX32_SHIFT))&MCG_C4_DMX32_MASK)\000"
 .LASF3996:
 	.ascii	"UARTLP_BDH_SBR_SHIFT UART0_BDH_SBR_SHIFT\000"
-.LASF581:
-	.ascii	"ADC_SC1_AIEN(x) (((uint32_t)(((uint32_t)(x))<<ADC_S"
-	.ascii	"C1_AIEN_SHIFT))&ADC_SC1_AIEN_MASK)\000"
 .LASF3950:
 	.ascii	"DMA_REQC_ARR_CFSM_SHIFT This_symbol_has_been_deprec"
 	.ascii	"ated\000"
@@ -18374,6 +18383,8 @@ os_SCHEDULE:
 	.ascii	"UART0_S1_TC_SHIFT 6\000"
 .LASF2681:
 	.ascii	"PORTB_PCR16 PORT_PCR_REG(PORTB,16)\000"
+.LASF958:
+	.ascii	"DMA_DSR_BCR_BCR_MASK 0xFFFFFFu\000"
 .LASF2477:
 	.ascii	"PIT_TCTRL_CHN(x) (((uint32_t)(((uint32_t)(x))<<PIT_"
 	.ascii	"TCTRL_CHN_SHIFT))&PIT_TCTRL_CHN_MASK)\000"
@@ -18406,7 +18417,7 @@ os_SCHEDULE:
 	.ascii	"__FLT_DIG__ 6\000"
 .LASF512:
 	.ascii	"SCB_SHCSR_SVCALLPENDED_Pos 15\000"
-.LASF4362:
+.LASF4365:
 	.ascii	"tskID\000"
 .LASF2554:
 	.ascii	"PMC_REGSC_BGEN_SHIFT 4\000"
@@ -18510,7 +18521,7 @@ os_SCHEDULE:
 	.ascii	"SIM_CLKDIV1_OUTDIV4_SHIFT 16\000"
 .LASF3278:
 	.ascii	"SMC_STOPCTRL_PSTOPO_SHIFT 6\000"
-.LASF4481:
+.LASF4484:
 	.ascii	"os_SCHEDULE\000"
 .LASF4107:
 	.ascii	"UARTLP_MA2_MA_SHIFT UART0_MA2_MA_SHIFT\000"
@@ -18528,9 +18539,8 @@ os_SCHEDULE:
 	.ascii	"RTC_IER_TAIE_MASK 0x4u\000"
 .LASF3239:
 	.ascii	"SIM_COPC SIM_COPC_REG(SIM)\000"
-.LASF977:
-	.ascii	"DMA_DSR_BCR_BED(x) (((uint32_t)(((uint32_t)(x))<<DM"
-	.ascii	"A_DSR_BCR_BED_SHIFT))&DMA_DSR_BCR_BED_MASK)\000"
+.LASF2953:
+	.ascii	"RTC_LR_SRL_MASK 0x20u\000"
 .LASF2848:
 	.ascii	"ROM_COMPID1 ROM_COMPID_REG(ROM,1)\000"
 .LASF3513:
@@ -18570,7 +18580,7 @@ os_SCHEDULE:
 .LASF757:
 	.ascii	"CMP_CR0_FILTER_CNT(x) (((uint8_t)(((uint8_t)(x))<<C"
 	.ascii	"MP_CR0_FILTER_CNT_SHIFT))&CMP_CR0_FILTER_CNT_MASK)\000"
-.LASF4457:
+.LASF4460:
 	.ascii	"readyNode\000"
 .LASF3389:
 	.ascii	"SPI_M_Bits_SHIFT 0\000"
@@ -18644,13 +18654,13 @@ os_SCHEDULE:
 .LASF1388:
 	.ascii	"I2C_F_ICR(x) (((uint8_t)(((uint8_t)(x))<<I2C_F_ICR_"
 	.ascii	"SHIFT))&I2C_F_ICR_MASK)\000"
-.LASF4353:
+.LASF4356:
 	.ascii	"sysTckObjTypeEnum\000"
 .LASF391:
 	.ascii	"UINT32_MAX __UINT32_MAX__\000"
 .LASF4134:
 	.ascii	"DMAMUX_BASES DMAMUX_BASE_PTRS\000"
-.LASF4365:
+.LASF4368:
 	.ascii	"nxtSysTickTMR\000"
 .LASF3898:
 	.ascii	"UART0_C4_OSR_SHIFT 0\000"
@@ -18713,7 +18723,7 @@ os_SCHEDULE:
 	.ascii	"MTBDWT_MASK_MASK_SHIFT 0\000"
 .LASF2867:
 	.ascii	"RTC_TPR_TPR_WIDTH 16\000"
-.LASF4445:
+.LASF4448:
 	.ascii	"g_DispatchFlag\000"
 .LASF2023:
 	.ascii	"MTB_LOCKACCESS_REG(base) ((base)->LOCKACCESS)\000"
@@ -18820,7 +18830,7 @@ os_SCHEDULE:
 	.ascii	"SPI_C1_SPTIE_SHIFT 5\000"
 .LASF682:
 	.ascii	"ADC_OFS_OFS_MASK 0xFFFFu\000"
-.LASF4428:
+.LASF4431:
 	.ascii	"PSyncEle\000"
 .LASF17:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
@@ -18875,7 +18885,7 @@ os_SCHEDULE:
 	.ascii	"MCG_C2_RANGE_WIDTH (MCG_C2_RANGE0_WIDTH)\000"
 .LASF2646:
 	.ascii	"PORTA_PCR16 PORT_PCR_REG(PORTA,16)\000"
-.LASF4466:
+.LASF4469:
 	.ascii	"cntr\000"
 .LASF2464:
 	.ascii	"PIT_CVAL_TVL_WIDTH 32\000"
@@ -18895,12 +18905,12 @@ os_SCHEDULE:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF2680:
 	.ascii	"PORTB_PCR15 PORT_PCR_REG(PORTB,15)\000"
-.LASF4372:
+.LASF4375:
 	.ascii	"sysTickTMRStruc\000"
 .LASF2794:
 	.ascii	"ROM_PERIPHID4_PERIPHID_SHIFT 0\000"
-.LASF958:
-	.ascii	"DMA_DSR_BCR_BCR_MASK 0xFFFFFFu\000"
+.LASF2715:
+	.ascii	"RCM_SRS0_LOC_SHIFT 2\000"
 .LASF2779:
 	.ascii	"ROM_COMPID_REG(base,index) ((base)->COMPID[index])\000"
 .LASF3097:
@@ -18918,8 +18928,6 @@ os_SCHEDULE:
 	.ascii	"__SHRT_MAX__ 32767\000"
 .LASF999:
 	.ascii	"DMA_DCR_D_REQ_SHIFT 7\000"
-.LASF2583:
-	.ascii	"PORT_PCR_PFE_SHIFT 4\000"
 .LASF2662:
 	.ascii	"PORTA_GPCLR PORT_GPCLR_REG(PORTA)\000"
 .LASF3881:
@@ -18942,12 +18950,13 @@ os_SCHEDULE:
 	.ascii	"SIM_SDID_REVID_WIDTH 4\000"
 .LASF2978:
 	.ascii	"RTC_IER_WPON_SHIFT 7\000"
-.LASF4371:
+.LASF4374:
 	.ascii	"PSysTickTMR\000"
 .LASF3476:
 	.ascii	"TPM_STATUS_CH0F_MASK 0x1u\000"
-.LASF410:
-	.ascii	"INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)\000"
+.LASF977:
+	.ascii	"DMA_DSR_BCR_BED(x) (((uint32_t)(((uint32_t)(x))<<DM"
+	.ascii	"A_DSR_BCR_BED_SHIFT))&DMA_DSR_BCR_BED_MASK)\000"
 .LASF4279:
 	.ascii	"FktCall\000"
 .LASF3512:
@@ -18981,7 +18990,7 @@ os_SCHEDULE:
 	.ascii	"GPIO_PCOR_PTCO_WIDTH 32\000"
 .LASF3274:
 	.ascii	"SMC_STOPCTRL_PORPO_SHIFT 5\000"
-.LASF4437:
+.LASF4440:
 	.ascii	"tskSets\000"
 .LASF2911:
 	.ascii	"RTC_CR_CLKO_WIDTH 1\000"
@@ -18994,8 +19003,6 @@ os_SCHEDULE:
 .LASF1237:
 	.ascii	"FTFA_FCCOB2_CCOBn(x) (((uint8_t)(((uint8_t)(x))<<FT"
 	.ascii	"FA_FCCOB2_CCOBn_SHIFT))&FTFA_FCCOB2_CCOBn_MASK)\000"
-.LASF3198:
-	.ascii	"SIM_UIDL_UID_SHIFT 0\000"
 .LASF4220:
 	.ascii	"TSK_STATE_IS_UNINIT_ENDED(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_UNINIT_ENDED)\000"
@@ -19054,8 +19061,9 @@ os_SCHEDULE:
 	.ascii	"MTB_TAGCLEAR_TAGCLEAR_WIDTH 32\000"
 .LASF2700:
 	.ascii	"PORTA_PCR(index) PORT_PCR_REG(PORTA,index)\000"
-.LASF2789:
-	.ascii	"ROM_SYSACCESS_SYSACCESS_MASK 0xFFFFFFFFu\000"
+.LASF581:
+	.ascii	"ADC_SC1_AIEN(x) (((uint32_t)(((uint32_t)(x))<<ADC_S"
+	.ascii	"C1_AIEN_SHIFT))&ADC_SC1_AIEN_MASK)\000"
 .LASF212:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
 .LASF2706:
@@ -19098,12 +19106,10 @@ os_SCHEDULE:
 	.ascii	"UART0_BDH_LBKDIE_MASK 0x80u\000"
 .LASF141:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
-.LASF4462:
+.LASF4465:
 	.ascii	"tmpPrioArElmnt\000"
 .LASF53:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
-.LASF1973:
-	.ascii	"MCM_PLACR_DFCDA_WIDTH 1\000"
 .LASF2996:
 	.ascii	"SIM_SOPT2_REG(base) ((base)->SOPT2)\000"
 .LASF3409:
@@ -19219,7 +19225,7 @@ os_SCHEDULE:
 	.ascii	"SPI_C1_SPTIE_MASK 0x20u\000"
 .LASF3244:
 	.ascii	"SMC_PMSTAT_REG(base) ((base)->PMSTAT)\000"
-.LASF4438:
+.LASF4441:
 	.ascii	"nxtTsk\000"
 .LASF397:
 	.ascii	"UINT64_MAX __UINT64_MAX__\000"
@@ -19336,13 +19342,13 @@ os_SCHEDULE:
 	.ascii	"UART0_MA2_MA_MASK 0xFFu\000"
 .LASF4137:
 	.ascii	"FPTA FGPIOA\000"
-.LASF4419:
+.LASF4422:
 	.ascii	"syncEleHandle\000"
 .LASF1541:
 	.ascii	"I2C_SLTH_SSLT_MASK 0xFFu\000"
 .LASF3618:
 	.ascii	"TSI_GENCS_REFCHRG_SHIFT 21\000"
-.LASF4421:
+.LASF4424:
 	.ascii	"TmrSyncEle\000"
 .LASF2021:
 	.ascii	"MTB_TAGSET_REG(base) ((base)->TAGSET)\000"
@@ -19369,7 +19375,7 @@ os_SCHEDULE:
 	.ascii	"SyncEle_TYPE_NOID\000"
 .LASF1662:
 	.ascii	"LLWU_F1_WUF6_SHIFT 6\000"
-.LASF4448:
+.LASF4451:
 	.ascii	"gLPExit\000"
 .LASF3720:
 	.ascii	"UART0_C1_RSRC(x) (((uint8_t)(((uint8_t)(x))<<UART0_"
@@ -19466,10 +19472,8 @@ os_SCHEDULE:
 .LASF1468:
 	.ascii	"I2C_C2_RMEN(x) (((uint8_t)(((uint8_t)(x))<<I2C_C2_R"
 	.ascii	"MEN_SHIFT))&I2C_C2_RMEN_MASK)\000"
-.LASF2136:
-	.ascii	"MTB_PERIPHID_PERIPHID(x) (((uint32_t)(((uint32_t)(x"
-	.ascii	"))<<MTB_PERIPHID_PERIPHID_SHIFT))&MTB_PERIPHID_PERI"
-	.ascii	"PHID_MASK)\000"
+.LASF462:
+	.ascii	"SCB_CPUID_IMPLEMENTER_Pos 24\000"
 .LASF837:
 	.ascii	"CMP_MUXCR_PSEL(x) (((uint8_t)(((uint8_t)(x))<<CMP_M"
 	.ascii	"UXCR_PSEL_SHIFT))&CMP_MUXCR_PSEL_MASK)\000"
@@ -19510,7 +19514,7 @@ os_SCHEDULE:
 .LASF1970:
 	.ascii	"MCM_PLACR_CFCC(x) (((uint32_t)(((uint32_t)(x))<<MCM"
 	.ascii	"_PLACR_CFCC_SHIFT))&MCM_PLACR_CFCC_MASK)\000"
-.LASF4456:
+.LASF4459:
 	.ascii	"PrioARFlgs\000"
 .LASF1441:
 	.ascii	"I2C_S_ARBL_MASK 0x10u\000"
@@ -19565,8 +19569,9 @@ os_SCHEDULE:
 	.ascii	"MCM_PLACR_EFDS_SHIFT 14\000"
 .LASF1783:
 	.ascii	"LPTMR_CMR_COMPARE_WIDTH 16\000"
-.LASF1167:
-	.ascii	"FTFA_FCCOBA_REG(base) ((base)->FCCOBA)\000"
+.LASF3435:
+	.ascii	"TPM_SC_DMA(x) (((uint32_t)(((uint32_t)(x))<<TPM_SC_"
+	.ascii	"DMA_SHIFT))&TPM_SC_DMA_MASK)\000"
 .LASF2010:
 	.ascii	"MCM_BASE_ADDRS { MCM_BASE }\000"
 .LASF3266:
@@ -19700,8 +19705,8 @@ os_SCHEDULE:
 	.ascii	"DMA_DSR_BCR_REQ_MASK 0x4000000u\000"
 .LASF2492:
 	.ascii	"PIT_TCTRL0 PIT_TCTRL_REG(PIT,0)\000"
-.LASF156:
-	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
+.LASF885:
+	.ascii	"DAC_C0_LPEN_MASK 0x8u\000"
 .LASF835:
 	.ascii	"CMP_MUXCR_PSEL_SHIFT 3\000"
 .LASF3313:
@@ -19731,10 +19736,8 @@ os_SCHEDULE:
 	.ascii	"SIM_SOPT7_ADC0ALTTRGEN_WIDTH 1\000"
 .LASF363:
 	.ascii	"__int_least8_t_defined 1\000"
-.LASF2218:
-	.ascii	"MTBDWT_FCT_DATAVADDR0(x) (((uint32_t)(((uint32_t)(x"
-	.ascii	"))<<MTBDWT_FCT_DATAVADDR0_SHIFT))&MTBDWT_FCT_DATAVA"
-	.ascii	"DDR0_MASK)\000"
+.LASF3198:
+	.ascii	"SIM_UIDL_UID_SHIFT 0\000"
 .LASF1143:
 	.ascii	"FGPIOA_PSOR FGPIO_PSOR_REG(FGPIOA)\000"
 .LASF4024:
@@ -19862,7 +19865,7 @@ os_SCHEDULE:
 	.ascii	"FTFA_FCCOB6_CCOBn_MASK 0xFFu\000"
 .LASF3665:
 	.ascii	"UART0_BDH_REG(base) ((base)->BDH)\000"
-.LASF4405:
+.LASF4408:
 	.ascii	"msgProvType\000"
 .LASF3664:
 	.ascii	"TSI0_TSHD TSI_TSHD_REG(TSI0)\000"
@@ -19875,9 +19878,11 @@ os_SCHEDULE:
 .LASF601:
 	.ascii	"ADC_CFG1_ADIV(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"CFG1_ADIV_SHIFT))&ADC_CFG1_ADIV_MASK)\000"
-.LASF603:
-	.ascii	"ADC_CFG1_ADLPC_SHIFT 7\000"
-.LASF4360:
+.LASF2218:
+	.ascii	"MTBDWT_FCT_DATAVADDR0(x) (((uint32_t)(((uint32_t)(x"
+	.ascii	"))<<MTBDWT_FCT_DATAVADDR0_SHIFT))&MTBDWT_FCT_DATAVA"
+	.ascii	"DDR0_MASK)\000"
+.LASF4363:
 	.ascii	"SysTckObj_SysFktWait\000"
 .LASF1810:
 	.ascii	"MCG_C1_IREFSTEN_WIDTH 1\000"
@@ -19896,7 +19901,7 @@ os_SCHEDULE:
 	.ascii	"PMC_BASE_PTR (PMC)\000"
 .LASF2355:
 	.ascii	"NV_FSEC_MEEN_WIDTH 2\000"
-.LASF4442:
+.LASF4445:
 	.ascii	"OsCode\000"
 .LASF1232:
 	.ascii	"FTFA_FCCOB3_CCOBn_WIDTH 8\000"
@@ -19904,7 +19909,7 @@ os_SCHEDULE:
 	.ascii	"ADC0_SC1B ADC_SC1_REG(ADC0,1)\000"
 .LASF2543:
 	.ascii	"PMC_REGSC_BGBE_WIDTH 1\000"
-.LASF4449:
+.LASF4452:
 	.ascii	"gWokenUp\000"
 .LASF4135:
 	.ascii	"FPTA_BASE_PTR FGPIOA_BASE_PTR\000"
@@ -19954,7 +19959,7 @@ os_SCHEDULE:
 	.ascii	"RTC_BASE (0x4003D000u)\000"
 .LASF544:
 	.ascii	"MCG_MODE_FEI 0U\000"
-.LASF4358:
+.LASF4361:
 	.ascii	"SysTckObj_SysFkt\000"
 .LASF1647:
 	.ascii	"LLWU_F1_WUF2_WIDTH 1\000"
@@ -20043,9 +20048,6 @@ os_SCHEDULE:
 	.ascii	"FTFA_FPROT1_PROT_WIDTH 8\000"
 .LASF3292:
 	.ascii	"SMC_STOPCTRL SMC_STOPCTRL_REG(SMC)\000"
-.LASF1823:
-	.ascii	"MCG_C1_FRDIV(x) (((uint8_t)(((uint8_t)(x))<<MCG_C1_"
-	.ascii	"FRDIV_SHIFT))&MCG_C1_FRDIV_MASK)\000"
 .LASF2461:
 	.ascii	"PIT_LDVAL_TSV(x) (((uint32_t)(((uint32_t)(x))<<PIT_"
 	.ascii	"LDVAL_TSV_SHIFT))&PIT_LDVAL_TSV_MASK)\000"
@@ -20063,7 +20065,7 @@ os_SCHEDULE:
 	.ascii	"INT_FAST64_MAX __INT_FAST64_MAX__\000"
 .LASF2840:
 	.ascii	"ROM_PERIPHID5 ROM_PERIPHID5_REG(ROM)\000"
-.LASF4393:
+.LASF4396:
 	.ascii	"Dummy_Prov\000"
 .LASF309:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 1\000"
@@ -20154,10 +20156,10 @@ os_SCHEDULE:
 .LASF3132:
 	.ascii	"SIM_SCGC6_FTF(x) (((uint32_t)(((uint32_t)(x))<<SIM_"
 	.ascii	"SCGC6_FTF_SHIFT))&SIM_SCGC6_FTF_MASK)\000"
-.LASF4397:
+.LASF4400:
 	.ascii	"msgQMsgProv\000"
-.LASF3437:
-	.ascii	"TPM_CNT_COUNT_SHIFT 0\000"
+.LASF3340:
+	.ascii	"SPI_C2_RXDMAE_MASK 0x4u\000"
 .LASF438:
 	.ascii	"NUMBER_OF_INT_VECTORS 48\000"
 .LASF466:
@@ -20231,11 +20233,8 @@ os_SCHEDULE:
 	.ascii	"TPM_CnSC_CHIE_MASK 0x40u\000"
 .LASF2381:
 	.ascii	"FTFA_FlashConfig_BASE (0x400u)\000"
-.LASF880:
-	.ascii	"DAC_C0_DACBBIEN(x) (((uint8_t)(((uint8_t)(x))<<DAC_"
-	.ascii	"C0_DACBBIEN_SHIFT))&DAC_C0_DACBBIEN_MASK)\000"
-.LASF885:
-	.ascii	"DAC_C0_LPEN_MASK 0x8u\000"
+.LASF2690:
+	.ascii	"PORTB_PCR25 PORT_PCR_REG(PORTB,25)\000"
 .LASF2338:
 	.ascii	"NV_FPROT1_PROT_SHIFT 0\000"
 .LASF3021:
@@ -20250,7 +20249,7 @@ os_SCHEDULE:
 	.ascii	"LLWU_PE1_WUPE0_MASK 0x3u\000"
 .LASF1514:
 	.ascii	"I2C_SMB_SHTF1_SHIFT 2\000"
-.LASF4464:
+.LASF4467:
 	.ascii	"bitFiddlyPrioSlotHelper\000"
 .LASF2226:
 	.ascii	"MTBDWT_TBCTRL_ACOMP0(x) (((uint32_t)(((uint32_t)(x)"
@@ -20309,7 +20308,7 @@ os_SCHEDULE:
 	.ascii	"SIM_SDID_FAMID_WIDTH 4\000"
 .LASF1417:
 	.ascii	"I2C_C1_IICIE_MASK 0x40u\000"
-.LASF4451:
+.LASF4454:
 	.ascii	"tskPrioArEle\000"
 .LASF4246:
 	.ascii	"BITM_RMB_TURN_BIT_ON(x) (((uint32_t)x)|(((uint32_t)"
@@ -20325,8 +20324,8 @@ os_SCHEDULE:
 .LASF1644:
 	.ascii	"LLWU_F1_WUF1(x) (((uint8_t)(((uint8_t)(x))<<LLWU_F1"
 	.ascii	"_WUF1_SHIFT))&LLWU_F1_WUF1_MASK)\000"
-.LASF508:
-	.ascii	"SCB_CCR_STKALIGN_Pos 9\000"
+.LASF4352:
+	.ascii	"SyncEle_TYPE_CntSEM\000"
 .LASF110:
 	.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
 .LASF4268:
@@ -20465,7 +20464,7 @@ os_SCHEDULE:
 	.ascii	"UART0_C3_PEIE_WIDTH 1\000"
 .LASF3982:
 	.ascii	"UARTLP_Type UART0_Type\000"
-.LASF4450:
+.LASF4453:
 	.ascii	"BitsOSFlags\000"
 .LASF247:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
@@ -20538,8 +20537,8 @@ os_SCHEDULE:
 	.ascii	"RTC_CR RTC_CR_REG(RTC)\000"
 .LASF1993:
 	.ascii	"MCM_PLACR_ESFC_WIDTH 1\000"
-.LASF869:
-	.ascii	"DAC_SR_DACBFRPBF_MASK 0x1u\000"
+.LASF3224:
+	.ascii	"SIM_SOPT2 SIM_SOPT2_REG(SIM)\000"
 .LASF4257:
 	.ascii	"unsigned char\000"
 .LASF541:
@@ -20625,7 +20624,7 @@ os_SCHEDULE:
 	.ascii	"PORTA_PCR3 PORT_PCR_REG(PORTA,3)\000"
 .LASF3995:
 	.ascii	"UARTLP_BDH_SBR_MASK UART0_BDH_SBR_MASK\000"
-.LASF4366:
+.LASF4369:
 	.ascii	"prvSysTickTMR\000"
 .LASF792:
 	.ascii	"CMP_FPR_FILT_PER_WIDTH 8\000"
@@ -20662,8 +20661,8 @@ os_SCHEDULE:
 	.ascii	"DAC_C2_DACBFRP_WIDTH 1\000"
 .LASF935:
 	.ascii	"DAC0_C0 DAC_C0_REG(DAC0)\000"
-.LASF1154:
-	.ascii	"FTFA_FSTAT_REG(base) ((base)->FSTAT)\000"
+.LASF4359:
+	.ascii	"SysTckObj_TskBlck\000"
 .LASF193:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF1550:
@@ -20758,7 +20757,7 @@ os_SCHEDULE:
 	.ascii	"CMP_CR0_HYSTCTR_MASK 0x3u\000"
 .LASF4326:
 	.ascii	"TSK_STATE_WAITING_EVT\000"
-.LASF4480:
+.LASF4483:
 	.ascii	"os_INIT_Scheduler\000"
 .LASF2302:
 	.ascii	"NV_BACKKEY2_KEY_SHIFT 0\000"
@@ -20781,7 +20780,7 @@ os_SCHEDULE:
 .LASF1895:
 	.ascii	"MCG_SC_LOCS0(x) (((uint8_t)(((uint8_t)(x))<<MCG_SC_"
 	.ascii	"LOCS0_SHIFT))&MCG_SC_LOCS0_MASK)\000"
-.LASF4402:
+.LASF4405:
 	.ascii	"tskMailBox\000"
 .LASF1474:
 	.ascii	"I2C_C2_HDRS_SHIFT 5\000"
@@ -20930,10 +20929,10 @@ os_SCHEDULE:
 	.ascii	"NV_FOPT_LPBOOT1_SHIFT 4\000"
 .LASF3578:
 	.ascii	"TSI_GENCS_EOSF_SHIFT 2\000"
-.LASF4395:
+.LASF4398:
 	.ascii	"sysTickEleIDUnion\000"
-.LASF879:
-	.ascii	"DAC_C0_DACBBIEN_WIDTH 1\000"
+.LASF3061:
+	.ascii	"SIM_SOPT7_ADC0PRETRGSEL_MASK 0x10u\000"
 .LASF308:
 	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 1\000"
 .LASF3549:
@@ -20992,10 +20991,12 @@ os_SCHEDULE:
 	.ascii	"_FCRDIV_SHIFT))&MCG_SC_FCRDIV_MASK)\000"
 .LASF2937:
 	.ascii	"RTC_SR_TAF_MASK 0x4u\000"
-.LASF600:
-	.ascii	"ADC_CFG1_ADIV_WIDTH 2\000"
+.LASF1167:
+	.ascii	"FTFA_FCCOBA_REG(base) ((base)->FCCOBA)\000"
 .LASF3308:
 	.ascii	"SPI_C1_CPHA_MASK 0x4u\000"
+.LASF91:
+	.ascii	"__INT_LEAST8_MAX__ 127\000"
 .LASF1795:
 	.ascii	"LPTMR0_PSR LPTMR_PSR_REG(LPTMR0)\000"
 .LASF2925:
@@ -21004,7 +21005,7 @@ os_SCHEDULE:
 	.ascii	"MCG_C6_CME_WIDTH 1\000"
 .LASF19:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
-.LASF4478:
+.LASF4481:
 	.ascii	"BREAK\000"
 .LASF124:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
@@ -21111,8 +21112,6 @@ os_SCHEDULE:
 	.ascii	"DMAMUX_CHCFG_SOURCE(x) (((uint8_t)(((uint8_t)(x))<<"
 	.ascii	"DMAMUX_CHCFG_SOURCE_SHIFT))&DMAMUX_CHCFG_SOURCE_MAS"
 	.ascii	"K)\000"
-.LASF157:
-	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
 .LASF1249:
 	.ascii	"FTFA_FCCOB7_CCOBn(x) (((uint8_t)(((uint8_t)(x))<<FT"
 	.ascii	"FA_FCCOB7_CCOBn_SHIFT))&FTFA_FCCOB7_CCOBn_MASK)\000"
@@ -21122,8 +21121,6 @@ os_SCHEDULE:
 	.ascii	"DMAMUX_CHCFG_TRIG_WIDTH 1\000"
 .LASF1924:
 	.ascii	"MCG_BASE (0x40064000u)\000"
-.LASF3878:
-	.ascii	"UART0_D_R5T5_SHIFT 5\000"
 .LASF672:
 	.ascii	"ADC_SC3_ADCO_WIDTH 1\000"
 .LASF2761:
@@ -21142,13 +21139,13 @@ os_SCHEDULE:
 	.ascii	"MCG_C3 MCG_C3_REG(MCG)\000"
 .LASF9:
 	.ascii	"__ATOMIC_ACQUIRE 2\000"
-.LASF4415:
-	.ascii	"dummy1\000"
-.LASF4416:
-	.ascii	"dummy2\000"
-.LASF4417:
-	.ascii	"dummy3\000"
 .LASF4418:
+	.ascii	"dummy1\000"
+.LASF4419:
+	.ascii	"dummy2\000"
+.LASF4420:
+	.ascii	"dummy3\000"
+.LASF4421:
 	.ascii	"dummy4\000"
 .LASF1238:
 	.ascii	"FTFA_FCCOB1_CCOBn_MASK 0xFFu\000"
@@ -21163,10 +21160,8 @@ os_SCHEDULE:
 .LASF1217:
 	.ascii	"FTFA_FSEC_FSLACC(x) (((uint8_t)(((uint8_t)(x))<<FTF"
 	.ascii	"A_FSEC_FSLACC_SHIFT))&FTFA_FSEC_FSLACC_MASK)\000"
-.LASF4444:
+.LASF4447:
 	.ascii	"gStruc_OS_FLAGS\000"
-.LASF3488:
-	.ascii	"TPM_STATUS_CH3F_MASK 0x8u\000"
 .LASF1511:
 	.ascii	"I2C_SMB_SHTF2_WIDTH 1\000"
 .LASF3523:
@@ -21222,7 +21217,7 @@ os_SCHEDULE:
 	.ascii	"TMS_SHIFT))&MCG_SC_ATMS_MASK)\000"
 .LASF1654:
 	.ascii	"LLWU_F1_WUF4_SHIFT 4\000"
-.LASF4439:
+.LASF4442:
 	.ascii	"prvTsk\000"
 .LASF2851:
 	.ascii	"ROM_ENTRY(index) ROM_ENTRY_REG(ROM,index)\000"
@@ -21254,8 +21249,6 @@ os_SCHEDULE:
 	.ascii	"UART0_C4_MAEN2_SHIFT 6\000"
 .LASF2249:
 	.ascii	"MTBDWT_COMPID_COMPID_WIDTH 32\000"
-.LASF2715:
-	.ascii	"RCM_SRS0_LOC_SHIFT 2\000"
 .LASF235:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF2015:
@@ -21263,7 +21256,7 @@ os_SCHEDULE:
 .LASF2784:
 	.ascii	"ROM_ENTRY_ENTRY(x) (((uint32_t)(((uint32_t)(x))<<RO"
 	.ascii	"M_ENTRY_ENTRY_SHIFT))&ROM_ENTRY_ENTRY_MASK)\000"
-.LASF4420:
+.LASF4423:
 	.ascii	"EvtSyncEle\000"
 .LASF1449:
 	.ascii	"I2C_S_IAAS_MASK 0x40u\000"
@@ -21277,6 +21270,10 @@ os_SCHEDULE:
 	.ascii	"__ATOMIC_SEQ_CST 5\000"
 .LASF2530:
 	.ascii	"PMC_LVDSC2_LVWIE_SHIFT 5\000"
+.LASF2136:
+	.ascii	"MTB_PERIPHID_PERIPHID(x) (((uint32_t)(((uint32_t)(x"
+	.ascii	"))<<MTB_PERIPHID_PERIPHID_SHIFT))&MTB_PERIPHID_PERI"
+	.ascii	"PHID_MASK)\000"
 .LASF3999:
 	.ascii	"UARTLP_BDH_SBNS_SHIFT UART0_BDH_SBNS_SHIFT\000"
 .LASF1773:
@@ -21300,8 +21297,6 @@ os_SCHEDULE:
 	.ascii	"UART0_BASES UART0_BASE_PTRS\000"
 .LASF2783:
 	.ascii	"ROM_ENTRY_ENTRY_WIDTH 32\000"
-.LASF4356:
-	.ascii	"SysTckObj_TskBlck\000"
 .LASF3236:
 	.ascii	"SIM_UIDMH SIM_UIDMH_REG(SIM)\000"
 .LASF1108:
@@ -21469,6 +21464,8 @@ os_SCHEDULE:
 .LASF4218:
 	.ascii	"TSK_STATE_IS_UNINIT_UNINIT(pTsk) (TskState)(TSK_GET"
 	.ascii	"STATE(pTsk) == TSK_STATE_UNINIT_UNINIT)\000"
+.LASF59:
+	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
 .LASF547:
 	.ascii	"MCG_MODE_FEE 3U\000"
 .LASF2121:
@@ -21490,7 +21487,7 @@ os_SCHEDULE:
 	.ascii	"NV_BACKKEY3_REG(base) ((base)->BACKKEY3)\000"
 .LASF75:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
-.LASF4409:
+.LASF4412:
 	.ascii	"someDummy\000"
 .LASF1615:
 	.ascii	"LLWU_ME_WUME2_WIDTH 1\000"
@@ -21562,9 +21559,9 @@ os_SCHEDULE:
 	.ascii	"FTFA_BASE_PTRS { FTFA }\000"
 .LASF814:
 	.ascii	"CMP_SCR_DMAEN_MASK 0x40u\000"
-.LASF462:
-	.ascii	"SCB_CPUID_IMPLEMENTER_Pos 24\000"
-.LASF4479:
+.LASF3521:
+	.ascii	"TPM_CONF_CSOO_SHIFT 17\000"
+.LASF4482:
 	.ascii	"tsk_GetNxtActvTsk\000"
 .LASF1549:
 	.ascii	"I2C0_BASE (0x40066000u)\000"
@@ -21595,8 +21592,8 @@ os_SCHEDULE:
 	.ascii	"UART0_BDL UART0_BDL_REG(UART0)\000"
 .LASF3520:
 	.ascii	"TPM_CONF_CSOO_MASK 0x20000u\000"
-.LASF1224:
-	.ascii	"FTFA_FSEC_KEYEN_WIDTH 2\000"
+.LASF410:
+	.ascii	"INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)\000"
 .LASF1906:
 	.ascii	"MCG_SC_ATMF_WIDTH 1\000"
 .LASF3787:
@@ -21685,8 +21682,8 @@ os_SCHEDULE:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF865:
 	.ascii	"DAC_DATH_DATA1_MASK 0xFu\000"
-.LASF59:
-	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
+.LASF1973:
+	.ascii	"MCM_PLACR_DFCDA_WIDTH 1\000"
 .LASF1075:
 	.ascii	"DMA_SAR(index) DMA_SAR_REG(DMA0,index)\000"
 .LASF1920:
@@ -21701,7 +21698,7 @@ os_SCHEDULE:
 	.ascii	"SysTick_VAL_CURRENT_Pos 0\000"
 .LASF1142:
 	.ascii	"FGPIOA_PDOR FGPIO_PDOR_REG(FGPIOA)\000"
-.LASF4441:
+.LASF4444:
 	.ascii	"PTskTCB\000"
 .LASF683:
 	.ascii	"ADC_OFS_OFS_SHIFT 0\000"
@@ -21718,7 +21715,7 @@ os_SCHEDULE:
 .LASF2597:
 	.ascii	"PORT_PCR_IRQC(x) (((uint32_t)(((uint32_t)(x))<<PORT"
 	.ascii	"_PCR_IRQC_SHIFT))&PORT_PCR_IRQC_MASK)\000"
-.LASF4376:
+.LASF4379:
 	.ascii	"MsgQMsgProv\000"
 .LASF3450:
 	.ascii	"TPM_CnSC_ELSA_WIDTH 1\000"
@@ -21745,6 +21742,8 @@ os_SCHEDULE:
 	.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
 .LASF2957:
 	.ascii	"RTC_LR_LRL_MASK 0x40u\000"
+.LASF3437:
+	.ascii	"TPM_CNT_COUNT_SHIFT 0\000"
 .LASF207:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF532:
@@ -21799,7 +21798,7 @@ os_SCHEDULE:
 .LASF693:
 	.ascii	"ADC_CLPD_CLPD(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"CLPD_CLPD_SHIFT))&ADC_CLPD_CLPD_MASK)\000"
-.LASF4357:
+.LASF4360:
 	.ascii	"SysTckObj_TskWait\000"
 .LASF4054:
 	.ascii	"UARTLP_S1_TDRE_SHIFT UART0_S1_TDRE_SHIFT\000"
@@ -21854,7 +21853,7 @@ os_SCHEDULE:
 	.ascii	"FTFA_FSTAT_MGSTAT0_WIDTH 1\000"
 .LASF1564:
 	.ascii	"I2C0_SLTH I2C_SLTH_REG(I2C0)\000"
-.LASF4377:
+.LASF4380:
 	.ascii	"MsgID\000"
 .LASF3866:
 	.ascii	"UART0_D_R2T2_SHIFT 2\000"
@@ -21969,6 +21968,8 @@ os_SCHEDULE:
 	.ascii	"DMA_DCR_DSIZE_SHIFT 17\000"
 .LASF1627:
 	.ascii	"LLWU_ME_WUME5_WIDTH 1\000"
+.LASF1307:
+	.ascii	"FTFA_FCCOB7 FTFA_FCCOB7_REG(FTFA)\000"
 .LASF262:
 	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
 .LASF1448:
@@ -21980,7 +21981,7 @@ os_SCHEDULE:
 	.ascii	"DAC_C0_LPEN_SHIFT 3\000"
 .LASF1372:
 	.ascii	"I2C_S_REG(base) ((base)->S)\000"
-.LASF4400:
+.LASF4403:
 	.ascii	"dummyMsgProv\000"
 .LASF1462:
 	.ascii	"I2C_C2_AD_SHIFT 0\000"
@@ -22030,7 +22031,7 @@ os_SCHEDULE:
 .LASF2908:
 	.ascii	"RTC_CR_OSCE(x) (((uint32_t)(((uint32_t)(x))<<RTC_CR"
 	.ascii	"_OSCE_SHIFT))&RTC_CR_OSCE_MASK)\000"
-.LASF4467:
+.LASF4470:
 	.ascii	"prioSlots\000"
 .LASF1022:
 	.ascii	"DMA_DCR_SSIZE_MASK 0x300000u\000"
@@ -22045,6 +22046,10 @@ os_SCHEDULE:
 	.ascii	"FLG_TIF_SHIFT))&PIT_TFLG_TIF_MASK)\000"
 .LASF1065:
 	.ascii	"DMA_SAR2 DMA_SAR_REG(DMA0,2)\000"
+.LASF3629:
+	.ascii	"TSI_GENCS_OUTRGF_MASK 0x80000000u\000"
+.LASF2988:
+	.ascii	"RTC_TAR RTC_TAR_REG(RTC)\000"
 .LASF1421:
 	.ascii	"I2C_C1_IICEN_MASK 0x80u\000"
 .LASF3636:
@@ -22098,8 +22103,8 @@ os_SCHEDULE:
 	.ascii	"C3_ADCO_SHIFT))&ADC_SC3_ADCO_MASK)\000"
 .LASF1912:
 	.ascii	"MCG_SC_ATME_MASK 0x80u\000"
-.LASF3340:
-	.ascii	"SPI_C2_RXDMAE_MASK 0x4u\000"
+.LASF600:
+	.ascii	"ADC_CFG1_ADIV_WIDTH 2\000"
 .LASF1569:
 	.ascii	"LLWU_F1_REG(base) ((base)->F1)\000"
 .LASF1933:
@@ -22117,7 +22122,7 @@ os_SCHEDULE:
 	.ascii	"UARTLP_S1_RDRF_SHIFT UART0_S1_RDRF_SHIFT\000"
 .LASF3103:
 	.ascii	"SIM_SCGC4_UART0_WIDTH 1\000"
-.LASF4455:
+.LASF4458:
 	.ascii	"PTskPrioArEle\000"
 .LASF2404:
 	.ascii	"OSC_CR_SC16P(x) (((uint8_t)(((uint8_t)(x))<<OSC_CR_"
@@ -22126,7 +22131,7 @@ os_SCHEDULE:
 	.ascii	"MCG_S_CLKST_SHIFT 2\000"
 .LASF3087:
 	.ascii	"SIM_SDID_SERIESID_WIDTH 4\000"
-.LASF4364:
+.LASF4367:
 	.ascii	"SysTickEleID\000"
 .LASF820:
 	.ascii	"CMP_DACCR_VOSEL_WIDTH 6\000"
@@ -22140,7 +22145,7 @@ os_SCHEDULE:
 	.ascii	"PORT_GPCHR_GPWE_MASK 0xFFFF0000u\000"
 .LASF931:
 	.ascii	"DAC0_DAT0H DAC_DATH_REG(DAC0,0)\000"
-.LASF4429:
+.LASF4432:
 	.ascii	"tskTCB\000"
 .LASF2265:
 	.ascii	"MTBDWT_DEVICETYPID MTBDWT_DEVICETYPID_REG(MTBDWT)\000"
@@ -22174,7 +22179,7 @@ os_SCHEDULE:
 	.ascii	"TPM_CnV_VAL_MASK 0xFFFFu\000"
 .LASF4232:
 	.ascii	"RET_TSK_NO_IDLE_TSK ((RetCode)0x20u)\000"
-.LASF4473:
+.LASF4476:
 	.ascii	"gOS_FLAGS\000"
 .LASF1846:
 	.ascii	"MCG_C2_RANGE0_WIDTH 2\000"
@@ -22223,7 +22228,7 @@ os_SCHEDULE:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
 .LASF4033:
 	.ascii	"UARTLP_C2_RIE_MASK UART0_C2_RIE_MASK\000"
-.LASF4475:
+.LASF4478:
 	.ascii	"../source/R_RTOS/R_RTOS_scheduler.c\000"
 .LASF2516:
 	.ascii	"PMC_LVDSC1_LVDIE(x) (((uint8_t)(((uint8_t)(x))<<PMC"
@@ -22234,14 +22239,14 @@ os_SCHEDULE:
 	.ascii	"DMA_DSR_BCR_CE_WIDTH 1\000"
 .LASF2345:
 	.ascii	"NV_FSEC_SEC_MASK 0x3u\000"
-.LASF4389:
+.LASF4392:
 	.ascii	"msgProvTypeEnum\000"
 .LASF2775:
 	.ascii	"ROM_PERIPHID0_REG(base) ((base)->PERIPHID0)\000"
 .LASF2933:
 	.ascii	"RTC_SR_TOF_MASK 0x2u\000"
-.LASF474:
-	.ascii	"SCB_ICSR_PENDSVSET_Pos 28\000"
+.LASF879:
+	.ascii	"DAC_C0_DACBBIEN_WIDTH 1\000"
 .LASF3160:
 	.ascii	"SIM_SCGC6_DAC0(x) (((uint32_t)(((uint32_t)(x))<<SIM"
 	.ascii	"_SCGC6_DAC0_SHIFT))&SIM_SCGC6_DAC0_MASK)\000"
@@ -22272,7 +22277,7 @@ os_SCHEDULE:
 	.ascii	"ADC_SC2_ACFE_MASK 0x20u\000"
 .LASF1163:
 	.ascii	"FTFA_FCCOB6_REG(base) ((base)->FCCOB6)\000"
-.LASF4470:
+.LASF4473:
 	.ascii	"tsk_AR\000"
 .LASF2526:
 	.ascii	"PMC_LVDSC2_LVWV_SHIFT 0\000"
@@ -22290,7 +22295,7 @@ os_SCHEDULE:
 	.ascii	"SHIFT))&I2C_S_RAM_MASK)\000"
 .LASF3631:
 	.ascii	"TSI_GENCS_OUTRGF_WIDTH 1\000"
-.LASF4440:
+.LASF4443:
 	.ascii	"TskTCB\000"
 .LASF3819:
 	.ascii	"UART0_S2_RXEDGIF_WIDTH 1\000"
@@ -22316,8 +22321,8 @@ os_SCHEDULE:
 	.ascii	"PORTA_PCR23 PORT_PCR_REG(PORTA,23)\000"
 .LASF442:
 	.ascii	"__NVIC_PRIO_BITS 2\000"
-.LASF3118:
-	.ascii	"SIM_SCGC5_TSI_SHIFT 5\000"
+.LASF1415:
+	.ascii	"I2C_C1_MST_WIDTH 1\000"
 .LASF4072:
 	.ascii	"UARTLP_C3_PEIE_SHIFT UART0_C3_PEIE_SHIFT\000"
 .LASF343:
@@ -22396,7 +22401,7 @@ os_SCHEDULE:
 	.ascii	"FTFA_FCNFG_CCIE_SHIFT 7\000"
 .LASF4336:
 	.ascii	"TskSet_NONE\000"
-.LASF4446:
+.LASF4449:
 	.ascii	"g_needsScheduling\000"
 .LASF3608:
 	.ascii	"TSI_GENCS_PS(x) (((uint32_t)(((uint32_t)(x))<<TSI_G"
@@ -22548,7 +22553,7 @@ os_SCHEDULE:
 	.ascii	"TIF_SHIFT))&RTC_SR_TIF_MASK)\000"
 .LASF1206:
 	.ascii	"FTFA_FCNFG_CCIE_MASK 0x80u\000"
-.LASF4430:
+.LASF4433:
 	.ascii	"pStckPtr\000"
 .LASF2079:
 	.ascii	"MTB_FLOW_WATERMARK_WIDTH 29\000"
@@ -22570,7 +22575,7 @@ os_SCHEDULE:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
 .LASF729:
 	.ascii	"ADC0_CV1 ADC_CV1_REG(ADC0)\000"
-.LASF4387:
+.LASF4390:
 	.ascii	"dummyDummy\000"
 .LASF3265:
 	.ascii	"SMC_PMCTRL_RUNM_MASK 0x60u\000"
@@ -22580,7 +22585,7 @@ os_SCHEDULE:
 .LASF1253:
 	.ascii	"FTFA_FCCOB6_CCOBn(x) (((uint8_t)(((uint8_t)(x))<<FT"
 	.ascii	"FA_FCCOB6_CCOBn_SHIFT))&FTFA_FCCOB6_CCOBn_MASK)\000"
-.LASF4380:
+.LASF4383:
 	.ascii	"msgID\000"
 .LASF2103:
 	.ascii	"MTB_LOCKSTAT_LOCKSTAT_WIDTH 32\000"
@@ -22601,8 +22606,8 @@ os_SCHEDULE:
 	.ascii	"NV_FSEC_FSLACC_WIDTH 2\000"
 .LASF1069:
 	.ascii	"DMA_DCR2 DMA_DCR_REG(DMA0,2)\000"
-.LASF2188:
-	.ascii	"MTBDWT_CTRL_DWTCFGCTRL_SHIFT 0\000"
+.LASF4353:
+	.ascii	"SyncEle_TYPE_MTX\000"
 .LASF455:
 	.ascii	"__CMSIS_GCC_USE_REG(r) \"l\" (r)\000"
 .LASF3740:
@@ -22684,7 +22689,7 @@ os_SCHEDULE:
 	.ascii	"DMAMUX_CHCFG_ENBL_WIDTH 1\000"
 .LASF3538:
 	.ascii	"TPM_BASE_ADDRS { TPM0_BASE, TPM1_BASE }\000"
-.LASF4472:
+.LASF4475:
 	.ascii	"p_nxt_tsk_tcb\000"
 .LASF2920:
 	.ascii	"RTC_CR_SC8P(x) (((uint32_t)(((uint32_t)(x))<<RTC_CR"
@@ -22713,7 +22718,7 @@ os_SCHEDULE:
 	.ascii	"MCG_S_IREFST_MASK 0x10u\000"
 .LASF976:
 	.ascii	"DMA_DSR_BCR_BED_WIDTH 1\000"
-.LASF4458:
+.LASF4461:
 	.ascii	"curPrioArElmnt\000"
 .LASF2413:
 	.ascii	"OSC_CR_SC2P_MASK 0x8u\000"
@@ -22727,6 +22732,8 @@ os_SCHEDULE:
 	.ascii	"RTC_IER RTC_IER_REG(RTC)\000"
 .LASF4160:
 	.ascii	"PORT_BASES PORT_BASE_PTRS\000"
+.LASF1058:
+	.ascii	"DMA_DSR0 DMA_DSR_REG(DMA0,0)\000"
 .LASF1489:
 	.ascii	"I2C_FLT_STOPIE_MASK 0x20u\000"
 .LASF1622:
@@ -22746,8 +22753,8 @@ os_SCHEDULE:
 	.ascii	"SPI0 ((SPI_Type *)SPI0_BASE)\000"
 .LASF4017:
 	.ascii	"UARTLP_C1_RSRC_MASK UART0_C1_RSRC_MASK\000"
-.LASF1307:
-	.ascii	"FTFA_FCCOB7 FTFA_FCCOB7_REG(FTFA)\000"
+.LASF1154:
+	.ascii	"FTFA_FSTAT_REG(base) ((base)->FSTAT)\000"
 .LASF2306:
 	.ascii	"NV_BACKKEY1_KEY_SHIFT 0\000"
 .LASF2288:
@@ -22778,7 +22785,7 @@ os_SCHEDULE:
 	.ascii	"PORTB_PCR4 PORT_PCR_REG(PORTB,4)\000"
 .LASF2150:
 	.ascii	"MTB_MODECTRL MTB_MODECTRL_REG(MTB)\000"
-.LASF4378:
+.LASF4381:
 	.ascii	"tskMsgProvStruc\000"
 .LASF1234:
 	.ascii	"FTFA_FCCOB2_CCOBn_MASK 0xFFu\000"
@@ -22822,14 +22829,14 @@ os_SCHEDULE:
 	.ascii	"sizetype\000"
 .LASF4007:
 	.ascii	"UARTLP_C1_PT_MASK UART0_C1_PT_MASK\000"
-.LASF4476:
+.LASF4479:
 	.ascii	"C:\\\\Users\\\\Christian\\\\Documents\\\\OHM\\\\MAP"
 	.ascii	"R\\\\Projekt\\\\WRKSPC\\\\R_RTOS\\\\build\000"
 .LASF936:
 	.ascii	"DAC0_C1 DAC_C1_REG(DAC0)\000"
 .LASF135:
 	.ascii	"__DBL_DIG__ 15\000"
-.LASF4461:
+.LASF4464:
 	.ascii	"tmpTsk\000"
 .LASF3066:
 	.ascii	"SIM_SOPT7_ADC0ALTTRGEN_SHIFT 7\000"
@@ -22897,6 +22904,8 @@ os_SCHEDULE:
 	.ascii	"__UINTPTR_MAX__ 4294967295U\000"
 .LASF2395:
 	.ascii	"NV_FPROT2 NV_FPROT2_REG(FTFA_FlashConfig)\000"
+.LASF2188:
+	.ascii	"MTBDWT_CTRL_DWTCFGCTRL_SHIFT 0\000"
 .LASF806:
 	.ascii	"CMP_SCR_IEF_MASK 0x8u\000"
 .LASF1809:
@@ -22971,7 +22980,7 @@ os_SCHEDULE:
 	.ascii	"ROM_COMPID0 ROM_COMPID_REG(ROM,0)\000"
 .LASF26:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
-.LASF4392:
+.LASF4395:
 	.ascii	"Sys_Prov\000"
 .LASF2515:
 	.ascii	"PMC_LVDSC1_LVDIE_WIDTH 1\000"
@@ -23052,13 +23061,13 @@ os_SCHEDULE:
 	.ascii	"UART0_S1_RDRF_MASK 0x20u\000"
 .LASF2954:
 	.ascii	"RTC_LR_SRL_SHIFT 5\000"
-.LASF4422:
+.LASF4425:
 	.ascii	"SemSyncEle\000"
 .LASF2521:
 	.ascii	"PMC_LVDSC1_LVDF_MASK 0x80u\000"
 .LASF4009:
 	.ascii	"UARTLP_C1_PE_MASK UART0_C1_PE_MASK\000"
-.LASF4404:
+.LASF4407:
 	.ascii	"dummyByte\000"
 .LASF3254:
 	.ascii	"SMC_PMPROT_AVLP_SHIFT 5\000"
@@ -23110,8 +23119,8 @@ os_SCHEDULE:
 	.ascii	"FTFA_FPROT3_PROT_MASK 0xFFu\000"
 .LASF3559:
 	.ascii	"TPM1_MOD TPM_MOD_REG(TPM1)\000"
-.LASF91:
-	.ascii	"__INT_LEAST8_MAX__ 127\000"
+.LASF1006:
+	.ascii	"DMA_DCR_SMOD_MASK 0xF000u\000"
 .LASF2677:
 	.ascii	"PORTB_PCR12 PORT_PCR_REG(PORTB,12)\000"
 .LASF169:
@@ -23127,6 +23136,8 @@ os_SCHEDULE:
 	.ascii	"E_WUME5_SHIFT))&LLWU_ME_WUME5_MASK)\000"
 .LASF3277:
 	.ascii	"SMC_STOPCTRL_PSTOPO_MASK 0xC0u\000"
+.LASF508:
+	.ascii	"SCB_CCR_STKALIGN_Pos 9\000"
 .LASF1322:
 	.ascii	"GPIO_PTOR_REG(base) ((base)->PTOR)\000"
 .LASF510:
@@ -23165,9 +23176,6 @@ os_SCHEDULE:
 	.ascii	"I2C_C1_DMAEN_SHIFT 0\000"
 .LASF3865:
 	.ascii	"UART0_D_R2T2_MASK 0x4u\000"
-.LASF3435:
-	.ascii	"TPM_SC_DMA(x) (((uint32_t)(((uint32_t)(x))<<TPM_SC_"
-	.ascii	"DMA_SHIFT))&TPM_SC_DMA_MASK)\000"
 .LASF615:
 	.ascii	"ADC_CFG2_ADACKEN_SHIFT 3\000"
 .LASF1722:
@@ -23236,11 +23244,11 @@ os_SCHEDULE:
 	.ascii	"I2C_SMB_ALERTEN_MASK 0x40u\000"
 .LASF2773:
 	.ascii	"ROM_PERIPHID6_REG(base) ((base)->PERIPHID6)\000"
-.LASF2953:
-	.ascii	"RTC_LR_SRL_MASK 0x20u\000"
+.LASF3878:
+	.ascii	"UART0_D_R5T5_SHIFT 5\000"
 .LASF2090:
 	.ascii	"MTB_TAGSET_TAGSET_SHIFT 0\000"
-.LASF4367:
+.LASF4370:
 	.ascii	"sysTckObjType\000"
 .LASF2846:
 	.ascii	"ROM_PERIPHID3 ROM_PERIPHID3_REG(ROM)\000"
@@ -23323,7 +23331,7 @@ os_SCHEDULE:
 	.ascii	"IM_SOPT2_TPMSRC_SHIFT))&SIM_SOPT2_TPMSRC_MASK)\000"
 .LASF3524:
 	.ascii	"TPM_CONF_CROT_MASK 0x40000u\000"
-.LASF4410:
+.LASF4413:
 	.ascii	"evtSyncEle\000"
 .LASF2750:
 	.ascii	"RCM_RPFC_RSTFLTSS_MASK 0x4u\000"
@@ -23349,7 +23357,7 @@ os_SCHEDULE:
 	.ascii	"ADC_SC3_CALF_WIDTH 1\000"
 .LASF655:
 	.ascii	"ADC_SC2_ADTRG_SHIFT 6\000"
-.LASF4381:
+.LASF4384:
 	.ascii	"TskMsgProv\000"
 .LASF1960:
 	.ascii	"MCM_PLAMC_AMC_SHIFT 0\000"
@@ -23363,7 +23371,7 @@ os_SCHEDULE:
 	.ascii	"DMA_DCR_LCH1_SHIFT 2\000"
 .LASF4334:
 	.ascii	"TskState\000"
-.LASF4447:
+.LASF4450:
 	.ascii	"g_tskCriticalExecution\000"
 .LASF246:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
@@ -23489,7 +23497,7 @@ os_SCHEDULE:
 	.ascii	"RCM_SRS0_LVD_MASK 0x2u\000"
 .LASF2432:
 	.ascii	"PIT_LTMR64H_REG(base) ((base)->LTMR64H)\000"
-.LASF4390:
+.LASF4393:
 	.ascii	"MsgQ_Prov\000"
 .LASF3009:
 	.ascii	"SIM_UIDML_REG(base) ((base)->UIDML)\000"
@@ -23542,8 +23550,8 @@ os_SCHEDULE:
 	.ascii	"FTFA_FCCOBA FTFA_FCCOBA_REG(FTFA)\000"
 .LASF1166:
 	.ascii	"FTFA_FCCOBB_REG(base) ((base)->FCCOBB)\000"
-.LASF3262:
-	.ascii	"SMC_PMCTRL_STOPA_SHIFT 3\000"
+.LASF603:
+	.ascii	"ADC_CFG1_ADLPC_SHIFT 7\000"
 .LASF2116:
 	.ascii	"MTB_AUTHSTAT_BIT2(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"MTB_AUTHSTAT_BIT2_SHIFT))&MTB_AUTHSTAT_BIT2_MASK)\000"
@@ -23756,6 +23764,8 @@ os_SCHEDULE:
 	.ascii	"M_CONF_DOZEEN_SHIFT))&TPM_CONF_DOZEEN_MASK)\000"
 .LASF827:
 	.ascii	"CMP_DACCR_DACEN_SHIFT 7\000"
+.LASF1882:
+	.ascii	"MCG_S_OSCINIT0_WIDTH 1\000"
 .LASF3400:
 	.ascii	"SPI0_S SPI_S_REG(SPI0)\000"
 .LASF3335:
@@ -23819,15 +23829,17 @@ os_SCHEDULE:
 	.ascii	"UARTLP_D_R3T3_MASK UART0_D_R3T3_MASK\000"
 .LASF3799:
 	.ascii	"UART0_S2_LBKDE_WIDTH 1\000"
-.LASF4468:
+.LASF4471:
 	.ascii	"ar_TskActvPrioSorted\000"
 .LASF2468:
 	.ascii	"PIT_TCTRL_TEN_WIDTH 1\000"
 .LASF2593:
 	.ascii	"PORT_PCR_MUX(x) (((uint32_t)(((uint32_t)(x))<<PORT_"
 	.ascii	"PCR_MUX_SHIFT))&PORT_PCR_MUX_MASK)\000"
-.LASF4382:
+.LASF4385:
 	.ascii	"sysMsgProvStruc\000"
+.LASF1030:
+	.ascii	"DMA_DCR_EADREQ_MASK 0x800000u\000"
 .LASF1790:
 	.ascii	"LPTMR0 ((LPTMR_Type *)LPTMR0_BASE)\000"
 .LASF2950:
@@ -23912,7 +23924,7 @@ os_SCHEDULE:
 .LASF3467:
 	.ascii	"TPM_CnSC_CHIE(x) (((uint32_t)(((uint32_t)(x))<<TPM_"
 	.ascii	"CnSC_CHIE_SHIFT))&TPM_CnSC_CHIE_MASK)\000"
-.LASF4424:
+.LASF4427:
 	.ascii	"syncEleStruc\000"
 .LASF2285:
 	.ascii	"NV_BACKKEY1_REG(base) ((base)->BACKKEY1)\000"
@@ -23953,7 +23965,7 @@ os_SCHEDULE:
 	.ascii	"SIM_SDID_SERIESID_SHIFT))&SIM_SDID_SERIESID_MASK)\000"
 .LASF2255:
 	.ascii	"MTBDWT_BASE_PTRS { MTBDWT }\000"
-.LASF4354:
+.LASF4357:
 	.ascii	"SysTckObj_Err\000"
 .LASF3837:
 	.ascii	"UART0_C3_ORIE_MASK 0x8u\000"
@@ -24051,8 +24063,9 @@ os_SCHEDULE:
 	.ascii	"I2C_S_BUSY_WIDTH 1\000"
 .LASF1585:
 	.ascii	"LLWU_PE1_WUPE3_MASK 0xC0u\000"
-.LASF2690:
-	.ascii	"PORTB_PCR25 PORT_PCR_REG(PORTB,25)\000"
+.LASF1823:
+	.ascii	"MCG_C1_FRDIV(x) (((uint8_t)(((uint8_t)(x))<<MCG_C1_"
+	.ascii	"FRDIV_SHIFT))&MCG_C1_FRDIV_MASK)\000"
 .LASF377:
 	.ascii	"INT8_MIN (-__INT8_MAX__ - 1)\000"
 .LASF1684:
@@ -24070,7 +24083,7 @@ os_SCHEDULE:
 	.ascii	"LLWU_F3_MWUF7_MASK 0x80u\000"
 .LASF1473:
 	.ascii	"I2C_C2_HDRS_MASK 0x20u\000"
-.LASF4431:
+.LASF4434:
 	.ascii	"pStckTop\000"
 .LASF1135:
 	.ascii	"FGPIOA ((FGPIO_Type *)FGPIOA_BASE)\000"
@@ -24247,7 +24260,7 @@ os_SCHEDULE:
 	.ascii	"TFA_FCNFG_ERSSUSP_SHIFT))&FTFA_FCNFG_ERSSUSP_MASK)\000"
 .LASF279:
 	.ascii	"__UDQ_FBIT__ 64\000"
-.LASF4363:
+.LASF4366:
 	.ascii	"sysFktID\000"
 .LASF3821:
 	.ascii	"UART0_S2_LBKDIF_MASK 0x80u\000"
@@ -24294,6 +24307,8 @@ os_SCHEDULE:
 	.ascii	"SIM_SOPT4_TPM1CH0SRC_SHIFT 18\000"
 .LASF2827:
 	.ascii	"ROM_COMPID_COMPID_WIDTH 32\000"
+.LASF1224:
+	.ascii	"FTFA_FSEC_KEYEN_WIDTH 2\000"
 .LASF3303:
 	.ascii	"SPI_C1_LSBFE(x) (((uint8_t)(((uint8_t)(x))<<SPI_C1_"
 	.ascii	"LSBFE_SHIFT))&SPI_C1_LSBFE_MASK)\000"
@@ -24424,7 +24439,7 @@ os_SCHEDULE:
 	.ascii	"LPTMR_CSR_TMS_SHIFT 1\000"
 .LASF3317:
 	.ascii	"SPI_C1_MSTR_SHIFT 4\000"
-.LASF4352:
+.LASF4355:
 	.ascii	"SyncEleType\000"
 .LASF3390:
 	.ascii	"SPI_M_Bits_WIDTH 8\000"
@@ -24434,8 +24449,8 @@ os_SCHEDULE:
 	.ascii	"ADC_CFG1_ADLSMP_SHIFT 4\000"
 .LASF727:
 	.ascii	"ADC0_RA ADC_R_REG(ADC0,0)\000"
-.LASF4413:
-	.ascii	"expireTime\000"
+.LASF3488:
+	.ascii	"TPM_STATUS_CH3F_MASK 0x8u\000"
 .LASF2484:
 	.ascii	"PIT_BASE_PTR (PIT)\000"
 .LASF1079:
@@ -24456,9 +24471,9 @@ os_SCHEDULE:
 	.ascii	"RTC_IER_TSIE_MASK 0x10u\000"
 .LASF578:
 	.ascii	"ADC_SC1_AIEN_MASK 0x40u\000"
-.LASF4433:
+.LASF4436:
 	.ascii	"pTskEnd\000"
-.LASF4412:
+.LASF4415:
 	.ascii	"tmrSyncEle\000"
 .LASF2268:
 	.ascii	"MTBDWT_PERIPHID6 MTBDWT_PERIPHID_REG(MTBDWT,2)\000"
@@ -24492,7 +24507,7 @@ os_SCHEDULE:
 	.ascii	"ADC_SC3_AVGE_SHIFT 2\000"
 .LASF4159:
 	.ascii	"PMC_BASES PMC_BASE_PTRS\000"
-.LASF4370:
+.LASF4373:
 	.ascii	"insrtnSysTicksTime\000"
 .LASF3716:
 	.ascii	"UART0_C1_M(x) (((uint8_t)(((uint8_t)(x))<<UART0_C1_"
@@ -24523,7 +24538,7 @@ os_SCHEDULE:
 	.ascii	"ADC_CLPS_REG(base) ((base)->CLPS)\000"
 .LASF3250:
 	.ascii	"SMC_PMPROT_ALLS_SHIFT 3\000"
-.LASF4469:
+.LASF4472:
 	.ascii	"pIDLETsk\000"
 .LASF2009:
 	.ascii	"MCM_BASE_PTR (MCM)\000"
@@ -24583,7 +24598,7 @@ os_SCHEDULE:
 	.ascii	"s_SHIFT))&SPI_M_Bits_MASK)\000"
 .LASF437:
 	.ascii	"MCU_MEM_MAP_VERSION_MINOR 0x0003u\000"
-.LASF4403:
+.LASF4406:
 	.ascii	"nxtTskMB\000"
 .LASF1412:
 	.ascii	"I2C_C1_TX(x) (((uint8_t)(((uint8_t)(x))<<I2C_C1_TX_"
@@ -24607,7 +24622,7 @@ os_SCHEDULE:
 	.ascii	"LLWU_ME_WUME2_SHIFT 2\000"
 .LASF69:
 	.ascii	"__LONG_MAX__ 2147483647L\000"
-.LASF4399:
+.LASF4402:
 	.ascii	"sysMsgProv\000"
 .LASF3017:
 	.ascii	"SIM_SOPT2_RTCCLKOUTSEL_MASK 0x10u\000"
@@ -24645,7 +24660,7 @@ os_SCHEDULE:
 	.ascii	"LPTimer_IRQHandler LPTMR0_IRQHandler\000"
 .LASF3518:
 	.ascii	"TPM_CONF_CSOT_WIDTH 1\000"
-.LASF4368:
+.LASF4371:
 	.ascii	"sysTckObjID\000"
 .LASF3380:
 	.ascii	"SPI_S_SPRF_MASK 0x80u\000"
@@ -24686,8 +24701,6 @@ os_SCHEDULE:
 .LASF637:
 	.ascii	"ADC_SC2_REFSEL(x) (((uint32_t)(((uint32_t)(x))<<ADC"
 	.ascii	"_SC2_REFSEL_SHIFT))&ADC_SC2_REFSEL_MASK)\000"
-.LASF3521:
-	.ascii	"TPM_CONF_CSOO_SHIFT 17\000"
 .LASF342:
 	.ascii	"MCU_MKL05Z4 \000"
 .LASF2439:
@@ -24756,7 +24769,7 @@ os_SCHEDULE:
 .LASF985:
 	.ascii	"DMA_DSR_BCR_CE(x) (((uint32_t)(((uint32_t)(x))<<DMA"
 	.ascii	"_DSR_BCR_CE_SHIFT))&DMA_DSR_BCR_CE_MASK)\000"
-.LASF4386:
+.LASF4389:
 	.ascii	"dummyID\000"
 .LASF2890:
 	.ascii	"RTC_CR_SWR_SHIFT 0\000"
@@ -24873,7 +24886,7 @@ os_SCHEDULE:
 	.ascii	"SIM_SOPT1_OSC32KSEL_SHIFT 18\000"
 .LASF1495:
 	.ascii	"I2C_FLT_STOPF_WIDTH 1\000"
-.LASF4436:
+.LASF4439:
 	.ascii	"stckSze\000"
 .LASF742:
 	.ascii	"ADC0_SC1(index) ADC_SC1_REG(ADC0,index)\000"
@@ -24900,8 +24913,8 @@ os_SCHEDULE:
 	.ascii	"_MODFEN_SHIFT))&SPI_C2_MODFEN_MASK)\000"
 .LASF80:
 	.ascii	"__UINTMAX_C(c) c ## ULL\000"
-.LASF2988:
-	.ascii	"RTC_TAR RTC_TAR_REG(RTC)\000"
+.LASF156:
+	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
 .LASF3322:
 	.ascii	"SPI_C1_SPTIE_WIDTH 1\000"
 .LASF3789:
@@ -24927,7 +24940,7 @@ os_SCHEDULE:
 	.ascii	"__GCC_ATOMIC_POINTER_LOCK_FREE 1\000"
 .LASF3187:
 	.ascii	"SIM_FCFG2_MAXADDR0_WIDTH 7\000"
-.LASF4423:
+.LASF4426:
 	.ascii	"MntrSyncEle\000"
 .LASF3420:
 	.ascii	"TPM_SC_CPWMS_MASK 0x20u\000"
@@ -24980,7 +24993,7 @@ os_SCHEDULE:
 .LASF2092:
 	.ascii	"MTB_TAGSET_TAGSET(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"MTB_TAGSET_TAGSET_SHIFT))&MTB_TAGSET_TAGSET_MASK)\000"
-.LASF4396:
+.LASF4399:
 	.ascii	"msgPrvdrsUnion\000"
 .LASF1172:
 	.ascii	"FTFA_FPROT1_REG(base) ((base)->FPROT1)\000"
@@ -25017,11 +25030,11 @@ os_SCHEDULE:
 	.ascii	"LLWU_BASE_ADDRS { LLWU_BASE }\000"
 .LASF2168:
 	.ascii	"MTB_COMPID1 MTB_COMPID_REG(MTB,1)\000"
-.LASF4385:
+.LASF4388:
 	.ascii	"dummyMsgProvStruc\000"
 .LASF741:
 	.ascii	"ADC0_CLP0 ADC_CLP0_REG(ADC0)\000"
-.LASF4425:
+.LASF4428:
 	.ascii	"syncEleID\000"
 .LASF2922:
 	.ascii	"RTC_CR_SC4P_SHIFT 12\000"
@@ -25038,7 +25051,7 @@ os_SCHEDULE:
 	.ascii	"TPM_STATUS_CH1F_MASK 0x2u\000"
 .LASF702:
 	.ascii	"ADC_CLP3_CLP3_MASK 0x1FFu\000"
-.LASF4394:
+.LASF4397:
 	.ascii	"MsgProvType\000"
 .LASF3016:
 	.ascii	"SIM_SOPT1_OSC32KSEL(x) (((uint32_t)(((uint32_t)(x))"
@@ -25087,7 +25100,7 @@ os_SCHEDULE:
 	.ascii	"TSK_PRIO_ULT\000"
 .LASF1908:
 	.ascii	"MCG_SC_ATMS_MASK 0x40u\000"
-.LASF4383:
+.LASF4386:
 	.ascii	"sysProvID\000"
 .LASF2555:
 	.ascii	"PMC_REGSC_BGEN_WIDTH 1\000"
@@ -25172,7 +25185,7 @@ os_SCHEDULE:
 	.ascii	"R_SC16P_SHIFT))&RTC_CR_SC16P_MASK)\000"
 .LASF115:
 	.ascii	"__INTPTR_MAX__ 2147483647\000"
-.LASF4414:
+.LASF4417:
 	.ascii	"semSyncEle\000"
 .LASF3186:
 	.ascii	"SIM_FCFG2_MAXADDR0_SHIFT 24\000"
@@ -25204,7 +25217,7 @@ os_SCHEDULE:
 	.ascii	"RTC_TCR_CIR_WIDTH 8\000"
 .LASF2494:
 	.ascii	"PIT_LDVAL1 PIT_LDVAL_REG(PIT,1)\000"
-.LASF4477:
+.LASF4480:
 	.ascii	"mntrSyncEle\000"
 .LASF758:
 	.ascii	"CMP_CR1_EN_MASK 0x1u\000"
@@ -25349,6 +25362,8 @@ os_SCHEDULE:
 	.ascii	"R_FRZ_SHIFT))&PIT_MCR_FRZ_MASK)\000"
 .LASF1053:
 	.ascii	"DMA_BASE_ADDRS { DMA_BASE }\000"
+.LASF3118:
+	.ascii	"SIM_SCGC5_TSI_SHIFT 5\000"
 .LASF4103:
 	.ascii	"UARTLP_MA1_MA_MASK UART0_MA1_MA_MASK\000"
 .LASF403:
@@ -25372,7 +25387,7 @@ os_SCHEDULE:
 	.ascii	"UIDML_UID_SHIFT))&SIM_UIDML_UID_MASK)\000"
 .LASF32:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
-.LASF4369:
+.LASF4372:
 	.ascii	"remSysTicks\000"
 .LASF2931:
 	.ascii	"RTC_SR_TIF_WIDTH 1\000"
@@ -25413,7 +25428,7 @@ os_SCHEDULE:
 	.ascii	"TPM_CONF_GTBEEN_WIDTH 1\000"
 .LASF4079:
 	.ascii	"UARTLP_C3_TXINV_MASK UART0_C3_TXINV_MASK\000"
-.LASF4388:
+.LASF4391:
 	.ascii	"DummyMsgProv\000"
 .LASF761:
 	.ascii	"CMP_CR1_EN(x) (((uint8_t)(((uint8_t)(x))<<CMP_CR1_E"

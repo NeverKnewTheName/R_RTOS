@@ -159,6 +159,32 @@ __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_resetTskCriti
     return returnVal;
 }
 
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mtx_TakeMtx(
+                                                                         const MtxNr mtxNr,
+                                                                         PTskTCB const tsk,
+                                                                         const SysTicks maxTimeToWait )
+{
+    INPUT_ARG_1( mtxNr );
+    INPUT_ARG_2( tsk );
+    INPUT_ARG_3( maxTimeToWait );
+    SVC( SVC_MTX_TAKE );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mtx_GiveMtx(
+                                                                         const MtxNr mtxNr,
+                                                                         PTskTCB const tsk )
+{
+    INPUT_ARG_1( mtxNr );
+    INPUT_ARG_2( tsk );
+    SVC( SVC_MTX_GIVE );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
 __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_TakeSem(
                                                                          const SemNr semNr,
                                                                          TskTCB* const tsk,

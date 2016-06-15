@@ -98,7 +98,7 @@
 /** \def AMOUNT_OF_SEMS
  *  \brief  Defines the maximum amount of different semaphores in the system.
  */
-#define     AMOUNT_OF_SEMS  (uint8_t)0x6u
+#define     AMOUNT_OF_SEMS  (uint8_t)0x2u
 /* END SEMAPHORES */
 
 /* EVENTS */
@@ -764,6 +764,7 @@ typedef enum syncEleType
     SyncEle_TYPE_NOID = (uint8_t) 0x0u,//!< No ID of the synchronization element (Probably error)
     SyncEle_TYPE_TMR = (uint8_t) 0x1u, //!< ID of the software timer synchronization mechanism
     SyncEle_TYPE_EVT = (uint8_t) 0x2u, //!< ID of the event synchronization mechanism
+    SyncEle_TYPE_SEM = (uint8_t) 0x3u, //FALLBACK
     SyncEle_TYPE_BinSEM = (uint8_t) 0x3u, //!< ID of the binary semaphore synchronization mechanism
     SyncEle_TYPE_CntSEM = (uint8_t) 0x4u, //!< ID of the counting semaphore synchronization mechanism
     SyncEle_TYPE_MTX = (uint8_t) 0x5u, //!< ID of the mutex synchronization mechanism
@@ -1267,6 +1268,13 @@ typedef struct syncEleStruc
             uint8_t dummy3;
             uint8_t dummy4;
         } SemSyncEle;    //!< semaphore synchronization object
+        struct mtxSyncEle
+        {
+            uint8_t dummy1;
+            uint8_t dummy2;
+            uint8_t dummy3;
+            uint8_t dummy4;
+        };
         //MONITOR
         struct mntrSyncEle
         {
@@ -1508,6 +1516,8 @@ typedef enum svcCode
     SVC_TSK_KILL,                       //!< Kill a task
     SVC_TSK_SET_CRIT,                   //!< Set critical execution state
     SVC_TSK_RESET_CRIT,                 //!< Reset critical execution state
+    SVC_MTX_TAKE,                       //!< Attempt to take a mutex
+    SVC_MTX_GIVE,                       //!< Give back an occupied mutex
     SVC_SEM_TAKE,                       //!< Take a semaphore
     SVC_SEM_GIVE,                       //!< Release a semaphore
     SVC_EVT_SEND,                       //!< Send an event
@@ -1516,21 +1526,21 @@ typedef enum svcCode
     SVC_SYSTCK_SET,                     //!< Set a system tick timer
     SVC_MSGQ_CRT_Q,                     //!< create a new message queue
     SVC_MSGQ_DEL_Q,                     //!< delete an existing message queue
-    SVC_MSGQ_REG_PUB,            //!< Register to a message queue as a publisher
-    SVC_MSGQ_REG_TSK_SUB,       //!< Register to a message queue as a subscriber
-    SVC_MSGQ_REG_SYS_SUB,    //!< Register system function to a message queue as a subscriber
-    SVC_MSGQ_MSG_PUB,                  //!< Publish a message to a message queue
+    SVC_MSGQ_REG_PUB,                   //!< Register to a message queue as a publisher
+    SVC_MSGQ_REG_TSK_SUB,               //!< Register to a message queue as a subscriber
+    SVC_MSGQ_REG_SYS_SUB,               //!< Register system function to a message queue as a subscriber
+    SVC_MSGQ_MSG_PUB,                   //!< Publish a message to a message queue
     SVC_MSGQ_MSG_READ,                  //!< Read a message from a message queue
-    SVC_MSGQ_MSG_READALLNEW,     //!< Read all new messages from a message queue
-    SVC_MSGQ_MSG_READALL,            //!< Read all messages from a message queue
-    SVC_MSGQ_MSG_TAKE,      //!< Read and destroy a message from a message queue
-    SVC_MSGQ_MSG_TAKEALLNEW,    //!< Read and destroy all new messages from a message queue
-    SVC_MSGQ_MSG_TAKEALL,    //!< Read and destroy all messages from a message queue
+    SVC_MSGQ_MSG_READALLNEW,            //!< Read all new messages from a message queue
+    SVC_MSGQ_MSG_READALL,               //!< Read all messages from a message queue
+    SVC_MSGQ_MSG_TAKE,                  //!< Read and destroy a message from a message queue
+    SVC_MSGQ_MSG_TAKEALLNEW,            //!< Read and destroy all new messages from a message queue
+    SVC_MSGQ_MSG_TAKEALL,               //!< Read and destroy all messages from a message queue
     SVC_OS_SCHEDULE,                    //!< Call the scheduler
-    SVC_CALL_FKT_PRIV,     //!< Call a function with privileges using main stack
+    SVC_CALL_FKT_PRIV,                  //!< Call a function with privileges using main stack
     SVC_LP_ENTER,                       //!< Enter low power mode
-    SVC_TRC_OUPUT,                       //!< Output the trace buffer
-    SVC_OS_ERROR = (uint8_t) 0xFFu,      //!< OS ERROR
+    SVC_TRC_OUPUT,                      //!< Output the trace buffer
+    SVC_OS_ERROR = (uint8_t) 0xFFu,     //!< OS ERROR
 } SVCCode;
 
 /* END SVC */

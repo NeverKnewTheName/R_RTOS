@@ -10,1065 +10,1088 @@
   10              		.eabi_attribute 34, 0
   11              		.eabi_attribute 18, 4
   12              		.code	16
-  13              		.file	"R_RTOS_sem.c"
+  13              		.file	"Tasks.c"
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.section	.bss.ar_Sems,"aw",%nobits
+  17              		.section	.text.tsk1,"ax",%progbits
   18              		.align	2
-  21              	ar_Sems:
-  22 0000 00000000 		.space	24
-  22      00000000 
-  22      00000000 
-  22      00000000 
-  22      00000000 
-  23              		.section	.bss.ar_Mtxs,"aw",%nobits
-  24              		.align	2
-  27              	ar_Mtxs:
-  28 0000 00000000 		.space	16
-  28      00000000 
-  28      00000000 
-  28      00000000 
-  29              		.section	.bss.memPoolID_SEM,"aw",%nobits
-  32              	memPoolID_SEM:
-  33 0000 00       		.space	1
-  34              		.section	.bss.memPoolID_MTX,"aw",%nobits
-  37              	memPoolID_MTX:
-  38 0000 00       		.space	1
-  39              		.section	.text.sem_InitSems,"ax",%progbits
-  40              		.align	2
-  41              		.global	sem_InitSems
-  42              		.code	16
-  43              		.thumb_func
-  45              	sem_InitSems:
-  46              	.LFB0:
-  47              		.file 1 "../source/R_RTOS/R_RTOS_sem.c"
-   1:../source/R_RTOS/R_RTOS_sem.c **** /**
-   2:../source/R_RTOS/R_RTOS_sem.c ****  *  \file    R_RTOS_sem.c
-   3:../source/R_RTOS/R_RTOS_sem.c ****  *  \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
-   4:../source/R_RTOS/R_RTOS_sem.c ****  *  \date    15.12.2015
-   5:../source/R_RTOS/R_RTOS_sem.c ****  *
-   6:../source/R_RTOS/R_RTOS_sem.c ****  *  \brief Functions for creating, initializing, maintaining Semaphores.
-   7:../source/R_RTOS/R_RTOS_sem.c ****  *
-   8:../source/R_RTOS/R_RTOS_sem.c ****  *
-   9:../source/R_RTOS/R_RTOS_sem.c ****  *  <h2>Priority Inheritance</h2>
-  10:../source/R_RTOS/R_RTOS_sem.c ****  *  When access to a specific resource is requested, but cannot be granted, the requesting consumer
-  11:../source/R_RTOS/R_RTOS_sem.c ****  *  These wait queues are sorted according to the priority of their entities. Therefore a waiting h
-  12:../source/R_RTOS/R_RTOS_sem.c ****  *  access to the resource before a waiting low priority task receives the resource. But if the res
-  13:../source/R_RTOS/R_RTOS_sem.c ****  *  task and a high priority task requests access, the resource remains at the lower priority task.
-  14:../source/R_RTOS/R_RTOS_sem.c ****  *  is put into a waiting queue and its execution is suspended. If the lower priority task occupyin
-  15:../source/R_RTOS/R_RTOS_sem.c ****  *  e.g. a medium priority task is activated, this medium priority task would receive processor tim
-  16:../source/R_RTOS/R_RTOS_sem.c ****  *  is currently waiting on the resource. This is called <i>Priority Inversion</i>.<br>
-  17:../source/R_RTOS/R_RTOS_sem.c ****  *  To avoid that a lower priority task is executed before a high priority task <i>Priority Inherit
-  18:../source/R_RTOS/R_RTOS_sem.c ****  *  priority task is occupying a resource while a high priority task requests access to said resour
-  19:../source/R_RTOS/R_RTOS_sem.c ****  *  of the high priority task for the duration of the access to the protected resource. Hence a med
-  20:../source/R_RTOS/R_RTOS_sem.c ****  *  lower priority task while it is occupying the resource and the high priority task is waiting fo
-  21:../source/R_RTOS/R_RTOS_sem.c ****  *
-  22:../source/R_RTOS/R_RTOS_sem.c ****  *
-  23:../source/R_RTOS/R_RTOS_sem.c ****  *  <h2>Semaphores</h2>
-  24:../source/R_RTOS/R_RTOS_sem.c ****  *  Semaphores are a signaling mechanism to allow multiple access to a protected resource.
-  25:../source/R_RTOS/R_RTOS_sem.c ****  *  A consumer does not get ownership of the semaphore. If a consumer is granted access the semapho
-  26:../source/R_RTOS/R_RTOS_sem.c ****  *  When the consumer is done with accessing the protected resource the semaphore is then increment
-  27:../source/R_RTOS/R_RTOS_sem.c ****  *  As soon as the counter reaches 0 no more accesses to the protected resource will be granted. Al
-  28:../source/R_RTOS/R_RTOS_sem.c ****  *  are put into a wait queue and must wait for the counter to increment again and therefore for an
-  29:../source/R_RTOS/R_RTOS_sem.c ****  *  was previously granted access to the resource, to release the resource and hence increment the 
-  30:../source/R_RTOS/R_RTOS_sem.c ****  *
-  31:../source/R_RTOS/R_RTOS_sem.c ****  *  <h3>Counting Semaphores</h3>
-  32:../source/R_RTOS/R_RTOS_sem.c ****  *  Counting semaphores contain a counter which can be set to a specific value are incremented vari
-  33:../source/R_RTOS/R_RTOS_sem.c ****  *  This is used to limit access to a resource to the counter value.
-  34:../source/R_RTOS/R_RTOS_sem.c ****  *
-  35:../source/R_RTOS/R_RTOS_sem.c ****  *  <h3>Binary Semaphores</h3>
-  36:../source/R_RTOS/R_RTOS_sem.c ****  *  Contrary to counting semaphores, binary semaphores can only take the values 0 or 1 (taken or fr
-  37:../source/R_RTOS/R_RTOS_sem.c ****  *  for mutual exclusion, but unlike mutexes the consumer, which is granted access, does not receiv
-  38:../source/R_RTOS/R_RTOS_sem.c ****  *
-  39:../source/R_RTOS/R_RTOS_sem.c ****  *
-  40:../source/R_RTOS/R_RTOS_sem.c ****  *  <h2>Mutexes</h2>
-  41:../source/R_RTOS/R_RTOS_sem.c ****  *  Mutexes are a synchronization mechanism for mutual exclusion. As soon as a consumer accesses th
-  42:../source/R_RTOS/R_RTOS_sem.c ****  *  protected data, it is granted ownership of the mutex, if the mutex is still available. In case 
-  43:../source/R_RTOS/R_RTOS_sem.c ****  *  owned by another consumer, the current consumer is denied access and put into a wait queue unti
-  44:../source/R_RTOS/R_RTOS_sem.c ****  *  gives the mutex back to the system. The next consumer in the waiting queue is now granted acces
-  45:../source/R_RTOS/R_RTOS_sem.c ****  *  ownership of the mutex.
-  46:../source/R_RTOS/R_RTOS_sem.c ****  *
-  47:../source/R_RTOS/R_RTOS_sem.c ****  *
-  48:../source/R_RTOS/R_RTOS_sem.c ****  *  <h2>Difference Mutex and Binary Semaphore</h2>
-  49:../source/R_RTOS/R_RTOS_sem.c ****  *  Since a Binary Semaphore only depends on singaling, it can be signaled from anywhere, whereas a
-  50:../source/R_RTOS/R_RTOS_sem.c ****  */
-  51:../source/R_RTOS/R_RTOS_sem.c **** 
-  52:../source/R_RTOS/R_RTOS_sem.c **** #include "R_RTOS_sem.h"
-  53:../source/R_RTOS/R_RTOS_sem.c **** #include "R_RTOS_task.h"
-  54:../source/R_RTOS/R_RTOS_sem.c **** 
-  55:../source/R_RTOS/R_RTOS_sem.c **** #include "R_RTOS_memMngr.h"
-  56:../source/R_RTOS/R_RTOS_sem.c **** 
-  57:../source/R_RTOS/R_RTOS_sem.c **** //extern void os_SCHEDULE( void );
-  58:../source/R_RTOS/R_RTOS_sem.c **** extern TskTCB tsk_AR[NR_OF_TSKS];
-  59:../source/R_RTOS/R_RTOS_sem.c **** 
-  60:../source/R_RTOS/R_RTOS_sem.c **** /** \var ar_Sems
-  61:../source/R_RTOS/R_RTOS_sem.c ****  *  \brief Contains all semaphores.
-  62:../source/R_RTOS/R_RTOS_sem.c ****  */
-  63:../source/R_RTOS/R_RTOS_sem.c **** static Sem ar_Sems[AMOUNT_OF_SEMS ];
-  64:../source/R_RTOS/R_RTOS_sem.c **** 
-  65:../source/R_RTOS/R_RTOS_sem.c **** /** \var ar_Mtxs
-  66:../source/R_RTOS/R_RTOS_sem.c ****  *  \brief Contains all mutexes.
-  67:../source/R_RTOS/R_RTOS_sem.c ****  */
-  68:../source/R_RTOS/R_RTOS_sem.c **** static Mtx ar_Mtxs[AMOUNT_OF_MTXS ];
-  69:../source/R_RTOS/R_RTOS_sem.c **** 
-  70:../source/R_RTOS/R_RTOS_sem.c **** /** \var memPoolID_SEM
-  71:../source/R_RTOS/R_RTOS_sem.c ****  *  \brief ID of the memory pool memory allocation request of semaphores are served from.
-  72:../source/R_RTOS/R_RTOS_sem.c ****  */
-  73:../source/R_RTOS/R_RTOS_sem.c **** static MemPoolID memPoolID_SEM;
-  74:../source/R_RTOS/R_RTOS_sem.c **** 
-  75:../source/R_RTOS/R_RTOS_sem.c **** static MemPoolID memPoolID_MTX;
-  76:../source/R_RTOS/R_RTOS_sem.c **** 
-  77:../source/R_RTOS/R_RTOS_sem.c **** RetCode sem_InitSems( void )
-  78:../source/R_RTOS/R_RTOS_sem.c **** {
-  48              		.loc 1 78 0
-  49              		.cfi_startproc
-  50 0000 80B5     		push	{r7, lr}
-  51              		.cfi_def_cfa_offset 8
-  52              		.cfi_offset 7, -8
-  53              		.cfi_offset 14, -4
-  54 0002 82B0     		sub	sp, sp, #8
-  55              		.cfi_def_cfa_offset 16
-  56 0004 00AF     		add	r7, sp, #0
-  57              		.cfi_def_cfa_register 7
-  79:../source/R_RTOS/R_RTOS_sem.c ****     uint8_t i = (uint8_t) 0x0u;
-  58              		.loc 1 79 0
-  59 0006 FB1D     		add	r3, r7, #7
-  60 0008 0022     		mov	r2, #0
-  61 000a 1A70     		strb	r2, [r3]
-  80:../source/R_RTOS/R_RTOS_sem.c ****     for ( ; i < AMOUNT_OF_SEMS ; ++i )
-  62              		.loc 1 80 0
-  63 000c 04E0     		b	.L2
-  64              	.L3:
-  65              		.loc 1 80 0 is_stmt 0 discriminator 2
-  66 000e FB1D     		add	r3, r7, #7
-  67 0010 FA1D     		add	r2, r7, #7
-  68 0012 1278     		ldrb	r2, [r2]
-  69 0014 0132     		add	r2, r2, #1
-  70 0016 1A70     		strb	r2, [r3]
-  71              	.L2:
-  72              		.loc 1 80 0 discriminator 1
-  73 0018 FB1D     		add	r3, r7, #7
-  74 001a 1B78     		ldrb	r3, [r3]
-  75 001c 052B     		cmp	r3, #5
-  76 001e F6D9     		bls	.L3
-  81:../source/R_RTOS/R_RTOS_sem.c ****     {
-  82:../source/R_RTOS/R_RTOS_sem.c ****         //ToDO
-  83:../source/R_RTOS/R_RTOS_sem.c **** //        ar_Sems[i].semOccTskID = TSK_ID_NO_TSK;
-  84:../source/R_RTOS/R_RTOS_sem.c **** //        ar_Sems[i].semQTskID = TSK_ID_NO_TSK;
-  85:../source/R_RTOS/R_RTOS_sem.c **** //        ar_Sems[i].svdPrio = TSK_PRIO_ERROR;
-  86:../source/R_RTOS/R_RTOS_sem.c **** //        ar_Sems[i].takenCntr = (SemCntr) 0x0u;
-  87:../source/R_RTOS/R_RTOS_sem.c ****     }
-  88:../source/R_RTOS/R_RTOS_sem.c ****     memMngr_CreateMemPool( sizeof(SyncEle), MEM_OBJECTS_SEM, &memPoolID_SEM );
-  77              		.loc 1 88 0 is_stmt 1
-  78 0020 054B     		ldr	r3, .L5
-  79 0022 0820     		mov	r0, #8
-  80 0024 0421     		mov	r1, #4
-  81 0026 1A1C     		mov	r2, r3
-  82 0028 FFF7FEFF 		bl	memMngr_CreateMemPool
-  89:../source/R_RTOS/R_RTOS_sem.c ****     return RET_OK;
-  83              		.loc 1 89 0
-  84 002c 0123     		mov	r3, #1
-  90:../source/R_RTOS/R_RTOS_sem.c **** }
-  85              		.loc 1 90 0
-  86 002e 181C     		mov	r0, r3
-  87 0030 BD46     		mov	sp, r7
-  88 0032 02B0     		add	sp, sp, #8
-  89              		@ sp needed
-  90 0034 80BD     		pop	{r7, pc}
-  91              	.L6:
-  92 0036 C046     		.align	2
-  93              	.L5:
-  94 0038 00000000 		.word	memPoolID_SEM
-  95              		.cfi_endproc
-  96              	.LFE0:
-  98              		.section	.text.mtx_InitMtxs,"ax",%progbits
-  99              		.align	2
- 100              		.global	mtx_InitMtxs
- 101              		.code	16
- 102              		.thumb_func
- 104              	mtx_InitMtxs:
- 105              	.LFB1:
-  91:../source/R_RTOS/R_RTOS_sem.c **** 
-  92:../source/R_RTOS/R_RTOS_sem.c **** //ToDO
-  93:../source/R_RTOS/R_RTOS_sem.c **** RetCode mtx_InitMtxs( void )
-  94:../source/R_RTOS/R_RTOS_sem.c **** {
- 106              		.loc 1 94 0
- 107              		.cfi_startproc
- 108 0000 80B5     		push	{r7, lr}
- 109              		.cfi_def_cfa_offset 8
- 110              		.cfi_offset 7, -8
- 111              		.cfi_offset 14, -4
- 112 0002 82B0     		sub	sp, sp, #8
- 113              		.cfi_def_cfa_offset 16
- 114 0004 00AF     		add	r7, sp, #0
- 115              		.cfi_def_cfa_register 7
-  95:../source/R_RTOS/R_RTOS_sem.c ****     uint8_t i = (uint8_t) 0x0u;
- 116              		.loc 1 95 0
- 117 0006 FB1D     		add	r3, r7, #7
- 118 0008 0022     		mov	r2, #0
- 119 000a 1A70     		strb	r2, [r3]
-  96:../source/R_RTOS/R_RTOS_sem.c ****     for ( ; i < AMOUNT_OF_MTXS ; ++i )
- 120              		.loc 1 96 0
- 121 000c 18E0     		b	.L8
- 122              	.L9:
-  97:../source/R_RTOS/R_RTOS_sem.c ****     {
-  98:../source/R_RTOS/R_RTOS_sem.c ****         ar_Mtxs[i].mtxOccTskID = TSK_ID_NO_TSK;
- 123              		.loc 1 98 0 discriminator 2
- 124 000e FB1D     		add	r3, r7, #7
- 125 0010 1B78     		ldrb	r3, [r3]
- 126 0012 134A     		ldr	r2, .L11
- 127 0014 9B00     		lsl	r3, r3, #2
- 128 0016 D318     		add	r3, r2, r3
- 129 0018 0022     		mov	r2, #0
- 130 001a 5A70     		strb	r2, [r3, #1]
-  99:../source/R_RTOS/R_RTOS_sem.c ****         ar_Mtxs[i].mtxQStrtTskID = TSK_ID_NO_TSK;
- 131              		.loc 1 99 0 discriminator 2
- 132 001c FB1D     		add	r3, r7, #7
- 133 001e 1A78     		ldrb	r2, [r3]
- 134 0020 0F4B     		ldr	r3, .L11
- 135 0022 9200     		lsl	r2, r2, #2
- 136 0024 0021     		mov	r1, #0
- 137 0026 D154     		strb	r1, [r2, r3]
- 100:../source/R_RTOS/R_RTOS_sem.c ****         ar_Mtxs[i].svdTskPrio = TSK_PRIO_ERROR;
- 138              		.loc 1 100 0 discriminator 2
- 139 0028 FB1D     		add	r3, r7, #7
- 140 002a 1B78     		ldrb	r3, [r3]
- 141 002c 0C4A     		ldr	r2, .L11
- 142 002e 9B00     		lsl	r3, r3, #2
- 143 0030 D318     		add	r3, r2, r3
- 144 0032 0022     		mov	r2, #0
- 145 0034 9A70     		strb	r2, [r3, #2]
-  96:../source/R_RTOS/R_RTOS_sem.c ****     for ( ; i < AMOUNT_OF_MTXS ; ++i )
- 146              		.loc 1 96 0 discriminator 2
- 147 0036 FB1D     		add	r3, r7, #7
- 148 0038 FA1D     		add	r2, r7, #7
- 149 003a 1278     		ldrb	r2, [r2]
- 150 003c 0132     		add	r2, r2, #1
- 151 003e 1A70     		strb	r2, [r3]
- 152              	.L8:
-  96:../source/R_RTOS/R_RTOS_sem.c ****     for ( ; i < AMOUNT_OF_MTXS ; ++i )
- 153              		.loc 1 96 0 is_stmt 0 discriminator 1
- 154 0040 FB1D     		add	r3, r7, #7
- 155 0042 1B78     		ldrb	r3, [r3]
- 156 0044 032B     		cmp	r3, #3
- 157 0046 E2D9     		bls	.L9
- 101:../source/R_RTOS/R_RTOS_sem.c ****     }
- 102:../source/R_RTOS/R_RTOS_sem.c ****     memMngr_CreateMemPool( sizeof(SyncEle), MEM_OBJECTS_MTX, &memPoolID_MTX );
- 158              		.loc 1 102 0 is_stmt 1
- 159 0048 064B     		ldr	r3, .L11+4
- 160 004a 0820     		mov	r0, #8
- 161 004c 0421     		mov	r1, #4
- 162 004e 1A1C     		mov	r2, r3
- 163 0050 FFF7FEFF 		bl	memMngr_CreateMemPool
- 103:../source/R_RTOS/R_RTOS_sem.c ****     return RET_OK;
- 164              		.loc 1 103 0
- 165 0054 0123     		mov	r3, #1
- 104:../source/R_RTOS/R_RTOS_sem.c **** }
- 166              		.loc 1 104 0
- 167 0056 181C     		mov	r0, r3
- 168 0058 BD46     		mov	sp, r7
- 169 005a 02B0     		add	sp, sp, #8
- 170              		@ sp needed
- 171 005c 80BD     		pop	{r7, pc}
- 172              	.L12:
- 173 005e C046     		.align	2
- 174              	.L11:
- 175 0060 00000000 		.word	ar_Mtxs
- 176 0064 00000000 		.word	memPoolID_MTX
- 177              		.cfi_endproc
- 178              	.LFE1:
- 180              		.section	.text.mtx_InsertTskMtxQ,"ax",%progbits
- 181              		.align	2
- 182              		.code	16
- 183              		.thumb_func
- 185              	mtx_InsertTskMtxQ:
- 186              	.LFB2:
- 105:../source/R_RTOS/R_RTOS_sem.c **** 
- 106:../source/R_RTOS/R_RTOS_sem.c **** static RetCode mtx_InsertTskMtxQ( PMtx pMtx, PTskTCB pTskToIns )
- 107:../source/R_RTOS/R_RTOS_sem.c **** {
- 187              		.loc 1 107 0
- 188              		.cfi_startproc
- 189 0000 80B5     		push	{r7, lr}
- 190              		.cfi_def_cfa_offset 8
- 191              		.cfi_offset 7, -8
- 192              		.cfi_offset 14, -4
- 193 0002 84B0     		sub	sp, sp, #16
- 194              		.cfi_def_cfa_offset 24
- 195 0004 00AF     		add	r7, sp, #0
- 196              		.cfi_def_cfa_register 7
- 197 0006 7860     		str	r0, [r7, #4]
- 198 0008 3960     		str	r1, [r7]
- 108:../source/R_RTOS/R_RTOS_sem.c ****     //DEBUG
- 109:../source/R_RTOS/R_RTOS_sem.c ****     if ( ( (uint32_t) pMtx == ( uint32_t ) NULL ) || ( (uint32_t) pTskToIns
- 199              		.loc 1 109 0
- 200 000a 7B68     		ldr	r3, [r7, #4]
- 201 000c 002B     		cmp	r3, #0
- 202 000e 02D0     		beq	.L14
- 203              		.loc 1 109 0 is_stmt 0 discriminator 1
- 204 0010 3B68     		ldr	r3, [r7]
- 205 0012 002B     		cmp	r3, #0
- 206 0014 01D1     		bne	.L15
- 207              	.L14:
- 110:../source/R_RTOS/R_RTOS_sem.c ****             == ( uint32_t ) NULL ) )
- 111:../source/R_RTOS/R_RTOS_sem.c ****         return RET_NOK;
- 208              		.loc 1 111 0 is_stmt 1
- 209 0016 0023     		mov	r3, #0
- 210 0018 4BE0     		b	.L16
- 211              	.L15:
- 112:../source/R_RTOS/R_RTOS_sem.c ****     //\DEBUG
- 113:../source/R_RTOS/R_RTOS_sem.c **** 
- 114:../source/R_RTOS/R_RTOS_sem.c ****     if ( pMtx->mtxQStrtTskID == TSK_ID_NO_TSK )
- 212              		.loc 1 114 0
- 213 001a 7B68     		ldr	r3, [r7, #4]
- 214 001c 1B78     		ldrb	r3, [r3]
- 215 001e 002B     		cmp	r3, #0
- 216 0020 0DD1     		bne	.L17
- 115:../source/R_RTOS/R_RTOS_sem.c ****     {
- 116:../source/R_RTOS/R_RTOS_sem.c ****         // NO QUEUE YET => START A QUEUE
- 117:../source/R_RTOS/R_RTOS_sem.c **** 
- 118:../source/R_RTOS/R_RTOS_sem.c ****         pMtx->mtxQStrtTskID = pTskToIns->tskID;
- 217              		.loc 1 118 0
- 218 0022 3A68     		ldr	r2, [r7]
- 219 0024 2123     		mov	r3, #33
- 220 0026 D25C     		ldrb	r2, [r2, r3]
- 221 0028 7B68     		ldr	r3, [r7, #4]
- 222 002a 1A70     		strb	r2, [r3]
- 119:../source/R_RTOS/R_RTOS_sem.c ****         // given task is the start and end of the new queue
- 120:../source/R_RTOS/R_RTOS_sem.c ****         pTskToIns->nxtTsk = TSK_ID_NO_TSK;
- 223              		.loc 1 120 0
- 224 002c 3A68     		ldr	r2, [r7]
- 225 002e 2223     		mov	r3, #34
- 226 0030 0021     		mov	r1, #0
- 227 0032 D154     		strb	r1, [r2, r3]
- 121:../source/R_RTOS/R_RTOS_sem.c ****         pTskToIns->prvTsk = TSK_ID_NO_TSK;
- 228              		.loc 1 121 0
- 229 0034 3A68     		ldr	r2, [r7]
- 230 0036 2323     		mov	r3, #35
- 231 0038 0021     		mov	r1, #0
- 232 003a D154     		strb	r1, [r2, r3]
- 233 003c 38E0     		b	.L18
- 234              	.L17:
- 235              	.LBB2:
- 122:../source/R_RTOS/R_RTOS_sem.c ****     }
- 123:../source/R_RTOS/R_RTOS_sem.c ****     else
- 124:../source/R_RTOS/R_RTOS_sem.c ****     {
- 125:../source/R_RTOS/R_RTOS_sem.c ****         // THERE IS A QUEUE => INSERT ACCORDING TO PRIORITY
- 126:../source/R_RTOS/R_RTOS_sem.c ****         PTskTCB curTsk = &tsk_AR[pMtx->mtxQStrtTskID];
- 236              		.loc 1 126 0
- 237 003e 7B68     		ldr	r3, [r7, #4]
- 238 0040 1B78     		ldrb	r3, [r3]
- 239 0042 1A1C     		mov	r2, r3
- 240 0044 131C     		mov	r3, r2
- 241 0046 DB00     		lsl	r3, r3, #3
- 242 0048 9B18     		add	r3, r3, r2
- 243 004a 9B00     		lsl	r3, r3, #2
- 244 004c 1B4A     		ldr	r2, .L23
- 245 004e 9B18     		add	r3, r3, r2
- 246 0050 FB60     		str	r3, [r7, #12]
- 127:../source/R_RTOS/R_RTOS_sem.c ****         while ( curTsk->tskPrio >= pTskToIns->tskPrio )
- 247              		.loc 1 127 0
- 248 0052 12E0     		b	.L19
- 249              	.L22:
- 128:../source/R_RTOS/R_RTOS_sem.c ****         {
- 129:../source/R_RTOS/R_RTOS_sem.c ****             if ( curTsk->nxtTsk == TSK_ID_NO_TSK )
- 250              		.loc 1 129 0
- 251 0054 FA68     		ldr	r2, [r7, #12]
- 252 0056 2223     		mov	r3, #34
- 253 0058 D35C     		ldrb	r3, [r2, r3]
- 254 005a DBB2     		uxtb	r3, r3
- 255 005c 002B     		cmp	r3, #0
- 256 005e 00D1     		bne	.L20
- 130:../source/R_RTOS/R_RTOS_sem.c ****             {
- 131:../source/R_RTOS/R_RTOS_sem.c ****                 break;
- 257              		.loc 1 131 0
- 258 0060 13E0     		b	.L21
- 259              	.L20:
- 132:../source/R_RTOS/R_RTOS_sem.c ****             }
- 133:../source/R_RTOS/R_RTOS_sem.c ****             curTsk = &tsk_AR[curTsk->nxtTsk];    // advance in the list
- 260              		.loc 1 133 0
- 261 0062 FA68     		ldr	r2, [r7, #12]
- 262 0064 2223     		mov	r3, #34
- 263 0066 D35C     		ldrb	r3, [r2, r3]
- 264 0068 DBB2     		uxtb	r3, r3
- 265 006a 1A1C     		mov	r2, r3
- 266 006c 131C     		mov	r3, r2
- 267 006e DB00     		lsl	r3, r3, #3
- 268 0070 9B18     		add	r3, r3, r2
- 269 0072 9B00     		lsl	r3, r3, #2
- 270 0074 114A     		ldr	r2, .L23
- 271 0076 9B18     		add	r3, r3, r2
- 272 0078 FB60     		str	r3, [r7, #12]
- 273              	.L19:
- 127:../source/R_RTOS/R_RTOS_sem.c ****         while ( curTsk->tskPrio >= pTskToIns->tskPrio )
- 274              		.loc 1 127 0 discriminator 1
- 275 007a FB68     		ldr	r3, [r7, #12]
- 276 007c DB7F     		ldrb	r3, [r3, #31]
- 277 007e DAB2     		uxtb	r2, r3
- 278 0080 3B68     		ldr	r3, [r7]
- 279 0082 DB7F     		ldrb	r3, [r3, #31]
- 280 0084 DBB2     		uxtb	r3, r3
- 281 0086 9A42     		cmp	r2, r3
- 282 0088 E4D2     		bcs	.L22
- 283              	.L21:
- 134:../source/R_RTOS/R_RTOS_sem.c ****         }
- 135:../source/R_RTOS/R_RTOS_sem.c ****         pTskToIns->prvTsk = curTsk->tskID;    // previous task to new task is the current task
- 284              		.loc 1 135 0
- 285 008a FA68     		ldr	r2, [r7, #12]
- 286 008c 2123     		mov	r3, #33
- 287 008e D15C     		ldrb	r1, [r2, r3]
- 288 0090 3A68     		ldr	r2, [r7]
- 289 0092 2323     		mov	r3, #35
- 290 0094 D154     		strb	r1, [r2, r3]
- 136:../source/R_RTOS/R_RTOS_sem.c ****         pTskToIns->nxtTsk = curTsk->nxtTsk;    // next task to the new task is the former next task
- 291              		.loc 1 136 0
- 292 0096 FA68     		ldr	r2, [r7, #12]
- 293 0098 2223     		mov	r3, #34
- 294 009a D35C     		ldrb	r3, [r2, r3]
- 295 009c D9B2     		uxtb	r1, r3
- 296 009e 3A68     		ldr	r2, [r7]
- 297 00a0 2223     		mov	r3, #34
- 298 00a2 D154     		strb	r1, [r2, r3]
- 137:../source/R_RTOS/R_RTOS_sem.c ****         curTsk->nxtTsk = pTskToIns->tskID;    // new task is now the next task to the current task
- 299              		.loc 1 137 0
- 300 00a4 3A68     		ldr	r2, [r7]
- 301 00a6 2123     		mov	r3, #33
- 302 00a8 D15C     		ldrb	r1, [r2, r3]
- 303 00aa FA68     		ldr	r2, [r7, #12]
- 304 00ac 2223     		mov	r3, #34
- 305 00ae D154     		strb	r1, [r2, r3]
- 306              	.L18:
- 307              	.LBE2:
- 138:../source/R_RTOS/R_RTOS_sem.c ****     }
- 139:../source/R_RTOS/R_RTOS_sem.c **** 
- 140:../source/R_RTOS/R_RTOS_sem.c ****     return RET_OK;
- 308              		.loc 1 140 0
- 309 00b0 0123     		mov	r3, #1
- 310              	.L16:
- 141:../source/R_RTOS/R_RTOS_sem.c **** }
- 311              		.loc 1 141 0
- 312 00b2 181C     		mov	r0, r3
- 313 00b4 BD46     		mov	sp, r7
- 314 00b6 04B0     		add	sp, sp, #16
- 315              		@ sp needed
- 316 00b8 80BD     		pop	{r7, pc}
- 317              	.L24:
- 318 00ba C046     		.align	2
- 319              	.L23:
- 320 00bc 00000000 		.word	tsk_AR
- 321              		.cfi_endproc
- 322              	.LFE2:
- 324              		.section	.text.mtx_GetNextTskMtxQ,"ax",%progbits
- 325              		.align	2
- 326              		.code	16
- 327              		.thumb_func
- 329              	mtx_GetNextTskMtxQ:
- 330              	.LFB3:
- 142:../source/R_RTOS/R_RTOS_sem.c **** 
- 143:../source/R_RTOS/R_RTOS_sem.c **** static RetCode mtx_GetNextTskMtxQ( PMtx pMtx )
- 144:../source/R_RTOS/R_RTOS_sem.c **** {
- 331              		.loc 1 144 0
- 332              		.cfi_startproc
- 333 0000 80B5     		push	{r7, lr}
- 334              		.cfi_def_cfa_offset 8
- 335              		.cfi_offset 7, -8
- 336              		.cfi_offset 14, -4
- 337 0002 84B0     		sub	sp, sp, #16
- 338              		.cfi_def_cfa_offset 24
- 339 0004 00AF     		add	r7, sp, #0
- 340              		.cfi_def_cfa_register 7
- 341 0006 7860     		str	r0, [r7, #4]
- 145:../source/R_RTOS/R_RTOS_sem.c ****     //DEBUG
- 146:../source/R_RTOS/R_RTOS_sem.c ****     if ( (uint32_t) pMtx == ( uint32_t ) NULL )
- 342              		.loc 1 146 0
- 343 0008 7B68     		ldr	r3, [r7, #4]
- 344 000a 002B     		cmp	r3, #0
- 345 000c 01D1     		bne	.L26
- 147:../source/R_RTOS/R_RTOS_sem.c ****     {
- 148:../source/R_RTOS/R_RTOS_sem.c ****         // NO START NODE
- 149:../source/R_RTOS/R_RTOS_sem.c ****         return RET_NOK;
- 346              		.loc 1 149 0
- 347 000e 0023     		mov	r3, #0
- 348 0010 2FE0     		b	.L27
- 349              	.L26:
- 150:../source/R_RTOS/R_RTOS_sem.c ****     }
- 151:../source/R_RTOS/R_RTOS_sem.c ****     //\DEBUG
- 152:../source/R_RTOS/R_RTOS_sem.c **** 
- 153:../source/R_RTOS/R_RTOS_sem.c ****     pMtx->mtxOccTskID = pMtx->mtxQStrtTskID;
- 350              		.loc 1 153 0
- 351 0012 7B68     		ldr	r3, [r7, #4]
- 352 0014 1A78     		ldrb	r2, [r3]
- 353 0016 7B68     		ldr	r3, [r7, #4]
- 354 0018 5A70     		strb	r2, [r3, #1]
- 154:../source/R_RTOS/R_RTOS_sem.c **** 
- 155:../source/R_RTOS/R_RTOS_sem.c ****     if ( pMtx->mtxQStrtTskID != TSK_ID_NO_TSK )
- 355              		.loc 1 155 0
- 356 001a 7B68     		ldr	r3, [r7, #4]
- 357 001c 1B78     		ldrb	r3, [r3]
- 358 001e 002B     		cmp	r3, #0
- 359 0020 26D0     		beq	.L28
- 360              	.LBB3:
- 156:../source/R_RTOS/R_RTOS_sem.c ****     {
- 157:../source/R_RTOS/R_RTOS_sem.c ****         PTskTCB nxtTsk = &tsk_AR[pMtx->mtxQStrtTskID];
- 361              		.loc 1 157 0
- 362 0022 7B68     		ldr	r3, [r7, #4]
- 363 0024 1B78     		ldrb	r3, [r3]
- 364 0026 1A1C     		mov	r2, r3
- 365 0028 131C     		mov	r3, r2
- 366 002a DB00     		lsl	r3, r3, #3
- 367 002c 9B18     		add	r3, r3, r2
- 368 002e 9B00     		lsl	r3, r3, #2
- 369 0030 124A     		ldr	r2, .L29
- 370 0032 9B18     		add	r3, r3, r2
- 371 0034 FB60     		str	r3, [r7, #12]
- 158:../source/R_RTOS/R_RTOS_sem.c ****         pMtx->mtxQStrtTskID = nxtTsk->nxtTsk;
- 372              		.loc 1 158 0
- 373 0036 FA68     		ldr	r2, [r7, #12]
- 374 0038 2223     		mov	r3, #34
- 375 003a D35C     		ldrb	r3, [r2, r3]
- 376 003c DAB2     		uxtb	r2, r3
- 377 003e 7B68     		ldr	r3, [r7, #4]
- 378 0040 1A70     		strb	r2, [r3]
- 159:../source/R_RTOS/R_RTOS_sem.c ****         pMtx->svdTskPrio = nxtTsk->tskPrio;
- 379              		.loc 1 159 0
- 380 0042 FB68     		ldr	r3, [r7, #12]
- 381 0044 DB7F     		ldrb	r3, [r3, #31]
- 382 0046 DAB2     		uxtb	r2, r3
- 383 0048 7B68     		ldr	r3, [r7, #4]
- 384 004a 9A70     		strb	r2, [r3, #2]
- 160:../source/R_RTOS/R_RTOS_sem.c ****         tsk_ClrEvt( nxtTsk, nxtTsk->tskSync );
- 385              		.loc 1 160 0
- 386 004c FB68     		ldr	r3, [r7, #12]
- 387 004e 9B69     		ldr	r3, [r3, #24]
- 388 0050 FA68     		ldr	r2, [r7, #12]
- 389 0052 101C     		mov	r0, r2
- 390 0054 191C     		mov	r1, r3
- 391 0056 FFF7FEFF 		bl	tsk_ClrEvt
- 161:../source/R_RTOS/R_RTOS_sem.c ****         memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_MTX );    // FREE CURRENT TskSyncEle
- 392              		.loc 1 161 0
- 393 005a FB68     		ldr	r3, [r7, #12]
- 394 005c 9A69     		ldr	r2, [r3, #24]
- 395 005e 084B     		ldr	r3, .L29+4
- 396 0060 1B78     		ldrb	r3, [r3]
- 397 0062 101C     		mov	r0, r2
- 398 0064 191C     		mov	r1, r3
- 399 0066 FFF7FEFF 		bl	memMngr_MemPoolFree
- 162:../source/R_RTOS/R_RTOS_sem.c ****         nxtTsk->tskSync = (PSyncEle) NULL;
- 400              		.loc 1 162 0
- 401 006a FB68     		ldr	r3, [r7, #12]
- 402 006c 0022     		mov	r2, #0
- 403 006e 9A61     		str	r2, [r3, #24]
- 404              	.L28:
- 405              	.LBE3:
- 163:../source/R_RTOS/R_RTOS_sem.c ****     }
- 164:../source/R_RTOS/R_RTOS_sem.c **** 
- 165:../source/R_RTOS/R_RTOS_sem.c ****     return RET_OK;
- 406              		.loc 1 165 0
- 407 0070 0123     		mov	r3, #1
- 408              	.L27:
- 166:../source/R_RTOS/R_RTOS_sem.c **** }
- 409              		.loc 1 166 0
- 410 0072 181C     		mov	r0, r3
- 411 0074 BD46     		mov	sp, r7
- 412 0076 04B0     		add	sp, sp, #16
- 413              		@ sp needed
- 414 0078 80BD     		pop	{r7, pc}
- 415              	.L30:
- 416 007a C046     		.align	2
- 417              	.L29:
- 418 007c 00000000 		.word	tsk_AR
- 419 0080 00000000 		.word	memPoolID_MTX
- 420              		.cfi_endproc
- 421              	.LFE3:
- 423              		.section	.text.mtx_TakeMtx,"ax",%progbits
- 424              		.align	2
- 425              		.global	mtx_TakeMtx
- 426              		.code	16
- 427              		.thumb_func
- 429              	mtx_TakeMtx:
- 430              	.LFB4:
- 167:../source/R_RTOS/R_RTOS_sem.c **** 
- 168:../source/R_RTOS/R_RTOS_sem.c **** RetCode mtx_TakeMtx(
- 169:../source/R_RTOS/R_RTOS_sem.c ****                      PTskTCB const tsk,
- 170:../source/R_RTOS/R_RTOS_sem.c ****                      const MtxNr mtxNr,
- 171:../source/R_RTOS/R_RTOS_sem.c ****                      const SysTicks maxSysTicksToWait )
- 172:../source/R_RTOS/R_RTOS_sem.c **** {
- 431              		.loc 1 172 0
- 432              		.cfi_startproc
- 433 0000 80B5     		push	{r7, lr}
- 434              		.cfi_def_cfa_offset 8
- 435              		.cfi_offset 7, -8
- 436              		.cfi_offset 14, -4
- 437 0002 86B0     		sub	sp, sp, #24
- 438              		.cfi_def_cfa_offset 32
- 439 0004 00AF     		add	r7, sp, #0
- 440              		.cfi_def_cfa_register 7
- 441 0006 7860     		str	r0, [r7, #4]
- 442 0008 FB1C     		add	r3, r7, #3
- 443 000a 1970     		strb	r1, [r3]
- 444 000c BB1C     		add	r3, r7, #2
- 445 000e 1A70     		strb	r2, [r3]
- 173:../source/R_RTOS/R_RTOS_sem.c ****     //DEBUG
- 174:../source/R_RTOS/R_RTOS_sem.c ****     if ( mtxNr >= AMOUNT_OF_MTXS )
- 446              		.loc 1 174 0
- 447 0010 FB1C     		add	r3, r7, #3
- 448 0012 1B78     		ldrb	r3, [r3]
- 449 0014 032B     		cmp	r3, #3
- 450 0016 01D9     		bls	.L32
- 175:../source/R_RTOS/R_RTOS_sem.c ****         return RET_NOK;
- 451              		.loc 1 175 0
- 452 0018 0023     		mov	r3, #0
- 453 001a 61E0     		b	.L33
- 454              	.L32:
- 176:../source/R_RTOS/R_RTOS_sem.c ****     //\DEBUG
- 177:../source/R_RTOS/R_RTOS_sem.c **** 
- 178:../source/R_RTOS/R_RTOS_sem.c ****     PMtx pMtx = &ar_Mtxs[mtxNr];
- 455              		.loc 1 178 0
- 456 001c FB1C     		add	r3, r7, #3
- 457 001e 1B78     		ldrb	r3, [r3]
- 458 0020 9A00     		lsl	r2, r3, #2
- 459 0022 314B     		ldr	r3, .L39
- 460 0024 D318     		add	r3, r2, r3
- 461 0026 7B61     		str	r3, [r7, #20]
- 179:../source/R_RTOS/R_RTOS_sem.c **** 
- 180:../source/R_RTOS/R_RTOS_sem.c ****     // The mutex is free, when there is no occupying task
- 181:../source/R_RTOS/R_RTOS_sem.c ****     if ( pMtx->mtxOccTskID != TSK_ID_NO_TSK )
- 462              		.loc 1 181 0
- 463 0028 7B69     		ldr	r3, [r7, #20]
- 464 002a 5B78     		ldrb	r3, [r3, #1]
- 465 002c 002B     		cmp	r3, #0
- 466 002e 49D0     		beq	.L34
- 467              	.LBB4:
- 182:../source/R_RTOS/R_RTOS_sem.c ****     {
- 183:../source/R_RTOS/R_RTOS_sem.c ****         // CHECK IF THE SPECIFIED TASK IS NOT ALREADY WAITING FOR ANY SYNC ELEMENT, WHICH IS AN ERR
- 184:../source/R_RTOS/R_RTOS_sem.c ****         //DEBUG
- 185:../source/R_RTOS/R_RTOS_sem.c ****         if ( (uint32_t) tsk->tskSync != ( uint32_t ) NULL )
- 468              		.loc 1 185 0
- 469 0030 7B68     		ldr	r3, [r7, #4]
- 470 0032 9B69     		ldr	r3, [r3, #24]
- 471 0034 002B     		cmp	r3, #0
- 472 0036 01D0     		beq	.L35
- 186:../source/R_RTOS/R_RTOS_sem.c ****             return RET_NOK;
- 473              		.loc 1 186 0
- 474 0038 0023     		mov	r3, #0
- 475 003a 51E0     		b	.L33
- 476              	.L35:
- 187:../source/R_RTOS/R_RTOS_sem.c ****         //\DEBUG
- 188:../source/R_RTOS/R_RTOS_sem.c **** 
- 189:../source/R_RTOS/R_RTOS_sem.c ****         PSyncEle mtxSync;
- 190:../source/R_RTOS/R_RTOS_sem.c ****         memMngr_MemPoolMalloc( &mtxSync, memPoolID_MTX );
- 477              		.loc 1 190 0
- 478 003c 2B4B     		ldr	r3, .L39+4
- 479 003e 1B78     		ldrb	r3, [r3]
- 480 0040 3A1C     		mov	r2, r7
- 481 0042 0C32     		add	r2, r2, #12
- 482 0044 101C     		mov	r0, r2
- 483 0046 191C     		mov	r1, r3
- 484 0048 FFF7FEFF 		bl	memMngr_MemPoolMalloc
- 191:../source/R_RTOS/R_RTOS_sem.c ****         if ( (uint32_t) mtxSync == ( uint32_t ) NULL )
- 485              		.loc 1 191 0
- 486 004c FB68     		ldr	r3, [r7, #12]
- 487 004e 002B     		cmp	r3, #0
- 488 0050 05D1     		bne	.L37
- 192:../source/R_RTOS/R_RTOS_sem.c ****         {
- 193:../source/R_RTOS/R_RTOS_sem.c ****             tsk->tskState = TSK_STATE_ERROR;
- 489              		.loc 1 193 0
- 490 0052 7A68     		ldr	r2, [r7, #4]
- 491 0054 2023     		mov	r3, #32
- 492 0056 0021     		mov	r1, #0
- 493 0058 D154     		strb	r1, [r2, r3]
- 194:../source/R_RTOS/R_RTOS_sem.c ****             return RET_NOK;
- 494              		.loc 1 194 0
- 495 005a 0023     		mov	r3, #0
- 496 005c 40E0     		b	.L33
- 497              	.L37:
- 195:../source/R_RTOS/R_RTOS_sem.c ****         }
- 196:../source/R_RTOS/R_RTOS_sem.c ****         //ToDO
- 197:../source/R_RTOS/R_RTOS_sem.c ****         //semSync->maxBlckTime = maxSysTicksToWait;
- 198:../source/R_RTOS/R_RTOS_sem.c ****         mtxSync->syncEleID = mtxNr;
- 498              		.loc 1 198 0
- 499 005e FB68     		ldr	r3, [r7, #12]
- 500 0060 FA1C     		add	r2, r7, #3
- 501 0062 1278     		ldrb	r2, [r2]
- 502 0064 5A70     		strb	r2, [r3, #1]
- 199:../source/R_RTOS/R_RTOS_sem.c ****         mtxSync->syncEleType = SyncEle_TYPE_MTX;
- 503              		.loc 1 199 0
- 504 0066 FB68     		ldr	r3, [r7, #12]
- 505 0068 0522     		mov	r2, #5
- 506 006a 1A70     		strb	r2, [r3]
- 200:../source/R_RTOS/R_RTOS_sem.c ****         //semSync->SyncEleHandle.SemSyncEle.dummy1
- 201:../source/R_RTOS/R_RTOS_sem.c ****         tsk->tskSync = mtxSync;
- 507              		.loc 1 201 0
- 508 006c FA68     		ldr	r2, [r7, #12]
- 509 006e 7B68     		ldr	r3, [r7, #4]
- 510 0070 9A61     		str	r2, [r3, #24]
- 202:../source/R_RTOS/R_RTOS_sem.c ****         tsk_SetEvt( tsk, mtxSync );
- 511              		.loc 1 202 0
- 512 0072 FB68     		ldr	r3, [r7, #12]
- 513 0074 7A68     		ldr	r2, [r7, #4]
- 514 0076 101C     		mov	r0, r2
- 515 0078 191C     		mov	r1, r3
- 516 007a FFF7FEFF 		bl	tsk_SetEvt
- 203:../source/R_RTOS/R_RTOS_sem.c **** 
- 204:../source/R_RTOS/R_RTOS_sem.c ****         PTskTCB occTsk = &( tsk_AR[pMtx->mtxOccTskID] );
- 517              		.loc 1 204 0
- 518 007e 7B69     		ldr	r3, [r7, #20]
- 519 0080 5B78     		ldrb	r3, [r3, #1]
- 520 0082 1A1C     		mov	r2, r3
- 521 0084 131C     		mov	r3, r2
- 522 0086 DB00     		lsl	r3, r3, #3
- 523 0088 9B18     		add	r3, r3, r2
- 524 008a 9B00     		lsl	r3, r3, #2
- 525 008c 184A     		ldr	r2, .L39+8
- 526 008e 9B18     		add	r3, r3, r2
- 527 0090 3B61     		str	r3, [r7, #16]
- 205:../source/R_RTOS/R_RTOS_sem.c ****         if ( occTsk->tskPrio < tsk->tskPrio )
- 528              		.loc 1 205 0
- 529 0092 3B69     		ldr	r3, [r7, #16]
- 530 0094 DB7F     		ldrb	r3, [r3, #31]
- 531 0096 DAB2     		uxtb	r2, r3
- 532 0098 7B68     		ldr	r3, [r7, #4]
- 533 009a DB7F     		ldrb	r3, [r3, #31]
- 534 009c DBB2     		uxtb	r3, r3
- 535 009e 9A42     		cmp	r2, r3
- 536 00a0 07D2     		bcs	.L38
- 206:../source/R_RTOS/R_RTOS_sem.c ****         {
- 207:../source/R_RTOS/R_RTOS_sem.c ****             // INHERIT MAXIMUM PRIORITY OF ALL INCOMING TASKS
- 208:../source/R_RTOS/R_RTOS_sem.c ****             tsk_ChngePrio( occTsk, tsk->tskPrio );
- 537              		.loc 1 208 0
- 538 00a2 7B68     		ldr	r3, [r7, #4]
- 539 00a4 DB7F     		ldrb	r3, [r3, #31]
- 540 00a6 DBB2     		uxtb	r3, r3
- 541 00a8 3A69     		ldr	r2, [r7, #16]
- 542 00aa 101C     		mov	r0, r2
- 543 00ac 191C     		mov	r1, r3
- 544 00ae FFF7FEFF 		bl	tsk_ChngePrio
- 545              	.L38:
- 209:../source/R_RTOS/R_RTOS_sem.c ****         }
- 210:../source/R_RTOS/R_RTOS_sem.c ****         return sem_InsertTskSemQ( pMtx, tsk );    // insert the new semaphore according to its task
- 546              		.loc 1 210 0
- 547 00b2 7A69     		ldr	r2, [r7, #20]
- 548 00b4 7B68     		ldr	r3, [r7, #4]
- 549 00b6 101C     		mov	r0, r2
- 550 00b8 191C     		mov	r1, r3
- 551 00ba FFF7FEFF 		bl	sem_InsertTskSemQ
- 552 00be 031C     		mov	r3, r0
- 553 00c0 DBB2     		uxtb	r3, r3
- 554 00c2 0DE0     		b	.L33
- 555              	.L34:
- 556              	.LBE4:
- 211:../source/R_RTOS/R_RTOS_sem.c ****     }
- 212:../source/R_RTOS/R_RTOS_sem.c ****     else
- 213:../source/R_RTOS/R_RTOS_sem.c ****     {
- 214:../source/R_RTOS/R_RTOS_sem.c ****         pMtx->mtxOccTskID = tsk->tskID; // current task is now the occupying task
- 557              		.loc 1 214 0
- 558 00c4 7A68     		ldr	r2, [r7, #4]
- 559 00c6 2123     		mov	r3, #33
- 560 00c8 D25C     		ldrb	r2, [r2, r3]
- 561 00ca 7B69     		ldr	r3, [r7, #20]
- 562 00cc 5A70     		strb	r2, [r3, #1]
- 215:../source/R_RTOS/R_RTOS_sem.c ****         pMtx->svdTskPrio = tsk->tskPrio; // save the task priority for the priority inversion proto
- 563              		.loc 1 215 0
- 564 00ce 7B68     		ldr	r3, [r7, #4]
- 565 00d0 DB7F     		ldrb	r3, [r3, #31]
- 566 00d2 DAB2     		uxtb	r2, r3
- 567 00d4 7B69     		ldr	r3, [r7, #20]
- 568 00d6 9A70     		strb	r2, [r3, #2]
- 216:../source/R_RTOS/R_RTOS_sem.c ****         // If the semaphore is free, there is also no waiting queue; to make sure, set the Q start 
- 217:../source/R_RTOS/R_RTOS_sem.c ****         pMtx->mtxQStrtTskID = TSK_ID_NO_TSK;
- 569              		.loc 1 217 0
- 570 00d8 7B69     		ldr	r3, [r7, #20]
- 571 00da 0022     		mov	r2, #0
- 572 00dc 1A70     		strb	r2, [r3]
- 218:../source/R_RTOS/R_RTOS_sem.c ****         return RET_OK;
- 573              		.loc 1 218 0
- 574 00de 0123     		mov	r3, #1
- 575              	.L33:
- 219:../source/R_RTOS/R_RTOS_sem.c ****     }
- 220:../source/R_RTOS/R_RTOS_sem.c **** }
- 576              		.loc 1 220 0
- 577 00e0 181C     		mov	r0, r3
- 578 00e2 BD46     		mov	sp, r7
- 579 00e4 06B0     		add	sp, sp, #24
- 580              		@ sp needed
- 581 00e6 80BD     		pop	{r7, pc}
- 582              	.L40:
- 583              		.align	2
- 584              	.L39:
- 585 00e8 00000000 		.word	ar_Mtxs
- 586 00ec 00000000 		.word	memPoolID_MTX
- 587 00f0 00000000 		.word	tsk_AR
- 588              		.cfi_endproc
- 589              	.LFE4:
- 591              		.section	.text.mtx_GiveMtx,"ax",%progbits
- 592              		.align	2
- 593              		.global	mtx_GiveMtx
- 594              		.code	16
- 595              		.thumb_func
- 597              	mtx_GiveMtx:
- 598              	.LFB5:
- 221:../source/R_RTOS/R_RTOS_sem.c **** 
- 222:../source/R_RTOS/R_RTOS_sem.c **** RetCode mtx_GiveMtx( PTskTCB const tsk, const MtxNr mtxNr )
- 223:../source/R_RTOS/R_RTOS_sem.c **** {
- 599              		.loc 1 223 0
- 600              		.cfi_startproc
- 601 0000 80B5     		push	{r7, lr}
- 602              		.cfi_def_cfa_offset 8
- 603              		.cfi_offset 7, -8
- 604              		.cfi_offset 14, -4
- 605 0002 84B0     		sub	sp, sp, #16
- 606              		.cfi_def_cfa_offset 24
- 607 0004 00AF     		add	r7, sp, #0
- 608              		.cfi_def_cfa_register 7
- 609 0006 7860     		str	r0, [r7, #4]
- 610 0008 0A1C     		mov	r2, r1
- 611 000a FB1C     		add	r3, r7, #3
- 612 000c 1A70     		strb	r2, [r3]
- 224:../source/R_RTOS/R_RTOS_sem.c ****     //DEBUG
- 225:../source/R_RTOS/R_RTOS_sem.c ****     if ( mtxNr >= AMOUNT_OF_MTXS )
- 613              		.loc 1 225 0
- 614 000e FB1C     		add	r3, r7, #3
- 615 0010 1B78     		ldrb	r3, [r3]
- 616 0012 032B     		cmp	r3, #3
- 617 0014 01D9     		bls	.L42
- 226:../source/R_RTOS/R_RTOS_sem.c ****         return RET_NOK;
- 618              		.loc 1 226 0
- 619 0016 0023     		mov	r3, #0
- 620 0018 21E0     		b	.L43
- 621              	.L42:
- 227:../source/R_RTOS/R_RTOS_sem.c ****     //\DEBUG
- 228:../source/R_RTOS/R_RTOS_sem.c **** 
- 229:../source/R_RTOS/R_RTOS_sem.c ****     PMtx pMtx = &( ar_Mtxs[mtxNr] );
- 622              		.loc 1 229 0
- 623 001a FB1C     		add	r3, r7, #3
- 624 001c 1B78     		ldrb	r3, [r3]
- 625 001e 9A00     		lsl	r2, r3, #2
- 626 0020 114B     		ldr	r3, .L46
- 627 0022 D318     		add	r3, r2, r3
- 628 0024 FB60     		str	r3, [r7, #12]
- 230:../source/R_RTOS/R_RTOS_sem.c **** 
- 231:../source/R_RTOS/R_RTOS_sem.c ****     if ( pMtx->mtxOccTskID != tsk->tskID )    // ONLY THE OCCUPYING TASK CAN GIVE THE MUTEX
- 629              		.loc 1 231 0
- 630 0026 FB68     		ldr	r3, [r7, #12]
- 631 0028 5A78     		ldrb	r2, [r3, #1]
- 632 002a 7968     		ldr	r1, [r7, #4]
- 633 002c 2123     		mov	r3, #33
- 634 002e CB5C     		ldrb	r3, [r1, r3]
- 635 0030 9A42     		cmp	r2, r3
- 636 0032 01D0     		beq	.L44
- 232:../source/R_RTOS/R_RTOS_sem.c ****         return RET_NOK;
- 637              		.loc 1 232 0
- 638 0034 0023     		mov	r3, #0
- 639 0036 12E0     		b	.L43
- 640              	.L44:
- 233:../source/R_RTOS/R_RTOS_sem.c **** 
- 234:../source/R_RTOS/R_RTOS_sem.c ****     if ( tsk->tskPrio != pMtx->svdTskPrio )
- 641              		.loc 1 234 0
- 642 0038 7B68     		ldr	r3, [r7, #4]
- 643 003a DB7F     		ldrb	r3, [r3, #31]
- 644 003c DAB2     		uxtb	r2, r3
- 645 003e FB68     		ldr	r3, [r7, #12]
- 646 0040 9B78     		ldrb	r3, [r3, #2]
- 647 0042 9A42     		cmp	r2, r3
- 648 0044 06D0     		beq	.L45
- 235:../source/R_RTOS/R_RTOS_sem.c ****     {
- 236:../source/R_RTOS/R_RTOS_sem.c ****         tsk_ChngePrio( tsk, pMtx->svdTskPrio );
- 649              		.loc 1 236 0
- 650 0046 FB68     		ldr	r3, [r7, #12]
- 651 0048 9B78     		ldrb	r3, [r3, #2]
- 652 004a 7A68     		ldr	r2, [r7, #4]
- 653 004c 101C     		mov	r0, r2
- 654 004e 191C     		mov	r1, r3
- 655 0050 FFF7FEFF 		bl	tsk_ChngePrio
- 656              	.L45:
- 237:../source/R_RTOS/R_RTOS_sem.c ****     }
- 238:../source/R_RTOS/R_RTOS_sem.c **** 
- 239:../source/R_RTOS/R_RTOS_sem.c ****     return mtx_GetNextTskMtxQ( pMtx );
- 657              		.loc 1 239 0
- 658 0054 FB68     		ldr	r3, [r7, #12]
- 659 0056 181C     		mov	r0, r3
- 660 0058 FFF7FEFF 		bl	mtx_GetNextTskMtxQ
- 661 005c 031C     		mov	r3, r0
- 662              	.L43:
- 240:../source/R_RTOS/R_RTOS_sem.c **** }
- 663              		.loc 1 240 0
- 664 005e 181C     		mov	r0, r3
- 665 0060 BD46     		mov	sp, r7
- 666 0062 04B0     		add	sp, sp, #16
- 667              		@ sp needed
- 668 0064 80BD     		pop	{r7, pc}
- 669              	.L47:
- 670 0066 C046     		.align	2
- 671              	.L46:
- 672 0068 00000000 		.word	ar_Mtxs
- 673              		.cfi_endproc
- 674              	.LFE5:
- 676              		.section	.text.sem_GiveUpOnSem,"ax",%progbits
- 677              		.align	2
- 678              		.global	sem_GiveUpOnSem
- 679              		.code	16
- 680              		.thumb_func
- 682              	sem_GiveUpOnSem:
- 683              	.LFB6:
- 241:../source/R_RTOS/R_RTOS_sem.c **** 
- 242:../source/R_RTOS/R_RTOS_sem.c **** RetCode sem_GiveUpOnSem( PTskTCB const tsk )
- 243:../source/R_RTOS/R_RTOS_sem.c **** {
- 684              		.loc 1 243 0
- 685              		.cfi_startproc
- 686 0000 80B5     		push	{r7, lr}
- 687              		.cfi_def_cfa_offset 8
- 688              		.cfi_offset 7, -8
- 689              		.cfi_offset 14, -4
- 690 0002 82B0     		sub	sp, sp, #8
- 691              		.cfi_def_cfa_offset 16
- 692 0004 00AF     		add	r7, sp, #0
- 693              		.cfi_def_cfa_register 7
- 694 0006 7860     		str	r0, [r7, #4]
- 244:../source/R_RTOS/R_RTOS_sem.c ****     //ToDO
- 245:../source/R_RTOS/R_RTOS_sem.c **** 
- 246:../source/R_RTOS/R_RTOS_sem.c **** //    PSem sem;
- 247:../source/R_RTOS/R_RTOS_sem.c **** //    uint8_t semArCnt = (uint8_t) 0x0u;
- 248:../source/R_RTOS/R_RTOS_sem.c **** //
- 249:../source/R_RTOS/R_RTOS_sem.c **** //    for ( ; semArCnt < AMOUNT_OF_SEMS ; semArCnt++ )
- 250:../source/R_RTOS/R_RTOS_sem.c **** //    {
- 251:../source/R_RTOS/R_RTOS_sem.c **** //        sem = &ar_Sems[semArCnt];
- 252:../source/R_RTOS/R_RTOS_sem.c **** //        // If the semaphore is taken and the given task is the start of the list, release the sem
- 253:../source/R_RTOS/R_RTOS_sem.c **** //        if ( sem->takenCntr )    //ToDo is this really needed? semOccTskID should be TSK_ID_NO_TS
- 254:../source/R_RTOS/R_RTOS_sem.c **** //        {
- 255:../source/R_RTOS/R_RTOS_sem.c **** //            if ( sem->semOccTskID == tsk->tskID )
- 256:../source/R_RTOS/R_RTOS_sem.c **** //            {
- 257:../source/R_RTOS/R_RTOS_sem.c **** //                // Get the next task from the semaphore queue -> will be stored as the new start 
- 258:../source/R_RTOS/R_RTOS_sem.c **** //                sem_GetNextTskSemQ( sem );    //ToDo RetCode??
- 259:../source/R_RTOS/R_RTOS_sem.c **** //            }
- 260:../source/R_RTOS/R_RTOS_sem.c **** //        }
- 261:../source/R_RTOS/R_RTOS_sem.c **** //    }
- 262:../source/R_RTOS/R_RTOS_sem.c ****     return RET_OK;
- 695              		.loc 1 262 0
- 696 0008 0123     		mov	r3, #1
- 263:../source/R_RTOS/R_RTOS_sem.c **** }
- 697              		.loc 1 263 0
- 698 000a 181C     		mov	r0, r3
- 699 000c BD46     		mov	sp, r7
- 700 000e 02B0     		add	sp, sp, #8
- 701              		@ sp needed
- 702 0010 80BD     		pop	{r7, pc}
- 703              		.cfi_endproc
- 704              	.LFE6:
- 706 0012 C046     		.section	.text.sem_DeleteTskSemQ,"ax",%progbits
- 707              		.align	2
- 708              		.global	sem_DeleteTskSemQ
- 709              		.code	16
- 710              		.thumb_func
- 712              	sem_DeleteTskSemQ:
- 713              	.LFB7:
- 264:../source/R_RTOS/R_RTOS_sem.c **** 
- 265:../source/R_RTOS/R_RTOS_sem.c **** // WARNING! MAKE SURE THAT THE TASK !IS! IN THE SEMAPHORE WAITING TASK QUEUE!!!
- 266:../source/R_RTOS/R_RTOS_sem.c **** RetCode sem_DeleteTskSemQ( PTskTCB const tsk )
- 267:../source/R_RTOS/R_RTOS_sem.c **** {
- 714              		.loc 1 267 0
- 715              		.cfi_startproc
- 716 0000 80B5     		push	{r7, lr}
- 717              		.cfi_def_cfa_offset 8
- 718              		.cfi_offset 7, -8
- 719              		.cfi_offset 14, -4
- 720 0002 82B0     		sub	sp, sp, #8
- 721              		.cfi_def_cfa_offset 16
- 722 0004 00AF     		add	r7, sp, #0
- 723              		.cfi_def_cfa_register 7
- 724 0006 7860     		str	r0, [r7, #4]
- 268:../source/R_RTOS/R_RTOS_sem.c ****     //ToDO !!!
- 269:../source/R_RTOS/R_RTOS_sem.c **** //    if ( ( (uint32_t) tsk->tskSync == ( uint32_t ) NULL ) || ( tsk->tskSync->syncEleType
- 270:../source/R_RTOS/R_RTOS_sem.c **** //            != SyncEle_TYPE_SEM ) )
- 271:../source/R_RTOS/R_RTOS_sem.c **** //        return RET_NOK;    // WTF?
- 272:../source/R_RTOS/R_RTOS_sem.c **** //
- 273:../source/R_RTOS/R_RTOS_sem.c **** //    PSem sem = &ar_Sems[tsk->tskSync->syncEleID];
- 274:../source/R_RTOS/R_RTOS_sem.c **** //
- 275:../source/R_RTOS/R_RTOS_sem.c **** //    if ( sem->semQTskID == tsk->tskID )
- 276:../source/R_RTOS/R_RTOS_sem.c **** //    {
- 277:../source/R_RTOS/R_RTOS_sem.c **** //        sem->semQTskID = tsk->nxtTsk;
- 278:../source/R_RTOS/R_RTOS_sem.c **** //        if ( tsk->nxtTsk != TSK_ID_NO_TSK )
- 279:../source/R_RTOS/R_RTOS_sem.c **** //        {
- 280:../source/R_RTOS/R_RTOS_sem.c **** //            tsk_AR[tsk->nxtTsk].prvTsk = TSK_ID_NO_TSK;
- 281:../source/R_RTOS/R_RTOS_sem.c **** //        }
- 282:../source/R_RTOS/R_RTOS_sem.c **** //    }
- 283:../source/R_RTOS/R_RTOS_sem.c **** //    else
- 284:../source/R_RTOS/R_RTOS_sem.c **** //    {
- 285:../source/R_RTOS/R_RTOS_sem.c **** //        if ( tsk->nxtTsk != TSK_ID_NO_TSK )
- 286:../source/R_RTOS/R_RTOS_sem.c **** //        {
- 287:../source/R_RTOS/R_RTOS_sem.c **** //            tsk_AR[tsk->nxtTsk].prvTsk = tsk->prvTsk;
- 288:../source/R_RTOS/R_RTOS_sem.c **** //        }
- 289:../source/R_RTOS/R_RTOS_sem.c **** //        if ( tsk->prvTsk != TSK_ID_NO_TSK )
- 290:../source/R_RTOS/R_RTOS_sem.c **** //        {
- 291:../source/R_RTOS/R_RTOS_sem.c **** //            tsk_AR[tsk->prvTsk].nxtTsk = tsk->nxtTsk;
- 292:../source/R_RTOS/R_RTOS_sem.c **** //        }
- 293:../source/R_RTOS/R_RTOS_sem.c **** //    }
- 294:../source/R_RTOS/R_RTOS_sem.c **** //
- 295:../source/R_RTOS/R_RTOS_sem.c **** //    memMngr_MemPoolFree( tsk->tskSync, memPoolID_SEM );    // FREE CURRENT NODE
- 296:../source/R_RTOS/R_RTOS_sem.c **** 
- 297:../source/R_RTOS/R_RTOS_sem.c ****     return RET_OK;
- 725              		.loc 1 297 0
- 726 0008 0123     		mov	r3, #1
- 298:../source/R_RTOS/R_RTOS_sem.c **** }
- 727              		.loc 1 298 0
- 728 000a 181C     		mov	r0, r3
- 729 000c BD46     		mov	sp, r7
- 730 000e 02B0     		add	sp, sp, #8
- 731              		@ sp needed
- 732 0010 80BD     		pop	{r7, pc}
- 733              		.cfi_endproc
- 734              	.LFE7:
- 736 0012 C046     		.text
- 737              	.Letext0:
- 738              		.file 2 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
- 739              		.file 3 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\stdint.h"
- 740              		.file 4 "../include/R_RTOS_inc.h"
- 741              		.file 5 "../include/R_RTOS_memMngr.h"
+  19              		.global	tsk1
+  20              		.code	16
+  21              		.thumb_func
+  23              	tsk1:
+  24              	.LFB64:
+  25              		.file 1 "../Tasks/MtxTest/Tasks.c"
+   1:../Tasks/MtxTest/Tasks.c **** #include "R_RTOS_services.h"
+   2:../Tasks/MtxTest/Tasks.c **** #include "PortFunc.h"
+   3:../Tasks/MtxTest/Tasks.c **** #include "TimerFunc.h"
+   4:../Tasks/MtxTest/Tasks.c **** 
+   5:../Tasks/MtxTest/Tasks.c **** #include "R_RTOS_task.h"
+   6:../Tasks/MtxTest/Tasks.c **** #include "R_RTOS_timer.h"
+   7:../Tasks/MtxTest/Tasks.c **** 
+   8:../Tasks/MtxTest/Tasks.c **** extern void tsk_EndTheTask( void );
+   9:../Tasks/MtxTest/Tasks.c **** extern SysFkt sys_SysFkt[AMOUNT_SYS_FKT ];
+  10:../Tasks/MtxTest/Tasks.c **** 
+  11:../Tasks/MtxTest/Tasks.c **** extern TskTCB tsk_AR[];
+  12:../Tasks/MtxTest/Tasks.c **** 
+  13:../Tasks/MtxTest/Tasks.c **** void tsk1( void );
+  14:../Tasks/MtxTest/Tasks.c **** void tsk2( void );
+  15:../Tasks/MtxTest/Tasks.c **** 
+  16:../Tasks/MtxTest/Tasks.c **** void tsk1( void )
+  17:../Tasks/MtxTest/Tasks.c **** {
+  26              		.loc 1 17 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 82B0     		sub	sp, sp, #8
+  33              		.cfi_def_cfa_offset 16
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  18:../Tasks/MtxTest/Tasks.c ****     SET_PIN_LOW(PIN_LED0);
+  36              		.loc 1 18 0
+  37 0006 504B     		ldr	r3, .L21
+  38 0008 5A69     		ldr	r2, [r3, #20]
+  39 000a 8023     		mov	r3, #128
+  40 000c 5B00     		lsl	r3, r3, #1
+  41 000e 1340     		and	r3, r2
+  42 0010 06D0     		beq	.L3
+  43              		.loc 1 18 0 is_stmt 0 discriminator 1
+  44 0012 4D4B     		ldr	r3, .L21
+  45 0014 4C4A     		ldr	r2, .L21
+  46 0016 9268     		ldr	r2, [r2, #8]
+  47 0018 8021     		mov	r1, #128
+  48 001a 4900     		lsl	r1, r1, #1
+  49 001c 0A43     		orr	r2, r1
+  50 001e 9A60     		str	r2, [r3, #8]
+  51              	.L3:
+  52              	.LBB24:
+  53              	.LBB25:
+  54              		.file 2 "../include/R_RTOS_services.h"
+   1:../include/R_RTOS_services.h **** /**
+   2:../include/R_RTOS_services.h ****  * \file    R_RTOS_services.h
+   3:../include/R_RTOS_services.h ****  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
+   4:../include/R_RTOS_services.h ****  * \date    18.12.2015
+   5:../include/R_RTOS_services.h ****  *
+   6:../include/R_RTOS_services.h ****  * \brief Service calls, which can be used by/inside tasks
+   7:../include/R_RTOS_services.h ****  */
+   8:../include/R_RTOS_services.h **** 
+   9:../include/R_RTOS_services.h **** #ifndef HEADERS_R_RTOS_SERVICES_H_
+  10:../include/R_RTOS_services.h **** #define HEADERS_R_RTOS_SERVICES_H_
+  11:../include/R_RTOS_services.h **** 
+  12:../include/R_RTOS_services.h **** #include "R_RTOS_inc.h"
+  13:../include/R_RTOS_services.h **** 
+  14:../include/R_RTOS_services.h **** #ifndef __STATIC_INLINE
+  15:../include/R_RTOS_services.h **** #define __STATIC_INLINE  static inline
+  16:../include/R_RTOS_services.h **** #endif
+  17:../include/R_RTOS_services.h **** 
+  18:../include/R_RTOS_services.h **** /** \def INPUT_ARG_1(input)
+  19:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the first input argument for a following function call.
+  20:../include/R_RTOS_services.h ****  *
+  21:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  22:../include/R_RTOS_services.h ****  *
+  23:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  24:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  25:../include/R_RTOS_services.h ****  *
+  26:../include/R_RTOS_services.h ****  *  The first argument will be stored in R0.
+  27:../include/R_RTOS_services.h ****  */
+  28:../include/R_RTOS_services.h **** #define INPUT_ARG_1(input)  __asm volatile( "movs r0, %0 \n"::"l"(input) :)
+  29:../include/R_RTOS_services.h **** 
+  30:../include/R_RTOS_services.h **** /** \def INPUT_ARG_2(input)
+  31:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the second input argument for a following function call.
+  32:../include/R_RTOS_services.h ****  *
+  33:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  34:../include/R_RTOS_services.h ****  *
+  35:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  36:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  37:../include/R_RTOS_services.h ****  *
+  38:../include/R_RTOS_services.h ****  *  The second argument will be stored in R1.
+  39:../include/R_RTOS_services.h ****  */
+  40:../include/R_RTOS_services.h **** #define INPUT_ARG_2(input)  __asm volatile( "movs r1, %0 \n"::"l"(input) :)
+  41:../include/R_RTOS_services.h **** 
+  42:../include/R_RTOS_services.h **** /** \def INPUT_ARG_3(input)
+  43:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the third input argument for a following function call.
+  44:../include/R_RTOS_services.h ****  *
+  45:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  46:../include/R_RTOS_services.h ****  *
+  47:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  48:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  49:../include/R_RTOS_services.h ****  *
+  50:../include/R_RTOS_services.h ****  *  The third argument will be stored in R2.
+  51:../include/R_RTOS_services.h ****  */
+  52:../include/R_RTOS_services.h **** #define INPUT_ARG_3(input)  __asm volatile( "movs r2, %0 \n"::"l"(input) :)
+  53:../include/R_RTOS_services.h **** 
+  54:../include/R_RTOS_services.h **** /** \def INPUT_ARG_4(input)
+  55:../include/R_RTOS_services.h ****  *  \brief Sets \a input as the fourth input argument for a following function call.
+  56:../include/R_RTOS_services.h ****  *
+  57:../include/R_RTOS_services.h ****  *  \param  [in]    input  input argument - max uint32_t
+  58:../include/R_RTOS_services.h ****  *
+  59:../include/R_RTOS_services.h ****  *  When a function is called the Parameters are passed through the the registers r0-r3.
+  60:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function call, one can manually put the arguments into 
+  61:../include/R_RTOS_services.h ****  *
+  62:../include/R_RTOS_services.h ****  *  The fourth argument will be stored in R3.
+  63:../include/R_RTOS_services.h ****  */
+  64:../include/R_RTOS_services.h **** #define INPUT_ARG_4(input)  __asm volatile( "movs r3, %0 \n"::"l"(input) :)
+  65:../include/R_RTOS_services.h **** 
+  66:../include/R_RTOS_services.h **** /** \def OUTPUT_ARG(output)
+  67:../include/R_RTOS_services.h ****  *  \brief Retrieves an return value from a preceding function call and stores it into \a output.
+  68:../include/R_RTOS_services.h ****  *
+  69:../include/R_RTOS_services.h ****  *  \param  [out]   output  output argument - max uint32_t
+  70:../include/R_RTOS_services.h ****  *
+  71:../include/R_RTOS_services.h ****  *  When a function returns the return value is stored in r0.
+  72:../include/R_RTOS_services.h ****  *  To mimic the behavior of such a regular function return, one can manually retrieve the return v
+  73:../include/R_RTOS_services.h ****  *  Register r0 is the last valued pushed onto the stack, thus it is the first value to pop off the
+  74:../include/R_RTOS_services.h ****  */
+  75:../include/R_RTOS_services.h **** #define OUTPUT_ARG(output)  __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n"
+  76:../include/R_RTOS_services.h **** 
+  77:../include/R_RTOS_services.h **** /** \def SVC( svcCode )
+  78:../include/R_RTOS_services.h ****  *  \brief SVC Call with the given \a svcCode.
+  79:../include/R_RTOS_services.h ****  *
+  80:../include/R_RTOS_services.h ****  *  \param  [in]    svcCode  number of the SVC Call to be called
+  81:../include/R_RTOS_services.h ****  *
+  82:../include/R_RTOS_services.h ****  *  To make a SuperVisorCall the svc instruction has to be executed.
+  83:../include/R_RTOS_services.h ****  *  A byte value can be passed alongside to further distinct the requested service.
+  84:../include/R_RTOS_services.h ****  */
+  85:../include/R_RTOS_services.h **** #define SVC( svcCode )      __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(svcCode) : )
+  86:../include/R_RTOS_services.h **** 
+  87:../include/R_RTOS_services.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void svc_os_StartOS( void )
+  88:../include/R_RTOS_services.h **** {
+  89:../include/R_RTOS_services.h ****     SVC( SVC_OS_START );
+  90:../include/R_RTOS_services.h ****     while ( 1 )
+  91:../include/R_RTOS_services.h ****     {
+  92:../include/R_RTOS_services.h ****         ;
+  93:../include/R_RTOS_services.h ****     }
+  94:../include/R_RTOS_services.h **** }
+  95:../include/R_RTOS_services.h **** 
+  96:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_InitTsk(
+  97:../include/R_RTOS_services.h ****                                                                          const TskID tskID,
+  98:../include/R_RTOS_services.h ****                                                                          const TskStartAddr const t
+  99:../include/R_RTOS_services.h ****                                                                          const TskStartAddr const t
+ 100:../include/R_RTOS_services.h ****                                                                          const StackSize stckSze )
+ 101:../include/R_RTOS_services.h **** {
+ 102:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 103:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskAddr );
+ 104:../include/R_RTOS_services.h ****     INPUT_ARG_3( tskEndAddr );
+ 105:../include/R_RTOS_services.h ****     INPUT_ARG_4( stckSze );
+ 106:../include/R_RTOS_services.h ****     SVC( SVC_TSK_INIT );
+ 107:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 108:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 109:../include/R_RTOS_services.h ****     return returnVal;
+ 110:../include/R_RTOS_services.h **** }
+ 111:../include/R_RTOS_services.h **** 
+ 112:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_SetTskPrio(
+ 113:../include/R_RTOS_services.h ****                                                                             const TskID tskID,
+ 114:../include/R_RTOS_services.h ****                                                                             const TskPrio tskPrio )
+ 115:../include/R_RTOS_services.h **** {
+ 116:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 117:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskPrio );
+ 118:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SETPRIO );
+ 119:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 120:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 121:../include/R_RTOS_services.h ****     return returnVal;
+ 122:../include/R_RTOS_services.h **** }
+ 123:../include/R_RTOS_services.h **** 
+ 124:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_ActvTsk(
+ 125:../include/R_RTOS_services.h ****                                                                          const TskID tskID )
+ 126:../include/R_RTOS_services.h **** {
+ 127:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 128:../include/R_RTOS_services.h ****     SVC( SVC_TSK_ACTV );
+ 129:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 130:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 131:../include/R_RTOS_services.h ****     return returnVal;
+ 132:../include/R_RTOS_services.h **** }
+ 133:../include/R_RTOS_services.h **** 
+ 134:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_KillTsk(
+ 135:../include/R_RTOS_services.h ****                                                                          TskTCB* const tsk )
+ 136:../include/R_RTOS_services.h **** {
+ 137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
+ 139:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 141:../include/R_RTOS_services.h ****     return returnVal;
+ 142:../include/R_RTOS_services.h **** }
+ 143:../include/R_RTOS_services.h **** 
+ 144:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_setTskCriticalState(
+ 145:../include/R_RTOS_services.h ****                                                                                      void )
+ 146:../include/R_RTOS_services.h **** {
+ 147:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SET_CRIT );
+ 148:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 149:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 150:../include/R_RTOS_services.h ****     return returnVal;
+ 151:../include/R_RTOS_services.h **** }
+ 152:../include/R_RTOS_services.h **** 
+ 153:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_resetTskCriticalState(
+ 154:../include/R_RTOS_services.h ****                                                                                        void )
+ 155:../include/R_RTOS_services.h **** {
+ 156:../include/R_RTOS_services.h ****     SVC( SVC_TSK_RESET_CRIT );
+ 157:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 158:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 159:../include/R_RTOS_services.h ****     return returnVal;
+ 160:../include/R_RTOS_services.h **** }
+ 161:../include/R_RTOS_services.h **** 
+ 162:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mtx_TakeMtx(
+ 163:../include/R_RTOS_services.h ****                                                                          const MtxNr mtxNr,
+ 164:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk,
+ 165:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
+ 166:../include/R_RTOS_services.h **** {
+ 167:../include/R_RTOS_services.h ****     INPUT_ARG_1( mtxNr );
+  55              		.loc 2 167 0 is_stmt 1
+  56 0020 0123     		mov	r3, #1
+  57              	@ 167 "../include/R_RTOS_services.h" 1
+  58 0022 181C     		movs r0, r3 
+  59              	
+  60              	@ 0 "" 2
+ 168:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+  61              		.loc 2 168 0
+  62              		.code	16
+  63 0024 494B     		ldr	r3, .L21+4
+  64              	@ 168 "../include/R_RTOS_services.h" 1
+  65 0026 191C     		movs r1, r3 
+  66              	
+  67              	@ 0 "" 2
+ 169:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
+  68              		.loc 2 169 0
+  69              		.code	16
+  70 0028 6423     		mov	r3, #100
+  71              	@ 169 "../include/R_RTOS_services.h" 1
+  72 002a 1A1C     		movs r2, r3 
+  73              	
+  74              	@ 0 "" 2
+ 170:../include/R_RTOS_services.h ****     SVC( SVC_MTX_TAKE );
+  75              		.loc 2 170 0
+  76              	@ 170 "../include/R_RTOS_services.h" 1
+  77 002c 07DF     		svc #7 
+  78              	
+  79              	@ 0 "" 2
+ 171:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 172:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+  80              		.loc 2 172 0
+  81              	@ 172 "../include/R_RTOS_services.h" 1
+  82 002e EFF30881 		mrs     r1,     msp 
+  83 0032 0868     	 ldr r0, [r1] 
+  84 0034 021C     	 movs r2, r0 
+  85              	
+  86              	@ 0 "" 2
+  87              		.code	16
+  88 0036 FB1D     		add	r3, r7, #7
+  89 0038 1A70     		strb	r2, [r3]
+  90              	.LBE25:
+  91              	.LBE24:
+  19:../Tasks/MtxTest/Tasks.c ****     svc_mtx_TakeMtx( (MtxNr) 0x1u, &tsk_AR[1], 100 );
+  20:../Tasks/MtxTest/Tasks.c ****     SET_PIN_HIGH(PIN_LED0);
+  92              		.loc 1 20 0
+  93 003a 434B     		ldr	r3, .L21
+  94 003c 5A69     		ldr	r2, [r3, #20]
+  95 003e 8023     		mov	r3, #128
+  96 0040 5B00     		lsl	r3, r3, #1
+  97 0042 1340     		and	r3, r2
+  98 0044 06D0     		beq	.L6
+  99              		.loc 1 20 0 is_stmt 0 discriminator 1
+ 100 0046 404B     		ldr	r3, .L21
+ 101 0048 3F4A     		ldr	r2, .L21
+ 102 004a 5268     		ldr	r2, [r2, #4]
+ 103 004c 8021     		mov	r1, #128
+ 104 004e 4900     		lsl	r1, r1, #1
+ 105 0050 0A43     		orr	r2, r1
+ 106 0052 5A60     		str	r2, [r3, #4]
+ 107              	.L6:
+  21:../Tasks/MtxTest/Tasks.c **** 
+  22:../Tasks/MtxTest/Tasks.c ****     SET_PIN_LOW( PIN_LED1 );
+ 108              		.loc 1 22 0 is_stmt 1
+ 109 0054 3C4B     		ldr	r3, .L21
+ 110 0056 5A69     		ldr	r2, [r3, #20]
+ 111 0058 8023     		mov	r3, #128
+ 112 005a 9B00     		lsl	r3, r3, #2
+ 113 005c 1340     		and	r3, r2
+ 114 005e 06D0     		beq	.L8
+ 115              		.loc 1 22 0 is_stmt 0 discriminator 1
+ 116 0060 394B     		ldr	r3, .L21
+ 117 0062 394A     		ldr	r2, .L21
+ 118 0064 9268     		ldr	r2, [r2, #8]
+ 119 0066 8021     		mov	r1, #128
+ 120 0068 8900     		lsl	r1, r1, #2
+ 121 006a 0A43     		orr	r2, r1
+ 122 006c 9A60     		str	r2, [r3, #8]
+ 123              	.L8:
+  23:../Tasks/MtxTest/Tasks.c ****     SET_PIN_LOW( PIN_LED2 );
+ 124              		.loc 1 23 0 is_stmt 1
+ 125 006e 364B     		ldr	r3, .L21
+ 126 0070 5A69     		ldr	r2, [r3, #20]
+ 127 0072 8023     		mov	r3, #128
+ 128 0074 DB00     		lsl	r3, r3, #3
+ 129 0076 1340     		and	r3, r2
+ 130 0078 06D0     		beq	.L10
+ 131              		.loc 1 23 0 is_stmt 0 discriminator 1
+ 132 007a 334B     		ldr	r3, .L21
+ 133 007c 324A     		ldr	r2, .L21
+ 134 007e 9268     		ldr	r2, [r2, #8]
+ 135 0080 8021     		mov	r1, #128
+ 136 0082 C900     		lsl	r1, r1, #3
+ 137 0084 0A43     		orr	r2, r1
+ 138 0086 9A60     		str	r2, [r3, #8]
+ 139              	.L10:
+ 140              	.LBB26:
+ 141              	.LBB27:
+ 102:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 142              		.loc 2 102 0 is_stmt 1
+ 143 0088 0223     		mov	r3, #2
+ 144              	@ 102 "../include/R_RTOS_services.h" 1
+ 145 008a 181C     		movs r0, r3 
+ 146              	
+ 147              	@ 0 "" 2
+ 103:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskAddr );
+ 148              		.loc 2 103 0
+ 149              		.code	16
+ 150 008c 304B     		ldr	r3, .L21+8
+ 151              	@ 103 "../include/R_RTOS_services.h" 1
+ 152 008e 191C     		movs r1, r3 
+ 153              	
+ 154              	@ 0 "" 2
+ 104:../include/R_RTOS_services.h ****     INPUT_ARG_3( tskEndAddr );
+ 155              		.loc 2 104 0
+ 156              		.code	16
+ 157 0090 304B     		ldr	r3, .L21+12
+ 158              	@ 104 "../include/R_RTOS_services.h" 1
+ 159 0092 1A1C     		movs r2, r3 
+ 160              	
+ 161              	@ 0 "" 2
+ 105:../include/R_RTOS_services.h ****     INPUT_ARG_4( stckSze );
+ 162              		.loc 2 105 0
+ 163              		.code	16
+ 164 0094 8023     		mov	r3, #128
+ 165              	@ 105 "../include/R_RTOS_services.h" 1
+ 166 0096 1B1C     		movs r3, r3 
+ 167              	
+ 168              	@ 0 "" 2
+ 106:../include/R_RTOS_services.h ****     SVC( SVC_TSK_INIT );
+ 169              		.loc 2 106 0
+ 170              	@ 106 "../include/R_RTOS_services.h" 1
+ 171 0098 01DF     		svc #1 
+ 172              	
+ 173              	@ 0 "" 2
+ 108:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 174              		.loc 2 108 0
+ 175              	@ 108 "../include/R_RTOS_services.h" 1
+ 176 009a EFF30881 		mrs     r1,     msp 
+ 177 009e 0868     	 ldr r0, [r1] 
+ 178 00a0 021C     	 movs r2, r0 
+ 179              	
+ 180              	@ 0 "" 2
+ 181              		.code	16
+ 182 00a2 BB1D     		add	r3, r7, #6
+ 183 00a4 1A70     		strb	r2, [r3]
+ 184              	.LBE27:
+ 185              	.LBE26:
+ 186              	.LBB28:
+ 187              	.LBB29:
+ 116:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 188              		.loc 2 116 0
+ 189 00a6 0223     		mov	r3, #2
+ 190              	@ 116 "../include/R_RTOS_services.h" 1
+ 191 00a8 181C     		movs r0, r3 
+ 192              	
+ 193              	@ 0 "" 2
+ 117:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskPrio );
+ 194              		.loc 2 117 0
+ 195              		.code	16
+ 196 00aa 0623     		mov	r3, #6
+ 197              	@ 117 "../include/R_RTOS_services.h" 1
+ 198 00ac 191C     		movs r1, r3 
+ 199              	
+ 200              	@ 0 "" 2
+ 118:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SETPRIO );
+ 201              		.loc 2 118 0
+ 202              	@ 118 "../include/R_RTOS_services.h" 1
+ 203 00ae 02DF     		svc #2 
+ 204              	
+ 205              	@ 0 "" 2
+ 120:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 206              		.loc 2 120 0
+ 207              	@ 120 "../include/R_RTOS_services.h" 1
+ 208 00b0 EFF30881 		mrs     r1,     msp 
+ 209 00b4 0868     	 ldr r0, [r1] 
+ 210 00b6 021C     	 movs r2, r0 
+ 211              	
+ 212              	@ 0 "" 2
+ 213              		.code	16
+ 214 00b8 7B1D     		add	r3, r7, #5
+ 215 00ba 1A70     		strb	r2, [r3]
+ 216              	.LBE29:
+ 217              	.LBE28:
+ 218              	.LBB30:
+ 219              	.LBB31:
+ 127:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 220              		.loc 2 127 0
+ 221 00bc 0223     		mov	r3, #2
+ 222              	@ 127 "../include/R_RTOS_services.h" 1
+ 223 00be 181C     		movs r0, r3 
+ 224              	
+ 225              	@ 0 "" 2
+ 128:../include/R_RTOS_services.h ****     SVC( SVC_TSK_ACTV );
+ 226              		.loc 2 128 0
+ 227              	@ 128 "../include/R_RTOS_services.h" 1
+ 228 00c0 03DF     		svc #3 
+ 229              	
+ 230              	@ 0 "" 2
+ 130:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 231              		.loc 2 130 0
+ 232              	@ 130 "../include/R_RTOS_services.h" 1
+ 233 00c2 EFF30881 		mrs     r1,     msp 
+ 234 00c6 0868     	 ldr r0, [r1] 
+ 235 00c8 021C     	 movs r2, r0 
+ 236              	
+ 237              	@ 0 "" 2
+ 238              		.code	16
+ 239 00ca 3B1D     		add	r3, r7, #4
+ 240 00cc 1A70     		strb	r2, [r3]
+ 241              	.LBE31:
+ 242              	.LBE30:
+  24:../Tasks/MtxTest/Tasks.c **** 
+  25:../Tasks/MtxTest/Tasks.c ****     svc_tsk_InitTsk( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
+  26:../Tasks/MtxTest/Tasks.c ****     svc_tsk_SetTskPrio( (TskID) 0x2u, TSK_PRIO_HIG );
+  27:../Tasks/MtxTest/Tasks.c ****     svc_tsk_ActvTsk( (TskID) 0x2u );
+  28:../Tasks/MtxTest/Tasks.c **** 
+  29:../Tasks/MtxTest/Tasks.c ****     SET_PIN_HIGH( PIN_LED1 );
+ 243              		.loc 1 29 0
+ 244 00ce 1E4B     		ldr	r3, .L21
+ 245 00d0 5A69     		ldr	r2, [r3, #20]
+ 246 00d2 8023     		mov	r3, #128
+ 247 00d4 9B00     		lsl	r3, r3, #2
+ 248 00d6 1340     		and	r3, r2
+ 249 00d8 06D0     		beq	.L15
+ 250              		.loc 1 29 0 is_stmt 0 discriminator 1
+ 251 00da 1B4B     		ldr	r3, .L21
+ 252 00dc 1A4A     		ldr	r2, .L21
+ 253 00de 5268     		ldr	r2, [r2, #4]
+ 254 00e0 8021     		mov	r1, #128
+ 255 00e2 8900     		lsl	r1, r1, #2
+ 256 00e4 0A43     		orr	r2, r1
+ 257 00e6 5A60     		str	r2, [r3, #4]
+ 258              	.L15:
+ 259              	.LBB32:
+ 260              	.LBB33:
+ 173:../include/R_RTOS_services.h ****     return returnVal;
+ 174:../include/R_RTOS_services.h **** }
+ 175:../include/R_RTOS_services.h **** 
+ 176:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mtx_GiveMtx(
+ 177:../include/R_RTOS_services.h ****                                                                          const MtxNr mtxNr,
+ 178:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk )
+ 179:../include/R_RTOS_services.h **** {
+ 180:../include/R_RTOS_services.h ****     INPUT_ARG_1( mtxNr );
+ 181:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 182:../include/R_RTOS_services.h ****     SVC( SVC_MTX_GIVE );
+ 183:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 184:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 185:../include/R_RTOS_services.h ****     return returnVal;
+ 186:../include/R_RTOS_services.h **** }
+ 187:../include/R_RTOS_services.h **** 
+ 188:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_TakeSem(
+ 189:../include/R_RTOS_services.h ****                                                                          const SemNr semNr,
+ 190:../include/R_RTOS_services.h ****                                                                          TskTCB* const tsk,
+ 191:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
+ 192:../include/R_RTOS_services.h **** {
+ 193:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
+ 194:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 195:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
+ 196:../include/R_RTOS_services.h ****     SVC( SVC_SEM_TAKE );
+ 197:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 198:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 199:../include/R_RTOS_services.h ****     return returnVal;
+ 200:../include/R_RTOS_services.h **** }
+ 201:../include/R_RTOS_services.h **** 
+ 202:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_GiveSem(
+ 203:../include/R_RTOS_services.h ****                                                                          const SemNr semNr,
+ 204:../include/R_RTOS_services.h ****                                                                          TskTCB* const tsk )
+ 205:../include/R_RTOS_services.h **** {
+ 206:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
+ 207:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 208:../include/R_RTOS_services.h ****     SVC( SVC_SEM_GIVE );
+ 209:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 210:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 211:../include/R_RTOS_services.h ****     return returnVal;
+ 212:../include/R_RTOS_services.h **** }
+ 213:../include/R_RTOS_services.h **** 
+ 214:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_SendEvt(
+ 215:../include/R_RTOS_services.h ****                                                                          const EvtNr evt )
+ 216:../include/R_RTOS_services.h **** {
+ 217:../include/R_RTOS_services.h ****     INPUT_ARG_1( evt );
+ 218:../include/R_RTOS_services.h ****     SVC( SVC_EVT_SEND );
+ 219:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 220:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 221:../include/R_RTOS_services.h ****     return returnVal;
+ 222:../include/R_RTOS_services.h **** }
+ 223:../include/R_RTOS_services.h **** 
+ 224:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_RecvEvt(
+ 225:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk,
+ 226:../include/R_RTOS_services.h ****                                                                          EVTQSlots evtMask,
+ 227:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
+ 228:../include/R_RTOS_services.h **** {
+ 229:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 230:../include/R_RTOS_services.h ****     INPUT_ARG_2( evtMask );
+ 231:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
+ 232:../include/R_RTOS_services.h ****     SVC( SVC_EVT_RECV );
+ 233:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 234:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 235:../include/R_RTOS_services.h ****     return returnVal;
+ 236:../include/R_RTOS_services.h **** }
+ 237:../include/R_RTOS_services.h **** 
+ 238:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tmr_SetTimer(
+ 239:../include/R_RTOS_services.h ****                                                                           const WaitTime msToWait,
+ 240:../include/R_RTOS_services.h ****                                                                           TskTCB* const tsk )
+ 241:../include/R_RTOS_services.h **** {
+ 242:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 261              		.loc 2 242 0 is_stmt 1
+ 262 00e8 FA23     		mov	r3, #250
+ 263 00ea 5B00     		lsl	r3, r3, #1
+ 264              	@ 242 "../include/R_RTOS_services.h" 1
+ 265 00ec 181C     		movs r0, r3 
+ 266              	
+ 267              	@ 0 "" 2
+ 243:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 268              		.loc 2 243 0
+ 269              		.code	16
+ 270 00ee 174B     		ldr	r3, .L21+4
+ 271              	@ 243 "../include/R_RTOS_services.h" 1
+ 272 00f0 191C     		movs r1, r3 
+ 273              	
+ 274              	@ 0 "" 2
+ 244:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 275              		.loc 2 244 0
+ 276              	@ 244 "../include/R_RTOS_services.h" 1
+ 277 00f2 0DDF     		svc #13 
+ 278              	
+ 279              	@ 0 "" 2
+ 245:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 246:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 280              		.loc 2 246 0
+ 281              	@ 246 "../include/R_RTOS_services.h" 1
+ 282 00f4 EFF30881 		mrs     r1,     msp 
+ 283 00f8 0868     	 ldr r0, [r1] 
+ 284 00fa 021C     	 movs r2, r0 
+ 285              	
+ 286              	@ 0 "" 2
+ 287              		.code	16
+ 288 00fc FB1C     		add	r3, r7, #3
+ 289 00fe 1A70     		strb	r2, [r3]
+ 290              	.LBE33:
+ 291              	.LBE32:
+ 292              	.LBB34:
+ 293              	.LBB35:
+ 180:../include/R_RTOS_services.h ****     INPUT_ARG_1( mtxNr );
+ 294              		.loc 2 180 0
+ 295 0100 0123     		mov	r3, #1
+ 296              	@ 180 "../include/R_RTOS_services.h" 1
+ 297 0102 181C     		movs r0, r3 
+ 298              	
+ 299              	@ 0 "" 2
+ 181:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 300              		.loc 2 181 0
+ 301              		.code	16
+ 302 0104 114B     		ldr	r3, .L21+4
+ 303              	@ 181 "../include/R_RTOS_services.h" 1
+ 304 0106 191C     		movs r1, r3 
+ 305              	
+ 306              	@ 0 "" 2
+ 182:../include/R_RTOS_services.h ****     SVC( SVC_MTX_GIVE );
+ 307              		.loc 2 182 0
+ 308              	@ 182 "../include/R_RTOS_services.h" 1
+ 309 0108 08DF     		svc #8 
+ 310              	
+ 311              	@ 0 "" 2
+ 184:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 312              		.loc 2 184 0
+ 313              	@ 184 "../include/R_RTOS_services.h" 1
+ 314 010a EFF30881 		mrs     r1,     msp 
+ 315 010e 0868     	 ldr r0, [r1] 
+ 316 0110 021C     	 movs r2, r0 
+ 317              	
+ 318              	@ 0 "" 2
+ 319              		.code	16
+ 320 0112 BB1C     		add	r3, r7, #2
+ 321 0114 1A70     		strb	r2, [r3]
+ 322              	.LBE35:
+ 323              	.LBE34:
+  30:../Tasks/MtxTest/Tasks.c ****     svc_tmr_SetTimer( (WaitTime) 500, &tsk_AR[1] );
+  31:../Tasks/MtxTest/Tasks.c **** 
+  32:../Tasks/MtxTest/Tasks.c ****     svc_mtx_GiveMtx( (MtxNr) 0x1u, &tsk_AR[1] );
+  33:../Tasks/MtxTest/Tasks.c **** 
+  34:../Tasks/MtxTest/Tasks.c ****     SET_PIN_HIGH( PIN_LED2 );
+ 324              		.loc 1 34 0
+ 325 0116 0C4B     		ldr	r3, .L21
+ 326 0118 5A69     		ldr	r2, [r3, #20]
+ 327 011a 8023     		mov	r3, #128
+ 328 011c DB00     		lsl	r3, r3, #3
+ 329 011e 1340     		and	r3, r2
+ 330 0120 06D0     		beq	.L19
+ 331              		.loc 1 34 0 is_stmt 0 discriminator 1
+ 332 0122 094B     		ldr	r3, .L21
+ 333 0124 084A     		ldr	r2, .L21
+ 334 0126 5268     		ldr	r2, [r2, #4]
+ 335 0128 8021     		mov	r1, #128
+ 336 012a C900     		lsl	r1, r1, #3
+ 337 012c 0A43     		orr	r2, r1
+ 338 012e 5A60     		str	r2, [r3, #4]
+ 339              	.L19:
+ 340              	.LBB36:
+ 341              	.LBB37:
+ 137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 342              		.loc 2 137 0 is_stmt 1
+ 343 0130 064B     		ldr	r3, .L21+4
+ 344              	@ 137 "../include/R_RTOS_services.h" 1
+ 345 0132 181C     		movs r0, r3 
+ 346              	
+ 347              	@ 0 "" 2
+ 138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
+ 348              		.loc 2 138 0
+ 349              	@ 138 "../include/R_RTOS_services.h" 1
+ 350 0134 04DF     		svc #4 
+ 351              	
+ 352              	@ 0 "" 2
+ 140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 353              		.loc 2 140 0
+ 354              	@ 140 "../include/R_RTOS_services.h" 1
+ 355 0136 EFF30881 		mrs     r1,     msp 
+ 356 013a 0868     	 ldr r0, [r1] 
+ 357 013c 021C     	 movs r2, r0 
+ 358              	
+ 359              	@ 0 "" 2
+ 360              		.code	16
+ 361 013e 7B1C     		add	r3, r7, #1
+ 362 0140 1A70     		strb	r2, [r3]
+ 363              	.LBE37:
+ 364              	.LBE36:
+  35:../Tasks/MtxTest/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[1] );
+  36:../Tasks/MtxTest/Tasks.c **** }
+ 365              		.loc 1 36 0
+ 366 0142 BD46     		mov	sp, r7
+ 367 0144 02B0     		add	sp, sp, #8
+ 368              		@ sp needed
+ 369 0146 80BD     		pop	{r7, pc}
+ 370              	.L22:
+ 371              		.align	2
+ 372              	.L21:
+ 373 0148 00F00F40 		.word	1074786304
+ 374 014c 24000000 		.word	tsk_AR+36
+ 375 0150 00000000 		.word	tsk2
+ 376 0154 00000000 		.word	tsk_EndTheTask
+ 377              		.cfi_endproc
+ 378              	.LFE64:
+ 380              		.section	.text.tsk2,"ax",%progbits
+ 381              		.align	2
+ 382              		.global	tsk2
+ 383              		.code	16
+ 384              		.thumb_func
+ 386              	tsk2:
+ 387              	.LFB65:
+  37:../Tasks/MtxTest/Tasks.c **** void tsk2( void )
+  38:../Tasks/MtxTest/Tasks.c **** {
+ 388              		.loc 1 38 0
+ 389              		.cfi_startproc
+ 390 0000 80B5     		push	{r7, lr}
+ 391              		.cfi_def_cfa_offset 8
+ 392              		.cfi_offset 7, -8
+ 393              		.cfi_offset 14, -4
+ 394 0002 82B0     		sub	sp, sp, #8
+ 395              		.cfi_def_cfa_offset 16
+ 396 0004 00AF     		add	r7, sp, #0
+ 397              		.cfi_def_cfa_register 7
+  39:../Tasks/MtxTest/Tasks.c ****     SET_PIN_LOW( PIN_LED3 );
+ 398              		.loc 1 39 0
+ 399 0006 254B     		ldr	r3, .L32
+ 400 0008 5A69     		ldr	r2, [r3, #20]
+ 401 000a 8023     		mov	r3, #128
+ 402 000c 1B01     		lsl	r3, r3, #4
+ 403 000e 1340     		and	r3, r2
+ 404 0010 06D0     		beq	.L25
+ 405              		.loc 1 39 0 is_stmt 0 discriminator 1
+ 406 0012 224B     		ldr	r3, .L32
+ 407 0014 214A     		ldr	r2, .L32
+ 408 0016 9268     		ldr	r2, [r2, #8]
+ 409 0018 8021     		mov	r1, #128
+ 410 001a 0901     		lsl	r1, r1, #4
+ 411 001c 0A43     		orr	r2, r1
+ 412 001e 9A60     		str	r2, [r3, #8]
+ 413              	.L25:
+ 414              	.LBB38:
+ 415              	.LBB39:
+ 167:../include/R_RTOS_services.h ****     INPUT_ARG_1( mtxNr );
+ 416              		.loc 2 167 0 is_stmt 1
+ 417 0020 0123     		mov	r3, #1
+ 418              	@ 167 "../include/R_RTOS_services.h" 1
+ 419 0022 181C     		movs r0, r3 
+ 420              	
+ 421              	@ 0 "" 2
+ 168:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 422              		.loc 2 168 0
+ 423              		.code	16
+ 424 0024 1E4B     		ldr	r3, .L32+4
+ 425              	@ 168 "../include/R_RTOS_services.h" 1
+ 426 0026 191C     		movs r1, r3 
+ 427              	
+ 428              	@ 0 "" 2
+ 169:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
+ 429              		.loc 2 169 0
+ 430              		.code	16
+ 431 0028 6423     		mov	r3, #100
+ 432              	@ 169 "../include/R_RTOS_services.h" 1
+ 433 002a 1A1C     		movs r2, r3 
+ 434              	
+ 435              	@ 0 "" 2
+ 170:../include/R_RTOS_services.h ****     SVC( SVC_MTX_TAKE );
+ 436              		.loc 2 170 0
+ 437              	@ 170 "../include/R_RTOS_services.h" 1
+ 438 002c 07DF     		svc #7 
+ 439              	
+ 440              	@ 0 "" 2
+ 172:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 441              		.loc 2 172 0
+ 442              	@ 172 "../include/R_RTOS_services.h" 1
+ 443 002e EFF30881 		mrs     r1,     msp 
+ 444 0032 0868     	 ldr r0, [r1] 
+ 445 0034 021C     	 movs r2, r0 
+ 446              	
+ 447              	@ 0 "" 2
+ 448              		.code	16
+ 449 0036 FB1D     		add	r3, r7, #7
+ 450 0038 1A70     		strb	r2, [r3]
+ 451              	.LBE39:
+ 452              	.LBE38:
+ 453              	.LBB40:
+ 454              	.LBB41:
+ 242:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 455              		.loc 2 242 0
+ 456 003a FA23     		mov	r3, #250
+ 457 003c 5B00     		lsl	r3, r3, #1
+ 458              	@ 242 "../include/R_RTOS_services.h" 1
+ 459 003e 181C     		movs r0, r3 
+ 460              	
+ 461              	@ 0 "" 2
+ 243:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 462              		.loc 2 243 0
+ 463              		.code	16
+ 464 0040 174B     		ldr	r3, .L32+4
+ 465              	@ 243 "../include/R_RTOS_services.h" 1
+ 466 0042 191C     		movs r1, r3 
+ 467              	
+ 468              	@ 0 "" 2
+ 244:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 469              		.loc 2 244 0
+ 470              	@ 244 "../include/R_RTOS_services.h" 1
+ 471 0044 0DDF     		svc #13 
+ 472              	
+ 473              	@ 0 "" 2
+ 474              		.loc 2 246 0
+ 475              	@ 246 "../include/R_RTOS_services.h" 1
+ 476 0046 EFF30881 		mrs     r1,     msp 
+ 477 004a 0868     	 ldr r0, [r1] 
+ 478 004c 021C     	 movs r2, r0 
+ 479              	
+ 480              	@ 0 "" 2
+ 481              		.code	16
+ 482 004e BB1D     		add	r3, r7, #6
+ 483 0050 1A70     		strb	r2, [r3]
+ 484              	.LBE41:
+ 485              	.LBE40:
+  40:../Tasks/MtxTest/Tasks.c ****     svc_mtx_TakeMtx( (MtxNr) 0x1u, &tsk_AR[2], 100 );
+  41:../Tasks/MtxTest/Tasks.c **** 
+  42:../Tasks/MtxTest/Tasks.c **** 
+  43:../Tasks/MtxTest/Tasks.c ****     svc_tmr_SetTimer( (WaitTime) 500, &tsk_AR[2] );
+  44:../Tasks/MtxTest/Tasks.c ****     SET_PIN_HIGH( PIN_LED3 );
+ 486              		.loc 1 44 0
+ 487 0052 124B     		ldr	r3, .L32
+ 488 0054 5A69     		ldr	r2, [r3, #20]
+ 489 0056 8023     		mov	r3, #128
+ 490 0058 1B01     		lsl	r3, r3, #4
+ 491 005a 1340     		and	r3, r2
+ 492 005c 06D0     		beq	.L29
+ 493              		.loc 1 44 0 is_stmt 0 discriminator 1
+ 494 005e 0F4B     		ldr	r3, .L32
+ 495 0060 0E4A     		ldr	r2, .L32
+ 496 0062 5268     		ldr	r2, [r2, #4]
+ 497 0064 8021     		mov	r1, #128
+ 498 0066 0901     		lsl	r1, r1, #4
+ 499 0068 0A43     		orr	r2, r1
+ 500 006a 5A60     		str	r2, [r3, #4]
+ 501              	.L29:
+ 502              	.LBB42:
+ 503              	.LBB43:
+ 180:../include/R_RTOS_services.h ****     INPUT_ARG_1( mtxNr );
+ 504              		.loc 2 180 0 is_stmt 1
+ 505 006c 0123     		mov	r3, #1
+ 506              	@ 180 "../include/R_RTOS_services.h" 1
+ 507 006e 181C     		movs r0, r3 
+ 508              	
+ 509              	@ 0 "" 2
+ 181:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 510              		.loc 2 181 0
+ 511              		.code	16
+ 512 0070 0B4B     		ldr	r3, .L32+4
+ 513              	@ 181 "../include/R_RTOS_services.h" 1
+ 514 0072 191C     		movs r1, r3 
+ 515              	
+ 516              	@ 0 "" 2
+ 182:../include/R_RTOS_services.h ****     SVC( SVC_MTX_GIVE );
+ 517              		.loc 2 182 0
+ 518              	@ 182 "../include/R_RTOS_services.h" 1
+ 519 0074 08DF     		svc #8 
+ 520              	
+ 521              	@ 0 "" 2
+ 184:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 522              		.loc 2 184 0
+ 523              	@ 184 "../include/R_RTOS_services.h" 1
+ 524 0076 EFF30881 		mrs     r1,     msp 
+ 525 007a 0868     	 ldr r0, [r1] 
+ 526 007c 021C     	 movs r2, r0 
+ 527              	
+ 528              	@ 0 "" 2
+ 529              		.code	16
+ 530 007e 7B1D     		add	r3, r7, #5
+ 531 0080 1A70     		strb	r2, [r3]
+ 532              	.LBE43:
+ 533              	.LBE42:
+ 534              	.LBB44:
+ 535              	.LBB45:
+ 137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 536              		.loc 2 137 0
+ 537 0082 074B     		ldr	r3, .L32+4
+ 538              	@ 137 "../include/R_RTOS_services.h" 1
+ 539 0084 181C     		movs r0, r3 
+ 540              	
+ 541              	@ 0 "" 2
+ 138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
+ 542              		.loc 2 138 0
+ 543              	@ 138 "../include/R_RTOS_services.h" 1
+ 544 0086 04DF     		svc #4 
+ 545              	
+ 546              	@ 0 "" 2
+ 140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 547              		.loc 2 140 0
+ 548              	@ 140 "../include/R_RTOS_services.h" 1
+ 549 0088 EFF30881 		mrs     r1,     msp 
+ 550 008c 0868     	 ldr r0, [r1] 
+ 551 008e 021C     	 movs r2, r0 
+ 552              	
+ 553              	@ 0 "" 2
+ 554              		.code	16
+ 555 0090 3B1D     		add	r3, r7, #4
+ 556 0092 1A70     		strb	r2, [r3]
+ 557              	.LBE45:
+ 558              	.LBE44:
+  45:../Tasks/MtxTest/Tasks.c **** 
+  46:../Tasks/MtxTest/Tasks.c ****     svc_mtx_GiveMtx( (MtxNr) 0x1u, &tsk_AR[2] );
+  47:../Tasks/MtxTest/Tasks.c **** 
+  48:../Tasks/MtxTest/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[2] );
+  49:../Tasks/MtxTest/Tasks.c **** }
+ 559              		.loc 1 49 0
+ 560 0094 BD46     		mov	sp, r7
+ 561 0096 02B0     		add	sp, sp, #8
+ 562              		@ sp needed
+ 563 0098 80BD     		pop	{r7, pc}
+ 564              	.L33:
+ 565 009a C046     		.align	2
+ 566              	.L32:
+ 567 009c 00F00F40 		.word	1074786304
+ 568 00a0 48000000 		.word	tsk_AR+72
+ 569              		.cfi_endproc
+ 570              	.LFE65:
+ 572              		.section	.text.actvTsk1,"ax",%progbits
+ 573              		.align	2
+ 574              		.global	actvTsk1
+ 575              		.code	16
+ 576              		.thumb_func
+ 578              	actvTsk1:
+ 579              	.LFB66:
+  50:../Tasks/MtxTest/Tasks.c **** 
+  51:../Tasks/MtxTest/Tasks.c **** void actvTsk1( void )
+  52:../Tasks/MtxTest/Tasks.c **** {
+ 580              		.loc 1 52 0
+ 581              		.cfi_startproc
+ 582 0000 80B5     		push	{r7, lr}
+ 583              		.cfi_def_cfa_offset 8
+ 584              		.cfi_offset 7, -8
+ 585              		.cfi_offset 14, -4
+ 586 0002 00AF     		add	r7, sp, #0
+ 587              		.cfi_def_cfa_register 7
+  53:../Tasks/MtxTest/Tasks.c ****     tsk_tskInit( (TskID) 0x1u, &tsk1, &tsk_EndTheTask, MY_STACK_SIZE );
+ 588              		.loc 1 53 0
+ 589 0004 0A4A     		ldr	r2, .L35
+ 590 0006 0B4B     		ldr	r3, .L35+4
+ 591 0008 0120     		mov	r0, #1
+ 592 000a 111C     		mov	r1, r2
+ 593 000c 1A1C     		mov	r2, r3
+ 594 000e 8023     		mov	r3, #128
+ 595 0010 FFF7FEFF 		bl	tsk_tskInit
+  54:../Tasks/MtxTest/Tasks.c ****     tsk_ChngePrio(&tsk_AR[0x1u],TSK_PRIO_MED);
+ 596              		.loc 1 54 0
+ 597 0014 084B     		ldr	r3, .L35+8
+ 598 0016 181C     		mov	r0, r3
+ 599 0018 0421     		mov	r1, #4
+ 600 001a FFF7FEFF 		bl	tsk_ChngePrio
+  55:../Tasks/MtxTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x1u] );
+ 601              		.loc 1 55 0
+ 602 001e 064B     		ldr	r3, .L35+8
+ 603 0020 181C     		mov	r0, r3
+ 604 0022 FFF7FEFF 		bl	tsk_ActvTsk
+  56:../Tasks/MtxTest/Tasks.c ****     os_SCHEDULE();
+ 605              		.loc 1 56 0
+ 606 0026 FFF7FEFF 		bl	os_SCHEDULE
+  57:../Tasks/MtxTest/Tasks.c **** }
+ 607              		.loc 1 57 0
+ 608 002a BD46     		mov	sp, r7
+ 609              		@ sp needed
+ 610 002c 80BD     		pop	{r7, pc}
+ 611              	.L36:
+ 612 002e C046     		.align	2
+ 613              	.L35:
+ 614 0030 00000000 		.word	tsk1
+ 615 0034 00000000 		.word	tsk_EndTheTask
+ 616 0038 24000000 		.word	tsk_AR+36
+ 617              		.cfi_endproc
+ 618              	.LFE66:
+ 620              		.section	.text.actvTsk2,"ax",%progbits
+ 621              		.align	2
+ 622              		.global	actvTsk2
+ 623              		.code	16
+ 624              		.thumb_func
+ 626              	actvTsk2:
+ 627              	.LFB67:
+  58:../Tasks/MtxTest/Tasks.c **** void actvTsk2( void )
+  59:../Tasks/MtxTest/Tasks.c **** {
+ 628              		.loc 1 59 0
+ 629              		.cfi_startproc
+ 630 0000 80B5     		push	{r7, lr}
+ 631              		.cfi_def_cfa_offset 8
+ 632              		.cfi_offset 7, -8
+ 633              		.cfi_offset 14, -4
+ 634 0002 00AF     		add	r7, sp, #0
+ 635              		.cfi_def_cfa_register 7
+  60:../Tasks/MtxTest/Tasks.c ****     tsk_tskInit( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
+ 636              		.loc 1 60 0
+ 637 0004 074A     		ldr	r2, .L38
+ 638 0006 084B     		ldr	r3, .L38+4
+ 639 0008 0220     		mov	r0, #2
+ 640 000a 111C     		mov	r1, r2
+ 641 000c 1A1C     		mov	r2, r3
+ 642 000e 8023     		mov	r3, #128
+ 643 0010 FFF7FEFF 		bl	tsk_tskInit
+  61:../Tasks/MtxTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x2u] );
+ 644              		.loc 1 61 0
+ 645 0014 054B     		ldr	r3, .L38+8
+ 646 0016 181C     		mov	r0, r3
+ 647 0018 FFF7FEFF 		bl	tsk_ActvTsk
+  62:../Tasks/MtxTest/Tasks.c ****     os_SCHEDULE();
+ 648              		.loc 1 62 0
+ 649 001c FFF7FEFF 		bl	os_SCHEDULE
+  63:../Tasks/MtxTest/Tasks.c **** }
+ 650              		.loc 1 63 0
+ 651 0020 BD46     		mov	sp, r7
+ 652              		@ sp needed
+ 653 0022 80BD     		pop	{r7, pc}
+ 654              	.L39:
+ 655              		.align	2
+ 656              	.L38:
+ 657 0024 00000000 		.word	tsk2
+ 658 0028 00000000 		.word	tsk_EndTheTask
+ 659 002c 48000000 		.word	tsk_AR+72
+ 660              		.cfi_endproc
+ 661              	.LFE67:
+ 663              		.section	.text.OS_START,"ax",%progbits
+ 664              		.align	2
+ 665              		.global	OS_START
+ 666              		.code	16
+ 667              		.thumb_func
+ 669              	OS_START:
+ 670              	.LFB68:
+  64:../Tasks/MtxTest/Tasks.c **** 
+  65:../Tasks/MtxTest/Tasks.c **** void OS_START( void )
+  66:../Tasks/MtxTest/Tasks.c **** {
+ 671              		.loc 1 66 0
+ 672              		.cfi_startproc
+ 673 0000 80B5     		push	{r7, lr}
+ 674              		.cfi_def_cfa_offset 8
+ 675              		.cfi_offset 7, -8
+ 676              		.cfi_offset 14, -4
+ 677 0002 00AF     		add	r7, sp, #0
+ 678              		.cfi_def_cfa_register 7
+  67:../Tasks/MtxTest/Tasks.c ****     sys_SysFkt[0].fktCallType.tmrFktCall.sysFktCall = &actvTsk1;
+ 679              		.loc 1 67 0
+ 680 0004 064B     		ldr	r3, .L41
+ 681 0006 074A     		ldr	r2, .L41+4
+ 682 0008 1A60     		str	r2, [r3]
+  68:../Tasks/MtxTest/Tasks.c ****     sys_SysFkt[1].fktCallType.tmrFktCall.sysFktCall = &actvTsk2;
+ 683              		.loc 1 68 0
+ 684 000a 054B     		ldr	r3, .L41
+ 685 000c 064A     		ldr	r2, .L41+8
+ 686 000e DA60     		str	r2, [r3, #12]
+  69:../Tasks/MtxTest/Tasks.c ****     tmr_setSysTimer( 0, 1500u, 0x1u );
+ 687              		.loc 1 69 0
+ 688 0010 064B     		ldr	r3, .L41+12
+ 689 0012 0020     		mov	r0, #0
+ 690 0014 191C     		mov	r1, r3
+ 691 0016 0122     		mov	r2, #1
+ 692 0018 FFF7FEFF 		bl	tmr_setSysTimer
+  70:../Tasks/MtxTest/Tasks.c ****     //tmr_setSysTimer( 1, 200u, 0x1u );
+  71:../Tasks/MtxTest/Tasks.c **** }
+ 693              		.loc 1 71 0
+ 694 001c BD46     		mov	sp, r7
+ 695              		@ sp needed
+ 696 001e 80BD     		pop	{r7, pc}
+ 697              	.L42:
+ 698              		.align	2
+ 699              	.L41:
+ 700 0020 00000000 		.word	sys_SysFkt
+ 701 0024 00000000 		.word	actvTsk1
+ 702 0028 00000000 		.word	actvTsk2
+ 703 002c DC050000 		.word	1500
+ 704              		.cfi_endproc
+ 705              	.LFE68:
+ 707              		.text
+ 708              	.Letext0:
+ 709              		.file 3 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 710              		.file 4 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\stdint.h"
+ 711              		.file 5 "../include/R_RTOS_inc.h"
+ 712              		.file 6 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h"
+ 713              		.file 7 "../hal/mcu/NXP_KL05/include/PortFunc.h"
 DEFINED SYMBOLS
-                            *ABS*:00000000 R_RTOS_sem.c
-        R_RTOS_sem.s:18     .bss.ar_Sems:00000000 $d
-        R_RTOS_sem.s:21     .bss.ar_Sems:00000000 ar_Sems
-        R_RTOS_sem.s:24     .bss.ar_Mtxs:00000000 $d
-        R_RTOS_sem.s:27     .bss.ar_Mtxs:00000000 ar_Mtxs
-        R_RTOS_sem.s:32     .bss.memPoolID_SEM:00000000 memPoolID_SEM
-        R_RTOS_sem.s:33     .bss.memPoolID_SEM:00000000 $d
-        R_RTOS_sem.s:37     .bss.memPoolID_MTX:00000000 memPoolID_MTX
-        R_RTOS_sem.s:38     .bss.memPoolID_MTX:00000000 $d
-        R_RTOS_sem.s:40     .text.sem_InitSems:00000000 $t
-        R_RTOS_sem.s:45     .text.sem_InitSems:00000000 sem_InitSems
-        R_RTOS_sem.s:94     .text.sem_InitSems:00000038 $d
-        R_RTOS_sem.s:99     .text.mtx_InitMtxs:00000000 $t
-        R_RTOS_sem.s:104    .text.mtx_InitMtxs:00000000 mtx_InitMtxs
-        R_RTOS_sem.s:175    .text.mtx_InitMtxs:00000060 $d
-        R_RTOS_sem.s:181    .text.mtx_InsertTskMtxQ:00000000 $t
-        R_RTOS_sem.s:185    .text.mtx_InsertTskMtxQ:00000000 mtx_InsertTskMtxQ
-        R_RTOS_sem.s:320    .text.mtx_InsertTskMtxQ:000000bc $d
-        R_RTOS_sem.s:325    .text.mtx_GetNextTskMtxQ:00000000 $t
-        R_RTOS_sem.s:329    .text.mtx_GetNextTskMtxQ:00000000 mtx_GetNextTskMtxQ
-        R_RTOS_sem.s:418    .text.mtx_GetNextTskMtxQ:0000007c $d
-        R_RTOS_sem.s:424    .text.mtx_TakeMtx:00000000 $t
-        R_RTOS_sem.s:429    .text.mtx_TakeMtx:00000000 mtx_TakeMtx
-        R_RTOS_sem.s:585    .text.mtx_TakeMtx:000000e8 $d
-        R_RTOS_sem.s:592    .text.mtx_GiveMtx:00000000 $t
-        R_RTOS_sem.s:597    .text.mtx_GiveMtx:00000000 mtx_GiveMtx
-        R_RTOS_sem.s:672    .text.mtx_GiveMtx:00000068 $d
-        R_RTOS_sem.s:677    .text.sem_GiveUpOnSem:00000000 $t
-        R_RTOS_sem.s:682    .text.sem_GiveUpOnSem:00000000 sem_GiveUpOnSem
-        R_RTOS_sem.s:707    .text.sem_DeleteTskSemQ:00000000 $t
-        R_RTOS_sem.s:712    .text.sem_DeleteTskSemQ:00000000 sem_DeleteTskSemQ
+                            *ABS*:00000000 Tasks.c
+             Tasks.s:18     .text.tsk1:00000000 $t
+             Tasks.s:23     .text.tsk1:00000000 tsk1
+             Tasks.s:373    .text.tsk1:00000148 $d
+             Tasks.s:386    .text.tsk2:00000000 tsk2
+             Tasks.s:381    .text.tsk2:00000000 $t
+             Tasks.s:567    .text.tsk2:0000009c $d
+             Tasks.s:573    .text.actvTsk1:00000000 $t
+             Tasks.s:578    .text.actvTsk1:00000000 actvTsk1
+             Tasks.s:614    .text.actvTsk1:00000030 $d
+             Tasks.s:621    .text.actvTsk2:00000000 $t
+             Tasks.s:626    .text.actvTsk2:00000000 actvTsk2
+             Tasks.s:657    .text.actvTsk2:00000024 $d
+             Tasks.s:664    .text.OS_START:00000000 $t
+             Tasks.s:669    .text.OS_START:00000000 OS_START
+             Tasks.s:700    .text.OS_START:00000020 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
                            .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
                            .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
-                           .group:00000000 wm4.R_RTOS_inc.h.33.90af6908e359466da96cfb5569754ce2
-                           .group:00000000 wm4.R_RTOS_sem.h.19.ef9bebdb7f49b1a8b107db7ec548beb0
-                           .group:00000000 wm4.R_RTOS_memMngr.h.14.e71363defcaed3db880eddd5ae4849f6
+                           .group:00000000 wm4.R_RTOS_inc.h.33.673e81b7c65bad7fa1d77c307c4a1d01
+                           .group:00000000 wm4.R_RTOS_services.h.15.141ae7f3e634632683f7871b75760c07
+                           .group:00000000 wm4.MKL05Z4.h.103.c5a242a6313ded8e4c7cb62acb8df21b
+                           .group:00000000 wm4.core_cm0plus.h.43.8a4a713129c4559638c90873d349aea7
+                           .group:00000000 wm4.core_cmInstr.h.39.983ab10f37e3e59f2988e58e0e4c2ffe
+                           .group:00000000 wm4.core_cm0plus.h.155.59f470bcbcb3497af7bb725005dd1359
+                           .group:00000000 wm4.system_MKL05Z4.h.101.1304ea5d52ecf5deae71ccb0772f8612
+                           .group:00000000 wm4.MKL05Z4.h.274.69d105c645fb54a4873c1961c705a2ed
+                           .group:00000000 wm4.PortFunc.h.29.2889e345d9a6356c605a78c7f6468978
+                           .group:00000000 wm4.TimerFunc.h.9.adbda7f7862aad2ad31a4542ce2fb01d
+                           .group:00000000 wm4.R_RTOS_timer.h.10.320a5c95a3ff82b6cc9c2ca1b54c86a1
 
 UNDEFINED SYMBOLS
-memMngr_CreateMemPool
 tsk_AR
-tsk_ClrEvt
-memMngr_MemPoolFree
-memMngr_MemPoolMalloc
-tsk_SetEvt
+tsk_EndTheTask
+tsk_tskInit
 tsk_ChngePrio
-sem_InsertTskSemQ
+tsk_ActvTsk
+os_SCHEDULE
+tmr_setSysTimer
+sys_SysFkt

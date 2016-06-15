@@ -190,12 +190,12 @@ bitM_bitPos:
 	.uleb128 0x5
 	.4byte	.LASF528
 	.byte	0x4
-	.2byte	0x1f1
+	.2byte	0x1f6
 	.4byte	0x85
 	.uleb128 0x5
 	.4byte	.LASF529
 	.byte	0x4
-	.2byte	0x1f6
+	.2byte	0x1fb
 	.4byte	0x85
 	.uleb128 0x6
 	.4byte	.LASF533
@@ -1776,7 +1776,7 @@ bitM_bitPos:
 	.uleb128 0x1f5
 	.4byte	.LASF434
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.c1b03cc0c5c07ca0a477eb46e01868fd,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.673e81b7c65bad7fa1d77c307c4a1d01,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -1919,67 +1919,67 @@ bitM_bitPos:
 	.uleb128 0x13f
 	.4byte	.LASF481
 	.byte	0x5
-	.uleb128 0x53b
+	.uleb128 0x55d
 	.4byte	.LASF482
 	.byte	0x5
-	.uleb128 0x540
+	.uleb128 0x562
 	.4byte	.LASF483
 	.byte	0x5
-	.uleb128 0x547
+	.uleb128 0x569
 	.4byte	.LASF484
 	.byte	0x5
-	.uleb128 0x54a
+	.uleb128 0x56c
 	.4byte	.LASF485
 	.byte	0x5
-	.uleb128 0x558
+	.uleb128 0x57a
 	.4byte	.LASF486
 	.byte	0x5
-	.uleb128 0x55d
+	.uleb128 0x57f
 	.4byte	.LASF487
 	.byte	0x5
-	.uleb128 0x566
+	.uleb128 0x588
 	.4byte	.LASF488
 	.byte	0x5
-	.uleb128 0x56a
+	.uleb128 0x58c
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x56e
+	.uleb128 0x590
 	.4byte	.LASF490
 	.byte	0x5
-	.uleb128 0x572
+	.uleb128 0x594
 	.4byte	.LASF491
 	.byte	0x5
-	.uleb128 0x576
+	.uleb128 0x598
 	.4byte	.LASF492
 	.byte	0x5
-	.uleb128 0x57a
+	.uleb128 0x59c
 	.4byte	.LASF493
 	.byte	0x5
-	.uleb128 0x57e
+	.uleb128 0x5a0
 	.4byte	.LASF494
 	.byte	0x5
-	.uleb128 0x582
+	.uleb128 0x5a4
 	.4byte	.LASF495
 	.byte	0x5
-	.uleb128 0x586
+	.uleb128 0x5a8
 	.4byte	.LASF496
 	.byte	0x5
-	.uleb128 0x58a
+	.uleb128 0x5ac
 	.4byte	.LASF497
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x5b0
 	.4byte	.LASF498
 	.byte	0x5
-	.uleb128 0x592
+	.uleb128 0x5b4
 	.4byte	.LASF499
 	.byte	0x5
-	.uleb128 0x596
+	.uleb128 0x5b8
 	.4byte	.LASF500
 	.byte	0x5
-	.uleb128 0x59a
+	.uleb128 0x5bc
 	.4byte	.LASF501
 	.byte	0x5
-	.uleb128 0x59e
+	.uleb128 0x5c0
 	.4byte	.LASF502
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_BitMagic.h.17.72a457c77e96472fa40c2495458f70b9,comdat
@@ -2070,8 +2070,6 @@ bitM_bitPos:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF432:
 	.ascii	"UINT64_C(x) __UINT64_C(x)\000"
-.LASF448:
-	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x6u\000"
 .LASF127:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
 .LASF96:
@@ -2902,6 +2900,8 @@ bitM_bitPos:
 	.ascii	"../source/R_RTOS/R_RTOS_BitMagic.c\000"
 .LASF187:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
+.LASF448:
+	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x2u\000"
 .LASF527:
 	.ascii	"sizetype\000"
 .LASF343:

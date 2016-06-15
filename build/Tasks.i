@@ -1,4 +1,4 @@
-# 1 "../Tasks/MessageQueueTest/Tasks.c"
+# 1 "../Tasks/MtxTest/Tasks.c"
 # 1 "C:\\Users\\Christian\\Documents\\OHM\\MAPR\\Projekt\\WRKSPC\\R_RTOS\\build//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -343,25 +343,20 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
-# 1 "../Tasks/MessageQueueTest/Tasks.c"
-# 1 "../hal/mcu/NXP_KL05/include/PortFunc.h" 1
-# 10 "../hal/mcu/NXP_KL05/include/PortFunc.h"
-#define HEADERS_PORTFUNC_H_ 
+# 1 "../Tasks/MtxTest/Tasks.c"
+# 1 "../include/R_RTOS_services.h" 1
+# 10 "../include/R_RTOS_services.h"
+#define HEADERS_R_RTOS_SERVICES_H_ 
+
+# 1 "../include/R_RTOS_inc.h" 1
+# 10 "../include/R_RTOS_inc.h"
+#define HEADERS_R_RTOS_INC_H_ 
 
 
 
 
 
-# 1 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h" 1
-# 103 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h"
-#define MKL05Z4_H_ 
-#define MCU_MKL05Z4 
 
-
-
-
-
-#define MCU_ACTIVE 
 
 # 1 "c:\\freescale\\kds_3.0.0\\toolchain\\lib\\gcc\\arm-none-eabi\\4.8.4\\include\\stdint.h" 1 3 4
 # 9 "c:\\freescale\\kds_3.0.0\\toolchain\\lib\\gcc\\arm-none-eabi\\4.8.4\\include\\stdint.h" 3 4
@@ -698,7 +693,1325 @@ typedef __uintptr_t uintptr_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 113 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h" 2
+# 19 "../include/R_RTOS_inc.h" 2
+# 33 "../include/R_RTOS_inc.h"
+#undef NULL
+
+
+
+
+
+#define NULL ((void *)0x0u)
+
+
+
+
+
+
+#define ABS(x) (((x)<0) ? (-1*(x)) : (x))
+
+
+
+
+
+#define MIN_STACK_SIZE ((StackSize)0x40u)
+
+
+
+
+#define MY_STACK_SIZE ((StackSize)0x80u)
+
+
+
+
+#define IDLE_TSK_STACK_SIZE ((StackSize)0x60u)
+
+
+
+#define STACK_BLOCK_SIZE ((uint8_t)0x4u)
+# 75 "../include/R_RTOS_inc.h"
+#define AMOUNT_OF_MSGQ (QID)(0x3u)
+
+
+
+
+#define MSGQ_TSK_ID_POS (uint8_t)0x0u
+
+
+
+#define MSGQ_SYS_ID_POS (uint8_t)0x1u
+
+
+
+
+#define SYS_ID_MSK (uint16_t)0xFF00u
+
+
+
+#define TSK_ID_MSK (uint16_t)0x00FFu
+
+
+
+
+
+
+
+#define AMOUNT_OF_SEMS (uint8_t)0x2u
+
+
+
+
+
+
+
+#define AMOUNT_OF_EVTS (uint8_t)0x6u
+
+
+
+
+
+
+#define EVT_QUEUE_SIZE (uint8_t)0x4u
+# 126 "../include/R_RTOS_inc.h"
+#define SYSTCK_AR_RES (uint8_t)0x8u
+
+
+
+#define SYSTCK_AR_RES_MSK (uint8_t)(SYSTCK_AR_RES - (uint8_t)0x1u)
+# 144 "../include/R_RTOS_inc.h"
+#define TSK_ID_IDLE ((TskID)0x0u)
+
+
+
+
+
+
+#define TSK_ID_NO_TSK TSK_ID_IDLE
+
+
+
+
+
+
+
+#define TSK_PRIO_LEVELS_NR (TskPrioLvl)0xFu
+# 168 "../include/R_RTOS_inc.h"
+#define AMOUNT_SYS_FKT (uint8_t)0x8u
+
+
+
+
+
+#define SYSFKT_INVALID_SYSFKT_ID (SysFktID)0xFFu
+# 195 "../include/R_RTOS_inc.h"
+#define OFFSETOF(type,field) ((uint8_t) &(((type *) 0)->field))
+
+
+
+
+
+
+
+#define DATATYPE_IS_PTR(dataType) (uint8_t)( dataType & (uint8_t)0x4u)
+
+
+
+
+#define MAKE_SYS_ID(id) (uint16_t)((uint16_t)((uint8_t)id & (uint8_t)0xFFu) << (uint8_t)0x8u)
+
+
+
+
+#define MAKE_TSK_ID(id) (uint16_t)(uint16_t)((uint8_t)id & (uint8_t)0xFFu)
+
+
+
+#define MQ_IS_TSK_ID(id) (uint8_t)((uint16_t)id & (uint16_t)0xFFu)
+# 230 "../include/R_RTOS_inc.h"
+#define CREATE_EVT_MSK(evtNr) (EVTQSlots)((EVTQSlots)0x1u << evtNr)
+# 241 "../include/R_RTOS_inc.h"
+#define TSK_GETSTATE(pTsk) (TskState)(pTsk->tskState)
+
+
+
+
+#define TSK_STATE_IS_ERROR(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ERROR)
+
+
+
+
+#define TSK_STATE_IS_ACTIVE(pTsk) (TskState)(TSK_GETSTATE(pTsk) & TSK_STATE_ACTIVE)
+
+
+
+
+#define TSK_STATE_IS_ACTIVE_RUNNING(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_RUNNING )
+
+
+
+#define TSK_STATE_IS_ACTIVE_SUSPENDED(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_SUSPENDED )
+
+
+
+#define TSK_STATE_IS_ACTIVE_READY(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_READY )
+
+
+
+
+
+#define TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )
+
+
+
+
+
+#define TSK_STATE_IS_WAITING(pTsk) (TskState)(TSK_GETSTATE(pTsk) & TSK_STATE_WAITING)
+
+
+
+#define TSK_STATE_IS_WAITING_TMR(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_TMR)
+
+
+
+#define TSK_STATE_IS_WAITING_MSGRCV(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_MSGRCV)
+
+
+
+#define TSK_STATE_IS_WAITING_MSGSND(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_MSGSND)
+
+
+
+#define TSK_STATE_IS_WAITING_EVT(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_EVT)
+
+
+
+#define TSK_STATE_IS_WAITING_SEM(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_SEM)
+
+
+
+#define TSK_STATE_IS_WAITING_MNTR(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_MNTR)
+
+
+
+
+
+
+#define TSK_STATE_IS_UNINIT(pTsk) (TskState)(TSK_GETSTATE(pTsk) & TSK_STATE_UNINIT)
+
+
+
+#define TSK_STATE_IS_UNINIT_UNINIT(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_UNINIT_UNINIT)
+
+
+
+#define TSK_STATE_IS_UNINIT_FAILED(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_UNINIT_FAILED)
+
+
+
+#define TSK_STATE_IS_UNINIT_ENDED(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_UNINIT_ENDED)
+# 351 "../include/R_RTOS_inc.h"
+typedef void (*FktCall)( void );
+
+
+
+
+typedef void (*FktCallOneArg)( void * );
+
+
+
+
+typedef uint8_t SysFktID;
+
+
+
+
+
+typedef uint16_t StackSize;
+
+
+
+
+typedef uint32_t StackTypeT;
+
+
+
+
+
+typedef StackTypeT *StackPtrT;
+
+
+
+
+
+
+typedef uint8_t DataSize;
+
+
+
+typedef uint32_t *Data;
+
+
+
+
+
+typedef uint8_t QPrio;
+
+
+
+
+
+typedef void (*CallBackOnDataRecv)( Data );
+
+
+
+
+typedef uint8_t QID;
+
+
+
+
+typedef uint8_t MsgCntr;
+# 422 "../include/R_RTOS_inc.h"
+typedef union partID
+{
+    uint16_t fullID;
+    uint8_t snglID[2];
+} PartID;
+
+
+
+
+
+
+
+typedef uint8_t SemNr;
+
+
+
+
+typedef uint8_t MtxNr;
+
+
+
+
+typedef uint8_t SemCntr;
+
+
+
+
+
+
+
+typedef uint8_t EvtNr;
+
+
+
+
+typedef uint32_t EvtMsk;
+
+
+
+typedef uint32_t EVTQSlots;
+
+
+
+
+
+
+
+typedef uint16_t WaitTime;
+
+
+
+
+typedef uint32_t SysTime;
+
+
+
+
+typedef uint8_t SysTicks;
+
+
+
+
+typedef uint16_t TmrTime;
+
+
+
+
+typedef uint32_t LifeTime;
+
+
+
+
+
+
+typedef uint8_t TskID;
+
+
+
+
+
+typedef uint8_t TskPrioLvl;
+
+
+
+
+typedef uint8_t tskStateT;
+
+
+
+
+typedef FktCall TskStartAddr;
+
+
+
+
+typedef FktCall TskEndAddr;
+# 530 "../include/R_RTOS_inc.h"
+typedef uint8_t SyncEleID;
+# 593 "../include/R_RTOS_inc.h"
+typedef enum mntrAccssType
+{
+    MNTR_ACCESS_NONE = (uint8_t) 0x0u,
+    MNTR_ACCESS_READ = (uint8_t) 0x1u,
+    MNTR_ACCESS_WRITE = (uint8_t) 0x2u,
+    MNTR_ACCESS_DELETE = (uint8_t) 0x4u,
+    MNTR_ACCESS_MODIFY = (uint8_t) 0x8u
+} ACCSSType;
+
+
+
+
+
+
+typedef enum dataTypes
+{
+    DataT_Undef = (uint8_t) 0x0u,
+    DataT_Int = (uint8_t) 0x1u,
+    DataT_Ptr = (uint8_t) 0x4u,
+    DataT_Int_Ptr,
+    DataT_String,
+    DataT_FunCall = (uint8_t) 0x8u
+} DataType;
+# 631 "../include/R_RTOS_inc.h"
+typedef enum timerTypeEn
+{
+    SysTimerType = (uint8_t) 0x0u,
+    TskTimerType = (uint8_t) 0x1u,
+    SysTickTimerType = (uint8_t) 0x2u
+} TimerType;
+# 647 "../include/R_RTOS_inc.h"
+typedef enum tskPrio
+{
+    TSK_PRIO_ERROR = (TskPrioLvl) 0x0u,
+    TSK_PRIO_LOWEST = (TskPrioLvl) 0x1u,
+    TSK_PRIO_LOWER,
+    TSK_PRIO_LOW,
+    TSK_PRIO_MED,
+    TSK_PRIO_ABOVMED,
+    TSK_PRIO_HIG,
+    TSK_PRIO_HIGHER,
+    TSK_PRIO_HIGHEST,
+    TSK_PRIO_ULT,
+    TSK_PRIO_IDLE = (TskPrioLvl) 0xFu
+} TskPrio;
+
+
+
+
+
+
+
+typedef enum evtType
+{
+    EvtTMR = (uint8_t) 0x21u,
+    EvtMSGRCV = (uint8_t) 0x22u,
+    EvtMSGSND = (uint8_t) 0x24u,
+    EvtEVT = (uint8_t) 0x41u,
+    EvtSEM = (uint8_t) 0x42u,
+    EvtMNTR = (uint8_t) 0x48u
+} EvtType;
+# 709 "../include/R_RTOS_inc.h"
+typedef enum tskState
+{
+    TSK_STATE_ERROR = (tskStateT) 0x00u,
+    TSK_STATE_ACTIVE = ( (tskStateT) 0x10u ),
+    TSK_STATE_ACTIVE_RUNNING = ( (tskStateT) 0x11u ),
+    TSK_STATE_ACTIVE_SUSPENDED = ( (tskStateT) 0x12u ),
+    TSK_STATE_ACTIVE_READY = ( (tskStateT) 0x14u ),
+    TSK_STATE_ACTIVE_CRITSEC = ( (tskStateT) 0x18u ),
+    TSK_STATE_WAITING_MSGNG = (tskStateT) 0x20u,
+    TSK_STATE_WAITING_MSGRCV = (tskStateT) 0x21u,
+    TSK_STATE_WAITING_MSGSND = (tskStateT) 0x22u,
+    TSK_STATE_WAITING_SYNC = (tskStateT) 0x40u,
+    TSK_STATE_WAITING_TMR = (tskStateT) 0x41u,
+    TSK_STATE_WAITING_EVT = (tskStateT) 0x42u,
+    TSK_STATE_WAITING_SEM = (tskStateT) 0x43u,
+    TSK_STATE_WAITING_MNTR = (tskStateT) 0x44u,
+    TSK_STATE_WAITING = (tskStateT) 0x60u,
+    TSK_STATE_UNINIT = (tskStateT) 0x80u,
+    TSK_STATE_UNINIT_UNINIT = (tskStateT) 0x81u,
+    TSK_STATE_UNINIT_FAILED = (tskStateT) 0x82u,
+    TSK_STATE_UNINIT_ENDED = (tskStateT) 0x88u,
+} TskState;
+
+
+
+
+
+
+
+typedef enum tskSettings
+{
+    TskSet_NONE = (uint8_t) 0x00u,
+    TskSet_Periodic = (uint8_t) 0x01u,
+    TskSet_OneShot = (uint8_t) 0x02u,
+    TskSet_DUMMY_0 = (uint8_t) 0x04u,
+    TskSet_DUMMY_1 = (uint8_t) 0x08u,
+    TskSet_DUMMY_2 = (uint8_t) 0x10u,
+    TskSet_DUMMY_3 = (uint8_t) 0x20u,
+    TskSet_DUMMY_4 = (uint8_t) 0x40u,
+    TskSet_DUMMY_5 = (uint8_t) 0x80u
+} TskSettings;
+# 762 "../include/R_RTOS_inc.h"
+typedef enum syncEleType
+{
+    SyncEle_TYPE_NOID = (uint8_t) 0x0u,
+    SyncEle_TYPE_TMR = (uint8_t) 0x1u,
+    SyncEle_TYPE_EVT = (uint8_t) 0x2u,
+    SyncEle_TYPE_SEM = (uint8_t) 0x3u,
+    SyncEle_TYPE_BinSEM = (uint8_t) 0x3u,
+    SyncEle_TYPE_CntSEM = (uint8_t) 0x4u,
+    SyncEle_TYPE_MTX = (uint8_t) 0x5u,
+    SyncEle_TYPE_MNTR = (uint8_t) 0x6u
+} SyncEleType;
+# 797 "../include/R_RTOS_inc.h"
+typedef enum sysTckObjTypeEnum
+{
+    SysTckObj_Err = (uint8_t) 0x0u,
+    SysTckObj_Tsk = (uint8_t) 0x10u,
+    SysTckObj_TskBlck = (uint8_t) 0x11u,
+    SysTckObj_TskWait = (uint8_t) 0x12u,
+    SysTckObj_SysFkt = (uint8_t) 0x20u,
+    SysTckObj_SysFktBlck = (uint8_t) 0x21u,
+    SysTckObj_SysFktWait = (uint8_t) 0x22u,
+} SysTckEleType;
+# 816 "../include/R_RTOS_inc.h"
+typedef union sysTickEleIDUnion
+{
+    TskID tskID;
+    SysFktID sysFktID;
+} SysTickEleID;
+# 831 "../include/R_RTOS_inc.h"
+typedef struct sysTickTMRStruc
+{
+    struct sysTickTMRStruc * nxtSysTickTMR;
+    struct sysTickTMRStruc * prvSysTickTMR;
+    SysTckEleType sysTckObjType;
+    SysTickEleID sysTckObjID;
+    SysTicks remSysTicks;
+    SysTicks insrtnSysTicksTime;
+} SysTickTMR, *PSysTickTMR;
+
+
+
+
+
+
+typedef const uint32_t * CData;
+
+
+
+typedef CData *PCData;
+# 870 "../include/R_RTOS_inc.h"
+typedef struct mqData
+{
+    CData data;
+    PartID pubID;
+    DataType dataType;
+    DataSize dataSize;
+} MQData, *PMQData;
+# 888 "../include/R_RTOS_inc.h"
+typedef struct msgQMsgProvStruc
+{
+    QID msgQID;
+    volatile MsgCntr msgsNew;
+} MsgQMsgProv, *PMsgQMsgProv;
+
+
+
+
+
+typedef uint8_t MsgID;
+# 913 "../include/R_RTOS_inc.h"
+typedef struct tskMsgProvStruc
+{
+    volatile TskID tskProvID;
+    volatile MsgID msgID;
+} TskMsgProv, *PTskMsgProv;
+# 933 "../include/R_RTOS_inc.h"
+typedef struct sysMsgProvStruc
+{
+    volatile SysFktID sysProvID;
+    volatile MsgID msgID;
+} SysMsgProv, *PSysMsgProv;
+
+typedef struct dummyMsgProvStruc
+{
+    uint8_t dummyID;
+    uint8_t dummyDummy;
+} DummyMsgProv, *PDummyMsgProv;
+# 953 "../include/R_RTOS_inc.h"
+typedef enum msgProvTypeEnum
+{
+    MsgQ_Prov = (uint8_t) 0x0u,
+    Tsk_Prov = (uint8_t) 0x1u,
+    Sys_Prov = (uint8_t) 0x2u,
+    Dummy_Prov = (uint8_t) 0xFFu
+} MsgProvType;
+# 970 "../include/R_RTOS_inc.h"
+typedef union msgPrvdrsUnion
+{
+    MsgQMsgProv msgQMsgProv;
+    TskMsgProv tskMsgProv;
+    SysMsgProv sysMsgProv;
+    DummyMsgProv dummyMsgProv;
+} MsgPrvdrs, *PMsgPrvdrs;
+# 991 "../include/R_RTOS_inc.h"
+typedef struct tskMailBox
+{
+    volatile struct tskMailBox *nxtTskMB;
+
+
+    uint8_t dummyByte;
+    MsgProvType msgProvType;
+    MsgPrvdrs msgProv;
+} TskMB, *PTskMB;
+# 1013 "../include/R_RTOS_inc.h"
+typedef struct tmrFktCallStruc
+{
+    FktCall sysFktCall;
+    LifeTime expirationTime;
+    TmrTime reloadTime;
+    SysFktID nxtFktCall;
+    SysFktID fktID;
+} TmrFktCall, *PTmrFktCall;
+# 1030 "../include/R_RTOS_inc.h"
+typedef struct sysTckFktCallstruc
+{
+    FktCall sysFktCall;
+    volatile PSysTickTMR sysTckTmr;
+    SysTicks reloadTime;
+    uint8_t dummy8;
+    uint16_t dummy16;
+} SysTckFktCall, *PSysTckFktCall;
+# 1047 "../include/R_RTOS_inc.h"
+typedef struct msgFktCallStruc
+{
+    FktCallOneArg sysFktCall;
+    MsgPrvdrs msgProv;
+    MsgProvType msgProvType;
+} MsgFktCall, *PMsgFktCall;
+# 1063 "../include/R_RTOS_inc.h"
+typedef struct dummyFktCallStruc
+{
+    void * sysFktCall;
+    uint32_t dummy32;
+    uint16_t dummy16;
+    uint8_t dummy8_1;
+    uint8_t dummy8_2;
+} DummyFktCall, *PDummyFktCall;
+# 1084 "../include/R_RTOS_inc.h"
+typedef struct sysFkt
+{
+
+    union
+    {
+        TmrFktCall tmrFktCall;
+        SysTckFktCall sysTckFktCall;
+        MsgFktCall msgFktCall;
+        DummyFktCall dummyfktCall;
+    } fktCallType;
+} SysFkt, *PSysFkt;
+
+
+
+
+typedef enum semTypeEnum
+{
+    SemBin = (uint8_t)0x0u,
+    SemCnt = (uint8_t)0x1u
+}SemType;
+# 1116 "../include/R_RTOS_inc.h"
+typedef struct semStruc
+{
+    TskID semQStrtTskID;
+    TskPrio svdTskPrio;
+    SemType semType;
+    union
+    {
+        SemCntr semCntrSig;
+        SemCntr semBinSig;
+    }semSignal;
+} Sem, *PSem;
+
+typedef struct mtxStruc
+{
+    TskID mtxQStrtTskID;
+    TskID mtxOccTskID;
+    TskPrio svdTskPrio;
+    uint8_t isOcc;
+}Mtx, *PMtx;
+# 1151 "../include/R_RTOS_inc.h"
+typedef struct evtStruc
+{
+    EVTQSlots evtQ_Slots;
+    TskID evtObjs[(uint8_t)0x4u ];
+} Evt, *PEvt;
+# 1169 "../include/R_RTOS_inc.h"
+typedef struct sysTimerStruc
+{
+    SysFktID sysFktIDQStrt;
+} SysTimer, *PSysTimer;
+# 1182 "../include/R_RTOS_inc.h"
+typedef struct tskTimerStruc
+{
+    TskID tskIDQStrt;
+} TskTimer, *PTskTimer;
+# 1196 "../include/R_RTOS_inc.h"
+typedef struct timerStruc
+{
+    LifeTime expirationTime;
+    TimerType timerType;
+    union
+    {
+        SysTimer sysTimer;
+        TskTimer tskTimer;
+    } specTimer;
+} Timer, *PTimer;
+# 1239 "../include/R_RTOS_inc.h"
+typedef struct syncEleStruc
+{
+    SyncEleType syncEleType;
+    SyncEleID syncEleID;
+
+
+    union multipurposeByte
+    {
+        ACCSSType mntrAccssType;
+        uint8_t someDummy;
+    } MultiPurposeByte;
+
+    union syncEleHandle
+    {
+
+        struct evtSyncEle
+        {
+            EvtMsk evtMsk;
+        } EvtSyncEle;
+
+        struct tmrSyncEle
+        {
+            LifeTime expireTime;
+        } TmrSyncEle;
+
+        struct semSyncEle
+        {
+            uint8_t dummy1;
+            uint8_t dummy2;
+            uint8_t dummy3;
+            uint8_t dummy4;
+        } SemSyncEle;
+        struct mtxSyncEle
+        {
+            uint8_t dummy1;
+            uint8_t dummy2;
+            uint8_t dummy3;
+            uint8_t dummy4;
+        };
+
+        struct mntrSyncEle
+        {
+
+        } MntrSyncEle;
+    } SyncEleHandle;
+} SyncEle, *PSyncEle;
+# 1301 "../include/R_RTOS_inc.h"
+typedef struct tskTCB
+{
+            volatile StackPtrT pStckPtr;
+            StackPtrT pStckTop;
+
+            TskStartAddr pTskStrt;
+            TskEndAddr pTskEnd;
+
+            volatile PTskMB tskMailBox;
+
+            volatile PSysTickTMR sysTckTmr;
+            volatile PSyncEle tskSync;
+
+            StackSize stckSze;
+
+            volatile TskSettings tskSets;
+
+            volatile TskPrio tskPrio;
+            volatile TskState tskState;
+
+            TskID tskID;
+            volatile TskID nxtTsk;
+            volatile TskID prvTsk;
+} TskTCB, *PTskTCB;
+# 1373 "../include/R_RTOS_inc.h"
+#define TIME_SLICE_AMOUNT (uint16_t)500u
+
+
+
+
+#define NR_OF_TSKS ((uint8_t)0xBu)
+
+
+
+
+
+
+#define MAX_TASKS NR_OF_TSKS
+
+
+#define NR_OF_MEMPOOLS (uint8_t)0x5u
+# 1397 "../include/R_RTOS_inc.h"
+typedef uint8_t OsCode;
+
+
+
+
+#define OS_FULL_DISPATCH ((OsCode)0x2u)
+
+
+
+
+#define OS_DISPATCH_NEEDED ((OsCode)0x1u)
+
+
+
+
+typedef uint8_t RetCode;
+
+
+
+#define RET_NOK ((RetCode)0x0u)
+
+
+
+#define RET_OK ((RetCode)0x1u)
+
+
+
+#define RET_MEM_ALLOC_FAIL_TCB ((RetCode)0x1Au)
+
+
+
+#define RET_MEM_ALLOC_FAIL_STACK ((RetCode)0x1Cu)
+
+
+
+#define RET_TSK_TOO_MANY ((RetCode)0x2Fu)
+
+
+
+#define RET_TSK_NO_IDLE_TSK ((RetCode)0x20u)
+
+
+
+#define RET_TSK_CONFLICTING_IDLE_TSK ((RetCode)0x21u)
+
+
+
+#define RET_TSK_STILL_RUNNING ((RetCode)0x24u)
+
+
+
+#define RET_TSK_IS_ABOUT_TO_RUN ((RetCode)0x25u)
+
+
+
+#define RET_STCK_ERR_FULL ((RetCode)0x3Fu)
+
+
+
+#define RET_STCK_ERR_EMPTY ((RetCode)0x30u)
+
+
+
+#define RET_STCK_ERR_INDEX_OVERFLOW ((RetCode)0x31u)
+
+
+
+#define RET_STCK_ERR_INDEX_UNDERFLOW ((RetCode)0x32u)
+
+
+
+#define RET_STCK_NO_STCKELEM_PTR ((RetCode)0x33u)
+
+
+
+#define RET_STCK_NO_STCKPTR ((RetCode)0x34u)
+
+
+
+
+
+typedef uint16_t MemSize;
+# 1491 "../include/R_RTOS_inc.h"
+typedef struct gStruc_OS_FLAGS
+{
+    volatile uint8_t g_DispatchFlag :2;
+    volatile uint8_t g_needsScheduling :1;
+    volatile uint8_t g_tskCriticalExecution :1;
+    volatile uint8_t gLPExit :1;
+    volatile uint8_t gWokenUp :1;
+} BitsOSFlags;
+# 1510 "../include/R_RTOS_inc.h"
+typedef enum svcCode
+{
+    SVC_OS_START = (uint8_t) 0x0u,
+    SVC_TSK_INIT,
+    SVC_TSK_SETPRIO,
+    SVC_TSK_ACTV,
+    SVC_TSK_KILL,
+    SVC_TSK_SET_CRIT,
+    SVC_TSK_RESET_CRIT,
+    SVC_MTX_TAKE,
+    SVC_MTX_GIVE,
+    SVC_SEM_TAKE,
+    SVC_SEM_GIVE,
+    SVC_EVT_SEND,
+    SVC_EVT_RECV,
+    SVC_TMR_SET,
+    SVC_SYSTCK_SET,
+    SVC_MSGQ_CRT_Q,
+    SVC_MSGQ_DEL_Q,
+    SVC_MSGQ_REG_PUB,
+    SVC_MSGQ_REG_TSK_SUB,
+    SVC_MSGQ_REG_SYS_SUB,
+    SVC_MSGQ_MSG_PUB,
+    SVC_MSGQ_MSG_READ,
+    SVC_MSGQ_MSG_READALLNEW,
+    SVC_MSGQ_MSG_READALL,
+    SVC_MSGQ_MSG_TAKE,
+    SVC_MSGQ_MSG_TAKEALLNEW,
+    SVC_MSGQ_MSG_TAKEALL,
+    SVC_OS_SCHEDULE,
+    SVC_CALL_FKT_PRIV,
+    SVC_LP_ENTER,
+    SVC_TRC_OUPUT,
+    SVC_OS_ERROR = (uint8_t) 0xFFu,
+} SVCCode;
+# 13 "../include/R_RTOS_services.h" 2
+
+
+#define __STATIC_INLINE static inline
+# 28 "../include/R_RTOS_services.h"
+#define INPUT_ARG_1(input) __asm volatile( "movs r0, %0 \n"::"l"(input) :)
+# 40 "../include/R_RTOS_services.h"
+#define INPUT_ARG_2(input) __asm volatile( "movs r1, %0 \n"::"l"(input) :)
+# 52 "../include/R_RTOS_services.h"
+#define INPUT_ARG_3(input) __asm volatile( "movs r2, %0 \n"::"l"(input) :)
+# 64 "../include/R_RTOS_services.h"
+#define INPUT_ARG_4(input) __asm volatile( "movs r3, %0 \n"::"l"(input) :)
+# 75 "../include/R_RTOS_services.h"
+#define OUTPUT_ARG(output) __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(output): :"memory")
+# 85 "../include/R_RTOS_services.h"
+#define SVC(svcCode) __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(svcCode) : )
+
+__attribute__( ( always_inline ) ) static inline void svc_os_StartOS( void )
+{
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_OS_START) : );
+    while ( 1 )
+    {
+        ;
+    }
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_tsk_InitTsk(
+                                                                         const TskID tskID,
+                                                                         const TskStartAddr const tskAddr,
+                                                                         const TskStartAddr const tskEndAddr,
+                                                                         const StackSize stckSze )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskAddr) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(tskEndAddr) :);
+    __asm volatile( "movs r3, %0 \n"::"l"(stckSze) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_INIT) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_tsk_SetTskPrio(
+                                                                            const TskID tskID,
+                                                                            const TskPrio tskPrio )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskPrio) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_SETPRIO) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_tsk_ActvTsk(
+                                                                         const TskID tskID )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(tskID) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_ACTV) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_tsk_KillTsk(
+                                                                         TskTCB* const tsk )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_KILL) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_tsk_setTskCriticalState(
+                                                                                     void )
+{
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_SET_CRIT) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_tsk_resetTskCriticalState(
+                                                                                       void )
+{
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_RESET_CRIT) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_mtx_TakeMtx(
+                                                                         const MtxNr mtxNr,
+                                                                         PTskTCB const tsk,
+                                                                         const SysTicks maxTimeToWait )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(mtxNr) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(maxTimeToWait) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MTX_TAKE) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_mtx_GiveMtx(
+                                                                         const MtxNr mtxNr,
+                                                                         PTskTCB const tsk )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(mtxNr) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MTX_GIVE) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_sem_TakeSem(
+                                                                         const SemNr semNr,
+                                                                         TskTCB* const tsk,
+                                                                         const SysTicks maxTimeToWait )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(semNr) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(maxTimeToWait) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_SEM_TAKE) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_sem_GiveSem(
+                                                                         const SemNr semNr,
+                                                                         TskTCB* const tsk )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(semNr) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_SEM_GIVE) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_evt_SendEvt(
+                                                                         const EvtNr evt )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(evt) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_EVT_SEND) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_evt_RecvEvt(
+                                                                         PTskTCB const tsk,
+                                                                         EVTQSlots evtMask,
+                                                                         const SysTicks maxTimeToWait )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(evtMask) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(maxTimeToWait) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_EVT_RECV) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_tmr_SetTimer(
+                                                                          const WaitTime msToWait,
+                                                                          TskTCB* const tsk )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msToWait) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TMR_SET) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_sysTck_SetTimer(
+                                                                             const SysTicks ticksToWait,
+                                                                             TskID const tskID )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(ticksToWait) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_SYSTCK_SET) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_CrtQ(
+                                                                       const QID msgQID )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_CRT_Q) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_DelQ(
+                                                                       const QID msgQID )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_DEL_Q) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_RegPub(
+                                                                         PTskTCB const tsk,
+                                                                         const QID msgQID )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_REG_PUB) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_RegTskSub(
+                                                                            PTskTCB const tsk,
+                                                                            const QID msgQID )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_REG_TSK_SUB) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_RegSysSub(
+                                                                            const SysFktID sysID,
+                                                                            const QID msgQID )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(sysID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_REG_SYS_SUB) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_PubMsg(
+                                                                         const QID msgQID,
+                                                                         const DataSize dataSize,
+                                                                         const DataType dataType,
+                                                                         CData const data )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(dataSize) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(dataType) :);
+    __asm volatile( "movs r3, %0 \n"::"l"(data) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_PUB) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgRead(
+                                                                          const QID msgQID,
+                                                                          const TskID tskID,
+                                                                          const PMQData * dataBuffer )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_READ) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgRead_AllNew(
+                                                                                 const QID msgQID,
+                                                                                 const TskID tskID,
+                                                                                 Data dataBuffer )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_READALLNEW) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgRead_All(
+                                                                              const QID msgQID,
+                                                                              const TskID tskID,
+                                                                              Data dataBuffer )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_READALL) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgTake(
+                                                                          const QID msgQID,
+                                                                          const TskID tskID,
+                                                                          Data dataBuffer )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_TAKE) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgTake_AllNew(
+                                                                                 const QID msgQID,
+                                                                                 const TskID tskID,
+                                                                                 Data dataBuffer )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_TAKEALLNEW) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgTake_All(
+                                                                              const QID msgQID,
+                                                                              const TskID tskID,
+                                                                              Data dataBuffer )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
+    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
+    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_TAKEALL) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_os_Scheduler( void )
+{
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_OS_SCHEDULE) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_cll_FktWithPrivileges(
+                                                                                   const TskStartAddr const fktToCall )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(fktToCall) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_CALL_FKT_PRIV) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_lp_EnterLPMode(
+                                                                            void )
+{
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_LP_ENTER) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+
+__attribute__( ( always_inline )) static inline RetCode svc_trc_OutputTrace(
+                                                                             void *msg )
+{
+    __asm volatile( "movs r0, %0 \n"::"l"(msg) :);
+    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TRC_OUPUT) : );
+    RetCode returnVal;
+    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
+    return returnVal;
+}
+# 2 "../Tasks/MtxTest/Tasks.c" 2
+# 1 "../hal/mcu/NXP_KL05/include/PortFunc.h" 1
+# 10 "../hal/mcu/NXP_KL05/include/PortFunc.h"
+#define HEADERS_PORTFUNC_H_ 
+
+
+
+
+
+# 1 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h" 1
+# 103 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h"
+#define MKL05Z4_H_ 
+#define MCU_MKL05Z4 
+
+
+
+
+
+#define MCU_ACTIVE 
+
+
 
 
 
@@ -5886,7 +7199,7 @@ void setPin( const EfiFreePIN pin, const uint8_t val );
 void togglePin( const EfiFreePIN pin );
 # 203 "../hal/mcu/NXP_KL05/include/PortFunc.h"
 uint8_t readPin( const EfiFreePIN pin );
-# 2 "../Tasks/MessageQueueTest/Tasks.c" 2
+# 3 "../Tasks/MtxTest/Tasks.c" 2
 # 1 "../hal/mcu/NXP_KL05/include/TimerFunc.h" 1
 # 9 "../hal/mcu/NXP_KL05/include/TimerFunc.h"
 #define HEADERS_TIMERFUNC_H_ 
@@ -6008,1246 +7321,7 @@ void __disableTPMTimers( void );
 void __enableTPMTimers( void );
 
 uint16_t findShortesTPM( void );
-# 3 "../Tasks/MessageQueueTest/Tasks.c" 2
-
-# 1 "../include/R_RTOS_services.h" 1
-# 10 "../include/R_RTOS_services.h"
-#define HEADERS_R_RTOS_SERVICES_H_ 
-
-# 1 "../include/R_RTOS_inc.h" 1
-# 10 "../include/R_RTOS_inc.h"
-#define HEADERS_R_RTOS_INC_H_ 
-# 33 "../include/R_RTOS_inc.h"
-#undef NULL
-
-
-
-
-
-#define NULL ((void *)0x0u)
-
-
-
-
-
-
-#define ABS(x) (((x)<0) ? (-1*(x)) : (x))
-
-
-
-
-
-#define MIN_STACK_SIZE ((StackSize)0x40u)
-
-
-
-
-#define MY_STACK_SIZE ((StackSize)0x80u)
-
-
-
-
-#define IDLE_TSK_STACK_SIZE ((StackSize)0x60u)
-
-
-
-#define STACK_BLOCK_SIZE ((uint8_t)0x4u)
-# 75 "../include/R_RTOS_inc.h"
-#define AMOUNT_OF_MSGQ (QID)(0x3u)
-
-
-
-
-#define MSGQ_TSK_ID_POS (uint8_t)0x0u
-
-
-
-#define MSGQ_SYS_ID_POS (uint8_t)0x1u
-
-
-
-
-#define SYS_ID_MSK (uint16_t)0xFF00u
-
-
-
-#define TSK_ID_MSK (uint16_t)0x00FFu
-
-
-
-
-
-
-
-#define AMOUNT_OF_SEMS (uint8_t)0x6u
-
-
-
-
-
-
-
-#define AMOUNT_OF_EVTS (uint8_t)0x6u
-
-
-
-
-
-
-#define EVT_QUEUE_SIZE (uint8_t)0x4u
-# 126 "../include/R_RTOS_inc.h"
-#define SYSTCK_AR_RES (uint8_t)0x8u
-
-
-
-#define SYSTCK_AR_RES_MSK (uint8_t)(SYSTCK_AR_RES - (uint8_t)0x1u)
-# 144 "../include/R_RTOS_inc.h"
-#define TSK_ID_IDLE ((TskID)0x0u)
-
-
-
-
-
-
-#define TSK_ID_NO_TSK TSK_ID_IDLE
-
-
-
-
-
-
-
-#define TSK_PRIO_LEVELS_NR (TskPrioLvl)0xFu
-# 168 "../include/R_RTOS_inc.h"
-#define AMOUNT_SYS_FKT (uint8_t)0x8u
-
-
-
-
-
-#define SYSFKT_INVALID_SYSFKT_ID (SysFktID)0xFFu
-# 195 "../include/R_RTOS_inc.h"
-#define OFFSETOF(type,field) ((uint8_t) &(((type *) 0)->field))
-
-
-
-
-
-
-
-#define DATATYPE_IS_PTR(dataType) (uint8_t)( dataType & (uint8_t)0x4u)
-
-
-
-
-#define MAKE_SYS_ID(id) (uint16_t)((uint16_t)((uint8_t)id & (uint8_t)0xFFu) << (uint8_t)0x8u)
-
-
-
-
-#define MAKE_TSK_ID(id) (uint16_t)(uint16_t)((uint8_t)id & (uint8_t)0xFFu)
-
-
-
-#define MQ_IS_TSK_ID(id) (uint8_t)((uint16_t)id & (uint16_t)0xFFu)
-# 230 "../include/R_RTOS_inc.h"
-#define CREATE_EVT_MSK(evtNr) (EVTQSlots)((EVTQSlots)0x1u << evtNr)
-# 241 "../include/R_RTOS_inc.h"
-#define TSK_GETSTATE(pTsk) (TskState)(pTsk->tskState)
-
-
-
-
-#define TSK_STATE_IS_ERROR(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ERROR)
-
-
-
-
-#define TSK_STATE_IS_ACTIVE(pTsk) (TskState)(TSK_GETSTATE(pTsk) & TSK_STATE_ACTIVE)
-
-
-
-
-#define TSK_STATE_IS_ACTIVE_RUNNING(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_RUNNING )
-
-
-
-#define TSK_STATE_IS_ACTIVE_SUSPENDED(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_SUSPENDED )
-
-
-
-#define TSK_STATE_IS_ACTIVE_READY(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_READY )
-
-
-
-
-
-#define TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )
-
-
-
-
-
-#define TSK_STATE_IS_WAITING(pTsk) (TskState)(TSK_GETSTATE(pTsk) & TSK_STATE_WAITING)
-
-
-
-#define TSK_STATE_IS_WAITING_TMR(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_TMR)
-
-
-
-#define TSK_STATE_IS_WAITING_MSGRCV(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_MSGRCV)
-
-
-
-#define TSK_STATE_IS_WAITING_MSGSND(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_MSGSND)
-
-
-
-#define TSK_STATE_IS_WAITING_EVT(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_EVT)
-
-
-
-#define TSK_STATE_IS_WAITING_SEM(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_SEM)
-
-
-
-#define TSK_STATE_IS_WAITING_MNTR(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_WAITING_MNTR)
-
-
-
-
-
-
-#define TSK_STATE_IS_UNINIT(pTsk) (TskState)(TSK_GETSTATE(pTsk) & TSK_STATE_UNINIT)
-
-
-
-#define TSK_STATE_IS_UNINIT_UNINIT(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_UNINIT_UNINIT)
-
-
-
-#define TSK_STATE_IS_UNINIT_FAILED(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_UNINIT_FAILED)
-
-
-
-#define TSK_STATE_IS_UNINIT_ENDED(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_UNINIT_ENDED)
-# 351 "../include/R_RTOS_inc.h"
-typedef void (*FktCall)( void );
-
-
-
-
-typedef void (*FktCallOneArg)( void * );
-
-
-
-
-typedef uint8_t SysFktID;
-
-
-
-
-
-typedef uint16_t StackSize;
-
-
-
-
-typedef uint32_t StackTypeT;
-
-
-
-
-
-typedef StackTypeT *StackPtrT;
-
-
-
-
-
-
-typedef uint8_t DataSize;
-
-
-
-typedef uint32_t *Data;
-
-
-
-
-
-typedef uint8_t QPrio;
-
-
-
-
-
-typedef void (*CallBackOnDataRecv)( Data );
-
-
-
-
-typedef uint8_t QID;
-
-
-
-
-typedef uint8_t MsgCntr;
-# 422 "../include/R_RTOS_inc.h"
-typedef union partID
-{
-    uint16_t fullID;
-    uint8_t snglID[2];
-} PartID;
-
-
-
-
-
-
-
-typedef uint8_t SemNr;
-
-
-
-
-typedef uint8_t SemCntr;
-
-
-
-
-
-
-
-typedef uint8_t EvtNr;
-
-
-
-
-typedef uint32_t EvtMsk;
-
-
-
-typedef uint32_t EVTQSlots;
-
-
-
-
-
-
-
-typedef uint16_t WaitTime;
-
-
-
-
-typedef uint32_t SysTime;
-
-
-
-
-typedef uint8_t SysTicks;
-
-
-
-
-typedef uint16_t TmrTime;
-
-
-
-
-typedef uint32_t LifeTime;
-
-
-
-
-
-
-typedef uint8_t TskID;
-
-
-
-
-
-typedef uint8_t TskPrioLvl;
-
-
-
-
-typedef uint8_t tskStateT;
-
-
-
-
-typedef FktCall TskStartAddr;
-
-
-
-
-typedef FktCall TskEndAddr;
-# 525 "../include/R_RTOS_inc.h"
-typedef uint8_t SyncEleID;
-# 588 "../include/R_RTOS_inc.h"
-typedef enum mntrAccssType
-{
-    MNTR_ACCESS_NONE = (uint8_t) 0x0u,
-    MNTR_ACCESS_READ = (uint8_t) 0x1u,
-    MNTR_ACCESS_WRITE = (uint8_t) 0x2u,
-    MNTR_ACCESS_DELETE = (uint8_t) 0x4u,
-    MNTR_ACCESS_MODIFY = (uint8_t) 0x8u
-} ACCSSType;
-
-
-
-
-
-
-typedef enum dataTypes
-{
-    DataT_Undef = (uint8_t) 0x0u,
-    DataT_Int = (uint8_t) 0x1u,
-    DataT_Ptr = (uint8_t) 0x4u,
-    DataT_Int_Ptr,
-    DataT_String,
-    DataT_FunCall = (uint8_t) 0x8u
-} DataType;
-# 626 "../include/R_RTOS_inc.h"
-typedef enum timerTypeEn
-{
-    SysTimerType = (uint8_t) 0x0u,
-    TskTimerType = (uint8_t) 0x1u,
-    SysTickTimerType = (uint8_t) 0x2u
-} TimerType;
-# 642 "../include/R_RTOS_inc.h"
-typedef enum tskPrio
-{
-    TSK_PRIO_ERROR = (TskPrioLvl) 0x0u,
-    TSK_PRIO_LOWEST = (TskPrioLvl) 0x1u,
-    TSK_PRIO_LOWER,
-    TSK_PRIO_LOW,
-    TSK_PRIO_MED,
-    TSK_PRIO_ABOVMED,
-    TSK_PRIO_HIG,
-    TSK_PRIO_HIGHER,
-    TSK_PRIO_HIGHEST,
-    TSK_PRIO_ULT,
-    TSK_PRIO_IDLE = (TskPrioLvl) 0xFu
-} TskPrio;
-
-
-
-
-
-
-
-typedef enum evtType
-{
-    EvtTMR = (uint8_t) 0x21u,
-    EvtMSGRCV = (uint8_t) 0x22u,
-    EvtMSGSND = (uint8_t) 0x24u,
-    EvtEVT = (uint8_t) 0x41u,
-    EvtSEM = (uint8_t) 0x42u,
-    EvtMNTR = (uint8_t) 0x48u
-} EvtType;
-# 704 "../include/R_RTOS_inc.h"
-typedef enum tskState
-{
-    TSK_STATE_ERROR = (tskStateT) 0x00u,
-    TSK_STATE_ACTIVE = ( (tskStateT) 0x10u ),
-    TSK_STATE_ACTIVE_RUNNING = ( (tskStateT) 0x11u ),
-    TSK_STATE_ACTIVE_SUSPENDED = ( (tskStateT) 0x12u ),
-    TSK_STATE_ACTIVE_READY = ( (tskStateT) 0x14u ),
-    TSK_STATE_ACTIVE_CRITSEC = ( (tskStateT) 0x18u ),
-    TSK_STATE_WAITING_MSGNG = (tskStateT) 0x20u,
-    TSK_STATE_WAITING_MSGRCV = (tskStateT) 0x21u,
-    TSK_STATE_WAITING_MSGSND = (tskStateT) 0x22u,
-    TSK_STATE_WAITING_SYNC = (tskStateT) 0x40u,
-    TSK_STATE_WAITING_TMR = (tskStateT) 0x41u,
-    TSK_STATE_WAITING_EVT = (tskStateT) 0x42u,
-    TSK_STATE_WAITING_SEM = (tskStateT) 0x43u,
-    TSK_STATE_WAITING_MNTR = (tskStateT) 0x44u,
-    TSK_STATE_WAITING = (tskStateT) 0x60u,
-    TSK_STATE_UNINIT = (tskStateT) 0x80u,
-    TSK_STATE_UNINIT_UNINIT = (tskStateT) 0x81u,
-    TSK_STATE_UNINIT_FAILED = (tskStateT) 0x82u,
-    TSK_STATE_UNINIT_ENDED = (tskStateT) 0x88u,
-} TskState;
-
-
-
-
-
-
-
-typedef enum tskSettings
-{
-    TskSet_NONE = (uint8_t) 0x00u,
-    TskSet_Periodic = (uint8_t) 0x01u,
-    TskSet_OneShot = (uint8_t) 0x02u,
-    TskSet_DUMMY_0 = (uint8_t) 0x04u,
-    TskSet_DUMMY_1 = (uint8_t) 0x08u,
-    TskSet_DUMMY_2 = (uint8_t) 0x10u,
-    TskSet_DUMMY_3 = (uint8_t) 0x20u,
-    TskSet_DUMMY_4 = (uint8_t) 0x40u,
-    TskSet_DUMMY_5 = (uint8_t) 0x80u
-} TskSettings;
-# 757 "../include/R_RTOS_inc.h"
-typedef enum syncEleType
-{
-    SyncEle_TYPE_NOID = (uint8_t) 0x0u,
-    SyncEle_TYPE_TMR = (uint8_t) 0x1u,
-    SyncEle_TYPE_EVT = (uint8_t) 0x2u,
-    SyncEle_TYPE_SEM = (uint8_t) 0x3u,
-    SyncEle_TYPE_MNTR = (uint8_t) 0x4u
-} SyncEleType;
-# 789 "../include/R_RTOS_inc.h"
-typedef enum sysTckObjTypeEnum
-{
-    SysTckObj_Err = (uint8_t) 0x0u,
-    SysTckObj_Tsk = (uint8_t) 0x10u,
-    SysTckObj_TskBlck = (uint8_t) 0x11u,
-    SysTckObj_TskWait = (uint8_t) 0x12u,
-    SysTckObj_SysFkt = (uint8_t) 0x20u,
-    SysTckObj_SysFktBlck = (uint8_t) 0x21u,
-    SysTckObj_SysFktWait = (uint8_t) 0x22u,
-} SysTckEleType;
-# 808 "../include/R_RTOS_inc.h"
-typedef union sysTickEleIDUnion
-{
-    TskID tskID;
-    SysFktID sysFktID;
-} SysTickEleID;
-# 823 "../include/R_RTOS_inc.h"
-typedef struct sysTickTMRStruc
-{
-    struct sysTickTMRStruc * nxtSysTickTMR;
-    struct sysTickTMRStruc * prvSysTickTMR;
-    SysTckEleType sysTckObjType;
-    SysTickEleID sysTckObjID;
-    SysTicks remSysTicks;
-    SysTicks insrtnSysTicksTime;
-} SysTickTMR, *PSysTickTMR;
-
-
-
-
-
-
-typedef const uint32_t * CData;
-
-
-
-typedef CData *PCData;
-# 862 "../include/R_RTOS_inc.h"
-typedef struct mqData
-{
-    CData data;
-    PartID pubID;
-    DataType dataType;
-    DataSize dataSize;
-} MQData, *PMQData;
-# 880 "../include/R_RTOS_inc.h"
-typedef struct msgQMsgProvStruc
-{
-    QID msgQID;
-    volatile MsgCntr msgsNew;
-} MsgQMsgProv, *PMsgQMsgProv;
-
-
-
-
-
-typedef uint8_t MsgID;
-# 905 "../include/R_RTOS_inc.h"
-typedef struct tskMsgProvStruc
-{
-    volatile TskID tskProvID;
-    volatile MsgID msgID;
-} TskMsgProv, *PTskMsgProv;
-# 925 "../include/R_RTOS_inc.h"
-typedef struct sysMsgProvStruc
-{
-    volatile SysFktID sysProvID;
-    volatile MsgID msgID;
-} SysMsgProv, *PSysMsgProv;
-
-typedef struct dummyMsgProvStruc
-{
-    uint8_t dummyID;
-    uint8_t dummyDummy;
-} DummyMsgProv, *PDummyMsgProv;
-# 945 "../include/R_RTOS_inc.h"
-typedef enum msgProvTypeEnum
-{
-    MsgQ_Prov = (uint8_t) 0x0u,
-    Tsk_Prov = (uint8_t) 0x1u,
-    Sys_Prov = (uint8_t) 0x2u,
-    Dummy_Prov = (uint8_t) 0xFFu
-} MsgProvType;
-# 962 "../include/R_RTOS_inc.h"
-typedef union msgPrvdrsUnion
-{
-    MsgQMsgProv msgQMsgProv;
-    TskMsgProv tskMsgProv;
-    SysMsgProv sysMsgProv;
-    DummyMsgProv dummyMsgProv;
-} MsgPrvdrs, *PMsgPrvdrs;
-# 983 "../include/R_RTOS_inc.h"
-typedef struct tskMailBox
-{
-    volatile struct tskMailBox *nxtTskMB;
-
-
-    uint8_t dummyByte;
-    MsgProvType msgProvType;
-    MsgPrvdrs msgProv;
-} TskMB, *PTskMB;
-# 1005 "../include/R_RTOS_inc.h"
-typedef struct tmrFktCallStruc
-{
-    FktCall sysFktCall;
-    LifeTime expirationTime;
-    TmrTime reloadTime;
-    SysFktID nxtFktCall;
-    SysFktID fktID;
-} TmrFktCall, *PTmrFktCall;
-# 1022 "../include/R_RTOS_inc.h"
-typedef struct sysTckFktCallstruc
-{
-    FktCall sysFktCall;
-    volatile PSysTickTMR sysTckTmr;
-    SysTicks reloadTime;
-    uint8_t dummy8;
-    uint16_t dummy16;
-} SysTckFktCall, *PSysTckFktCall;
-# 1039 "../include/R_RTOS_inc.h"
-typedef struct msgFktCallStruc
-{
-    FktCallOneArg sysFktCall;
-    MsgPrvdrs msgProv;
-    MsgProvType msgProvType;
-} MsgFktCall, *PMsgFktCall;
-# 1055 "../include/R_RTOS_inc.h"
-typedef struct dummyFktCallStruc
-{
-    void * sysFktCall;
-    uint32_t dummy32;
-    uint16_t dummy16;
-    uint8_t dummy8_1;
-    uint8_t dummy8_2;
-} DummyFktCall, *PDummyFktCall;
-# 1076 "../include/R_RTOS_inc.h"
-typedef struct sysFkt
-{
-
-    union
-    {
-        TmrFktCall tmrFktCall;
-        SysTckFktCall sysTckFktCall;
-        MsgFktCall msgFktCall;
-        DummyFktCall dummyfktCall;
-    } fktCallType;
-} SysFkt, *PSysFkt;
-# 1102 "../include/R_RTOS_inc.h"
-typedef struct semStruc
-{
-    TskID semQTskID;
-    TskID semOccTskID;
-    TskPrio svdPrio;
-    SemCntr takenCntr;
-} Sem, *PSem;
-# 1124 "../include/R_RTOS_inc.h"
-typedef struct evtStruc
-{
-    EVTQSlots evtQ_Slots;
-    TskID evtObjs[(uint8_t)0x4u ];
-} Evt, *PEvt;
-# 1142 "../include/R_RTOS_inc.h"
-typedef struct sysTimerStruc
-{
-    SysFktID sysFktIDQStrt;
-} SysTimer, *PSysTimer;
-# 1155 "../include/R_RTOS_inc.h"
-typedef struct tskTimerStruc
-{
-    TskID tskIDQStrt;
-} TskTimer, *PTskTimer;
-# 1169 "../include/R_RTOS_inc.h"
-typedef struct timerStruc
-{
-    LifeTime expirationTime;
-    TimerType timerType;
-    union
-    {
-        SysTimer sysTimer;
-        TskTimer tskTimer;
-    } specTimer;
-} Timer, *PTimer;
-# 1212 "../include/R_RTOS_inc.h"
-typedef struct syncEleStruc
-{
-    SyncEleType syncEleType;
-    SyncEleID syncEleID;
-
-
-    union multipurposeByte
-    {
-        ACCSSType mntrAccssType;
-        uint8_t someDummy;
-    } MultiPurposeByte;
-
-    union syncEleHandle
-    {
-
-        struct evtSyncEle
-        {
-            EvtMsk evtMsk;
-        } EvtSyncEle;
-
-        struct tmrSyncEle
-        {
-            LifeTime expireTime;
-        } TmrSyncEle;
-
-        struct semSyncEle
-        {
-            uint8_t dummy1;
-            uint8_t dummy2;
-            uint8_t dummy3;
-            uint8_t dummy4;
-        } SemSyncEle;
-
-        struct mntrSyncEle
-        {
-
-        } MntrSyncEle;
-    } SyncEleHandle;
-} SyncEle, *PSyncEle;
-# 1267 "../include/R_RTOS_inc.h"
-typedef struct tskTCB
-{
-    volatile StackPtrT pStckPtr;
-    StackPtrT pStckTop;
-
-    TskStartAddr pTskStrt;
-    TskEndAddr pTskEnd;
-
-    volatile PTskMB tskMailBox;
-
-    volatile PSysTickTMR sysTckTmr;
-    volatile PSyncEle tskSync;
-
-    StackSize stckSze;
-
-    volatile TskSettings tskSets;
-
-    volatile TskPrio tskPrio;
-    volatile TskState tskState;
-
-    TskID tskID;
-    volatile TskID nxtTsk;
-    volatile TskID prvTsk;
-} TskTCB, *PTskTCB;
-# 1339 "../include/R_RTOS_inc.h"
-#define TIME_SLICE_AMOUNT (uint16_t)500u
-
-
-
-
-#define NR_OF_TSKS ((uint8_t)0xBu)
-
-
-
-
-
-
-#define MAX_TASKS NR_OF_TSKS
-
-
-#define NR_OF_MEMPOOLS (uint8_t)0x5u
-# 1363 "../include/R_RTOS_inc.h"
-typedef uint8_t OsCode;
-
-
-
-
-#define OS_FULL_DISPATCH ((OsCode)0x2u)
-
-
-
-
-#define OS_DISPATCH_NEEDED ((OsCode)0x1u)
-
-
-
-
-typedef uint8_t RetCode;
-
-
-
-#define RET_NOK ((RetCode)0x0u)
-
-
-
-#define RET_OK ((RetCode)0x1u)
-
-
-
-#define RET_MEM_ALLOC_FAIL_TCB ((RetCode)0x1Au)
-
-
-
-#define RET_MEM_ALLOC_FAIL_STACK ((RetCode)0x1Cu)
-
-
-
-#define RET_TSK_TOO_MANY ((RetCode)0x2Fu)
-
-
-
-#define RET_TSK_NO_IDLE_TSK ((RetCode)0x20u)
-
-
-
-#define RET_TSK_CONFLICTING_IDLE_TSK ((RetCode)0x21u)
-
-
-
-#define RET_TSK_STILL_RUNNING ((RetCode)0x24u)
-
-
-
-#define RET_TSK_IS_ABOUT_TO_RUN ((RetCode)0x25u)
-
-
-
-#define RET_STCK_ERR_FULL ((RetCode)0x3Fu)
-
-
-
-#define RET_STCK_ERR_EMPTY ((RetCode)0x30u)
-
-
-
-#define RET_STCK_ERR_INDEX_OVERFLOW ((RetCode)0x31u)
-
-
-
-#define RET_STCK_ERR_INDEX_UNDERFLOW ((RetCode)0x32u)
-
-
-
-#define RET_STCK_NO_STCKELEM_PTR ((RetCode)0x33u)
-
-
-
-#define RET_STCK_NO_STCKPTR ((RetCode)0x34u)
-
-
-
-
-
-typedef uint16_t MemSize;
-# 1457 "../include/R_RTOS_inc.h"
-typedef struct gStruc_OS_FLAGS
-{
-    volatile uint8_t g_DispatchFlag :2;
-    volatile uint8_t g_needsScheduling :1;
-    volatile uint8_t g_tskCriticalExecution :1;
-    volatile uint8_t gLPExit :1;
-    volatile uint8_t gWokenUp :1;
-} BitsOSFlags;
-# 1476 "../include/R_RTOS_inc.h"
-typedef enum svcCode
-{
-    SVC_OS_START = (uint8_t) 0x0u,
-    SVC_TSK_INIT,
-    SVC_TSK_SETPRIO,
-    SVC_TSK_ACTV,
-    SVC_TSK_KILL,
-    SVC_TSK_SET_CRIT,
-    SVC_TSK_RESET_CRIT,
-    SVC_SEM_TAKE,
-    SVC_SEM_GIVE,
-    SVC_EVT_SEND,
-    SVC_EVT_RECV,
-    SVC_TMR_SET,
-    SVC_SYSTCK_SET,
-    SVC_MSGQ_CRT_Q,
-    SVC_MSGQ_DEL_Q,
-    SVC_MSGQ_REG_PUB,
-    SVC_MSGQ_REG_TSK_SUB,
-    SVC_MSGQ_REG_SYS_SUB,
-    SVC_MSGQ_MSG_PUB,
-    SVC_MSGQ_MSG_READ,
-    SVC_MSGQ_MSG_READALLNEW,
-    SVC_MSGQ_MSG_READALL,
-    SVC_MSGQ_MSG_TAKE,
-    SVC_MSGQ_MSG_TAKEALLNEW,
-    SVC_MSGQ_MSG_TAKEALL,
-    SVC_OS_SCHEDULE,
-    SVC_CALL_FKT_PRIV,
-    SVC_LP_ENTER,
-    SVC_TRC_OUPUT,
-    SVC_OS_ERROR = (uint8_t) 0xFFu,
-} SVCCode;
-# 13 "../include/R_RTOS_services.h" 2
-# 28 "../include/R_RTOS_services.h"
-#define INPUT_ARG_1(input) __asm volatile( "movs r0, %0 \n"::"l"(input) :)
-# 40 "../include/R_RTOS_services.h"
-#define INPUT_ARG_2(input) __asm volatile( "movs r1, %0 \n"::"l"(input) :)
-# 52 "../include/R_RTOS_services.h"
-#define INPUT_ARG_3(input) __asm volatile( "movs r2, %0 \n"::"l"(input) :)
-# 64 "../include/R_RTOS_services.h"
-#define INPUT_ARG_4(input) __asm volatile( "movs r3, %0 \n"::"l"(input) :)
-# 75 "../include/R_RTOS_services.h"
-#define OUTPUT_ARG(output) __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(output): :"memory")
-# 85 "../include/R_RTOS_services.h"
-#define SVC(svcCode) __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(svcCode) : )
-
-__attribute__( ( always_inline ) ) static inline void svc_os_StartOS( void )
-{
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_OS_START) : );
-    while ( 1 )
-    {
-        ;
-    }
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_tsk_InitTsk(
-                                                                         const TskID tskID,
-                                                                         const TskStartAddr const tskAddr,
-                                                                         const TskStartAddr const tskEndAddr,
-                                                                         const StackSize stckSze )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskAddr) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(tskEndAddr) :);
-    __asm volatile( "movs r3, %0 \n"::"l"(stckSze) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_INIT) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_tsk_SetTskPrio(
-                                                                            const TskID tskID,
-                                                                            const TskPrio tskPrio )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskPrio) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_SETPRIO) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_tsk_ActvTsk(
-                                                                         const TskID tskID )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(tskID) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_ACTV) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_tsk_KillTsk(
-                                                                         TskTCB* const tsk )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_KILL) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_tsk_setTskCriticalState(
-                                                                                     void )
-{
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_SET_CRIT) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_tsk_resetTskCriticalState(
-                                                                                       void )
-{
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TSK_RESET_CRIT) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_sem_TakeSem(
-                                                                         const SemNr semNr,
-                                                                         TskTCB* const tsk,
-                                                                         const SysTicks maxTimeToWait )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(semNr) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(maxTimeToWait) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_SEM_TAKE) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_sem_GiveSem(
-                                                                         const SemNr semNr,
-                                                                         TskTCB* const tsk )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(semNr) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_SEM_GIVE) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_evt_SendEvt(
-                                                                         const EvtNr evt )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(evt) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_EVT_SEND) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_evt_RecvEvt(
-                                                                         PTskTCB const tsk,
-                                                                         EVTQSlots evtMask,
-                                                                         const SysTicks maxTimeToWait )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(evtMask) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(maxTimeToWait) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_EVT_RECV) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_tmr_SetTimer(
-                                                                          const WaitTime msToWait,
-                                                                          TskTCB* const tsk )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msToWait) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tsk) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TMR_SET) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_sysTck_SetTimer(
-                                                                             const SysTicks ticksToWait,
-                                                                             TskID const tskID )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(ticksToWait) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_SYSTCK_SET) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_CrtQ(
-                                                                       const QID msgQID )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_CRT_Q) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_DelQ(
-                                                                       const QID msgQID )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_DEL_Q) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_RegPub(
-                                                                         PTskTCB const tsk,
-                                                                         const QID msgQID )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_REG_PUB) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_RegTskSub(
-                                                                            PTskTCB const tsk,
-                                                                            const QID msgQID )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(tsk) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_REG_TSK_SUB) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_RegSysSub(
-                                                                            const SysFktID sysID,
-                                                                            const QID msgQID )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(sysID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_REG_SYS_SUB) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_PubMsg(
-                                                                         const QID msgQID,
-                                                                         const DataSize dataSize,
-                                                                         const DataType dataType,
-                                                                         CData const data )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(dataSize) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(dataType) :);
-    __asm volatile( "movs r3, %0 \n"::"l"(data) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_PUB) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgRead(
-                                                                          const QID msgQID,
-                                                                          const TskID tskID,
-                                                                          const PMQData * dataBuffer )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_READ) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgRead_AllNew(
-                                                                                 const QID msgQID,
-                                                                                 const TskID tskID,
-                                                                                 Data dataBuffer )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_READALLNEW) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgRead_All(
-                                                                              const QID msgQID,
-                                                                              const TskID tskID,
-                                                                              Data dataBuffer )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_READALL) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgTake(
-                                                                          const QID msgQID,
-                                                                          const TskID tskID,
-                                                                          Data dataBuffer )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_TAKE) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgTake_AllNew(
-                                                                                 const QID msgQID,
-                                                                                 const TskID tskID,
-                                                                                 Data dataBuffer )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_TAKEALLNEW) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_msgq_MsgTake_All(
-                                                                              const QID msgQID,
-                                                                              const TskID tskID,
-                                                                              Data dataBuffer )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msgQID) :);
-    __asm volatile( "movs r1, %0 \n"::"l"(tskID) :);
-    __asm volatile( "movs r2, %0 \n"::"l"(dataBuffer) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_MSGQ_MSG_TAKEALL) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_os_Scheduler( void )
-{
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_OS_SCHEDULE) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_cll_FktWithPrivileges(
-                                                                                   const TskStartAddr const fktToCall )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(fktToCall) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_CALL_FKT_PRIV) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_lp_EnterLPMode(
-                                                                            void )
-{
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_LP_ENTER) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-
-__attribute__( ( always_inline )) static inline RetCode svc_trc_OutputTrace(
-                                                                             void *msg )
-{
-    __asm volatile( "movs r0, %0 \n"::"l"(msg) :);
-    __asm volatile( "svc %[svc_code] \n" : : [svc_code]"I"(SVC_TRC_OUPUT) : );
-    RetCode returnVal;
-    __asm volatile( "mrs     r1,     msp \n ldr r0, [r1] \n movs %0, r0 \n":"=l"(returnVal): :"memory");
-    return returnVal;
-}
-# 5 "../Tasks/MessageQueueTest/Tasks.c" 2
+# 4 "../Tasks/MtxTest/Tasks.c" 2
 
 # 1 "../include/R_RTOS_task.h" 1
 # 10 "../include/R_RTOS_task.h"
@@ -7275,7 +7349,7 @@ RetCode tsk_SetInactive( PTskTCB const tsk, TskState tskInactvState );
 RetCode tsk_ActvTsk( PTskTCB const tsk );
 
 RetCode tsk_ChngePrio( PTskTCB const tsk, const TskPrio newTskPrio );
-# 7 "../Tasks/MessageQueueTest/Tasks.c" 2
+# 6 "../Tasks/MtxTest/Tasks.c" 2
 # 1 "../include/R_RTOS_timer.h" 1
 # 10 "../include/R_RTOS_timer.h"
 #define HEADERS_R_RTOS_TIMER_H_ 
@@ -7299,687 +7373,55 @@ void tmr_SysTimerElapsed( void );
 void tmr_TskTimerElapsed( void );
 # 80 "../include/R_RTOS_timer.h"
 RetCode tmr_GiveUpOnTMR( PTskTCB const tsk );
-# 8 "../Tasks/MessageQueueTest/Tasks.c" 2
-# 1 "../include/R_RTOS_msgQueuing.h" 1
-# 10 "../include/R_RTOS_msgQueuing.h"
-#define HEADERS_R_RTOS_MSGQUEUING_H_ 
-
-
-# 1 "../include/R_RTOS_monitor.h" 1
-# 10 "../include/R_RTOS_monitor.h"
-#define HEADERS_R_RTOS_MONITOR_H_ 
-
-
-# 1 "../include/R_RTOS_memMngr.h" 1
-# 14 "../include/R_RTOS_memMngr.h"
-#define HEADERS_R_RTOS_MEMMNGR_H_ 
-
-
-
-
-
-#define malloc rMalloc
-
-
-
-#define calloc rCalloc
-
-
-
-#define realloc rRealloc
-
-
-
-#define free rFree
-
-
-
-
-
-typedef uint16_t BlckSize;
-
-
-
-
-#define BLCK_LIMIT ((BlckSize)0x800u)
-
-
-
-
-
-
-#define BIGGEST_BLCK ((BlckSize)0x100u)
-
-
-
-
-
-
-#define BIGGEST_BLCK_MSK ((BlckSize)(BIGGEST_BLCK - (BlckSize)1u))
-# 66 "../include/R_RTOS_memMngr.h"
-#define SMALLEST_BLCK ((BlckSize)0x8u)
-
-
-
-
-
-
-#define SMALLER_BLCK_MSK ((BlckSize)(SMALLEST_BLCK - (BlckSize)1u))
-
-
-
-
-
-
-#define SMALLER_BLCK_DIVISOR (MemIndex)(0x3u)
-# 89 "../include/R_RTOS_memMngr.h"
-#define CACHE_SIZE ((uint8_t)0x10u)
-
-
-
-
-typedef uint8_t MemPoolID;
-
-
-
-
-typedef uint16_t MemFlags;
-
-
-
-
-
-
-typedef void *stdPtr;
-
-
-
-
-typedef uint16_t MemIndex;
-# 168 "../include/R_RTOS_memMngr.h"
-typedef struct memMngrHead
-{
-# 191 "../include/R_RTOS_memMngr.h"
-    MemFlags flagsForMemBlock;
-# 213 "../include/R_RTOS_memMngr.h"
-    MemFlags additionalFlags;
-    MemIndex nxtMemBlck;
-    MemIndex prvMemBlck;
-
-
-} MemMngrHead;
-# 232 "../include/R_RTOS_memMngr.h"
-typedef struct memBlckhead
-{
-# 255 "../include/R_RTOS_memMngr.h"
-    MemFlags flagsForMemBlock;
-# 277 "../include/R_RTOS_memMngr.h"
-    MemFlags additionalFlags;
-} MemBlckHead;
-
-#define MEM_MNGR_GET_MEMMNGRHEAD(pointer) ((MemMngrHead *)( (uint32_t) pointer - (uint32_t) sizeof(MemBlckHead)))
-#define MEM_MNGR_GET_PTRTOMEM(memMngrPtr) ((void *) ((uint32_t) memMngrPtr + (uint32_t) sizeof(MemBlckHead)))
-
-
-#define MEM_FLG_PARSE(memFlgs,shft) ((MemFlags)((MemFlags)(memFlgs >> (MemFlags)shft) & (MemFlags)0x1u))
-#define MEM_FLG_GET_BIT_MSK(bit) ((MemFlags)((MemFlags)0x1u << (MemFlags)bit))
-#define MEM_FLG_GET_STRUC_PFIELD(struc,field) ((struc)->field)
-#define MEM_FLG_SET_BIT(pMemMngrHead,bit,whichFlags) MEM_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) |= MEM_FLG_GET_BIT_MSK(bit)
-#define MEM_FLG_CLR_BIT(pMemMngrHead,bit,whichFlags) MEM_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) &= ((MemFlags)(~MEM_FLG_GET_BIT_MSK(bit)))
-#define MEM_FLG_SET_BIT_MSK(pMemMngrHead,msk,whichFlags) MEM_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) |= (MemFlags)msk
-#define MEM_FLG_CLR_BIT_MSK(pMemMngrHead,msk,whichFlags) MEM_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) &= ((MemFlags)(~((MemFlags)msk)))
-# 316 "../include/R_RTOS_memMngr.h"
-#define MEM_FLGS_TAKEN_SHFT ((MemFlags)0x0u)
-#define MEM_FLGS_TAKEN_MSK ((MemFlags)0x1u)
-#define MEM_FLGS_ISLOWER_SHFT ((MemFlags)0x1u)
-#define MEM_FLGS_ISLOWER_MSK ((MemFlags)0x2u)
-#define MEM_FLGS_SPLT_4_SHFT ((MemFlags)0x2u)
-#define MEM_FLGS_SPLT_4_MSK ((MemFlags)0x4u)
-#define MEM_FLGS_SPLT_8_SHFT ((MemFlags)0x3u)
-#define MEM_FLGS_SPLT_8_MSK ((MemFlags)0x8u)
-#define MEM_FLGS_SPLT_16_SHFT ((MemFlags)0x4u)
-#define MEM_FLGS_SPLT_16_MSK ((MemFlags)0x10u)
-#define MEM_FLGS_SPLT_32_SHFT ((MemFlags)0x5u)
-#define MEM_FLGS_SPLT_32_MSK ((MemFlags)0x20u)
-#define MEM_FLGS_SPLT_64_SHFT ((MemFlags)0x6u)
-#define MEM_FLGS_SPLT_64_MSK ((MemFlags)0x40u)
-#define MEM_FLGS_SPLT_128_SHFT ((MemFlags)0x7u)
-#define MEM_FLGS_SPLT_128_MSK ((MemFlags)0x80u)
-#define MEM_FLGS_BGGSTBLCK_SHFT ((MemFlags)0x8u)
-#define MEM_FLGS_BGGSTBLCK_MSK ((MemFlags)0x100u)
-#define MEM_FLGS_MERGE512_SHFT ((MemFlags)0x9u)
-#define MEM_FLGS_MERGE512_MSK ((MemFlags)0x200u)
-#define MEM_FLGS_MERGE1024_SHFT ((MemFlags)0xAu)
-#define MEM_FLGS_MERGE1024_MSK ((MemFlags)0x400u)
-#define MEM_FLGS_MERGE2048_SHFT ((MemFlags)0xBu)
-#define MEM_FLGS_MERGE2048_MSK ((MemFlags)0x800u)
-#define MEM_FLGS_SPLT_SHFT ((MemFlags)0xCu)
-#define MEM_FLGS_SPLT_MSK ((MemFlags)0x1000u)
-#define MEM_FLGS_MERGED_SHFT ((MemFlags)0xDu)
-#define MEM_FLGS_MERGED_MSK ((MemFlags)0x2000u)
-#define MEM_FLGS_PREVTAKEN_SHFT ((MemFlags)0xEu)
-#define MEM_FLGS_PREVTAKEN_MSK ((MemFlags)0x4000u)
-#define MEM_FLGS_NXTTAKEN_SHFT ((MemFlags)0xFu)
-#define MEM_FLGS_NXTTAKEN_MSK ((MemFlags)0x8000u)
-
-#define MEM_FLGS_SIZE_MSK ((MemFlags)0xFFCu)
-
-#define MEM_FLG_ISTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_TAKEN_SHFT)
-#define MEM_FLG_SET_TAKEN(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_TAKEN_MSK, flagsForMemBlock)
-#define MEM_FLG_CLR_TAKEN(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_TAKEN_MSK, flagsForMemBlock)
-#define MEM_FLG_PREVTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_PREVTAKEN_SHFT)
-#define MEM_FLG_SET_PREVTAKEN(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_PREVTAKEN_MSK, flagsForMemBlock)
-#define MEM_FLG_CLR_PREVTAKEN(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_PREVTAKEN_MSK, flagsForMemBlock)
-#define MEM_FLG_NXTTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_NXTTAKEN_SHFT)
-#define MEM_FLG_SET_NXTTAKEN(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_NXTTAKEN_MSK, flagsForMemBlock)
-#define MEM_FLG_CLR_NXTTAKEN(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_NXTTAKEN_MSK, flagsForMemBlock)
-#define MEM_FLG_ISSPLIT(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_SPLT_SHFT)
-#define MEM_FLG_SET_SPLIT(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_SPLT_MSK, flagsForMemBlock)
-#define MEM_FLG_CLR_SPLIT(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_SPLT_MSK, flagsForMemBlock)
-#define MEM_FLG_ISLOWER(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_ISLOWER_SHFT)
-#define MEM_FLG_SET_ISLOWER(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_ISLOWER_MSK, flagsForMemBlock)
-#define MEM_FLG_CLR_ISLOWER(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_ISLOWER_MSK, flagsForMemBlock)
-#define MEM_FLG_ISMERGED(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_MERGED_SHFT)
-#define MEM_FLG_SET_MERGED(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_MERGED_MSK, flagsForMemBlock)
-#define MEM_FLG_CLR_MERGED(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_MERGED_MSK, flagsForMemBlock)
-#define MEM_FL_WASLOWER(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_WASLOWER_SHFT)
-
-#define MEM_FLG_GET_MEMSIZE(memFlgs) (MemSize)(memFlgs & MEM_FLGS_SIZE_MSK)
-#define MEM_FLG_SET_MEMSIZE(pMemMngrHead,newSize) do { if(((BlckSize)(newSize)) < BIGGEST_BLCK ) { MEM_FLG_SET_SPLIT(pMemMngrHead); } else { MEM_FLG_CLR_SPLIT(pMemMngrHead); } (pMemMngrHead)->flagsForMemBlock = (MemFlags)((pMemMngrHead)->flagsForMemBlock & (MemFlags)(~MEM_FLGS_SIZE_MSK)); (pMemMngrHead)->flagsForMemBlock = (MemFlags)((pMemMngrHead)->flagsForMemBlock | (MemFlags)((MemFlags)(newSize) & MEM_FLGS_SIZE_MSK)); }while((uint8_t)0x0u)
-# 385 "../include/R_RTOS_memMngr.h"
-#define MEM_FLG_ISCOMBO(memFlgs) (MemSize)((MEM_FLG_GET_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_MEMSIZE(memFlgs)-(MemSize)1u)) ? 1u : 0u)
-#define MEM_FLG_BIGGER_COMBO(memFlgs) (MemSize)(MEM_FLG_GET_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_MEMSIZE(memFlgs)-(MemSize)1u))
-#define MEM_FLG_SMALLER_COMBO(memFlgs) (MemSize)(MEM_FLG_GET_MEMSIZE(memFlgs) & (MemSize)(-MEM_FLG_GET_MEMSIZE(memFlgs)))
-# 413 "../include/R_RTOS_memMngr.h"
-#define MEM_FLGS_ISBLCKBEG_SHFT ((MemFlags)0x0u)
-#define MEM_FLGS_ISBLCKBEG_MSK ((MemFlags)0x1u)
-#define MEM_FLGS_ISBLCKLAST_SHFT ((MemFlags)0x1u)
-#define MEM_FLGS_ISBLCKLAST_MSK ((MemFlags)0x2u)
-#define MEM_FLGS_PRV_SPLT_4_SHFT MEM_FLGS_SPLT_4_SHFT
-#define MEM_FLGS_PRV_SPLT_4_MSK MEM_FLGS_SPLT_4_MSK
-#define MEM_FLGS_PRV_SPLT_8_SHFT MEM_FLGS_SPLT_8_SHFT
-#define MEM_FLGS_PRV_SPLT_8_MSK MEM_FLGS_SPLT_8_MSK
-#define MEM_FLGS_PRV_SPLT_16_SHFT MEM_FLGS_SPLT_16_SHFT
-#define MEM_FLGS_PRV_SPLT_16_MSK MEM_FLGS_SPLT_16_MSK
-#define MEM_FLGS_PRV_SPLT_32_SHFT MEM_FLGS_SPLT_32_SHFT
-#define MEM_FLGS_PRV_SPLT_32_MSK MEM_FLGS_SPLT_32_MSK
-#define MEM_FLGS_PRV_SPLT_64_SHFT MEM_FLGS_SPLT_64_SHFT
-#define MEM_FLGS_PRV_SPLT_64_MSK MEM_FLGS_SPLT_64_MSK
-#define MEM_FLGS_PRV_SPLT_128_SHFT MEM_FLGS_SPLT_128_SHFT
-#define MEM_FLGS_PRV_SPLT_128_MSK MEM_FLGS_SPLT_128_MSK
-#define MEM_FLGS_PRV_BGGSTBLCK_SHFT MEM_FLGS_BGGSTBLCK_SHFT
-#define MEM_FLGS_PRV_BGGSTBLCK_MSK MEM_FLGS_BGGSTBLCK_MSK
-#define MEM_FLGS_PRV_MERGE512_SHFT MEM_FLGS_MERGE512_SHFT
-#define MEM_FLGS_PRV_MERGE512_MSK MEM_FLGS_MERGE512_MSK
-#define MEM_FLGS_PRV_MERGE1024_SHFT MEM_FLGS_MERGE1024_SHFT
-#define MEM_FLGS_PRV_MERGE1024_MSK MEM_FLGS_MERGE1024_MSK
-#define MEM_FLGS_PRV_MERGE2048_SHFT MEM_FLGS_MERGE2048_SHFT
-#define MEM_FLGS_PRV_MERGE2048_MSK MEM_FLGS_MERGE2048_MSK
-#define MEM_FLGS_NXT_SPLT_SHFT ((MemFlags)0xCu)
-#define MEM_FLGS_NXT_SPLT_MSK ((MemFlags)0x1000u)
-#define MEM_FLGS_PREV_SPLT_SHFT ((MemFlags)0xDu)
-#define MEM_FLGS_PREV_SPLT_MSK ((MemFlags)0x2000u)
-#define MEM_FLGS_BGGRMRGD_SHFT ((MemFlags)0xEu)
-#define MEM_FLGS_BGGRMRGD_MSK ((MemFlags)0x4000u)
-#define MEM_FLGS_CACHED_SHFT ((MemFlags)0xFu)
-#define MEM_FLGS_CACHED_MSK ((MemFlags)0x8000u)
-
-#define MEM_FLG_ISBLCKBEG(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_ISBLCKBEG_SHFT)
-#define MEM_FLG_SET_BLCKBEG(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_ISBLCKBEG_MSK, additionalFlags)
-#define MEM_FLG_CLR_BLCKBEG(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_ISBLCKBEG_MSK, additionalFlags)
-#define MEM_FLG_ISBLCKLAST(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_ISBLCKLAST_SHFT)
-#define MEM_FLG_SET_BLCKLAST(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_ISBLCKLAST_MSK, additionalFlags)
-#define MEM_FLG_CLR_BLCKLAST(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_ISBLCKLAST_MSK, additionalFlags)
-#define MEM_FLG_NXT_SPLT(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_NXT_SPLT_SHFT)
-#define MEM_FLG_SET_NXT_SPLT(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_NXT_SPLT_MSK, additionalFlags)
-#define MEM_FLG_CLR_NXT_SPLT(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_NXT_SPLT_MSK, additionalFlags)
-#define MEM_FLG_PREV_SPLT(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_PREV_SPLT_SHFT)
-#define MEM_FLG_SET_PREV_SPLT(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_PREV_SPLT_MSK, additionalFlags)
-#define MEM_FLG_CLR_PREV_SPLT(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_PREV_SPLT_MSK, additionalFlags)
-#define MEM_FLG_GET_PREV_MEMSIZE(memFlgs) (BlckSize)(memFlgs & MEM_FLGS_SIZE_MSK)
-#define MEM_FLG_SET_PREV_MEMSIZE(pMemMngrHead,newSize) do { (pMemMngrHead)->additionalFlags = (MemFlags)((pMemMngrHead)->additionalFlags & (MemFlags)(~MEM_FLGS_SIZE_MSK)); (pMemMngrHead)->additionalFlags = (MemFlags)((pMemMngrHead)->additionalFlags | (MemFlags)((MemFlags)(newSize) & MEM_FLGS_SIZE_MSK)); }while((uint8_t)0x0u)
-
-
-
-
-
-#define MEM_FLG_PREV_ISCOMBO(memFlgs) (MemSize)((MEM_FLG_GET_PREV_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_PREV_MEMSIZE(memFlgs)-(MemSize)1u)) ? 1u : 0u)
-#define MEM_FLG_PREV_BIGGER_COMBO(memFlgs) (MemSize)(MEM_FLG_GET_PREV_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_PREV_MEMSIZE(memFlgs)-(MemSize)1u))
-#define MEM_FLG_PREV_SMALLER_COMBO(memFlgs) (MemSize)(MEM_FLG_GET_PREV_MEMSIZE(memFlgs) & (MemSize)(-MEM_FLG_GET_PREV_MEMSIZE(memFlgs)))
-#define MEM_FLG_BGGRMRGD(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_BGGRMRGD_SHFT)
-#define MEM_FLG_SET_BGGRMRGD(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_BGGRMRGD_MSK, additionalFlags)
-#define MEM_FLG_CLR_BGGRMRGD(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_BGGRMRGD_MSK, additionalFlags)
-#define MEM_FLG_ISCACHED(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_FLGS_CACHED_SHFT)
-#define MEM_FLG_SET_CACHED(pMemMngrHead) MEM_FLG_SET_BIT_MSK(pMemMngrHead, MEM_FLGS_CACHED_MSK, additionalFlags)
-#define MEM_FLG_CLR_CACHED(pMemMngrHead) MEM_FLG_CLR_BIT_MSK(pMemMngrHead, MEM_FLGS_CACHED_MSK, additionalFlags)
-
-#define MEM_FLG_TAKENORCACHED(pMemMngrHead) (MemFlags)(MEM_FLG_ISTAKEN(pMemMngrHead->flagsForMemBlock) | MEM_FLG_ISCACHED(pMemMngrHead->additionalFlags))
-# 486 "../include/R_RTOS_memMngr.h"
-RetCode initMEM( void );
-
-
-
-
-
-
-void * rMalloc( MemSize desiredSize );
-
-
-
-
-
-void * rCalloc( MemSize desiredSize );
-
-
-
-
-
-
-
-void * rRealloc( void * ptrToExistingMem, MemSize desiredSize );
-
-
-
-
-
-void rFree( void *pToBeFreed );
-
-
-
-
-
-
-void rFullyFree( MemMngrHead * blckToFullyFree );
-# 529 "../include/R_RTOS_memMngr.h"
-RetCode memMngr_CreateMemPool(
-                               const MemSize sizeOfElements,
-                               const uint8_t elements,
-                               MemPoolID * const memPoolID );
-
-
-
-
-
-
-
-RetCode memMngr_DeleteMemPool( const MemPoolID memPoolID );
-# 549 "../include/R_RTOS_memMngr.h"
-RetCode memMngr_MemPoolMalloc( void ** ptrToMem, const MemPoolID memPoolID );
-
-
-
-
-
-
-
-RetCode memMngr_MemPoolFree( void * ptrToMem, const MemPoolID memPoolID );
-# 14 "../include/R_RTOS_monitor.h" 2
-
-#define MEM_OBJECTS_MNTR (uint8_t)0x10u
-
-
-
-
-
-typedef uint8_t mntrFlgs;
-
-
-
-
-
-typedef enum mntrAccessState
-{
-
-    MNTR_LOCK_ERROR = (mntrFlgs) 0x00u,
-    MNTR_READ = (mntrFlgs) 0x1u,
-    MNTR_WRITE = (mntrFlgs) 0x2u,
-
-    MNTR_NOOP = (mntrFlgs) 0x8u,
-
-    MNTR_FREE = (mntrFlgs) 0x10u,
-    MNTR_FREE_READ = (mntrFlgs) 0x11u,
-    MNTR_FREE_NOOP = (mntrFlgs) 0x18u,
-
-    MNTR_PENDING = (mntrFlgs) 0x20u,
-    MNTR_PENDING_WRITE = (mntrFlgs) 0x22u,
-
-    MNTR_LOCK = (mntrFlgs) 0x40u,
-    MNTR_LOCK_WRITE = (mntrFlgs) 0x42u,
-
-    MNTR_RW = (mntrFlgs) 0x3u,
-    MNTR_RPW = (mntrFlgs) 0x33u,
-} MntrState;
-
-typedef uint8_t mntrRfrcCnt;
-
-
-typedef struct mntrWaitr
-{
-    struct mntrWaitr * ptrXOR;
-    ACCSSType accssType;
-    TskID tskID;
-} MntrWaitr, *PMntrWaitr;
-
-typedef struct mntr
-{
-    Data protectedData;
-    TskID mntrWaitrsQTskIDStrt;
-    TskID mntrWaitrsQTskIDEnd;
-    MntrState curState;
-    mntrRfrcCnt refCntr;
-
-} Mntr, *PMntr;
-
-RetCode mntr_INIT( void );
-
-RetCode mntr_CreateMntr(
-                         PMntr * usrMntrHndl,
-                         const Data const data,
-                         const uint8_t waitrQueueMaxSize );
-
-RetCode mntr_InitMntr( PMntr const mntrHndl, const Data const data );
-
-RetCode mntr_DelMntr( PMntr usrMntrHndl );
-
-RetCode mntr_ReqstReadAccssMntr( Mntr * const usrMntrHndl, TskID tskID );
-
-RetCode mntr_RelsReadAccssMntr( Mntr * const usrMntrHndl );
-
-RetCode mntr_ReqstWriteAccssMntr( Mntr * const usrMntrHndl, TskID tskID );
-
-RetCode mntr_RelsWriteAccssMntr( Mntr * const usrMntrHndl );
-# 14 "../include/R_RTOS_msgQueuing.h" 2
-
-
-
-
-
-
-#define MAX_MSGQ_SIZE (uint8_t)0x8u
-
-
-
-#define MAX_MSGQ_MSK (uint8_t)(MAX_MSGQ_SIZE-(uint8_t)0x1u)
-
-
-
-
-
-
-
-typedef enum partIDType
-{
-    PartID_TSK = (uint8_t) 0x0u,
-    PartID_SYS = (uint8_t) 0x1u
-} PartIDType;
-# 47 "../include/R_RTOS_msgQueuing.h"
-typedef struct mqDummyElmnt
-{
-    void *element;
-} MQDummyElmnt, *PMQDummyElmnt;
-# 61 "../include/R_RTOS_msgQueuing.h"
-typedef struct mqPub
-{
-    volatile PTskTCB publisher;
-} MQPub, *PMQPub;
-
-
-
-
-typedef PMQPub MQPubs;
-# 80 "../include/R_RTOS_msgQueuing.h"
-typedef struct mqTskSub
-{
-    volatile PTskMB tskMailBox;
-} MQTskSub, *PMQTskSub;
-# 94 "../include/R_RTOS_msgQueuing.h"
-typedef struct mqSysSub
-{
-    volatile PMsgFktCall msgCallBack;
-} MQSysSub, *PMQSysSub;
-# 108 "../include/R_RTOS_msgQueuing.h"
-typedef struct mqSub
-{
-    union
-    {
-        MQTskSub tskSub;
-        MQSysSub sysSub;
-    } mqSubT;
-} MQSub, *PMQSub;
-
-
-
-
-typedef PMQSub MQSubs;
-
-
-
-
-
-
-
-typedef enum mqPrtcpntTypeEnum
-{
-    MQPrtcpnt_TskPub = (uint8_t) 0x1u,
-    MQPrtcpnt_TskSub = (uint8_t) 0x3u,
-    MQPrtcpnt_SysSub = (uint8_t) 0x4u
-} MQPrtcpntType;
-# 144 "../include/R_RTOS_msgQueuing.h"
-typedef struct mqPrtcpnt
-{
-    struct mqPrtcpnt * nxtMQPrtcpnt;
-    PartID mqPrtcpntID;
-    MQPrtcpntType prtcpntType;
-    uint8_t DUMMY;
-    union
-    {
-        MQPub pub;
-        MQSub sub;
-        MQDummyElmnt dummy;
-    } MQElmnt;
-} MQPrtcpnt, *PMQPrtcpnt;
-
-
-
-
-typedef PMQPrtcpnt MQPrtcpnts;
-
-
-
-
-
-#define MAX_QUEUE_DATA_ELEMENT_SIZE (uint8_t)0x10u
-# 184 "../include/R_RTOS_msgQueuing.h"
-typedef struct msgQ
-{
-    MQData dataQueue[(uint8_t)0x8u ];
-    MQPrtcpnts pubs;
-    MQPrtcpnts subs;
-    QID queueID;
-    uint8_t dataQueueStart;
-    uint8_t dataQueueEnd;
-    uint8_t subscbrCnt;
-
-} MsgQ, *PMsgQ;
-
-
-
-
-
-
-
-RetCode msgQ_initQueue( QID msgQID);
-
-
-
-
-
-
-
-RetCode msgQ_delQueue( const QID msgQID );
-# 219 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_regTskPub( PTskTCB const pubTsk, const QID msgQID );
-# 230 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_regSysPub( const uint8_t participant, const QID msgQID );
-# 239 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_regTskSub(
-                        PTskTCB const subTsk,
-                        const QID msgQID);
-# 250 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_regSysSub( const SysFktID subSysFktID, const QID msgQID );
-# 259 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_unSub( const QID msgQID, const uint16_t id );
-# 272 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_pubDataToQ(
-                         const QID msgQID,
-                         const DataSize size,
-                         const DataType type,
-                         CData const data );
-# 287 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_readDataFrmQ(
-                           const QID msgQID,
-                           const TskID tskID,
-                           PMQData * data );
-# 300 "../include/R_RTOS_msgQueuing.h"
-RetCode msgQ_takeDataFrmQ(
-                           const QID msgQID,
-                           const TskID tskID,
-                           PMQData * data );
-# 9 "../Tasks/MessageQueueTest/Tasks.c" 2
+# 7 "../Tasks/MtxTest/Tasks.c" 2
 
 extern void tsk_EndTheTask( void );
+extern SysFkt sys_SysFkt[(uint8_t)0x8u ];
 
 extern TskTCB tsk_AR[];
-extern SysFkt sys_SysFkt[];
-extern PTskTCB p_cur_tsk_tcb;
 
 void tsk1( void );
 void tsk2( void );
-void tsk3( void );
-void tsk4( void );
 
 void tsk1( void )
 {
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PCOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
+    svc_mtx_TakeMtx( (MtxNr) 0x1u, &tsk_AR[1], 100 );
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PSOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
 
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PCOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PCOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
 
+    svc_tsk_InitTsk( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, ((StackSize)0x80u) );
+    svc_tsk_SetTskPrio( (TskID) 0x2u, TSK_PRIO_HIG );
+    svc_tsk_ActvTsk( (TskID) 0x2u );
 
-    uint32_t dataToPub = 0x0u;
-    svc_msgq_RegPub( p_cur_tsk_tcb, (const QID) 0x1u );
-    while ( 1 )
-    {
-        svc_msgq_PubMsg(
-                (const QID) 0x1u, (const DataSize) 0x4u, DataT_Int,
-                (CData) dataToPub );
-        ++dataToPub;
-        svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
-    }
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PSOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
+    svc_tmr_SetTimer( (WaitTime) 500, &tsk_AR[1] );
 
-    svc_tsk_KillTsk( p_cur_tsk_tcb );
+    svc_mtx_GiveMtx( (MtxNr) 0x1u, &tsk_AR[1] );
+
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PSOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
+    svc_tsk_KillTsk( &tsk_AR[1] );
 }
 void tsk2( void )
 {
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PCOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
+    svc_mtx_TakeMtx( (MtxNr) 0x1u, &tsk_AR[2], 100 );
 
 
+    svc_tmr_SetTimer( (WaitTime) 500, &tsk_AR[2] );
+    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PSOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
 
-    uint32_t dataToPub = 0xFFFFFFFFu;
-    svc_msgq_RegPub( p_cur_tsk_tcb, (const QID) 0x1u );
-    while ( 1 )
-    {
-        svc_msgq_PubMsg(
-                (const QID) 0x1u, (const DataSize) 0x4u, DataT_Int,
-                (const Data) dataToPub );
-        --dataToPub;
-        svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
-    }
-    svc_tsk_KillTsk( p_cur_tsk_tcb );
-}
-void tsk3( void )
-{
+    svc_mtx_GiveMtx( (MtxNr) 0x1u, &tsk_AR[2] );
 
-
-
-    const PMQData dataBuffer = (const PMQData) ((void *)0x0u);
-    uint32_t retrievedData;
-    svc_msgq_RegTskSub( p_cur_tsk_tcb, (const QID) 0x1u );
-    while ( 1 )
-    {
-        svc_msgq_MsgRead(
-                (const QID) 0x1u, (const TskID) p_cur_tsk_tcb->tskID,
-                (const PMQData *) &dataBuffer );
-        if ( (uint32_t) dataBuffer != (uint32_t) ((void *)0x0u) )
-        {
-            retrievedData = dataBuffer->data;
-            retrievedData &= 0x3u;
-            switch ( retrievedData )
-            {
-                case 0:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-                case 1:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-                case 2:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-                case 3:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-            }
-        }
-        svc_msgq_MsgRead(
-                (const QID) 0x1u, (const TskID) p_cur_tsk_tcb->tskID,
-                (const PMQData *) &dataBuffer );
-        if ( (uint32_t) dataBuffer != (uint32_t) ((void *)0x0u) )
-        {
-            retrievedData = dataBuffer->data;
-            retrievedData &= 0x3u;
-            switch ( retrievedData )
-            {
-                case 0:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x20u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-                case 1:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x24u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-                case 2:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x28u) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-                case 3:
-                    (((PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) != ((PortPIN)0xFFu)) && (uint32_t)( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PDDR) & ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) ))) ? ( ((((((uint8_t)( (PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) >> (uint8_t)12u ))) ? ((GPIO_Type *)(0x400FF040u)) : ((GPIO_Type *)(0x400FF000u))))->PTOR) |= ((uint32_t)( 0x1u << ((uint8_t)((( (PortPIN)(PortPIN)(PortPIN)((PortPIN)( (PortPIN)((PortPIN)0x2cu) | 0x0100u )) & (PortPIN)0xF0FFu ) & (PortPIN)0x7C) >> 0x2u )) ) )) : ((PortPIN)0xFFu);
-                    break;
-            }
-        }
-        svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
-    }
-    svc_tsk_KillTsk( p_cur_tsk_tcb );
-}
-void tsk4( void )
-{
-
-
-
-    const PMQData dataBuffer = (const PMQData) ((void *)0x0u);
-    ;
-    uint32_t retrievedData;
-    svc_msgq_RegTskSub( p_cur_tsk_tcb, (const QID) 0x1u );
-    while ( 1 )
-    {
-        svc_msgq_MsgRead(
-                (const QID) 0x1u, (const TskID) p_cur_tsk_tcb->tskID,
-                (const PMQData *) &dataBuffer );
-        if ( (uint32_t) dataBuffer != (uint32_t) ((void *)0x0u) )
-        {
-            retrievedData = dataBuffer->data;
-
-        }
-        svc_tmr_SetTimer( 100, p_cur_tsk_tcb );
-    }
-    svc_tsk_KillTsk( p_cur_tsk_tcb );
+    svc_tsk_KillTsk( &tsk_AR[2] );
 }
 
 void actvTsk1( void )
 {
     tsk_tskInit( (TskID) 0x1u, &tsk1, &tsk_EndTheTask, ((StackSize)0x80u) );
+    tsk_ChngePrio(&tsk_AR[0x1u],TSK_PRIO_MED);
     tsk_ActvTsk( &tsk_AR[(TskID) 0x1u] );
     os_SCHEDULE();
 }
@@ -7989,28 +7431,11 @@ void actvTsk2( void )
     tsk_ActvTsk( &tsk_AR[(TskID) 0x2u] );
     os_SCHEDULE();
 }
-void actvTsk3( void )
-{
-    tsk_tskInit( (TskID) 0x3u, &tsk3, &tsk_EndTheTask, ((StackSize)0x80u) );
-    tsk_ActvTsk( &tsk_AR[(TskID) 0x3u] );
-    os_SCHEDULE();
-}
-void actvTsk4( void )
-{
-    tsk_tskInit( (TskID) 0x4u, &tsk4, &tsk_EndTheTask, ((StackSize)0x80u) );
-    tsk_ActvTsk( &tsk_AR[(TskID) 0x4u] );
-    os_SCHEDULE();
-}
 
 void OS_START( void )
 {
-    msgQ_initQueue( (QID) 0x1u );
     sys_SysFkt[0].fktCallType.tmrFktCall.sysFktCall = &actvTsk1;
     sys_SysFkt[1].fktCallType.tmrFktCall.sysFktCall = &actvTsk2;
-    sys_SysFkt[2].fktCallType.tmrFktCall.sysFktCall = &actvTsk3;
-    sys_SysFkt[3].fktCallType.tmrFktCall.sysFktCall = &actvTsk4;
-    tmr_setSysTimer( 0, 160u, 0x0u );
-    tmr_setSysTimer( 1, 140u, 0x0u );
-    tmr_setSysTimer( 2, 120u, 0x0u );
-    tmr_setSysTimer( 3, 100u, 0x0u );
+    tmr_setSysTimer( 0, 1500u, 0x1u );
+
 }

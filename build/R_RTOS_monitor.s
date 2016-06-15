@@ -681,23 +681,23 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x5
 	.4byte	.LASF653
 	.byte	0x4
-	.2byte	0x1eb
+	.2byte	0x1f0
 	.4byte	0x85
 	.uleb128 0x5
 	.4byte	.LASF654
 	.byte	0x4
-	.2byte	0x1f1
+	.2byte	0x1f6
 	.4byte	0x85
 	.uleb128 0x5
 	.4byte	.LASF655
 	.byte	0x4
-	.2byte	0x1f6
+	.2byte	0x1fb
 	.4byte	0x85
 	.uleb128 0x7
 	.4byte	.LASF665
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x24c
+	.2byte	0x251
 	.4byte	0x104
 	.uleb128 0x8
 	.4byte	.LASF656
@@ -718,12 +718,12 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x5
 	.4byte	.LASF661
 	.byte	0x4
-	.2byte	0x253
+	.2byte	0x258
 	.4byte	0xd8
 	.uleb128 0x5
 	.4byte	.LASF662
 	.byte	0x4
-	.2byte	0x562
+	.2byte	0x584
 	.4byte	0x85
 	.uleb128 0x3
 	.4byte	.LASF663
@@ -2954,7 +2954,7 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x1f5
 	.4byte	.LASF433
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.c1b03cc0c5c07ca0a477eb46e01868fd,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.673e81b7c65bad7fa1d77c307c4a1d01,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -3097,67 +3097,67 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x13f
 	.4byte	.LASF480
 	.byte	0x5
-	.uleb128 0x53b
+	.uleb128 0x55d
 	.4byte	.LASF481
 	.byte	0x5
-	.uleb128 0x540
+	.uleb128 0x562
 	.4byte	.LASF482
 	.byte	0x5
-	.uleb128 0x547
+	.uleb128 0x569
 	.4byte	.LASF483
 	.byte	0x5
-	.uleb128 0x54a
+	.uleb128 0x56c
 	.4byte	.LASF484
 	.byte	0x5
-	.uleb128 0x558
+	.uleb128 0x57a
 	.4byte	.LASF485
 	.byte	0x5
-	.uleb128 0x55d
+	.uleb128 0x57f
 	.4byte	.LASF486
 	.byte	0x5
-	.uleb128 0x566
+	.uleb128 0x588
 	.4byte	.LASF487
 	.byte	0x5
-	.uleb128 0x56a
+	.uleb128 0x58c
 	.4byte	.LASF488
 	.byte	0x5
-	.uleb128 0x56e
+	.uleb128 0x590
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x572
+	.uleb128 0x594
 	.4byte	.LASF490
 	.byte	0x5
-	.uleb128 0x576
+	.uleb128 0x598
 	.4byte	.LASF491
 	.byte	0x5
-	.uleb128 0x57a
+	.uleb128 0x59c
 	.4byte	.LASF492
 	.byte	0x5
-	.uleb128 0x57e
+	.uleb128 0x5a0
 	.4byte	.LASF493
 	.byte	0x5
-	.uleb128 0x582
+	.uleb128 0x5a4
 	.4byte	.LASF494
 	.byte	0x5
-	.uleb128 0x586
+	.uleb128 0x5a8
 	.4byte	.LASF495
 	.byte	0x5
-	.uleb128 0x58a
+	.uleb128 0x5ac
 	.4byte	.LASF496
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x5b0
 	.4byte	.LASF497
 	.byte	0x5
-	.uleb128 0x592
+	.uleb128 0x5b4
 	.4byte	.LASF498
 	.byte	0x5
-	.uleb128 0x596
+	.uleb128 0x5b8
 	.4byte	.LASF499
 	.byte	0x5
-	.uleb128 0x59a
+	.uleb128 0x5bc
 	.4byte	.LASF500
 	.byte	0x5
-	.uleb128 0x59e
+	.uleb128 0x5c0
 	.4byte	.LASF501
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_memMngr.h.14.e71363defcaed3db880eddd5ae4849f6,comdat
@@ -3633,8 +3633,6 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF431:
 	.ascii	"UINT64_C(x) __UINT64_C(x)\000"
-.LASF447:
-	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x6u\000"
 .LASF127:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
 .LASF675:
@@ -4812,6 +4810,8 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"mntr_getNextWaitr\000"
 .LASF187:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
+.LASF447:
+	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x2u\000"
 .LASF652:
 	.ascii	"sizetype\000"
 .LASF342:

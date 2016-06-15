@@ -19,6 +19,7 @@
 #include "R_RTOS_task.h"
 #include "R_RTOS_stack.h"
 #include "R_RTOS_scheduler.h"
+#include "R_RTOS_mtx.h"
 #include "R_RTOS_sem.h"
 #include "R_RTOS_timer.h"
 #include "R_RTOS_SysTickTMR.h"
@@ -44,6 +45,12 @@ extern volatile TimerFlags gTMRFlags;
 extern uint16_t timeToWake;
 #endif
 
+/**
+ * \var offsetOfTskState
+ * \brief Offset of the TskState property inside a \ref TskTCB
+ *
+ * The offset is calculated dynamically to exclude compiler optimization errors.
+ */
 const uint8_t offsetOfTskState = OFFSETOF( TskTCB, tskState );
 
 /** \var sys_SysFkt
@@ -59,14 +66,13 @@ SysFkt sys_SysFkt[AMOUNT_SYS_FKT ];
  *  The return of the SVC Call can be influenced by setting this variable.
  *  According to its value the stack pointer used for unstacking and the mode to return to are altered.
  *
- *  Possible Values:
+ *  Possible Values (ARM Cortex M0+):
  *
  *  VALUE       |   MEANING
  *  ----------- |  -------------------------------------------------------
  *  0xFFFFFFF1  |   Return to Handler mode ( e.g. for nested exceptions )
  *  0xFFFFFFF9  |   Return to Thread mode using Main Stack Pointer
  *  0xFFFFFFFD  |   Return to Thread mode using Process Stack Pointer
- *
  *
  */
 volatile uint32_t svc_EXCReturn;
@@ -108,6 +114,9 @@ RetCode __initOS( void )
 
     /* INIT IDLE TASK */
     os_IDLETskInit( &tskIdle );
+
+    /* INITIALIZE Mutexes */
+    mtx_InitMtxs();
 
     /* INITIALIZE SEMAPHORES */
     sem_InitSems();
@@ -174,6 +183,7 @@ void tsk_EndTheTask( void )
 
 RetCode SVC_HandlerMain( uint32_t *svc_args )
 {
+    RetCode returnVal = RET_NOK;
     switch ( ( (uint8_t *) svc_args[6] )[-2] )
     // Extract the svc code
     {
@@ -182,7 +192,7 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
             OS_START();
 
             //Configure and start SysTick timer
-            SysTick_Config( sysTck_GetTimeSlice() );
+            returnVal = SysTick_Config( sysTck_GetTimeSlice() );
 
             /* SET CURRENT TASK TO IDLE TASK */
             p_cur_tsk_tcb = pIDLETsk;
@@ -196,41 +206,31 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
             __ISB();    // SYNCHRONIZE INSTRUCTION BUFFER
             break;
         case SVC_TSK_INIT:    // INITIALIZE TASK
-            if ( tsk_tskInit( (TskID) svc_args[0],    // Task ID
+            returnVal = tsk_tskInit( (TskID) svc_args[0],    // Task ID
                     (TskStartAddr) svc_args[1],    // Start address of the task
                     (TskEndAddr) svc_args[2],    // Function to call after task's execution
-                    (StackSize) svc_args[3] )    // Desired stack size for the task
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
+                    (StackSize) svc_args[3] );    // Desired stack size for the task
+
             break;
         case SVC_TSK_SETPRIO:
-            tsk_ChngePrio(
+            returnVal = tsk_ChngePrio(
                     (TskTCB * const ) ( &tsk_AR[(TskID) svc_args[0]] ),
                     (TskPrio) svc_args[1] );
-            os_SCHEDULE();
+            if(returnVal == RET_OK) os_SCHEDULE();
             break;
         case SVC_TSK_ACTV:    // ACTIVATE TASK
-            if ( tsk_ActvTsk(
-                    (TskTCB * const ) &( tsk_AR[(TskID) svc_args[0]] ) )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
+            returnVal =  tsk_ActvTsk(
+                    (TskTCB * const ) &( tsk_AR[(TskID) svc_args[0]] ) );
             gOS_FLAGS.g_needsScheduling = (uint8_t) 0x1u;
-            os_SCHEDULE();
+            if(returnVal == RET_OK) os_SCHEDULE();
             break;
         case SVC_TSK_KILL:    // KILL THE TASK
-            if ( tsk_tskDestroy( (PTskTCB) svc_args[0] ) != RET_OK )
-            {
-                return RET_NOK;
-            }
+            returnVal =  tsk_tskDestroy( (PTskTCB) svc_args[0] );
 //            ( (TskTCB*) svc_args[0] )->tskInfo.taskState =
 //                    TSK_STATE_UNINIT_ENDED;
             gOS_FLAGS.g_needsScheduling = (uint8_t) 0x1u;
             //p_cur_tsk_tcb = (TskTCB*) NULL;
-            os_SCHEDULE();
+            if(returnVal == RET_OK) os_SCHEDULE();
             break;
         case SVC_TSK_SET_CRIT:
             // NO ContextSwitching SHALL TAKE PLACE AS LONG AS THIS FLAG IS SET
@@ -240,127 +240,99 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
             // ContextSwitching REENABLED
             gOS_FLAGS.g_tskCriticalExecution = (uint8_t) 0x0u;
             break;
-
+        case SVC_MTX_TAKE:
+            returnVal = mtx_TakeMtx(
+                        (TskTCB* const ) svc_args[1],
+                        (const MtxNr) svc_args[0],
+                        (const SysTicks) svc_args[2]);
+            if(returnVal == RET_OK) os_SCHEDULE();
+            break;
+        case SVC_MTX_GIVE:
+            returnVal = mtx_GiveMtx(
+                                    (PTskTCB const) svc_args[1],
+                                    (const MtxNr) svc_args[0]
+                                    );
+            if(returnVal == RET_OK) os_SCHEDULE();
+            break;
         case SVC_SEM_TAKE:    // TAKE/GIVE Semaphor
-            if ( sem_TakeSem(
-                    (TskTCB* const ) svc_args[1], (const SemNr) svc_args[0],
-                    (const SysTicks) svc_args[2] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
-            os_SCHEDULE();
+//            if ( sem_TakeSem(
+//                    (TskTCB* const ) svc_args[1], (const SemNr) svc_args[0],
+//                    (const SysTicks) svc_args[2] )
+//                 != RET_OK )
+//            {
+//                return RET_NOK;
+//            }
+//            os_SCHEDULE();
             break;
         case SVC_SEM_GIVE:
-            if ( sem_GiveSem(
-                    (TskTCB* const ) svc_args[1], (const SemNr) svc_args[0] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
-            os_SCHEDULE();
+//            if ( sem_GiveSem(
+//                    (TskTCB* const ) svc_args[1], (const SemNr) svc_args[0] )
+//                 != RET_OK )
+//            {
+//                return RET_NOK;
+//            }
+//            os_SCHEDULE();
             break;
         case SVC_EVT_SEND:
-            if ( evt_SendEvt( (EvtNr) svc_args[0] ) != RET_OK )
-                return RET_NOK;
-            os_SCHEDULE();
+            returnVal = evt_SendEvt( (EvtNr) svc_args[0] );
+            if(returnVal == RET_OK) os_SCHEDULE();
             break;
         case SVC_EVT_RECV:
-            if ( evt_WaitForEvts(
+            returnVal = evt_WaitForEvts(
                     (PTskTCB const) svc_args[0], (EVTQSlots) svc_args[1],
-                    (const SysTicks) svc_args[2] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
-
-            os_SCHEDULE();
+                    (const SysTicks) svc_args[2] );
+            if(returnVal == RET_OK) os_SCHEDULE();
             break;
         case SVC_TMR_SET:    // SET A TIMER
-            if ( tmr_setTskTimer(
-                    (TskTCB* const ) svc_args[1], (const WaitTime) svc_args[0] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
-            os_SCHEDULE();
+            returnVal = tmr_setTskTimer(
+                    (TskTCB* const ) svc_args[1], (const WaitTime) svc_args[0] );
+            if(returnVal == RET_OK) os_SCHEDULE();
             break;
         case SVC_SYSTCK_SET:
-            if ( sysTck_setSysTckTMR( (const SysTicks) svc_args[0], (SysTckEleType)SysTckObj_TskWait,
-                    (TskID const ) svc_args[1] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
-            os_SCHEDULE();
+            returnVal = sysTck_setSysTckTMR(
+                                             (const SysTicks) svc_args[0],
+                                             (SysTckEleType)SysTckObj_TskWait,
+                                             (TskID const ) svc_args[1] );
+
+            if(returnVal == RET_OK) os_SCHEDULE();
             break;
         case SVC_MSGQ_CRT_Q:
-            if ( msgQ_initQueue( (QID) svc_args[0]/*, (QPrio) svc_args[1] */) != RET_OK )
-            {
-                return RET_NOK;
-            }
+            returnVal = msgQ_initQueue( (QID) svc_args[0]/*, (QPrio) svc_args[1] */);
             break;
         case SVC_MSGQ_DEL_Q:
-            if ( msgQ_delQueue( (QID) svc_args[0] ) != RET_OK )
-            {
-                return RET_NOK;
-            }
+            returnVal = msgQ_delQueue( (QID) svc_args[0] );
             break;
         case SVC_MSGQ_REG_PUB:
-            if ( msgQ_regTskPub(
-                    (TskTCB * const ) svc_args[0], (QID) svc_args[1] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
+            returnVal = msgQ_regTskPub(
+                    (TskTCB * const ) svc_args[0], (QID) svc_args[1] );
+
             break;
         case SVC_MSGQ_REG_TSK_SUB:
-            if ( msgQ_regTskSub(
-                    (PTskTCB const) svc_args[0], (const QID) svc_args[1] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
+            returnVal = msgQ_regTskSub(
+                    (PTskTCB const) svc_args[0], (const QID) svc_args[1] );
             break;
         case SVC_MSGQ_REG_SYS_SUB:
-            if ( msgQ_regSysSub(
-                    (const SysFktID) svc_args[0], (const QID) svc_args[1] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
+            returnVal = msgQ_regSysSub(
+                    (const SysFktID) svc_args[0], (const QID) svc_args[1] );
             break;
         case SVC_MSGQ_MSG_PUB:
-            if ( msgQ_pubDataToQ(
+            returnVal = msgQ_pubDataToQ(
                     (const QID) svc_args[0], (const uint8_t) svc_args[1],
-                    (const DataType) svc_args[2], (CData const) svc_args[3] )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
+                    (const DataType) svc_args[2], (CData const) svc_args[3] );
             break;
         case SVC_MSGQ_MSG_READ:
-            if ( ( msgQ_readDataFrmQ(
+            returnVal = msgQ_readDataFrmQ(
                     (const QID) svc_args[0], (const TskID) svc_args[1],
-                    ( (PMQData *) svc_args[2] ) ) )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
+                    ( (PMQData *) svc_args[2] ));
             break;
         case SVC_MSGQ_MSG_READALLNEW:
             break;
         case SVC_MSGQ_MSG_READALL:
             break;
         case SVC_MSGQ_MSG_TAKE:
-            if ( ( msgQ_takeDataFrmQ(
+            returnVal = msgQ_takeDataFrmQ(
                     (const QID) svc_args[0], (const TskID) svc_args[1],
-                    ( (PMQData *) svc_args[2] ) ) )
-                 != RET_OK )
-            {
-                return RET_NOK;
-            }
-            break;
+                    ( (PMQData *) svc_args[2] ) );
             break;
         case SVC_MSGQ_MSG_TAKEALLNEW:
             break;
@@ -368,6 +340,7 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
             break;
         case SVC_OS_SCHEDULE:    // CALL os_SCHEDULE from tasks
             os_SCHEDULE();
+            returnVal = RET_OK;
             break;
         case SVC_CALL_FKT_PRIV:
             ( *( (FktCall) svc_args[0] ) )();
@@ -433,7 +406,7 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
         default:
             __NOP();
     }
-    return RET_OK;
+    return returnVal;
 }
 
 #ifdef _TIMERUSED_

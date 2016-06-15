@@ -1,11 +1,31 @@
-source/R_RTOS/R_RTOS_sem.o: ../source/R_RTOS/R_RTOS_sem.c \
- ../include/R_RTOS_sem.h ../include/R_RTOS_inc.h ../include/R_RTOS_task.h \
- ../include/R_RTOS_memMngr.h
+Tasks/Tasks.o: ../Tasks/MtxTest/Tasks.c ../include/R_RTOS_services.h \
+ ../include/R_RTOS_inc.h ../hal/mcu/NXP_KL05/include/PortFunc.h \
+ ../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h \
+ ../hal/proc/ARM_cortex-m0plus/core_cm0plus.h \
+ ../hal/proc/ARM_cortex-m0plus/core_cmInstr.h \
+ ../hal/proc/ARM_cortex-m0plus/core_cmFunc.h \
+ ../hal/mcu/NXP_KL05/BSP/include/system_MKL05Z4.h \
+ ../hal/mcu/NXP_KL05/include/TimerFunc.h ../include/R_RTOS_task.h \
+ ../include/R_RTOS_timer.h
 
-../include/R_RTOS_sem.h:
+../include/R_RTOS_services.h:
 
 ../include/R_RTOS_inc.h:
 
+../hal/mcu/NXP_KL05/include/PortFunc.h:
+
+../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h:
+
+../hal/proc/ARM_cortex-m0plus/core_cm0plus.h:
+
+../hal/proc/ARM_cortex-m0plus/core_cmInstr.h:
+
+../hal/proc/ARM_cortex-m0plus/core_cmFunc.h:
+
+../hal/mcu/NXP_KL05/BSP/include/system_MKL05Z4.h:
+
+../hal/mcu/NXP_KL05/include/TimerFunc.h:
+
 ../include/R_RTOS_task.h:
 
-../include/R_RTOS_memMngr.h:
+../include/R_RTOS_timer.h:

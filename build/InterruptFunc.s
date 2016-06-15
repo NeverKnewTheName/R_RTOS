@@ -1370,12 +1370,12 @@ setSensingForPin:
 	.uleb128 0x9
 	.4byte	.LASF4540
 	.byte	0x8
-	.2byte	0x1f1
+	.2byte	0x1f6
 	.4byte	0x90
 	.uleb128 0x9
 	.4byte	.LASF4541
 	.byte	0x8
-	.2byte	0x1f6
+	.2byte	0x1fb
 	.4byte	0x90
 	.uleb128 0x11
 	.4byte	.LASF4542
@@ -15186,7 +15186,7 @@ setSensingForPin:
 	.uleb128 0x7f
 	.4byte	.LASF4289
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.926edc6cbd061ce8c711a04429e20efd,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.e20ad093e597e8d0ba535fac3f58656b,comdat
 .Ldebug_macro14:
 	.2byte	0x4
 	.byte	0
@@ -15332,67 +15332,67 @@ setSensingForPin:
 	.uleb128 0x13f
 	.4byte	.LASF4337
 	.byte	0x5
-	.uleb128 0x53b
+	.uleb128 0x55d
 	.4byte	.LASF4338
 	.byte	0x5
-	.uleb128 0x540
+	.uleb128 0x562
 	.4byte	.LASF4339
 	.byte	0x5
-	.uleb128 0x547
+	.uleb128 0x569
 	.4byte	.LASF4340
 	.byte	0x5
-	.uleb128 0x54a
+	.uleb128 0x56c
 	.4byte	.LASF4341
 	.byte	0x5
-	.uleb128 0x558
+	.uleb128 0x57a
 	.4byte	.LASF4342
 	.byte	0x5
-	.uleb128 0x55d
+	.uleb128 0x57f
 	.4byte	.LASF4343
 	.byte	0x5
-	.uleb128 0x566
+	.uleb128 0x588
 	.4byte	.LASF4344
 	.byte	0x5
-	.uleb128 0x56a
+	.uleb128 0x58c
 	.4byte	.LASF4345
 	.byte	0x5
-	.uleb128 0x56e
+	.uleb128 0x590
 	.4byte	.LASF4346
 	.byte	0x5
-	.uleb128 0x572
+	.uleb128 0x594
 	.4byte	.LASF4347
 	.byte	0x5
-	.uleb128 0x576
+	.uleb128 0x598
 	.4byte	.LASF4348
 	.byte	0x5
-	.uleb128 0x57a
+	.uleb128 0x59c
 	.4byte	.LASF4349
 	.byte	0x5
-	.uleb128 0x57e
+	.uleb128 0x5a0
 	.4byte	.LASF4350
 	.byte	0x5
-	.uleb128 0x582
+	.uleb128 0x5a4
 	.4byte	.LASF4351
 	.byte	0x5
-	.uleb128 0x586
+	.uleb128 0x5a8
 	.4byte	.LASF4352
 	.byte	0x5
-	.uleb128 0x58a
+	.uleb128 0x5ac
 	.4byte	.LASF4353
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x5b0
 	.4byte	.LASF4354
 	.byte	0x5
-	.uleb128 0x592
+	.uleb128 0x5b4
 	.4byte	.LASF4355
 	.byte	0x5
-	.uleb128 0x596
+	.uleb128 0x5b8
 	.4byte	.LASF4356
 	.byte	0x5
-	.uleb128 0x59a
+	.uleb128 0x5bc
 	.4byte	.LASF4357
 	.byte	0x5
-	.uleb128 0x59e
+	.uleb128 0x5c0
 	.4byte	.LASF4358
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_memMngr.h.20.3fa02398393232138c63718be3aa1b6e,comdat
@@ -16584,8 +16584,6 @@ setSensingForPin:
 	.ascii	"DMA_DCR_SSIZE_WIDTH 2\000"
 .LASF4153:
 	.ascii	"MCM_BASES MCM_BASE_PTRS\000"
-.LASF4304:
-	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x6u\000"
 .LASF311:
 	.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 1\000"
 .LASF3568:
@@ -17498,6 +17496,8 @@ setSensingForPin:
 	.ascii	"ADC_SC2_ADACT_SHIFT 7\000"
 .LASF170:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+.LASF4304:
+	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x2u\000"
 .LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
 .LASF4379:

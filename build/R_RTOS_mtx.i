@@ -1,4 +1,4 @@
-# 1 "../source/R_RTOS/R_RTOS_task.c"
+# 1 "../source/R_RTOS/R_RTOS_mtx.c"
 # 1 "C:\\Users\\Christian\\Documents\\OHM\\MAPR\\Projekt\\WRKSPC\\R_RTOS\\build//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -343,11 +343,15 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
-# 1 "../source/R_RTOS/R_RTOS_task.c"
-# 9 "../source/R_RTOS/R_RTOS_task.c"
-# 1 "../include/R_RTOS_scheduler.h" 1
-# 10 "../include/R_RTOS_scheduler.h"
-#define HEADERS_R_RTOS_SCHEDULER_H_ 
+# 1 "../source/R_RTOS/R_RTOS_mtx.c"
+# 34 "../source/R_RTOS/R_RTOS_mtx.c"
+# 1 "../include/R_RTOS_mtx.h" 1
+# 13 "../include/R_RTOS_mtx.h"
+#define INCLUDE_R_RTOS_MTX_H_ 
+
+#define MEM_OBJECTS_MTX (uint8_t)0x4u
+
+#define AMOUNT_OF_MTXS (uint8_t)0x2u
 
 # 1 "../include/R_RTOS_inc.h" 1
 # 10 "../include/R_RTOS_inc.h"
@@ -1608,38 +1612,19 @@ typedef enum svcCode
     SVC_TRC_OUPUT,
     SVC_OS_ERROR = (uint8_t) 0xFFu,
 } SVCCode;
-# 13 "../include/R_RTOS_scheduler.h" 2
-# 23 "../include/R_RTOS_scheduler.h"
-typedef struct tskPrioArEle
-{
-    TskID fstTsk;
-    TskID lstTsk;
-} TskPrioArEle, *PTskPrioArEle;
-
-
-
-
-typedef uint16_t PrioARFlgs;
-
-
-
-
-
-
-
-RetCode tsk_rmvTskActvTskLst( PTskTCB const tsk );
-# 52 "../include/R_RTOS_scheduler.h"
-RetCode tsk_insrtTskActvTskLst( PTskTCB const tsk );
-
-
-
-
-
-
-void os_INIT_Scheduler( void );
-# 69 "../include/R_RTOS_scheduler.h"
-void os_SCHEDULE( void );
-# 10 "../source/R_RTOS/R_RTOS_task.c" 2
+# 20 "../include/R_RTOS_mtx.h" 2
+# 29 "../include/R_RTOS_mtx.h"
+RetCode mtx_InitMtxs( void );
+# 50 "../include/R_RTOS_mtx.h"
+RetCode mtx_TakeMtx(
+                     PTskTCB const tsk,
+                     const MtxNr mtxNr,
+                     const SysTicks maxSysTicksToWait );
+# 66 "../include/R_RTOS_mtx.h"
+RetCode mtx_GiveMtx( PTskTCB const tsk, const MtxNr mtxNr );
+# 77 "../include/R_RTOS_mtx.h"
+RetCode mtx_GiveUpOnMtx( PTskTCB const tsk );
+# 35 "../source/R_RTOS/R_RTOS_mtx.c" 2
 # 1 "../include/R_RTOS_task.h" 1
 # 10 "../include/R_RTOS_task.h"
 #define HEADERS_R_RTOS_TASK_H_ 
@@ -1666,93 +1651,7 @@ RetCode tsk_SetInactive( PTskTCB const tsk, TskState tskInactvState );
 RetCode tsk_ActvTsk( PTskTCB const tsk );
 
 RetCode tsk_ChngePrio( PTskTCB const tsk, const TskPrio newTskPrio );
-# 11 "../source/R_RTOS/R_RTOS_task.c" 2
-# 1 "../include/R_RTOS_stack.h" 1
-# 10 "../include/R_RTOS_stack.h"
-#define HEADERS_R_RTOS_STACK_H_ 
-# 24 "../include/R_RTOS_stack.h"
-RetCode stk_StackCreate(
-                         register PTskTCB tsk,
-                         register StackSize desiredStackSize );
-# 39 "../include/R_RTOS_stack.h"
-RetCode stk_StackInit( register PTskTCB tsk, void *fktParam );
-# 50 "../include/R_RTOS_stack.h"
-RetCode stk_StackDestroy( register PTskTCB tsk );
-
-
-
-
-
-
-
-RetCode stk_TSTStck( PTskTCB const tsk );
-# 70 "../include/R_RTOS_stack.h"
-RetCode stk_StackClear( PTskTCB const tsk );
-# 12 "../source/R_RTOS/R_RTOS_task.c" 2
-# 1 "../include/R_RTOS_sem.h" 1
-# 10 "../include/R_RTOS_sem.h"
-#define HEADERS_R_RTOS_SEM_H_ 
-# 19 "../include/R_RTOS_sem.h"
-#define MEM_OBJECTS_SEM (uint8_t)0x4u
-# 29 "../include/R_RTOS_sem.h"
-RetCode sem_InitSems( void );
-# 40 "../include/R_RTOS_sem.h"
-RetCode sem_GiveUpOnSem( PTskTCB const tsk );
-# 49 "../include/R_RTOS_sem.h"
-RetCode sem_DeleteTskSemQ( PTskTCB const tsk );
-# 13 "../source/R_RTOS/R_RTOS_task.c" 2
-# 1 "../include/R_RTOS_timer.h" 1
-# 10 "../include/R_RTOS_timer.h"
-#define HEADERS_R_RTOS_TIMER_H_ 
-
-
-
-#define MEM_OBJECTS_TMR (uint8_t)0x5u
-
-#define TMR_INVALID_TIME (LifeTime)0xFFFFFFFFu
-# 26 "../include/R_RTOS_timer.h"
-#define TMR_PIT_DELAY (uint32_t)0x3u
-# 36 "../include/R_RTOS_timer.h"
-RetCode tmr_INIT( void );
-# 50 "../include/R_RTOS_timer.h"
-RetCode tmr_setTskTimer( PTskTCB tsk, TmrTime msToWait );
-
-RetCode tmr_setSysTimer( SysFktID fktID, TmrTime msToWait, uint8_t periodicity );
-
-void tmr_SysTimerElapsed( void );
-# 66 "../include/R_RTOS_timer.h"
-void tmr_TskTimerElapsed( void );
-# 80 "../include/R_RTOS_timer.h"
-RetCode tmr_GiveUpOnTMR( PTskTCB const tsk );
-# 14 "../source/R_RTOS/R_RTOS_task.c" 2
-# 1 "../include/R_RTOS_events.h" 1
-# 10 "../include/R_RTOS_events.h"
-#define HEADERS_R_RTOS_EVENTS_H_ 
-
-
-
-
-
-
-#define MEM_OBJECTS_EVT (uint8_t)0x4u
-# 31 "../include/R_RTOS_events.h"
-typedef struct evtQueue
-{
-    struct evtQueue *ptrNxtEvtQ;
-    TskID tskID;
-} EVTQueue;
-# 44 "../include/R_RTOS_events.h"
-void evt_INIT( void );
-# 57 "../include/R_RTOS_events.h"
-RetCode evt_WaitForEvts(
-                         PTskTCB const tsk,
-                         EVTQSlots evtMask,
-                         const SysTicks maxWaitTime );
-# 71 "../include/R_RTOS_events.h"
-RetCode evt_SendEvt( const EvtNr evtNr );
-# 82 "../include/R_RTOS_events.h"
-RetCode evt_GiveUpOnEvts( PTskTCB const tsk );
-# 15 "../source/R_RTOS/R_RTOS_task.c" 2
+# 36 "../source/R_RTOS/R_RTOS_mtx.c" 2
 
 # 1 "../include/R_RTOS_memMngr.h" 1
 # 14 "../include/R_RTOS_memMngr.h"
@@ -2057,239 +1956,196 @@ RetCode memMngr_MemPoolMalloc( void ** ptrToMem, const MemPoolID memPoolID );
 
 
 RetCode memMngr_MemPoolFree( void * ptrToMem, const MemPoolID memPoolID );
-# 17 "../source/R_RTOS/R_RTOS_task.c" 2
+# 38 "../source/R_RTOS/R_RTOS_mtx.c" 2
 
-
-extern void os_SCHEDULE( void );
-
-extern BitsOSFlags gOS_FLAGS;
-extern TskTCB *p_cur_tsk_tcb;
-
-TskTCB tsk_AR[((uint8_t)0xBu)];
-uint8_t IDLE_TSK_STCK[((StackSize)0x60u)];
-
-static void BREAK( void )
-{
-    while ( 1 )
-    {
-        ;
-    }
-}
-# 44 "../source/R_RTOS/R_RTOS_task.c"
-PTskTCB const pIDLETsk = &( tsk_AR[0] );
+extern TskTCB tsk_AR[((uint8_t)0xBu)];
 
 
 
 
+static Mtx ar_Mtxs[(uint8_t)0x2u ];
 
 
-RetCode tsk_initTsks( void )
-{
-    TskID tskCntr = ((uint8_t)0xBu);
-    while ( tskCntr-- )
-    {
 
-        tsk_AR[tskCntr].tskID = tskCntr;
 
-        tsk_AR[tskCntr].tskState = TSK_STATE_UNINIT_UNINIT;
-        tsk_AR[tskCntr].tskPrio = TSK_PRIO_MED;
+static MemPoolID memPoolID_MTX;
 
-        tsk_AR[tskCntr].pStckPtr = (StackPtrT) ((void *)0x0u);
-        tsk_AR[tskCntr].pStckTop = (StackPtrT) ((void *)0x0u);
-        tsk_AR[tskCntr].stckSze = (StackSize) 0x0u;
-
-        tsk_AR[tskCntr].pTskStrt = (TskStartAddr) ((void *)0x0u);
-        tsk_AR[tskCntr].pTskEnd = (TskEndAddr) ((void *)0x0u);
-
-        tsk_AR[tskCntr].tskMailBox = (PTskMB) ((void *)0x0u);
-
-        tsk_AR[tskCntr].tskSync = (PSyncEle) ((void *)0x0u);
-
-        tsk_AR[tskCntr].nxtTsk = ((TskID)0x0u);
-        tsk_AR[tskCntr].prvTsk = ((TskID)0x0u);
-    }
-    return ((RetCode)0x1u);
-}
-
-RetCode tsk_tskInit(
-                     const TskID tskID,
-                     const TskStartAddr const strtAddr,
-                     const TskEndAddr const endAddr,
-                     const StackSize stkSze )
+static RetCode mtx_InsertTskMtxQ( PMtx pMtx, PTskTCB pTskToIns )
 {
 
-    if ( ( tskID >= ((uint8_t)0xBu) ) || ( tskID == (TskID) 0x0u ) )
+    if ( ( (uint32_t) pMtx == ( uint32_t ) ((void *)0x0u) ) || ( (uint32_t) pTskToIns
+            == ( uint32_t ) ((void *)0x0u) ) )
         return ((RetCode)0x0u);
 
-    PTskTCB tsk = &tsk_AR[tskID];
 
-
-    if ( !(TskState)((TskState)(tsk->tskState) & TSK_STATE_UNINIT) )
-    {
-        tsk_tskDestroy( tsk );
-    }
-
-    tsk->tskState = TSK_STATE_WAITING;
-    tsk->pTskStrt = strtAddr;
-    tsk->pTskEnd = endAddr;
-    tsk->tskMailBox = (PTskMB) ((void *)0x0u);
-    tsk->tskSync = (PSyncEle) ((void *)0x0u);
-
-    if ( stk_StackCreate( tsk, stkSze ) == ((RetCode)0x1u) )
+    if ( pMtx->mtxQStrtTskID == ((TskID)0x0u) )
     {
 
-        if ( stk_StackInit( tsk, ((void *)0x0u) ) == ((RetCode)0x0u) )
-        {
-            BREAK();
-            return ((RetCode)0x1Cu);
-        }
+
+        pMtx->mtxQStrtTskID = pTskToIns->tskID;
+
+        pTskToIns->nxtTsk = ((TskID)0x0u);
+        pTskToIns->prvTsk = ((TskID)0x0u);
     }
     else
     {
-        BREAK();
-        return ((RetCode)0x1Cu);
-    }
 
-    return ((RetCode)0x1u);
-}
-
-
-RetCode os_IDLETskInit( const TskStartAddr const strtAddr )
-{
-    pIDLETsk->pStckPtr = (volatile StackPtrT) ( (uint32_t) IDLE_TSK_STCK
-            + (uint32_t) ((StackSize)0x60u) );
-    pIDLETsk->pStckTop = (StackPtrT) pIDLETsk->pStckPtr;
-    pIDLETsk->stckSze = ((StackSize)0x60u);
-
-    pIDLETsk->tskPrio = TSK_PRIO_IDLE;
-    pIDLETsk->tskState = TSK_STATE_ACTIVE_READY;
-    pIDLETsk->pTskStrt = strtAddr;
-    pIDLETsk->pTskEnd = strtAddr;
-    pIDLETsk->nxtTsk = ((TskID)0x0u);
-    pIDLETsk->prvTsk = ((TskID)0x0u);
-
-    if ( stk_StackInit( pIDLETsk, ((void *)0x0u) ) == ((RetCode)0x0u) )
-    {
-        return ((RetCode)0x1Cu);
-    }
-    return ((RetCode)0x1u);
-}
-
-RetCode tsk_tskDestroy( TskTCB * const tsk )
-{
-    if ( (TskState)((TskState)(tsk->tskState) == TSK_STATE_UNINIT_UNINIT) )
-    {
-        BREAK();
-        return ((RetCode)0x0u);
-    }
-
-    if ( (TskState)((TskState)(tsk->tskState) & TSK_STATE_WAITING) )
-    {
-        if ( (TskState)((TskState)(tsk->tskState) == TSK_STATE_WAITING_EVT) )
+        PTskTCB curTsk = &tsk_AR[pMtx->mtxQStrtTskID];
+        while ( curTsk->tskPrio >= pTskToIns->tskPrio )
         {
-            evt_GiveUpOnEvts( tsk );
+            if ( curTsk->nxtTsk == ((TskID)0x0u) )
+            {
+                break;
+            }
+            curTsk = &tsk_AR[curTsk->nxtTsk];
         }
-        else if ( (TskState)((TskState)(tsk->tskState) == TSK_STATE_WAITING_SEM) )
-        {
-            sem_GiveUpOnSem( tsk );
-        }
-
-
-
-
-
-
-    }
-
-    if ( (TskState)((TskState)(tsk->tskState) & TSK_STATE_ACTIVE) )
-    {
-        tsk_SetInactive( tsk, TSK_STATE_UNINIT_UNINIT );
-    }
-
-    if ( stk_StackDestroy( tsk ) != ((RetCode)0x1u) )
-    {
-        return ((RetCode)0x0u);
-    }
-
-    if ( (uint32_t) tsk == (uint32_t) p_cur_tsk_tcb )
-    {
-        p_cur_tsk_tcb = (TskTCB*) ((void *)0x0u);
-        tsk->tskState = TSK_STATE_UNINIT_UNINIT;
+        pTskToIns->prvTsk = curTsk->tskID;
+        pTskToIns->nxtTsk = curTsk->nxtTsk;
+        curTsk->nxtTsk = pTskToIns->tskID;
     }
 
     return ((RetCode)0x1u);
 }
 
-
-RetCode tsk_ClrEvt( PTskTCB const tsk, PSyncEle const syncEle )
+static RetCode mtx_GetNextTskMtxQ( PMtx pMtx )
 {
-    if ( (uint32_t) tsk == (uint32_t) ((void *)0x0u) )
-        return ((RetCode)0x0u);
 
-    if ( tsk->tskState != ( TSK_STATE_WAITING_SYNC | syncEle->syncEleType ) )
-        return ((RetCode)0x0u);
+    if ( (uint32_t) pMtx == ( uint32_t ) ((void *)0x0u) )
+    {
 
-    tsk->tskState = TSK_STATE_ACTIVE_SUSPENDED;
-    return tsk_insrtTskActvTskLst( tsk );
+        return ((RetCode)0x0u);
+    }
+
+
+    pMtx->mtxOccTskID = pMtx->mtxQStrtTskID;
+
+    if ( pMtx->mtxQStrtTskID != ((TskID)0x0u) )
+    {
+        PTskTCB nxtTsk = &tsk_AR[pMtx->mtxQStrtTskID];
+        pMtx->mtxQStrtTskID = nxtTsk->nxtTsk;
+        pMtx->svdTskPrio = nxtTsk->tskPrio;
+        tsk_ClrEvt( nxtTsk, nxtTsk->tskSync );
+        memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_MTX );
+        nxtTsk->tskSync = (PSyncEle) ((void *)0x0u);
+    }
+
+    return ((RetCode)0x1u);
 }
 
-
-RetCode tsk_SetEvt( PTskTCB const tsk, PSyncEle const syncEle )
+RetCode mtx_InitMtxs( void )
 {
-    return tsk_SetInactive( tsk, TSK_STATE_WAITING_SYNC | syncEle->syncEleType );
+    uint8_t i = (uint8_t) 0x0u;
+    for ( ; i < (uint8_t)0x2u ; ++i )
+    {
+        ar_Mtxs[i].mtxOccTskID = ((TskID)0x0u);
+        ar_Mtxs[i].mtxQStrtTskID = ((TskID)0x0u);
+        ar_Mtxs[i].svdTskPrio = TSK_PRIO_ERROR;
+    }
+    memMngr_CreateMemPool( sizeof(SyncEle), (uint8_t)0x4u, &memPoolID_MTX );
+    return ((RetCode)0x1u);
 }
 
-RetCode tsk_SetInactive( PTskTCB const tsk, TskState tskInactvState )
+RetCode mtx_TakeMtx(
+                     PTskTCB const tsk,
+                     const MtxNr mtxNr,
+                     const SysTicks maxSysTicksToWait )
 {
-    if ( (uint32_t) tsk == (uint32_t) ((void *)0x0u) )
-        return ((RetCode)0x0u);
 
-    if ( !( (TskState)((TskState)(tsk->tskState) & TSK_STATE_ACTIVE) ) )
-        return ((RetCode)0x0u);
-
-    tsk->tskState = tskInactvState;
-
-    return tsk_rmvTskActvTskLst( tsk );
-}
-
-RetCode tsk_ActvTsk( PTskTCB const tsk )
-{
-    if ( (uint32_t) tsk == (uint32_t) ((void *)0x0u) )
-        return ((RetCode)0x0u);
-
-    if ( !( (TskState)((TskState)(tsk->tskState) & TSK_STATE_WAITING) ) )
+    if ( mtxNr >= (uint8_t)0x2u )
         return ((RetCode)0x0u);
 
 
-    if ( tsk->tskState == TSK_STATE_WAITING )
-        tsk->tskState = TSK_STATE_ACTIVE_READY;
+    PMtx pMtx = &ar_Mtxs[mtxNr];
+
+
+    if ( pMtx->mtxOccTskID != ((TskID)0x0u) )
+    {
+
+
+        if ( (uint32_t) tsk->tskSync != ( uint32_t ) ((void *)0x0u) )
+            return ((RetCode)0x0u);
+
+
+        PSyncEle mtxSync;
+        memMngr_MemPoolMalloc( &mtxSync, memPoolID_MTX );
+        if ( (uint32_t) mtxSync == ( uint32_t ) ((void *)0x0u) )
+        {
+            tsk->tskState = TSK_STATE_ERROR;
+            return ((RetCode)0x0u);
+        }
+
+
+
+
+        mtxSync->syncEleID = mtxNr;
+        mtxSync->syncEleType = SyncEle_TYPE_MTX;
+
+        tsk->tskSync = mtxSync;
+        tsk_SetEvt( tsk, mtxSync );
+
+        PTskTCB occTsk = &( tsk_AR[pMtx->mtxOccTskID] );
+        if ( occTsk->tskPrio < tsk->tskPrio )
+        {
+
+            tsk_ChngePrio( occTsk, tsk->tskPrio );
+        }
+        return mtx_InsertTskMtxQ( pMtx, tsk );
+    }
     else
+    {
+        pMtx->mtxOccTskID = tsk->tskID;
+        pMtx->svdTskPrio = tsk->tskPrio;
 
-        tsk->tskState = TSK_STATE_ACTIVE_SUSPENDED;
-
-    return tsk_insrtTskActvTskLst( tsk );
+        pMtx->mtxQStrtTskID = ((TskID)0x0u);
+        return ((RetCode)0x1u);
+    }
 }
 
-RetCode tsk_ChngePrio( PTskTCB const tsk, const TskPrio newTskPrio )
+RetCode mtx_GiveMtx( PTskTCB const tsk, const MtxNr mtxNr )
 {
-    if ( (uint32_t) tsk == (uint32_t) ((void *)0x0u) )
+
+    if ( mtxNr >= (uint8_t)0x2u )
         return ((RetCode)0x0u);
 
-    if ( tsk->tskPrio == newTskPrio )
+
+    PMtx pMtx = &( ar_Mtxs[mtxNr] );
+
+    if ( pMtx->mtxOccTskID != tsk->tskID )
         return ((RetCode)0x0u);
 
-    if ( (TskState)((TskState)(tsk->tskState) & TSK_STATE_ACTIVE) )
+    if ( tsk->tskPrio != pMtx->svdTskPrio )
     {
+        tsk_ChngePrio( tsk, pMtx->svdTskPrio );
+    }
 
-        tsk_rmvTskActvTskLst( tsk );
-        tsk->tskPrio = newTskPrio;
-        tsk_insrtTskActvTskLst( tsk );
-        return ((RetCode)0x1u);
-    }
-    else if ( (TskState)((TskState)(tsk->tskState) & TSK_STATE_WAITING) )
-    {
-        tsk->tskPrio = newTskPrio;
-        return ((RetCode)0x1u);
-    }
-    return ((RetCode)0x0u);
+    return mtx_GetNextTskMtxQ( pMtx );
+}
+
+RetCode mtx_GiveUpOnMtx( PTskTCB const tsk )
+{
+
+    PSyncEle pMtxSyncEle = tsk->tskSync;
+
+
+    if((uint32_t)pMtxSyncEle == (uint32_t)((void *)0x0u))
+        return ((RetCode)0x0u);
+
+
+    if(pMtxSyncEle->syncEleType != SyncEle_TYPE_MTX)
+        return ((RetCode)0x0u);
+
+
+
+
+
+    tsk_AR[tsk->prvTsk].nxtTsk = tsk->nxtTsk;
+
+
+    if(tsk->nxtTsk != ((TskID)0x0u))
+        tsk_AR[tsk->nxtTsk].prvTsk = tsk->prvTsk;
+
+    tsk_ClrEvt( tsk, pMtxSyncEle );
+    memMngr_MemPoolFree( pMtxSyncEle, memPoolID_MTX );
+
+    return ((RetCode)0x1u);
 }
