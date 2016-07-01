@@ -32,6 +32,8 @@
 *.dSYM/
 *.su
 
+*.lst
+*.map
 *.i
 *.s
 
