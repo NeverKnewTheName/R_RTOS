@@ -723,6 +723,24 @@ typedef __uintptr_t uintptr_t;
 
 
 
+
+
+#define TIME_SLICE_AMOUNT (uint16_t)500u
+
+
+
+
+#define NR_OF_TSKS ((uint8_t)0xBu)
+
+
+
+
+
+
+#define MAX_TASKS NR_OF_TSKS
+
+
+
 #define MIN_STACK_SIZE ((StackSize)0x40u)
 
 
@@ -738,7 +756,7 @@ typedef __uintptr_t uintptr_t;
 
 
 #define STACK_BLOCK_SIZE ((uint8_t)0x4u)
-# 75 "../include/R_RTOS_inc.h"
+# 93 "../include/R_RTOS_inc.h"
 #define AMOUNT_OF_MSGQ (QID)(0x3u)
 
 
@@ -781,13 +799,13 @@ typedef __uintptr_t uintptr_t;
 
 
 #define EVT_QUEUE_SIZE (uint8_t)0x4u
-# 126 "../include/R_RTOS_inc.h"
+# 144 "../include/R_RTOS_inc.h"
 #define SYSTCK_AR_RES (uint8_t)0x8u
 
 
 
 #define SYSTCK_AR_RES_MSK (uint8_t)(SYSTCK_AR_RES - (uint8_t)0x1u)
-# 144 "../include/R_RTOS_inc.h"
+# 162 "../include/R_RTOS_inc.h"
 #define TSK_ID_IDLE ((TskID)0x0u)
 
 
@@ -804,7 +822,7 @@ typedef __uintptr_t uintptr_t;
 
 
 #define TSK_PRIO_LEVELS_NR (TskPrioLvl)0xFu
-# 168 "../include/R_RTOS_inc.h"
+# 186 "../include/R_RTOS_inc.h"
 #define AMOUNT_SYS_FKT (uint8_t)0x8u
 
 
@@ -812,7 +830,7 @@ typedef __uintptr_t uintptr_t;
 
 
 #define SYSFKT_INVALID_SYSFKT_ID (SysFktID)0xFFu
-# 195 "../include/R_RTOS_inc.h"
+# 213 "../include/R_RTOS_inc.h"
 #define OFFSETOF(type,field) ((uint8_t) &(((type *) 0)->field))
 
 
@@ -836,9 +854,9 @@ typedef __uintptr_t uintptr_t;
 
 
 #define MQ_IS_TSK_ID(id) (uint8_t)((uint16_t)id & (uint16_t)0xFFu)
-# 230 "../include/R_RTOS_inc.h"
+# 248 "../include/R_RTOS_inc.h"
 #define CREATE_EVT_MSK(evtNr) (EVTQSlots)((EVTQSlots)0x1u << evtNr)
-# 241 "../include/R_RTOS_inc.h"
+# 259 "../include/R_RTOS_inc.h"
 #define TSK_GETSTATE(pTsk) (TskState)(pTsk->tskState)
 
 
@@ -869,7 +887,6 @@ typedef __uintptr_t uintptr_t;
 
 
 #define TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )
-
 
 
 
@@ -918,7 +935,7 @@ typedef __uintptr_t uintptr_t;
 
 
 #define TSK_STATE_IS_UNINIT_ENDED(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_UNINIT_ENDED)
-# 351 "../include/R_RTOS_inc.h"
+# 368 "../include/R_RTOS_inc.h"
 typedef void (*FktCall)( void );
 
 
@@ -980,7 +997,7 @@ typedef uint8_t QID;
 
 
 typedef uint8_t MsgCntr;
-# 422 "../include/R_RTOS_inc.h"
+# 439 "../include/R_RTOS_inc.h"
 typedef union partID
 {
     uint16_t fullID;
@@ -1077,9 +1094,9 @@ typedef FktCall TskStartAddr;
 
 
 typedef FktCall TskEndAddr;
-# 530 "../include/R_RTOS_inc.h"
+# 547 "../include/R_RTOS_inc.h"
 typedef uint8_t SyncEleID;
-# 593 "../include/R_RTOS_inc.h"
+# 610 "../include/R_RTOS_inc.h"
 typedef enum mntrAccssType
 {
     MNTR_ACCESS_NONE = (uint8_t) 0x0u,
@@ -1103,14 +1120,14 @@ typedef enum dataTypes
     DataT_String,
     DataT_FunCall = (uint8_t) 0x8u
 } DataType;
-# 631 "../include/R_RTOS_inc.h"
+# 648 "../include/R_RTOS_inc.h"
 typedef enum timerTypeEn
 {
     SysTimerType = (uint8_t) 0x0u,
     TskTimerType = (uint8_t) 0x1u,
     SysTickTimerType = (uint8_t) 0x2u
 } TimerType;
-# 647 "../include/R_RTOS_inc.h"
+# 664 "../include/R_RTOS_inc.h"
 typedef enum tskPrio
 {
     TSK_PRIO_ERROR = (TskPrioLvl) 0x0u,
@@ -1141,7 +1158,7 @@ typedef enum evtType
     EvtSEM = (uint8_t) 0x42u,
     EvtMNTR = (uint8_t) 0x48u
 } EvtType;
-# 709 "../include/R_RTOS_inc.h"
+# 726 "../include/R_RTOS_inc.h"
 typedef enum tskState
 {
     TSK_STATE_ERROR = (tskStateT) 0x00u,
@@ -1156,8 +1173,10 @@ typedef enum tskState
     TSK_STATE_WAITING_SYNC = (tskStateT) 0x40u,
     TSK_STATE_WAITING_TMR = (tskStateT) 0x41u,
     TSK_STATE_WAITING_EVT = (tskStateT) 0x42u,
-    TSK_STATE_WAITING_SEM = (tskStateT) 0x43u,
-    TSK_STATE_WAITING_MNTR = (tskStateT) 0x44u,
+    TSK_STATE_WAITING_SEM_BIN = (tskStateT) 0x43u,
+    TSK_STATE_WAITING_SEM_CNT = (tskStateT) 0x44u,
+    TSK_STATE_WAITING_MTX = (tskStateT) 0x45u,
+    TSK_STATE_WAITING_MNTR = (tskStateT) 0x46u,
     TSK_STATE_WAITING = (tskStateT) 0x60u,
     TSK_STATE_UNINIT = (tskStateT) 0x80u,
     TSK_STATE_UNINIT_UNINIT = (tskStateT) 0x81u,
@@ -1183,7 +1202,7 @@ typedef enum tskSettings
     TskSet_DUMMY_4 = (uint8_t) 0x40u,
     TskSet_DUMMY_5 = (uint8_t) 0x80u
 } TskSettings;
-# 762 "../include/R_RTOS_inc.h"
+# 781 "../include/R_RTOS_inc.h"
 typedef enum syncEleType
 {
     SyncEle_TYPE_NOID = (uint8_t) 0x0u,
@@ -1195,7 +1214,7 @@ typedef enum syncEleType
     SyncEle_TYPE_MTX = (uint8_t) 0x5u,
     SyncEle_TYPE_MNTR = (uint8_t) 0x6u
 } SyncEleType;
-# 797 "../include/R_RTOS_inc.h"
+# 816 "../include/R_RTOS_inc.h"
 typedef enum sysTckObjTypeEnum
 {
     SysTckObj_Err = (uint8_t) 0x0u,
@@ -1206,13 +1225,13 @@ typedef enum sysTckObjTypeEnum
     SysTckObj_SysFktBlck = (uint8_t) 0x21u,
     SysTckObj_SysFktWait = (uint8_t) 0x22u,
 } SysTckEleType;
-# 816 "../include/R_RTOS_inc.h"
+# 835 "../include/R_RTOS_inc.h"
 typedef union sysTickEleIDUnion
 {
     TskID tskID;
     SysFktID sysFktID;
 } SysTickEleID;
-# 831 "../include/R_RTOS_inc.h"
+# 850 "../include/R_RTOS_inc.h"
 typedef struct sysTickTMRStruc
 {
     struct sysTickTMRStruc * nxtSysTickTMR;
@@ -1233,7 +1252,7 @@ typedef const uint32_t * CData;
 
 
 typedef CData *PCData;
-# 870 "../include/R_RTOS_inc.h"
+# 889 "../include/R_RTOS_inc.h"
 typedef struct mqData
 {
     CData data;
@@ -1241,7 +1260,7 @@ typedef struct mqData
     DataType dataType;
     DataSize dataSize;
 } MQData, *PMQData;
-# 888 "../include/R_RTOS_inc.h"
+# 907 "../include/R_RTOS_inc.h"
 typedef struct msgQMsgProvStruc
 {
     QID msgQID;
@@ -1253,13 +1272,13 @@ typedef struct msgQMsgProvStruc
 
 
 typedef uint8_t MsgID;
-# 913 "../include/R_RTOS_inc.h"
+# 932 "../include/R_RTOS_inc.h"
 typedef struct tskMsgProvStruc
 {
     volatile TskID tskProvID;
     volatile MsgID msgID;
 } TskMsgProv, *PTskMsgProv;
-# 933 "../include/R_RTOS_inc.h"
+# 952 "../include/R_RTOS_inc.h"
 typedef struct sysMsgProvStruc
 {
     volatile SysFktID sysProvID;
@@ -1271,7 +1290,7 @@ typedef struct dummyMsgProvStruc
     uint8_t dummyID;
     uint8_t dummyDummy;
 } DummyMsgProv, *PDummyMsgProv;
-# 953 "../include/R_RTOS_inc.h"
+# 972 "../include/R_RTOS_inc.h"
 typedef enum msgProvTypeEnum
 {
     MsgQ_Prov = (uint8_t) 0x0u,
@@ -1279,7 +1298,7 @@ typedef enum msgProvTypeEnum
     Sys_Prov = (uint8_t) 0x2u,
     Dummy_Prov = (uint8_t) 0xFFu
 } MsgProvType;
-# 970 "../include/R_RTOS_inc.h"
+# 989 "../include/R_RTOS_inc.h"
 typedef union msgPrvdrsUnion
 {
     MsgQMsgProv msgQMsgProv;
@@ -1287,7 +1306,7 @@ typedef union msgPrvdrsUnion
     SysMsgProv sysMsgProv;
     DummyMsgProv dummyMsgProv;
 } MsgPrvdrs, *PMsgPrvdrs;
-# 991 "../include/R_RTOS_inc.h"
+# 1010 "../include/R_RTOS_inc.h"
 typedef struct tskMailBox
 {
     volatile struct tskMailBox *nxtTskMB;
@@ -1297,7 +1316,7 @@ typedef struct tskMailBox
     MsgProvType msgProvType;
     MsgPrvdrs msgProv;
 } TskMB, *PTskMB;
-# 1013 "../include/R_RTOS_inc.h"
+# 1032 "../include/R_RTOS_inc.h"
 typedef struct tmrFktCallStruc
 {
     FktCall sysFktCall;
@@ -1306,7 +1325,7 @@ typedef struct tmrFktCallStruc
     SysFktID nxtFktCall;
     SysFktID fktID;
 } TmrFktCall, *PTmrFktCall;
-# 1030 "../include/R_RTOS_inc.h"
+# 1049 "../include/R_RTOS_inc.h"
 typedef struct sysTckFktCallstruc
 {
     FktCall sysFktCall;
@@ -1315,14 +1334,14 @@ typedef struct sysTckFktCallstruc
     uint8_t dummy8;
     uint16_t dummy16;
 } SysTckFktCall, *PSysTckFktCall;
-# 1047 "../include/R_RTOS_inc.h"
+# 1066 "../include/R_RTOS_inc.h"
 typedef struct msgFktCallStruc
 {
     FktCallOneArg sysFktCall;
     MsgPrvdrs msgProv;
     MsgProvType msgProvType;
 } MsgFktCall, *PMsgFktCall;
-# 1063 "../include/R_RTOS_inc.h"
+# 1082 "../include/R_RTOS_inc.h"
 typedef struct dummyFktCallStruc
 {
     void * sysFktCall;
@@ -1331,7 +1350,7 @@ typedef struct dummyFktCallStruc
     uint8_t dummy8_1;
     uint8_t dummy8_2;
 } DummyFktCall, *PDummyFktCall;
-# 1084 "../include/R_RTOS_inc.h"
+# 1103 "../include/R_RTOS_inc.h"
 typedef struct sysFkt
 {
 
@@ -1349,20 +1368,23 @@ typedef struct sysFkt
 
 typedef enum semTypeEnum
 {
-    SemBin = (uint8_t)0x0u,
-    SemCnt = (uint8_t)0x1u
-}SemType;
-# 1116 "../include/R_RTOS_inc.h"
+    SemBin = (uint8_t) 0x0u, SemCnt = (uint8_t) 0x1u
+} SemType;
+
+#define SEM_NR_OF_TSK_REF_BYTES (uint8_t)((NR_OF_TSKS >> 3) + 1)
+# 1136 "../include/R_RTOS_inc.h"
 typedef struct semStruc
 {
-    TskID semQStrtTskID;
-    TskPrio svdTskPrio;
+    uint8_t tskReferences[(uint8_t)((((uint8_t)0xBu) >> 3) + 1)];
+
+    TskPrio prioInheritPrio;
     SemType semType;
+    SemCntr maxCntrVal;
     union
     {
         SemCntr semCntrSig;
         SemCntr semBinSig;
-    }semSignal;
+    } semSignal;
 } Sem, *PSem;
 
 typedef struct mtxStruc
@@ -1371,24 +1393,24 @@ typedef struct mtxStruc
     TskID mtxOccTskID;
     TskPrio svdTskPrio;
     uint8_t isOcc;
-}Mtx, *PMtx;
-# 1151 "../include/R_RTOS_inc.h"
+} Mtx, *PMtx;
+# 1173 "../include/R_RTOS_inc.h"
 typedef struct evtStruc
 {
     EVTQSlots evtQ_Slots;
     TskID evtObjs[(uint8_t)0x4u ];
 } Evt, *PEvt;
-# 1169 "../include/R_RTOS_inc.h"
+# 1191 "../include/R_RTOS_inc.h"
 typedef struct sysTimerStruc
 {
     SysFktID sysFktIDQStrt;
 } SysTimer, *PSysTimer;
-# 1182 "../include/R_RTOS_inc.h"
+# 1204 "../include/R_RTOS_inc.h"
 typedef struct tskTimerStruc
 {
     TskID tskIDQStrt;
 } TskTimer, *PTskTimer;
-# 1196 "../include/R_RTOS_inc.h"
+# 1218 "../include/R_RTOS_inc.h"
 typedef struct timerStruc
 {
     LifeTime expirationTime;
@@ -1399,7 +1421,7 @@ typedef struct timerStruc
         TskTimer tskTimer;
     } specTimer;
 } Timer, *PTimer;
-# 1239 "../include/R_RTOS_inc.h"
+# 1261 "../include/R_RTOS_inc.h"
 typedef struct syncEleStruc
 {
     SyncEleType syncEleType;
@@ -1438,7 +1460,7 @@ typedef struct syncEleStruc
             uint8_t dummy2;
             uint8_t dummy3;
             uint8_t dummy4;
-        };
+        } MtxSyncEle;
 
         struct mntrSyncEle
         {
@@ -1446,7 +1468,13 @@ typedef struct syncEleStruc
         } MntrSyncEle;
     } SyncEleHandle;
 } SyncEle, *PSyncEle;
-# 1301 "../include/R_RTOS_inc.h"
+# 1319 "../include/R_RTOS_inc.h"
+typedef struct advTskPrio_struc
+{
+    volatile TskPrio actualTskPrio;
+    volatile TskPrio visibleTskPrio;
+} AdvTskPrio;
+# 1338 "../include/R_RTOS_inc.h"
 typedef struct tskTCB
 {
             volatile StackPtrT pStckPtr;
@@ -1462,33 +1490,18 @@ typedef struct tskTCB
 
             StackSize stckSze;
 
-            volatile TskSettings tskSets;
 
-            volatile TskPrio tskPrio;
+
+            AdvTskPrio tskPrio;
             volatile TskState tskState;
 
             TskID tskID;
             volatile TskID nxtTsk;
             volatile TskID prvTsk;
 } TskTCB, *PTskTCB;
-# 1373 "../include/R_RTOS_inc.h"
-#define TIME_SLICE_AMOUNT (uint16_t)500u
-
-
-
-
-#define NR_OF_TSKS ((uint8_t)0xBu)
-
-
-
-
-
-
-#define MAX_TASKS NR_OF_TSKS
-
-
-#define NR_OF_MEMPOOLS (uint8_t)0x5u
-# 1397 "../include/R_RTOS_inc.h"
+# 1408 "../include/R_RTOS_inc.h"
+#define NR_OF_MEMPOOLS (uint8_t)0x7u
+# 1417 "../include/R_RTOS_inc.h"
 typedef uint8_t OsCode;
 
 
@@ -1571,7 +1584,7 @@ typedef uint8_t RetCode;
 
 
 typedef uint16_t MemSize;
-# 1491 "../include/R_RTOS_inc.h"
+# 1511 "../include/R_RTOS_inc.h"
 typedef struct gStruc_OS_FLAGS
 {
     volatile uint8_t g_DispatchFlag :2;
@@ -1580,7 +1593,7 @@ typedef struct gStruc_OS_FLAGS
     volatile uint8_t gLPExit :1;
     volatile uint8_t gWokenUp :1;
 } BitsOSFlags;
-# 1510 "../include/R_RTOS_inc.h"
+# 1530 "../include/R_RTOS_inc.h"
 typedef enum svcCode
 {
     SVC_OS_START = (uint8_t) 0x0u,
@@ -1592,8 +1605,8 @@ typedef enum svcCode
     SVC_TSK_RESET_CRIT,
     SVC_MTX_TAKE,
     SVC_MTX_GIVE,
-    SVC_SEM_TAKE,
-    SVC_SEM_GIVE,
+    SVC_SEM_WAIT,
+    SVC_SEM_SIGNAL,
     SVC_EVT_SEND,
     SVC_EVT_RECV,
     SVC_TMR_SET,

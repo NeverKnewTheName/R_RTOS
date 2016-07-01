@@ -254,24 +254,24 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
                                     );
             if(returnVal == RET_OK) os_SCHEDULE();
             break;
-        case SVC_SEM_TAKE:    // TAKE/GIVE Semaphor
-//            if ( sem_TakeSem(
-//                    (TskTCB* const ) svc_args[1], (const SemNr) svc_args[0],
-//                    (const SysTicks) svc_args[2] )
-//                 != RET_OK )
-//            {
-//                return RET_NOK;
-//            }
-//            os_SCHEDULE();
+        case SVC_SEM_WAIT:
+            if ( sem_wait(
+                    (const SemNr) svc_args[0], ( PTskTCB const) svc_args[1],
+                    (const SysTicks) svc_args[2] )
+                 != RET_OK )
+            {
+                return RET_NOK;
+            }
+            os_SCHEDULE();
             break;
-        case SVC_SEM_GIVE:
-//            if ( sem_GiveSem(
-//                    (TskTCB* const ) svc_args[1], (const SemNr) svc_args[0] )
-//                 != RET_OK )
-//            {
-//                return RET_NOK;
-//            }
-//            os_SCHEDULE();
+        case SVC_SEM_SIGNAL:
+            if ( sem_Tsksignal(
+                     (const SemNr) svc_args[0] , (PTskTCB const ) svc_args[1])
+                 != RET_OK )
+            {
+                return RET_NOK;
+            }
+            os_SCHEDULE();
             break;
         case SVC_EVT_SEND:
             returnVal = evt_SendEvt( (EvtNr) svc_args[0] );

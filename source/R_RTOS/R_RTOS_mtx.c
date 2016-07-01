@@ -69,7 +69,7 @@ static RetCode mtx_InsertTskMtxQ( PMtx pMtx, PTskTCB pTskToIns )
     {
         // THERE IS A QUEUE => INSERT ACCORDING TO PRIORITY
         PTskTCB curTsk = &tsk_AR[pMtx->mtxQStrtTskID];
-        while ( curTsk->tskPrio >= pTskToIns->tskPrio )
+        while ( curTsk->tskPrio.visibleTskPrio >= pTskToIns->tskPrio.visibleTskPrio )
         {
             if ( curTsk->nxtTsk == TSK_ID_NO_TSK )
             {
@@ -101,7 +101,7 @@ static RetCode mtx_GetNextTskMtxQ( PMtx pMtx )
     {
         PTskTCB nxtTsk = &tsk_AR[pMtx->mtxQStrtTskID];
         pMtx->mtxQStrtTskID = nxtTsk->nxtTsk;
-        pMtx->svdTskPrio = nxtTsk->tskPrio;
+        pMtx->svdTskPrio = nxtTsk->tskPrio.visibleTskPrio;
         tsk_ClrEvt( nxtTsk, nxtTsk->tskSync );
         memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_MTX );    // FREE CURRENT TskSyncEle
         nxtTsk->tskSync = (PSyncEle) NULL;
@@ -162,17 +162,17 @@ RetCode mtx_TakeMtx(
         tsk_SetEvt( tsk, mtxSync );
 
         PTskTCB occTsk = &( tsk_AR[pMtx->mtxOccTskID] );
-        if ( occTsk->tskPrio < tsk->tskPrio )
+        if ( occTsk->tskPrio.visibleTskPrio < tsk->tskPrio.visibleTskPrio )
         {
             // INHERIT MAXIMUM PRIORITY OF ALL INCOMING TASKS
-            tsk_ChngePrio( occTsk, tsk->tskPrio );
+            tsk_ChngePrio( occTsk, tsk->tskPrio.visibleTskPrio );
         }
         return mtx_InsertTskMtxQ( pMtx, tsk );    // insert task into the mutex's wait queue
     }
     else
     {
         pMtx->mtxOccTskID = tsk->tskID; // current task is now the occupying task
-        pMtx->svdTskPrio = tsk->tskPrio; // save the task priority for the priority inversion protocol
+        pMtx->svdTskPrio = tsk->tskPrio.visibleTskPrio; // save the task priority for the priority inversion protocol
         // If the mutex is free, there is also no waiting queue; to make sure, set the Q start to TSK_ID_NO_TSK; COULD BE OPTIMIZED OUT
         pMtx->mtxQStrtTskID = TSK_ID_NO_TSK;
         return RET_OK;
@@ -191,7 +191,7 @@ RetCode mtx_GiveMtx( PTskTCB const tsk, const MtxNr mtxNr )
     if ( pMtx->mtxOccTskID != tsk->tskID )    // ONLY THE OCCUPYING TASK CAN GIVE THE MUTEX
         return RET_NOK;
 
-    if ( tsk->tskPrio != pMtx->svdTskPrio )
+    if ( tsk->tskPrio.visibleTskPrio != pMtx->svdTskPrio )
     {
         tsk_ChngePrio( tsk, pMtx->svdTskPrio );
     }

@@ -1006,10 +1006,10 @@ setSensingForPin:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF4568
-	.byte	0x1
 	.4byte	.LASF4569
+	.byte	0x1
 	.4byte	.LASF4570
+	.4byte	.LASF4571
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -1017,50 +1017,50 @@ setSensingForPin:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF4494
+	.4byte	.LASF4495
 	.uleb128 0x3
-	.4byte	.LASF4497
+	.4byte	.LASF4498
 	.byte	0x3
 	.byte	0x1c
 	.4byte	0x3b
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF4495
+	.4byte	.LASF4496
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF4496
+	.4byte	.LASF4497
 	.uleb128 0x3
-	.4byte	.LASF4498
+	.4byte	.LASF4499
 	.byte	0x3
 	.byte	0x26
 	.4byte	0x54
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF4499
+	.4byte	.LASF4500
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x5
-	.4byte	.LASF4500
-	.uleb128 0x3
 	.4byte	.LASF4501
+	.uleb128 0x3
+	.4byte	.LASF4502
 	.byte	0x3
 	.byte	0x38
 	.4byte	0x6d
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF4502
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x5
 	.4byte	.LASF4503
 	.uleb128 0x2
 	.byte	0x8
-	.byte	0x7
+	.byte	0x5
 	.4byte	.LASF4504
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x7
+	.4byte	.LASF4505
 	.uleb128 0x4
 	.byte	0x4
 	.byte	0x5
@@ -1068,26 +1068,26 @@ setSensingForPin:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF4505
-	.uleb128 0x3
 	.4byte	.LASF4506
+	.uleb128 0x3
+	.4byte	.LASF4507
 	.byte	0x4
 	.byte	0x2a
 	.4byte	0x30
 	.uleb128 0x3
-	.4byte	.LASF4507
+	.4byte	.LASF4508
 	.byte	0x4
 	.byte	0x36
 	.4byte	0x49
 	.uleb128 0x3
-	.4byte	.LASF4508
+	.4byte	.LASF4509
 	.byte	0x4
 	.byte	0x42
 	.4byte	0x62
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF4509
+	.4byte	.LASF4510
 	.uleb128 0x5
 	.4byte	0xbd
 	.uleb128 0x6
@@ -1100,44 +1100,44 @@ setSensingForPin:
 	.2byte	0x684
 	.4byte	0x11f
 	.uleb128 0x8
-	.4byte	.LASF4510
+	.4byte	.LASF4511
 	.byte	0x5
 	.2byte	0x685
 	.4byte	0xbd
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF4511
+	.4byte	.LASF4512
 	.byte	0x5
 	.2byte	0x686
 	.4byte	0xbd
 	.byte	0x4
 	.uleb128 0x8
-	.4byte	.LASF4512
+	.4byte	.LASF4513
 	.byte	0x5
 	.2byte	0x687
 	.4byte	0xbd
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF4513
+	.4byte	.LASF4514
 	.byte	0x5
 	.2byte	0x688
 	.4byte	0xbd
 	.byte	0xc
 	.uleb128 0x8
-	.4byte	.LASF4514
+	.4byte	.LASF4515
 	.byte	0x5
 	.2byte	0x689
 	.4byte	0xb8
 	.byte	0x10
 	.uleb128 0x8
-	.4byte	.LASF4515
+	.4byte	.LASF4516
 	.byte	0x5
 	.2byte	0x68a
 	.4byte	0xbd
 	.byte	0x14
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF4516
+	.4byte	.LASF4517
 	.byte	0x5
 	.2byte	0x68b
 	.4byte	0xc7
@@ -1174,25 +1174,25 @@ setSensingForPin:
 	.4byte	0x1b6
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF4517
+	.4byte	.LASF4518
 	.byte	0x5
 	.2byte	0xfb4
 	.4byte	0xbd
 	.byte	0x80
 	.uleb128 0x8
-	.4byte	.LASF4518
+	.4byte	.LASF4519
 	.byte	0x5
 	.2byte	0xfb5
 	.4byte	0xbd
 	.byte	0x84
 	.uleb128 0x8
-	.4byte	.LASF4519
+	.4byte	.LASF4520
 	.byte	0x5
 	.2byte	0xfb6
 	.4byte	0x14b
 	.byte	0x88
 	.uleb128 0x8
-	.4byte	.LASF4520
+	.4byte	.LASF4521
 	.byte	0x5
 	.2byte	0xfb7
 	.4byte	0xbd
@@ -1208,7 +1208,7 @@ setSensingForPin:
 	.uleb128 0x6
 	.4byte	0x1a6
 	.uleb128 0x9
-	.4byte	.LASF4521
+	.4byte	.LASF4522
 	.byte	0x5
 	.2byte	0xfb8
 	.4byte	0x15b
@@ -1225,7 +1225,7 @@ setSensingForPin:
 	.2byte	0x1587
 	.4byte	0x1fb
 	.uleb128 0x8
-	.4byte	.LASF4522
+	.4byte	.LASF4523
 	.byte	0x5
 	.2byte	0x1588
 	.4byte	0xbd
@@ -1261,31 +1261,31 @@ setSensingForPin:
 	.4byte	0xbd
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF4523
+	.4byte	.LASF4524
 	.byte	0x5
 	.2byte	0x158a
 	.4byte	0x26c
 	.byte	0xc
 	.uleb128 0x8
-	.4byte	.LASF4519
+	.4byte	.LASF4520
 	.byte	0x5
 	.2byte	0x158b
 	.4byte	0x27c
 	.byte	0x3c
 	.uleb128 0x8
-	.4byte	.LASF4524
+	.4byte	.LASF4525
 	.byte	0x5
 	.2byte	0x158c
 	.4byte	0xbd
 	.byte	0x50
 	.uleb128 0x8
-	.4byte	.LASF4525
+	.4byte	.LASF4526
 	.byte	0x5
 	.2byte	0x158d
 	.4byte	0x13b
 	.byte	0x54
 	.uleb128 0x8
-	.4byte	.LASF4526
+	.4byte	.LASF4527
 	.byte	0x5
 	.2byte	0x158e
 	.4byte	0xbd
@@ -1306,17 +1306,17 @@ setSensingForPin:
 	.byte	0x13
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF4527
+	.4byte	.LASF4528
 	.byte	0x5
 	.2byte	0x158f
 	.4byte	0x1fb
 	.uleb128 0x3
-	.4byte	.LASF4528
+	.4byte	.LASF4529
 	.byte	0x6
 	.byte	0x3d
 	.4byte	0x90
 	.uleb128 0x3
-	.4byte	.LASF4529
+	.4byte	.LASF4530
 	.byte	0x6
 	.byte	0x40
 	.4byte	0x2ae
@@ -1325,70 +1325,70 @@ setSensingForPin:
 	.4byte	0x2b4
 	.uleb128 0xe
 	.uleb128 0x3
-	.4byte	.LASF4530
+	.4byte	.LASF4531
 	.byte	0x6
 	.byte	0x42
 	.4byte	0x90
 	.uleb128 0xf
-	.4byte	.LASF4571
+	.4byte	.LASF4572
 	.byte	0x1
 	.byte	0x6
 	.byte	0x44
 	.4byte	0x2f7
 	.uleb128 0x10
-	.4byte	.LASF4531
+	.4byte	.LASF4532
 	.sleb128 0
 	.uleb128 0x10
-	.4byte	.LASF4532
+	.4byte	.LASF4533
 	.sleb128 1
 	.uleb128 0x10
-	.4byte	.LASF4533
+	.4byte	.LASF4534
 	.sleb128 2
 	.uleb128 0x10
-	.4byte	.LASF4534
+	.4byte	.LASF4535
 	.sleb128 3
 	.uleb128 0x10
-	.4byte	.LASF4535
+	.4byte	.LASF4536
 	.sleb128 4
 	.uleb128 0x10
-	.4byte	.LASF4536
+	.4byte	.LASF4537
 	.sleb128 5
 	.uleb128 0x10
-	.4byte	.LASF4537
+	.4byte	.LASF4538
 	.sleb128 6
 	.byte	0
 	.uleb128 0x3
-	.4byte	.LASF4538
+	.4byte	.LASF4539
 	.byte	0x7
 	.byte	0x1a
 	.4byte	0x9b
 	.uleb128 0x3
-	.4byte	.LASF4539
+	.4byte	.LASF4540
 	.byte	0x7
 	.byte	0x1b
 	.4byte	0x2f7
 	.uleb128 0x9
-	.4byte	.LASF4540
-	.byte	0x8
-	.2byte	0x1f6
-	.4byte	0x90
-	.uleb128 0x9
 	.4byte	.LASF4541
 	.byte	0x8
-	.2byte	0x1fb
+	.2byte	0x207
+	.4byte	0x90
+	.uleb128 0x9
+	.4byte	.LASF4542
+	.byte	0x8
+	.2byte	0x20c
 	.4byte	0x90
 	.uleb128 0x11
-	.4byte	.LASF4542
+	.4byte	.LASF4543
 	.byte	0x2
 	.2byte	0x148
 	.byte	0x3
 	.uleb128 0x11
-	.4byte	.LASF4543
+	.4byte	.LASF4544
 	.byte	0x2
 	.2byte	0x13d
 	.byte	0x3
 	.uleb128 0x12
-	.4byte	.LASF4547
+	.4byte	.LASF4548
 	.byte	0x1
 	.byte	0x70
 	.4byte	.LFB33
@@ -1397,7 +1397,7 @@ setSensingForPin:
 	.byte	0x9c
 	.4byte	0x377
 	.uleb128 0x13
-	.4byte	.LASF4544
+	.4byte	.LASF4545
 	.byte	0x1
 	.byte	0x70
 	.4byte	0x2a3
@@ -1405,7 +1405,7 @@ setSensingForPin:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0x13
-	.4byte	.LASF4545
+	.4byte	.LASF4546
 	.byte	0x1
 	.byte	0x70
 	.4byte	0x2b5
@@ -1413,7 +1413,7 @@ setSensingForPin:
 	.byte	0x91
 	.sleb128 -13
 	.uleb128 0x13
-	.4byte	.LASF4546
+	.4byte	.LASF4547
 	.byte	0x1
 	.byte	0x70
 	.4byte	0x90
@@ -1422,7 +1422,7 @@ setSensingForPin:
 	.sleb128 -14
 	.byte	0
 	.uleb128 0x12
-	.4byte	.LASF4548
+	.4byte	.LASF4549
 	.byte	0x1
 	.byte	0xfd
 	.4byte	.LFB34
@@ -1431,7 +1431,7 @@ setSensingForPin:
 	.byte	0x9c
 	.4byte	0x39b
 	.uleb128 0x14
-	.4byte	.LASF4550
+	.4byte	.LASF4551
 	.byte	0x1
 	.byte	0xff
 	.4byte	0x90
@@ -1440,7 +1440,7 @@ setSensingForPin:
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x15
-	.4byte	.LASF4549
+	.4byte	.LASF4550
 	.byte	0x1
 	.2byte	0x147
 	.4byte	.LFB35
@@ -1449,7 +1449,7 @@ setSensingForPin:
 	.byte	0x9c
 	.4byte	0x3c1
 	.uleb128 0x16
-	.4byte	.LASF4551
+	.4byte	.LASF4552
 	.byte	0x1
 	.2byte	0x149
 	.4byte	0x90
@@ -1458,7 +1458,7 @@ setSensingForPin:
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LASF4572
+	.4byte	.LASF4573
 	.byte	0x1
 	.2byte	0x198
 	.4byte	.LFB36
@@ -1466,7 +1466,7 @@ setSensingForPin:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x15
-	.4byte	.LASF4552
+	.4byte	.LASF4553
 	.byte	0x1
 	.2byte	0x1cc
 	.4byte	.LFB37
@@ -1475,7 +1475,7 @@ setSensingForPin:
 	.byte	0x9c
 	.4byte	0x428
 	.uleb128 0x16
-	.4byte	.LASF4553
+	.4byte	.LASF4554
 	.byte	0x1
 	.2byte	0x1ce
 	.4byte	0x302
@@ -1483,7 +1483,7 @@ setSensingForPin:
 	.byte	0x91
 	.sleb128 -10
 	.uleb128 0x16
-	.4byte	.LASF4554
+	.4byte	.LASF4555
 	.byte	0x1
 	.2byte	0x1d0
 	.4byte	0x428
@@ -1507,7 +1507,7 @@ setSensingForPin:
 	.byte	0x4
 	.4byte	0xbd
 	.uleb128 0x15
-	.4byte	.LASF4555
+	.4byte	.LASF4556
 	.byte	0x1
 	.2byte	0x1f0
 	.4byte	.LFB38
@@ -1516,7 +1516,7 @@ setSensingForPin:
 	.byte	0x9c
 	.4byte	0x483
 	.uleb128 0x16
-	.4byte	.LASF4553
+	.4byte	.LASF4554
 	.byte	0x1
 	.2byte	0x1f2
 	.4byte	0x302
@@ -1524,7 +1524,7 @@ setSensingForPin:
 	.byte	0x91
 	.sleb128 -10
 	.uleb128 0x16
-	.4byte	.LASF4554
+	.4byte	.LASF4555
 	.byte	0x1
 	.2byte	0x1f4
 	.4byte	0x428
@@ -1545,7 +1545,7 @@ setSensingForPin:
 	.2byte	0x203
 	.byte	0
 	.uleb128 0x19
-	.4byte	.LASF4556
+	.4byte	.LASF4557
 	.byte	0x1
 	.2byte	0x214
 	.4byte	.LFB39
@@ -1562,7 +1562,7 @@ setSensingForPin:
 	.byte	0x91
 	.sleb128 -26
 	.uleb128 0x1b
-	.4byte	.LASF4557
+	.4byte	.LASF4558
 	.byte	0x1
 	.2byte	0x214
 	.4byte	0x4cc
@@ -1570,7 +1570,7 @@ setSensingForPin:
 	.byte	0x91
 	.sleb128 -27
 	.uleb128 0x16
-	.4byte	.LASF4558
+	.4byte	.LASF4559
 	.byte	0x1
 	.2byte	0x216
 	.4byte	0x428
@@ -1590,7 +1590,7 @@ setSensingForPin:
 	.byte	0x5
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF4559
+	.4byte	.LASF4560
 	.byte	0x1
 	.byte	0x2d
 	.4byte	0x4f2
@@ -1600,7 +1600,7 @@ setSensingForPin:
 	.uleb128 0x6
 	.4byte	0x4d1
 	.uleb128 0x14
-	.4byte	.LASF4560
+	.4byte	.LASF4561
 	.byte	0x1
 	.byte	0x30
 	.4byte	0x508
@@ -1610,7 +1610,7 @@ setSensingForPin:
 	.uleb128 0x6
 	.4byte	0x1c7
 	.uleb128 0x14
-	.4byte	.LASF4561
+	.4byte	.LASF4562
 	.byte	0x1
 	.byte	0x38
 	.4byte	0x51e
@@ -1620,7 +1620,7 @@ setSensingForPin:
 	.uleb128 0x6
 	.4byte	0x12b
 	.uleb128 0x14
-	.4byte	.LASF4562
+	.4byte	.LASF4563
 	.byte	0x1
 	.byte	0x3a
 	.4byte	0x534
@@ -1637,7 +1637,7 @@ setSensingForPin:
 	.byte	0xc
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF4563
+	.4byte	.LASF4564
 	.byte	0x1
 	.byte	0x3c
 	.4byte	0x55a
@@ -1647,7 +1647,7 @@ setSensingForPin:
 	.uleb128 0x6
 	.4byte	0x539
 	.uleb128 0x14
-	.4byte	.LASF4564
+	.4byte	.LASF4565
 	.byte	0x1
 	.byte	0x41
 	.4byte	0x570
@@ -1667,7 +1667,7 @@ setSensingForPin:
 	.byte	0x4
 	.4byte	0xc2
 	.uleb128 0x14
-	.4byte	.LASF4565
+	.4byte	.LASF4566
 	.byte	0x1
 	.byte	0x47
 	.4byte	0x575
@@ -1675,7 +1675,7 @@ setSensingForPin:
 	.byte	0x3
 	.4byte	g_ISRFktNr_Modules
 	.uleb128 0x14
-	.4byte	.LASF4566
+	.4byte	.LASF4567
 	.byte	0x1
 	.byte	0x5d
 	.4byte	0x5ad
@@ -1688,7 +1688,7 @@ setSensingForPin:
 	.uleb128 0x6
 	.4byte	0x2a3
 	.uleb128 0x14
-	.4byte	.LASF4567
+	.4byte	.LASF4568
 	.byte	0x1
 	.byte	0x5e
 	.4byte	0x90
@@ -3286,10 +3286,10 @@ setSensingForPin:
 	.4byte	.LASF4292
 	.byte	0x5
 	.uleb128 0x1c
-	.4byte	.LASF4492
+	.4byte	.LASF4493
 	.byte	0x5
 	.uleb128 0x1f
-	.4byte	.LASF4493
+	.4byte	.LASF4494
 	.byte	0x4
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.MKL05Z4.h.103.f68bb2c385f84d89dfea36d27f6bce5b,comdat
@@ -15186,7 +15186,7 @@ setSensingForPin:
 	.uleb128 0x7f
 	.4byte	.LASF4289
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.e20ad093e597e8d0ba535fac3f58656b,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.55ebedb3326d3ea1a2e00d95ba548a73,comdat
 .Ldebug_macro14:
 	.2byte	0x4
 	.byte	0
@@ -15203,16 +15203,16 @@ setSensingForPin:
 	.uleb128 0x2e
 	.4byte	.LASF4294
 	.byte	0x5
-	.uleb128 0x34
+	.uleb128 0x36
 	.4byte	.LASF4295
 	.byte	0x5
-	.uleb128 0x39
+	.uleb128 0x3b
 	.4byte	.LASF4296
 	.byte	0x5
-	.uleb128 0x3e
+	.uleb128 0x42
 	.4byte	.LASF4297
 	.byte	0x5
-	.uleb128 0x42
+	.uleb128 0x46
 	.4byte	.LASF4298
 	.byte	0x5
 	.uleb128 0x4b
@@ -15224,176 +15224,179 @@ setSensingForPin:
 	.uleb128 0x54
 	.4byte	.LASF4301
 	.byte	0x5
-	.uleb128 0x59
+	.uleb128 0x5d
 	.4byte	.LASF4302
 	.byte	0x5
-	.uleb128 0x5d
+	.uleb128 0x62
 	.4byte	.LASF4303
 	.byte	0x5
-	.uleb128 0x65
+	.uleb128 0x66
 	.4byte	.LASF4304
 	.byte	0x5
-	.uleb128 0x6d
+	.uleb128 0x6b
 	.4byte	.LASF4305
 	.byte	0x5
-	.uleb128 0x74
+	.uleb128 0x6f
 	.4byte	.LASF4306
 	.byte	0x5
-	.uleb128 0x7e
+	.uleb128 0x77
 	.4byte	.LASF4307
 	.byte	0x5
-	.uleb128 0x82
+	.uleb128 0x7f
 	.4byte	.LASF4308
 	.byte	0x5
-	.uleb128 0x90
+	.uleb128 0x86
 	.4byte	.LASF4309
 	.byte	0x5
-	.uleb128 0x97
+	.uleb128 0x90
 	.4byte	.LASF4310
 	.byte	0x5
-	.uleb128 0x9f
+	.uleb128 0x94
 	.4byte	.LASF4311
 	.byte	0x5
-	.uleb128 0xa8
+	.uleb128 0xa2
 	.4byte	.LASF4312
 	.byte	0x5
-	.uleb128 0xae
+	.uleb128 0xa9
 	.4byte	.LASF4313
 	.byte	0x5
-	.uleb128 0xc3
+	.uleb128 0xb1
 	.4byte	.LASF4314
 	.byte	0x5
-	.uleb128 0xcb
+	.uleb128 0xba
 	.4byte	.LASF4315
 	.byte	0x5
-	.uleb128 0xd0
+	.uleb128 0xc0
 	.4byte	.LASF4316
 	.byte	0x5
 	.uleb128 0xd5
 	.4byte	.LASF4317
 	.byte	0x5
-	.uleb128 0xd9
+	.uleb128 0xdd
 	.4byte	.LASF4318
 	.byte	0x5
-	.uleb128 0xe6
+	.uleb128 0xe2
 	.4byte	.LASF4319
 	.byte	0x5
-	.uleb128 0xf1
+	.uleb128 0xe7
 	.4byte	.LASF4320
 	.byte	0x5
-	.uleb128 0xf6
+	.uleb128 0xeb
 	.4byte	.LASF4321
 	.byte	0x5
-	.uleb128 0xfb
+	.uleb128 0xf8
 	.4byte	.LASF4322
 	.byte	0x5
-	.uleb128 0x100
+	.uleb128 0x103
 	.4byte	.LASF4323
 	.byte	0x5
-	.uleb128 0x104
+	.uleb128 0x108
 	.4byte	.LASF4324
 	.byte	0x5
-	.uleb128 0x108
+	.uleb128 0x10d
 	.4byte	.LASF4325
 	.byte	0x5
-	.uleb128 0x10e
+	.uleb128 0x112
 	.4byte	.LASF4326
 	.byte	0x5
-	.uleb128 0x114
+	.uleb128 0x116
 	.4byte	.LASF4327
 	.byte	0x5
-	.uleb128 0x118
+	.uleb128 0x11a
 	.4byte	.LASF4328
 	.byte	0x5
-	.uleb128 0x11c
+	.uleb128 0x120
 	.4byte	.LASF4329
 	.byte	0x5
-	.uleb128 0x120
+	.uleb128 0x125
 	.4byte	.LASF4330
 	.byte	0x5
-	.uleb128 0x124
+	.uleb128 0x129
 	.4byte	.LASF4331
 	.byte	0x5
-	.uleb128 0x128
+	.uleb128 0x12d
 	.4byte	.LASF4332
 	.byte	0x5
-	.uleb128 0x12c
+	.uleb128 0x131
 	.4byte	.LASF4333
 	.byte	0x5
-	.uleb128 0x133
+	.uleb128 0x135
 	.4byte	.LASF4334
 	.byte	0x5
-	.uleb128 0x137
+	.uleb128 0x139
 	.4byte	.LASF4335
 	.byte	0x5
-	.uleb128 0x13b
+	.uleb128 0x13d
 	.4byte	.LASF4336
 	.byte	0x5
-	.uleb128 0x13f
+	.uleb128 0x144
 	.4byte	.LASF4337
 	.byte	0x5
-	.uleb128 0x55d
+	.uleb128 0x148
 	.4byte	.LASF4338
 	.byte	0x5
-	.uleb128 0x562
+	.uleb128 0x14c
 	.4byte	.LASF4339
 	.byte	0x5
-	.uleb128 0x569
+	.uleb128 0x150
 	.4byte	.LASF4340
 	.byte	0x5
-	.uleb128 0x56c
+	.uleb128 0x463
 	.4byte	.LASF4341
 	.byte	0x5
-	.uleb128 0x57a
+	.uleb128 0x580
 	.4byte	.LASF4342
 	.byte	0x5
-	.uleb128 0x57f
+	.uleb128 0x58e
 	.4byte	.LASF4343
 	.byte	0x5
-	.uleb128 0x588
+	.uleb128 0x593
 	.4byte	.LASF4344
 	.byte	0x5
-	.uleb128 0x58c
+	.uleb128 0x59c
 	.4byte	.LASF4345
 	.byte	0x5
-	.uleb128 0x590
+	.uleb128 0x5a0
 	.4byte	.LASF4346
 	.byte	0x5
-	.uleb128 0x594
+	.uleb128 0x5a4
 	.4byte	.LASF4347
 	.byte	0x5
-	.uleb128 0x598
+	.uleb128 0x5a8
 	.4byte	.LASF4348
 	.byte	0x5
-	.uleb128 0x59c
+	.uleb128 0x5ac
 	.4byte	.LASF4349
 	.byte	0x5
-	.uleb128 0x5a0
+	.uleb128 0x5b0
 	.4byte	.LASF4350
 	.byte	0x5
-	.uleb128 0x5a4
+	.uleb128 0x5b4
 	.4byte	.LASF4351
 	.byte	0x5
-	.uleb128 0x5a8
+	.uleb128 0x5b8
 	.4byte	.LASF4352
 	.byte	0x5
-	.uleb128 0x5ac
+	.uleb128 0x5bc
 	.4byte	.LASF4353
 	.byte	0x5
-	.uleb128 0x5b0
+	.uleb128 0x5c0
 	.4byte	.LASF4354
 	.byte	0x5
-	.uleb128 0x5b4
+	.uleb128 0x5c4
 	.4byte	.LASF4355
 	.byte	0x5
-	.uleb128 0x5b8
+	.uleb128 0x5c8
 	.4byte	.LASF4356
 	.byte	0x5
-	.uleb128 0x5bc
+	.uleb128 0x5cc
 	.4byte	.LASF4357
 	.byte	0x5
-	.uleb128 0x5c0
+	.uleb128 0x5d0
 	.4byte	.LASF4358
+	.byte	0x5
+	.uleb128 0x5d4
+	.4byte	.LASF4359
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_memMngr.h.20.3fa02398393232138c63718be3aa1b6e,comdat
 .Ldebug_macro15:
@@ -15401,403 +15404,403 @@ setSensingForPin:
 	.byte	0
 	.byte	0x5
 	.uleb128 0x14
-	.4byte	.LASF4359
-	.byte	0x5
-	.uleb128 0x18
 	.4byte	.LASF4360
 	.byte	0x5
-	.uleb128 0x1c
+	.uleb128 0x18
 	.4byte	.LASF4361
 	.byte	0x5
-	.uleb128 0x20
+	.uleb128 0x1c
 	.4byte	.LASF4362
 	.byte	0x5
-	.uleb128 0x2b
+	.uleb128 0x20
 	.4byte	.LASF4363
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x2b
 	.4byte	.LASF4364
 	.byte	0x5
-	.uleb128 0x39
+	.uleb128 0x32
 	.4byte	.LASF4365
 	.byte	0x5
-	.uleb128 0x42
+	.uleb128 0x39
 	.4byte	.LASF4366
 	.byte	0x5
-	.uleb128 0x49
+	.uleb128 0x42
 	.4byte	.LASF4367
 	.byte	0x5
-	.uleb128 0x50
+	.uleb128 0x49
 	.4byte	.LASF4368
 	.byte	0x5
-	.uleb128 0x59
+	.uleb128 0x50
 	.4byte	.LASF4369
 	.byte	0x5
-	.uleb128 0x118
+	.uleb128 0x59
 	.4byte	.LASF4370
 	.byte	0x5
-	.uleb128 0x119
+	.uleb128 0x118
 	.4byte	.LASF4371
 	.byte	0x5
-	.uleb128 0x11c
+	.uleb128 0x119
 	.4byte	.LASF4372
 	.byte	0x5
-	.uleb128 0x11d
+	.uleb128 0x11c
 	.4byte	.LASF4373
 	.byte	0x5
-	.uleb128 0x11e
+	.uleb128 0x11d
 	.4byte	.LASF4374
 	.byte	0x5
-	.uleb128 0x11f
+	.uleb128 0x11e
 	.4byte	.LASF4375
 	.byte	0x5
-	.uleb128 0x120
+	.uleb128 0x11f
 	.4byte	.LASF4376
 	.byte	0x5
-	.uleb128 0x121
+	.uleb128 0x120
 	.4byte	.LASF4377
 	.byte	0x5
-	.uleb128 0x122
+	.uleb128 0x121
 	.4byte	.LASF4378
 	.byte	0x5
-	.uleb128 0x13c
+	.uleb128 0x122
 	.4byte	.LASF4379
 	.byte	0x5
-	.uleb128 0x13d
+	.uleb128 0x13c
 	.4byte	.LASF4380
 	.byte	0x5
-	.uleb128 0x13e
+	.uleb128 0x13d
 	.4byte	.LASF4381
 	.byte	0x5
-	.uleb128 0x13f
+	.uleb128 0x13e
 	.4byte	.LASF4382
 	.byte	0x5
-	.uleb128 0x140
+	.uleb128 0x13f
 	.4byte	.LASF4383
 	.byte	0x5
-	.uleb128 0x141
+	.uleb128 0x140
 	.4byte	.LASF4384
 	.byte	0x5
-	.uleb128 0x142
+	.uleb128 0x141
 	.4byte	.LASF4385
 	.byte	0x5
-	.uleb128 0x143
+	.uleb128 0x142
 	.4byte	.LASF4386
 	.byte	0x5
-	.uleb128 0x144
+	.uleb128 0x143
 	.4byte	.LASF4387
 	.byte	0x5
-	.uleb128 0x145
+	.uleb128 0x144
 	.4byte	.LASF4388
 	.byte	0x5
-	.uleb128 0x146
+	.uleb128 0x145
 	.4byte	.LASF4389
 	.byte	0x5
-	.uleb128 0x147
+	.uleb128 0x146
 	.4byte	.LASF4390
 	.byte	0x5
-	.uleb128 0x148
+	.uleb128 0x147
 	.4byte	.LASF4391
 	.byte	0x5
-	.uleb128 0x149
+	.uleb128 0x148
 	.4byte	.LASF4392
 	.byte	0x5
-	.uleb128 0x14a
+	.uleb128 0x149
 	.4byte	.LASF4393
 	.byte	0x5
-	.uleb128 0x14b
+	.uleb128 0x14a
 	.4byte	.LASF4394
 	.byte	0x5
-	.uleb128 0x14c
+	.uleb128 0x14b
 	.4byte	.LASF4395
 	.byte	0x5
-	.uleb128 0x14d
+	.uleb128 0x14c
 	.4byte	.LASF4396
 	.byte	0x5
-	.uleb128 0x14e
+	.uleb128 0x14d
 	.4byte	.LASF4397
 	.byte	0x5
-	.uleb128 0x14f
+	.uleb128 0x14e
 	.4byte	.LASF4398
 	.byte	0x5
-	.uleb128 0x150
+	.uleb128 0x14f
 	.4byte	.LASF4399
 	.byte	0x5
-	.uleb128 0x151
+	.uleb128 0x150
 	.4byte	.LASF4400
 	.byte	0x5
-	.uleb128 0x152
+	.uleb128 0x151
 	.4byte	.LASF4401
 	.byte	0x5
-	.uleb128 0x153
+	.uleb128 0x152
 	.4byte	.LASF4402
 	.byte	0x5
-	.uleb128 0x154
+	.uleb128 0x153
 	.4byte	.LASF4403
 	.byte	0x5
-	.uleb128 0x155
+	.uleb128 0x154
 	.4byte	.LASF4404
 	.byte	0x5
-	.uleb128 0x156
+	.uleb128 0x155
 	.4byte	.LASF4405
 	.byte	0x5
-	.uleb128 0x157
+	.uleb128 0x156
 	.4byte	.LASF4406
 	.byte	0x5
-	.uleb128 0x158
+	.uleb128 0x157
 	.4byte	.LASF4407
 	.byte	0x5
-	.uleb128 0x159
+	.uleb128 0x158
 	.4byte	.LASF4408
 	.byte	0x5
-	.uleb128 0x15a
+	.uleb128 0x159
 	.4byte	.LASF4409
 	.byte	0x5
-	.uleb128 0x15b
+	.uleb128 0x15a
 	.4byte	.LASF4410
 	.byte	0x5
-	.uleb128 0x15d
+	.uleb128 0x15b
 	.4byte	.LASF4411
 	.byte	0x5
-	.uleb128 0x15f
+	.uleb128 0x15d
 	.4byte	.LASF4412
 	.byte	0x5
-	.uleb128 0x160
+	.uleb128 0x15f
 	.4byte	.LASF4413
 	.byte	0x5
-	.uleb128 0x161
+	.uleb128 0x160
 	.4byte	.LASF4414
 	.byte	0x5
-	.uleb128 0x162
+	.uleb128 0x161
 	.4byte	.LASF4415
 	.byte	0x5
-	.uleb128 0x163
+	.uleb128 0x162
 	.4byte	.LASF4416
 	.byte	0x5
-	.uleb128 0x164
+	.uleb128 0x163
 	.4byte	.LASF4417
 	.byte	0x5
-	.uleb128 0x165
+	.uleb128 0x164
 	.4byte	.LASF4418
 	.byte	0x5
-	.uleb128 0x166
+	.uleb128 0x165
 	.4byte	.LASF4419
 	.byte	0x5
-	.uleb128 0x167
+	.uleb128 0x166
 	.4byte	.LASF4420
 	.byte	0x5
-	.uleb128 0x168
+	.uleb128 0x167
 	.4byte	.LASF4421
 	.byte	0x5
-	.uleb128 0x169
+	.uleb128 0x168
 	.4byte	.LASF4422
 	.byte	0x5
-	.uleb128 0x16a
+	.uleb128 0x169
 	.4byte	.LASF4423
 	.byte	0x5
-	.uleb128 0x16b
+	.uleb128 0x16a
 	.4byte	.LASF4424
 	.byte	0x5
-	.uleb128 0x16c
+	.uleb128 0x16b
 	.4byte	.LASF4425
 	.byte	0x5
-	.uleb128 0x16d
+	.uleb128 0x16c
 	.4byte	.LASF4426
 	.byte	0x5
-	.uleb128 0x16e
+	.uleb128 0x16d
 	.4byte	.LASF4427
 	.byte	0x5
-	.uleb128 0x16f
+	.uleb128 0x16e
 	.4byte	.LASF4428
 	.byte	0x5
-	.uleb128 0x170
+	.uleb128 0x16f
 	.4byte	.LASF4429
 	.byte	0x5
-	.uleb128 0x171
+	.uleb128 0x170
 	.4byte	.LASF4430
 	.byte	0x5
-	.uleb128 0x173
+	.uleb128 0x171
 	.4byte	.LASF4431
 	.byte	0x5
-	.uleb128 0x174
+	.uleb128 0x173
 	.4byte	.LASF4432
 	.byte	0x5
-	.uleb128 0x181
+	.uleb128 0x174
 	.4byte	.LASF4433
 	.byte	0x5
-	.uleb128 0x182
+	.uleb128 0x181
 	.4byte	.LASF4434
 	.byte	0x5
-	.uleb128 0x183
+	.uleb128 0x182
 	.4byte	.LASF4435
 	.byte	0x5
-	.uleb128 0x19d
+	.uleb128 0x183
 	.4byte	.LASF4436
 	.byte	0x5
-	.uleb128 0x19e
+	.uleb128 0x19d
 	.4byte	.LASF4437
 	.byte	0x5
-	.uleb128 0x19f
+	.uleb128 0x19e
 	.4byte	.LASF4438
 	.byte	0x5
-	.uleb128 0x1a0
+	.uleb128 0x19f
 	.4byte	.LASF4439
 	.byte	0x5
-	.uleb128 0x1a1
+	.uleb128 0x1a0
 	.4byte	.LASF4440
 	.byte	0x5
-	.uleb128 0x1a2
+	.uleb128 0x1a1
 	.4byte	.LASF4441
 	.byte	0x5
-	.uleb128 0x1a3
+	.uleb128 0x1a2
 	.4byte	.LASF4442
 	.byte	0x5
-	.uleb128 0x1a4
+	.uleb128 0x1a3
 	.4byte	.LASF4443
 	.byte	0x5
-	.uleb128 0x1a5
+	.uleb128 0x1a4
 	.4byte	.LASF4444
 	.byte	0x5
-	.uleb128 0x1a6
+	.uleb128 0x1a5
 	.4byte	.LASF4445
 	.byte	0x5
-	.uleb128 0x1a7
+	.uleb128 0x1a6
 	.4byte	.LASF4446
 	.byte	0x5
-	.uleb128 0x1a8
+	.uleb128 0x1a7
 	.4byte	.LASF4447
 	.byte	0x5
-	.uleb128 0x1a9
+	.uleb128 0x1a8
 	.4byte	.LASF4448
 	.byte	0x5
-	.uleb128 0x1aa
+	.uleb128 0x1a9
 	.4byte	.LASF4449
 	.byte	0x5
-	.uleb128 0x1ab
+	.uleb128 0x1aa
 	.4byte	.LASF4450
 	.byte	0x5
-	.uleb128 0x1ac
+	.uleb128 0x1ab
 	.4byte	.LASF4451
 	.byte	0x5
-	.uleb128 0x1ad
+	.uleb128 0x1ac
 	.4byte	.LASF4452
 	.byte	0x5
-	.uleb128 0x1ae
+	.uleb128 0x1ad
 	.4byte	.LASF4453
 	.byte	0x5
-	.uleb128 0x1af
+	.uleb128 0x1ae
 	.4byte	.LASF4454
 	.byte	0x5
-	.uleb128 0x1b0
+	.uleb128 0x1af
 	.4byte	.LASF4455
 	.byte	0x5
-	.uleb128 0x1b1
+	.uleb128 0x1b0
 	.4byte	.LASF4456
 	.byte	0x5
-	.uleb128 0x1b2
+	.uleb128 0x1b1
 	.4byte	.LASF4457
 	.byte	0x5
-	.uleb128 0x1b3
+	.uleb128 0x1b2
 	.4byte	.LASF4458
 	.byte	0x5
-	.uleb128 0x1b4
+	.uleb128 0x1b3
 	.4byte	.LASF4459
 	.byte	0x5
-	.uleb128 0x1b5
+	.uleb128 0x1b4
 	.4byte	.LASF4460
 	.byte	0x5
-	.uleb128 0x1b6
+	.uleb128 0x1b5
 	.4byte	.LASF4461
 	.byte	0x5
-	.uleb128 0x1b7
+	.uleb128 0x1b6
 	.4byte	.LASF4462
 	.byte	0x5
-	.uleb128 0x1b8
+	.uleb128 0x1b7
 	.4byte	.LASF4463
 	.byte	0x5
-	.uleb128 0x1b9
+	.uleb128 0x1b8
 	.4byte	.LASF4464
 	.byte	0x5
-	.uleb128 0x1ba
+	.uleb128 0x1b9
 	.4byte	.LASF4465
 	.byte	0x5
-	.uleb128 0x1bb
+	.uleb128 0x1ba
 	.4byte	.LASF4466
 	.byte	0x5
-	.uleb128 0x1bc
+	.uleb128 0x1bb
 	.4byte	.LASF4467
 	.byte	0x5
-	.uleb128 0x1be
+	.uleb128 0x1bc
 	.4byte	.LASF4468
 	.byte	0x5
-	.uleb128 0x1bf
+	.uleb128 0x1be
 	.4byte	.LASF4469
 	.byte	0x5
-	.uleb128 0x1c0
+	.uleb128 0x1bf
 	.4byte	.LASF4470
 	.byte	0x5
-	.uleb128 0x1c1
+	.uleb128 0x1c0
 	.4byte	.LASF4471
 	.byte	0x5
-	.uleb128 0x1c2
+	.uleb128 0x1c1
 	.4byte	.LASF4472
 	.byte	0x5
-	.uleb128 0x1c3
+	.uleb128 0x1c2
 	.4byte	.LASF4473
 	.byte	0x5
-	.uleb128 0x1c4
+	.uleb128 0x1c3
 	.4byte	.LASF4474
 	.byte	0x5
-	.uleb128 0x1c5
+	.uleb128 0x1c4
 	.4byte	.LASF4475
 	.byte	0x5
-	.uleb128 0x1c6
+	.uleb128 0x1c5
 	.4byte	.LASF4476
 	.byte	0x5
-	.uleb128 0x1c7
+	.uleb128 0x1c6
 	.4byte	.LASF4477
 	.byte	0x5
-	.uleb128 0x1c8
+	.uleb128 0x1c7
 	.4byte	.LASF4478
 	.byte	0x5
-	.uleb128 0x1c9
+	.uleb128 0x1c8
 	.4byte	.LASF4479
 	.byte	0x5
-	.uleb128 0x1ca
+	.uleb128 0x1c9
 	.4byte	.LASF4480
 	.byte	0x5
-	.uleb128 0x1cb
+	.uleb128 0x1ca
 	.4byte	.LASF4481
 	.byte	0x5
-	.uleb128 0x1d1
+	.uleb128 0x1cb
 	.4byte	.LASF4482
 	.byte	0x5
-	.uleb128 0x1d2
+	.uleb128 0x1d1
 	.4byte	.LASF4483
 	.byte	0x5
-	.uleb128 0x1d3
+	.uleb128 0x1d2
 	.4byte	.LASF4484
 	.byte	0x5
-	.uleb128 0x1d4
+	.uleb128 0x1d3
 	.4byte	.LASF4485
 	.byte	0x5
-	.uleb128 0x1d5
+	.uleb128 0x1d4
 	.4byte	.LASF4486
 	.byte	0x5
-	.uleb128 0x1d6
+	.uleb128 0x1d5
 	.4byte	.LASF4487
 	.byte	0x5
-	.uleb128 0x1d7
+	.uleb128 0x1d6
 	.4byte	.LASF4488
 	.byte	0x5
-	.uleb128 0x1d8
+	.uleb128 0x1d7
 	.4byte	.LASF4489
 	.byte	0x5
-	.uleb128 0x1d9
+	.uleb128 0x1d8
 	.4byte	.LASF4490
 	.byte	0x5
-	.uleb128 0x1db
+	.uleb128 0x1d9
 	.4byte	.LASF4491
+	.byte	0x5
+	.uleb128 0x1db
+	.4byte	.LASF4492
 	.byte	0
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
@@ -15810,9 +15813,9 @@ setSensingForPin:
 	.ascii	"CMP_CR1_PMODE_MASK 0x10u\000"
 .LASF351:
 	.ascii	"___int16_t_defined 1\000"
-.LASF4346:
+.LASF4347:
 	.ascii	"RET_MEM_ALLOC_FAIL_TCB ((RetCode)0x1Au)\000"
-.LASF4503:
+.LASF4504:
 	.ascii	"long long int\000"
 .LASF2132:
 	.ascii	"MTB_DEVICETYPID_DEVICETYPID(x) (((uint32_t)(((uint3"
@@ -15833,7 +15836,7 @@ setSensingForPin:
 	.ascii	"DAC0_BASE_PTR (DAC0)\000"
 .LASF3690:
 	.ascii	"UART0_BDH_LBKDIE_SHIFT 7\000"
-.LASF4313:
+.LASF4316:
 	.ascii	"SYSFKT_INVALID_SYSFKT_ID (SysFktID)0xFFu\000"
 .LASF1794:
 	.ascii	"LPTMR0_CSR LPTMR_CSR_REG(LPTMR0)\000"
@@ -15928,7 +15931,7 @@ setSensingForPin:
 	.ascii	"SIM_SCGC4_CMP_MASK 0x80000u\000"
 .LASF2251:
 	.ascii	"MTBDWT_BASE (0xF0001000u)\000"
-.LASF4393:
+.LASF4394:
 	.ascii	"MEM_FLGS_SPLT_128_SHFT ((MemFlags)0x7u)\000"
 .LASF1000:
 	.ascii	"DMA_DCR_D_REQ_WIDTH 1\000"
@@ -15938,7 +15941,7 @@ setSensingForPin:
 	.ascii	"NV_FPROT1 NV_FPROT1_REG(FTFA_FlashConfig)\000"
 .LASF478:
 	.ascii	"SCB_ICSR_PENDSTSET_Pos 26\000"
-.LASF4502:
+.LASF4503:
 	.ascii	"long unsigned int\000"
 .LASF1456:
 	.ascii	"I2C_S_TCF(x) (((uint8_t)(((uint8_t)(x))<<I2C_S_TCF_"
@@ -15966,7 +15969,7 @@ setSensingForPin:
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
 .LASF1355:
 	.ascii	"GPIO_BASE_ADDRS { GPIOA_BASE, GPIOB_BASE }\000"
-.LASF4306:
+.LASF4309:
 	.ascii	"EVT_QUEUE_SIZE (uint8_t)0x4u\000"
 .LASF1059:
 	.ascii	"DMA_DCR0 DMA_DCR_REG(DMA0,0)\000"
@@ -15984,7 +15987,7 @@ setSensingForPin:
 	.ascii	"RCM_SRS1_MDM_AP_MASK 0x8u\000"
 .LASF1191:
 	.ascii	"FTFA_FSTAT_CCIF_SHIFT 7\000"
-.LASF4571:
+.LASF4572:
 	.ascii	"IRQIndices\000"
 .LASF2184:
 	.ascii	"MTBDWT_PERIPHID_COUNT 8\000"
@@ -16003,7 +16006,7 @@ setSensingForPin:
 .LASF2465:
 	.ascii	"PIT_CVAL_TVL(x) (((uint32_t)(((uint32_t)(x))<<PIT_C"
 	.ascii	"VAL_TVL_SHIFT))&PIT_CVAL_TVL_MASK)\000"
-.LASF4367:
+.LASF4368:
 	.ascii	"SMALLER_BLCK_MSK ((BlckSize)(SMALLEST_BLCK - (BlckS"
 	.ascii	"ize)1u))\000"
 .LASF2974:
@@ -16025,7 +16028,7 @@ setSensingForPin:
 	.ascii	"SIM_FCFG1_PFSIZE_WIDTH 4\000"
 .LASF402:
 	.ascii	"INT_FAST8_MAX __INT_FAST8_MAX__\000"
-.LASF4526:
+.LASF4527:
 	.ascii	"CONF\000"
 .LASF1725:
 	.ascii	"LLWU_BASE (0x4007C000u)\000"
@@ -16041,7 +16044,7 @@ setSensingForPin:
 	.ascii	"TPM_STATUS_TOF_MASK 0x100u\000"
 .LASF3505:
 	.ascii	"TPM_CONF_DOZEEN_SHIFT 5\000"
-.LASF4366:
+.LASF4367:
 	.ascii	"SMALLEST_BLCK ((BlckSize)0x8u)\000"
 .LASF3356:
 	.ascii	"SPI_C2_SPMIE_MASK 0x80u\000"
@@ -16061,7 +16064,7 @@ setSensingForPin:
 	.ascii	"I2C_C2_RMEN_MASK 0x8u\000"
 .LASF1989:
 	.ascii	"MCM_PLACR_DFCS_WIDTH 1\000"
-.LASF4553:
+.LASF4554:
 	.ascii	"causingPin\000"
 .LASF4182:
 	.ascii	"INT_ZERO ((IntEdge)0x8u)\000"
@@ -16087,14 +16090,14 @@ setSensingForPin:
 .LASF821:
 	.ascii	"CMP_DACCR_VOSEL(x) (((uint8_t)(((uint8_t)(x))<<CMP_"
 	.ascii	"DACCR_VOSEL_SHIFT))&CMP_DACCR_VOSEL_MASK)\000"
-.LASF4531:
+.LASF4532:
 	.ascii	"zeroIRQ\000"
 .LASF2752:
 	.ascii	"RCM_RPFC_RSTFLTSS_WIDTH 1\000"
 .LASF2029:
 	.ascii	"MTB_PERIPHID_REG(base,index) ((base)->PERIPHID[inde"
 	.ascii	"x])\000"
-.LASF4300:
+.LASF4303:
 	.ascii	"MSGQ_TSK_ID_POS (uint8_t)0x0u\000"
 .LASF2913:
 	.ascii	"RTC_CR_SC16P_MASK 0x400u\000"
@@ -16166,7 +16169,7 @@ setSensingForPin:
 	.ascii	"DAC_DATH_DATA1_WIDTH 4\000"
 .LASF151:
 	.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
-.LASF4560:
+.LASF4561:
 	.ascii	"g_ISRFktNr_TPM1\000"
 .LASF511:
 	.ascii	"SCB_CCR_UNALIGN_TRP_Msk (1UL << SCB_CCR_UNALIGN_TRP"
@@ -16180,7 +16183,7 @@ setSensingForPin:
 .LASF2328:
 	.ascii	"NV_BACKKEY4_KEY(x) (((uint8_t)(((uint8_t)(x))<<NV_B"
 	.ascii	"ACKKEY4_KEY_SHIFT))&NV_BACKKEY4_KEY_MASK)\000"
-.LASF4404:
+.LASF4405:
 	.ascii	"MEM_FLGS_SPLT_MSK ((MemFlags)0x1000u)\000"
 .LASF1458:
 	.ascii	"I2C_D_DATA_SHIFT 0\000"
@@ -16226,7 +16229,7 @@ setSensingForPin:
 	.ascii	"UART0_C1_PT_MASK 0x1u\000"
 .LASF341:
 	.ascii	"MKL05Z4_H_ \000"
-.LASF4540:
+.LASF4541:
 	.ascii	"TskPrioLvl\000"
 .LASF572:
 	.ascii	"ADC_CLP1_REG(base) ((base)->CLP1)\000"
@@ -16318,7 +16321,7 @@ setSensingForPin:
 	.ascii	"_PF_SHIFT))&UART0_S1_PF_MASK)\000"
 .LASF1829:
 	.ascii	"MCG_C2_IRCS_SHIFT 0\000"
-.LASF4522:
+.LASF4523:
 	.ascii	"CnSC\000"
 .LASF2133:
 	.ascii	"MTB_PERIPHID_PERIPHID_MASK 0xFFFFFFFFu\000"
@@ -16326,7 +16329,7 @@ setSensingForPin:
 	.ascii	"UARTLP_S2_RWUID_SHIFT UART0_S2_RWUID_SHIFT\000"
 .LASF2842:
 	.ascii	"ROM_PERIPHID7 ROM_PERIPHID7_REG(ROM)\000"
-.LASF4314:
+.LASF4317:
 	.ascii	"OFFSETOF(type,field) ((uint8_t) &(((type *) 0)->fie"
 	.ascii	"ld))\000"
 .LASF1400:
@@ -16340,7 +16343,7 @@ setSensingForPin:
 	.ascii	"NV_BACKKEY0_KEY_WIDTH 8\000"
 .LASF3677:
 	.ascii	"UART0_BDH_SBR_MASK 0x1Fu\000"
-.LASF4430:
+.LASF4431:
 	.ascii	"MEM_FL_WASLOWER(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_WASLOWER_SHFT)\000"
 .LASF699:
@@ -16355,6 +16358,9 @@ setSensingForPin:
 .LASF3973:
 	.ascii	"MCM_MATCR_ATC3_SHIFT This_symbol_has_been_deprecate"
 	.ascii	"d\000"
+.LASF4341:
+	.ascii	"SEM_NR_OF_TSK_REF_BYTES (uint8_t)((NR_OF_TSKS >> 3)"
+	.ascii	" + 1)\000"
 .LASF3304:
 	.ascii	"SPI_C1_SSOE_MASK 0x2u\000"
 .LASF2749:
@@ -16368,7 +16374,7 @@ setSensingForPin:
 	.ascii	"SMC_PMCTRL_STOPA_WIDTH 1\000"
 .LASF3551:
 	.ascii	"TPM0_C4SC TPM_CnSC_REG(TPM0,4)\000"
-.LASF4355:
+.LASF4356:
 	.ascii	"RET_STCK_ERR_INDEX_OVERFLOW ((RetCode)0x31u)\000"
 .LASF3941:
 	.ascii	"UART0_D UART0_D_REG(UART0)\000"
@@ -16376,14 +16382,14 @@ setSensingForPin:
 	.ascii	"SIM_SOPT7_REG(base) ((base)->SOPT7)\000"
 .LASF4076:
 	.ascii	"UARTLP_C3_NEIE_SHIFT UART0_C3_NEIE_SHIFT\000"
-.LASF4485:
+.LASF4486:
 	.ascii	"MEM_FLG_BGGRMRGD(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_BGGRMRGD_SHFT)\000"
 .LASF1050:
 	.ascii	"DMA_BASE (0x40008000u)\000"
 .LASF1701:
 	.ascii	"LLWU_FILT1_FILTSEL_MASK 0xFu\000"
-.LASF4347:
+.LASF4348:
 	.ascii	"RET_MEM_ALLOC_FAIL_STACK ((RetCode)0x1Cu)\000"
 .LASF3902:
 	.ascii	"UART0_C4_M10_SHIFT 5\000"
@@ -16485,10 +16491,10 @@ setSensingForPin:
 .LASF3968:
 	.ascii	"MCM_MATCR_ATC2_SHIFT This_symbol_has_been_deprecate"
 	.ascii	"d\000"
-.LASF4329:
+.LASF4332:
 	.ascii	"TSK_STATE_IS_WAITING_MSGRCV(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_WAITING_MSGRCV)\000"
-.LASF4470:
+.LASF4471:
 	.ascii	"MEM_FLG_CLR_BLCKBEG(pMemMngrHead) MEM_FLG_CLR_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISBLCKBEG_MSK, additional"
 	.ascii	"Flags)\000"
@@ -16512,7 +16518,7 @@ setSensingForPin:
 	.ascii	"ASK)\000"
 .LASF3702:
 	.ascii	"UART0_C1_PE_SHIFT 1\000"
-.LASF4508:
+.LASF4509:
 	.ascii	"uint32_t\000"
 .LASF2162:
 	.ascii	"MTB_PERIPHID7 MTB_PERIPHID_REG(MTB,3)\000"
@@ -16522,7 +16528,7 @@ setSensingForPin:
 	.ascii	"I2C_C1_WUEN_WIDTH 1\000"
 .LASF509:
 	.ascii	"SCB_CCR_STKALIGN_Msk (1UL << SCB_CCR_STKALIGN_Pos)\000"
-.LASF4567:
+.LASF4568:
 	.ascii	"g_IRQArrSize\000"
 .LASF2152:
 	.ascii	"MTB_TAGCLEAR MTB_TAGCLEAR_REG(MTB)\000"
@@ -16543,7 +16549,7 @@ setSensingForPin:
 	.ascii	"FTFA_FCCOB4_CCOBn_MASK 0xFFu\000"
 .LASF1587:
 	.ascii	"LLWU_PE1_WUPE3_WIDTH 2\000"
-.LASF4466:
+.LASF4467:
 	.ascii	"MEM_FLGS_CACHED_SHFT ((MemFlags)0xFu)\000"
 .LASF1621:
 	.ascii	"LLWU_ME_WUME4_MASK 0x10u\000"
@@ -16672,7 +16678,7 @@ setSensingForPin:
 	.ascii	"I2C_BASE_ADDRS { I2C0_BASE }\000"
 .LASF2059:
 	.ascii	"MTB_MASTER_RAMPRIV_WIDTH 1\000"
-.LASF4538:
+.LASF4539:
 	.ascii	"PortPIN\000"
 .LASF178:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
@@ -16710,8 +16716,6 @@ setSensingForPin:
 	.ascii	"NV_FOPT_NMI_DIS_SHIFT 2\000"
 .LASF3759:
 	.ascii	"UART0_C2_TIE_WIDTH 1\000"
-.LASF4341:
-	.ascii	"NR_OF_MEMPOOLS (uint8_t)0x5u\000"
 .LASF1352:
 	.ascii	"GPIOB_BASE (0x400FF040u)\000"
 .LASF2140:
@@ -16724,7 +16728,7 @@ setSensingForPin:
 	.ascii	"\000"
 .LASF2447:
 	.ascii	"PIT_MCR_MDIS_SHIFT 1\000"
-.LASF4318:
+.LASF4321:
 	.ascii	"MQ_IS_TSK_ID(id) (uint8_t)((uint16_t)id & (uint16_t"
 	.ascii	")0xFFu)\000"
 .LASF1791:
@@ -16738,7 +16742,7 @@ setSensingForPin:
 	.ascii	"_PLACR_ESFC_SHIFT))&MCM_PLACR_ESFC_MASK)\000"
 .LASF3709:
 	.ascii	"UART0_C1_WAKE_MASK 0x8u\000"
-.LASF4369:
+.LASF4370:
 	.ascii	"CACHE_SIZE ((uint8_t)0x10u)\000"
 .LASF830:
 	.ascii	"CMP_MUXCR_MSEL_MASK 0x7u\000"
@@ -16827,7 +16831,7 @@ setSensingForPin:
 	.ascii	"MTB_MASTER_TSTOPEN_SHIFT 6\000"
 .LASF1812:
 	.ascii	"MCG_C1_IRCLKEN_MASK 0x2u\000"
-.LASF4448:
+.LASF4449:
 	.ascii	"MEM_FLGS_PRV_SPLT_64_SHFT MEM_FLGS_SPLT_64_SHFT\000"
 .LASF2408:
 	.ascii	"OSC_CR_SC8P(x) (((uint8_t)(((uint8_t)(x))<<OSC_CR_S"
@@ -16843,7 +16847,7 @@ setSensingForPin:
 .LASF2556:
 	.ascii	"PMC_REGSC_BGEN(x) (((uint8_t)(((uint8_t)(x))<<PMC_R"
 	.ascii	"EGSC_BGEN_SHIFT))&PMC_REGSC_BGEN_MASK)\000"
-.LASF4482:
+.LASF4483:
 	.ascii	"MEM_FLG_PREV_ISCOMBO(memFlgs) (MemSize)((MEM_FLG_GE"
 	.ascii	"T_PREV_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_PRE"
 	.ascii	"V_MEMSIZE(memFlgs)-(MemSize)1u)) ? 1u : 0u)\000"
@@ -16872,7 +16876,7 @@ setSensingForPin:
 .LASF2980:
 	.ascii	"RTC_IER_WPON(x) (((uint32_t)(((uint32_t)(x))<<RTC_I"
 	.ascii	"ER_WPON_SHIFT))&RTC_IER_WPON_MASK)\000"
-.LASF4434:
+.LASF4435:
 	.ascii	"MEM_FLG_BIGGER_COMBO(memFlgs) (MemSize)(MEM_FLG_GET"
 	.ascii	"_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_MEMSIZE(m"
 	.ascii	"emFlgs)-(MemSize)1u))\000"
@@ -16916,11 +16920,10 @@ setSensingForPin:
 	.ascii	"LLWU_FILT2 LLWU_FILT2_REG(LLWU)\000"
 .LASF2650:
 	.ascii	"PORTA_PCR20 PORT_PCR_REG(PORTA,20)\000"
-.LASF4513:
+.LASF4514:
 	.ascii	"PTOR\000"
-.LASF4330:
-	.ascii	"TSK_STATE_IS_WAITING_MSGSND(pTsk) (TskState)(TSK_GE"
-	.ascii	"TSTATE(pTsk) == TSK_STATE_WAITING_MSGSND)\000"
+.LASF4297:
+	.ascii	"MAX_TASKS NR_OF_TSKS\000"
 .LASF3217:
 	.ascii	"SIM_BASE (0x40047000u)\000"
 .LASF302:
@@ -16955,7 +16958,7 @@ setSensingForPin:
 	.ascii	"NV_FOPT_LPBOOT1_MASK 0x10u\000"
 .LASF293:
 	.ascii	"__USA_FBIT__ 16\000"
-.LASF4321:
+.LASF4324:
 	.ascii	"TSK_STATE_IS_ERROR(pTsk) (TskState)(TSK_GETSTATE(pT"
 	.ascii	"sk) == TSK_STATE_ERROR)\000"
 .LASF3428:
@@ -16988,7 +16991,7 @@ setSensingForPin:
 	.ascii	"INT_RISE ((IntEdge)0x9u)\000"
 .LASF1774:
 	.ascii	"LPTMR_PSR_PBYP_SHIFT 2\000"
-.LASF4375:
+.LASF4376:
 	.ascii	"MEM_FLG_SET_BIT(pMemMngrHead,bit,whichFlags) MEM_FL"
 	.ascii	"G_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) |= MEM"
 	.ascii	"_FLG_GET_BIT_MSK(bit)\000"
@@ -17011,11 +17014,9 @@ setSensingForPin:
 .LASF3908:
 	.ascii	"UART0_C4_MAEN2(x) (((uint8_t)(((uint8_t)(x))<<UART0"
 	.ascii	"_C4_MAEN2_SHIFT))&UART0_C4_MAEN2_MASK)\000"
-.LASF4340:
-	.ascii	"MAX_TASKS NR_OF_TSKS\000"
 .LASF764:
 	.ascii	"CMP_CR1_OPE_WIDTH 1\000"
-.LASF4565:
+.LASF4566:
 	.ascii	"g_ISRFktNr_Modules\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
@@ -17107,7 +17108,7 @@ setSensingForPin:
 .LASF904:
 	.ascii	"DAC_C0_DACEN(x) (((uint8_t)(((uint8_t)(x))<<DAC_C0_"
 	.ascii	"DACEN_SHIFT))&DAC_C0_DACEN_MASK)\000"
-.LASF4478:
+.LASF4479:
 	.ascii	"MEM_FLG_SET_PREV_SPLT(pMemMngrHead) MEM_FLG_SET_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREV_SPLT_MSK, addition"
 	.ascii	"alFlags)\000"
@@ -17120,7 +17121,7 @@ setSensingForPin:
 .LASF493:
 	.ascii	"SCB_AIRCR_VECTKEY_Msk (0xFFFFUL << SCB_AIRCR_VECTKE"
 	.ascii	"Y_Pos)\000"
-.LASF4439:
+.LASF4440:
 	.ascii	"MEM_FLGS_ISBLCKLAST_MSK ((MemFlags)0x2u)\000"
 .LASF2360:
 	.ascii	"NV_FSEC_KEYEN(x) (((uint8_t)(((uint8_t)(x))<<NV_FSE"
@@ -17141,13 +17142,13 @@ setSensingForPin:
 	.ascii	"I2C_C1_WUEN_MASK 0x2u\000"
 .LASF301:
 	.ascii	"__GNUC_STDC_INLINE__ 1\000"
-.LASF4530:
+.LASF4531:
 	.ascii	"IRQIndex\000"
 .LASF2113:
 	.ascii	"MTB_AUTHSTAT_BIT2_MASK 0x4u\000"
 .LASF2501:
 	.ascii	"PIT_TFLG(index) PIT_TFLG_REG(PIT,index)\000"
-.LASF4409:
+.LASF4410:
 	.ascii	"MEM_FLGS_NXTTAKEN_SHFT ((MemFlags)0xFu)\000"
 .LASF3448:
 	.ascii	"TPM_CnSC_ELSA_MASK 0x4u\000"
@@ -17181,13 +17182,13 @@ setSensingForPin:
 	.ascii	"CMP_MUXCR_PSTM_MASK 0x80u\000"
 .LASF2997:
 	.ascii	"SIM_SOPT4_REG(base) ((base)->SOPT4)\000"
-.LASF4305:
+.LASF4308:
 	.ascii	"AMOUNT_OF_EVTS (uint8_t)0x6u\000"
 .LASF3802:
 	.ascii	"UART0_S2_BRK13_SHIFT 2\000"
 .LASF779:
 	.ascii	"CMP_CR1_TRIGM_SHIFT 5\000"
-.LASF4414:
+.LASF4415:
 	.ascii	"MEM_FLG_CLR_TAKEN(pMemMngrHead) MEM_FLG_CLR_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_TAKEN_MSK, flagsForMemBlock"
 	.ascii	")\000"
@@ -17198,7 +17199,7 @@ setSensingForPin:
 	.ascii	"SET_PIN_LOW_PORT(pin,port) (((PortPIN)pin != NC) &&"
 	.ascii	" GET_PIN_DDR_PORT(pin,port)) ? ( GPIO_PCOR_REG(port"
 	.ascii	") |= PINMASK((PortPIN)pin)) : NC\000"
-.LASF4451:
+.LASF4452:
 	.ascii	"MEM_FLGS_PRV_SPLT_128_MSK MEM_FLGS_SPLT_128_MSK\000"
 .LASF3980:
 	.ascii	"SPI_C2_SPLPIE_MASK This_symbol_has_been_deprecated\000"
@@ -17229,7 +17230,7 @@ setSensingForPin:
 	.ascii	"FTFA_FCNFG_RDCOLLIE(x) (((uint8_t)(((uint8_t)(x))<<"
 	.ascii	"FTFA_FCNFG_RDCOLLIE_SHIFT))&FTFA_FCNFG_RDCOLLIE_MAS"
 	.ascii	"K)\000"
-.LASF4491:
+.LASF4492:
 	.ascii	"MEM_FLG_TAKENORCACHED(pMemMngrHead) (MemFlags)(MEM_"
 	.ascii	"FLG_ISTAKEN(pMemMngrHead->flagsForMemBlock) | MEM_F"
 	.ascii	"LG_ISCACHED(pMemMngrHead->additionalFlags))\000"
@@ -17250,9 +17251,9 @@ setSensingForPin:
 .LASF1117:
 	.ascii	"FGPIO_PSOR_PTSO(x) (((uint32_t)(((uint32_t)(x))<<FG"
 	.ascii	"PIO_PSOR_PTSO_SHIFT))&FGPIO_PSOR_PTSO_MASK)\000"
-.LASF4561:
+.LASF4562:
 	.ascii	"g_ISRFktNr_PIT\000"
-.LASF4568:
+.LASF4569:
 	.ascii	"GNU C 4.8.4 20140725 (release) [ARM/embedded-4_8-br"
 	.ascii	"anch revision 213147] -fpreprocessed -mcpu=cortex-m"
 	.ascii	"0plus -mthumb -g3 -std=c99 -fmessage-length=0 -fsig"
@@ -17288,7 +17289,7 @@ setSensingForPin:
 	.ascii	"SIM_UIDMH_REG(base) ((base)->UIDMH)\000"
 .LASF1380:
 	.ascii	"I2C_SLTL_REG(base) ((base)->SLTL)\000"
-.LASF4452:
+.LASF4453:
 	.ascii	"MEM_FLGS_PRV_BGGSTBLCK_SHFT MEM_FLGS_BGGSTBLCK_SHFT"
 	.ascii	"\000"
 .LASF3144:
@@ -17326,7 +17327,7 @@ setSensingForPin:
 	.ascii	"WCHAR_MAX __WCHAR_MAX__\000"
 .LASF1703:
 	.ascii	"LLWU_FILT1_FILTSEL_WIDTH 4\000"
-.LASF4455:
+.LASF4456:
 	.ascii	"MEM_FLGS_PRV_MERGE512_MSK MEM_FLGS_MERGE512_MSK\000"
 .LASF3230:
 	.ascii	"SIM_SCGC5 SIM_SCGC5_REG(SIM)\000"
@@ -17360,7 +17361,7 @@ setSensingForPin:
 	.ascii	"UART0_C2 UART0_C2_REG(UART0)\000"
 .LASF3031:
 	.ascii	"SIM_SOPT2_UART0SRC_WIDTH 2\000"
-.LASF4549:
+.LASF4550:
 	.ascii	"TPM1_IRQHandler\000"
 .LASF3910:
 	.ascii	"UART0_C4_MAEN1_SHIFT 7\000"
@@ -17496,11 +17497,11 @@ setSensingForPin:
 	.ascii	"ADC_SC2_ADACT_SHIFT 7\000"
 .LASF170:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
-.LASF4304:
+.LASF4307:
 	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x2u\000"
 .LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
-.LASF4379:
+.LASF4380:
 	.ascii	"MEM_FLGS_TAKEN_SHFT ((MemFlags)0x0u)\000"
 .LASF3527:
 	.ascii	"TPM_CONF_CROT(x) (((uint32_t)(((uint32_t)(x))<<TPM_"
@@ -17539,13 +17540,13 @@ setSensingForPin:
 .LASF2745:
 	.ascii	"RCM_SRS1_SACKERR(x) (((uint8_t)(((uint8_t)(x))<<RCM"
 	.ascii	"_SRS1_SACKERR_SHIFT))&RCM_SRS1_SACKERR_MASK)\000"
-.LASF4373:
+.LASF4374:
 	.ascii	"MEM_FLG_GET_BIT_MSK(bit) ((MemFlags)((MemFlags)0x1u"
 	.ascii	" << (MemFlags)bit))\000"
 .LASF3140:
 	.ascii	"SIM_SCGC6_PIT(x) (((uint32_t)(((uint32_t)(x))<<SIM_"
 	.ascii	"SCGC6_PIT_SHIFT))&SIM_SCGC6_PIT_MASK)\000"
-.LASF4542:
+.LASF4543:
 	.ascii	"__disable_irq\000"
 .LASF712:
 	.ascii	"ADC_CLP1_CLP1_WIDTH 7\000"
@@ -17563,7 +17564,7 @@ setSensingForPin:
 .LASF1811:
 	.ascii	"MCG_C1_IREFSTEN(x) (((uint8_t)(((uint8_t)(x))<<MCG_"
 	.ascii	"C1_IREFSTEN_SHIFT))&MCG_C1_IREFSTEN_MASK)\000"
-.LASF4419:
+.LASF4420:
 	.ascii	"MEM_FLG_SET_NXTTAKEN(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXTTAKEN_MSK, flagsForMe"
 	.ascii	"mBlock)\000"
@@ -17615,9 +17616,9 @@ setSensingForPin:
 	.ascii	"MTB_MODECTRL_MODECTRL_SHIFT 0\000"
 .LASF1787:
 	.ascii	"LPTMR_CNR_COUNTER_WIDTH 16\000"
-.LASF4309:
+.LASF4312:
 	.ascii	"TSK_ID_IDLE ((TskID)0x0u)\000"
-.LASF4401:
+.LASF4402:
 	.ascii	"MEM_FLGS_MERGE2048_SHFT ((MemFlags)0xBu)\000"
 .LASF2730:
 	.ascii	"RCM_SRS1_LOCKUP_MASK 0x2u\000"
@@ -17650,7 +17651,7 @@ setSensingForPin:
 .LASF701:
 	.ascii	"ADC_CLP4_CLP4(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"CLP4_CLP4_SHIFT))&ADC_CLP4_CLP4_MASK)\000"
-.LASF4536:
+.LASF4537:
 	.ascii	"PORTA_IRQ_INDEX\000"
 .LASF2924:
 	.ascii	"RTC_CR_SC4P(x) (((uint32_t)(((uint32_t)(x))<<RTC_CR"
@@ -17666,7 +17667,7 @@ setSensingForPin:
 	.ascii	"CMP_CR1_SE_SHIFT 7\000"
 .LASF680:
 	.ascii	"ADC_SC3_CAL_WIDTH 1\000"
-.LASF4533:
+.LASF4534:
 	.ascii	"TPM1_IRQ_INDEX\000"
 .LASF1192:
 	.ascii	"FTFA_FSTAT_CCIF_WIDTH 1\000"
@@ -17731,7 +17732,7 @@ setSensingForPin:
 	.ascii	"MCM_PLASC_ASC_SHIFT 0\000"
 .LASF2654:
 	.ascii	"PORTA_PCR24 PORT_PCR_REG(PORTA,24)\000"
-.LASF4358:
+.LASF4359:
 	.ascii	"RET_STCK_NO_STCKPTR ((RetCode)0x34u)\000"
 .LASF3945:
 	.ascii	"UART0_C5 UART0_C5_REG(UART0)\000"
@@ -17744,9 +17745,9 @@ setSensingForPin:
 	.ascii	"SCB_CPUID_PARTNO_Pos 4\000"
 .LASF2688:
 	.ascii	"PORTB_PCR23 PORT_PCR_REG(PORTB,23)\000"
-.LASF4497:
+.LASF4498:
 	.ascii	"__uint8_t\000"
-.LASF4559:
+.LASF4560:
 	.ascii	"g_ISRFktNr_TPM0\000"
 .LASF620:
 	.ascii	"ADC_CFG2_MUXSEL_WIDTH 1\000"
@@ -17794,13 +17795,13 @@ setSensingForPin:
 	.ascii	"I2C_C2_HDRS_WIDTH 1\000"
 .LASF459:
 	.ascii	"__I volatile const\000"
-.LASF4523:
+.LASF4524:
 	.ascii	"CONTROLS\000"
 .LASF3861:
 	.ascii	"UART0_D_R1T1_MASK 0x2u\000"
 .LASF3758:
 	.ascii	"UART0_C2_TIE_SHIFT 7\000"
-.LASF4348:
+.LASF4349:
 	.ascii	"RET_TSK_TOO_MANY ((RetCode)0x2Fu)\000"
 .LASF2490:
 	.ascii	"PIT_LDVAL0 PIT_LDVAL_REG(PIT,0)\000"
@@ -17867,7 +17868,7 @@ setSensingForPin:
 	.ascii	"TSI_TSHD_THRESH_WIDTH 16\000"
 .LASF3886:
 	.ascii	"UART0_D_R7T7_SHIFT 7\000"
-.LASF4552:
+.LASF4553:
 	.ascii	"PORTA_IRQHandler\000"
 .LASF4273:
 	.ascii	"PORTNR(pin) ((uint8_t)( (PortPIN)pin >> PORT_SHIFT "
@@ -17933,7 +17934,7 @@ setSensingForPin:
 .LASF841:
 	.ascii	"CMP_MUXCR_PSTM(x) (((uint8_t)(((uint8_t)(x))<<CMP_M"
 	.ascii	"UXCR_PSTM_SHIFT))&CMP_MUXCR_PSTM_MASK)\000"
-.LASF4411:
+.LASF4412:
 	.ascii	"MEM_FLGS_SIZE_MSK ((MemFlags)0xFFCu)\000"
 .LASF2182:
 	.ascii	"MTBDWT_DEVICETYPID_REG(base) ((base)->DEVICETYPID)\000"
@@ -17941,7 +17942,7 @@ setSensingForPin:
 	.ascii	"RTC_CR_SUP_SHIFT 2\000"
 .LASF143:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
-.LASF4323:
+.LASF4326:
 	.ascii	"TSK_STATE_IS_ACTIVE_RUNNING(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_ACTIVE_RUNNING )\000"
 .LASF3731:
@@ -17949,7 +17950,7 @@ setSensingForPin:
 .LASF1867:
 	.ascii	"MCG_C4_DRST_DRS(x) (((uint8_t)(((uint8_t)(x))<<MCG_"
 	.ascii	"C4_DRST_DRS_SHIFT))&MCG_C4_DRST_DRS_MASK)\000"
-.LASF4372:
+.LASF4373:
 	.ascii	"MEM_FLG_PARSE(memFlgs,shft) ((MemFlags)((MemFlags)("
 	.ascii	"memFlgs >> (MemFlags)shft) & (MemFlags)0x1u))\000"
 .LASF1097:
@@ -17985,9 +17986,9 @@ setSensingForPin:
 	.ascii	"OSC_CR_SC8P_SHIFT 1\000"
 .LASF1631:
 	.ascii	"LLWU_ME_WUME6_WIDTH 1\000"
-.LASF4551:
+.LASF4552:
 	.ascii	"tpm1Channels\000"
-.LASF4350:
+.LASF4351:
 	.ascii	"RET_TSK_CONFLICTING_IDLE_TSK ((RetCode)0x21u)\000"
 .LASF898:
 	.ascii	"DAC_C0_DACRFS_SHIFT 6\000"
@@ -18018,12 +18019,12 @@ setSensingForPin:
 	.ascii	"ACKKEY5_KEY_SHIFT))&NV_BACKKEY5_KEY_MASK)\000"
 .LASF1044:
 	.ascii	"DMA_DCR_ERQ_WIDTH 1\000"
-.LASF4380:
+.LASF4381:
 	.ascii	"MEM_FLGS_TAKEN_MSK ((MemFlags)0x1u)\000"
 .LASF1612:
 	.ascii	"LLWU_ME_WUME1(x) (((uint8_t)(((uint8_t)(x))<<LLWU_M"
 	.ascii	"E_WUME1_SHIFT))&LLWU_ME_WUME1_MASK)\000"
-.LASF4391:
+.LASF4392:
 	.ascii	"MEM_FLGS_SPLT_64_SHFT ((MemFlags)0x6u)\000"
 .LASF3785:
 	.ascii	"UART0_S1_TC_MASK 0x40u\000"
@@ -18069,7 +18070,7 @@ setSensingForPin:
 	.ascii	"os)\000"
 .LASF1319:
 	.ascii	"GPIO_PDOR_REG(base) ((base)->PDOR)\000"
-.LASF4460:
+.LASF4461:
 	.ascii	"MEM_FLGS_NXT_SPLT_SHFT ((MemFlags)0xCu)\000"
 .LASF2743:
 	.ascii	"RCM_SRS1_SACKERR_SHIFT 5\000"
@@ -18092,7 +18093,7 @@ setSensingForPin:
 	.ascii	"I2C_SLTH_REG(base) ((base)->SLTH)\000"
 .LASF2272:
 	.ascii	"MTBDWT_PERIPHID2 MTBDWT_PERIPHID_REG(MTBDWT,6)\000"
-.LASF4444:
+.LASF4445:
 	.ascii	"MEM_FLGS_PRV_SPLT_16_SHFT MEM_FLGS_SPLT_16_SHFT\000"
 .LASF3929:
 	.ascii	"UART0_BASE (0x4006A000u)\000"
@@ -18169,7 +18170,7 @@ setSensingForPin:
 	.ascii	"I2C0_RA I2C_RA_REG(I2C0)\000"
 .LASF2676:
 	.ascii	"PORTB_PCR11 PORT_PCR_REG(PORTB,11)\000"
-.LASF4459:
+.LASF4460:
 	.ascii	"MEM_FLGS_PRV_MERGE2048_MSK MEM_FLGS_MERGE2048_MSK\000"
 .LASF591:
 	.ascii	"ADC_CFG1_MODE_SHIFT 2\000"
@@ -18224,7 +18225,7 @@ setSensingForPin:
 .LASF912:
 	.ascii	"DAC_C1_DACBFMD(x) (((uint8_t)(((uint8_t)(x))<<DAC_C"
 	.ascii	"1_DACBFMD_SHIFT))&DAC_C1_DACBFMD_MASK)\000"
-.LASF4397:
+.LASF4398:
 	.ascii	"MEM_FLGS_MERGE512_SHFT ((MemFlags)0x9u)\000"
 .LASF2027:
 	.ascii	"MTB_DEVICECFG_REG(base) ((base)->DEVICECFG)\000"
@@ -18249,7 +18250,7 @@ setSensingForPin:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF2897:
 	.ascii	"RTC_CR_SUP_MASK 0x4u\000"
-.LASF4386:
+.LASF4387:
 	.ascii	"MEM_FLGS_SPLT_8_MSK ((MemFlags)0x8u)\000"
 .LASF3580:
 	.ascii	"TSI_GENCS_EOSF(x) (((uint32_t)(((uint32_t)(x))<<TSI"
@@ -18303,7 +18304,7 @@ setSensingForPin:
 	.ascii	"FGPIO_PDIR_PDI_WIDTH 32\000"
 .LASF2389:
 	.ascii	"NV_BACKKEY0 NV_BACKKEY0_REG(FTFA_FlashConfig)\000"
-.LASF4331:
+.LASF4334:
 	.ascii	"TSK_STATE_IS_WAITING_EVT(pTsk) (TskState)(TSK_GETST"
 	.ascii	"ATE(pTsk) == TSK_STATE_WAITING_EVT)\000"
 .LASF1098:
@@ -18324,7 +18325,7 @@ setSensingForPin:
 	.ascii	"TPM_STATUS_CH3F_SHIFT 3\000"
 .LASF994:
 	.ascii	"DMA_DCR_LINKCC_MASK 0x30u\000"
-.LASF4519:
+.LASF4520:
 	.ascii	"RESERVED_0\000"
 .LASF854:
 	.ascii	"DAC_DATL_COUNT 2\000"
@@ -18338,7 +18339,7 @@ setSensingForPin:
 	.ascii	"FGPIOA_BASE_PTR (FGPIOA)\000"
 .LASF1602:
 	.ascii	"LLWU_PE2_WUPE7_SHIFT 6\000"
-.LASF4545:
+.LASF4546:
 	.ascii	"module\000"
 .LASF2142:
 	.ascii	"MTB ((MTB_Type *)MTB_BASE)\000"
@@ -18346,7 +18347,7 @@ setSensingForPin:
 	.ascii	"FGPIOB_PDOR FGPIO_PDOR_REG(FGPIOB)\000"
 .LASF3885:
 	.ascii	"UART0_D_R7T7_MASK 0x80u\000"
-.LASF4515:
+.LASF4516:
 	.ascii	"PDDR\000"
 .LASF425:
 	.ascii	"INT8_C(x) __INT8_C(x)\000"
@@ -18365,7 +18366,7 @@ setSensingForPin:
 	.ascii	"UART0_C2_TE_MASK 0x8u\000"
 .LASF4133:
 	.ascii	"DMA_BASES DMA_BASE_PTRS\000"
-.LASF4454:
+.LASF4455:
 	.ascii	"MEM_FLGS_PRV_MERGE512_SHFT MEM_FLGS_MERGE512_SHFT\000"
 .LASF2165:
 	.ascii	"MTB_PERIPHID2 MTB_PERIPHID_REG(MTB,6)\000"
@@ -18422,7 +18423,7 @@ setSensingForPin:
 .LASF3359:
 	.ascii	"SPI_C2_SPMIE(x) (((uint8_t)(((uint8_t)(x))<<SPI_C2_"
 	.ascii	"SPMIE_SHIFT))&SPI_C2_SPMIE_MASK)\000"
-.LASF4554:
+.LASF4555:
 	.ascii	"isfr\000"
 .LASF3312:
 	.ascii	"SPI_C1_CPOL_MASK 0x8u\000"
@@ -18454,13 +18455,13 @@ setSensingForPin:
 	.ascii	"ROM_PERIPHID0_PERIPHID_MASK 0xFFFFFFFFu\000"
 .LASF2546:
 	.ascii	"PMC_REGSC_REGONS_SHIFT 2\000"
-.LASF4457:
+.LASF4458:
 	.ascii	"MEM_FLGS_PRV_MERGE1024_MSK MEM_FLGS_MERGE1024_MSK\000"
 .LASF2636:
 	.ascii	"PORTA_PCR6 PORT_PCR_REG(PORTA,6)\000"
 .LASF534:
 	.ascii	"NVIC_BASE (SCS_BASE + 0x0100UL)\000"
-.LASF4315:
+.LASF4318:
 	.ascii	"DATATYPE_IS_PTR(dataType) (uint8_t)( dataType & (ui"
 	.ascii	"nt8_t)0x4u)\000"
 .LASF3421:
@@ -18485,7 +18486,7 @@ setSensingForPin:
 .LASF3924:
 	.ascii	"UART0_C5_RDMAE(x) (((uint8_t)(((uint8_t)(x))<<UART0"
 	.ascii	"_C5_RDMAE_SHIFT))&UART0_C5_RDMAE_MASK)\000"
-.LASF4464:
+.LASF4465:
 	.ascii	"MEM_FLGS_BGGRMRGD_SHFT ((MemFlags)0xEu)\000"
 .LASF213:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
@@ -18495,7 +18496,7 @@ setSensingForPin:
 	.ascii	"NV_FPROT2_PROT_WIDTH 8\000"
 .LASF782:
 	.ascii	"CMP_CR1_WE_MASK 0x40u\000"
-.LASF4407:
+.LASF4408:
 	.ascii	"MEM_FLGS_PREVTAKEN_SHFT ((MemFlags)0xEu)\000"
 .LASF627:
 	.ascii	"ADC_CV1_CV_SHIFT 0\000"
@@ -18538,7 +18539,7 @@ setSensingForPin:
 .LASF613:
 	.ascii	"ADC_CFG2_ADHSC(x) (((uint32_t)(((uint32_t)(x))<<ADC"
 	.ascii	"_CFG2_ADHSC_SHIFT))&ADC_CFG2_ADHSC_MASK)\000"
-.LASF4518:
+.LASF4519:
 	.ascii	"GPCHR\000"
 .LASF3360:
 	.ascii	"SPI_BR_SPR_MASK 0xFu\000"
@@ -18546,7 +18547,7 @@ setSensingForPin:
 	.ascii	"TPM1_CnSC(index) TPM_CnSC_REG(TPM1,index)\000"
 .LASF2386:
 	.ascii	"NV_BACKKEY3 NV_BACKKEY3_REG(FTFA_FlashConfig)\000"
-.LASF4481:
+.LASF4482:
 	.ascii	"MEM_FLG_SET_PREV_MEMSIZE(pMemMngrHead,newSize) do {"
 	.ascii	" (pMemMngrHead)->additionalFlags = (MemFlags)((pMem"
 	.ascii	"MngrHead)->additionalFlags & (MemFlags)(~MEM_FLGS_S"
@@ -18592,7 +18593,7 @@ setSensingForPin:
 	.ascii	"MCM_PLACR_ARB_MASK 0x200u\000"
 .LASF3641:
 	.ascii	"TSI_DATA_DMAEN_MASK 0x800000u\000"
-.LASF4377:
+.LASF4378:
 	.ascii	"MEM_FLG_SET_BIT_MSK(pMemMngrHead,msk,whichFlags) ME"
 	.ascii	"M_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) |="
 	.ascii	" (MemFlags)msk\000"
@@ -18603,7 +18604,7 @@ setSensingForPin:
 	.ascii	"UART0_C2_RE_WIDTH 1\000"
 .LASF871:
 	.ascii	"DAC_SR_DACBFRPBF_WIDTH 1\000"
-.LASF4406:
+.LASF4407:
 	.ascii	"MEM_FLGS_MERGED_MSK ((MemFlags)0x2000u)\000"
 .LASF3260:
 	.ascii	"SMC_PMCTRL_STOPM(x) (((uint8_t)(((uint8_t)(x))<<SMC"
@@ -18624,7 +18625,7 @@ setSensingForPin:
 	.ascii	"DAC_DATL_DATA0_WIDTH 8\000"
 .LASF2678:
 	.ascii	"PORTB_PCR13 PORT_PCR_REG(PORTB,13)\000"
-.LASF4480:
+.LASF4481:
 	.ascii	"MEM_FLG_GET_PREV_MEMSIZE(memFlgs) (BlckSize)(memFlg"
 	.ascii	"s & MEM_FLGS_SIZE_MSK)\000"
 .LASF2915:
@@ -18726,7 +18727,7 @@ setSensingForPin:
 	.ascii	"PIT_TCTRL_TEN_MASK 0x1u\000"
 .LASF1174:
 	.ascii	"FTFA_FSTAT_MGSTAT0_MASK 0x1u\000"
-.LASF4437:
+.LASF4438:
 	.ascii	"MEM_FLGS_ISBLCKBEG_MSK ((MemFlags)0x1u)\000"
 .LASF1754:
 	.ascii	"LPTMR_CSR_TPP_SHIFT 3\000"
@@ -18761,11 +18762,11 @@ setSensingForPin:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
 .LASF4268:
 	.ascii	"PIN_PCS1_33999 PTB12\000"
-.LASF4514:
+.LASF4515:
 	.ascii	"PDIR\000"
 .LASF1056:
 	.ascii	"DMA_DAR0 DMA_DAR_REG(DMA0,0)\000"
-.LASF4449:
+.LASF4450:
 	.ascii	"MEM_FLGS_PRV_SPLT_64_MSK MEM_FLGS_SPLT_64_MSK\000"
 .LASF3171:
 	.ascii	"SIM_CLKDIV1_OUTDIV1_WIDTH 4\000"
@@ -18880,7 +18881,7 @@ setSensingForPin:
 	.ascii	"_FOPT_FAST_INIT_SHIFT))&NV_FOPT_FAST_INIT_MASK)\000"
 .LASF3433:
 	.ascii	"TPM_SC_DMA_SHIFT 8\000"
-.LASF4381:
+.LASF4382:
 	.ascii	"MEM_FLGS_ISLOWER_SHFT ((MemFlags)0x1u)\000"
 .LASF1641:
 	.ascii	"LLWU_F1_WUF1_MASK 0x2u\000"
@@ -18894,7 +18895,7 @@ setSensingForPin:
 	.ascii	"MB_TCKSEL_SHIFT))&I2C_SMB_TCKSEL_MASK)\000"
 .LASF4040:
 	.ascii	"UARTLP_S1_PF_SHIFT UART0_S1_PF_SHIFT\000"
-.LASF4517:
+.LASF4518:
 	.ascii	"GPCLR\000"
 .LASF2799:
 	.ascii	"ROM_PERIPHID5_PERIPHID_WIDTH 32\000"
@@ -18919,7 +18920,7 @@ setSensingForPin:
 .LASF3184:
 	.ascii	"SIM_FCFG1_PFSIZE(x) (((uint32_t)(((uint32_t)(x))<<S"
 	.ascii	"IM_FCFG1_PFSIZE_SHIFT))&SIM_FCFG1_PFSIZE_MASK)\000"
-.LASF4298:
+.LASF4301:
 	.ascii	"STACK_BLOCK_SIZE ((uint8_t)0x4u)\000"
 .LASF2097:
 	.ascii	"MTB_LOCKACCESS_LOCKACCESS_MASK 0xFFFFFFFFu\000"
@@ -18954,7 +18955,7 @@ setSensingForPin:
 	.ascii	"OSC_CR_SC2P_SHIFT 3\000"
 .LASF573:
 	.ascii	"ADC_CLP0_REG(base) ((base)->CLP0)\000"
-.LASF4498:
+.LASF4499:
 	.ascii	"__uint16_t\000"
 .LASF1618:
 	.ascii	"LLWU_ME_WUME3_SHIFT 3\000"
@@ -18967,7 +18968,7 @@ setSensingForPin:
 	.ascii	"ATCVL_ATCVL_SHIFT))&MCG_ATCVL_ATCVL_MASK)\000"
 .LASF608:
 	.ascii	"ADC_CFG2_ADLSTS_WIDTH 2\000"
-.LASF4572:
+.LASF4573:
 	.ascii	"PIT_IRQHandler\000"
 .LASF3491:
 	.ascii	"TPM_STATUS_CH3F(x) (((uint32_t)(((uint32_t)(x))<<TP"
@@ -18979,7 +18980,7 @@ setSensingForPin:
 	.ascii	"PMC_LVDSC1_LVDACK_SHIFT 6\000"
 .LASF323:
 	.ascii	"__arm__ 1\000"
-.LASF4311:
+.LASF4314:
 	.ascii	"TSK_PRIO_LEVELS_NR (TskPrioLvl)0xFu\000"
 .LASF1089:
 	.ascii	"DMAMUX_CHCFG_TRIG(x) (((uint8_t)(((uint8_t)(x))<<DM"
@@ -19074,7 +19075,7 @@ setSensingForPin:
 	.ascii	"MCG_C2_RANGE_WIDTH (MCG_C2_RANGE0_WIDTH)\000"
 .LASF2646:
 	.ascii	"PORTA_PCR16 PORT_PCR_REG(PORTA,16)\000"
-.LASF4562:
+.LASF4563:
 	.ascii	"g_ISRFktNr_LPTPMR0\000"
 .LASF3005:
 	.ascii	"SIM_CLKDIV1_REG(base) ((base)->CLKDIV1)\000"
@@ -19193,7 +19194,7 @@ setSensingForPin:
 	.ascii	"FA_FCCOB2_CCOBn_SHIFT))&FTFA_FCCOB2_CCOBn_MASK)\000"
 .LASF2392:
 	.ascii	"NV_BACKKEY5 NV_BACKKEY5_REG(FTFA_FlashConfig)\000"
-.LASF4337:
+.LASF4340:
 	.ascii	"TSK_STATE_IS_UNINIT_ENDED(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_UNINIT_ENDED)\000"
 .LASF2732:
@@ -19243,7 +19244,7 @@ setSensingForPin:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
 .LASF2229:
 	.ascii	"MTBDWT_TBCTRL_ACOMP1_WIDTH 1\000"
-.LASF4529:
+.LASF4530:
 	.ascii	"FuncPtr\000"
 .LASF1341:
 	.ascii	"GPIO_PDIR_PDI_MASK 0xFFFFFFFFu\000"
@@ -19260,7 +19261,7 @@ setSensingForPin:
 	.ascii	"RCM_SRS0_WAKEUP_MASK 0x1u\000"
 .LASF33:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
-.LASF4505:
+.LASF4506:
 	.ascii	"unsigned int\000"
 .LASF1021:
 	.ascii	"DMA_DCR_DINC(x) (((uint32_t)(((uint32_t)(x))<<DMA_D"
@@ -19273,7 +19274,7 @@ setSensingForPin:
 	.ascii	"RCM_RPFC_RSTFLTSS_SHIFT 2\000"
 .LASF3069:
 	.ascii	"SIM_SDID_PINID_MASK 0xFu\000"
-.LASF4510:
+.LASF4511:
 	.ascii	"PDOR\000"
 .LASF2289:
 	.ascii	"NV_BACKKEY5_REG(base) ((base)->BACKKEY5)\000"
@@ -19330,7 +19331,7 @@ setSensingForPin:
 	.ascii	"RCM_SRS0_WDOG_WIDTH 1\000"
 .LASF2405:
 	.ascii	"OSC_CR_SC8P_MASK 0x2u\000"
-.LASF4320:
+.LASF4323:
 	.ascii	"TSK_GETSTATE(pTsk) (TskState)(pTsk->tskState)\000"
 .LASF259:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
@@ -19342,14 +19343,14 @@ setSensingForPin:
 	.ascii	"SIM_CLKDIV1_OUTDIV4(x) (((uint32_t)(((uint32_t)(x))"
 	.ascii	"<<SIM_CLKDIV1_OUTDIV4_SHIFT))&SIM_CLKDIV1_OUTDIV4_M"
 	.ascii	"ASK)\000"
-.LASF4493:
+.LASF4494:
 	.ascii	"NUM_INT_HANDLER_CONTAINER ((uint8_t)12u)\000"
 .LASF709:
 	.ascii	"ADC_CLP2_CLP2(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"CLP2_CLP2_SHIFT))&ADC_CLP2_CLP2_MASK)\000"
 .LASF2703:
 	.ascii	"RCM_SRS1_REG(base) ((base)->SRS1)\000"
-.LASF4326:
+.LASF4329:
 	.ascii	"TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )\000"
 .LASF3100:
@@ -19393,7 +19394,7 @@ setSensingForPin:
 	.ascii	"TPM_SC_DMA_MASK 0x100u\000"
 .LASF878:
 	.ascii	"DAC_C0_DACBBIEN_SHIFT 0\000"
-.LASF4333:
+.LASF4336:
 	.ascii	"TSK_STATE_IS_WAITING_MNTR(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_WAITING_MNTR)\000"
 .LASF2698:
@@ -19543,7 +19544,7 @@ setSensingForPin:
 .LASF868:
 	.ascii	"DAC_DATH_DATA1(x) (((uint8_t)(((uint8_t)(x))<<DAC_D"
 	.ascii	"ATH_DATA1_SHIFT))&DAC_DATH_DATA1_MASK)\000"
-.LASF4395:
+.LASF4396:
 	.ascii	"MEM_FLGS_BGGSTBLCK_SHFT ((MemFlags)0x8u)\000"
 .LASF1301:
 	.ascii	"FTFA_FSEC FTFA_FSEC_REG(FTFA)\000"
@@ -19563,7 +19564,7 @@ setSensingForPin:
 	.ascii	"LPTMR_CSR_TEN_MASK 0x1u\000"
 .LASF1242:
 	.ascii	"FTFA_FCCOB0_CCOBn_MASK 0xFFu\000"
-.LASF4527:
+.LASF4528:
 	.ascii	"TPM_Type\000"
 .LASF1313:
 	.ascii	"FTFA_FCCOB9 FTFA_FCCOB9_REG(FTFA)\000"
@@ -19577,7 +19578,7 @@ setSensingForPin:
 	.ascii	"C1_RSRC_SHIFT))&UART0_C1_RSRC_MASK)\000"
 .LASF2361:
 	.ascii	"NV_FOPT_LPBOOT0_MASK 0x1u\000"
-.LASF4458:
+.LASF4459:
 	.ascii	"MEM_FLGS_PRV_MERGE2048_SHFT MEM_FLGS_MERGE2048_SHFT"
 	.ascii	"\000"
 .LASF1940:
@@ -19607,11 +19608,11 @@ setSensingForPin:
 	.ascii	"R_CSR_TCF_SHIFT))&LPTMR_CSR_TCF_MASK)\000"
 .LASF3895:
 	.ascii	"UART0_MA2_MA_WIDTH 8\000"
-.LASF4362:
+.LASF4363:
 	.ascii	"free rFree\000"
 .LASF1378:
 	.ascii	"I2C_A2_REG(base) ((base)->A2)\000"
-.LASF4492:
+.LASF4493:
 	.ascii	"NULL ((void *)0)\000"
 .LASF3502:
 	.ascii	"TPM_STATUS_TOF_WIDTH 1\000"
@@ -19741,7 +19742,7 @@ setSensingForPin:
 	.ascii	"UART0_BDL_REG(base) ((base)->BDL)\000"
 .LASF92:
 	.ascii	"__INT8_C(c) c\000"
-.LASF4525:
+.LASF4526:
 	.ascii	"RESERVED_1\000"
 .LASF3670:
 	.ascii	"UART0_S2_REG(base) ((base)->S2)\000"
@@ -19767,7 +19768,7 @@ setSensingForPin:
 	.ascii	"FA_FCCOB8_CCOBn_SHIFT))&FTFA_FCCOB8_CCOBn_MASK)\000"
 .LASF3470:
 	.ascii	"TPM_CnSC_CHF_WIDTH 1\000"
-.LASF4312:
+.LASF4315:
 	.ascii	"AMOUNT_SYS_FKT (uint8_t)0x8u\000"
 .LASF1984:
 	.ascii	"MCM_PLACR_EFDS_SHIFT 14\000"
@@ -19782,7 +19783,7 @@ setSensingForPin:
 	.ascii	"MCM_BASE_ADDRS { MCM_BASE }\000"
 .LASF3266:
 	.ascii	"SMC_PMCTRL_RUNM_SHIFT 5\000"
-.LASF4297:
+.LASF4300:
 	.ascii	"IDLE_TSK_STACK_SIZE ((StackSize)0x60u)\000"
 .LASF1965:
 	.ascii	"MCM_PLACR_ARB_WIDTH 1\000"
@@ -19806,7 +19807,7 @@ setSensingForPin:
 	.ascii	"ted\000"
 .LASF2608:
 	.ascii	"PORT_GPCLR_GPWE_WIDTH 16\000"
-.LASF4516:
+.LASF4517:
 	.ascii	"GPIO_Type\000"
 .LASF1486:
 	.ascii	"I2C_FLT_FLT_SHIFT 0\000"
@@ -19969,7 +19970,7 @@ setSensingForPin:
 	.ascii	"__SFRACT_IBIT__ 0\000"
 .LASF336:
 	.ascii	"__ARM_PCS 1\000"
-.LASF4343:
+.LASF4344:
 	.ascii	"OS_DISPATCH_NEEDED ((OsCode)0x1u)\000"
 .LASF3327:
 	.ascii	"SPI_C1_SPE(x) (((uint8_t)(((uint8_t)(x))<<SPI_C1_SP"
@@ -19992,7 +19993,7 @@ setSensingForPin:
 	.ascii	"TPM_SC_REG(base) ((base)->SC)\000"
 .LASF1789:
 	.ascii	"LPTMR0_BASE (0x40040000u)\000"
-.LASF4443:
+.LASF4444:
 	.ascii	"MEM_FLGS_PRV_SPLT_8_MSK MEM_FLGS_SPLT_8_MSK\000"
 .LASF980:
 	.ascii	"DMA_DSR_BCR_BES_WIDTH 1\000"
@@ -20016,7 +20017,7 @@ setSensingForPin:
 	.ascii	"SIM_BASE_PTR (SIM)\000"
 .LASF1518:
 	.ascii	"I2C_SMB_SLTF_SHIFT 3\000"
-.LASF4484:
+.LASF4485:
 	.ascii	"MEM_FLG_PREV_SMALLER_COMBO(memFlgs) (MemSize)(MEM_F"
 	.ascii	"LG_GET_PREV_MEMSIZE(memFlgs) & (MemSize)(-MEM_FLG_G"
 	.ascii	"ET_PREV_MEMSIZE(memFlgs)))\000"
@@ -20071,7 +20072,7 @@ setSensingForPin:
 	.ascii	"LLWU_PE1_WUPE0_WIDTH 2\000"
 .LASF1737:
 	.ascii	"LPTMR_CSR_REG(base) ((base)->CSR)\000"
-.LASF4541:
+.LASF4542:
 	.ascii	"tskStateT\000"
 .LASF2808:
 	.ascii	"ROM_PERIPHID7_PERIPHID(x) (((uint32_t)(((uint32_t)("
@@ -20115,7 +20116,7 @@ setSensingForPin:
 	.ascii	"TPM_SC_TOIE_SHIFT 6\000"
 .LASF1869:
 	.ascii	"MCG_C4_DMX32_SHIFT 7\000"
-.LASF4325:
+.LASF4328:
 	.ascii	"TSK_STATE_IS_ACTIVE_READY(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_ACTIVE_READY )\000"
 .LASF2559:
@@ -20146,7 +20147,7 @@ setSensingForPin:
 	.ascii	"SIM_SOPT5 SIM_SOPT5_REG(SIM)\000"
 .LASF454:
 	.ascii	"__CMSIS_GCC_OUT_REG(r) \"=l\" (r)\000"
-.LASF4556:
+.LASF4557:
 	.ascii	"setSensingForPin\000"
 .LASF31:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
@@ -20160,7 +20161,7 @@ setSensingForPin:
 	.ascii	"RTC_CR_REG(base) ((base)->CR)\000"
 .LASF3532:
 	.ascii	"TPM0_BASE (0x40038000u)\000"
-.LASF4475:
+.LASF4476:
 	.ascii	"MEM_FLG_SET_NXT_SPLT(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXT_SPLT_MSK, additional"
 	.ascii	"Flags)\000"
@@ -20192,7 +20193,7 @@ setSensingForPin:
 	.ascii	"SMC_PMPROT_AVLP_WIDTH 1\000"
 .LASF2712:
 	.ascii	"RCM_SRS0_LVD_WIDTH 1\000"
-.LASF4390:
+.LASF4391:
 	.ascii	"MEM_FLGS_SPLT_32_MSK ((MemFlags)0x20u)\000"
 .LASF3591:
 	.ascii	"TSI_GENCS_STPE_WIDTH 1\000"
@@ -20231,7 +20232,7 @@ setSensingForPin:
 	.ascii	"TSI_GENCS_MODE_WIDTH 4\000"
 .LASF1759:
 	.ascii	"LPTMR_CSR_TPS_WIDTH 2\000"
-.LASF4339:
+.LASF4296:
 	.ascii	"NR_OF_TSKS ((uint8_t)0xBu)\000"
 .LASF969:
 	.ascii	"DMA_DSR_BCR_BSY(x) (((uint32_t)(((uint32_t)(x))<<DM"
@@ -20244,7 +20245,7 @@ setSensingForPin:
 	.ascii	"UART0_C1_DOZEEN_SHIFT 6\000"
 .LASF1087:
 	.ascii	"DMAMUX_CHCFG_TRIG_SHIFT 6\000"
-.LASF4410:
+.LASF4411:
 	.ascii	"MEM_FLGS_NXTTAKEN_MSK ((MemFlags)0x8000u)\000"
 .LASF1247:
 	.ascii	"FTFA_FCCOB7_CCOBn_SHIFT 0\000"
@@ -20283,7 +20284,7 @@ setSensingForPin:
 .LASF2461:
 	.ascii	"PIT_LDVAL_TSV(x) (((uint32_t)(((uint32_t)(x))<<PIT_"
 	.ascii	"LDVAL_TSV_SHIFT))&PIT_LDVAL_TSV_MASK)\000"
-.LASF4499:
+.LASF4500:
 	.ascii	"short unsigned int\000"
 .LASF265:
 	.ascii	"__HQ_FBIT__ 15\000"
@@ -20427,7 +20428,7 @@ setSensingForPin:
 	.ascii	"NV_BACKKEY0_REG(base) ((base)->BACKKEY0)\000"
 .LASF4263:
 	.ascii	"PIN_SD_DETECT PTB7\000"
-.LASF4520:
+.LASF4521:
 	.ascii	"ISFR\000"
 .LASF3897:
 	.ascii	"UART0_C4_OSR_MASK 0x1Fu\000"
@@ -20529,7 +20530,7 @@ setSensingForPin:
 	.ascii	"UART0_BDH_RXEDGIE_MASK 0x40u\000"
 .LASF3883:
 	.ascii	"UART0_D_R6T6_WIDTH 1\000"
-.LASF4400:
+.LASF4401:
 	.ascii	"MEM_FLGS_MERGE1024_MSK ((MemFlags)0x400u)\000"
 .LASF1336:
 	.ascii	"GPIO_PCOR_PTCO(x) (((uint32_t)(((uint32_t)(x))<<GPI"
@@ -20569,7 +20570,7 @@ setSensingForPin:
 	.ascii	"SCB_CCR_STKALIGN_Pos 9\000"
 .LASF110:
 	.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
-.LASF4506:
+.LASF4507:
 	.ascii	"uint8_t\000"
 .LASF3926:
 	.ascii	"UART0_C5_TDMAE_SHIFT 7\000"
@@ -20606,13 +20607,13 @@ setSensingForPin:
 	.ascii	"DAC_C0_DACSWTRG_SHIFT 4\000"
 .LASF2117:
 	.ascii	"MTB_AUTHSTAT_BIT3_MASK 0x8u\000"
-.LASF4356:
+.LASF4357:
 	.ascii	"RET_STCK_ERR_INDEX_UNDERFLOW ((RetCode)0x32u)\000"
 .LASF1002:
 	.ascii	"DMA_DCR_DMOD_MASK 0xF00u\000"
 .LASF847:
 	.ascii	"CMP0_CR0 CMP_CR0_REG(CMP0)\000"
-.LASF4365:
+.LASF4366:
 	.ascii	"BIGGEST_BLCK_MSK ((BlckSize)(BIGGEST_BLCK - (BlckSi"
 	.ascii	"ze)1u))\000"
 .LASF597:
@@ -20653,7 +20654,7 @@ setSensingForPin:
 .LASF2972:
 	.ascii	"RTC_IER_TAIE(x) (((uint32_t)(((uint32_t)(x))<<RTC_I"
 	.ascii	"ER_TAIE_SHIFT))&RTC_IER_TAIE_MASK)\000"
-.LASF4447:
+.LASF4448:
 	.ascii	"MEM_FLGS_PRV_SPLT_32_MSK MEM_FLGS_SPLT_32_MSK\000"
 .LASF2579:
 	.ascii	"PORT_PCR_SRE_SHIFT 2\000"
@@ -20719,7 +20720,7 @@ setSensingForPin:
 	.ascii	"I2C_SMB_TCKSEL_WIDTH 1\000"
 .LASF2672:
 	.ascii	"PORTB_PCR7 PORT_PCR_REG(PORTB,7)\000"
-.LASF4402:
+.LASF4403:
 	.ascii	"MEM_FLGS_MERGE2048_MSK ((MemFlags)0x800u)\000"
 .LASF3237:
 	.ascii	"SIM_UIDML SIM_UIDML_REG(SIM)\000"
@@ -20771,7 +20772,7 @@ setSensingForPin:
 	.ascii	"MTB_DEVICEARCH_DEVICEARCH(x) (((uint32_t)(((uint32_"
 	.ascii	"t)(x))<<MTB_DEVICEARCH_DEVICEARCH_SHIFT))&MTB_DEVIC"
 	.ascii	"EARCH_DEVICEARCH_MASK)\000"
-.LASF4547:
+.LASF4548:
 	.ascii	"installIrq\000"
 .LASF1111:
 	.ascii	"FGPIO_PDOR_PDO_SHIFT 0\000"
@@ -20783,7 +20784,7 @@ setSensingForPin:
 	.ascii	"MCM_PLACR_ESFC_WIDTH 1\000"
 .LASF3224:
 	.ascii	"SIM_SOPT2 SIM_SOPT2_REG(SIM)\000"
-.LASF4495:
+.LASF4496:
 	.ascii	"unsigned char\000"
 .LASF541:
 	.ascii	"_IP_IDX(IRQn) ( ((uint32_t)(IRQn) >> 2) )\000"
@@ -20794,7 +20795,7 @@ setSensingForPin:
 	.ascii	"FTFA ((FTFA_Type *)FTFA_BASE)\000"
 .LASF2016:
 	.ascii	"MTB_POSITION_REG(base) ((base)->POSITION)\000"
-.LASF4537:
+.LASF4538:
 	.ascii	"PORTB_IRQ_INDEX\000"
 .LASF1211:
 	.ascii	"FTFA_FSEC_SEC_SHIFT 0\000"
@@ -20817,9 +20818,9 @@ setSensingForPin:
 	.ascii	"MTB_AUTHSTAT_BIT0_MASK 0x1u\000"
 .LASF2798:
 	.ascii	"ROM_PERIPHID5_PERIPHID_SHIFT 0\000"
-.LASF4544:
+.LASF4545:
 	.ascii	"func\000"
-.LASF4408:
+.LASF4409:
 	.ascii	"MEM_FLGS_PREVTAKEN_MSK ((MemFlags)0x4000u)\000"
 .LASF1610:
 	.ascii	"LLWU_ME_WUME1_SHIFT 1\000"
@@ -20865,14 +20866,14 @@ setSensingForPin:
 	.ascii	"_SR_DACBFRPBF_SHIFT))&DAC_SR_DACBFRPBF_MASK)\000"
 .LASF3571:
 	.ascii	"TSI_DATA_REG(base) ((base)->DATA)\000"
-.LASF4427:
+.LASF4428:
 	.ascii	"MEM_FLG_ISMERGED(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_MERGED_SHFT)\000"
 .LASF2655:
 	.ascii	"PORTA_PCR25 PORT_PCR_REG(PORTA,25)\000"
 .LASF2633:
 	.ascii	"PORTA_PCR3 PORT_PCR_REG(PORTA,3)\000"
-.LASF4426:
+.LASF4427:
 	.ascii	"MEM_FLG_CLR_ISLOWER(pMemMngrHead) MEM_FLG_CLR_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISLOWER_MSK, flagsForMemB"
 	.ascii	"lock)\000"
@@ -20943,9 +20944,9 @@ setSensingForPin:
 	.ascii	"ROM_TABLEMARK_MARK_SHIFT 0\000"
 .LASF3611:
 	.ascii	"TSI_GENCS_EXTCHRG_WIDTH 3\000"
-.LASF4563:
-	.ascii	"g_ISRFktNr_PORTA\000"
 .LASF4564:
+	.ascii	"g_ISRFktNr_PORTA\000"
+.LASF4565:
 	.ascii	"g_ISRFktNr_PORTB\000"
 .LASF1484:
 	.ascii	"I2C_C2_GCAEN(x) (((uint8_t)(((uint8_t)(x))<<I2C_C2_"
@@ -21022,7 +21023,7 @@ setSensingForPin:
 	.ascii	"SPI_C2_BIDIROE_MASK 0x8u\000"
 .LASF1082:
 	.ascii	"DMAMUX_CHCFG_SOURCE_MASK 0x3Fu\000"
-.LASF4490:
+.LASF4491:
 	.ascii	"MEM_FLG_CLR_CACHED(pMemMngrHead) MEM_FLG_CLR_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_CACHED_MSK, additionalFlag"
 	.ascii	"s)\000"
@@ -21050,7 +21051,7 @@ setSensingForPin:
 .LASF3848:
 	.ascii	"UART0_C3_TXDIR(x) (((uint8_t)(((uint8_t)(x))<<UART0"
 	.ascii	"_C3_TXDIR_SHIFT))&UART0_C3_TXDIR_MASK)\000"
-.LASF4370:
+.LASF4371:
 	.ascii	"MEM_MNGR_GET_MEMMNGRHEAD(pointer) ((MemMngrHead *)("
 	.ascii	" (uint32_t) pointer - (uint32_t) sizeof(MemBlckHead"
 	.ascii	")))\000"
@@ -21066,21 +21067,21 @@ setSensingForPin:
 	.ascii	"SIM_SOPT7_ADC0ALTTRGEN(x) (((uint32_t)(((uint32_t)("
 	.ascii	"x))<<SIM_SOPT7_ADC0ALTTRGEN_SHIFT))&SIM_SOPT7_ADC0A"
 	.ascii	"LTTRGEN_MASK)\000"
-.LASF4336:
+.LASF4339:
 	.ascii	"TSK_STATE_IS_UNINIT_FAILED(pTsk) (TskState)(TSK_GET"
 	.ascii	"STATE(pTsk) == TSK_STATE_UNINIT_FAILED)\000"
 .LASF431:
 	.ascii	"INT64_C(x) __INT64_C(x)\000"
 .LASF3673:
 	.ascii	"UART0_MA1_REG(base) ((base)->MA1)\000"
-.LASF4569:
+.LASF4570:
 	.ascii	"../hal/mcu/NXP_KL05/source/InterruptFunc.c\000"
 .LASF3216:
 	.ascii	"SIM_SRVCOP_SRVCOP(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"SIM_SRVCOP_SRVCOP_SHIFT))&SIM_SRVCOP_SRVCOP_MASK)\000"
 .LASF2894:
 	.ascii	"RTC_CR_WPE_SHIFT 1\000"
-.LASF4324:
+.LASF4327:
 	.ascii	"TSK_STATE_IS_ACTIVE_SUSPENDED(pTsk) (TskState)(TSK_"
 	.ascii	"GETSTATE(pTsk) == TSK_STATE_ACTIVE_SUSPENDED )\000"
 .LASF778:
@@ -21200,7 +21201,7 @@ setSensingForPin:
 	.ascii	"M_SCGC5_LPTMR_SHIFT))&SIM_SCGC5_LPTMR_MASK)\000"
 .LASF703:
 	.ascii	"ADC_CLP3_CLP3_SHIFT 0\000"
-.LASF4472:
+.LASF4473:
 	.ascii	"MEM_FLG_SET_BLCKLAST(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_ISBLCKLAST_MSK, addition"
 	.ascii	"alFlags)\000"
@@ -21226,7 +21227,7 @@ setSensingForPin:
 	.ascii	"TSI_GENCS_STPE_MASK 0x20u\000"
 .LASF2371:
 	.ascii	"NV_FOPT_RESET_PIN_CFG_WIDTH 1\000"
-.LASF4441:
+.LASF4442:
 	.ascii	"MEM_FLGS_PRV_SPLT_4_MSK MEM_FLGS_SPLT_4_MSK\000"
 .LASF1715:
 	.ascii	"LLWU_FILT2_FILTSEL_WIDTH 4\000"
@@ -21313,9 +21314,9 @@ setSensingForPin:
 	.ascii	"__INT32_C(c) c ## L\000"
 .LASF340:
 	.ascii	"__USES_INITFINI__ 1\000"
-.LASF4548:
+.LASF4549:
 	.ascii	"TPM0_IRQHandler\000"
-.LASF4334:
+.LASF4337:
 	.ascii	"TSK_STATE_IS_UNINIT(pTsk) (TskState)(TSK_GETSTATE(p"
 	.ascii	"Tsk) & TSK_STATE_UNINIT)\000"
 .LASF1742:
@@ -21326,7 +21327,7 @@ setSensingForPin:
 	.ascii	"UART0_C2_ILIE_SHIFT 4\000"
 .LASF3269:
 	.ascii	"SMC_STOPCTRL_VLLSM_MASK 0x7u\000"
-.LASF4423:
+.LASF4424:
 	.ascii	"MEM_FLG_CLR_SPLIT(pMemMngrHead) MEM_FLG_CLR_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_SPLT_MSK, flagsForMemBlock)"
 	.ascii	"\000"
@@ -21366,7 +21367,7 @@ setSensingForPin:
 .LASF2548:
 	.ascii	"PMC_REGSC_REGONS(x) (((uint8_t)(((uint8_t)(x))<<PMC"
 	.ascii	"_REGSC_REGONS_SHIFT))&PMC_REGSC_REGONS_MASK)\000"
-.LASF4524:
+.LASF4525:
 	.ascii	"STATUS\000"
 .LASF1582:
 	.ascii	"LLWU_PE1_WUPE2_SHIFT 4\000"
@@ -21451,7 +21452,7 @@ setSensingForPin:
 	.ascii	"DMA_DCR_EADREQ_WIDTH 1\000"
 .LASF2319:
 	.ascii	"NV_BACKKEY6_KEY_WIDTH 8\000"
-.LASF4310:
+.LASF4313:
 	.ascii	"TSK_ID_NO_TSK TSK_ID_IDLE\000"
 .LASF3970:
 	.ascii	"MCM_MATCR_RO2_MASK This_symbol_has_been_deprecated\000"
@@ -21461,7 +21462,7 @@ setSensingForPin:
 	.ascii	"FTFA_FPROT2_PROT_WIDTH 8\000"
 .LASF860:
 	.ascii	"DAC_C2_REG(base) ((base)->C2)\000"
-.LASF4501:
+.LASF4502:
 	.ascii	"__uint32_t\000"
 .LASF2855:
 	.ascii	"RTC_TAR_REG(base) ((base)->TAR)\000"
@@ -21520,7 +21521,7 @@ setSensingForPin:
 	.ascii	"MTBDWT_COMPID_COMPID_WIDTH 32\000"
 .LASF4042:
 	.ascii	"UARTLP_S1_FE_SHIFT UART0_S1_FE_SHIFT\000"
-.LASF4511:
+.LASF4512:
 	.ascii	"PSOR\000"
 .LASF2015:
 	.ascii	"MCM_CPO MCM_CPO_REG(MCM)\000"
@@ -21582,11 +21583,11 @@ setSensingForPin:
 	.ascii	"CMP_MUXCR_MSEL_SHIFT 0\000"
 .LASF596:
 	.ascii	"ADC_CFG1_ADLSMP_WIDTH 1\000"
-.LASF4435:
+.LASF4436:
 	.ascii	"MEM_FLG_SMALLER_COMBO(memFlgs) (MemSize)(MEM_FLG_GE"
 	.ascii	"T_MEMSIZE(memFlgs) & (MemSize)(-MEM_FLG_GET_MEMSIZE"
 	.ascii	"(memFlgs)))\000"
-.LASF4468:
+.LASF4469:
 	.ascii	"MEM_FLG_ISBLCKBEG(memFlgs) MEM_FLG_PARSE(memFlgs,ME"
 	.ascii	"M_FLGS_ISBLCKBEG_SHFT)\000"
 .LASF1359:
@@ -21610,7 +21611,7 @@ setSensingForPin:
 	.ascii	"UINT8_C(x) __UINT8_C(x)\000"
 .LASF63:
 	.ascii	"__INTPTR_TYPE__ int\000"
-.LASF4462:
+.LASF4463:
 	.ascii	"MEM_FLGS_PREV_SPLT_SHFT ((MemFlags)0xDu)\000"
 .LASF1235:
 	.ascii	"FTFA_FCCOB2_CCOBn_SHIFT 0\000"
@@ -21650,7 +21651,7 @@ setSensingForPin:
 	.ascii	"TPM0_C5SC TPM_CnSC_REG(TPM0,5)\000"
 .LASF3719:
 	.ascii	"UART0_C1_RSRC_WIDTH 1\000"
-.LASF4446:
+.LASF4447:
 	.ascii	"MEM_FLGS_PRV_SPLT_32_SHFT MEM_FLGS_SPLT_32_SHFT\000"
 .LASF2269:
 	.ascii	"MTBDWT_PERIPHID7 MTBDWT_PERIPHID_REG(MTBDWT,3)\000"
@@ -21685,7 +21686,7 @@ setSensingForPin:
 	.ascii	"FTFA_FSTAT_RDCOLERR_MASK 0x40u\000"
 .LASF4138:
 	.ascii	"FPTB_BASE_PTR FGPIOB_BASE_PTR\000"
-.LASF4521:
+.LASF4522:
 	.ascii	"PORT_Type\000"
 .LASF3504:
 	.ascii	"TPM_CONF_DOZEEN_MASK 0x20u\000"
@@ -21737,7 +21738,7 @@ setSensingForPin:
 .LASF3772:
 	.ascii	"UART0_S1_NF(x) (((uint8_t)(((uint8_t)(x))<<UART0_S1"
 	.ascii	"_NF_SHIFT))&UART0_S1_NF_MASK)\000"
-.LASF4335:
+.LASF4338:
 	.ascii	"TSK_STATE_IS_UNINIT_UNINIT(pTsk) (TskState)(TSK_GET"
 	.ascii	"STATE(pTsk) == TSK_STATE_UNINIT_UNINIT)\000"
 .LASF547:
@@ -21759,9 +21760,9 @@ setSensingForPin:
 	.ascii	"NV_BACKKEY3_REG(base) ((base)->BACKKEY3)\000"
 .LASF75:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
-.LASF4392:
+.LASF4393:
 	.ascii	"MEM_FLGS_SPLT_64_MSK ((MemFlags)0x40u)\000"
-.LASF4363:
+.LASF4364:
 	.ascii	"BLCK_LIMIT ((BlckSize)0x800u)\000"
 .LASF1615:
 	.ascii	"LLWU_ME_WUME2_WIDTH 1\000"
@@ -21772,9 +21773,9 @@ setSensingForPin:
 .LASF3423:
 	.ascii	"TPM_SC_CPWMS(x) (((uint32_t)(((uint32_t)(x))<<TPM_S"
 	.ascii	"C_CPWMS_SHIFT))&TPM_SC_CPWMS_MASK)\000"
-.LASF4546:
+.LASF4547:
 	.ascii	"entity\000"
-.LASF4473:
+.LASF4474:
 	.ascii	"MEM_FLG_CLR_BLCKLAST(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_ISBLCKLAST_MSK, addition"
 	.ascii	"alFlags)\000"
@@ -21789,7 +21790,7 @@ setSensingForPin:
 	.ascii	"ROM_PERIPHID5_PERIPHID(x) (((uint32_t)(((uint32_t)("
 	.ascii	"x))<<ROM_PERIPHID5_PERIPHID_SHIFT))&ROM_PERIPHID5_P"
 	.ascii	"ERIPHID_MASK)\000"
-.LASF4328:
+.LASF4331:
 	.ascii	"TSK_STATE_IS_WAITING_TMR(pTsk) (TskState)(TSK_GETST"
 	.ascii	"ATE(pTsk) == TSK_STATE_WAITING_TMR)\000"
 .LASF533:
@@ -21821,7 +21822,7 @@ setSensingForPin:
 	.ascii	"MTB_AUTHSTAT_BIT2_WIDTH 1\000"
 .LASF1418:
 	.ascii	"I2C_C1_IICIE_SHIFT 6\000"
-.LASF4332:
+.LASF4335:
 	.ascii	"TSK_STATE_IS_WAITING_SEM(pTsk) (TskState)(TSK_GETST"
 	.ascii	"ATE(pTsk) == TSK_STATE_WAITING_SEM)\000"
 .LASF3714:
@@ -21832,7 +21833,7 @@ setSensingForPin:
 	.ascii	"ADC_SC3_ADCO_MASK 0x8u\000"
 .LASF731:
 	.ascii	"ADC0_SC2 ADC_SC2_REG(ADC0)\000"
-.LASF4308:
+.LASF4311:
 	.ascii	"SYSTCK_AR_RES_MSK (uint8_t)(SYSTCK_AR_RES - (uint8_"
 	.ascii	"t)0x1u)\000"
 .LASF1298:
@@ -21841,7 +21842,7 @@ setSensingForPin:
 	.ascii	"CMP_SCR_DMAEN_MASK 0x40u\000"
 .LASF462:
 	.ascii	"SCB_CPUID_IMPLEMENTER_Pos 24\000"
-.LASF4566:
+.LASF4567:
 	.ascii	"g_IRQArr\000"
 .LASF1549:
 	.ascii	"I2C0_BASE (0x40066000u)\000"
@@ -21874,7 +21875,7 @@ setSensingForPin:
 	.ascii	"TPM_CONF_CSOO_MASK 0x20000u\000"
 .LASF1224:
 	.ascii	"FTFA_FSEC_KEYEN_WIDTH 2\000"
-.LASF4431:
+.LASF4432:
 	.ascii	"MEM_FLG_GET_MEMSIZE(memFlgs) (MemSize)(memFlgs & ME"
 	.ascii	"M_FLGS_SIZE_MSK)\000"
 .LASF1906:
@@ -21887,7 +21888,7 @@ setSensingForPin:
 	.ascii	"MTB_AUTHSTAT_REG(base) ((base)->AUTHSTAT)\000"
 .LASF1481:
 	.ascii	"I2C_C2_GCAEN_MASK 0x80u\000"
-.LASF4338:
+.LASF4295:
 	.ascii	"TIME_SLICE_AMOUNT (uint16_t)500u\000"
 .LASF1568:
 	.ascii	"LLWU_ME_REG(base) ((base)->ME)\000"
@@ -21924,7 +21925,7 @@ setSensingForPin:
 .LASF825:
 	.ascii	"CMP_DACCR_VRSEL(x) (((uint8_t)(((uint8_t)(x))<<CMP_"
 	.ascii	"DACCR_VRSEL_SHIFT))&CMP_DACCR_VRSEL_MASK)\000"
-.LASF4296:
+.LASF4299:
 	.ascii	"MY_STACK_SIZE ((StackSize)0x80u)\000"
 .LASF370:
 	.ascii	"__int_fast8_t_defined 1\000"
@@ -21946,7 +21947,7 @@ setSensingForPin:
 	.ascii	"TPM_CnSC_CHIE_SHIFT 6\000"
 .LASF858:
 	.ascii	"DAC_C0_REG(base) ((base)->C0)\000"
-.LASF4353:
+.LASF4354:
 	.ascii	"RET_STCK_ERR_FULL ((RetCode)0x3Fu)\000"
 .LASF721:
 	.ascii	"ADC_BASE_ADDRS { ADC0_BASE }\000"
@@ -22089,7 +22090,7 @@ setSensingForPin:
 	.ascii	"UARTLP_S1_TDRE_SHIFT UART0_S1_TDRE_SHIFT\000"
 .LASF4165:
 	.ascii	"SMC_BASES SMC_BASE_PTRS\000"
-.LASF4418:
+.LASF4419:
 	.ascii	"MEM_FLG_NXTTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_NXTTAKEN_SHFT)\000"
 .LASF4005:
@@ -22106,7 +22107,7 @@ setSensingForPin:
 	.ascii	"SPI_C1_SPIE_SHIFT 7\000"
 .LASF113:
 	.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
-.LASF4383:
+.LASF4384:
 	.ascii	"MEM_FLGS_SPLT_4_SHFT ((MemFlags)0x2u)\000"
 .LASF714:
 	.ascii	"ADC_CLP0_CLP0_MASK 0x3Fu\000"
@@ -22147,7 +22148,7 @@ setSensingForPin:
 	.ascii	"UART0_D_R2T2_SHIFT 2\000"
 .LASF3215:
 	.ascii	"SIM_SRVCOP_SRVCOP_WIDTH 8\000"
-.LASF4385:
+.LASF4386:
 	.ascii	"MEM_FLGS_SPLT_8_SHFT ((MemFlags)0x3u)\000"
 .LASF1562:
 	.ascii	"I2C0_SMB I2C_SMB_REG(I2C0)\000"
@@ -22207,7 +22208,7 @@ setSensingForPin:
 	.ascii	"TSI_TSHD_REG(base) ((base)->TSHD)\000"
 .LASF2651:
 	.ascii	"PORTA_PCR21 PORT_PCR_REG(PORTA,21)\000"
-.LASF4471:
+.LASF4472:
 	.ascii	"MEM_FLG_ISBLCKLAST(memFlgs) MEM_FLG_PARSE(memFlgs,M"
 	.ascii	"EM_FLGS_ISBLCKLAST_SHFT)\000"
 .LASF610:
@@ -22243,7 +22244,7 @@ setSensingForPin:
 	.ascii	"I_TSHD_THRESH_SHIFT))&TSI_TSHD_THRESH_MASK)\000"
 .LASF2451:
 	.ascii	"PIT_LTMR64H_LTH_SHIFT 0\000"
-.LASF4453:
+.LASF4454:
 	.ascii	"MEM_FLGS_PRV_BGGSTBLCK_MSK MEM_FLGS_BGGSTBLCK_MSK\000"
 .LASF461:
 	.ascii	"__IO volatile\000"
@@ -22274,7 +22275,7 @@ setSensingForPin:
 	.ascii	"DAC_C0_LPEN_SHIFT 3\000"
 .LASF1372:
 	.ascii	"I2C_S_REG(base) ((base)->S)\000"
-.LASF4488:
+.LASF4489:
 	.ascii	"MEM_FLG_ISCACHED(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_CACHED_SHFT)\000"
 .LASF1462:
@@ -22304,7 +22305,7 @@ setSensingForPin:
 .LASF1776:
 	.ascii	"LPTMR_PSR_PBYP(x) (((uint32_t)(((uint32_t)(x))<<LPT"
 	.ascii	"MR_PSR_PBYP_SHIFT))&LPTMR_PSR_PBYP_MASK)\000"
-.LASF4389:
+.LASF4390:
 	.ascii	"MEM_FLGS_SPLT_32_SHFT ((MemFlags)0x5u)\000"
 .LASF2731:
 	.ascii	"RCM_SRS1_LOCKUP_SHIFT 1\000"
@@ -22328,7 +22329,7 @@ setSensingForPin:
 	.ascii	"_OSCE_SHIFT))&RTC_CR_OSCE_MASK)\000"
 .LASF1022:
 	.ascii	"DMA_DCR_SSIZE_MASK 0x300000u\000"
-.LASF4557:
+.LASF4558:
 	.ascii	"sensing\000"
 .LASF1499:
 	.ascii	"I2C_FLT_SHEN_WIDTH 1\000"
@@ -22380,7 +22381,7 @@ setSensingForPin:
 	.ascii	"TPM_STATUS_CH2F_WIDTH 1\000"
 .LASF588:
 	.ascii	"ADC_CFG1_ADICLK_WIDTH 2\000"
-.LASF4388:
+.LASF4389:
 	.ascii	"MEM_FLGS_SPLT_16_MSK ((MemFlags)0x10u)\000"
 .LASF2657:
 	.ascii	"PORTA_PCR27 PORT_PCR_REG(PORTA,27)\000"
@@ -22428,7 +22429,7 @@ setSensingForPin:
 	.ascii	"SIM_SDID_SERIESID_WIDTH 4\000"
 .LASF820:
 	.ascii	"CMP_DACCR_VOSEL_WIDTH 6\000"
-.LASF4496:
+.LASF4497:
 	.ascii	"short int\000"
 .LASF2727:
 	.ascii	"RCM_SRS0_POR_SHIFT 7\000"
@@ -22438,7 +22439,7 @@ setSensingForPin:
 	.ascii	"PORT_GPCHR_GPWE_MASK 0xFFFF0000u\000"
 .LASF931:
 	.ascii	"DAC0_DAT0H DAC_DATH_REG(DAC0,0)\000"
-.LASF4483:
+.LASF4484:
 	.ascii	"MEM_FLG_PREV_BIGGER_COMBO(memFlgs) (MemSize)(MEM_FL"
 	.ascii	"G_GET_PREV_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET"
 	.ascii	"_PREV_MEMSIZE(memFlgs)-(MemSize)1u))\000"
@@ -22472,9 +22473,9 @@ setSensingForPin:
 	.ascii	"DAC_C0_DACTRGSEL_WIDTH 1\000"
 .LASF3472:
 	.ascii	"TPM_CnV_VAL_MASK 0xFFFFu\000"
-.LASF4349:
+.LASF4350:
 	.ascii	"RET_TSK_NO_IDLE_TSK ((RetCode)0x20u)\000"
-.LASF4413:
+.LASF4414:
 	.ascii	"MEM_FLG_SET_TAKEN(pMemMngrHead) MEM_FLG_SET_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_TAKEN_MSK, flagsForMemBlock"
 	.ascii	")\000"
@@ -22559,7 +22560,7 @@ setSensingForPin:
 	.ascii	"PIT_MCR_REG(base) ((base)->MCR)\000"
 .LASF945:
 	.ascii	"DMA_DSR_BCR_COUNT 4\000"
-.LASF4361:
+.LASF4362:
 	.ascii	"realloc rRealloc\000"
 .LASF4286:
 	.ascii	"GET_PIN_LVL_PORT(pin,port) (uint8_t)((((PortPIN)pin"
@@ -22591,7 +22592,7 @@ setSensingForPin:
 .LASF1440:
 	.ascii	"I2C_S_RAM(x) (((uint8_t)(((uint8_t)(x))<<I2C_S_RAM_"
 	.ascii	"SHIFT))&I2C_S_RAM_MASK)\000"
-.LASF4357:
+.LASF4358:
 	.ascii	"RET_STCK_NO_STCKELEM_PTR ((RetCode)0x33u)\000"
 .LASF3631:
 	.ascii	"TSI_GENCS_OUTRGF_WIDTH 1\000"
@@ -22646,7 +22647,7 @@ setSensingForPin:
 	.ascii	"UARTLP_C4_OSR_SHIFT UART0_C4_OSR_SHIFT\000"
 .LASF273:
 	.ascii	"__UQQ_FBIT__ 8\000"
-.LASF4359:
+.LASF4360:
 	.ascii	"malloc rMalloc\000"
 .LASF3691:
 	.ascii	"UART0_BDH_LBKDIE_WIDTH 1\000"
@@ -22665,7 +22666,7 @@ setSensingForPin:
 	.ascii	"ACKKEY7_KEY_SHIFT))&NV_BACKKEY7_KEY_MASK)\000"
 .LASF3547:
 	.ascii	"TPM0_C2SC TPM_CnSC_REG(TPM0,2)\000"
-.LASF4344:
+.LASF4345:
 	.ascii	"RET_NOK ((RetCode)0x0u)\000"
 .LASF1366:
 	.ascii	"GPIOB_PTOR GPIO_PTOR_REG(GPIOB)\000"
@@ -22704,7 +22705,7 @@ setSensingForPin:
 	.ascii	"UARTLP_MA1_REG UART0_MA1_REG\000"
 .LASF1173:
 	.ascii	"FTFA_FPROT0_REG(base) ((base)->FPROT0)\000"
-.LASF4424:
+.LASF4425:
 	.ascii	"MEM_FLG_ISLOWER(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_ISLOWER_SHFT)\000"
 .LASF4254:
@@ -22746,7 +22747,7 @@ setSensingForPin:
 	.ascii	"GPIOB_PDOR GPIO_PDOR_REG(GPIOB)\000"
 .LASF1995:
 	.ascii	"MCM_CPO_CPOREQ_MASK 0x1u\000"
-.LASF4303:
+.LASF4306:
 	.ascii	"TSK_ID_MSK (uint16_t)0x00FFu\000"
 .LASF1838:
 	.ascii	"MCG_C2_EREFS0_WIDTH 1\000"
@@ -22784,7 +22785,7 @@ setSensingForPin:
 	.ascii	"ADC_CLP2_CLP2_WIDTH 8\000"
 .LASF3850:
 	.ascii	"UART0_C3_R9T8_SHIFT 6\000"
-.LASF4463:
+.LASF4464:
 	.ascii	"MEM_FLGS_PREV_SPLT_MSK ((MemFlags)0x2000u)\000"
 .LASF1650:
 	.ascii	"LLWU_F1_WUF3_SHIFT 3\000"
@@ -22860,7 +22861,7 @@ setSensingForPin:
 	.ascii	"MTB_FLOW_WATERMARK_WIDTH 29\000"
 .LASF1939:
 	.ascii	"MCG_C2_EREFS_MASK (MCG_C2_EREFS0_MASK)\000"
-.LASF4299:
+.LASF4302:
 	.ascii	"AMOUNT_OF_MSGQ (QID)(0x3u)\000"
 .LASF2813:
 	.ascii	"ROM_PERIPHID1_PERIPHID_MASK 0xFFFFFFFFu\000"
@@ -22888,7 +22889,7 @@ setSensingForPin:
 	.ascii	"MTB_LOCKSTAT_LOCKSTAT_WIDTH 32\000"
 .LASF1308:
 	.ascii	"FTFA_FCCOB6 FTFA_FCCOB6_REG(FTFA)\000"
-.LASF4465:
+.LASF4466:
 	.ascii	"MEM_FLGS_BGGRMRGD_MSK ((MemFlags)0x4000u)\000"
 .LASF1041:
 	.ascii	"DMA_DCR_CS(x) (((uint32_t)(((uint32_t)(x))<<DMA_DCR"
@@ -22992,7 +22993,7 @@ setSensingForPin:
 	.ascii	"DMAMUX_CHCFG_ENBL_WIDTH 1\000"
 .LASF3538:
 	.ascii	"TPM_BASE_ADDRS { TPM0_BASE, TPM1_BASE }\000"
-.LASF4436:
+.LASF4437:
 	.ascii	"MEM_FLGS_ISBLCKBEG_SHFT ((MemFlags)0x0u)\000"
 .LASF1779:
 	.ascii	"LPTMR_PSR_PRESCALE_WIDTH 4\000"
@@ -23027,7 +23028,7 @@ setSensingForPin:
 	.ascii	"OSC_CR_SC2P_MASK 0x8u\000"
 .LASF405:
 	.ascii	"INT_FAST16_MAX __INT_FAST16_MAX__\000"
-.LASF4420:
+.LASF4421:
 	.ascii	"MEM_FLG_CLR_NXTTAKEN(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXTTAKEN_MSK, flagsForMe"
 	.ascii	"mBlock)\000"
@@ -23128,11 +23129,11 @@ setSensingForPin:
 .LASF1432:
 	.ascii	"I2C_S_IICIF(x) (((uint8_t)(((uint8_t)(x))<<I2C_S_II"
 	.ascii	"CIF_SHIFT))&I2C_S_IICIF_MASK)\000"
-.LASF4509:
+.LASF4510:
 	.ascii	"sizetype\000"
 .LASF4007:
 	.ascii	"UARTLP_C1_PT_MASK UART0_C1_PT_MASK\000"
-.LASF4570:
+.LASF4571:
 	.ascii	"C:\\\\Users\\\\Christian\\\\Documents\\\\OHM\\\\MAP"
 	.ascii	"R\\\\Projekt\\\\WRKSPC\\\\R_RTOS\\\\build\000"
 .LASF936:
@@ -23173,7 +23174,7 @@ setSensingForPin:
 .LASF641:
 	.ascii	"ADC_SC2_DMAEN(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"SC2_DMAEN_SHIFT))&ADC_SC2_DMAEN_MASK)\000"
-.LASF4387:
+.LASF4388:
 	.ascii	"MEM_FLGS_SPLT_16_SHFT ((MemFlags)0x4u)\000"
 .LASF1996:
 	.ascii	"MCM_CPO_CPOREQ_SHIFT 0\000"
@@ -23181,7 +23182,7 @@ setSensingForPin:
 	.ascii	"LLWU_PE1_WUPE0_SHIFT 0\000"
 .LASF2946:
 	.ascii	"RTC_LR_TCL_SHIFT 3\000"
-.LASF4319:
+.LASF4322:
 	.ascii	"CREATE_EVT_MSK(evtNr) (EVTQSlots)((EVTQSlots)0x1u <"
 	.ascii	"< evtNr)\000"
 .LASF1750:
@@ -23191,7 +23192,7 @@ setSensingForPin:
 .LASF645:
 	.ascii	"ADC_SC2_ACREN(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"SC2_ACREN_SHIFT))&ADC_SC2_ACREN_MASK)\000"
-.LASF4543:
+.LASF4544:
 	.ascii	"__enable_irq\000"
 .LASF2007:
 	.ascii	"MCM_BASE (0xF0003000u)\000"
@@ -23257,7 +23258,7 @@ setSensingForPin:
 	.ascii	"SPI_C2_TXDMAE_MASK 0x20u\000"
 .LASF276:
 	.ascii	"__UHQ_IBIT__ 0\000"
-.LASF4539:
+.LASF4540:
 	.ascii	"EfiFreePIN\000"
 .LASF3963:
 	.ascii	"MCM_MATCR_ATC1_SHIFT This_symbol_has_been_deprecate"
@@ -23281,7 +23282,7 @@ setSensingForPin:
 	.ascii	"WINT_MIN __WINT_MIN__\000"
 .LASF14:
 	.ascii	"__SIZEOF_INT__ 4\000"
-.LASF4295:
+.LASF4298:
 	.ascii	"MIN_STACK_SIZE ((StackSize)0x40u)\000"
 .LASF2847:
 	.ascii	"ROM_COMPID0 ROM_COMPID_REG(ROM,0)\000"
@@ -23349,7 +23350,7 @@ setSensingForPin:
 	.ascii	"UARTLP_D_R1T1_MASK UART0_D_R1T1_MASK\000"
 .LASF448:
 	.ascii	"__CORTEX_M (0x00)\000"
-.LASF4429:
+.LASF4430:
 	.ascii	"MEM_FLG_CLR_MERGED(pMemMngrHead) MEM_FLG_CLR_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_MERGED_MSK, flagsForMemBlo"
 	.ascii	"ck)\000"
@@ -23364,7 +23365,7 @@ setSensingForPin:
 	.ascii	"SMC_PMCTRL SMC_PMCTRL_REG(SMC)\000"
 .LASF2791:
 	.ascii	"ROM_SYSACCESS_SYSACCESS_WIDTH 32\000"
-.LASF4382:
+.LASF4383:
 	.ascii	"MEM_FLGS_ISLOWER_MSK ((MemFlags)0x2u)\000"
 .LASF3912:
 	.ascii	"UART0_C4_MAEN1(x) (((uint8_t)(((uint8_t)(x))<<UART0"
@@ -23466,7 +23467,7 @@ setSensingForPin:
 	.ascii	"FTFA_FPROT1_PROT_SHIFT 0\000"
 .LASF1382:
 	.ascii	"I2C_A1_AD_SHIFT 1\000"
-.LASF4342:
+.LASF4343:
 	.ascii	"OS_FULL_DISPATCH ((OsCode)0x2u)\000"
 .LASF529:
 	.ascii	"SysTick_CALIB_SKEW_Msk (1UL << SysTick_CALIB_SKEW_P"
@@ -23509,7 +23510,7 @@ setSensingForPin:
 	.ascii	"__UQQ_IBIT__ 0\000"
 .LASF1821:
 	.ascii	"MCG_C1_FRDIV_SHIFT 3\000"
-.LASF4364:
+.LASF4365:
 	.ascii	"BIGGEST_BLCK ((BlckSize)0x100u)\000"
 .LASF2110:
 	.ascii	"MTB_AUTHSTAT_BIT1_SHIFT 1\000"
@@ -23553,7 +23554,7 @@ setSensingForPin:
 	.ascii	"TPM_CONF_DBGMODE_SHIFT 6\000"
 .LASF3211:
 	.ascii	"SIM_COPC_COPT_WIDTH 2\000"
-.LASF4479:
+.LASF4480:
 	.ascii	"MEM_FLG_CLR_PREV_SPLT(pMemMngrHead) MEM_FLG_CLR_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREV_SPLT_MSK, addition"
 	.ascii	"alFlags)\000"
@@ -23580,7 +23581,7 @@ setSensingForPin:
 	.ascii	"SMC_PMPROT_REG(base) ((base)->PMPROT)\000"
 .LASF1814:
 	.ascii	"MCG_C1_IRCLKEN_WIDTH 1\000"
-.LASF4317:
+.LASF4320:
 	.ascii	"MAKE_TSK_ID(id) (uint16_t)(uint16_t)((uint8_t)id & "
 	.ascii	"(uint8_t)0xFFu)\000"
 .LASF1200:
@@ -23594,7 +23595,7 @@ setSensingForPin:
 	.ascii	"PIO_PTOR_PTTO_SHIFT))&FGPIO_PTOR_PTTO_MASK)\000"
 .LASF3669:
 	.ascii	"UART0_S1_REG(base) ((base)->S1)\000"
-.LASF4422:
+.LASF4423:
 	.ascii	"MEM_FLG_SET_SPLIT(pMemMngrHead) MEM_FLG_SET_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_SPLT_MSK, flagsForMemBlock)"
 	.ascii	"\000"
@@ -23611,7 +23612,7 @@ setSensingForPin:
 .LASF1990:
 	.ascii	"MCM_PLACR_DFCS(x) (((uint32_t)(((uint32_t)(x))<<MCM"
 	.ascii	"_PLACR_DFCS_SHIFT))&MCM_PLACR_DFCS_MASK)\000"
-.LASF4415:
+.LASF4416:
 	.ascii	"MEM_FLG_PREVTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,ME"
 	.ascii	"M_FLGS_PREVTAKEN_SHFT)\000"
 .LASF1785:
@@ -23636,7 +23637,7 @@ setSensingForPin:
 	.ascii	"DAC_SR_DACBFRPTF_SHIFT 1\000"
 .LASF1210:
 	.ascii	"FTFA_FSEC_SEC_MASK 0x3u\000"
-.LASF4352:
+.LASF4353:
 	.ascii	"RET_TSK_IS_ABOUT_TO_RUN ((RetCode)0x25u)\000"
 .LASF3986:
 	.ascii	"UARTLP_C2_REG UART0_C2_REG\000"
@@ -23652,7 +23653,7 @@ setSensingForPin:
 .LASF3096:
 	.ascii	"SIM_SDID_FAMID(x) (((uint32_t)(((uint32_t)(x))<<SIM"
 	.ascii	"_SDID_FAMID_SHIFT))&SIM_SDID_FAMID_MASK)\000"
-.LASF4442:
+.LASF4443:
 	.ascii	"MEM_FLGS_PRV_SPLT_8_SHFT MEM_FLGS_SPLT_8_SHFT\000"
 .LASF3452:
 	.ascii	"TPM_CnSC_ELSB_MASK 0x8u\000"
@@ -23674,7 +23675,7 @@ setSensingForPin:
 	.ascii	"NV_BACKKEY0_KEY_MASK 0xFFu\000"
 .LASF390:
 	.ascii	"INT32_MAX __INT32_MAX__\000"
-.LASF4412:
+.LASF4413:
 	.ascii	"MEM_FLG_ISTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_TAKEN_SHFT)\000"
 .LASF1113:
@@ -23686,7 +23687,7 @@ setSensingForPin:
 	.ascii	"NV_FOPT_LPBOOT1_WIDTH 1\000"
 .LASF1666:
 	.ascii	"LLWU_F1_WUF7_SHIFT 7\000"
-.LASF4378:
+.LASF4379:
 	.ascii	"MEM_FLG_CLR_BIT_MSK(pMemMngrHead,msk,whichFlags) ME"
 	.ascii	"M_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) &="
 	.ascii	" ((MemFlags)(~((MemFlags)msk)))\000"
@@ -23711,7 +23712,7 @@ setSensingForPin:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF3561:
 	.ascii	"TPM1_C0V TPM_CnV_REG(TPM1,0)\000"
-.LASF4396:
+.LASF4397:
 	.ascii	"MEM_FLGS_BGGSTBLCK_MSK ((MemFlags)0x100u)\000"
 .LASF3431:
 	.ascii	"TPM_SC_TOF(x) (((uint32_t)(((uint32_t)(x))<<TPM_SC_"
@@ -23768,14 +23769,14 @@ setSensingForPin:
 	.ascii	"__int_fast32_t_defined 1\000"
 .LASF1423:
 	.ascii	"I2C_C1_IICEN_WIDTH 1\000"
-.LASF4405:
+.LASF4406:
 	.ascii	"MEM_FLGS_MERGED_SHFT ((MemFlags)0xDu)\000"
 .LASF2036:
 	.ascii	"MTB_POSITION_WRAP(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"MTB_POSITION_WRAP_SHIFT))&MTB_POSITION_WRAP_MASK)\000"
 .LASF415:
 	.ascii	"UINTMAX_MAX __UINTMAX_MAX__\000"
-.LASF4494:
+.LASF4495:
 	.ascii	"signed char\000"
 .LASF137:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
@@ -23815,7 +23816,7 @@ setSensingForPin:
 	.ascii	"SC2_ADACT_SHIFT))&ADC_SC2_ADACT_MASK)\000"
 .LASF1531:
 	.ascii	"I2C_SMB_ALERTEN_WIDTH 1\000"
-.LASF4512:
+.LASF4513:
 	.ascii	"PCOR\000"
 .LASF2325:
 	.ascii	"NV_BACKKEY4_KEY_MASK 0xFFu\000"
@@ -23831,7 +23832,7 @@ setSensingForPin:
 	.ascii	"RCM_SRS0_LVD_MASK 0x2u\000"
 .LASF2432:
 	.ascii	"PIT_LTMR64H_REG(base) ((base)->LTMR64H)\000"
-.LASF4417:
+.LASF4418:
 	.ascii	"MEM_FLG_CLR_PREVTAKEN(pMemMngrHead) MEM_FLG_CLR_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREVTAKEN_MSK, flagsFor"
 	.ascii	"MemBlock)\000"
@@ -23878,7 +23879,7 @@ setSensingForPin:
 	.ascii	"F_SHIFT))&SPI_S_MODF_MASK)\000"
 .LASF1880:
 	.ascii	"MCG_S_OSCINIT0_MASK 0x2u\000"
-.LASF4445:
+.LASF4446:
 	.ascii	"MEM_FLGS_PRV_SPLT_16_MSK MEM_FLGS_SPLT_16_MSK\000"
 .LASF2358:
 	.ascii	"NV_FSEC_KEYEN_SHIFT 6\000"
@@ -23891,7 +23892,7 @@ setSensingForPin:
 .LASF2116:
 	.ascii	"MTB_AUTHSTAT_BIT2(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"MTB_AUTHSTAT_BIT2_SHIFT))&MTB_AUTHSTAT_BIT2_MASK)\000"
-.LASF4433:
+.LASF4434:
 	.ascii	"MEM_FLG_ISCOMBO(memFlgs) (MemSize)((MEM_FLG_GET_MEM"
 	.ascii	"SIZE(memFlgs) & (MemSize)(MEM_FLG_GET_MEMSIZE(memFl"
 	.ascii	"gs)-(MemSize)1u)) ? 1u : 0u)\000"
@@ -23928,7 +23929,7 @@ setSensingForPin:
 	.ascii	"ROM_BASE_PTRS { ROM }\000"
 .LASF1546:
 	.ascii	"I2C_SLTL_SSLT_SHIFT 0\000"
-.LASF4302:
+.LASF4305:
 	.ascii	"SYS_ID_MSK (uint16_t)0xFF00u\000"
 .LASF76:
 	.ascii	"__SIZE_MAX__ 4294967295U\000"
@@ -23984,7 +23985,7 @@ setSensingForPin:
 	.ascii	"CMP_CR0_FILTER_CNT_SHIFT 4\000"
 .LASF1959:
 	.ascii	"MCM_PLAMC_AMC_MASK 0xFFu\000"
-.LASF4550:
+.LASF4551:
 	.ascii	"tpm0Channels\000"
 .LASF447:
 	.ascii	"__CM0PLUS_CMSIS_VERSION ((__CM0PLUS_CMSIS_VERSION_M"
@@ -24027,7 +24028,7 @@ setSensingForPin:
 .LASF1265:
 	.ascii	"FTFA_FCCOBB_CCOBn(x) (((uint8_t)(((uint8_t)(x))<<FT"
 	.ascii	"FA_FCCOBB_CCOBn_SHIFT))&FTFA_FCCOBB_CCOBn_MASK)\000"
-.LASF4534:
+.LASF4535:
 	.ascii	"PIT_IRQ_INDEX\000"
 .LASF4230:
 	.ascii	"PTB7 ((PortPIN)0x101cu)\000"
@@ -24047,7 +24048,7 @@ setSensingForPin:
 	.ascii	"PE2_WUPE6_SHIFT))&LLWU_PE2_WUPE6_MASK)\000"
 .LASF1730:
 	.ascii	"LLWU_PE1 LLWU_PE1_REG(LLWU)\000"
-.LASF4421:
+.LASF4422:
 	.ascii	"MEM_FLG_ISSPLIT(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_SPLT_SHFT)\000"
 .LASF2006:
@@ -24057,7 +24058,7 @@ setSensingForPin:
 	.ascii	"__UINT_FAST16_MAX__ 4294967295U\000"
 .LASF3395:
 	.ascii	"SPI_BASE_ADDRS { SPI0_BASE }\000"
-.LASF4316:
+.LASF4319:
 	.ascii	"MAKE_SYS_ID(id) (uint16_t)((uint16_t)((uint8_t)id &"
 	.ascii	" (uint8_t)0xFFu) << (uint8_t)0x8u)\000"
 .LASF18:
@@ -24090,7 +24091,7 @@ setSensingForPin:
 	.ascii	"FTFA_FCCOB8 FTFA_FCCOB8_REG(FTFA)\000"
 .LASF1342:
 	.ascii	"GPIO_PDIR_PDI_SHIFT 0\000"
-.LASF4555:
+.LASF4556:
 	.ascii	"PORTB_IRQHandler\000"
 .LASF3820:
 	.ascii	"UART0_S2_RXEDGIF(x) (((uint8_t)(((uint8_t)(x))<<UAR"
@@ -24155,9 +24156,9 @@ setSensingForPin:
 	.ascii	"SET_PIN_HIGH_PORT(pin,port) (((PortPIN)pin != NC) &"
 	.ascii	"& GET_PIN_DDR_PORT(pin,port)) ? ( GPIO_PSOR_REG(por"
 	.ascii	"t) |= PINMASK((PortPIN)pin)) : NC\000"
-.LASF4360:
+.LASF4361:
 	.ascii	"calloc rCalloc\000"
-.LASF4500:
+.LASF4501:
 	.ascii	"long int\000"
 .LASF891:
 	.ascii	"DAC_C0_DACSWTRG_WIDTH 1\000"
@@ -24193,7 +24194,7 @@ setSensingForPin:
 .LASF2593:
 	.ascii	"PORT_PCR_MUX(x) (((uint32_t)(((uint32_t)(x))<<PORT_"
 	.ascii	"PCR_MUX_SHIFT))&PORT_PCR_MUX_MASK)\000"
-.LASF4307:
+.LASF4310:
 	.ascii	"SYSTCK_AR_RES (uint8_t)0x8u\000"
 .LASF1790:
 	.ascii	"LPTMR0 ((LPTMR_Type *)LPTMR0_BASE)\000"
@@ -24208,6 +24209,8 @@ setSensingForPin:
 	.ascii	"ROT2_PROT_SHIFT))&NV_FPROT2_PROT_MASK)\000"
 .LASF1953:
 	.ascii	"MCM_PLACR_REG(base) ((base)->PLACR)\000"
+.LASF4342:
+	.ascii	"NR_OF_MEMPOOLS (uint8_t)0x7u\000"
 .LASF1110:
 	.ascii	"FGPIO_PDOR_PDO_MASK 0xFFFFFFFFu\000"
 .LASF1073:
@@ -24226,7 +24229,7 @@ setSensingForPin:
 	.ascii	"PTB GPIOB\000"
 .LASF1849:
 	.ascii	"MCG_C2_LOCRE0_SHIFT 7\000"
-.LASF4504:
+.LASF4505:
 	.ascii	"long long unsigned int\000"
 .LASF2176:
 	.ascii	"MTBDWT_MASK_REG(base,index) ((base)->COMPARATOR[ind"
@@ -24262,7 +24265,7 @@ setSensingForPin:
 	.ascii	"ROM_COMPID(index) ROM_COMPID_REG(ROM,index)\000"
 .LASF2748:
 	.ascii	"RCM_RPFC_RSTFLTSRW_WIDTH 2\000"
-.LASF4374:
+.LASF4375:
 	.ascii	"MEM_FLG_GET_STRUC_PFIELD(struc,field) ((struc)->fie"
 	.ascii	"ld)\000"
 .LASF3633:
@@ -24298,7 +24301,7 @@ setSensingForPin:
 	.ascii	"PTB2 ((PortPIN)0x1008u)\000"
 .LASF2588:
 	.ascii	"PORT_PCR_DSE_WIDTH 1\000"
-.LASF4376:
+.LASF4377:
 	.ascii	"MEM_FLG_CLR_BIT(pMemMngrHead,bit,whichFlags) MEM_FL"
 	.ascii	"G_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) &= ((M"
 	.ascii	"emFlags)(~MEM_FLG_GET_BIT_MSK(bit)))\000"
@@ -24326,7 +24329,7 @@ setSensingForPin:
 	.ascii	"TPM1_CHANNELS (uint8_t)0x2u\000"
 .LASF2255:
 	.ascii	"MTBDWT_BASE_PTRS { MTBDWT }\000"
-.LASF4507:
+.LASF4508:
 	.ascii	"uint16_t\000"
 .LASF2114:
 	.ascii	"MTB_AUTHSTAT_BIT2_SHIFT 2\000"
@@ -24340,7 +24343,7 @@ setSensingForPin:
 	.ascii	"_RELOAD_Pos)\000"
 .LASF2489:
 	.ascii	"PIT_LTMR64L PIT_LTMR64L_REG(PIT)\000"
-.LASF4345:
+.LASF4346:
 	.ascii	"RET_OK ((RetCode)0x1u)\000"
 .LASF1038:
 	.ascii	"DMA_DCR_CS_MASK 0x20000000u\000"
@@ -24399,7 +24402,7 @@ setSensingForPin:
 	.ascii	"UARTLP_S2_LBKDIF_SHIFT UART0_S2_LBKDIF_SHIFT\000"
 .LASF3122:
 	.ascii	"SIM_SCGC5_PORTA_SHIFT 9\000"
-.LASF4371:
+.LASF4372:
 	.ascii	"MEM_MNGR_GET_PTRTOMEM(memMngrPtr) ((void *) ((uint3"
 	.ascii	"2_t) memMngrPtr + (uint32_t) sizeof(MemBlckHead)))\000"
 .LASF694:
@@ -24473,7 +24476,7 @@ setSensingForPin:
 	.ascii	"TPM_SC_PS_SHIFT 0\000"
 .LASF2626:
 	.ascii	"PORTB ((PORT_Type *)PORTB_BASE)\000"
-.LASF4301:
+.LASF4304:
 	.ascii	"MSGQ_SYS_ID_POS (uint8_t)0x1u\000"
 .LASF2104:
 	.ascii	"MTB_LOCKSTAT_LOCKSTAT(x) (((uint32_t)(((uint32_t)(x"
@@ -24563,7 +24566,7 @@ setSensingForPin:
 	.ascii	"DMAMUX_CHCFG_SOURCE_SHIFT 0\000"
 .LASF528:
 	.ascii	"SysTick_CALIB_SKEW_Pos 30\000"
-.LASF4528:
+.LASF4529:
 	.ascii	"interruptEvent\000"
 .LASF3365:
 	.ascii	"SPI_BR_SPPR_SHIFT 4\000"
@@ -24620,13 +24623,13 @@ setSensingForPin:
 	.ascii	"__UDQ_FBIT__ 64\000"
 .LASF1490:
 	.ascii	"I2C_FLT_STOPIE_SHIFT 5\000"
-.LASF4469:
+.LASF4470:
 	.ascii	"MEM_FLG_SET_BLCKBEG(pMemMngrHead) MEM_FLG_SET_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISBLCKBEG_MSK, additional"
 	.ascii	"Flags)\000"
 .LASF3821:
 	.ascii	"UART0_S2_LBKDIF_MASK 0x80u\000"
-.LASF4456:
+.LASF4457:
 	.ascii	"MEM_FLGS_PRV_MERGE1024_SHFT MEM_FLGS_MERGE1024_SHFT"
 	.ascii	"\000"
 .LASF3419:
@@ -24689,7 +24692,7 @@ setSensingForPin:
 	.ascii	"SIM_SOPT5_UART0ODE(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<SIM_SOPT5_UART0ODE_SHIFT))&SIM_SOPT5_UART0ODE_MASK"
 	.ascii	")\000"
-.LASF4532:
+.LASF4533:
 	.ascii	"TPM0_IRQ_INDEX\000"
 .LASF3131:
 	.ascii	"SIM_SCGC6_FTF_WIDTH 1\000"
@@ -24760,7 +24763,7 @@ setSensingForPin:
 .LASF3812:
 	.ascii	"UART0_S2_RXINV(x) (((uint8_t)(((uint8_t)(x))<<UART0"
 	.ascii	"_S2_RXINV_SHIFT))&UART0_S2_RXINV_MASK)\000"
-.LASF4476:
+.LASF4477:
 	.ascii	"MEM_FLG_CLR_NXT_SPLT(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXT_SPLT_MSK, additional"
 	.ascii	"Flags)\000"
@@ -24804,14 +24807,14 @@ setSensingForPin:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
 .LASF1115:
 	.ascii	"FGPIO_PSOR_PTSO_SHIFT 0\000"
-.LASF4322:
+.LASF4325:
 	.ascii	"TSK_STATE_IS_ACTIVE(pTsk) (TskState)(TSK_GETSTATE(p"
 	.ascii	"Tsk) & TSK_STATE_ACTIVE)\000"
 .LASF1746:
 	.ascii	"LPTMR_CSR_TMS_SHIFT 1\000"
 .LASF3317:
 	.ascii	"SPI_C1_MSTR_SHIFT 4\000"
-.LASF4428:
+.LASF4429:
 	.ascii	"MEM_FLG_SET_MERGED(pMemMngrHead) MEM_FLG_SET_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_MERGED_MSK, flagsForMemBlo"
 	.ascii	"ck)\000"
@@ -24856,7 +24859,7 @@ setSensingForPin:
 	.ascii	"GPIOB_BASE_PTR (GPIOB)\000"
 .LASF2004:
 	.ascii	"MCM_CPO_CPOWOI_SHIFT 2\000"
-.LASF4487:
+.LASF4488:
 	.ascii	"MEM_FLG_CLR_BGGRMRGD(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_BGGRMRGD_MSK, additional"
 	.ascii	"Flags)\000"
@@ -24920,7 +24923,7 @@ setSensingForPin:
 	.ascii	"RTC_CR_SC8P_MASK 0x800u\000"
 .LASF844:
 	.ascii	"CMP0_BASE_PTR (CMP0)\000"
-.LASF4354:
+.LASF4355:
 	.ascii	"RET_STCK_ERR_EMPTY ((RetCode)0x30u)\000"
 .LASF2422:
 	.ascii	"OSC_CR_ERCLKEN_SHIFT 7\000"
@@ -24952,7 +24955,7 @@ setSensingForPin:
 .LASF625:
 	.ascii	"ADC_R_D(x) (((uint32_t)(((uint32_t)(x))<<ADC_R_D_SH"
 	.ascii	"IFT))&ADC_R_D_MASK)\000"
-.LASF4403:
+.LASF4404:
 	.ascii	"MEM_FLGS_SPLT_SHFT ((MemFlags)0xCu)\000"
 .LASF17:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
@@ -25023,7 +25026,7 @@ setSensingForPin:
 	.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 1\000"
 .LASF1019:
 	.ascii	"DMA_DCR_DINC_SHIFT 19\000"
-.LASF4474:
+.LASF4475:
 	.ascii	"MEM_FLG_NXT_SPLT(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_NXT_SPLT_SHFT)\000"
 .LASF3165:
@@ -25036,7 +25039,7 @@ setSensingForPin:
 	.ascii	"LPTimer_IRQHandler LPTMR0_IRQHandler\000"
 .LASF3518:
 	.ascii	"TPM_CONF_CSOT_WIDTH 1\000"
-.LASF4477:
+.LASF4478:
 	.ascii	"MEM_FLG_PREV_SPLT(memFlgs) MEM_FLG_PARSE(memFlgs,ME"
 	.ascii	"M_FLGS_PREV_SPLT_SHFT)\000"
 .LASF3380:
@@ -25046,7 +25049,7 @@ setSensingForPin:
 .LASF2198:
 	.ascii	"MTBDWT_COMP_COMP(x) (((uint32_t)(((uint32_t)(x))<<M"
 	.ascii	"TBDWT_COMP_COMP_SHIFT))&MTBDWT_COMP_COMP_MASK)\000"
-.LASF4425:
+.LASF4426:
 	.ascii	"MEM_FLG_SET_ISLOWER(pMemMngrHead) MEM_FLG_SET_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISLOWER_MSK, flagsForMemB"
 	.ascii	"lock)\000"
@@ -25091,7 +25094,7 @@ setSensingForPin:
 	.ascii	"LLWU_F3_MWUF3_MASK 0x8u\000"
 .LASF4112:
 	.ascii	"UARTLP_C4_M10_MASK UART0_C4_M10_MASK\000"
-.LASF4432:
+.LASF4433:
 	.ascii	"MEM_FLG_SET_MEMSIZE(pMemMngrHead,newSize) do { if(("
 	.ascii	"(BlckSize)(newSize)) < BIGGEST_BLCK ) { MEM_FLG_SET"
 	.ascii	"_SPLIT(pMemMngrHead); } else { MEM_FLG_CLR_SPLIT(pM"
@@ -25142,7 +25145,7 @@ setSensingForPin:
 .LASF1584:
 	.ascii	"LLWU_PE1_WUPE2(x) (((uint8_t)(((uint8_t)(x))<<LLWU_"
 	.ascii	"PE1_WUPE2_SHIFT))&LLWU_PE1_WUPE2_MASK)\000"
-.LASF4461:
+.LASF4462:
 	.ascii	"MEM_FLGS_NXT_SPLT_MSK ((MemFlags)0x1000u)\000"
 .LASF640:
 	.ascii	"ADC_SC2_DMAEN_WIDTH 1\000"
@@ -25262,7 +25265,7 @@ setSensingForPin:
 	.ascii	"ADC0_BASE (0x4003B000u)\000"
 .LASF648:
 	.ascii	"ADC_SC2_ACFGT_WIDTH 1\000"
-.LASF4558:
+.LASF4559:
 	.ascii	"regPin_PCR\000"
 .LASF2225:
 	.ascii	"MTBDWT_TBCTRL_ACOMP0_WIDTH 1\000"
@@ -25270,7 +25273,7 @@ setSensingForPin:
 	.ascii	"TSI_GENCS_PS_WIDTH 3\000"
 .LASF1162:
 	.ascii	"FTFA_FCCOB7_REG(base) ((base)->FCCOB7)\000"
-.LASF4438:
+.LASF4439:
 	.ascii	"MEM_FLGS_ISBLCKLAST_SHFT ((MemFlags)0x1u)\000"
 .LASF1240:
 	.ascii	"FTFA_FCCOB1_CCOBn_WIDTH 8\000"
@@ -25305,7 +25308,7 @@ setSensingForPin:
 	.ascii	"nSC)\000"
 .LASF4202:
 	.ascii	"NC ((PortPIN)0xFFu)\000"
-.LASF4450:
+.LASF4451:
 	.ascii	"MEM_FLGS_PRV_SPLT_128_SHFT MEM_FLGS_SPLT_128_SHFT\000"
 .LASF2553:
 	.ascii	"PMC_REGSC_BGEN_MASK 0x10u\000"
@@ -25366,8 +25369,11 @@ setSensingForPin:
 	.ascii	"ADC0_CLP1 ADC_CLP1_REG(ADC0)\000"
 .LASF494:
 	.ascii	"SCB_AIRCR_VECTKEYSTAT_Pos 16\000"
-.LASF4351:
+.LASF4352:
 	.ascii	"RET_TSK_STILL_RUNNING ((RetCode)0x24u)\000"
+.LASF4333:
+	.ascii	"TSK_STATE_IS_WAITING_MSGSND(pTsk) (TskState)(TSK_GE"
+	.ascii	"TSTATE(pTsk) == TSK_STATE_WAITING_MSGSND)\000"
 .LASF3588:
 	.ascii	"TSI_GENCS_STM(x) (((uint32_t)(((uint32_t)(x))<<TSI_"
 	.ascii	"GENCS_STM_SHIFT))&TSI_GENCS_STM_MASK)\000"
@@ -25482,7 +25488,7 @@ setSensingForPin:
 	.ascii	"PORTA_PCR7 PORT_PCR_REG(PORTA,7)\000"
 .LASF1395:
 	.ascii	"I2C_C1_DMAEN_WIDTH 1\000"
-.LASF4368:
+.LASF4369:
 	.ascii	"SMALLER_BLCK_DIVISOR (MemIndex)(0x3u)\000"
 .LASF3495:
 	.ascii	"TPM_STATUS_CH4F(x) (((uint32_t)(((uint32_t)(x))<<TP"
@@ -25514,7 +25520,7 @@ setSensingForPin:
 .LASF3872:
 	.ascii	"UART0_D_R3T3(x) (((uint8_t)(((uint8_t)(x))<<UART0_D"
 	.ascii	"_R3T3_SHIFT))&UART0_D_R3T3_MASK)\000"
-.LASF4394:
+.LASF4395:
 	.ascii	"MEM_FLGS_SPLT_128_MSK ((MemFlags)0x80u)\000"
 .LASF2259:
 	.ascii	"MTBDWT_FCT0 MTBDWT_FCT_REG(MTBDWT,0)\000"
@@ -25535,7 +25541,7 @@ setSensingForPin:
 	.ascii	"D_SHIFT))&I2C_RA_RAD_MASK)\000"
 .LASF3573:
 	.ascii	"TSI_GENCS_CURSW_MASK 0x2u\000"
-.LASF4467:
+.LASF4468:
 	.ascii	"MEM_FLGS_CACHED_MSK ((MemFlags)0x8000u)\000"
 .LASF1112:
 	.ascii	"FGPIO_PDOR_PDO_WIDTH 32\000"
@@ -25600,7 +25606,7 @@ setSensingForPin:
 	.ascii	"MTB_MASTER_RAMPRIV(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<MTB_MASTER_RAMPRIV_SHIFT))&MTB_MASTER_RAMPRIV_MASK"
 	.ascii	")\000"
-.LASF4486:
+.LASF4487:
 	.ascii	"MEM_FLG_SET_BGGRMRGD(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_BGGRMRGD_MSK, additional"
 	.ascii	"Flags)\000"
@@ -25639,7 +25645,7 @@ setSensingForPin:
 	.ascii	"OSC_BASE_PTRS { OSC0 }\000"
 .LASF3543:
 	.ascii	"TPM0_C0SC TPM_CnSC_REG(TPM0,0)\000"
-.LASF4398:
+.LASF4399:
 	.ascii	"MEM_FLGS_MERGE512_MSK ((MemFlags)0x200u)\000"
 .LASF3496:
 	.ascii	"TPM_STATUS_CH5F_MASK 0x20u\000"
@@ -25661,7 +25667,7 @@ setSensingForPin:
 	.ascii	"RTC_SR_TIF_MASK 0x1u\000"
 .LASF642:
 	.ascii	"ADC_SC2_ACREN_MASK 0x8u\000"
-.LASF4327:
+.LASF4330:
 	.ascii	"TSK_STATE_IS_WAITING(pTsk) (TskState)(TSK_GETSTATE("
 	.ascii	"pTsk) & TSK_STATE_WAITING)\000"
 .LASF307:
@@ -25678,7 +25684,7 @@ setSensingForPin:
 	.ascii	"KOUTSEL_MASK)\000"
 .LASF451:
 	.ascii	"__STATIC_INLINE static inline\000"
-.LASF4535:
+.LASF4536:
 	.ascii	"LPTMR0_IRQ_INDEX\000"
 .LASF819:
 	.ascii	"CMP_DACCR_VOSEL_SHIFT 0\000"
@@ -25701,7 +25707,7 @@ setSensingForPin:
 	.ascii	"TPM0_C0V TPM_CnV_REG(TPM0,0)\000"
 .LASF2602:
 	.ascii	"PORT_GPCLR_GPWD_MASK 0xFFFFu\000"
-.LASF4416:
+.LASF4417:
 	.ascii	"MEM_FLG_SET_PREVTAKEN(pMemMngrHead) MEM_FLG_SET_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREVTAKEN_MSK, flagsFor"
 	.ascii	"MemBlock)\000"
@@ -25766,9 +25772,9 @@ setSensingForPin:
 	.ascii	"__CORE_CMFUNC_H \000"
 .LASF894:
 	.ascii	"DAC_C0_DACTRGSEL_SHIFT 5\000"
-.LASF4399:
+.LASF4400:
 	.ascii	"MEM_FLGS_MERGE1024_SHFT ((MemFlags)0xAu)\000"
-.LASF4489:
+.LASF4490:
 	.ascii	"MEM_FLG_SET_CACHED(pMemMngrHead) MEM_FLG_SET_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_CACHED_MSK, additionalFlag"
 	.ascii	"s)\000"
@@ -25848,7 +25854,7 @@ setSensingForPin:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
 .LASF173:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
-.LASF4440:
+.LASF4441:
 	.ascii	"MEM_FLGS_PRV_SPLT_4_SHFT MEM_FLGS_SPLT_4_SHFT\000"
 .LASF3514:
 	.ascii	"TPM_CONF_GTBEEN_WIDTH 1\000"
@@ -25883,7 +25889,7 @@ setSensingForPin:
 	.ascii	"O_PTOR_PTTO_SHIFT))&GPIO_PTOR_PTTO_MASK)\000"
 .LASF1362:
 	.ascii	"GPIOA_PDDR GPIO_PDDR_REG(GPIOA)\000"
-.LASF4384:
+.LASF4385:
 	.ascii	"MEM_FLGS_SPLT_4_MSK ((MemFlags)0x4u)\000"
 .LASF3554:
 	.ascii	"TPM0_C5V TPM_CnV_REG(TPM0,5)\000"

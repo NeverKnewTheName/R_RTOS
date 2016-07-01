@@ -1,5 +1,5 @@
 /**
- * \file    R_RTOS_memMngr.c
+< * \file    R_RTOS_memMngr.c
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    18.12.2015
  *
@@ -70,7 +70,7 @@ static uint8_t buddyOffset = (uint8_t) 0x0u;
  */
 static uint8_t cacheSize = (uint8_t) 0x0u;
 
-static uint32_t memPoolsInUse = 0x0u;
+static volatile uint32_t memPoolsInUse = 0x0u;
 static MemMngrHead *memPools[NR_OF_MEMPOOLS ];
 
 static void BREAK( void )

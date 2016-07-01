@@ -47,6 +47,24 @@
 
 /* END HELPER */
 
+//SYSCTRL
+/** \def TIME_SLICE_AMOUNT
+ *  \brief Period of time between two SysTicks in ms.
+ */
+#define TIME_SLICE_AMOUNT                  (uint16_t)500u  // Time slice in ms
+
+/** \def NR_OF_TSKS
+ *  \brief Number of tasks in the system.
+ */
+#define NR_OF_TSKS          ((uint8_t)0xBu) // max tasks
+
+/** \def MAX_TASKS
+ *  \brief Maximum number of tasks in the system.
+ *
+ *  The Maximum number of tasks in the system is influenced by the amount of heap available.
+ */
+#define MAX_TASKS           NR_OF_TSKS
+
 /* STACK */
 
 #define MIN_STACK_SIZE  ((StackSize)0x40u) // 64 Byte
@@ -268,7 +286,6 @@
  *  The task is currently running and also within a critical section.
  */
 #define TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GETSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )
-
 
 /** \def TSK_STATE_IS_WAITING
  *  \brief Evalutate if the task is in a waiting state.
@@ -592,11 +609,11 @@ typedef uint8_t SyncEleID;
  */
 typedef enum mntrAccssType
 {
-    MNTR_ACCESS_NONE = (uint8_t) 0x0u,  //!< MNTR_ACCESS_NONE
-    MNTR_ACCESS_READ = (uint8_t) 0x1u,  //!< MNTR_ACCESS_READ
-    MNTR_ACCESS_WRITE = (uint8_t) 0x2u, //!< MNTR_ACCESS_WRITE
-    MNTR_ACCESS_DELETE = (uint8_t) 0x4u,//!< MNTR_ACCESS_DELETE
-    MNTR_ACCESS_MODIFY = (uint8_t) 0x8u //!< MNTR_ACCESS_MODIFY
+    MNTR_ACCESS_NONE = (uint8_t) 0x0u,    //!< MNTR_ACCESS_NONE
+    MNTR_ACCESS_READ = (uint8_t) 0x1u,    //!< MNTR_ACCESS_READ
+    MNTR_ACCESS_WRITE = (uint8_t) 0x2u,    //!< MNTR_ACCESS_WRITE
+    MNTR_ACCESS_DELETE = (uint8_t) 0x4u,    //!< MNTR_ACCESS_DELETE
+    MNTR_ACCESS_MODIFY = (uint8_t) 0x8u    //!< MNTR_ACCESS_MODIFY
 } ACCSSType;
 /* END MNTR */
 
@@ -606,12 +623,12 @@ typedef enum mntrAccssType
  */
 typedef enum dataTypes
 {
-    DataT_Undef = (uint8_t) 0x0u, //!< DataT_Undef
-    DataT_Int = (uint8_t) 0x1u,   //!< DataT_Int
-    DataT_Ptr = (uint8_t) 0x4u,   //!< DataT_Ptr
+    DataT_Undef = (uint8_t) 0x0u,    //!< DataT_Undef
+    DataT_Int = (uint8_t) 0x1u,    //!< DataT_Int
+    DataT_Ptr = (uint8_t) 0x4u,    //!< DataT_Ptr
     DataT_Int_Ptr,                //!< DataT_Int_Ptr
     DataT_String,                 //!< DataT_String
-    DataT_FunCall = (uint8_t) 0x8u//!< DataT_FunCall
+    DataT_FunCall = (uint8_t) 0x8u                 //!< DataT_FunCall
 } DataType;
 /* END MESSAGE QUEUE */
 
@@ -630,9 +647,9 @@ typedef enum dataTypes
  */
 typedef enum timerTypeEn
 {
-    SysTimerType = (uint8_t) 0x0u,   //!< System software timer
-    TskTimerType = (uint8_t) 0x1u,   //!< Task software timer
-    SysTickTimerType = (uint8_t) 0x2u//!< System Tick software timer
+    SysTimerType = (uint8_t) 0x0u,    //!< System software timer
+    TskTimerType = (uint8_t) 0x1u,    //!< Task software timer
+    SysTickTimerType = (uint8_t) 0x2u    //!< System Tick software timer
 } TimerType;
 /* END TIMER */
 
@@ -667,12 +684,12 @@ typedef enum tskPrio
  */
 typedef enum evtType
 {
-    EvtTMR = (uint8_t) 0x21u,   //!< EvtTMR
-    EvtMSGRCV = (uint8_t) 0x22u,//!< EvtMSGRCV
-    EvtMSGSND = (uint8_t) 0x24u,//!< EvtMSGSND
-    EvtEVT = (uint8_t) 0x41u,   //!< EvtEVT
-    EvtSEM = (uint8_t) 0x42u,   //!< EvtSEM
-    EvtMNTR = (uint8_t) 0x48u   //!< EvtMNTR
+    EvtTMR = (uint8_t) 0x21u,    //!< EvtTMR
+    EvtMSGRCV = (uint8_t) 0x22u,    //!< EvtMSGRCV
+    EvtMSGSND = (uint8_t) 0x24u,    //!< EvtMSGSND
+    EvtEVT = (uint8_t) 0x41u,    //!< EvtEVT
+    EvtSEM = (uint8_t) 0x42u,    //!< EvtSEM
+    EvtMNTR = (uint8_t) 0x48u    //!< EvtMNTR
 } EvtType;
 
 /** \enum tskState
@@ -720,8 +737,10 @@ typedef enum tskState
     TSK_STATE_WAITING_SYNC = (tskStateT) 0x40u,    //!< Task synchronization waiting states
     TSK_STATE_WAITING_TMR = (tskStateT) 0x41u,    //!< Task is waiting for a timer
     TSK_STATE_WAITING_EVT = (tskStateT) 0x42u,    //!< Task is waiting for an event
-    TSK_STATE_WAITING_SEM = (tskStateT) 0x43u,    //!< Task is waiting for an event
-    TSK_STATE_WAITING_MNTR = (tskStateT) 0x44u,    //!< Task is waiting for a monitor access
+    TSK_STATE_WAITING_SEM_BIN = (tskStateT) 0x43u,    //!< Task is waiting for a binary semaphore
+    TSK_STATE_WAITING_SEM_CNT = (tskStateT) 0x44u,    //!< Task is waiting for a coutning semaphore
+    TSK_STATE_WAITING_MTX = (tskStateT) 0x45u,    //!< Task is waiting for a mutex
+    TSK_STATE_WAITING_MNTR = (tskStateT) 0x46u,    //!< Task is waiting for a monitor
     TSK_STATE_WAITING = (tskStateT) 0x60u,    //!< Common task waiting states
     TSK_STATE_UNINIT = (tskStateT) 0x80u,    //!< Task is uninitialized
     TSK_STATE_UNINIT_UNINIT = (tskStateT) 0x81u,    //!< Task has not yet been initialized
@@ -737,15 +756,15 @@ typedef enum tskState
  */
 typedef enum tskSettings
 {
-    TskSet_NONE = (uint8_t) 0x00u, //!< NO SETTINGS
+    TskSet_NONE = (uint8_t) 0x00u,    //!< NO SETTINGS
     TskSet_Periodic = (uint8_t) 0x01u,    //!< keep task context
     TskSet_OneShot = (uint8_t) 0x02u,    //!< delete after execution
-    TskSet_DUMMY_0 = (uint8_t) 0x04u,//!< TskSet_DUMMY_0
-    TskSet_DUMMY_1 = (uint8_t) 0x08u,//!< TskSet_DUMMY_1
-    TskSet_DUMMY_2 = (uint8_t) 0x10u,//!< TskSet_DUMMY_2
-    TskSet_DUMMY_3 = (uint8_t) 0x20u,//!< TskSet_DUMMY_3
-    TskSet_DUMMY_4 = (uint8_t) 0x40u,//!< TskSet_DUMMY_4
-    TskSet_DUMMY_5 = (uint8_t) 0x80u //!< TskSet_DUMMY_5
+    TskSet_DUMMY_0 = (uint8_t) 0x04u,    //!< TskSet_DUMMY_0
+    TskSet_DUMMY_1 = (uint8_t) 0x08u,    //!< TskSet_DUMMY_1
+    TskSet_DUMMY_2 = (uint8_t) 0x10u,    //!< TskSet_DUMMY_2
+    TskSet_DUMMY_3 = (uint8_t) 0x20u,    //!< TskSet_DUMMY_3
+    TskSet_DUMMY_4 = (uint8_t) 0x40u,    //!< TskSet_DUMMY_4
+    TskSet_DUMMY_5 = (uint8_t) 0x80u    //!< TskSet_DUMMY_5
 } TskSettings;
 /* END TASK */
 
@@ -761,14 +780,14 @@ typedef enum tskSettings
  */
 typedef enum syncEleType
 {
-    SyncEle_TYPE_NOID = (uint8_t) 0x0u,//!< No ID of the synchronization element (Probably error)
-    SyncEle_TYPE_TMR = (uint8_t) 0x1u, //!< ID of the software timer synchronization mechanism
-    SyncEle_TYPE_EVT = (uint8_t) 0x2u, //!< ID of the event synchronization mechanism
-    SyncEle_TYPE_SEM = (uint8_t) 0x3u, //FALLBACK
-    SyncEle_TYPE_BinSEM = (uint8_t) 0x3u, //!< ID of the binary semaphore synchronization mechanism
-    SyncEle_TYPE_CntSEM = (uint8_t) 0x4u, //!< ID of the counting semaphore synchronization mechanism
-    SyncEle_TYPE_MTX = (uint8_t) 0x5u, //!< ID of the mutex synchronization mechanism
-    SyncEle_TYPE_MNTR = (uint8_t) 0x6u //!< ID of the monitor synchronization mechanism
+    SyncEle_TYPE_NOID = (uint8_t) 0x0u,    //!< No ID of the synchronization element (Probably error)
+    SyncEle_TYPE_TMR = (uint8_t) 0x1u,    //!< ID of the software timer synchronization mechanism
+    SyncEle_TYPE_EVT = (uint8_t) 0x2u,    //!< ID of the event synchronization mechanism
+    SyncEle_TYPE_SEM = (uint8_t) 0x3u,    //FALLBACK
+    SyncEle_TYPE_BinSEM = (uint8_t) 0x3u,    //!< ID of the binary semaphore synchronization mechanism
+    SyncEle_TYPE_CntSEM = (uint8_t) 0x4u,    //!< ID of the counting semaphore synchronization mechanism
+    SyncEle_TYPE_MTX = (uint8_t) 0x5u,    //!< ID of the mutex synchronization mechanism
+    SyncEle_TYPE_MNTR = (uint8_t) 0x6u    //!< ID of the monitor synchronization mechanism
 } SyncEleType;
 /* END SYNC */
 /*
@@ -796,13 +815,13 @@ typedef enum syncEleType
  */
 typedef enum sysTckObjTypeEnum
 {
-    SysTckObj_Err = (uint8_t) 0x0u, //!< Error of system tick object
-    SysTckObj_Tsk = (uint8_t) 0x10u, //!< common Task system tick object
-    SysTckObj_TskBlck = (uint8_t) 0x11u, //!< Task blocking system tick object
-    SysTckObj_TskWait = (uint8_t) 0x12u, //!< Task waiting system tick object used for timeouts by other synchronization mechanisms
-    SysTckObj_SysFkt = (uint8_t) 0x20u, //!< common system function system tick object
-    SysTckObj_SysFktBlck = (uint8_t) 0x21u, //!< Blocking system function system tick object
-    SysTckObj_SysFktWait = (uint8_t) 0x22u, //!< waiting system function system tick object
+    SysTckObj_Err = (uint8_t) 0x0u,    //!< Error of system tick object
+    SysTckObj_Tsk = (uint8_t) 0x10u,    //!< common Task system tick object
+    SysTckObj_TskBlck = (uint8_t) 0x11u,    //!< Task blocking system tick object
+    SysTckObj_TskWait = (uint8_t) 0x12u,    //!< Task waiting system tick object used for timeouts by other synchronization mechanisms
+    SysTckObj_SysFkt = (uint8_t) 0x20u,    //!< common system function system tick object
+    SysTckObj_SysFktBlck = (uint8_t) 0x21u,    //!< Blocking system function system tick object
+    SysTckObj_SysFktWait = (uint8_t) 0x22u,    //!< waiting system function system tick object
 } SysTckEleType;
 
 /** \union sysTickEleIDUnion
@@ -835,7 +854,7 @@ typedef struct sysTickTMRStruc
     SysTckEleType sysTckObjType;    //!< Type of the object this SysTickTMR belongs to
     SysTickEleID sysTckObjID;    //!< ID of the object this SysTickTMR belongs to
     SysTicks remSysTicks;    //!< remaining SysTicks until the SysTickTMR expires
-    SysTicks insrtnSysTicksTime; //!< time in SysTicks when the timer was set
+    SysTicks insrtnSysTicksTime;    //!< time in SysTicks when the timer was set
 } SysTickTMR, *PSysTickTMR;
 /* END SYSTICKTMR */
 
@@ -932,8 +951,8 @@ typedef struct tskMsgProvStruc
  */
 typedef struct sysMsgProvStruc
 {
-    volatile SysFktID sysProvID;  //!< ID of the system provider's system function
-    volatile MsgID msgID; //!< ID of the sent message
+    volatile SysFktID sysProvID;    //!< ID of the system provider's system function
+    volatile MsgID msgID;    //!< ID of the sent message
 } SysMsgProv, *PSysMsgProv;
 
 typedef struct dummyMsgProvStruc
@@ -1098,9 +1117,10 @@ typedef struct sysFkt
 
 typedef enum semTypeEnum
 {
-    SemBin = (uint8_t)0x0u,
-    SemCnt = (uint8_t)0x1u
-}SemType;
+    SemBin = (uint8_t) 0x0u, SemCnt = (uint8_t) 0x1u
+} SemType;
+
+#define SEM_NR_OF_TSK_REF_BYTES (uint8_t)((NR_OF_TSKS >> 3) + 1)
 
 /** \struct semStruc
  *  \brief Struct for semaphore maintenance.
@@ -1108,30 +1128,32 @@ typedef enum semTypeEnum
  *  Contains information about the semaphore.
  */
 /** \typedef Sem
- *  \brief semStruc
+ *  \brief \ref semStruc
  */
 /** \typedef PSem
- *  \brief Pointer to a semStruc
+ *  \brief Pointer to a \ref semStruc
  */
 typedef struct semStruc
 {
-    TskID semQStrtTskID;        //!< TskID of the first task in the waiting queue
-    TskPrio svdTskPrio;         //!< Initial priority of the task currently occupying the semaphore
-    SemType semType;            //!< Indicates the type of semaphore (binary or counting)
+    uint8_t tskReferences[SEM_NR_OF_TSK_REF_BYTES];    // NR_OF_TSKS / 8 + 1 gives the number of bits needed for all tasks
+    //TskID semQStrtTskID;        //!< TskID of the first task in the waiting queue
+    TskPrio prioInheritPrio;    //!< Initial priority of the task currently occupying the semaphore
+    SemType semType;    //!< Indicates the type of semaphore (binary or counting)
+    SemCntr maxCntrVal;
     union
     {
         SemCntr semCntrSig;     //!< Counting Semaphore - signaling counter
         SemCntr semBinSig;      //!< Binary Semaphore - signaled/not signaled
-    }semSignal;  //!< signaling counter for each type of semaphore
+    } semSignal;    //!< signaling counter for each type of semaphore
 } Sem, *PSem;
 
 typedef struct mtxStruc
 {
     TskID mtxQStrtTskID;    //!< TskID of the first task in the waiting queue
-    TskID mtxOccTskID;      //!< TskID of the task currently occupying the semaphore
+    TskID mtxOccTskID;    //!< TskID of the task currently occupying the semaphore
     TskPrio svdTskPrio;     //!< Saved task priority of the occupying task
-    uint8_t isOcc;  //ToDO Do we really need this? might as well check mtxOccTskID for valid task ID...
-}Mtx, *PMtx;
+    uint8_t isOcc;    //ToDO Do we really need this? might as well check mtxOccTskID for valid task ID...
+} Mtx, *PMtx;
 
 /* END SEMAPHORES */
 
@@ -1143,10 +1165,10 @@ typedef struct mtxStruc
  *  \note The design limits the number of entities, which can be notified by the event, to 32.
  */
 /** \typedef Evt
- *  \brief evtStruc
+ *  \brief \ref evtStruc
  */
 /** \typedef PEvt
- *  \brief Pointer to an evtStruc
+ *  \brief Pointer to an \ref evtStruc
  */
 typedef struct evtStruc
 {
@@ -1274,16 +1296,31 @@ typedef struct syncEleStruc
             uint8_t dummy2;
             uint8_t dummy3;
             uint8_t dummy4;
-        };
+        } MtxSyncEle;
         //MONITOR
         struct mntrSyncEle
         {
-            //PMntr mntr;    //!< Pointer to the Mntr
+        //PMntr mntr;    //!< Pointer to the Mntr
         } MntrSyncEle;    //!< monitor synchronization object
     } SyncEleHandle;    //!< Union of synchronization objects
 } SyncEle, *PSyncEle;
 
 /* END SYNC */
+
+/** \struct advTskPrio_struc
+ *  \brief Contains the \ref TskPrio visible to the system and the real \ref TskPrio
+ *
+ *  Each task has a visible \ref TskPrio which represents the priority the task currently has as seen by the system.
+ *  Additionally each task saves its actual \ref TskPrio for further retrieval.
+ */
+/** \typedef AdvTskPrio
+ *  \brief \ref advTskPrio_struc
+ */
+typedef struct advTskPrio_struc
+{
+    volatile TskPrio actualTskPrio;
+    volatile TskPrio visibleTskPrio;
+} AdvTskPrio;
 
 /* TASK */
 /** \struct tskTCB
@@ -1303,7 +1340,7 @@ typedef struct tskTCB
     /*STCK*/volatile StackPtrT pStckPtr;/*4*/    //!< current stack pointer
     /*STCK*/StackPtrT pStckTop;/*4*/            //!< top of the stack
 
-    /*STAT*/TskStartAddr pTskStrt;/*4*/        //!< Pointer to task's function's address
+    /*STAT*/TskStartAddr pTskStrt;/*4*/    //!< Pointer to task's function's address
     /*STAT*/TskEndAddr pTskEnd;/*4*/    //!< Pointer to task's ending function, which is executed at the end of the task (usually tsk_EndTheTask)
 
     /*MSGG*/volatile PTskMB tskMailBox;/*4*/     //!< pointer to task mailbox
@@ -1313,14 +1350,14 @@ typedef struct tskTCB
 
     /*STCK*/StackSize stckSze;/*2*/        //!< size of the task's stack
 
-    /*STAT*/volatile TskSettings tskSets;/*1*/ //!< Settings for the task
+    // /*STAT*/volatile TskSettings tskSets;/*1*/ //!< Settings for the task
 
-    /*SCHD*/volatile TskPrio tskPrio;/*1*/       //!< Current priority of the task
+    /*SCHD*/AdvTskPrio tskPrio;/*1*/    //!< Current priority settings of the task
     /*STAT*/volatile TskState tskState;/*1*/     //!< Current state of the task
 
     /*SCHD*/TskID tskID;/*1*/                    //!< ID of the task
-    /*SCHD*/volatile TskID nxtTsk;/*1*/         //!< TskID of the child task to the left
-    /*SCHD*/volatile TskID prvTsk;/*1*/        //!< TskID of the child task to the right
+    /*SCHD*/volatile TskID nxtTsk;/*1*/    //!< TskID of the child task to the left
+    /*SCHD*/volatile TskID prvTsk;/*1*/    //!< TskID of the child task to the right
 } TskTCB, *PTskTCB;/*36*/
 /* END TASK */
 
@@ -1367,25 +1404,8 @@ typedef struct tskTCB
 /* END SYNC */
 
 //SYSCTRL
-/** \def TIME_SLICE_AMOUNT
- *  \brief Period of time between two SysTicks in ms.
- */
-#define TIME_SLICE_AMOUNT                  (uint16_t)500u  // Time slice in ms
-
-/** \def NR_OF_TSKS
- *  \brief Number of tasks in the system.
- */
-#define NR_OF_TSKS          ((uint8_t)0xBu) // max tasks
-
-/** \def MAX_TASKS
- *  \brief Maximum number of tasks in the system.
- *
- *  The Maximum number of tasks in the system is influenced by the amount of heap available.
- */
-#define MAX_TASKS           NR_OF_TSKS
-
 //ToDO
-#define NR_OF_MEMPOOLS (uint8_t)0x5u
+#define NR_OF_MEMPOOLS (uint8_t)0x7u
 
 //SYSCTRL
 
@@ -1518,26 +1538,26 @@ typedef enum svcCode
     SVC_TSK_RESET_CRIT,                 //!< Reset critical execution state
     SVC_MTX_TAKE,                       //!< Attempt to take a mutex
     SVC_MTX_GIVE,                       //!< Give back an occupied mutex
-    SVC_SEM_TAKE,                       //!< Take a semaphore
-    SVC_SEM_GIVE,                       //!< Release a semaphore
+    SVC_SEM_WAIT,                       //!< Take a semaphore
+    SVC_SEM_SIGNAL,                       //!< Release a semaphore
     SVC_EVT_SEND,                       //!< Send an event
     SVC_EVT_RECV,                       //!< Wait for an event
     SVC_TMR_SET,                        //!< Set up a timer
     SVC_SYSTCK_SET,                     //!< Set a system tick timer
     SVC_MSGQ_CRT_Q,                     //!< create a new message queue
     SVC_MSGQ_DEL_Q,                     //!< delete an existing message queue
-    SVC_MSGQ_REG_PUB,                   //!< Register to a message queue as a publisher
-    SVC_MSGQ_REG_TSK_SUB,               //!< Register to a message queue as a subscriber
-    SVC_MSGQ_REG_SYS_SUB,               //!< Register system function to a message queue as a subscriber
-    SVC_MSGQ_MSG_PUB,                   //!< Publish a message to a message queue
+    SVC_MSGQ_REG_PUB,            //!< Register to a message queue as a publisher
+    SVC_MSGQ_REG_TSK_SUB,       //!< Register to a message queue as a subscriber
+    SVC_MSGQ_REG_SYS_SUB,    //!< Register system function to a message queue as a subscriber
+    SVC_MSGQ_MSG_PUB,                  //!< Publish a message to a message queue
     SVC_MSGQ_MSG_READ,                  //!< Read a message from a message queue
-    SVC_MSGQ_MSG_READALLNEW,            //!< Read all new messages from a message queue
-    SVC_MSGQ_MSG_READALL,               //!< Read all messages from a message queue
-    SVC_MSGQ_MSG_TAKE,                  //!< Read and destroy a message from a message queue
-    SVC_MSGQ_MSG_TAKEALLNEW,            //!< Read and destroy all new messages from a message queue
-    SVC_MSGQ_MSG_TAKEALL,               //!< Read and destroy all messages from a message queue
+    SVC_MSGQ_MSG_READALLNEW,     //!< Read all new messages from a message queue
+    SVC_MSGQ_MSG_READALL,            //!< Read all messages from a message queue
+    SVC_MSGQ_MSG_TAKE,      //!< Read and destroy a message from a message queue
+    SVC_MSGQ_MSG_TAKEALLNEW,    //!< Read and destroy all new messages from a message queue
+    SVC_MSGQ_MSG_TAKEALL,    //!< Read and destroy all messages from a message queue
     SVC_OS_SCHEDULE,                    //!< Call the scheduler
-    SVC_CALL_FKT_PRIV,                  //!< Call a function with privileges using main stack
+    SVC_CALL_FKT_PRIV,     //!< Call a function with privileges using main stack
     SVC_LP_ENTER,                       //!< Enter low power mode
     SVC_TRC_OUPUT,                      //!< Output the trace buffer
     SVC_OS_ERROR = (uint8_t) 0xFFu,     //!< OS ERROR

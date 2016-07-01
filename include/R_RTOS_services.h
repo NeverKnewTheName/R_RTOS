@@ -185,27 +185,27 @@ __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mtx_GiveMtx(
     return returnVal;
 }
 
-__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_TakeSem(
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_wait(
                                                                          const SemNr semNr,
-                                                                         TskTCB* const tsk,
+                                                                         PTskTCB const tsk,
                                                                          const SysTicks maxTimeToWait )
 {
     INPUT_ARG_1( semNr );
     INPUT_ARG_2( tsk );
     INPUT_ARG_3( maxTimeToWait );
-    SVC( SVC_SEM_TAKE );
+    SVC( SVC_SEM_WAIT );
     RetCode returnVal;
     OUTPUT_ARG( returnVal );
     return returnVal;
 }
 
-__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_GiveSem(
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_signal(
                                                                          const SemNr semNr,
-                                                                         TskTCB* const tsk )
+                                                                         PTskTCB const tsk )
 {
     INPUT_ARG_1( semNr );
     INPUT_ARG_2( tsk );
-    SVC( SVC_SEM_GIVE );
+    SVC( SVC_SEM_SIGNAL );
     RetCode returnVal;
     OUTPUT_ARG( returnVal );
     return returnVal;

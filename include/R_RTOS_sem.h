@@ -16,7 +16,9 @@
  *
  *  \note User defined
  */
-#define MEM_OBJECTS_SEM (uint8_t)0x4u
+#define MEM_OBJECTS_SEM (uint8_t)0x6u
+
+#define SEM_GET_REF_BYTE_NR(tskID) (uint8_t)(((tskID) >> (uint8_t)3u ))
 
 /** \fn RetCode sem_InitSems( void );
  *  \brief Initialize the semaphore functionality.
@@ -27,6 +29,16 @@
  *
  */
 RetCode sem_InitSems( void );
+
+RetCode sem_initBinSem( const SemNr semNr );
+
+RetCode sem_initCntSem( const SemNr semNr, const SemCntr ressourceCntr );
+
+RetCode sem_wait(const SemNr semNr, PTskTCB const tsk, const SysTicks maxSysTicksToWait);
+
+RetCode sem_Tsksignal( const SemNr semNr, PTskTCB const tsk );
+
+RetCode sem_signal(const SemNr semNr);
 
 /** \fn RetCode sem_GiveUpOnSem( TskTCB * tsk );
  *  \brief Forces a giving back of all semaphores the specified task has taken (not necessarily occupied).

@@ -1,4 +1,4 @@
-Tasks/Tasks.o: ../Tasks/MtxTest/Tasks.c ../include/R_RTOS_services.h \
+Tasks/Tasks.o: ../Tasks/SemTest/Tasks.c ../include/R_RTOS_services.h \
  ../include/R_RTOS_inc.h ../hal/mcu/NXP_KL05/include/PortFunc.h \
  ../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h \
  ../hal/proc/ARM_cortex-m0plus/core_cm0plus.h \

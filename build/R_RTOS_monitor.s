@@ -598,10 +598,10 @@ mntr_RelsWriteAccssMntr:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF712
-	.byte	0x1
 	.4byte	.LASF713
+	.byte	0x1
 	.4byte	.LASF714
+	.4byte	.LASF715
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -609,45 +609,45 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF638
+	.4byte	.LASF639
 	.uleb128 0x3
-	.4byte	.LASF643
+	.4byte	.LASF644
 	.byte	0x2
 	.byte	0x1c
 	.4byte	0x3b
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF639
-	.uleb128 0x2
-	.byte	0x2
-	.byte	0x5
 	.4byte	.LASF640
 	.uleb128 0x2
 	.byte	0x2
-	.byte	0x7
+	.byte	0x5
 	.4byte	.LASF641
+	.uleb128 0x2
+	.byte	0x2
+	.byte	0x7
+	.4byte	.LASF642
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x5
-	.4byte	.LASF642
+	.4byte	.LASF643
 	.uleb128 0x3
-	.4byte	.LASF644
+	.4byte	.LASF645
 	.byte	0x2
 	.byte	0x38
 	.4byte	0x62
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF645
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x5
 	.4byte	.LASF646
 	.uleb128 0x2
 	.byte	0x8
-	.byte	0x7
+	.byte	0x5
 	.4byte	.LASF647
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x7
+	.4byte	.LASF648
 	.uleb128 0x4
 	.byte	0x4
 	.byte	0x5
@@ -655,21 +655,21 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF648
-	.uleb128 0x3
 	.4byte	.LASF649
+	.uleb128 0x3
+	.4byte	.LASF650
 	.byte	0x3
 	.byte	0x2a
 	.4byte	0x30
 	.uleb128 0x3
-	.4byte	.LASF650
+	.4byte	.LASF651
 	.byte	0x3
 	.byte	0x42
 	.4byte	0x57
 	.uleb128 0x5
-	.4byte	.LASF651
+	.4byte	.LASF652
 	.byte	0x4
-	.2byte	0x185
+	.2byte	0x196
 	.4byte	0xa7
 	.uleb128 0x6
 	.byte	0x4
@@ -677,140 +677,140 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF652
-	.uleb128 0x5
 	.4byte	.LASF653
-	.byte	0x4
-	.2byte	0x1f0
-	.4byte	0x85
 	.uleb128 0x5
 	.4byte	.LASF654
 	.byte	0x4
-	.2byte	0x1f6
+	.2byte	0x201
 	.4byte	0x85
 	.uleb128 0x5
 	.4byte	.LASF655
 	.byte	0x4
-	.2byte	0x1fb
+	.2byte	0x207
+	.4byte	0x85
+	.uleb128 0x5
+	.4byte	.LASF656
+	.byte	0x4
+	.2byte	0x20c
 	.4byte	0x85
 	.uleb128 0x7
-	.4byte	.LASF665
+	.4byte	.LASF666
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x251
+	.2byte	0x262
 	.4byte	0x104
 	.uleb128 0x8
-	.4byte	.LASF656
+	.4byte	.LASF657
 	.sleb128 0
 	.uleb128 0x8
-	.4byte	.LASF657
+	.4byte	.LASF658
 	.sleb128 1
 	.uleb128 0x8
-	.4byte	.LASF658
+	.4byte	.LASF659
 	.sleb128 2
 	.uleb128 0x8
-	.4byte	.LASF659
+	.4byte	.LASF660
 	.sleb128 4
 	.uleb128 0x8
-	.4byte	.LASF660
+	.4byte	.LASF661
 	.sleb128 8
 	.byte	0
 	.uleb128 0x5
-	.4byte	.LASF661
-	.byte	0x4
-	.2byte	0x258
-	.4byte	0xd8
-	.uleb128 0x5
 	.4byte	.LASF662
 	.byte	0x4
-	.2byte	0x584
+	.2byte	0x269
+	.4byte	0xd8
+	.uleb128 0x5
+	.4byte	.LASF663
+	.byte	0x4
+	.2byte	0x598
 	.4byte	0x85
 	.uleb128 0x3
-	.4byte	.LASF663
+	.4byte	.LASF664
 	.byte	0x5
 	.byte	0x5e
 	.4byte	0x85
 	.uleb128 0x3
-	.4byte	.LASF664
+	.4byte	.LASF665
 	.byte	0x6
 	.byte	0x15
 	.4byte	0x85
 	.uleb128 0x9
-	.4byte	.LASF666
+	.4byte	.LASF667
 	.byte	0x1
 	.byte	0x6
 	.byte	0x1b
 	.4byte	0x18f
 	.uleb128 0x8
-	.4byte	.LASF667
+	.4byte	.LASF668
 	.sleb128 0
 	.uleb128 0x8
-	.4byte	.LASF668
+	.4byte	.LASF669
 	.sleb128 1
 	.uleb128 0x8
-	.4byte	.LASF669
+	.4byte	.LASF670
 	.sleb128 2
 	.uleb128 0x8
-	.4byte	.LASF670
+	.4byte	.LASF671
 	.sleb128 8
 	.uleb128 0x8
-	.4byte	.LASF671
+	.4byte	.LASF672
 	.sleb128 16
 	.uleb128 0x8
-	.4byte	.LASF672
+	.4byte	.LASF673
 	.sleb128 17
 	.uleb128 0x8
-	.4byte	.LASF673
+	.4byte	.LASF674
 	.sleb128 24
 	.uleb128 0x8
-	.4byte	.LASF674
+	.4byte	.LASF675
 	.sleb128 32
 	.uleb128 0x8
-	.4byte	.LASF675
+	.4byte	.LASF676
 	.sleb128 34
 	.uleb128 0x8
-	.4byte	.LASF676
+	.4byte	.LASF677
 	.sleb128 64
 	.uleb128 0x8
-	.4byte	.LASF677
+	.4byte	.LASF678
 	.sleb128 66
 	.uleb128 0x8
-	.4byte	.LASF678
+	.4byte	.LASF679
 	.sleb128 3
 	.uleb128 0x8
-	.4byte	.LASF679
+	.4byte	.LASF680
 	.sleb128 51
 	.byte	0
 	.uleb128 0x3
-	.4byte	.LASF680
+	.4byte	.LASF681
 	.byte	0x6
 	.byte	0x30
 	.4byte	0x132
 	.uleb128 0x3
-	.4byte	.LASF681
+	.4byte	.LASF682
 	.byte	0x6
 	.byte	0x32
 	.4byte	0x85
 	.uleb128 0xa
-	.4byte	.LASF686
+	.4byte	.LASF687
 	.byte	0x8
 	.byte	0x6
 	.byte	0x35
 	.4byte	0x1d6
 	.uleb128 0xb
-	.4byte	.LASF682
+	.4byte	.LASF683
 	.byte	0x6
 	.byte	0x37
 	.4byte	0x1d6
 	.byte	0
 	.uleb128 0xb
-	.4byte	.LASF683
+	.4byte	.LASF684
 	.byte	0x6
 	.byte	0x38
 	.4byte	0x104
 	.byte	0x4
 	.uleb128 0xb
-	.4byte	.LASF684
+	.4byte	.LASF685
 	.byte	0x6
 	.byte	0x39
 	.4byte	0xb4
@@ -820,54 +820,54 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x4
 	.4byte	0x1a5
 	.uleb128 0x3
-	.4byte	.LASF685
+	.4byte	.LASF686
 	.byte	0x6
 	.byte	0x3a
 	.4byte	0x1d6
 	.uleb128 0xa
-	.4byte	.LASF687
+	.4byte	.LASF688
 	.byte	0x8
 	.byte	0x6
 	.byte	0x3c
 	.4byte	0x230
 	.uleb128 0xb
-	.4byte	.LASF688
+	.4byte	.LASF689
 	.byte	0x6
 	.byte	0x3e
 	.4byte	0x9b
 	.byte	0
 	.uleb128 0xb
-	.4byte	.LASF689
+	.4byte	.LASF690
 	.byte	0x6
 	.byte	0x3f
 	.4byte	0xb4
 	.byte	0x4
 	.uleb128 0xb
-	.4byte	.LASF690
+	.4byte	.LASF691
 	.byte	0x6
 	.byte	0x40
 	.4byte	0xb4
 	.byte	0x5
 	.uleb128 0xb
-	.4byte	.LASF691
+	.4byte	.LASF692
 	.byte	0x6
 	.byte	0x41
 	.4byte	0x18f
 	.byte	0x6
 	.uleb128 0xb
-	.4byte	.LASF692
+	.4byte	.LASF693
 	.byte	0x6
 	.byte	0x42
 	.4byte	0x19a
 	.byte	0x7
 	.byte	0
 	.uleb128 0x3
-	.4byte	.LASF693
+	.4byte	.LASF694
 	.byte	0x6
 	.byte	0x44
 	.4byte	0x1e7
 	.uleb128 0x3
-	.4byte	.LASF694
+	.4byte	.LASF695
 	.byte	0x6
 	.byte	0x44
 	.4byte	0x246
@@ -875,7 +875,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x4
 	.4byte	0x1e7
 	.uleb128 0xc
-	.4byte	.LASF696
+	.4byte	.LASF697
 	.byte	0x1
 	.byte	0x12
 	.4byte	0x110
@@ -885,7 +885,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x282
 	.uleb128 0xd
-	.4byte	.LASF687
+	.4byte	.LASF688
 	.byte	0x1
 	.byte	0x13
 	.4byte	0x282
@@ -893,7 +893,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xd
-	.4byte	.LASF695
+	.4byte	.LASF696
 	.byte	0x1
 	.byte	0x14
 	.4byte	0x287
@@ -906,7 +906,7 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0xe
 	.4byte	0x1dc
 	.uleb128 0xc
-	.4byte	.LASF697
+	.4byte	.LASF698
 	.byte	0x1
 	.byte	0x2c
 	.4byte	0x110
@@ -916,7 +916,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x2c2
 	.uleb128 0xd
-	.4byte	.LASF687
+	.4byte	.LASF688
 	.byte	0x1
 	.byte	0x2c
 	.4byte	0x282
@@ -924,7 +924,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xd
-	.4byte	.LASF695
+	.4byte	.LASF696
 	.byte	0x1
 	.byte	0x2c
 	.4byte	0x2c2
@@ -936,7 +936,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x4
 	.4byte	0x1dc
 	.uleb128 0xf
-	.4byte	.LASF715
+	.4byte	.LASF716
 	.byte	0x1
 	.byte	0x31
 	.4byte	0x110
@@ -945,7 +945,7 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x10
-	.4byte	.LASF701
+	.4byte	.LASF702
 	.byte	0x1
 	.byte	0x37
 	.4byte	0x110
@@ -955,7 +955,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x321
 	.uleb128 0xd
-	.4byte	.LASF698
+	.4byte	.LASF699
 	.byte	0x1
 	.byte	0x38
 	.4byte	0x321
@@ -963,7 +963,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xd
-	.4byte	.LASF699
+	.4byte	.LASF700
 	.byte	0x1
 	.byte	0x39
 	.4byte	0x327
@@ -971,7 +971,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x91
 	.sleb128 -16
 	.uleb128 0xd
-	.4byte	.LASF700
+	.4byte	.LASF701
 	.byte	0x1
 	.byte	0x3a
 	.4byte	0x32c
@@ -987,7 +987,7 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0xe
 	.4byte	0x85
 	.uleb128 0x11
-	.4byte	.LASF702
+	.4byte	.LASF703
 	.byte	0x1
 	.byte	0x53
 	.4byte	0x110
@@ -997,7 +997,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x367
 	.uleb128 0xd
-	.4byte	.LASF703
+	.4byte	.LASF704
 	.byte	0x1
 	.byte	0x53
 	.4byte	0x282
@@ -1005,7 +1005,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xd
-	.4byte	.LASF699
+	.4byte	.LASF700
 	.byte	0x1
 	.byte	0x53
 	.4byte	0x327
@@ -1014,7 +1014,7 @@ mntr_RelsWriteAccssMntr:
 	.sleb128 -16
 	.byte	0
 	.uleb128 0x11
-	.4byte	.LASF704
+	.4byte	.LASF705
 	.byte	0x1
 	.byte	0x5f
 	.4byte	0x110
@@ -1024,7 +1024,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x38f
 	.uleb128 0xd
-	.4byte	.LASF703
+	.4byte	.LASF704
 	.byte	0x1
 	.byte	0x5f
 	.4byte	0x23b
@@ -1033,7 +1033,7 @@ mntr_RelsWriteAccssMntr:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x10
-	.4byte	.LASF705
+	.4byte	.LASF706
 	.byte	0x1
 	.byte	0x64
 	.4byte	0x110
@@ -1043,7 +1043,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x3b7
 	.uleb128 0xd
-	.4byte	.LASF698
+	.4byte	.LASF699
 	.byte	0x1
 	.byte	0x64
 	.4byte	0x321
@@ -1052,7 +1052,7 @@ mntr_RelsWriteAccssMntr:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x10
-	.4byte	.LASF706
+	.4byte	.LASF707
 	.byte	0x1
 	.byte	0x7c
 	.4byte	0x110
@@ -1062,7 +1062,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x405
 	.uleb128 0xd
-	.4byte	.LASF698
+	.4byte	.LASF699
 	.byte	0x1
 	.byte	0x7c
 	.4byte	0x405
@@ -1070,7 +1070,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x91
 	.sleb128 -20
 	.uleb128 0xd
-	.4byte	.LASF684
+	.4byte	.LASF685
 	.byte	0x1
 	.byte	0x7c
 	.4byte	0xb4
@@ -1081,7 +1081,7 @@ mntr_RelsWriteAccssMntr:
 	.4byte	.LBB2
 	.4byte	.LBE2-.LBB2
 	.uleb128 0x13
-	.4byte	.LASF710
+	.4byte	.LASF711
 	.byte	0x1
 	.byte	0x96
 	.4byte	0x1dc
@@ -1096,7 +1096,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x4
 	.4byte	0x230
 	.uleb128 0x11
-	.4byte	.LASF707
+	.4byte	.LASF708
 	.byte	0x1
 	.byte	0xb5
 	.4byte	0x110
@@ -1106,7 +1106,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x438
 	.uleb128 0xd
-	.4byte	.LASF698
+	.4byte	.LASF699
 	.byte	0x1
 	.byte	0xb5
 	.4byte	0x405
@@ -1115,7 +1115,7 @@ mntr_RelsWriteAccssMntr:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x11
-	.4byte	.LASF708
+	.4byte	.LASF709
 	.byte	0x1
 	.byte	0xd8
 	.4byte	0x110
@@ -1125,7 +1125,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x46e
 	.uleb128 0xd
-	.4byte	.LASF698
+	.4byte	.LASF699
 	.byte	0x1
 	.byte	0xd8
 	.4byte	0x405
@@ -1133,7 +1133,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xd
-	.4byte	.LASF684
+	.4byte	.LASF685
 	.byte	0x1
 	.byte	0xd8
 	.4byte	0xb4
@@ -1142,7 +1142,7 @@ mntr_RelsWriteAccssMntr:
 	.sleb128 -13
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF709
+	.4byte	.LASF710
 	.byte	0x1
 	.2byte	0x10c
 	.4byte	0x110
@@ -1152,7 +1152,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x9c
 	.4byte	0x498
 	.uleb128 0x15
-	.4byte	.LASF698
+	.4byte	.LASF699
 	.byte	0x1
 	.2byte	0x10c
 	.4byte	0x405
@@ -1161,7 +1161,7 @@ mntr_RelsWriteAccssMntr:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF711
+	.4byte	.LASF712
 	.byte	0x1
 	.byte	0x10
 	.4byte	0x11c
@@ -2656,7 +2656,7 @@ mntr_RelsWriteAccssMntr:
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0xf
-	.4byte	.LASF636
+	.4byte	.LASF637
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xb
@@ -2668,7 +2668,7 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x9
 	.byte	0x5
 	.uleb128 0xa
-	.4byte	.LASF637
+	.4byte	.LASF638
 	.byte	0x4
 	.byte	0x4
 	.byte	0
@@ -2954,7 +2954,7 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x1f5
 	.4byte	.LASF433
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.673e81b7c65bad7fa1d77c307c4a1d01,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.737b3062ed8c29b36217f91bed19f771,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -2968,16 +2968,16 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x2e
 	.4byte	.LASF437
 	.byte	0x5
-	.uleb128 0x34
+	.uleb128 0x36
 	.4byte	.LASF438
 	.byte	0x5
-	.uleb128 0x39
+	.uleb128 0x3b
 	.4byte	.LASF439
 	.byte	0x5
-	.uleb128 0x3e
+	.uleb128 0x42
 	.4byte	.LASF440
 	.byte	0x5
-	.uleb128 0x42
+	.uleb128 0x46
 	.4byte	.LASF441
 	.byte	0x5
 	.uleb128 0x4b
@@ -2989,176 +2989,179 @@ mntr_RelsWriteAccssMntr:
 	.uleb128 0x54
 	.4byte	.LASF444
 	.byte	0x5
-	.uleb128 0x59
+	.uleb128 0x5d
 	.4byte	.LASF445
 	.byte	0x5
-	.uleb128 0x5d
+	.uleb128 0x62
 	.4byte	.LASF446
 	.byte	0x5
-	.uleb128 0x65
+	.uleb128 0x66
 	.4byte	.LASF447
 	.byte	0x5
-	.uleb128 0x6d
+	.uleb128 0x6b
 	.4byte	.LASF448
 	.byte	0x5
-	.uleb128 0x74
+	.uleb128 0x6f
 	.4byte	.LASF449
 	.byte	0x5
-	.uleb128 0x7e
+	.uleb128 0x77
 	.4byte	.LASF450
 	.byte	0x5
-	.uleb128 0x82
+	.uleb128 0x7f
 	.4byte	.LASF451
 	.byte	0x5
-	.uleb128 0x90
+	.uleb128 0x86
 	.4byte	.LASF452
 	.byte	0x5
-	.uleb128 0x97
+	.uleb128 0x90
 	.4byte	.LASF453
 	.byte	0x5
-	.uleb128 0x9f
+	.uleb128 0x94
 	.4byte	.LASF454
 	.byte	0x5
-	.uleb128 0xa8
+	.uleb128 0xa2
 	.4byte	.LASF455
 	.byte	0x5
-	.uleb128 0xae
+	.uleb128 0xa9
 	.4byte	.LASF456
 	.byte	0x5
-	.uleb128 0xc3
+	.uleb128 0xb1
 	.4byte	.LASF457
 	.byte	0x5
-	.uleb128 0xcb
+	.uleb128 0xba
 	.4byte	.LASF458
 	.byte	0x5
-	.uleb128 0xd0
+	.uleb128 0xc0
 	.4byte	.LASF459
 	.byte	0x5
 	.uleb128 0xd5
 	.4byte	.LASF460
 	.byte	0x5
-	.uleb128 0xd9
+	.uleb128 0xdd
 	.4byte	.LASF461
 	.byte	0x5
-	.uleb128 0xe6
+	.uleb128 0xe2
 	.4byte	.LASF462
 	.byte	0x5
-	.uleb128 0xf1
+	.uleb128 0xe7
 	.4byte	.LASF463
 	.byte	0x5
-	.uleb128 0xf6
+	.uleb128 0xeb
 	.4byte	.LASF464
 	.byte	0x5
-	.uleb128 0xfb
+	.uleb128 0xf8
 	.4byte	.LASF465
 	.byte	0x5
-	.uleb128 0x100
+	.uleb128 0x103
 	.4byte	.LASF466
 	.byte	0x5
-	.uleb128 0x104
+	.uleb128 0x108
 	.4byte	.LASF467
 	.byte	0x5
-	.uleb128 0x108
+	.uleb128 0x10d
 	.4byte	.LASF468
 	.byte	0x5
-	.uleb128 0x10e
+	.uleb128 0x112
 	.4byte	.LASF469
 	.byte	0x5
-	.uleb128 0x114
+	.uleb128 0x116
 	.4byte	.LASF470
 	.byte	0x5
-	.uleb128 0x118
+	.uleb128 0x11a
 	.4byte	.LASF471
 	.byte	0x5
-	.uleb128 0x11c
+	.uleb128 0x120
 	.4byte	.LASF472
 	.byte	0x5
-	.uleb128 0x120
+	.uleb128 0x125
 	.4byte	.LASF473
 	.byte	0x5
-	.uleb128 0x124
+	.uleb128 0x129
 	.4byte	.LASF474
 	.byte	0x5
-	.uleb128 0x128
+	.uleb128 0x12d
 	.4byte	.LASF475
 	.byte	0x5
-	.uleb128 0x12c
+	.uleb128 0x131
 	.4byte	.LASF476
 	.byte	0x5
-	.uleb128 0x133
+	.uleb128 0x135
 	.4byte	.LASF477
 	.byte	0x5
-	.uleb128 0x137
+	.uleb128 0x139
 	.4byte	.LASF478
 	.byte	0x5
-	.uleb128 0x13b
+	.uleb128 0x13d
 	.4byte	.LASF479
 	.byte	0x5
-	.uleb128 0x13f
+	.uleb128 0x144
 	.4byte	.LASF480
 	.byte	0x5
-	.uleb128 0x55d
+	.uleb128 0x148
 	.4byte	.LASF481
 	.byte	0x5
-	.uleb128 0x562
+	.uleb128 0x14c
 	.4byte	.LASF482
 	.byte	0x5
-	.uleb128 0x569
+	.uleb128 0x150
 	.4byte	.LASF483
 	.byte	0x5
-	.uleb128 0x56c
+	.uleb128 0x463
 	.4byte	.LASF484
 	.byte	0x5
-	.uleb128 0x57a
+	.uleb128 0x580
 	.4byte	.LASF485
 	.byte	0x5
-	.uleb128 0x57f
+	.uleb128 0x58e
 	.4byte	.LASF486
 	.byte	0x5
-	.uleb128 0x588
+	.uleb128 0x593
 	.4byte	.LASF487
 	.byte	0x5
-	.uleb128 0x58c
+	.uleb128 0x59c
 	.4byte	.LASF488
 	.byte	0x5
-	.uleb128 0x590
+	.uleb128 0x5a0
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x594
+	.uleb128 0x5a4
 	.4byte	.LASF490
 	.byte	0x5
-	.uleb128 0x598
+	.uleb128 0x5a8
 	.4byte	.LASF491
 	.byte	0x5
-	.uleb128 0x59c
+	.uleb128 0x5ac
 	.4byte	.LASF492
 	.byte	0x5
-	.uleb128 0x5a0
+	.uleb128 0x5b0
 	.4byte	.LASF493
 	.byte	0x5
-	.uleb128 0x5a4
+	.uleb128 0x5b4
 	.4byte	.LASF494
 	.byte	0x5
-	.uleb128 0x5a8
+	.uleb128 0x5b8
 	.4byte	.LASF495
 	.byte	0x5
-	.uleb128 0x5ac
+	.uleb128 0x5bc
 	.4byte	.LASF496
 	.byte	0x5
-	.uleb128 0x5b0
+	.uleb128 0x5c0
 	.4byte	.LASF497
 	.byte	0x5
-	.uleb128 0x5b4
+	.uleb128 0x5c4
 	.4byte	.LASF498
 	.byte	0x5
-	.uleb128 0x5b8
+	.uleb128 0x5c8
 	.4byte	.LASF499
 	.byte	0x5
-	.uleb128 0x5bc
+	.uleb128 0x5cc
 	.4byte	.LASF500
 	.byte	0x5
-	.uleb128 0x5c0
+	.uleb128 0x5d0
 	.4byte	.LASF501
+	.byte	0x5
+	.uleb128 0x5d4
+	.4byte	.LASF502
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_memMngr.h.14.e71363defcaed3db880eddd5ae4849f6,comdat
 .Ldebug_macro5:
@@ -3166,413 +3169,413 @@ mntr_RelsWriteAccssMntr:
 	.byte	0
 	.byte	0x5
 	.uleb128 0xe
-	.4byte	.LASF502
-	.byte	0x5
-	.uleb128 0x14
 	.4byte	.LASF503
 	.byte	0x5
-	.uleb128 0x18
+	.uleb128 0x14
 	.4byte	.LASF504
 	.byte	0x5
-	.uleb128 0x1c
+	.uleb128 0x18
 	.4byte	.LASF505
 	.byte	0x5
-	.uleb128 0x20
+	.uleb128 0x1c
 	.4byte	.LASF506
 	.byte	0x5
-	.uleb128 0x2b
+	.uleb128 0x20
 	.4byte	.LASF507
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x2b
 	.4byte	.LASF508
 	.byte	0x5
-	.uleb128 0x39
+	.uleb128 0x32
 	.4byte	.LASF509
 	.byte	0x5
-	.uleb128 0x42
+	.uleb128 0x39
 	.4byte	.LASF510
 	.byte	0x5
-	.uleb128 0x49
+	.uleb128 0x42
 	.4byte	.LASF511
 	.byte	0x5
-	.uleb128 0x50
+	.uleb128 0x49
 	.4byte	.LASF512
 	.byte	0x5
-	.uleb128 0x59
+	.uleb128 0x50
 	.4byte	.LASF513
 	.byte	0x5
-	.uleb128 0x118
+	.uleb128 0x59
 	.4byte	.LASF514
 	.byte	0x5
-	.uleb128 0x119
+	.uleb128 0x118
 	.4byte	.LASF515
 	.byte	0x5
-	.uleb128 0x11c
+	.uleb128 0x119
 	.4byte	.LASF516
 	.byte	0x5
-	.uleb128 0x11d
+	.uleb128 0x11c
 	.4byte	.LASF517
 	.byte	0x5
-	.uleb128 0x11e
+	.uleb128 0x11d
 	.4byte	.LASF518
 	.byte	0x5
-	.uleb128 0x11f
+	.uleb128 0x11e
 	.4byte	.LASF519
 	.byte	0x5
-	.uleb128 0x120
+	.uleb128 0x11f
 	.4byte	.LASF520
 	.byte	0x5
-	.uleb128 0x121
+	.uleb128 0x120
 	.4byte	.LASF521
 	.byte	0x5
-	.uleb128 0x122
+	.uleb128 0x121
 	.4byte	.LASF522
 	.byte	0x5
-	.uleb128 0x13c
+	.uleb128 0x122
 	.4byte	.LASF523
 	.byte	0x5
-	.uleb128 0x13d
+	.uleb128 0x13c
 	.4byte	.LASF524
 	.byte	0x5
-	.uleb128 0x13e
+	.uleb128 0x13d
 	.4byte	.LASF525
 	.byte	0x5
-	.uleb128 0x13f
+	.uleb128 0x13e
 	.4byte	.LASF526
 	.byte	0x5
-	.uleb128 0x140
+	.uleb128 0x13f
 	.4byte	.LASF527
 	.byte	0x5
-	.uleb128 0x141
+	.uleb128 0x140
 	.4byte	.LASF528
 	.byte	0x5
-	.uleb128 0x142
+	.uleb128 0x141
 	.4byte	.LASF529
 	.byte	0x5
-	.uleb128 0x143
+	.uleb128 0x142
 	.4byte	.LASF530
 	.byte	0x5
-	.uleb128 0x144
+	.uleb128 0x143
 	.4byte	.LASF531
 	.byte	0x5
-	.uleb128 0x145
+	.uleb128 0x144
 	.4byte	.LASF532
 	.byte	0x5
-	.uleb128 0x146
+	.uleb128 0x145
 	.4byte	.LASF533
 	.byte	0x5
-	.uleb128 0x147
+	.uleb128 0x146
 	.4byte	.LASF534
 	.byte	0x5
-	.uleb128 0x148
+	.uleb128 0x147
 	.4byte	.LASF535
 	.byte	0x5
-	.uleb128 0x149
+	.uleb128 0x148
 	.4byte	.LASF536
 	.byte	0x5
-	.uleb128 0x14a
+	.uleb128 0x149
 	.4byte	.LASF537
 	.byte	0x5
-	.uleb128 0x14b
+	.uleb128 0x14a
 	.4byte	.LASF538
 	.byte	0x5
-	.uleb128 0x14c
+	.uleb128 0x14b
 	.4byte	.LASF539
 	.byte	0x5
-	.uleb128 0x14d
+	.uleb128 0x14c
 	.4byte	.LASF540
 	.byte	0x5
-	.uleb128 0x14e
+	.uleb128 0x14d
 	.4byte	.LASF541
 	.byte	0x5
-	.uleb128 0x14f
+	.uleb128 0x14e
 	.4byte	.LASF542
 	.byte	0x5
-	.uleb128 0x150
+	.uleb128 0x14f
 	.4byte	.LASF543
 	.byte	0x5
-	.uleb128 0x151
+	.uleb128 0x150
 	.4byte	.LASF544
 	.byte	0x5
-	.uleb128 0x152
+	.uleb128 0x151
 	.4byte	.LASF545
 	.byte	0x5
-	.uleb128 0x153
+	.uleb128 0x152
 	.4byte	.LASF546
 	.byte	0x5
-	.uleb128 0x154
+	.uleb128 0x153
 	.4byte	.LASF547
 	.byte	0x5
-	.uleb128 0x155
+	.uleb128 0x154
 	.4byte	.LASF548
 	.byte	0x5
-	.uleb128 0x156
+	.uleb128 0x155
 	.4byte	.LASF549
 	.byte	0x5
-	.uleb128 0x157
+	.uleb128 0x156
 	.4byte	.LASF550
 	.byte	0x5
-	.uleb128 0x158
+	.uleb128 0x157
 	.4byte	.LASF551
 	.byte	0x5
-	.uleb128 0x159
+	.uleb128 0x158
 	.4byte	.LASF552
 	.byte	0x5
-	.uleb128 0x15a
+	.uleb128 0x159
 	.4byte	.LASF553
 	.byte	0x5
-	.uleb128 0x15b
+	.uleb128 0x15a
 	.4byte	.LASF554
 	.byte	0x5
-	.uleb128 0x15d
+	.uleb128 0x15b
 	.4byte	.LASF555
 	.byte	0x5
-	.uleb128 0x15f
+	.uleb128 0x15d
 	.4byte	.LASF556
 	.byte	0x5
-	.uleb128 0x160
+	.uleb128 0x15f
 	.4byte	.LASF557
 	.byte	0x5
-	.uleb128 0x161
+	.uleb128 0x160
 	.4byte	.LASF558
 	.byte	0x5
-	.uleb128 0x162
+	.uleb128 0x161
 	.4byte	.LASF559
 	.byte	0x5
-	.uleb128 0x163
+	.uleb128 0x162
 	.4byte	.LASF560
 	.byte	0x5
-	.uleb128 0x164
+	.uleb128 0x163
 	.4byte	.LASF561
 	.byte	0x5
-	.uleb128 0x165
+	.uleb128 0x164
 	.4byte	.LASF562
 	.byte	0x5
-	.uleb128 0x166
+	.uleb128 0x165
 	.4byte	.LASF563
 	.byte	0x5
-	.uleb128 0x167
+	.uleb128 0x166
 	.4byte	.LASF564
 	.byte	0x5
-	.uleb128 0x168
+	.uleb128 0x167
 	.4byte	.LASF565
 	.byte	0x5
-	.uleb128 0x169
+	.uleb128 0x168
 	.4byte	.LASF566
 	.byte	0x5
-	.uleb128 0x16a
+	.uleb128 0x169
 	.4byte	.LASF567
 	.byte	0x5
-	.uleb128 0x16b
+	.uleb128 0x16a
 	.4byte	.LASF568
 	.byte	0x5
-	.uleb128 0x16c
+	.uleb128 0x16b
 	.4byte	.LASF569
 	.byte	0x5
-	.uleb128 0x16d
+	.uleb128 0x16c
 	.4byte	.LASF570
 	.byte	0x5
-	.uleb128 0x16e
+	.uleb128 0x16d
 	.4byte	.LASF571
 	.byte	0x5
-	.uleb128 0x16f
+	.uleb128 0x16e
 	.4byte	.LASF572
 	.byte	0x5
-	.uleb128 0x170
+	.uleb128 0x16f
 	.4byte	.LASF573
 	.byte	0x5
-	.uleb128 0x171
+	.uleb128 0x170
 	.4byte	.LASF574
 	.byte	0x5
-	.uleb128 0x173
+	.uleb128 0x171
 	.4byte	.LASF575
 	.byte	0x5
-	.uleb128 0x174
+	.uleb128 0x173
 	.4byte	.LASF576
 	.byte	0x5
-	.uleb128 0x181
+	.uleb128 0x174
 	.4byte	.LASF577
 	.byte	0x5
-	.uleb128 0x182
+	.uleb128 0x181
 	.4byte	.LASF578
 	.byte	0x5
-	.uleb128 0x183
+	.uleb128 0x182
 	.4byte	.LASF579
 	.byte	0x5
-	.uleb128 0x19d
+	.uleb128 0x183
 	.4byte	.LASF580
 	.byte	0x5
-	.uleb128 0x19e
+	.uleb128 0x19d
 	.4byte	.LASF581
 	.byte	0x5
-	.uleb128 0x19f
+	.uleb128 0x19e
 	.4byte	.LASF582
 	.byte	0x5
-	.uleb128 0x1a0
+	.uleb128 0x19f
 	.4byte	.LASF583
 	.byte	0x5
-	.uleb128 0x1a1
+	.uleb128 0x1a0
 	.4byte	.LASF584
 	.byte	0x5
-	.uleb128 0x1a2
+	.uleb128 0x1a1
 	.4byte	.LASF585
 	.byte	0x5
-	.uleb128 0x1a3
+	.uleb128 0x1a2
 	.4byte	.LASF586
 	.byte	0x5
-	.uleb128 0x1a4
+	.uleb128 0x1a3
 	.4byte	.LASF587
 	.byte	0x5
-	.uleb128 0x1a5
+	.uleb128 0x1a4
 	.4byte	.LASF588
 	.byte	0x5
-	.uleb128 0x1a6
+	.uleb128 0x1a5
 	.4byte	.LASF589
 	.byte	0x5
-	.uleb128 0x1a7
+	.uleb128 0x1a6
 	.4byte	.LASF590
 	.byte	0x5
-	.uleb128 0x1a8
+	.uleb128 0x1a7
 	.4byte	.LASF591
 	.byte	0x5
-	.uleb128 0x1a9
+	.uleb128 0x1a8
 	.4byte	.LASF592
 	.byte	0x5
-	.uleb128 0x1aa
+	.uleb128 0x1a9
 	.4byte	.LASF593
 	.byte	0x5
-	.uleb128 0x1ab
+	.uleb128 0x1aa
 	.4byte	.LASF594
 	.byte	0x5
-	.uleb128 0x1ac
+	.uleb128 0x1ab
 	.4byte	.LASF595
 	.byte	0x5
-	.uleb128 0x1ad
+	.uleb128 0x1ac
 	.4byte	.LASF596
 	.byte	0x5
-	.uleb128 0x1ae
+	.uleb128 0x1ad
 	.4byte	.LASF597
 	.byte	0x5
-	.uleb128 0x1af
+	.uleb128 0x1ae
 	.4byte	.LASF598
 	.byte	0x5
-	.uleb128 0x1b0
+	.uleb128 0x1af
 	.4byte	.LASF599
 	.byte	0x5
-	.uleb128 0x1b1
+	.uleb128 0x1b0
 	.4byte	.LASF600
 	.byte	0x5
-	.uleb128 0x1b2
+	.uleb128 0x1b1
 	.4byte	.LASF601
 	.byte	0x5
-	.uleb128 0x1b3
+	.uleb128 0x1b2
 	.4byte	.LASF602
 	.byte	0x5
-	.uleb128 0x1b4
+	.uleb128 0x1b3
 	.4byte	.LASF603
 	.byte	0x5
-	.uleb128 0x1b5
+	.uleb128 0x1b4
 	.4byte	.LASF604
 	.byte	0x5
-	.uleb128 0x1b6
+	.uleb128 0x1b5
 	.4byte	.LASF605
 	.byte	0x5
-	.uleb128 0x1b7
+	.uleb128 0x1b6
 	.4byte	.LASF606
 	.byte	0x5
-	.uleb128 0x1b8
+	.uleb128 0x1b7
 	.4byte	.LASF607
 	.byte	0x5
-	.uleb128 0x1b9
+	.uleb128 0x1b8
 	.4byte	.LASF608
 	.byte	0x5
-	.uleb128 0x1ba
+	.uleb128 0x1b9
 	.4byte	.LASF609
 	.byte	0x5
-	.uleb128 0x1bb
+	.uleb128 0x1ba
 	.4byte	.LASF610
 	.byte	0x5
-	.uleb128 0x1bc
+	.uleb128 0x1bb
 	.4byte	.LASF611
 	.byte	0x5
-	.uleb128 0x1be
+	.uleb128 0x1bc
 	.4byte	.LASF612
 	.byte	0x5
-	.uleb128 0x1bf
+	.uleb128 0x1be
 	.4byte	.LASF613
 	.byte	0x5
-	.uleb128 0x1c0
+	.uleb128 0x1bf
 	.4byte	.LASF614
 	.byte	0x5
-	.uleb128 0x1c1
+	.uleb128 0x1c0
 	.4byte	.LASF615
 	.byte	0x5
-	.uleb128 0x1c2
+	.uleb128 0x1c1
 	.4byte	.LASF616
 	.byte	0x5
-	.uleb128 0x1c3
+	.uleb128 0x1c2
 	.4byte	.LASF617
 	.byte	0x5
-	.uleb128 0x1c4
+	.uleb128 0x1c3
 	.4byte	.LASF618
 	.byte	0x5
-	.uleb128 0x1c5
+	.uleb128 0x1c4
 	.4byte	.LASF619
 	.byte	0x5
-	.uleb128 0x1c6
+	.uleb128 0x1c5
 	.4byte	.LASF620
 	.byte	0x5
-	.uleb128 0x1c7
+	.uleb128 0x1c6
 	.4byte	.LASF621
 	.byte	0x5
-	.uleb128 0x1c8
+	.uleb128 0x1c7
 	.4byte	.LASF622
 	.byte	0x5
-	.uleb128 0x1c9
+	.uleb128 0x1c8
 	.4byte	.LASF623
 	.byte	0x5
-	.uleb128 0x1ca
+	.uleb128 0x1c9
 	.4byte	.LASF624
 	.byte	0x5
-	.uleb128 0x1cb
+	.uleb128 0x1ca
 	.4byte	.LASF625
 	.byte	0x5
-	.uleb128 0x1d1
+	.uleb128 0x1cb
 	.4byte	.LASF626
 	.byte	0x5
-	.uleb128 0x1d2
+	.uleb128 0x1d1
 	.4byte	.LASF627
 	.byte	0x5
-	.uleb128 0x1d3
+	.uleb128 0x1d2
 	.4byte	.LASF628
 	.byte	0x5
-	.uleb128 0x1d4
+	.uleb128 0x1d3
 	.4byte	.LASF629
 	.byte	0x5
-	.uleb128 0x1d5
+	.uleb128 0x1d4
 	.4byte	.LASF630
 	.byte	0x5
-	.uleb128 0x1d6
+	.uleb128 0x1d5
 	.4byte	.LASF631
 	.byte	0x5
-	.uleb128 0x1d7
+	.uleb128 0x1d6
 	.4byte	.LASF632
 	.byte	0x5
-	.uleb128 0x1d8
+	.uleb128 0x1d7
 	.4byte	.LASF633
 	.byte	0x5
-	.uleb128 0x1d9
+	.uleb128 0x1d8
 	.4byte	.LASF634
 	.byte	0x5
-	.uleb128 0x1db
+	.uleb128 0x1d9
 	.4byte	.LASF635
+	.byte	0x5
+	.uleb128 0x1db
+	.4byte	.LASF636
 	.byte	0
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
 .LASF237:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
-.LASF577:
+.LASF578:
 	.ascii	"MEM_FLG_ISCOMBO(memFlgs) (MemSize)((MEM_FLG_GET_MEM"
 	.ascii	"SIZE(memFlgs) & (MemSize)(MEM_FLG_GET_MEMSIZE(memFl"
 	.ascii	"gs)-(MemSize)1u)) ? 1u : 0u)\000"
@@ -3580,7 +3583,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 1\000"
 .LASF62:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
-.LASF462:
+.LASF465:
 	.ascii	"CREATE_EVT_MSK(evtNr) (EVTQSlots)((EVTQSlots)0x1u <"
 	.ascii	"< evtNr)\000"
 .LASF70:
@@ -3591,7 +3594,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
 .LASF318:
 	.ascii	"__SIZEOF_WINT_T__ 4\000"
-.LASF597:
+.LASF598:
 	.ascii	"MEM_FLGS_PRV_BGGSTBLCK_MSK MEM_FLGS_BGGSTBLCK_MSK\000"
 .LASF356:
 	.ascii	"___int_least64_t_defined 1\000"
@@ -3601,17 +3604,17 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
 .LASF413:
 	.ascii	"INTMAX_MIN (-INTMAX_MAX - 1)\000"
-.LASF595:
+.LASF596:
 	.ascii	"MEM_FLGS_PRV_SPLT_128_MSK MEM_FLGS_SPLT_128_MSK\000"
 .LASF174:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
-.LASF685:
+.LASF686:
 	.ascii	"PMntrWaitr\000"
 .LASF91:
 	.ascii	"__INT_LEAST8_MAX__ 127\000"
 .LASF386:
 	.ascii	"INT_LEAST16_MAX __INT_LEAST16_MAX__\000"
-.LASF483:
+.LASF440:
 	.ascii	"MAX_TASKS NR_OF_TSKS\000"
 .LASF83:
 	.ascii	"__INT8_MAX__ 127\000"
@@ -3619,13 +3622,13 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT_LEAST64_MIN (-__INT_LEAST64_MAX__ - 1)\000"
 .LASF100:
 	.ascii	"__UINT8_C(c) c\000"
-.LASF579:
+.LASF580:
 	.ascii	"MEM_FLG_SMALLER_COMBO(memFlgs) (MemSize)(MEM_FLG_GE"
 	.ascii	"T_MEMSIZE(memFlgs) & (MemSize)(-MEM_FLG_GET_MEMSIZE"
 	.ascii	"(memFlgs)))\000"
 .LASF85:
 	.ascii	"__INT32_MAX__ 2147483647L\000"
-.LASF610:
+.LASF611:
 	.ascii	"MEM_FLGS_CACHED_SHFT ((MemFlags)0xFu)\000"
 .LASF69:
 	.ascii	"__LONG_MAX__ 2147483647L\000"
@@ -3635,7 +3638,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"UINT64_C(x) __UINT64_C(x)\000"
 .LASF127:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
-.LASF675:
+.LASF676:
 	.ascii	"MNTR_PENDING_WRITE\000"
 .LASF136:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
@@ -3643,13 +3646,16 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 1\000"
 .LASF97:
 	.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
-.LASF544:
+.LASF545:
 	.ascii	"MEM_FLGS_MERGE1024_MSK ((MemFlags)0x400u)\000"
-.LASF620:
+.LASF621:
 	.ascii	"MEM_FLG_CLR_NXT_SPLT(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXT_SPLT_MSK, additional"
 	.ascii	"Flags)\000"
-.LASF684:
+.LASF484:
+	.ascii	"SEM_NR_OF_TSK_REF_BYTES (uint8_t)((NR_OF_TSKS >> 3)"
+	.ascii	" + 1)\000"
+.LASF685:
 	.ascii	"tskID\000"
 .LASF346:
 	.ascii	"__GNUC_PREREQ(maj,min) ((__GNUC__ << 16) + __GNUC_M"
@@ -3662,22 +3668,22 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)\000"
 .LASF74:
 	.ascii	"__WINT_MIN__ 0U\000"
-.LASF565:
+.LASF566:
 	.ascii	"MEM_FLG_ISSPLIT(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_SPLT_SHFT)\000"
-.LASF581:
+.LASF582:
 	.ascii	"MEM_FLGS_ISBLCKBEG_MSK ((MemFlags)0x1u)\000"
 .LASF4:
 	.ascii	"__GNUC_MINOR__ 8\000"
-.LASF648:
+.LASF649:
 	.ascii	"unsigned int\000"
 .LASF414:
 	.ascii	"UINTMAX_MAX __UINTMAX_MAX__\000"
-.LASF481:
+.LASF438:
 	.ascii	"TIME_SLICE_AMOUNT (uint16_t)500u\000"
 .LASF102:
 	.ascii	"__UINT16_C(c) c\000"
-.LASF476:
+.LASF479:
 	.ascii	"TSK_STATE_IS_WAITING_MNTR(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_WAITING_MNTR)\000"
 .LASF17:
@@ -3688,7 +3694,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"UINT_LEAST32_MAX __UINT_LEAST32_MAX__\000"
 .LASF20:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
-.LASF506:
+.LASF507:
 	.ascii	"free rFree\000"
 .LASF3:
 	.ascii	"__GNUC__ 4\000"
@@ -3696,11 +3702,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
 .LASF221:
 	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
-.LASF660:
+.LASF661:
 	.ascii	"MNTR_ACCESS_MODIFY\000"
 .LASF179:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
-.LASF596:
+.LASF597:
 	.ascii	"MEM_FLGS_PRV_BGGSTBLCK_SHFT MEM_FLGS_BGGSTBLCK_SHFT"
 	.ascii	"\000"
 .LASF297:
@@ -3709,30 +3715,30 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__DBL_MANT_DIG__ 53\000"
 .LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
-.LASF514:
+.LASF515:
 	.ascii	"MEM_MNGR_GET_MEMMNGRHEAD(pointer) ((MemMngrHead *)("
 	.ascii	" (uint32_t) pointer - (uint32_t) sizeof(MemBlckHead"
 	.ascii	")))\000"
-.LASF623:
+.LASF624:
 	.ascii	"MEM_FLG_CLR_PREV_SPLT(pMemMngrHead) MEM_FLG_CLR_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREV_SPLT_MSK, addition"
 	.ascii	"alFlags)\000"
-.LASF663:
+.LASF664:
 	.ascii	"MemPoolID\000"
 .LASF10:
 	.ascii	"__ATOMIC_RELEASE 3\000"
-.LASF488:
+.LASF489:
 	.ascii	"RET_OK ((RetCode)0x1u)\000"
 .LASF31:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
-.LASF518:
+.LASF519:
 	.ascii	"MEM_FLG_GET_STRUC_PFIELD(struc,field) ((struc)->fie"
 	.ascii	"ld)\000"
 .LASF40:
 	.ascii	"__INT16_TYPE__ short int\000"
 .LASF378:
 	.ascii	"UINT8_MAX __UINT8_MAX__\000"
-.LASF532:
+.LASF533:
 	.ascii	"MEM_FLGS_SPLT_16_MSK ((MemFlags)0x10u)\000"
 .LASF167:
 	.ascii	"__DEC32_EPSILON__ 1E-6DF\000"
@@ -3744,28 +3750,28 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"UINT32_C(x) __UINT32_C(x)\000"
 .LASF254:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
-.LASF517:
+.LASF518:
 	.ascii	"MEM_FLG_GET_BIT_MSK(bit) ((MemFlags)((MemFlags)0x1u"
 	.ascii	" << (MemFlags)bit))\000"
 .LASF8:
 	.ascii	"__ATOMIC_SEQ_CST 5\000"
-.LASF609:
+.LASF610:
 	.ascii	"MEM_FLGS_BGGRMRGD_MSK ((MemFlags)0x4000u)\000"
 .LASF417:
 	.ascii	"SIG_ATOMIC_MAX __STDINT_EXP(INT_MAX)\000"
 .LASF430:
 	.ascii	"INT64_C(x) __INT64_C(x)\000"
-.LASF575:
+.LASF576:
 	.ascii	"MEM_FLG_GET_MEMSIZE(memFlgs) (MemSize)(memFlgs & ME"
 	.ascii	"M_FLGS_SIZE_MSK)\000"
 .LASF361:
 	.ascii	"__int8_t_defined 1\000"
 .LASF47:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
-.LASF471:
+.LASF474:
 	.ascii	"TSK_STATE_IS_WAITING_TMR(pTsk) (TskState)(TSK_GETST"
 	.ascii	"ATE(pTsk) == TSK_STATE_WAITING_TMR)\000"
-.LASF456:
+.LASF459:
 	.ascii	"SYSFKT_INVALID_SYSFKT_ID (SysFktID)0xFFu\000"
 .LASF381:
 	.ascii	"UINT_LEAST8_MAX __UINT_LEAST8_MAX__\000"
@@ -3777,7 +3783,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INT_FAST16_MAX__ 2147483647\000"
 .LASF428:
 	.ascii	"INT32_C(x) __INT32_C(x)\000"
-.LASF617:
+.LASF618:
 	.ascii	"MEM_FLG_CLR_BLCKLAST(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_ISBLCKLAST_MSK, addition"
 	.ascii	"alFlags)\000"
@@ -3785,22 +3791,22 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF99:
 	.ascii	"__UINT_LEAST8_MAX__ 255\000"
-.LASF538:
+.LASF539:
 	.ascii	"MEM_FLGS_SPLT_128_MSK ((MemFlags)0x80u)\000"
-.LASF490:
+.LASF491:
 	.ascii	"RET_MEM_ALLOC_FAIL_STACK ((RetCode)0x1Cu)\000"
-.LASF654:
+.LASF655:
 	.ascii	"TskPrioLvl\000"
 .LASF324:
 	.ascii	"__ARM_ARCH 6\000"
 .LASF51:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
-.LASF449:
+.LASF452:
 	.ascii	"EVT_QUEUE_SIZE (uint8_t)0x4u\000"
-.LASF468:
+.LASF471:
 	.ascii	"TSK_STATE_IS_ACTIVE_READY(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_ACTIVE_READY )\000"
-.LASF570:
+.LASF571:
 	.ascii	"MEM_FLG_CLR_ISLOWER(pMemMngrHead) MEM_FLG_CLR_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISLOWER_MSK, flagsForMemB"
 	.ascii	"lock)\000"
@@ -3809,17 +3815,17 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"000000001E-6143DL\000"
 .LASF219:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
-.LASF446:
+.LASF449:
 	.ascii	"TSK_ID_MSK (uint16_t)0x00FFu\000"
 .LASF7:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF374:
 	.ascii	"INTPTR_MAX __INTPTR_MAX__\000"
-.LASF501:
+.LASF502:
 	.ascii	"RET_STCK_NO_STCKPTR ((RetCode)0x34u)\000"
 .LASF373:
 	.ascii	"INTPTR_MIN (-__INTPTR_MAX__ - 1)\000"
-.LASF698:
+.LASF699:
 	.ascii	"usrMntrHndl\000"
 .LASF245:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
@@ -3827,7 +3833,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF250:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF576:
+.LASF577:
 	.ascii	"MEM_FLG_SET_MEMSIZE(pMemMngrHead,newSize) do { if(("
 	.ascii	"(BlckSize)(newSize)) < BIGGEST_BLCK ) { MEM_FLG_SET"
 	.ascii	"_SPLIT(pMemMngrHead); } else { MEM_FLG_CLR_SPLIT(pM"
@@ -3839,11 +3845,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"E_MSK)); }while((uint8_t)0x0u)\000"
 .LASF152:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
-.LASF666:
+.LASF667:
 	.ascii	"mntrAccessState\000"
-.LASF608:
+.LASF609:
 	.ascii	"MEM_FLGS_BGGRMRGD_SHFT ((MemFlags)0xEu)\000"
-.LASF455:
+.LASF458:
 	.ascii	"AMOUNT_SYS_FKT (uint8_t)0x8u\000"
 .LASF328:
 	.ascii	"__ARMEL__ 1\000"
@@ -3857,33 +3863,33 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INT_FAST64_TYPE__ long long int\000"
 .LASF92:
 	.ascii	"__INT8_C(c) c\000"
-.LASF443:
+.LASF446:
 	.ascii	"MSGQ_TSK_ID_POS (uint8_t)0x0u\000"
-.LASF557:
+.LASF558:
 	.ascii	"MEM_FLG_SET_TAKEN(pMemMngrHead) MEM_FLG_SET_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_TAKEN_MSK, flagsForMemBlock"
 	.ascii	")\000"
-.LASF492:
+.LASF493:
 	.ascii	"RET_TSK_NO_IDLE_TSK ((RetCode)0x20u)\000"
 .LASF284:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF76:
 	.ascii	"__SIZE_MAX__ 4294967295U\000"
-.LASF627:
+.LASF628:
 	.ascii	"MEM_FLG_PREV_BIGGER_COMBO(memFlgs) (MemSize)(MEM_FL"
 	.ascii	"G_GET_PREV_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET"
 	.ascii	"_PREV_MEMSIZE(memFlgs)-(MemSize)1u))\000"
-.LASF651:
+.LASF652:
 	.ascii	"Data\000"
 .LASF404:
 	.ascii	"INT_FAST16_MAX __INT_FAST16_MAX__\000"
 .LASF260:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
-.LASF650:
+.LASF651:
 	.ascii	"uint32_t\000"
 .LASF434:
 	.ascii	"_GCC_WRAP_STDINT_H \000"
-.LASF626:
+.LASF627:
 	.ascii	"MEM_FLG_PREV_ISCOMBO(memFlgs) (MemSize)((MEM_FLG_GE"
 	.ascii	"T_PREV_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_PRE"
 	.ascii	"V_MEMSIZE(memFlgs)-(MemSize)1u)) ? 1u : 0u)\000"
@@ -3891,13 +3897,13 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
 .LASF325:
 	.ascii	"__APCS_32__ 1\000"
-.LASF445:
+.LASF448:
 	.ascii	"SYS_ID_MSK (uint16_t)0xFF00u\000"
 .LASF64:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
-.LASF706:
+.LASF707:
 	.ascii	"mntr_ReqstReadAccssMntr\000"
-.LASF543:
+.LASF544:
 	.ascii	"MEM_FLGS_MERGE1024_SHFT ((MemFlags)0xAu)\000"
 .LASF286:
 	.ascii	"__SA_IBIT__ 16\000"
@@ -3905,10 +3911,10 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
 .LASF436:
 	.ascii	"NULL ((void *)0x0u)\000"
-.LASF475:
+.LASF478:
 	.ascii	"TSK_STATE_IS_WAITING_SEM(pTsk) (TskState)(TSK_GETST"
 	.ascii	"ATE(pTsk) == TSK_STATE_WAITING_SEM)\000"
-.LASF548:
+.LASF549:
 	.ascii	"MEM_FLGS_SPLT_MSK ((MemFlags)0x1000u)\000"
 .LASF121:
 	.ascii	"__FLT_DIG__ 6\000"
@@ -3918,11 +3924,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__DA_FBIT__ 31\000"
 .LASF320:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
-.LASF655:
+.LASF656:
 	.ascii	"tskStateT\000"
 .LASF38:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
-.LASF622:
+.LASF623:
 	.ascii	"MEM_FLG_SET_PREV_SPLT(pMemMngrHead) MEM_FLG_SET_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREV_SPLT_MSK, addition"
 	.ascii	"alFlags)\000"
@@ -3934,11 +3940,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
 .LASF349:
 	.ascii	"___int8_t_defined 1\000"
-.LASF591:
+.LASF592:
 	.ascii	"MEM_FLGS_PRV_SPLT_32_MSK MEM_FLGS_SPLT_32_MSK\000"
-.LASF669:
+.LASF670:
 	.ascii	"MNTR_WRITE\000"
-.LASF599:
+.LASF600:
 	.ascii	"MEM_FLGS_PRV_MERGE512_MSK MEM_FLGS_MERGE512_MSK\000"
 .LASF251:
 	.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
@@ -3946,23 +3952,23 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
 .LASF186:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
-.LASF667:
+.LASF668:
 	.ascii	"MNTR_LOCK_ERROR\000"
-.LASF662:
+.LASF663:
 	.ascii	"RetCode\000"
 .LASF345:
 	.ascii	"_SYS_FEATURES_H \000"
-.LASF647:
+.LASF648:
 	.ascii	"long long unsigned int\000"
-.LASF688:
+.LASF689:
 	.ascii	"protectedData\000"
 .LASF177:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
-.LASF454:
+.LASF457:
 	.ascii	"TSK_PRIO_LEVELS_NR (TskPrioLvl)0xFu\000"
-.LASF535:
+.LASF536:
 	.ascii	"MEM_FLGS_SPLT_64_SHFT ((MemFlags)0x6u)\000"
-.LASF502:
+.LASF503:
 	.ascii	"HEADERS_R_RTOS_MEMMNGR_H_ \000"
 .LASF212:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
@@ -3974,17 +3980,17 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
 .LASF253:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
-.LASF572:
+.LASF573:
 	.ascii	"MEM_FLG_SET_MERGED(pMemMngrHead) MEM_FLG_SET_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_MERGED_MSK, flagsForMemBlo"
 	.ascii	"ck)\000"
 .LASF119:
 	.ascii	"__FLT_RADIX__ 2\000"
-.LASF512:
+.LASF513:
 	.ascii	"SMALLER_BLCK_DIVISOR (MemIndex)(0x3u)\000"
-.LASF505:
+.LASF506:
 	.ascii	"realloc rRealloc\000"
-.LASF452:
+.LASF455:
 	.ascii	"TSK_ID_IDLE ((TskID)0x0u)\000"
 .LASF220:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
@@ -3996,22 +4002,22 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF55:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
-.LASF545:
+.LASF546:
 	.ascii	"MEM_FLGS_MERGE2048_SHFT ((MemFlags)0xBu)\000"
 .LASF60:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
-.LASF477:
+.LASF480:
 	.ascii	"TSK_STATE_IS_UNINIT(pTsk) (TskState)(TSK_GETSTATE(p"
 	.ascii	"Tsk) & TSK_STATE_UNINIT)\000"
-.LASF473:
+.LASF476:
 	.ascii	"TSK_STATE_IS_WAITING_MSGSND(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_WAITING_MSGSND)\000"
-.LASF664:
+.LASF665:
 	.ascii	"mntrFlgs\000"
-.LASF568:
+.LASF569:
 	.ascii	"MEM_FLG_ISLOWER(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_ISLOWER_SHFT)\000"
-.LASF515:
+.LASF516:
 	.ascii	"MEM_MNGR_GET_PTRTOMEM(memMngrPtr) ((void *) ((uint3"
 	.ascii	"2_t) memMngrPtr + (uint32_t) sizeof(MemBlckHead)))\000"
 .LASF223:
@@ -4026,15 +4032,15 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
 .LASF310:
 	.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 1\000"
-.LASF629:
+.LASF630:
 	.ascii	"MEM_FLG_BGGRMRGD(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_BGGRMRGD_SHFT)\000"
-.LASF511:
+.LASF512:
 	.ascii	"SMALLER_BLCK_MSK ((BlckSize)(SMALLEST_BLCK - (BlckS"
 	.ascii	"ize)1u))\000"
 .LASF420:
 	.ascii	"WCHAR_MAX __WCHAR_MAX__\000"
-.LASF674:
+.LASF675:
 	.ascii	"MNTR_PENDING\000"
 .LASF234:
 	.ascii	"__ACCUM_IBIT__ 16\000"
@@ -4060,11 +4066,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT16_C(x) __INT16_C(x)\000"
 .LASF147:
 	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
-.LASF573:
+.LASF574:
 	.ascii	"MEM_FLG_CLR_MERGED(pMemMngrHead) MEM_FLG_CLR_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_MERGED_MSK, flagsForMemBlo"
 	.ascii	"ck)\000"
-.LASF704:
+.LASF705:
 	.ascii	"mntr_DelMntr\000"
 .LASF231:
 	.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
@@ -4072,31 +4078,31 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UINT32_C(c) c ## UL\000"
 .LASF164:
 	.ascii	"__DEC32_MAX_EXP__ 97\000"
-.LASF671:
+.LASF672:
 	.ascii	"MNTR_FREE\000"
-.LASF602:
+.LASF603:
 	.ascii	"MEM_FLGS_PRV_MERGE2048_SHFT MEM_FLGS_MERGE2048_SHFT"
 	.ascii	"\000"
-.LASF615:
+.LASF616:
 	.ascii	"MEM_FLG_ISBLCKLAST(memFlgs) MEM_FLG_PARSE(memFlgs,M"
 	.ascii	"EM_FLGS_ISBLCKLAST_SHFT)\000"
-.LASF653:
+.LASF654:
 	.ascii	"TskID\000"
 .LASF406:
 	.ascii	"INT_FAST32_MIN (-__INT_FAST32_MAX__ - 1)\000"
-.LASF657:
+.LASF658:
 	.ascii	"MNTR_ACCESS_READ\000"
-.LASF611:
+.LASF612:
 	.ascii	"MEM_FLGS_CACHED_MSK ((MemFlags)0x8000u)\000"
-.LASF555:
+.LASF556:
 	.ascii	"MEM_FLGS_SIZE_MSK ((MemFlags)0xFFCu)\000"
-.LASF497:
+.LASF498:
 	.ascii	"RET_STCK_ERR_EMPTY ((RetCode)0x30u)\000"
 .LASF329:
 	.ascii	"__THUMBEL__ 1\000"
 .LASF367:
 	.ascii	"__int64_t_defined 1\000"
-.LASF708:
+.LASF709:
 	.ascii	"mntr_ReqstWriteAccssMntr\000"
 .LASF288:
 	.ascii	"__DA_IBIT__ 32\000"
@@ -4108,6 +4114,8 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INT_LEAST16_MAX__ 32767\000"
 .LASF191:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
+.LASF485:
+	.ascii	"NR_OF_MEMPOOLS (uint8_t)0x7u\000"
 .LASF350:
 	.ascii	"___int16_t_defined 1\000"
 .LASF183:
@@ -4116,26 +4124,26 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"NULL\000"
 .LASF255:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
-.LASF693:
+.LASF694:
 	.ascii	"Mntr\000"
-.LASF480:
+.LASF483:
 	.ascii	"TSK_STATE_IS_UNINIT_ENDED(pTsk) (TskState)(TSK_GETS"
 	.ascii	"TATE(pTsk) == TSK_STATE_UNINIT_ENDED)\000"
-.LASF561:
+.LASF562:
 	.ascii	"MEM_FLG_CLR_PREVTAKEN(pMemMngrHead) MEM_FLG_CLR_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREVTAKEN_MSK, flagsFor"
 	.ascii	"MemBlock)\000"
 .LASF112:
 	.ascii	"__UINT_FAST16_MAX__ 4294967295U\000"
-.LASF440:
+.LASF443:
 	.ascii	"IDLE_TSK_STACK_SIZE ((StackSize)0x60u)\000"
-.LASF672:
+.LASF673:
 	.ascii	"MNTR_FREE_READ\000"
-.LASF495:
+.LASF496:
 	.ascii	"RET_TSK_IS_ABOUT_TO_RUN ((RetCode)0x25u)\000"
 .LASF227:
 	.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
-.LASF542:
+.LASF543:
 	.ascii	"MEM_FLGS_MERGE512_MSK ((MemFlags)0x200u)\000"
 .LASF351:
 	.ascii	"___int32_t_defined 1\000"
@@ -4143,7 +4151,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
 .LASF44:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
-.LASF467:
+.LASF470:
 	.ascii	"TSK_STATE_IS_ACTIVE_SUSPENDED(pTsk) (TskState)(TSK_"
 	.ascii	"GETSTATE(pTsk) == TSK_STATE_ACTIVE_SUSPENDED )\000"
 .LASF75:
@@ -4168,7 +4176,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
 .LASF302:
 	.ascii	"__NO_INLINE__ 1\000"
-.LASF658:
+.LASF659:
 	.ascii	"MNTR_ACCESS_WRITE\000"
 .LASF229:
 	.ascii	"__USACCUM_IBIT__ 8\000"
@@ -4176,7 +4184,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
 .LASF120:
 	.ascii	"__FLT_MANT_DIG__ 24\000"
-.LASF567:
+.LASF568:
 	.ascii	"MEM_FLG_CLR_SPLIT(pMemMngrHead) MEM_FLG_CLR_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_SPLT_MSK, flagsForMemBlock)"
 	.ascii	"\000"
@@ -4190,19 +4198,19 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UINT64_TYPE__ long long unsigned int\000"
 .LASF400:
 	.ascii	"INT_FAST8_MIN (-__INT_FAST8_MAX__ - 1)\000"
-.LASF546:
+.LASF547:
 	.ascii	"MEM_FLGS_MERGE2048_MSK ((MemFlags)0x800u)\000"
 .LASF239:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF118:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
-.LASF510:
+.LASF511:
 	.ascii	"SMALLEST_BLCK ((BlckSize)0x8u)\000"
-.LASF450:
+.LASF453:
 	.ascii	"SYSTCK_AR_RES (uint8_t)0x8u\000"
 .LASF137:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
-.LASF670:
+.LASF671:
 	.ascii	"MNTR_NOOP\000"
 .LASF89:
 	.ascii	"__UINT32_MAX__ 4294967295UL\000"
@@ -4210,9 +4218,9 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__SQ_IBIT__ 0\000"
 .LASF334:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
-.LASF683:
+.LASF684:
 	.ascii	"accssType\000"
-.LASF625:
+.LASF626:
 	.ascii	"MEM_FLG_SET_PREV_MEMSIZE(pMemMngrHead,newSize) do {"
 	.ascii	" (pMemMngrHead)->additionalFlags = (MemFlags)((pMem"
 	.ascii	"MngrHead)->additionalFlags & (MemFlags)(~MEM_FLGS_S"
@@ -4222,19 +4230,19 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"int8_t)0x0u)\000"
 .LASF16:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
-.LASF714:
+.LASF715:
 	.ascii	"C:\\\\Users\\\\Christian\\\\Documents\\\\OHM\\\\MAP"
 	.ascii	"R\\\\Projekt\\\\WRKSPC\\\\R_RTOS\\\\build\000"
-.LASF585:
+.LASF586:
 	.ascii	"MEM_FLGS_PRV_SPLT_4_MSK MEM_FLGS_SPLT_4_MSK\000"
-.LASF459:
+.LASF462:
 	.ascii	"MAKE_SYS_ID(id) (uint16_t)((uint16_t)((uint8_t)id &"
 	.ascii	" (uint8_t)0xFFu) << (uint8_t)0x8u)\000"
 .LASF337:
 	.ascii	"__ARM_EABI__ 1\000"
 .LASF59:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
-.LASF457:
+.LASF460:
 	.ascii	"OFFSETOF(type,field) ((uint8_t) &(((type *) 0)->fie"
 	.ascii	"ld))\000"
 .LASF233:
@@ -4245,26 +4253,26 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF249:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
-.LASF606:
+.LASF607:
 	.ascii	"MEM_FLGS_PREV_SPLT_SHFT ((MemFlags)0xDu)\000"
 .LASF213:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
-.LASF578:
+.LASF579:
 	.ascii	"MEM_FLG_BIGGER_COMBO(memFlgs) (MemSize)(MEM_FLG_GET"
 	.ascii	"_MEMSIZE(memFlgs) & (MemSize)(MEM_FLG_GET_MEMSIZE(m"
 	.ascii	"emFlgs)-(MemSize)1u))\000"
-.LASF529:
+.LASF530:
 	.ascii	"MEM_FLGS_SPLT_8_SHFT ((MemFlags)0x3u)\000"
-.LASF699:
+.LASF700:
 	.ascii	"data\000"
 .LASF293:
 	.ascii	"__USA_FBIT__ 16\000"
 .LASF264:
 	.ascii	"__QQ_IBIT__ 0\000"
-.LASF479:
+.LASF482:
 	.ascii	"TSK_STATE_IS_UNINIT_FAILED(pTsk) (TskState)(TSK_GET"
 	.ascii	"STATE(pTsk) == TSK_STATE_UNINIT_FAILED)\000"
-.LASF519:
+.LASF520:
 	.ascii	"MEM_FLG_SET_BIT(pMemMngrHead,bit,whichFlags) MEM_FL"
 	.ascii	"G_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) |= MEM"
 	.ascii	"_FLG_GET_BIT_MSK(bit)\000"
@@ -4272,32 +4280,30 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)\000"
 .LASF380:
 	.ascii	"INT_LEAST8_MAX __INT_LEAST8_MAX__\000"
-.LASF465:
+.LASF468:
 	.ascii	"TSK_STATE_IS_ACTIVE(pTsk) (TskState)(TSK_GETSTATE(p"
 	.ascii	"Tsk) & TSK_STATE_ACTIVE)\000"
-.LASF649:
+.LASF650:
 	.ascii	"uint8_t\000"
 .LASF354:
 	.ascii	"___int_least16_t_defined 1\000"
 .LASF95:
 	.ascii	"__INT_LEAST32_MAX__ 2147483647L\000"
-.LASF484:
-	.ascii	"NR_OF_MEMPOOLS (uint8_t)0x5u\000"
-.LASF707:
+.LASF708:
 	.ascii	"mntr_RelsReadAccssMntr\000"
 .LASF203:
 	.ascii	"__LFRACT_FBIT__ 31\000"
-.LASF700:
+.LASF701:
 	.ascii	"waitrQueueMaxSize\000"
 .LASF48:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
-.LASF676:
+.LASF677:
 	.ascii	"MNTR_LOCK\000"
 .LASF305:
 	.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 1\000"
-.LASF637:
+.LASF638:
 	.ascii	"HEADERS_R_RTOS_TASK_H_ \000"
-.LASF486:
+.LASF487:
 	.ascii	"OS_DISPATCH_NEEDED ((OsCode)0x1u)\000"
 .LASF135:
 	.ascii	"__DBL_DIG__ 15\000"
@@ -4313,19 +4319,19 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
 .LASF128:
 	.ascii	"__FLT_MIN__ 1.1754943508222875e-38F\000"
-.LASF681:
+.LASF682:
 	.ascii	"mntrRfrcCnt\000"
-.LASF498:
+.LASF499:
 	.ascii	"RET_STCK_ERR_INDEX_OVERFLOW ((RetCode)0x31u)\000"
 .LASF101:
 	.ascii	"__UINT_LEAST16_MAX__ 65535\000"
-.LASF601:
+.LASF602:
 	.ascii	"MEM_FLGS_PRV_MERGE1024_MSK MEM_FLGS_MERGE1024_MSK\000"
 .LASF279:
 	.ascii	"__UDQ_FBIT__ 64\000"
 .LASF344:
 	.ascii	"_MACHINE__DEFAULT_TYPES_H \000"
-.LASF696:
+.LASF697:
 	.ascii	"mntr_appendToWaitrList\000"
 .LASF327:
 	.ascii	"__ARM_ARCH_ISA_THUMB 1\000"
@@ -4337,14 +4343,14 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF84:
 	.ascii	"__INT16_MAX__ 32767\000"
-.LASF646:
+.LASF647:
 	.ascii	"long long int\000"
 .LASF22:
 	.ascii	"__CHAR_BIT__ 8\000"
-.LASF516:
+.LASF517:
 	.ascii	"MEM_FLG_PARSE(memFlgs,shft) ((MemFlags)((MemFlags)("
 	.ascii	"memFlgs >> (MemFlags)shft) & (MemFlags)0x1u))\000"
-.LASF460:
+.LASF463:
 	.ascii	"MAKE_TSK_ID(id) (uint16_t)(uint16_t)((uint8_t)id & "
 	.ascii	"(uint8_t)0xFFu)\000"
 .LASF332:
@@ -4353,7 +4359,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__int_least64_t_defined 1\000"
 .LASF304:
 	.ascii	"__GCC_ATOMIC_BOOL_LOCK_FREE 1\000"
-.LASF550:
+.LASF551:
 	.ascii	"MEM_FLGS_MERGED_MSK ((MemFlags)0x2000u)\000"
 .LASF155:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
@@ -4363,19 +4369,19 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
 .LASF323:
 	.ascii	"__arm__ 1\000"
-.LASF527:
+.LASF528:
 	.ascii	"MEM_FLGS_SPLT_4_SHFT ((MemFlags)0x2u)\000"
-.LASF503:
+.LASF504:
 	.ascii	"malloc rMalloc\000"
 .LASF148:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
-.LASF690:
+.LASF691:
 	.ascii	"mntrWaitrsQTskIDEnd\000"
 .LASF291:
 	.ascii	"__UHA_FBIT__ 8\000"
 .LASF423:
 	.ascii	"WINT_MIN __WINT_MIN__\000"
-.LASF632:
+.LASF633:
 	.ascii	"MEM_FLG_ISCACHED(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_CACHED_SHFT)\000"
 .LASF67:
@@ -4388,9 +4394,9 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
 .LASF339:
 	.ascii	"__ELF__ 1\000"
-.LASF500:
+.LASF501:
 	.ascii	"RET_STCK_NO_STCKELEM_PTR ((RetCode)0x33u)\000"
-.LASF603:
+.LASF604:
 	.ascii	"MEM_FLGS_PRV_MERGE2048_MSK MEM_FLGS_MERGE2048_MSK\000"
 .LASF94:
 	.ascii	"__INT16_C(c) c\000"
@@ -4410,14 +4416,14 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__int_least16_t_defined 1\000"
 .LASF65:
 	.ascii	"__GXX_ABI_VERSION 1002\000"
-.LASF709:
+.LASF710:
 	.ascii	"mntr_RelsWriteAccssMntr\000"
 .LASF388:
 	.ascii	"INT32_MIN (-__INT32_MAX__ - 1)\000"
-.LASF600:
+.LASF601:
 	.ascii	"MEM_FLGS_PRV_MERGE1024_SHFT MEM_FLGS_MERGE1024_SHFT"
 	.ascii	"\000"
-.LASF571:
+.LASF572:
 	.ascii	"MEM_FLG_ISMERGED(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_MERGED_SHFT)\000"
 .LASF371:
@@ -4426,9 +4432,9 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__STDC__ 1\000"
 .LASF15:
 	.ascii	"__SIZEOF_LONG__ 4\000"
-.LASF587:
+.LASF588:
 	.ascii	"MEM_FLGS_PRV_SPLT_8_MSK MEM_FLGS_SPLT_8_MSK\000"
-.LASF533:
+.LASF534:
 	.ascii	"MEM_FLGS_SPLT_32_SHFT ((MemFlags)0x5u)\000"
 .LASF138:
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
@@ -4436,11 +4442,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"SIG_ATOMIC_MIN (-__STDINT_EXP(INT_MAX) - 1)\000"
 .LASF12:
 	.ascii	"__ATOMIC_CONSUME 1\000"
-.LASF549:
+.LASF550:
 	.ascii	"MEM_FLGS_MERGED_SHFT ((MemFlags)0xDu)\000"
 .LASF366:
 	.ascii	"__int_least32_t_defined 1\000"
-.LASF539:
+.LASF540:
 	.ascii	"MEM_FLGS_BGGSTBLCK_SHFT ((MemFlags)0x8u)\000"
 .LASF375:
 	.ascii	"UINTPTR_MAX __UINTPTR_MAX__\000"
@@ -4450,7 +4456,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
 .LASF115:
 	.ascii	"__INTPTR_MAX__ 2147483647\000"
-.LASF439:
+.LASF442:
 	.ascii	"MY_STACK_SIZE ((StackSize)0x80u)\000"
 .LASF248:
 	.ascii	"__ULACCUM_FBIT__ 32\000"
@@ -4458,13 +4464,13 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
 .LASF32:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
-.LASF560:
+.LASF561:
 	.ascii	"MEM_FLG_SET_PREVTAKEN(pMemMngrHead) MEM_FLG_SET_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREVTAKEN_MSK, flagsFor"
 	.ascii	"MemBlock)\000"
 .LASF235:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
-.LASF520:
+.LASF521:
 	.ascii	"MEM_FLG_CLR_BIT(pMemMngrHead,bit,whichFlags) MEM_FL"
 	.ascii	"G_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) &= ((M"
 	.ascii	"emFlags)(~MEM_FLG_GET_BIT_MSK(bit)))\000"
@@ -4482,15 +4488,15 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INT64_TYPE__ long long int\000"
 .LASF71:
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
-.LASF453:
+.LASF456:
 	.ascii	"TSK_ID_NO_TSK TSK_ID_IDLE\000"
 .LASF200:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
-.LASF634:
+.LASF635:
 	.ascii	"MEM_FLG_CLR_CACHED(pMemMngrHead) MEM_FLG_CLR_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_CACHED_MSK, additionalFlag"
 	.ascii	"s)\000"
-.LASF613:
+.LASF614:
 	.ascii	"MEM_FLG_SET_BLCKBEG(pMemMngrHead) MEM_FLG_SET_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISBLCKBEG_MSK, additional"
 	.ascii	"Flags)\000"
@@ -4502,7 +4508,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT64_MAX __INT64_MAX__\000"
 .LASF194:
 	.ascii	"__FRACT_IBIT__ 0\000"
-.LASF499:
+.LASF500:
 	.ascii	"RET_STCK_ERR_INDEX_UNDERFLOW ((RetCode)0x32u)\000"
 .LASF156:
 	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
@@ -4510,9 +4516,9 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__TA_FBIT__ 63\000"
 .LASF160:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
-.LASF661:
+.LASF662:
 	.ascii	"ACCSSType\000"
-.LASF496:
+.LASF497:
 	.ascii	"RET_STCK_ERR_FULL ((RetCode)0x3Fu)\000"
 .LASF369:
 	.ascii	"__int_fast8_t_defined 1\000"
@@ -4522,11 +4528,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ULLFRACT_FBIT__ 64\000"
 .LASF317:
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
-.LASF482:
+.LASF439:
 	.ascii	"NR_OF_TSKS ((uint8_t)0xBu)\000"
 .LASF96:
 	.ascii	"__INT32_C(c) c ## L\000"
-.LASF508:
+.LASF509:
 	.ascii	"BIGGEST_BLCK ((BlckSize)0x100u)\000"
 .LASF28:
 	.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
@@ -4536,17 +4542,17 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF162:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF554:
+.LASF555:
 	.ascii	"MEM_FLGS_NXTTAKEN_MSK ((MemFlags)0x8000u)\000"
 .LASF82:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF217:
 	.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
-.LASF589:
+.LASF590:
 	.ascii	"MEM_FLGS_PRV_SPLT_16_MSK MEM_FLGS_SPLT_16_MSK\000"
-.LASF636:
+.LASF637:
 	.ascii	"MEM_OBJECTS_MNTR (uint8_t)0x10u\000"
-.LASF614:
+.LASF615:
 	.ascii	"MEM_FLG_CLR_BLCKBEG(pMemMngrHead) MEM_FLG_CLR_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISBLCKBEG_MSK, additional"
 	.ascii	"Flags)\000"
@@ -4560,11 +4566,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ARM_PCS 1\000"
 .LASF266:
 	.ascii	"__HQ_IBIT__ 0\000"
-.LASF528:
+.LASF529:
 	.ascii	"MEM_FLGS_SPLT_4_MSK ((MemFlags)0x4u)\000"
 .LASF370:
 	.ascii	"__int_fast16_t_defined 1\000"
-.LASF692:
+.LASF693:
 	.ascii	"refCntr\000"
 .LASF130:
 	.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
@@ -4572,7 +4578,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__HA_FBIT__ 7\000"
 .LASF53:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
-.LASF592:
+.LASF593:
 	.ascii	"MEM_FLGS_PRV_SPLT_64_SHFT MEM_FLGS_SPLT_64_SHFT\000"
 .LASF269:
 	.ascii	"__DQ_FBIT__ 63\000"
@@ -4582,7 +4588,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT_FAST64_MAX __INT_FAST64_MAX__\000"
 .LASF252:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
-.LASF547:
+.LASF548:
 	.ascii	"MEM_FLGS_SPLT_SHFT ((MemFlags)0xCu)\000"
 .LASF87:
 	.ascii	"__UINT8_MAX__ 255\000"
@@ -4590,9 +4596,9 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)\000"
 .LASF246:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
-.LASF605:
+.LASF606:
 	.ascii	"MEM_FLGS_NXT_SPLT_MSK ((MemFlags)0x1000u)\000"
-.LASF522:
+.LASF523:
 	.ascii	"MEM_FLG_CLR_BIT_MSK(pMemMngrHead,msk,whichFlags) ME"
 	.ascii	"M_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) &="
 	.ascii	" ((MemFlags)(~((MemFlags)msk)))\000"
@@ -4600,21 +4606,21 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF73:
 	.ascii	"__WINT_MAX__ 4294967295U\000"
-.LASF537:
+.LASF538:
 	.ascii	"MEM_FLGS_SPLT_128_SHFT ((MemFlags)0x7u)\000"
-.LASF513:
+.LASF514:
 	.ascii	"CACHE_SIZE ((uint8_t)0x10u)\000"
 .LASF126:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
-.LASF563:
+.LASF564:
 	.ascii	"MEM_FLG_SET_NXTTAKEN(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXTTAKEN_MSK, flagsForMe"
 	.ascii	"mBlock)\000"
-.LASF569:
+.LASF570:
 	.ascii	"MEM_FLG_SET_ISLOWER(pMemMngrHead) MEM_FLG_SET_BIT_M"
 	.ascii	"SK(pMemMngrHead, MEM_FLGS_ISLOWER_MSK, flagsForMemB"
 	.ascii	"lock)\000"
-.LASF553:
+.LASF554:
 	.ascii	"MEM_FLGS_NXTTAKEN_SHFT ((MemFlags)0xFu)\000"
 .LASF343:
 	.ascii	"_STDINT_H \000"
@@ -4626,21 +4632,21 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF66:
 	.ascii	"__SCHAR_MAX__ 127\000"
-.LASF582:
+.LASF583:
 	.ascii	"MEM_FLGS_ISBLCKLAST_SHFT ((MemFlags)0x1u)\000"
 .LASF363:
 	.ascii	"__int16_t_defined 1\000"
 .LASF113:
 	.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
-.LASF487:
+.LASF488:
 	.ascii	"RET_NOK ((RetCode)0x0u)\000"
-.LASF640:
+.LASF641:
 	.ascii	"short int\000"
-.LASF703:
+.LASF704:
 	.ascii	"mntrHndl\000"
 .LASF171:
 	.ascii	"__DEC64_MAX_EXP__ 385\000"
-.LASF635:
+.LASF636:
 	.ascii	"MEM_FLG_TAKENORCACHED(pMemMngrHead) (MemFlags)(MEM_"
 	.ascii	"FLG_ISTAKEN(pMemMngrHead->flagsForMemBlock) | MEM_F"
 	.ascii	"LG_ISCACHED(pMemMngrHead->additionalFlags))\000"
@@ -4650,17 +4656,17 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INT32_TYPE__ long int\000"
 .LASF412:
 	.ascii	"INTMAX_MAX __INTMAX_MAX__\000"
-.LASF642:
+.LASF643:
 	.ascii	"long int\000"
-.LASF594:
+.LASF595:
 	.ascii	"MEM_FLGS_PRV_SPLT_128_SHFT MEM_FLGS_SPLT_128_SHFT\000"
-.LASF551:
+.LASF552:
 	.ascii	"MEM_FLGS_PREVTAKEN_SHFT ((MemFlags)0xEu)\000"
 .LASF365:
 	.ascii	"__int32_t_defined 1\000"
-.LASF530:
+.LASF531:
 	.ascii	"MEM_FLGS_SPLT_8_MSK ((MemFlags)0x8u)\000"
-.LASF701:
+.LASF702:
 	.ascii	"mntr_CreateMntr\000"
 .LASF267:
 	.ascii	"__SQ_FBIT__ 31\000"
@@ -4672,15 +4678,15 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
 .LASF398:
 	.ascii	"INT_LEAST64_MAX __INT_LEAST64_MAX__\000"
-.LASF441:
+.LASF444:
 	.ascii	"STACK_BLOCK_SIZE ((uint8_t)0x4u)\000"
-.LASF590:
+.LASF591:
 	.ascii	"MEM_FLGS_PRV_SPLT_32_SHFT MEM_FLGS_SPLT_32_SHFT\000"
 .LASF418:
 	.ascii	"PTRDIFF_MAX __PTRDIFF_MAX__\000"
-.LASF695:
+.LASF696:
 	.ascii	"waitr\000"
-.LASF562:
+.LASF563:
 	.ascii	"MEM_FLG_NXTTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_NXTTAKEN_SHFT)\000"
 .LASF242:
@@ -4691,31 +4697,31 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF300:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
-.LASF677:
+.LASF678:
 	.ascii	"MNTR_LOCK_WRITE\000"
-.LASF458:
+.LASF461:
 	.ascii	"DATATYPE_IS_PTR(dataType) (uint8_t)( dataType & (ui"
 	.ascii	"nt8_t)0x4u)\000"
-.LASF612:
+.LASF613:
 	.ascii	"MEM_FLG_ISBLCKBEG(memFlgs) MEM_FLG_PARSE(memFlgs,ME"
 	.ascii	"M_FLGS_ISBLCKBEG_SHFT)\000"
 .LASF321:
 	.ascii	"__ARM_SIZEOF_WCHAR_T 32\000"
-.LASF448:
+.LASF451:
 	.ascii	"AMOUNT_OF_EVTS (uint8_t)0x6u\000"
 .LASF271:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF77:
 	.ascii	"__INTMAX_MAX__ 9223372036854775807LL\000"
-.LASF715:
+.LASF716:
 	.ascii	"mntr_INIT\000"
 .LASF333:
 	.ascii	"__ARM_NEON_FP 4\000"
 .LASF285:
 	.ascii	"__SA_FBIT__ 15\000"
-.LASF491:
+.LASF492:
 	.ascii	"RET_TSK_TOO_MANY ((RetCode)0x2Fu)\000"
-.LASF616:
+.LASF617:
 	.ascii	"MEM_FLG_SET_BLCKLAST(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_ISBLCKLAST_MSK, addition"
 	.ascii	"alFlags)\000"
@@ -4723,7 +4729,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF86:
 	.ascii	"__INT64_MAX__ 9223372036854775807LL\000"
-.LASF607:
+.LASF608:
 	.ascii	"MEM_FLGS_PREV_SPLT_MSK ((MemFlags)0x2000u)\000"
 .LASF188:
 	.ascii	"__USFRACT_FBIT__ 8\000"
@@ -4733,7 +4739,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF292:
 	.ascii	"__UHA_IBIT__ 8\000"
-.LASF583:
+.LASF584:
 	.ascii	"MEM_FLGS_ISBLCKLAST_MSK ((MemFlags)0x2u)\000"
 .LASF184:
 	.ascii	"__SFRACT_IBIT__ 0\000"
@@ -4741,18 +4747,18 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UQQ_IBIT__ 0\000"
 .LASF43:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
-.LASF470:
+.LASF473:
 	.ascii	"TSK_STATE_IS_WAITING(pTsk) (TskState)(TSK_GETSTATE("
 	.ascii	"pTsk) & TSK_STATE_WAITING)\000"
 .LASF389:
 	.ascii	"INT32_MAX __INT32_MAX__\000"
-.LASF643:
+.LASF644:
 	.ascii	"__uint8_t\000"
-.LASF534:
+.LASF535:
 	.ascii	"MEM_FLGS_SPLT_32_MSK ((MemFlags)0x20u)\000"
 .LASF50:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
-.LASF451:
+.LASF454:
 	.ascii	"SYSTCK_AR_RES_MSK (uint8_t)(SYSTCK_AR_RES - (uint8_"
 	.ascii	"t)0x1u)\000"
 .LASF433:
@@ -4761,10 +4767,10 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
 .LASF151:
 	.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
-.LASF478:
+.LASF481:
 	.ascii	"TSK_STATE_IS_UNINIT_UNINIT(pTsk) (TskState)(TSK_GET"
 	.ascii	"STATE(pTsk) == TSK_STATE_UNINIT_UNINIT)\000"
-.LASF598:
+.LASF599:
 	.ascii	"MEM_FLGS_PRV_MERGE512_SHFT MEM_FLGS_MERGE512_SHFT\000"
 .LASF29:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
@@ -4772,13 +4778,13 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
 .LASF331:
 	.ascii	"__VFP_FP__ 1\000"
-.LASF438:
+.LASF441:
 	.ascii	"MIN_STACK_SIZE ((StackSize)0x40u)\000"
 .LASF211:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
-.LASF702:
+.LASF703:
 	.ascii	"mntr_InitMntr\000"
-.LASF464:
+.LASF467:
 	.ascii	"TSK_STATE_IS_ERROR(pTsk) (TskState)(TSK_GETSTATE(pT"
 	.ascii	"sk) == TSK_STATE_ERROR)\000"
 .LASF225:
@@ -4787,40 +4793,40 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__SIG_ATOMIC_MAX__ 2147483647\000"
 .LASF314:
 	.ascii	"__GCC_ATOMIC_POINTER_LOCK_FREE 1\000"
-.LASF712:
+.LASF713:
 	.ascii	"GNU C 4.8.4 20140725 (release) [ARM/embedded-4_8-br"
 	.ascii	"anch revision 213147] -fpreprocessed -mcpu=cortex-m"
 	.ascii	"0plus -mthumb -g3 -std=c99 -fmessage-length=0 -fsig"
 	.ascii	"ned-char -ffunction-sections -fdata-sections -fstac"
 	.ascii	"k-usage\000"
-.LASF619:
+.LASF620:
 	.ascii	"MEM_FLG_SET_NXT_SPLT(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXT_SPLT_MSK, additional"
 	.ascii	"Flags)\000"
-.LASF631:
+.LASF632:
 	.ascii	"MEM_FLG_CLR_BGGRMRGD(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_BGGRMRGD_MSK, additional"
 	.ascii	"Flags)\000"
 .LASF247:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
-.LASF461:
+.LASF464:
 	.ascii	"MQ_IS_TSK_ID(id) (uint8_t)((uint16_t)id & (uint16_t"
 	.ascii	")0xFFu)\000"
-.LASF697:
+.LASF698:
 	.ascii	"mntr_getNextWaitr\000"
 .LASF187:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
-.LASF447:
+.LASF450:
 	.ascii	"AMOUNT_OF_SEMS (uint8_t)0x2u\000"
-.LASF652:
+.LASF653:
 	.ascii	"sizetype\000"
 .LASF342:
 	.ascii	"HEADERS_R_RTOS_INC_H_ \000"
 .LASF277:
 	.ascii	"__USQ_FBIT__ 32\000"
-.LASF711:
+.LASF712:
 	.ascii	"memPoolID_MNTR\000"
-.LASF645:
+.LASF646:
 	.ascii	"long unsigned int\000"
 .LASF116:
 	.ascii	"__UINTPTR_MAX__ 4294967295U\000"
@@ -4828,14 +4834,14 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 1\000"
 .LASF1:
 	.ascii	"__STDC_VERSION__ 199901L\000"
-.LASF710:
+.LASF711:
 	.ascii	"mntrWaitrRead\000"
-.LASF466:
+.LASF469:
 	.ascii	"TSK_STATE_IS_ACTIVE_RUNNING(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_ACTIVE_RUNNING )\000"
 .LASF88:
 	.ascii	"__UINT16_MAX__ 65535\000"
-.LASF469:
+.LASF472:
 	.ascii	"TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )\000"
 .LASF79:
@@ -4846,10 +4852,10 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__STDC_HOSTED__ 1\000"
 .LASF107:
 	.ascii	"__INT_FAST8_MAX__ 2147483647\000"
-.LASF621:
+.LASF622:
 	.ascii	"MEM_FLG_PREV_SPLT(memFlgs) MEM_FLG_PARSE(memFlgs,ME"
 	.ascii	"M_FLGS_PREV_SPLT_SHFT)\000"
-.LASF687:
+.LASF688:
 	.ascii	"mntr\000"
 .LASF166:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
@@ -4859,35 +4865,35 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__SOFTFP__ 1\000"
 .LASF110:
 	.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
-.LASF633:
+.LASF634:
 	.ascii	"MEM_FLG_SET_CACHED(pMemMngrHead) MEM_FLG_SET_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_CACHED_MSK, additionalFlag"
 	.ascii	"s)\000"
-.LASF564:
+.LASF565:
 	.ascii	"MEM_FLG_CLR_NXTTAKEN(pMemMngrHead) MEM_FLG_CLR_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_NXTTAKEN_MSK, flagsForMe"
 	.ascii	"mBlock)\000"
-.LASF628:
+.LASF629:
 	.ascii	"MEM_FLG_PREV_SMALLER_COMBO(memFlgs) (MemSize)(MEM_F"
 	.ascii	"LG_GET_PREV_MEMSIZE(memFlgs) & (MemSize)(-MEM_FLG_G"
 	.ascii	"ET_PREV_MEMSIZE(memFlgs)))\000"
 .LASF358:
 	.ascii	"__STDINT_EXP(x) __ ##x ##__\000"
-.LASF531:
+.LASF532:
 	.ascii	"MEM_FLGS_SPLT_16_SHFT ((MemFlags)0x4u)\000"
-.LASF540:
+.LASF541:
 	.ascii	"MEM_FLGS_BGGSTBLCK_MSK ((MemFlags)0x100u)\000"
-.LASF682:
+.LASF683:
 	.ascii	"ptrXOR\000"
-.LASF668:
+.LASF669:
 	.ascii	"MNTR_READ\000"
-.LASF566:
+.LASF567:
 	.ascii	"MEM_FLG_SET_SPLIT(pMemMngrHead) MEM_FLG_SET_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_SPLT_MSK, flagsForMemBlock)"
 	.ascii	"\000"
 .LASF312:
 	.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
-.LASF523:
+.LASF524:
 	.ascii	"MEM_FLGS_TAKEN_SHFT ((MemFlags)0x0u)\000"
 .LASF124:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
@@ -4895,19 +4901,19 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
 .LASF338:
 	.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
-.LASF525:
+.LASF526:
 	.ascii	"MEM_FLGS_ISLOWER_SHFT ((MemFlags)0x1u)\000"
-.LASF639:
+.LASF640:
 	.ascii	"unsigned char\000"
 .LASF163:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
-.LASF644:
+.LASF645:
 	.ascii	"__uint32_t\000"
-.LASF705:
+.LASF706:
 	.ascii	"mntr_DestrMntr\000"
 .LASF402:
 	.ascii	"UINT_FAST8_MAX __UINT_FAST8_MAX__\000"
-.LASF656:
+.LASF657:
 	.ascii	"MNTR_ACCESS_NONE\000"
 .LASF157:
 	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
@@ -4915,23 +4921,23 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__INTPTR_TYPE__ int\000"
 .LASF230:
 	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
-.LASF593:
+.LASF594:
 	.ascii	"MEM_FLGS_PRV_SPLT_64_MSK MEM_FLGS_SPLT_64_MSK\000"
 .LASF189:
 	.ascii	"__USFRACT_IBIT__ 0\000"
-.LASF678:
+.LASF679:
 	.ascii	"MNTR_RW\000"
-.LASF558:
+.LASF559:
 	.ascii	"MEM_FLG_CLR_TAKEN(pMemMngrHead) MEM_FLG_CLR_BIT_MSK"
 	.ascii	"(pMemMngrHead, MEM_FLGS_TAKEN_MSK, flagsForMemBlock"
 	.ascii	")\000"
-.LASF694:
+.LASF695:
 	.ascii	"PMntr\000"
-.LASF494:
+.LASF495:
 	.ascii	"RET_TSK_STILL_RUNNING ((RetCode)0x24u)\000"
 .LASF270:
 	.ascii	"__DQ_IBIT__ 0\000"
-.LASF679:
+.LASF680:
 	.ascii	"MNTR_RPW\000"
 .LASF30:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
@@ -4943,13 +4949,13 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT8_MAX __INT8_MAX__\000"
 .LASF258:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
-.LASF524:
+.LASF525:
 	.ascii	"MEM_FLGS_TAKEN_MSK ((MemFlags)0x1u)\000"
-.LASF541:
+.LASF542:
 	.ascii	"MEM_FLGS_MERGE512_SHFT ((MemFlags)0x9u)\000"
-.LASF485:
+.LASF486:
 	.ascii	"OS_FULL_DISPATCH ((OsCode)0x2u)\000"
-.LASF474:
+.LASF477:
 	.ascii	"TSK_STATE_IS_WAITING_EVT(pTsk) (TskState)(TSK_GETST"
 	.ascii	"ATE(pTsk) == TSK_STATE_WAITING_EVT)\000"
 .LASF357:
@@ -4958,23 +4964,23 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT_FAST32_MAX __INT_FAST32_MAX__\000"
 .LASF193:
 	.ascii	"__FRACT_FBIT__ 15\000"
-.LASF442:
+.LASF445:
 	.ascii	"AMOUNT_OF_MSGQ (QID)(0x3u)\000"
 .LASF353:
 	.ascii	"___int_least8_t_defined 1\000"
-.LASF507:
+.LASF508:
 	.ascii	"BLCK_LIMIT ((BlckSize)0x800u)\000"
-.LASF559:
+.LASF560:
 	.ascii	"MEM_FLG_PREVTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,ME"
 	.ascii	"M_FLGS_PREVTAKEN_SHFT)\000"
-.LASF586:
+.LASF587:
 	.ascii	"MEM_FLGS_PRV_SPLT_8_SHFT MEM_FLGS_SPLT_8_SHFT\000"
 .LASF123:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
-.LASF556:
+.LASF557:
 	.ascii	"MEM_FLG_ISTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_TAKEN_SHFT)\000"
-.LASF691:
+.LASF692:
 	.ascii	"curState\000"
 .LASF72:
 	.ascii	"__WCHAR_MIN__ 0U\000"
@@ -4990,18 +4996,18 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__SIZEOF_INT__ 4\000"
 .LASF34:
 	.ascii	"__INTMAX_TYPE__ long long int\000"
-.LASF574:
+.LASF575:
 	.ascii	"MEM_FL_WASLOWER(memFlgs) MEM_FLG_PARSE(memFlgs,MEM_"
 	.ascii	"FLGS_WASLOWER_SHFT)\000"
 .LASF78:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
-.LASF604:
+.LASF605:
 	.ascii	"MEM_FLGS_NXT_SPLT_SHFT ((MemFlags)0xCu)\000"
-.LASF689:
+.LASF690:
 	.ascii	"mntrWaitrsQTskIDStrt\000"
-.LASF680:
+.LASF681:
 	.ascii	"MntrState\000"
-.LASF552:
+.LASF553:
 	.ascii	"MEM_FLGS_PREVTAKEN_MSK ((MemFlags)0x4000u)\000"
 .LASF405:
 	.ascii	"UINT_FAST16_MAX __UINT_FAST16_MAX__\000"
@@ -5012,15 +5018,15 @@ mntr_RelsWriteAccssMntr:
 .LASF144:
 	.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
 	.ascii	"L)\000"
-.LASF638:
+.LASF639:
 	.ascii	"signed char\000"
 .LASF139:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
 .LASF390:
 	.ascii	"UINT32_MAX __UINT32_MAX__\000"
-.LASF641:
+.LASF642:
 	.ascii	"short unsigned int\000"
-.LASF686:
+.LASF687:
 	.ascii	"mntrWaitr\000"
 .LASF376:
 	.ascii	"INT8_MIN (-__INT8_MAX__ - 1)\000"
@@ -5030,23 +5036,23 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF372:
 	.ascii	"__int_fast64_t_defined 1\000"
-.LASF493:
+.LASF494:
 	.ascii	"RET_TSK_CONFLICTING_IDLE_TSK ((RetCode)0x21u)\000"
 .LASF322:
 	.ascii	"__ARM_ARCH_PROFILE 77\000"
 .LASF383:
 	.ascii	"INT16_MAX __INT16_MAX__\000"
-.LASF489:
+.LASF490:
 	.ascii	"RET_MEM_ALLOC_FAIL_TCB ((RetCode)0x1Au)\000"
-.LASF665:
+.LASF666:
 	.ascii	"mntrAccssType\000"
 .LASF419:
 	.ascii	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)\000"
 .LASF122:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
-.LASF584:
+.LASF585:
 	.ascii	"MEM_FLGS_PRV_SPLT_4_SHFT MEM_FLGS_SPLT_4_SHFT\000"
-.LASF509:
+.LASF510:
 	.ascii	"BIGGEST_BLCK_MSK ((BlckSize)(BIGGEST_BLCK - (BlckSi"
 	.ascii	"ze)1u))\000"
 .LASF180:
@@ -5054,7 +5060,7 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"6144DL\000"
 .LASF154:
 	.ascii	"__DECIMAL_DIG__ 17\000"
-.LASF673:
+.LASF674:
 	.ascii	"MNTR_FREE_NOOP\000"
 .LASF21:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
@@ -5062,13 +5068,13 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"INT16_MIN (-__INT16_MAX__ - 1)\000"
 .LASF303:
 	.ascii	"__STRICT_ANSI__ 1\000"
-.LASF580:
+.LASF581:
 	.ascii	"MEM_FLGS_ISBLCKBEG_SHFT ((MemFlags)0x0u)\000"
-.LASF526:
+.LASF527:
 	.ascii	"MEM_FLGS_ISLOWER_MSK ((MemFlags)0x2u)\000"
 .LASF145:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
-.LASF630:
+.LASF631:
 	.ascii	"MEM_FLG_SET_BGGRMRGD(pMemMngrHead) MEM_FLG_SET_BIT_"
 	.ascii	"MSK(pMemMngrHead, MEM_FLGS_BGGRMRGD_MSK, additional"
 	.ascii	"Flags)\000"
@@ -5076,15 +5082,15 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__have_longlong64 1\000"
 .LASF396:
 	.ascii	"UINT64_MAX __UINT64_MAX__\000"
-.LASF521:
+.LASF522:
 	.ascii	"MEM_FLG_SET_BIT_MSK(pMemMngrHead,msk,whichFlags) ME"
 	.ascii	"M_FLG_GET_STRUC_PFIELD(pMemMngrHead, whichFlags) |="
 	.ascii	" (MemFlags)msk\000"
 .LASF298:
 	.ascii	"__UTA_IBIT__ 64\000"
-.LASF463:
+.LASF466:
 	.ascii	"TSK_GETSTATE(pTsk) (TskState)(pTsk->tskState)\000"
-.LASF504:
+.LASF505:
 	.ascii	"calloc rCalloc\000"
 .LASF206:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
@@ -5095,11 +5101,11 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__UDA_FBIT__ 32\000"
 .LASF204:
 	.ascii	"__LFRACT_IBIT__ 0\000"
-.LASF536:
+.LASF537:
 	.ascii	"MEM_FLGS_SPLT_64_MSK ((MemFlags)0x40u)\000"
 .LASF424:
 	.ascii	"INT8_C(x) __INT8_C(x)\000"
-.LASF659:
+.LASF660:
 	.ascii	"MNTR_ACCESS_DELETE\000"
 .LASF106:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
@@ -5111,17 +5117,17 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__ARM_ARCH_6M__ 1\000"
 .LASF68:
 	.ascii	"__INT_MAX__ 2147483647\000"
-.LASF713:
+.LASF714:
 	.ascii	"../source/R_RTOS/R_RTOS_monitor.c\000"
-.LASF624:
+.LASF625:
 	.ascii	"MEM_FLG_GET_PREV_MEMSIZE(memFlgs) (BlckSize)(memFlg"
 	.ascii	"s & MEM_FLGS_SIZE_MSK)\000"
 .LASF215:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
-.LASF472:
+.LASF475:
 	.ascii	"TSK_STATE_IS_WAITING_MSGRCV(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_WAITING_MSGRCV)\000"
-.LASF588:
+.LASF589:
 	.ascii	"MEM_FLGS_PRV_SPLT_16_SHFT MEM_FLGS_SPLT_16_SHFT\000"
 .LASF392:
 	.ascii	"INT_LEAST32_MAX __INT_LEAST32_MAX__\000"
@@ -5131,10 +5137,10 @@ mntr_RelsWriteAccssMntr:
 	.ascii	"__LDBL_HAS_DENORM__ 1\000"
 .LASF422:
 	.ascii	"WINT_MAX __WINT_MAX__\000"
-.LASF618:
+.LASF619:
 	.ascii	"MEM_FLG_NXT_SPLT(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_NXT_SPLT_SHFT)\000"
-.LASF444:
+.LASF447:
 	.ascii	"MSGQ_SYS_ID_POS (uint8_t)0x1u\000"
 .LASF262:
 	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
