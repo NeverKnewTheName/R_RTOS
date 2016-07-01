@@ -89,6 +89,7 @@ RetCode sem_InitSems( void )
 //    }
 //}
 
+{
 static RetCode sem_InsertTskSemQ( PSem pSem, PTskTCB pTskToIns )
 {
     if ( ( (uint32_t) pSem == (uint32_t) NULL ) || ( (uint32_t) pTskToIns
