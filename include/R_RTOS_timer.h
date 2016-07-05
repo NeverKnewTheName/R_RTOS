@@ -11,7 +11,7 @@
 
 #include "R_RTOS_inc.h"
 
-#define MEM_OBJECTS_TMR (uint8_t)0x5u
+#define MEM_OBJECTS_TMR (uint8_t)0x4u
 
 #define TMR_INVALID_TIME (LifeTime)0xFFFFFFFFu
 

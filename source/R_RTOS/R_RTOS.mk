@@ -9,6 +9,7 @@ CSRC += \
 ../source/R_RTOS/R_RTOS_monitor.c \
 ../source/R_RTOS/R_RTOS_msgQueuing.c \
 ../source/R_RTOS/R_RTOS_scheduler.c \
+../source/R_RTOS/R_RTOS_mtx.c \
 ../source/R_RTOS/R_RTOS_sem.c \
 ../source/R_RTOS/R_RTOS_services.c \
 ../source/R_RTOS/R_RTOS_stack.c \
@@ -28,6 +29,7 @@ OBJS += \
 ./source/R_RTOS/R_RTOS_monitor.o \
 ./source/R_RTOS/R_RTOS_msgQueuing.o \
 ./source/R_RTOS/R_RTOS_scheduler.o \
+./source/R_RTOS/R_RTOS_mtx.o \
 ./source/R_RTOS/R_RTOS_sem.o \
 ./source/R_RTOS/R_RTOS_services.o \
 ./source/R_RTOS/R_RTOS_stack.o \

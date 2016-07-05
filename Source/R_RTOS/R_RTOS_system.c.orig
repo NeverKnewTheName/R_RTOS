@@ -116,16 +116,20 @@ RetCode __initOS( void )
     os_IDLETskInit( &tskIdle );
 
     /* INITIALIZE Mutexes */
-    mtx_InitMtxs();
+    //mtx_InitMtxs();
 
     /* INITIALIZE SEMAPHORES */
-    sem_InitSems();
+    //sem_InitSems();
 
     /* INITIALIZE TIMERS */
     tmr_INIT();
 
     /* INITIALIZE EVENTS */
+<<<<<<< HEAD
     evt_INIT();
+=======
+    //evt_INIT();
+>>>>>>> d1ed3aa1ab5e2cf9866fc91bd7620c0a1d18ad73
 
     /* INITIALIZE MONITORS */
     mntr_INIT();

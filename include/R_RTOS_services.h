@@ -159,32 +159,104 @@ __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_resetTskCriti
     return returnVal;
 }
 
-__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_TakeSem(
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mtx_TakeMtx(
+                                                                         const MtxNr mtxNr,
+                                                                         PTskTCB const tsk,
+                                                                         const SysTicks maxTimeToWait )
+{
+    INPUT_ARG_1( mtxNr );
+    INPUT_ARG_2( tsk );
+    INPUT_ARG_3( maxTimeToWait );
+    SVC( SVC_MTX_TAKE );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mtx_GiveMtx(
+                                                                         const MtxNr mtxNr,
+                                                                         PTskTCB const tsk )
+{
+    INPUT_ARG_1( mtxNr );
+    INPUT_ARG_2( tsk );
+    SVC( SVC_MTX_GIVE );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_wait(
                                                                          const SemNr semNr,
-                                                                         TskTCB* const tsk,
+                                                                         PTskTCB const tsk,
                                                                          const SysTicks maxTimeToWait )
 {
     INPUT_ARG_1( semNr );
     INPUT_ARG_2( tsk );
     INPUT_ARG_3( maxTimeToWait );
-    SVC( SVC_SEM_TAKE );
+    SVC( SVC_SEM_WAIT );
     RetCode returnVal;
     OUTPUT_ARG( returnVal );
     return returnVal;
 }
 
-__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_GiveSem(
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_signal(
                                                                          const SemNr semNr,
-                                                                         TskTCB* const tsk )
+                                                                         PTskTCB const tsk )
 {
     INPUT_ARG_1( semNr );
     INPUT_ARG_2( tsk );
-    SVC( SVC_SEM_GIVE );
+    SVC( SVC_SEM_SIGNAL );
     RetCode returnVal;
     OUTPUT_ARG( returnVal );
     return returnVal;
 }
 
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_init_mntr(
+                                                                         const MntrNr mntrNr,
+                                                                         const Data data )
+{
+    INPUT_ARG_1( mntrNr );
+    INPUT_ARG_2( data );
+    SVC( SVC_MNTR_INIT_MNTR );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_ReqReadAccs(
+                                                                         const MntrNr mntrNr,
+                                                                         PTskTCB const tsk )
+{
+    INPUT_ARG_1( mntrNr );
+    INPUT_ARG_2( tsk );
+    SVC( SVC_MNTR_REQ_READ_ACC );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_ReqWriteAccs(
+                                                                         const MntrNr mntrNr,
+                                                                         PTskTCB const tsk )
+{
+    INPUT_ARG_1( mntrNr );
+    INPUT_ARG_2( tsk );
+    SVC( SVC_MNTR_REQ_WRITE_ACC );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_RelAccs(
+                                                                         const MntrNr mntrNr )
+{
+    INPUT_ARG_1( mntrNr );
+    SVC( SVC_MNTR_REL_ACC );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
 __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_SendEvt(
                                                                          const EvtNr evt )
 {

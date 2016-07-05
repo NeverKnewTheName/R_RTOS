@@ -78,7 +78,7 @@ static RetCode tsk_GetNxtActvTsk( PTskTCB *readyNode )
 RetCode tsk_rmvTskActvTskLst( PTskTCB const tsk )
 {
     // priority of the task to delete
-    TskPrio tskPrio = tsk->tskPrio;
+    TskPrio tskPrio = tsk->tskPrio.visibleTskPrio;
     // task id of the task to delete
     TskID tskID = tsk->tskID;
 //     priority helper
@@ -94,7 +94,7 @@ RetCode tsk_rmvTskActvTskLst( PTskTCB const tsk )
          *
          * Its previous task therefore has reside in the next higher priority container.
          */
-        if ( tsk_AR[tsk->nxtTsk].tskPrio != tskPrio )
+        if ( tsk_AR[tsk->nxtTsk].tskPrio.visibleTskPrio != tskPrio )
         {
             /*
              * The next task does not belong to this priority container.
@@ -158,7 +158,7 @@ RetCode tsk_insrtTskActvTskLst( PTskTCB const tsk )
     // temporary task storage
     PTskTCB tmpTsk;
     // priority of the task to insert
-    TskPrio tskPrio = tsk->tskPrio;
+    TskPrio tskPrio = tsk->tskPrio.visibleTskPrio;
     // pointer to temporary priority container initialized to
     // priority container corresponding to the task's priority
     PTskPrioArEle tmpPrioArElmnt = &ar_TskActvPrioSorted[tskPrio];
