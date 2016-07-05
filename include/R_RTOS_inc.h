@@ -1300,7 +1300,8 @@ typedef struct syncEleStruc
         //MONITOR
         struct mntrSyncEle
         {
-        //PMntr mntr;    //!< Pointer to the Mntr
+            ACCSSType mntrAccssType;    //!< ACCSSType for the Mntr access
+
         } MntrSyncEle;    //!< monitor synchronization object
     } SyncEleHandle;    //!< Union of synchronization objects
 } SyncEle, *PSyncEle;

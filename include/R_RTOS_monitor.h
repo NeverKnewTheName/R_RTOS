@@ -14,6 +14,10 @@
 
 #define MEM_OBJECTS_MNTR (uint8_t)0x10u
 
+#define NR_OF_MNTRS (uint8_t)0x2u
+
+typedef uint8_t MntrNr;
+
 /**
  * \typedef mntrFlgs
  * \brief 8 bit representation of the current monitor access type
@@ -49,14 +53,6 @@ typedef enum mntrAccessState
 
 typedef uint8_t mntrRfrcCnt;
 
-//DEPRECATED
-typedef struct mntrWaitr
-{
-    struct mntrWaitr * ptrXOR;    //!> XORed pointer to previous and next element
-    ACCSSType accssType;        //!> Type of access demanded by the element
-    TskID tskID;                //!> ID of the element
-} MntrWaitr, *PMntrWaitr;
-
 typedef struct mntr
 {
     Data protectedData;      //!> Pointer to the data to protect
@@ -69,21 +65,16 @@ typedef struct mntr
 
 RetCode mntr_INIT( void );
 
-RetCode mntr_CreateMntr(
-                         PMntr * usrMntrHndl,
-                         const Data const data,
-                         const uint8_t waitrQueueMaxSize );
+RetCode mntr_InitMntr( const MntrNr mntrNr, const Data const data /* = NULL */  );
 
-RetCode mntr_InitMntr( PMntr const mntrHndl, const Data const data );
+RetCode mntr_DelMntr( const MntrNr mntrNr );
 
-RetCode mntr_DelMntr( PMntr usrMntrHndl );
+RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, const TskID tskID );
 
-RetCode mntr_ReqstReadAccssMntr( Mntr * const usrMntrHndl, TskID tskID );
+RetCode mntr_RelsReadAccssMntr( const MntrNr mntrNr );
 
-RetCode mntr_RelsReadAccssMntr( Mntr * const usrMntrHndl );
+RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, const TskID tskID );
 
-RetCode mntr_ReqstWriteAccssMntr( Mntr * const usrMntrHndl, TskID tskID );
-
-RetCode mntr_RelsWriteAccssMntr( Mntr * const usrMntrHndl );
+RetCode mntr_RelsWriteAccssMntr( const MntrNr mntrNr );
 
 #endif /* HEADERS_R_RTOS_MONITOR_H_ */
