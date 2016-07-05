@@ -12,7 +12,10 @@
 #include "R_RTOS_inc.h"
 #include "R_RTOS_memMngr.h"
 
-#define MEM_OBJECTS_MNTR (uint8_t)0x10u
+#define MEM_OBJECTS_MNTR (uint8_t)0x4u
+
+#define NR_OF_MNTRS (uint8_t)0x2u
+
 
 /**
  * \typedef mntrFlgs
@@ -44,18 +47,11 @@ typedef enum mntrAccessState
     MNTR_LOCK_WRITE = (mntrFlgs) 0x42u, /* MNTR_LOCK | MNTR_WRITE */
 
     MNTR_RW = (mntrFlgs) 0x3u, /* MNTR_READ | MNTR_WRITE */
-    MNTR_RPW = (mntrFlgs) 0x33u, /* MNTR_FREE | MNTR_READ | MNTR_PENDING | MNTR_WRITE */
+    MNTR_RPW = (mntrFlgs) 0x72u, /* MNTR_FREE | MNTR_PENDING | MNTR_LOCK | MNTR_READ | MNTR_WRITE */
+    MNTR_WPW = (mntrFlgs) 0x62u /* MNTR_FREE | MNTR_PENDING | MNTR_WRITE */
 } MntrState;
 
 typedef uint8_t mntrRfrcCnt;
-
-//DEPRECATED
-typedef struct mntrWaitr
-{
-    struct mntrWaitr * ptrXOR;    //!> XORed pointer to previous and next element
-    ACCSSType accssType;        //!> Type of access demanded by the element
-    TskID tskID;                //!> ID of the element
-} MntrWaitr, *PMntrWaitr;
 
 typedef struct mntr
 {
@@ -69,21 +65,14 @@ typedef struct mntr
 
 RetCode mntr_INIT( void );
 
-RetCode mntr_CreateMntr(
-                         PMntr * usrMntrHndl,
-                         const Data const data,
-                         const uint8_t waitrQueueMaxSize );
+RetCode mntr_InitMntr( const MntrNr mntrNr, const Data const data /* = NULL */  );
 
-RetCode mntr_InitMntr( PMntr const mntrHndl, const Data const data );
+RetCode mntr_DelMntr( const MntrNr mntrNr );
 
-RetCode mntr_DelMntr( PMntr usrMntrHndl );
+RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, PTskTCB const tsk );
 
-RetCode mntr_ReqstReadAccssMntr( Mntr * const usrMntrHndl, TskID tskID );
+RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, PTskTCB const tsk );
 
-RetCode mntr_RelsReadAccssMntr( Mntr * const usrMntrHndl );
-
-RetCode mntr_ReqstWriteAccssMntr( Mntr * const usrMntrHndl, TskID tskID );
-
-RetCode mntr_RelsWriteAccssMntr( Mntr * const usrMntrHndl );
+RetCode mntr_ReleaseAccssMntr( const MntrNr mntrNr );
 
 #endif /* HEADERS_R_RTOS_MONITOR_H_ */

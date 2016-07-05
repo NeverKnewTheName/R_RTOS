@@ -65,9 +65,11 @@ POSTBUILD += $(SIZE) docu
 
 #include the task!
 #-include ../Tasks/EventTest/source.mk
--include ../Tasks/MessageQueueTest/source.mk
+#-include ../Tasks/MessageQueueTest/source.mk
 #-include ../Tasks/SchedulerTest/source.mk
+#-include ../Tasks/MtxTest/source.mk
 #-include ../Tasks/SemTest/source.mk
+-include ../Tasks/MntrTest/source.mk
 #-include ../Tasks/SysTickTest/source.mk
 #-include ../Tasks/TimerTest/source.mk
 
@@ -126,7 +128,9 @@ clean:
 #	$(RM) $(SIZE) 
 	$(RM) $(TARGET) 
 	$(RM) $(OBJS) 
-	$(RM) *.s *.i *.map
+	$(RM) $(OBJS:%.o=%.su)
+#	$(RM) ./%.i 
+	$(RM) $(PROJECT).map
 	@echo '$@ done'
 	@echo ' '
 	

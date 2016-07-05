@@ -57,7 +57,8 @@ RetCode tsk_initTsks( void )
         tsk_AR[tskCntr].tskID = tskCntr;
         // set information about the task
         tsk_AR[tskCntr].tskState = TSK_STATE_UNINIT_UNINIT;
-        tsk_AR[tskCntr].tskPrio = TSK_PRIO_MED;    // DEFAULT PRIORITY
+        tsk_AR[tskCntr].tskPrio.visibleTskPrio = TSK_PRIO_MED;    // DEFAULT PRIORITY
+        tsk_AR[tskCntr].tskPrio.actualTskPrio = TSK_PRIO_MED;    // DEFAULT PRIORITY
         // init stack struct
         tsk_AR[tskCntr].pStckPtr = (StackPtrT) NULL;
         tsk_AR[tskCntr].pStckTop = (StackPtrT) NULL;
@@ -126,7 +127,8 @@ RetCode os_IDLETskInit( const TskStartAddr const strtAddr )
     pIDLETsk->pStckTop = (StackPtrT) pIDLETsk->pStckPtr;
     pIDLETsk->stckSze = IDLE_TSK_STACK_SIZE;
 
-    pIDLETsk->tskPrio = TSK_PRIO_IDLE;    // set TaskPriority
+    pIDLETsk->tskPrio.visibleTskPrio = TSK_PRIO_IDLE;    // set TaskPriority
+    pIDLETsk->tskPrio.actualTskPrio = TSK_PRIO_IDLE;    // set TaskPriority
     pIDLETsk->tskState = TSK_STATE_ACTIVE_READY;    // set TaskState --- per default a Task is waiting after its creation
     pIDLETsk->pTskStrt = strtAddr;
     pIDLETsk->pTskEnd = strtAddr;
@@ -154,10 +156,11 @@ RetCode tsk_tskDestroy( TskTCB * const tsk )
         {
             evt_GiveUpOnEvts( tsk );
         }
-        else if ( TSK_STATE_IS_WAITING_SEM( tsk ) )
-        {
-            sem_GiveUpOnSem( tsk );
-        }
+        //ToDO
+//        else if ( TSK_STATE_IS_WAITING_SEM( tsk ) )
+//        {
+//            sem_GiveUpOnSem( tsk );
+//        }
 #ifdef _TPMUSED_
         else if ( TSK_STATE_IS_WAITING_TMR( tsk ) )
         {
@@ -240,20 +243,20 @@ RetCode tsk_ChngePrio( PTskTCB const tsk, const TskPrio newTskPrio )
     if ( (uint32_t) tsk == (uint32_t) NULL )
         return RET_NOK;
 
-    if ( tsk->tskPrio == newTskPrio )
+    if ( tsk->tskPrio.visibleTskPrio == newTskPrio )
         return RET_NOK;
 
     if ( TSK_STATE_IS_ACTIVE( tsk ) )
     {
         //remove from list
         tsk_rmvTskActvTskLst( tsk );    // deleting the task from the list will reset its nxtTsk and prvTsk
-        tsk->tskPrio = newTskPrio;
+        tsk->tskPrio.visibleTskPrio = newTskPrio;
         tsk_insrtTskActvTskLst( tsk );
         return RET_OK;
     }
     else if ( TSK_STATE_IS_WAITING( tsk ) )
     {
-        tsk->tskPrio = newTskPrio;
+        tsk->tskPrio.visibleTskPrio = newTskPrio;
         return RET_OK;
     }
     return RET_NOK;

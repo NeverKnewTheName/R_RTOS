@@ -32,6 +32,11 @@
 *.dSYM/
 *.su
 
+*.lst
+*.map
+*.i
+*.s
+
 # Eclipse specific
 .cproject
 .settings

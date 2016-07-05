@@ -12,7 +12,7 @@
 
 #include "R_RTOS_inc.h"
 
-#define MEM_OBJECTS_SysTckTMR (uint8_t)0x10u
+#define MEM_OBJECTS_SysTckTMR (uint8_t)0x4u
 
 /** \fn void SysTick_Handler( void );
  *  \brief Service routine for SysTick events.
