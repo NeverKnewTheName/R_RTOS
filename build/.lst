@@ -20,57 +20,63 @@
   20              		.code	16
   21              		.thumb_func
   23              	tsk1:
-  24              	.LFB64:
-  25              		.file 1 "../Tasks/SemTest/Tasks.c"
-   1:../Tasks/SemTest/Tasks.c **** #include "R_RTOS_services.h"
-   2:../Tasks/SemTest/Tasks.c **** #include "PortFunc.h"
-   3:../Tasks/SemTest/Tasks.c **** #include "TimerFunc.h"
-   4:../Tasks/SemTest/Tasks.c **** 
-   5:../Tasks/SemTest/Tasks.c **** #include "R_RTOS_task.h"
-   6:../Tasks/SemTest/Tasks.c **** #include "R_RTOS_timer.h"
-   7:../Tasks/SemTest/Tasks.c **** 
-   8:../Tasks/SemTest/Tasks.c **** extern void tsk_EndTheTask( void );
-   9:../Tasks/SemTest/Tasks.c **** extern SysFkt sys_SysFkt[AMOUNT_SYS_FKT ];
-  10:../Tasks/SemTest/Tasks.c **** 
-  11:../Tasks/SemTest/Tasks.c **** extern TskTCB tsk_AR[];
-  12:../Tasks/SemTest/Tasks.c **** 
-  13:../Tasks/SemTest/Tasks.c **** void tsk1( void );
-  14:../Tasks/SemTest/Tasks.c **** void tsk2( void );
-  15:../Tasks/SemTest/Tasks.c **** void tsk3( void );
-  16:../Tasks/SemTest/Tasks.c **** void tsk4( void );
-  17:../Tasks/SemTest/Tasks.c **** 
-  18:../Tasks/SemTest/Tasks.c **** void tsk1( void )
-  19:../Tasks/SemTest/Tasks.c **** {
-  26              		.loc 1 19 0
+  24              	.LFB68:
+  25              		.file 1 "../Tasks/MntrTest/RWR/Tasks.c"
+   1:../Tasks/MntrTest/RWR/Tasks.c **** #include "R_RTOS_services.h"
+   2:../Tasks/MntrTest/RWR/Tasks.c **** #include "PortFunc.h"
+   3:../Tasks/MntrTest/RWR/Tasks.c **** #include "TimerFunc.h"
+   4:../Tasks/MntrTest/RWR/Tasks.c **** 
+   5:../Tasks/MntrTest/RWR/Tasks.c **** #include "R_RTOS_task.h"
+   6:../Tasks/MntrTest/RWR/Tasks.c **** #include "R_RTOS_timer.h"
+   7:../Tasks/MntrTest/RWR/Tasks.c **** 
+   8:../Tasks/MntrTest/RWR/Tasks.c **** extern void tsk_EndTheTask( void );
+   9:../Tasks/MntrTest/RWR/Tasks.c **** extern SysFkt sys_SysFkt[AMOUNT_SYS_FKT ];
+  10:../Tasks/MntrTest/RWR/Tasks.c **** 
+  11:../Tasks/MntrTest/RWR/Tasks.c **** extern TskTCB tsk_AR[];
+  12:../Tasks/MntrTest/RWR/Tasks.c **** 
+  13:../Tasks/MntrTest/RWR/Tasks.c **** extern PTskTCB p_cur_tsk_tcb;
+  14:../Tasks/MntrTest/RWR/Tasks.c **** 
+  15:../Tasks/MntrTest/RWR/Tasks.c **** void tsk1( void );
+  16:../Tasks/MntrTest/RWR/Tasks.c **** void tsk2( void );
+  17:../Tasks/MntrTest/RWR/Tasks.c **** void tsk3( void );
+  18:../Tasks/MntrTest/RWR/Tasks.c **** 
+  19:../Tasks/MntrTest/RWR/Tasks.c **** void tsk1( void )
+  20:../Tasks/MntrTest/RWR/Tasks.c **** {
+  26              		.loc 1 20 0
   27              		.cfi_startproc
   28 0000 80B5     		push	{r7, lr}
   29              		.cfi_def_cfa_offset 8
   30              		.cfi_offset 7, -8
   31              		.cfi_offset 14, -4
-  32 0002 82B0     		sub	sp, sp, #8
-  33              		.cfi_def_cfa_offset 16
+  32 0002 84B0     		sub	sp, sp, #16
+  33              		.cfi_def_cfa_offset 24
   34 0004 00AF     		add	r7, sp, #0
   35              		.cfi_def_cfa_register 7
-  20:../Tasks/SemTest/Tasks.c ****     SET_PIN_LOW(PIN_LED0);
-  36              		.loc 1 20 0
-  37 0006 434B     		ldr	r3, .L17
+  21:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_LOW(PIN_LED0);
+  36              		.loc 1 21 0
+  37 0006 564B     		ldr	r3, .L20
   38 0008 5A69     		ldr	r2, [r3, #20]
   39 000a 8023     		mov	r3, #128
   40 000c 5B00     		lsl	r3, r3, #1
   41 000e 1340     		and	r3, r2
   42 0010 06D0     		beq	.L3
-  43              		.loc 1 20 0 is_stmt 0 discriminator 1
-  44 0012 404B     		ldr	r3, .L17
-  45 0014 3F4A     		ldr	r2, .L17
+  43              		.loc 1 21 0 is_stmt 0 discriminator 1
+  44 0012 534B     		ldr	r3, .L20
+  45 0014 524A     		ldr	r2, .L20
   46 0016 9268     		ldr	r2, [r2, #8]
   47 0018 8021     		mov	r1, #128
   48 001a 4900     		lsl	r1, r1, #1
   49 001c 0A43     		orr	r2, r1
   50 001e 9A60     		str	r2, [r3, #8]
   51              	.L3:
-  52              	.LBB48:
-  53              	.LBB49:
-  54              		.file 2 "../include/R_RTOS_services.h"
+  22:../Tasks/MntrTest/RWR/Tasks.c ****     svc_mntr_ReqReadAccs((const MntrNr)0x0u, p_cur_tsk_tcb);
+  52              		.loc 1 22 0 is_stmt 1
+  53 0020 504B     		ldr	r3, .L20+4
+  54 0022 1B68     		ldr	r3, [r3]
+  55 0024 FB60     		str	r3, [r7, #12]
+  56              	.LBB38:
+  57              	.LBB39:
+  58              		.file 2 "../include/R_RTOS_services.h"
    1:../include/R_RTOS_services.h **** /**
    2:../include/R_RTOS_services.h ****  * \file    R_RTOS_services.h
    3:../include/R_RTOS_services.h ****  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
@@ -264,202 +270,11 @@
  191:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
  192:../include/R_RTOS_services.h **** {
  193:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
-  55              		.loc 2 193 0 is_stmt 1
-  56 0020 0123     		mov	r3, #1
-  57              	@ 193 "../include/R_RTOS_services.h" 1
-  58 0022 181C     		movs r0, r3 
-  59              	
-  60              	@ 0 "" 2
  194:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
-  61              		.loc 2 194 0
-  62              		.code	16
-  63 0024 3C4B     		ldr	r3, .L17+4
-  64              	@ 194 "../include/R_RTOS_services.h" 1
-  65 0026 191C     		movs r1, r3 
-  66              	
-  67              	@ 0 "" 2
  195:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
-  68              		.loc 2 195 0
-  69              		.code	16
-  70 0028 6423     		mov	r3, #100
-  71              	@ 195 "../include/R_RTOS_services.h" 1
-  72 002a 1A1C     		movs r2, r3 
-  73              	
-  74              	@ 0 "" 2
  196:../include/R_RTOS_services.h ****     SVC( SVC_SEM_WAIT );
-  75              		.loc 2 196 0
-  76              	@ 196 "../include/R_RTOS_services.h" 1
-  77 002c 09DF     		svc #9 
-  78              	
-  79              	@ 0 "" 2
  197:../include/R_RTOS_services.h ****     RetCode returnVal;
  198:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
-  80              		.loc 2 198 0
-  81              	@ 198 "../include/R_RTOS_services.h" 1
-  82 002e EFF30881 		mrs     r1,     msp 
-  83 0032 0868     	 ldr r0, [r1] 
-  84 0034 021C     	 movs r2, r0 
-  85              	
-  86              	@ 0 "" 2
-  87              		.code	16
-  88 0036 FB1D     		add	r3, r7, #7
-  89 0038 1A70     		strb	r2, [r3]
-  90              	.LBE49:
-  91              	.LBE48:
-  21:../Tasks/SemTest/Tasks.c ****     svc_sem_wait( (SemNr) 0x1u, &tsk_AR[1], 100 );
-  22:../Tasks/SemTest/Tasks.c ****     SET_PIN_HIGH(PIN_LED0);
-  92              		.loc 1 22 0
-  93 003a 364B     		ldr	r3, .L17
-  94 003c 5A69     		ldr	r2, [r3, #20]
-  95 003e 8023     		mov	r3, #128
-  96 0040 5B00     		lsl	r3, r3, #1
-  97 0042 1340     		and	r3, r2
-  98 0044 06D0     		beq	.L6
-  99              		.loc 1 22 0 is_stmt 0 discriminator 1
- 100 0046 334B     		ldr	r3, .L17
- 101 0048 324A     		ldr	r2, .L17
- 102 004a 5268     		ldr	r2, [r2, #4]
- 103 004c 8021     		mov	r1, #128
- 104 004e 4900     		lsl	r1, r1, #1
- 105 0050 0A43     		orr	r2, r1
- 106 0052 5A60     		str	r2, [r3, #4]
- 107              	.L6:
-  23:../Tasks/SemTest/Tasks.c **** 
-  24:../Tasks/SemTest/Tasks.c ****     SET_PIN_LOW( PIN_LED2 );
- 108              		.loc 1 24 0 is_stmt 1
- 109 0054 2F4B     		ldr	r3, .L17
- 110 0056 5A69     		ldr	r2, [r3, #20]
- 111 0058 8023     		mov	r3, #128
- 112 005a DB00     		lsl	r3, r3, #3
- 113 005c 1340     		and	r3, r2
- 114 005e 06D0     		beq	.L8
- 115              		.loc 1 24 0 is_stmt 0 discriminator 1
- 116 0060 2C4B     		ldr	r3, .L17
- 117 0062 2C4A     		ldr	r2, .L17
- 118 0064 9268     		ldr	r2, [r2, #8]
- 119 0066 8021     		mov	r1, #128
- 120 0068 C900     		lsl	r1, r1, #3
- 121 006a 0A43     		orr	r2, r1
- 122 006c 9A60     		str	r2, [r3, #8]
- 123              	.L8:
- 124              	.LBB50:
- 125              	.LBB51:
- 102:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
- 126              		.loc 2 102 0 is_stmt 1
- 127 006e 0323     		mov	r3, #3
- 128              	@ 102 "../include/R_RTOS_services.h" 1
- 129 0070 181C     		movs r0, r3 
- 130              	
- 131              	@ 0 "" 2
- 103:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskAddr );
- 132              		.loc 2 103 0
- 133              		.code	16
- 134 0072 2A4B     		ldr	r3, .L17+8
- 135              	@ 103 "../include/R_RTOS_services.h" 1
- 136 0074 191C     		movs r1, r3 
- 137              	
- 138              	@ 0 "" 2
- 104:../include/R_RTOS_services.h ****     INPUT_ARG_3( tskEndAddr );
- 139              		.loc 2 104 0
- 140              		.code	16
- 141 0076 2A4B     		ldr	r3, .L17+12
- 142              	@ 104 "../include/R_RTOS_services.h" 1
- 143 0078 1A1C     		movs r2, r3 
- 144              	
- 145              	@ 0 "" 2
- 105:../include/R_RTOS_services.h ****     INPUT_ARG_4( stckSze );
- 146              		.loc 2 105 0
- 147              		.code	16
- 148 007a 8023     		mov	r3, #128
- 149              	@ 105 "../include/R_RTOS_services.h" 1
- 150 007c 1B1C     		movs r3, r3 
- 151              	
- 152              	@ 0 "" 2
- 106:../include/R_RTOS_services.h ****     SVC( SVC_TSK_INIT );
- 153              		.loc 2 106 0
- 154              	@ 106 "../include/R_RTOS_services.h" 1
- 155 007e 01DF     		svc #1 
- 156              	
- 157              	@ 0 "" 2
- 108:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 158              		.loc 2 108 0
- 159              	@ 108 "../include/R_RTOS_services.h" 1
- 160 0080 EFF30881 		mrs     r1,     msp 
- 161 0084 0868     	 ldr r0, [r1] 
- 162 0086 021C     	 movs r2, r0 
- 163              	
- 164              	@ 0 "" 2
- 165              		.code	16
- 166 0088 BB1D     		add	r3, r7, #6
- 167 008a 1A70     		strb	r2, [r3]
- 168              	.LBE51:
- 169              	.LBE50:
- 170              	.LBB52:
- 171              	.LBB53:
- 116:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
- 172              		.loc 2 116 0
- 173 008c 0323     		mov	r3, #3
- 174              	@ 116 "../include/R_RTOS_services.h" 1
- 175 008e 181C     		movs r0, r3 
- 176              	
- 177              	@ 0 "" 2
- 117:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskPrio );
- 178              		.loc 2 117 0
- 179              		.code	16
- 180 0090 0623     		mov	r3, #6
- 181              	@ 117 "../include/R_RTOS_services.h" 1
- 182 0092 191C     		movs r1, r3 
- 183              	
- 184              	@ 0 "" 2
- 118:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SETPRIO );
- 185              		.loc 2 118 0
- 186              	@ 118 "../include/R_RTOS_services.h" 1
- 187 0094 02DF     		svc #2 
- 188              	
- 189              	@ 0 "" 2
- 120:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 190              		.loc 2 120 0
- 191              	@ 120 "../include/R_RTOS_services.h" 1
- 192 0096 EFF30881 		mrs     r1,     msp 
- 193 009a 0868     	 ldr r0, [r1] 
- 194 009c 021C     	 movs r2, r0 
- 195              	
- 196              	@ 0 "" 2
- 197              		.code	16
- 198 009e 7B1D     		add	r3, r7, #5
- 199 00a0 1A70     		strb	r2, [r3]
- 200              	.LBE53:
- 201              	.LBE52:
- 202              	.LBB54:
- 203              	.LBB55:
- 127:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
- 204              		.loc 2 127 0
- 205 00a2 0323     		mov	r3, #3
- 206              	@ 127 "../include/R_RTOS_services.h" 1
- 207 00a4 181C     		movs r0, r3 
- 208              	
- 209              	@ 0 "" 2
- 128:../include/R_RTOS_services.h ****     SVC( SVC_TSK_ACTV );
- 210              		.loc 2 128 0
- 211              	@ 128 "../include/R_RTOS_services.h" 1
- 212 00a6 03DF     		svc #3 
- 213              	
- 214              	@ 0 "" 2
- 130:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 215              		.loc 2 130 0
- 216              	@ 130 "../include/R_RTOS_services.h" 1
- 217 00a8 EFF30881 		mrs     r1,     msp 
- 218 00ac 0868     	 ldr r0, [r1] 
- 219 00ae 021C     	 movs r2, r0 
- 220              	
- 221              	@ 0 "" 2
- 222              		.code	16
- 223 00b0 3B1D     		add	r3, r7, #4
- 224 00b2 1A70     		strb	r2, [r3]
- 225              	.LBE55:
- 226              	.LBE54:
- 227              	.LBB56:
- 228              	.LBB57:
  199:../include/R_RTOS_services.h ****     return returnVal;
  200:../include/R_RTOS_services.h **** }
  201:../include/R_RTOS_services.h **** 
@@ -475,1301 +290,1194 @@
  211:../include/R_RTOS_services.h ****     return returnVal;
  212:../include/R_RTOS_services.h **** }
  213:../include/R_RTOS_services.h **** 
- 214:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_SendEvt(
- 215:../include/R_RTOS_services.h ****                                                                          const EvtNr evt )
- 216:../include/R_RTOS_services.h **** {
- 217:../include/R_RTOS_services.h ****     INPUT_ARG_1( evt );
- 218:../include/R_RTOS_services.h ****     SVC( SVC_EVT_SEND );
- 219:../include/R_RTOS_services.h ****     RetCode returnVal;
- 220:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 221:../include/R_RTOS_services.h ****     return returnVal;
- 222:../include/R_RTOS_services.h **** }
- 223:../include/R_RTOS_services.h **** 
- 224:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_RecvEvt(
- 225:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk,
- 226:../include/R_RTOS_services.h ****                                                                          EVTQSlots evtMask,
- 227:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
- 228:../include/R_RTOS_services.h **** {
- 229:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
- 230:../include/R_RTOS_services.h ****     INPUT_ARG_2( evtMask );
- 231:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
- 232:../include/R_RTOS_services.h ****     SVC( SVC_EVT_RECV );
+ 214:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_init_mntr(
+ 215:../include/R_RTOS_services.h ****                                                                          const MntrNr mntrNr,
+ 216:../include/R_RTOS_services.h ****                                                                          const Data data )
+ 217:../include/R_RTOS_services.h **** {
+ 218:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+ 219:../include/R_RTOS_services.h ****     INPUT_ARG_2( data );
+ 220:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_INIT_MNTR );
+ 221:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 222:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 223:../include/R_RTOS_services.h ****     return returnVal;
+ 224:../include/R_RTOS_services.h **** }
+ 225:../include/R_RTOS_services.h **** 
+ 226:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_ReqReadAccs(
+ 227:../include/R_RTOS_services.h ****                                                                          const MntrNr mntrNr,
+ 228:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk )
+ 229:../include/R_RTOS_services.h **** {
+ 230:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+  59              		.loc 2 230 0
+  60 0026 0023     		mov	r3, #0
+  61              	@ 230 "../include/R_RTOS_services.h" 1
+  62 0028 181C     		movs r0, r3 
+  63              	
+  64              	@ 0 "" 2
+ 231:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+  65              		.loc 2 231 0
+  66              		.code	16
+  67 002a FB68     		ldr	r3, [r7, #12]
+  68              	@ 231 "../include/R_RTOS_services.h" 1
+  69 002c 191C     		movs r1, r3 
+  70              	
+  71              	@ 0 "" 2
+ 232:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REQ_READ_ACC );
+  72              		.loc 2 232 0
+  73              	@ 232 "../include/R_RTOS_services.h" 1
+  74 002e 0CDF     		svc #12 
+  75              	
+  76              	@ 0 "" 2
  233:../include/R_RTOS_services.h ****     RetCode returnVal;
  234:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+  77              		.loc 2 234 0
+  78              	@ 234 "../include/R_RTOS_services.h" 1
+  79 0030 EFF30881 		mrs     r1,     msp 
+  80 0034 0868     	 ldr r0, [r1] 
+  81 0036 021C     	 movs r2, r0 
+  82              	
+  83              	@ 0 "" 2
+  84              		.code	16
+  85 0038 3B1C     		mov	r3, r7
+  86 003a 0B33     		add	r3, r3, #11
+  87 003c 1A70     		strb	r2, [r3]
+  88              	.LBE39:
+  89              	.LBE38:
+  23:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_HIGH(PIN_LED0);
+  90              		.loc 1 23 0
+  91 003e 484B     		ldr	r3, .L20
+  92 0040 5A69     		ldr	r2, [r3, #20]
+  93 0042 8023     		mov	r3, #128
+  94 0044 5B00     		lsl	r3, r3, #1
+  95 0046 1340     		and	r3, r2
+  96 0048 06D0     		beq	.L6
+  97              		.loc 1 23 0 is_stmt 0 discriminator 1
+  98 004a 454B     		ldr	r3, .L20
+  99 004c 444A     		ldr	r2, .L20
+ 100 004e 5268     		ldr	r2, [r2, #4]
+ 101 0050 8021     		mov	r1, #128
+ 102 0052 4900     		lsl	r1, r1, #1
+ 103 0054 0A43     		orr	r2, r1
+ 104 0056 5A60     		str	r2, [r3, #4]
+ 105              	.L6:
+  24:../Tasks/MntrTest/RWR/Tasks.c **** 
+  25:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_LOW( PIN_LED1 );
+ 106              		.loc 1 25 0 is_stmt 1
+ 107 0058 414B     		ldr	r3, .L20
+ 108 005a 5A69     		ldr	r2, [r3, #20]
+ 109 005c 8023     		mov	r3, #128
+ 110 005e 9B00     		lsl	r3, r3, #2
+ 111 0060 1340     		and	r3, r2
+ 112 0062 06D0     		beq	.L8
+ 113              		.loc 1 25 0 is_stmt 0 discriminator 1
+ 114 0064 3E4B     		ldr	r3, .L20
+ 115 0066 3E4A     		ldr	r2, .L20
+ 116 0068 9268     		ldr	r2, [r2, #8]
+ 117 006a 8021     		mov	r1, #128
+ 118 006c 8900     		lsl	r1, r1, #2
+ 119 006e 0A43     		orr	r2, r1
+ 120 0070 9A60     		str	r2, [r3, #8]
+ 121              	.L8:
+ 122              	.LBB40:
+ 123              	.LBB41:
+ 102:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 124              		.loc 2 102 0 is_stmt 1
+ 125 0072 0223     		mov	r3, #2
+ 126              	@ 102 "../include/R_RTOS_services.h" 1
+ 127 0074 181C     		movs r0, r3 
+ 128              	
+ 129              	@ 0 "" 2
+ 103:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskAddr );
+ 130              		.loc 2 103 0
+ 131              		.code	16
+ 132 0076 3C4B     		ldr	r3, .L20+8
+ 133              	@ 103 "../include/R_RTOS_services.h" 1
+ 134 0078 191C     		movs r1, r3 
+ 135              	
+ 136              	@ 0 "" 2
+ 104:../include/R_RTOS_services.h ****     INPUT_ARG_3( tskEndAddr );
+ 137              		.loc 2 104 0
+ 138              		.code	16
+ 139 007a 3C4B     		ldr	r3, .L20+12
+ 140              	@ 104 "../include/R_RTOS_services.h" 1
+ 141 007c 1A1C     		movs r2, r3 
+ 142              	
+ 143              	@ 0 "" 2
+ 105:../include/R_RTOS_services.h ****     INPUT_ARG_4( stckSze );
+ 144              		.loc 2 105 0
+ 145              		.code	16
+ 146 007e 8023     		mov	r3, #128
+ 147              	@ 105 "../include/R_RTOS_services.h" 1
+ 148 0080 1B1C     		movs r3, r3 
+ 149              	
+ 150              	@ 0 "" 2
+ 106:../include/R_RTOS_services.h ****     SVC( SVC_TSK_INIT );
+ 151              		.loc 2 106 0
+ 152              	@ 106 "../include/R_RTOS_services.h" 1
+ 153 0082 01DF     		svc #1 
+ 154              	
+ 155              	@ 0 "" 2
+ 108:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 156              		.loc 2 108 0
+ 157              	@ 108 "../include/R_RTOS_services.h" 1
+ 158 0084 EFF30881 		mrs     r1,     msp 
+ 159 0088 0868     	 ldr r0, [r1] 
+ 160 008a 021C     	 movs r2, r0 
+ 161              	
+ 162              	@ 0 "" 2
+ 163              		.code	16
+ 164 008c 3B1C     		mov	r3, r7
+ 165 008e 0A33     		add	r3, r3, #10
+ 166 0090 1A70     		strb	r2, [r3]
+ 167              	.LBE41:
+ 168              	.LBE40:
+ 169              	.LBB42:
+ 170              	.LBB43:
+ 116:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 171              		.loc 2 116 0
+ 172 0092 0223     		mov	r3, #2
+ 173              	@ 116 "../include/R_RTOS_services.h" 1
+ 174 0094 181C     		movs r0, r3 
+ 175              	
+ 176              	@ 0 "" 2
+ 117:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskPrio );
+ 177              		.loc 2 117 0
+ 178              		.code	16
+ 179 0096 0623     		mov	r3, #6
+ 180              	@ 117 "../include/R_RTOS_services.h" 1
+ 181 0098 191C     		movs r1, r3 
+ 182              	
+ 183              	@ 0 "" 2
+ 118:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SETPRIO );
+ 184              		.loc 2 118 0
+ 185              	@ 118 "../include/R_RTOS_services.h" 1
+ 186 009a 02DF     		svc #2 
+ 187              	
+ 188              	@ 0 "" 2
+ 120:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 189              		.loc 2 120 0
+ 190              	@ 120 "../include/R_RTOS_services.h" 1
+ 191 009c EFF30881 		mrs     r1,     msp 
+ 192 00a0 0868     	 ldr r0, [r1] 
+ 193 00a2 021C     	 movs r2, r0 
+ 194              	
+ 195              	@ 0 "" 2
+ 196              		.code	16
+ 197 00a4 3B1C     		mov	r3, r7
+ 198 00a6 0933     		add	r3, r3, #9
+ 199 00a8 1A70     		strb	r2, [r3]
+ 200              	.LBE43:
+ 201              	.LBE42:
+ 202              	.LBB44:
+ 203              	.LBB45:
+ 127:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 204              		.loc 2 127 0
+ 205 00aa 0223     		mov	r3, #2
+ 206              	@ 127 "../include/R_RTOS_services.h" 1
+ 207 00ac 181C     		movs r0, r3 
+ 208              	
+ 209              	@ 0 "" 2
+ 128:../include/R_RTOS_services.h ****     SVC( SVC_TSK_ACTV );
+ 210              		.loc 2 128 0
+ 211              	@ 128 "../include/R_RTOS_services.h" 1
+ 212 00ae 03DF     		svc #3 
+ 213              	
+ 214              	@ 0 "" 2
+ 130:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 215              		.loc 2 130 0
+ 216              	@ 130 "../include/R_RTOS_services.h" 1
+ 217 00b0 EFF30881 		mrs     r1,     msp 
+ 218 00b4 0868     	 ldr r0, [r1] 
+ 219 00b6 021C     	 movs r2, r0 
+ 220              	
+ 221              	@ 0 "" 2
+ 222              		.code	16
+ 223 00b8 3B1C     		mov	r3, r7
+ 224 00ba 0833     		add	r3, r3, #8
+ 225 00bc 1A70     		strb	r2, [r3]
+ 226              	.LBE45:
+ 227              	.LBE44:
+ 228              	.LBB46:
+ 229              	.LBB47:
+ 102:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 230              		.loc 2 102 0
+ 231 00be 0323     		mov	r3, #3
+ 232              	@ 102 "../include/R_RTOS_services.h" 1
+ 233 00c0 181C     		movs r0, r3 
+ 234              	
+ 235              	@ 0 "" 2
+ 103:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskAddr );
+ 236              		.loc 2 103 0
+ 237              		.code	16
+ 238 00c2 2B4B     		ldr	r3, .L20+16
+ 239              	@ 103 "../include/R_RTOS_services.h" 1
+ 240 00c4 191C     		movs r1, r3 
+ 241              	
+ 242              	@ 0 "" 2
+ 104:../include/R_RTOS_services.h ****     INPUT_ARG_3( tskEndAddr );
+ 243              		.loc 2 104 0
+ 244              		.code	16
+ 245 00c6 294B     		ldr	r3, .L20+12
+ 246              	@ 104 "../include/R_RTOS_services.h" 1
+ 247 00c8 1A1C     		movs r2, r3 
+ 248              	
+ 249              	@ 0 "" 2
+ 105:../include/R_RTOS_services.h ****     INPUT_ARG_4( stckSze );
+ 250              		.loc 2 105 0
+ 251              		.code	16
+ 252 00ca 8023     		mov	r3, #128
+ 253              	@ 105 "../include/R_RTOS_services.h" 1
+ 254 00cc 1B1C     		movs r3, r3 
+ 255              	
+ 256              	@ 0 "" 2
+ 106:../include/R_RTOS_services.h ****     SVC( SVC_TSK_INIT );
+ 257              		.loc 2 106 0
+ 258              	@ 106 "../include/R_RTOS_services.h" 1
+ 259 00ce 01DF     		svc #1 
+ 260              	
+ 261              	@ 0 "" 2
+ 108:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 262              		.loc 2 108 0
+ 263              	@ 108 "../include/R_RTOS_services.h" 1
+ 264 00d0 EFF30881 		mrs     r1,     msp 
+ 265 00d4 0868     	 ldr r0, [r1] 
+ 266 00d6 021C     	 movs r2, r0 
+ 267              	
+ 268              	@ 0 "" 2
+ 269              		.code	16
+ 270 00d8 FB1D     		add	r3, r7, #7
+ 271 00da 1A70     		strb	r2, [r3]
+ 272              	.LBE47:
+ 273              	.LBE46:
+ 274              	.LBB48:
+ 275              	.LBB49:
+ 116:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 276              		.loc 2 116 0
+ 277 00dc 0323     		mov	r3, #3
+ 278              	@ 116 "../include/R_RTOS_services.h" 1
+ 279 00de 181C     		movs r0, r3 
+ 280              	
+ 281              	@ 0 "" 2
+ 117:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskPrio );
+ 282              		.loc 2 117 0
+ 283              		.code	16
+ 284 00e0 0623     		mov	r3, #6
+ 285              	@ 117 "../include/R_RTOS_services.h" 1
+ 286 00e2 191C     		movs r1, r3 
+ 287              	
+ 288              	@ 0 "" 2
+ 118:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SETPRIO );
+ 289              		.loc 2 118 0
+ 290              	@ 118 "../include/R_RTOS_services.h" 1
+ 291 00e4 02DF     		svc #2 
+ 292              	
+ 293              	@ 0 "" 2
+ 120:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 294              		.loc 2 120 0
+ 295              	@ 120 "../include/R_RTOS_services.h" 1
+ 296 00e6 EFF30881 		mrs     r1,     msp 
+ 297 00ea 0868     	 ldr r0, [r1] 
+ 298 00ec 021C     	 movs r2, r0 
+ 299              	
+ 300              	@ 0 "" 2
+ 301              		.code	16
+ 302 00ee BB1D     		add	r3, r7, #6
+ 303 00f0 1A70     		strb	r2, [r3]
+ 304              	.LBE49:
+ 305              	.LBE48:
+ 306              	.LBB50:
+ 307              	.LBB51:
+ 127:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
+ 308              		.loc 2 127 0
+ 309 00f2 0323     		mov	r3, #3
+ 310              	@ 127 "../include/R_RTOS_services.h" 1
+ 311 00f4 181C     		movs r0, r3 
+ 312              	
+ 313              	@ 0 "" 2
+ 128:../include/R_RTOS_services.h ****     SVC( SVC_TSK_ACTV );
+ 314              		.loc 2 128 0
+ 315              	@ 128 "../include/R_RTOS_services.h" 1
+ 316 00f6 03DF     		svc #3 
+ 317              	
+ 318              	@ 0 "" 2
+ 130:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 319              		.loc 2 130 0
+ 320              	@ 130 "../include/R_RTOS_services.h" 1
+ 321 00f8 EFF30881 		mrs     r1,     msp 
+ 322 00fc 0868     	 ldr r0, [r1] 
+ 323 00fe 021C     	 movs r2, r0 
+ 324              	
+ 325              	@ 0 "" 2
+ 326              		.code	16
+ 327 0100 7B1D     		add	r3, r7, #5
+ 328 0102 1A70     		strb	r2, [r3]
+ 329              	.LBE51:
+ 330              	.LBE50:
+ 331              	.LBB52:
+ 332              	.LBB53:
  235:../include/R_RTOS_services.h ****     return returnVal;
  236:../include/R_RTOS_services.h **** }
  237:../include/R_RTOS_services.h **** 
- 238:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tmr_SetTimer(
- 239:../include/R_RTOS_services.h ****                                                                           const WaitTime msToWait,
- 240:../include/R_RTOS_services.h ****                                                                           TskTCB* const tsk )
+ 238:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_ReqWriteAccs(
+ 239:../include/R_RTOS_services.h ****                                                                          const MntrNr mntrNr,
+ 240:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk )
  241:../include/R_RTOS_services.h **** {
- 242:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
- 229              		.loc 2 242 0
- 230 00b4 9623     		mov	r3, #150
- 231 00b6 5B00     		lsl	r3, r3, #1
- 232              	@ 242 "../include/R_RTOS_services.h" 1
- 233 00b8 181C     		movs r0, r3 
- 234              	
- 235              	@ 0 "" 2
+ 242:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
  243:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 236              		.loc 2 243 0
- 237              		.code	16
- 238 00ba 174B     		ldr	r3, .L17+4
- 239              	@ 243 "../include/R_RTOS_services.h" 1
- 240 00bc 191C     		movs r1, r3 
- 241              	
- 242              	@ 0 "" 2
- 244:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
- 243              		.loc 2 244 0
- 244              	@ 244 "../include/R_RTOS_services.h" 1
- 245 00be 0DDF     		svc #13 
- 246              	
- 247              	@ 0 "" 2
+ 244:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REQ_WRITE_ACC );
  245:../include/R_RTOS_services.h ****     RetCode returnVal;
  246:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 248              		.loc 2 246 0
- 249              	@ 246 "../include/R_RTOS_services.h" 1
- 250 00c0 EFF30881 		mrs     r1,     msp 
- 251 00c4 0868     	 ldr r0, [r1] 
- 252 00c6 021C     	 movs r2, r0 
- 253              	
- 254              	@ 0 "" 2
- 255              		.code	16
- 256 00c8 FB1C     		add	r3, r7, #3
- 257 00ca 1A70     		strb	r2, [r3]
- 258              	.LBE57:
- 259              	.LBE56:
-  25:../Tasks/SemTest/Tasks.c **** 
-  26:../Tasks/SemTest/Tasks.c ****     svc_tsk_InitTsk( (TskID) 0x3u, &tsk3, &tsk_EndTheTask, MY_STACK_SIZE );
-  27:../Tasks/SemTest/Tasks.c ****     svc_tsk_SetTskPrio( (TskID) 0x3u, TSK_PRIO_HIG );
-  28:../Tasks/SemTest/Tasks.c ****     svc_tsk_ActvTsk( (TskID) 0x3u );
-  29:../Tasks/SemTest/Tasks.c **** 
-  30:../Tasks/SemTest/Tasks.c ****     svc_tmr_SetTimer( (WaitTime) 300, &tsk_AR[1] );
-  31:../Tasks/SemTest/Tasks.c ****     SET_PIN_HIGH(PIN_LED2);//##
- 260              		.loc 1 31 0
- 261 00cc 114B     		ldr	r3, .L17
- 262 00ce 5A69     		ldr	r2, [r3, #20]
- 263 00d0 8023     		mov	r3, #128
- 264 00d2 DB00     		lsl	r3, r3, #3
- 265 00d4 1340     		and	r3, r2
- 266 00d6 06D0     		beq	.L14
- 267              		.loc 1 31 0 is_stmt 0 discriminator 1
- 268 00d8 0E4B     		ldr	r3, .L17
- 269 00da 0E4A     		ldr	r2, .L17
- 270 00dc 5268     		ldr	r2, [r2, #4]
- 271 00de 8021     		mov	r1, #128
- 272 00e0 C900     		lsl	r1, r1, #3
- 273 00e2 0A43     		orr	r2, r1
- 274 00e4 5A60     		str	r2, [r3, #4]
- 275              	.L14:
- 276              	.LBB58:
- 277              	.LBB59:
- 206:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 278              		.loc 2 206 0 is_stmt 1
- 279 00e6 0123     		mov	r3, #1
- 280              	@ 206 "../include/R_RTOS_services.h" 1
- 281 00e8 181C     		movs r0, r3 
- 282              	
- 283              	@ 0 "" 2
- 207:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 284              		.loc 2 207 0
- 285              		.code	16
- 286 00ea 0B4B     		ldr	r3, .L17+4
- 287              	@ 207 "../include/R_RTOS_services.h" 1
- 288 00ec 191C     		movs r1, r3 
- 289              	
- 290              	@ 0 "" 2
- 208:../include/R_RTOS_services.h ****     SVC( SVC_SEM_SIGNAL );
- 291              		.loc 2 208 0
- 292              	@ 208 "../include/R_RTOS_services.h" 1
- 293 00ee 0ADF     		svc #10 
- 294              	
- 295              	@ 0 "" 2
- 210:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 296              		.loc 2 210 0
- 297              	@ 210 "../include/R_RTOS_services.h" 1
- 298 00f0 EFF30881 		mrs     r1,     msp 
- 299 00f4 0868     	 ldr r0, [r1] 
- 300 00f6 021C     	 movs r2, r0 
- 301              	
- 302              	@ 0 "" 2
- 303              		.code	16
- 304 00f8 BB1C     		add	r3, r7, #2
- 305 00fa 1A70     		strb	r2, [r3]
- 306              	.LBE59:
- 307              	.LBE58:
- 308              	.LBB60:
- 309              	.LBB61:
+ 247:../include/R_RTOS_services.h ****     return returnVal;
+ 248:../include/R_RTOS_services.h **** }
+ 249:../include/R_RTOS_services.h **** 
+ 250:../include/R_RTOS_services.h **** 
+ 251:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_RelAccs(
+ 252:../include/R_RTOS_services.h ****                                                                          const MntrNr mntrNr )
+ 253:../include/R_RTOS_services.h **** {
+ 254:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+ 255:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REL_ACC );
+ 256:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 257:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 258:../include/R_RTOS_services.h ****     return returnVal;
+ 259:../include/R_RTOS_services.h **** }
+ 260:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_SendEvt(
+ 261:../include/R_RTOS_services.h ****                                                                          const EvtNr evt )
+ 262:../include/R_RTOS_services.h **** {
+ 263:../include/R_RTOS_services.h ****     INPUT_ARG_1( evt );
+ 264:../include/R_RTOS_services.h ****     SVC( SVC_EVT_SEND );
+ 265:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 266:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 267:../include/R_RTOS_services.h ****     return returnVal;
+ 268:../include/R_RTOS_services.h **** }
+ 269:../include/R_RTOS_services.h **** 
+ 270:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_RecvEvt(
+ 271:../include/R_RTOS_services.h ****                                                                          PTskTCB const tsk,
+ 272:../include/R_RTOS_services.h ****                                                                          EVTQSlots evtMask,
+ 273:../include/R_RTOS_services.h ****                                                                          const SysTicks maxTimeToWa
+ 274:../include/R_RTOS_services.h **** {
+ 275:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
+ 276:../include/R_RTOS_services.h ****     INPUT_ARG_2( evtMask );
+ 277:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
+ 278:../include/R_RTOS_services.h ****     SVC( SVC_EVT_RECV );
+ 279:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 280:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 281:../include/R_RTOS_services.h ****     return returnVal;
+ 282:../include/R_RTOS_services.h **** }
+ 283:../include/R_RTOS_services.h **** 
+ 284:../include/R_RTOS_services.h **** __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tmr_SetTimer(
+ 285:../include/R_RTOS_services.h ****                                                                           const WaitTime msToWait,
+ 286:../include/R_RTOS_services.h ****                                                                           TskTCB* const tsk )
+ 287:../include/R_RTOS_services.h **** {
+ 288:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 333              		.loc 2 288 0
+ 334 0104 C823     		mov	r3, #200
+ 335              	@ 288 "../include/R_RTOS_services.h" 1
+ 336 0106 181C     		movs r0, r3 
+ 337              	
+ 338              	@ 0 "" 2
+ 289:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 339              		.loc 2 289 0
+ 340              		.code	16
+ 341 0108 1A4B     		ldr	r3, .L20+20
+ 342              	@ 289 "../include/R_RTOS_services.h" 1
+ 343 010a 191C     		movs r1, r3 
+ 344              	
+ 345              	@ 0 "" 2
+ 290:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 346              		.loc 2 290 0
+ 347              	@ 290 "../include/R_RTOS_services.h" 1
+ 348 010c 11DF     		svc #17 
+ 349              	
+ 350              	@ 0 "" 2
+ 291:../include/R_RTOS_services.h ****     RetCode returnVal;
+ 292:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 351              		.loc 2 292 0
+ 352              	@ 292 "../include/R_RTOS_services.h" 1
+ 353 010e EFF30881 		mrs     r1,     msp 
+ 354 0112 0868     	 ldr r0, [r1] 
+ 355 0114 021C     	 movs r2, r0 
+ 356              	
+ 357              	@ 0 "" 2
+ 358              		.code	16
+ 359 0116 3B1D     		add	r3, r7, #4
+ 360 0118 1A70     		strb	r2, [r3]
+ 361              	.LBE53:
+ 362              	.LBE52:
+  26:../Tasks/MntrTest/RWR/Tasks.c **** 
+  27:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_InitTsk( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
+  28:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_SetTskPrio( (TskID) 0x2u, TSK_PRIO_HIG );
+  29:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_ActvTsk( (TskID) 0x2u );
+  30:../Tasks/MntrTest/RWR/Tasks.c **** 
+  31:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_InitTsk( (TskID) 0x3u, &tsk3, &tsk_EndTheTask, MY_STACK_SIZE );
+  32:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_SetTskPrio( (TskID) 0x3u, TSK_PRIO_HIG );
+  33:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_ActvTsk( (TskID) 0x3u );
+  34:../Tasks/MntrTest/RWR/Tasks.c **** 
+  35:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tmr_SetTimer( (WaitTime) 200, &tsk_AR[1] );
+  36:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_HIGH( PIN_LED1 );
+ 363              		.loc 1 36 0
+ 364 011a 114B     		ldr	r3, .L20
+ 365 011c 5A69     		ldr	r2, [r3, #20]
+ 366 011e 8023     		mov	r3, #128
+ 367 0120 9B00     		lsl	r3, r3, #2
+ 368 0122 1340     		and	r3, r2
+ 369 0124 06D0     		beq	.L17
+ 370              		.loc 1 36 0 is_stmt 0 discriminator 1
+ 371 0126 0E4B     		ldr	r3, .L20
+ 372 0128 0D4A     		ldr	r2, .L20
+ 373 012a 5268     		ldr	r2, [r2, #4]
+ 374 012c 8021     		mov	r1, #128
+ 375 012e 8900     		lsl	r1, r1, #2
+ 376 0130 0A43     		orr	r2, r1
+ 377 0132 5A60     		str	r2, [r3, #4]
+ 378              	.L17:
+ 379              	.LBB54:
+ 380              	.LBB55:
+ 254:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+ 381              		.loc 2 254 0 is_stmt 1
+ 382 0134 0023     		mov	r3, #0
+ 383              	@ 254 "../include/R_RTOS_services.h" 1
+ 384 0136 181C     		movs r0, r3 
+ 385              	
+ 386              	@ 0 "" 2
+ 255:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REL_ACC );
+ 387              		.loc 2 255 0
+ 388              	@ 255 "../include/R_RTOS_services.h" 1
+ 389 0138 0EDF     		svc #14 
+ 390              	
+ 391              	@ 0 "" 2
+ 257:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 392              		.loc 2 257 0
+ 393              	@ 257 "../include/R_RTOS_services.h" 1
+ 394 013a EFF30881 		mrs     r1,     msp 
+ 395 013e 0868     	 ldr r0, [r1] 
+ 396 0140 021C     	 movs r2, r0 
+ 397              	
+ 398              	@ 0 "" 2
+ 399              		.code	16
+ 400 0142 FB1C     		add	r3, r7, #3
+ 401 0144 1A70     		strb	r2, [r3]
+ 402              	.LBE55:
+ 403              	.LBE54:
+ 404              	.LBB56:
+ 405              	.LBB57:
  137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
- 310              		.loc 2 137 0
- 311 00fc 064B     		ldr	r3, .L17+4
- 312              	@ 137 "../include/R_RTOS_services.h" 1
- 313 00fe 181C     		movs r0, r3 
- 314              	
- 315              	@ 0 "" 2
+ 406              		.loc 2 137 0
+ 407 0146 0B4B     		ldr	r3, .L20+20
+ 408              	@ 137 "../include/R_RTOS_services.h" 1
+ 409 0148 181C     		movs r0, r3 
+ 410              	
+ 411              	@ 0 "" 2
  138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
- 316              		.loc 2 138 0
- 317              	@ 138 "../include/R_RTOS_services.h" 1
- 318 0100 04DF     		svc #4 
- 319              	
- 320              	@ 0 "" 2
+ 412              		.loc 2 138 0
+ 413              	@ 138 "../include/R_RTOS_services.h" 1
+ 414 014a 04DF     		svc #4 
+ 415              	
+ 416              	@ 0 "" 2
  140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 321              		.loc 2 140 0
- 322              	@ 140 "../include/R_RTOS_services.h" 1
- 323 0102 EFF30881 		mrs     r1,     msp 
- 324 0106 0868     	 ldr r0, [r1] 
- 325 0108 021C     	 movs r2, r0 
- 326              	
- 327              	@ 0 "" 2
- 328              		.code	16
- 329 010a 7B1C     		add	r3, r7, #1
- 330 010c 1A70     		strb	r2, [r3]
- 331              	.LBE61:
- 332              	.LBE60:
-  32:../Tasks/SemTest/Tasks.c ****     //SET_PIN_LOW( PIN_LED3 );
-  33:../Tasks/SemTest/Tasks.c ****     svc_sem_signal( (SemNr) 0x1u, &tsk_AR[1] );
-  34:../Tasks/SemTest/Tasks.c **** 
-  35:../Tasks/SemTest/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[1] );
-  36:../Tasks/SemTest/Tasks.c **** }
- 333              		.loc 1 36 0
- 334 010e BD46     		mov	sp, r7
- 335 0110 02B0     		add	sp, sp, #8
- 336              		@ sp needed
- 337 0112 80BD     		pop	{r7, pc}
- 338              	.L18:
- 339              		.align	2
- 340              	.L17:
- 341 0114 00F00F40 		.word	1074786304
- 342 0118 24000000 		.word	tsk_AR+36
- 343 011c 00000000 		.word	tsk3
- 344 0120 00000000 		.word	tsk_EndTheTask
- 345              		.cfi_endproc
- 346              	.LFE64:
- 348              		.section	.text.tsk2,"ax",%progbits
- 349              		.align	2
- 350              		.global	tsk2
- 351              		.code	16
- 352              		.thumb_func
- 354              	tsk2:
- 355              	.LFB65:
-  37:../Tasks/SemTest/Tasks.c **** void tsk2( void )
-  38:../Tasks/SemTest/Tasks.c **** {
- 356              		.loc 1 38 0
- 357              		.cfi_startproc
- 358 0000 80B5     		push	{r7, lr}
- 359              		.cfi_def_cfa_offset 8
- 360              		.cfi_offset 7, -8
- 361              		.cfi_offset 14, -4
- 362 0002 84B0     		sub	sp, sp, #16
- 363              		.cfi_def_cfa_offset 24
- 364 0004 00AF     		add	r7, sp, #0
- 365              		.cfi_def_cfa_register 7
- 366              	.LBB62:
- 367              	.LBB63:
- 193:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 368              		.loc 2 193 0
- 369 0006 0123     		mov	r3, #1
- 370              	@ 193 "../include/R_RTOS_services.h" 1
- 371 0008 181C     		movs r0, r3 
- 372              	
- 373              	@ 0 "" 2
- 194:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 374              		.loc 2 194 0
- 375              		.code	16
- 376 000a 454B     		ldr	r3, .L33
- 377              	@ 194 "../include/R_RTOS_services.h" 1
- 378 000c 191C     		movs r1, r3 
- 379              	
- 380              	@ 0 "" 2
- 195:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
- 381              		.loc 2 195 0
- 382              		.code	16
- 383 000e 6423     		mov	r3, #100
- 384              	@ 195 "../include/R_RTOS_services.h" 1
- 385 0010 1A1C     		movs r2, r3 
- 386              	
- 387              	@ 0 "" 2
- 196:../include/R_RTOS_services.h ****     SVC( SVC_SEM_WAIT );
- 388              		.loc 2 196 0
- 389              	@ 196 "../include/R_RTOS_services.h" 1
- 390 0012 09DF     		svc #9 
- 391              	
- 392              	@ 0 "" 2
- 198:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 393              		.loc 2 198 0
- 394              	@ 198 "../include/R_RTOS_services.h" 1
- 395 0014 EFF30881 		mrs     r1,     msp 
- 396 0018 0868     	 ldr r0, [r1] 
- 397 001a 021C     	 movs r2, r0 
- 398              	
- 399              	@ 0 "" 2
- 400              		.code	16
- 401 001c 3B1C     		mov	r3, r7
- 402 001e 0F33     		add	r3, r3, #15
- 403 0020 1A70     		strb	r2, [r3]
- 404              	.LBE63:
- 405              	.LBE62:
-  39:../Tasks/SemTest/Tasks.c ****     svc_sem_wait( (SemNr) 0x1u, &tsk_AR[2], 100 );
-  40:../Tasks/SemTest/Tasks.c **** 
-  41:../Tasks/SemTest/Tasks.c ****     //SET_PIN_LOW( PIN_LED3 );
-  42:../Tasks/SemTest/Tasks.c **** 
-  43:../Tasks/SemTest/Tasks.c ****     SET_PIN_LOW(PIN_LED0);
- 406              		.loc 1 43 0
- 407 0022 404B     		ldr	r3, .L33+4
- 408 0024 5A69     		ldr	r2, [r3, #20]
- 409 0026 8023     		mov	r3, #128
- 410 0028 5B00     		lsl	r3, r3, #1
- 411 002a 1340     		and	r3, r2
- 412 002c 06D0     		beq	.L22
- 413              		.loc 1 43 0 is_stmt 0 discriminator 1
- 414 002e 3D4B     		ldr	r3, .L33+4
- 415 0030 3C4A     		ldr	r2, .L33+4
- 416 0032 9268     		ldr	r2, [r2, #8]
- 417 0034 8021     		mov	r1, #128
- 418 0036 4900     		lsl	r1, r1, #1
- 419 0038 0A43     		orr	r2, r1
- 420 003a 9A60     		str	r2, [r3, #8]
- 421              	.L22:
- 422              	.LBB64:
- 423              	.LBB65:
- 193:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 424              		.loc 2 193 0 is_stmt 1
- 425 003c 0023     		mov	r3, #0
- 426              	@ 193 "../include/R_RTOS_services.h" 1
- 427 003e 181C     		movs r0, r3 
- 428              	
- 429              	@ 0 "" 2
- 194:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 430              		.loc 2 194 0
- 431              		.code	16
- 432 0040 374B     		ldr	r3, .L33
- 433              	@ 194 "../include/R_RTOS_services.h" 1
- 434 0042 191C     		movs r1, r3 
- 435              	
- 436              	@ 0 "" 2
- 195:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
- 437              		.loc 2 195 0
- 438              		.code	16
- 439 0044 6423     		mov	r3, #100
- 440              	@ 195 "../include/R_RTOS_services.h" 1
- 441 0046 1A1C     		movs r2, r3 
- 442              	
- 443              	@ 0 "" 2
- 196:../include/R_RTOS_services.h ****     SVC( SVC_SEM_WAIT );
- 444              		.loc 2 196 0
- 445              	@ 196 "../include/R_RTOS_services.h" 1
- 446 0048 09DF     		svc #9 
- 447              	
- 448              	@ 0 "" 2
- 198:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 449              		.loc 2 198 0
- 450              	@ 198 "../include/R_RTOS_services.h" 1
- 451 004a EFF30881 		mrs     r1,     msp 
- 452 004e 0868     	 ldr r0, [r1] 
- 453 0050 021C     	 movs r2, r0 
- 454              	
- 455              	@ 0 "" 2
- 456              		.code	16
- 457 0052 3B1C     		mov	r3, r7
- 458 0054 0E33     		add	r3, r3, #14
- 459 0056 1A70     		strb	r2, [r3]
- 460              	.LBE65:
- 461              	.LBE64:
-  44:../Tasks/SemTest/Tasks.c ****     svc_sem_wait( (SemNr) 0x0u, &tsk_AR[2], 100 );
-  45:../Tasks/SemTest/Tasks.c ****     SET_PIN_HIGH(PIN_LED0);
- 462              		.loc 1 45 0
- 463 0058 324B     		ldr	r3, .L33+4
- 464 005a 5A69     		ldr	r2, [r3, #20]
- 465 005c 8023     		mov	r3, #128
- 466 005e 5B00     		lsl	r3, r3, #1
- 467 0060 1340     		and	r3, r2
- 468 0062 06D0     		beq	.L25
- 469              		.loc 1 45 0 is_stmt 0 discriminator 1
- 470 0064 2F4B     		ldr	r3, .L33+4
- 471 0066 2F4A     		ldr	r2, .L33+4
- 472 0068 5268     		ldr	r2, [r2, #4]
- 473 006a 8021     		mov	r1, #128
- 474 006c 4900     		lsl	r1, r1, #1
- 475 006e 0A43     		orr	r2, r1
- 476 0070 5A60     		str	r2, [r3, #4]
- 477              	.L25:
- 478              	.LBB66:
- 479              	.LBB67:
- 102:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
- 480              		.loc 2 102 0 is_stmt 1
- 481 0072 0423     		mov	r3, #4
- 482              	@ 102 "../include/R_RTOS_services.h" 1
- 483 0074 181C     		movs r0, r3 
- 484              	
- 485              	@ 0 "" 2
- 103:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskAddr );
- 486              		.loc 2 103 0
- 487              		.code	16
- 488 0076 2C4B     		ldr	r3, .L33+8
- 489              	@ 103 "../include/R_RTOS_services.h" 1
- 490 0078 191C     		movs r1, r3 
- 491              	
- 492              	@ 0 "" 2
- 104:../include/R_RTOS_services.h ****     INPUT_ARG_3( tskEndAddr );
- 493              		.loc 2 104 0
- 494              		.code	16
- 495 007a 2C4B     		ldr	r3, .L33+12
- 496              	@ 104 "../include/R_RTOS_services.h" 1
- 497 007c 1A1C     		movs r2, r3 
- 498              	
- 499              	@ 0 "" 2
- 105:../include/R_RTOS_services.h ****     INPUT_ARG_4( stckSze );
- 500              		.loc 2 105 0
- 501              		.code	16
- 502 007e 8023     		mov	r3, #128
- 503              	@ 105 "../include/R_RTOS_services.h" 1
- 504 0080 1B1C     		movs r3, r3 
- 505              	
- 506              	@ 0 "" 2
- 106:../include/R_RTOS_services.h ****     SVC( SVC_TSK_INIT );
- 507              		.loc 2 106 0
- 508              	@ 106 "../include/R_RTOS_services.h" 1
- 509 0082 01DF     		svc #1 
- 510              	
- 511              	@ 0 "" 2
- 108:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 512              		.loc 2 108 0
- 513              	@ 108 "../include/R_RTOS_services.h" 1
- 514 0084 EFF30881 		mrs     r1,     msp 
- 515 0088 0868     	 ldr r0, [r1] 
- 516 008a 021C     	 movs r2, r0 
- 517              	
- 518              	@ 0 "" 2
- 519              		.code	16
- 520 008c 3B1C     		mov	r3, r7
- 521 008e 0D33     		add	r3, r3, #13
- 522 0090 1A70     		strb	r2, [r3]
- 523              	.LBE67:
- 524              	.LBE66:
- 525              	.LBB68:
- 526              	.LBB69:
- 116:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
- 527              		.loc 2 116 0
- 528 0092 0423     		mov	r3, #4
- 529              	@ 116 "../include/R_RTOS_services.h" 1
- 530 0094 181C     		movs r0, r3 
- 531              	
- 532              	@ 0 "" 2
- 117:../include/R_RTOS_services.h ****     INPUT_ARG_2( tskPrio );
- 533              		.loc 2 117 0
- 534              		.code	16
- 535 0096 0523     		mov	r3, #5
- 536              	@ 117 "../include/R_RTOS_services.h" 1
- 537 0098 191C     		movs r1, r3 
- 538              	
- 539              	@ 0 "" 2
- 118:../include/R_RTOS_services.h ****     SVC( SVC_TSK_SETPRIO );
- 540              		.loc 2 118 0
- 541              	@ 118 "../include/R_RTOS_services.h" 1
- 542 009a 02DF     		svc #2 
- 543              	
- 544              	@ 0 "" 2
- 120:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 545              		.loc 2 120 0
- 546              	@ 120 "../include/R_RTOS_services.h" 1
- 547 009c EFF30881 		mrs     r1,     msp 
- 548 00a0 0868     	 ldr r0, [r1] 
- 549 00a2 021C     	 movs r2, r0 
- 550              	
- 551              	@ 0 "" 2
- 552              		.code	16
- 553 00a4 3B1C     		mov	r3, r7
- 554 00a6 0C33     		add	r3, r3, #12
- 555 00a8 1A70     		strb	r2, [r3]
- 556              	.LBE69:
- 557              	.LBE68:
- 558              	.LBB70:
- 559              	.LBB71:
- 127:../include/R_RTOS_services.h ****     INPUT_ARG_1( tskID );
- 560              		.loc 2 127 0
- 561 00aa 0423     		mov	r3, #4
- 562              	@ 127 "../include/R_RTOS_services.h" 1
- 563 00ac 181C     		movs r0, r3 
- 564              	
- 565              	@ 0 "" 2
- 128:../include/R_RTOS_services.h ****     SVC( SVC_TSK_ACTV );
- 566              		.loc 2 128 0
- 567              	@ 128 "../include/R_RTOS_services.h" 1
- 568 00ae 03DF     		svc #3 
- 569              	
- 570              	@ 0 "" 2
- 130:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 571              		.loc 2 130 0
- 572              	@ 130 "../include/R_RTOS_services.h" 1
- 573 00b0 EFF30881 		mrs     r1,     msp 
- 574 00b4 0868     	 ldr r0, [r1] 
- 575 00b6 021C     	 movs r2, r0 
- 576              	
- 577              	@ 0 "" 2
- 578              		.code	16
- 579 00b8 3B1C     		mov	r3, r7
- 580 00ba 0B33     		add	r3, r3, #11
- 581 00bc 1A70     		strb	r2, [r3]
- 582              	.LBE71:
- 583              	.LBE70:
- 584              	.LBB72:
- 585              	.LBB73:
- 242:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
- 586              		.loc 2 242 0
- 587 00be C823     		mov	r3, #200
- 588              	@ 242 "../include/R_RTOS_services.h" 1
- 589 00c0 181C     		movs r0, r3 
- 590              	
- 591              	@ 0 "" 2
+ 417              		.loc 2 140 0
+ 418              	@ 140 "../include/R_RTOS_services.h" 1
+ 419 014c EFF30881 		mrs     r1,     msp 
+ 420 0150 0868     	 ldr r0, [r1] 
+ 421 0152 021C     	 movs r2, r0 
+ 422              	
+ 423              	@ 0 "" 2
+ 424              		.code	16
+ 425 0154 BB1C     		add	r3, r7, #2
+ 426 0156 1A70     		strb	r2, [r3]
+ 427              	.LBE57:
+ 428              	.LBE56:
+  37:../Tasks/MntrTest/RWR/Tasks.c ****     svc_mntr_RelAccs((const MntrNr)0x0u);
+  38:../Tasks/MntrTest/RWR/Tasks.c **** 
+  39:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[1] );
+  40:../Tasks/MntrTest/RWR/Tasks.c **** }
+ 429              		.loc 1 40 0
+ 430 0158 BD46     		mov	sp, r7
+ 431 015a 04B0     		add	sp, sp, #16
+ 432              		@ sp needed
+ 433 015c 80BD     		pop	{r7, pc}
+ 434              	.L21:
+ 435 015e C046     		.align	2
+ 436              	.L20:
+ 437 0160 00F00F40 		.word	1074786304
+ 438 0164 00000000 		.word	p_cur_tsk_tcb
+ 439 0168 00000000 		.word	tsk2
+ 440 016c 00000000 		.word	tsk_EndTheTask
+ 441 0170 00000000 		.word	tsk3
+ 442 0174 24000000 		.word	tsk_AR+36
+ 443              		.cfi_endproc
+ 444              	.LFE68:
+ 446              		.section	.text.tsk2,"ax",%progbits
+ 447              		.align	2
+ 448              		.global	tsk2
+ 449              		.code	16
+ 450              		.thumb_func
+ 452              	tsk2:
+ 453              	.LFB69:
+  41:../Tasks/MntrTest/RWR/Tasks.c **** void tsk2( void )
+  42:../Tasks/MntrTest/RWR/Tasks.c **** {
+ 454              		.loc 1 42 0
+ 455              		.cfi_startproc
+ 456 0000 80B5     		push	{r7, lr}
+ 457              		.cfi_def_cfa_offset 8
+ 458              		.cfi_offset 7, -8
+ 459              		.cfi_offset 14, -4
+ 460 0002 82B0     		sub	sp, sp, #8
+ 461              		.cfi_def_cfa_offset 16
+ 462 0004 00AF     		add	r7, sp, #0
+ 463              		.cfi_def_cfa_register 7
+  43:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_LOW( PIN_LED0 );
+ 464              		.loc 1 43 0
+ 465 0006 314B     		ldr	r3, .L35
+ 466 0008 5A69     		ldr	r2, [r3, #20]
+ 467 000a 8023     		mov	r3, #128
+ 468 000c 5B00     		lsl	r3, r3, #1
+ 469 000e 1340     		and	r3, r2
+ 470 0010 06D0     		beq	.L24
+ 471              		.loc 1 43 0 is_stmt 0 discriminator 1
+ 472 0012 2E4B     		ldr	r3, .L35
+ 473 0014 2D4A     		ldr	r2, .L35
+ 474 0016 9268     		ldr	r2, [r2, #8]
+ 475 0018 8021     		mov	r1, #128
+ 476 001a 4900     		lsl	r1, r1, #1
+ 477 001c 0A43     		orr	r2, r1
+ 478 001e 9A60     		str	r2, [r3, #8]
+ 479              	.L24:
+  44:../Tasks/MntrTest/RWR/Tasks.c ****     svc_mntr_ReqWriteAccs((const MntrNr)0x0u, p_cur_tsk_tcb);
+ 480              		.loc 1 44 0 is_stmt 1
+ 481 0020 2B4B     		ldr	r3, .L35+4
+ 482 0022 1B68     		ldr	r3, [r3]
+ 483 0024 7B60     		str	r3, [r7, #4]
+ 484              	.LBB58:
+ 485              	.LBB59:
+ 242:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+ 486              		.loc 2 242 0
+ 487 0026 0023     		mov	r3, #0
+ 488              	@ 242 "../include/R_RTOS_services.h" 1
+ 489 0028 181C     		movs r0, r3 
+ 490              	
+ 491              	@ 0 "" 2
  243:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 592              		.loc 2 243 0
- 593              		.code	16
- 594 00c2 174B     		ldr	r3, .L33
- 595              	@ 243 "../include/R_RTOS_services.h" 1
- 596 00c4 191C     		movs r1, r3 
- 597              	
- 598              	@ 0 "" 2
- 244:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
- 599              		.loc 2 244 0
- 600              	@ 244 "../include/R_RTOS_services.h" 1
- 601 00c6 0DDF     		svc #13 
- 602              	
- 603              	@ 0 "" 2
- 604              		.loc 2 246 0
- 605              	@ 246 "../include/R_RTOS_services.h" 1
- 606 00c8 EFF30881 		mrs     r1,     msp 
- 607 00cc 0868     	 ldr r0, [r1] 
- 608 00ce 021C     	 movs r2, r0 
- 609              	
- 610              	@ 0 "" 2
- 611              		.code	16
- 612 00d0 3B1C     		mov	r3, r7
- 613 00d2 0A33     		add	r3, r3, #10
- 614 00d4 1A70     		strb	r2, [r3]
- 615              	.LBE73:
- 616              	.LBE72:
- 617              	.LBB74:
- 618              	.LBB75:
- 206:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 619              		.loc 2 206 0
- 620 00d6 0023     		mov	r3, #0
- 621              	@ 206 "../include/R_RTOS_services.h" 1
- 622 00d8 181C     		movs r0, r3 
- 623              	
- 624              	@ 0 "" 2
- 207:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 625              		.loc 2 207 0
- 626              		.code	16
- 627 00da 114B     		ldr	r3, .L33
- 628              	@ 207 "../include/R_RTOS_services.h" 1
- 629 00dc 191C     		movs r1, r3 
- 630              	
- 631              	@ 0 "" 2
- 208:../include/R_RTOS_services.h ****     SVC( SVC_SEM_SIGNAL );
- 632              		.loc 2 208 0
- 633              	@ 208 "../include/R_RTOS_services.h" 1
- 634 00de 0ADF     		svc #10 
- 635              	
- 636              	@ 0 "" 2
- 210:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 637              		.loc 2 210 0
- 638              	@ 210 "../include/R_RTOS_services.h" 1
- 639 00e0 EFF30881 		mrs     r1,     msp 
- 640 00e4 0868     	 ldr r0, [r1] 
- 641 00e6 021C     	 movs r2, r0 
- 642              	
- 643              	@ 0 "" 2
- 644              		.code	16
- 645 00e8 3B1C     		mov	r3, r7
- 646 00ea 0933     		add	r3, r3, #9
- 647 00ec 1A70     		strb	r2, [r3]
- 648              	.LBE75:
- 649              	.LBE74:
- 650              	.LBB76:
- 651              	.LBB77:
- 206:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 652              		.loc 2 206 0
- 653 00ee 0123     		mov	r3, #1
- 654              	@ 206 "../include/R_RTOS_services.h" 1
- 655 00f0 181C     		movs r0, r3 
- 656              	
- 657              	@ 0 "" 2
- 207:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 658              		.loc 2 207 0
- 659              		.code	16
- 660 00f2 0B4B     		ldr	r3, .L33
- 661              	@ 207 "../include/R_RTOS_services.h" 1
- 662 00f4 191C     		movs r1, r3 
- 663              	
- 664              	@ 0 "" 2
- 208:../include/R_RTOS_services.h ****     SVC( SVC_SEM_SIGNAL );
- 665              		.loc 2 208 0
- 666              	@ 208 "../include/R_RTOS_services.h" 1
- 667 00f6 0ADF     		svc #10 
- 668              	
- 669              	@ 0 "" 2
- 210:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 670              		.loc 2 210 0
- 671              	@ 210 "../include/R_RTOS_services.h" 1
- 672 00f8 EFF30881 		mrs     r1,     msp 
- 673 00fc 0868     	 ldr r0, [r1] 
- 674 00fe 021C     	 movs r2, r0 
- 675              	
- 676              	@ 0 "" 2
- 677              		.code	16
- 678 0100 3B1C     		mov	r3, r7
- 679 0102 0833     		add	r3, r3, #8
- 680 0104 1A70     		strb	r2, [r3]
- 681              	.LBE77:
- 682              	.LBE76:
- 683              	.LBB78:
- 684              	.LBB79:
+ 492              		.loc 2 243 0
+ 493              		.code	16
+ 494 002a 7B68     		ldr	r3, [r7, #4]
+ 495              	@ 243 "../include/R_RTOS_services.h" 1
+ 496 002c 191C     		movs r1, r3 
+ 497              	
+ 498              	@ 0 "" 2
+ 244:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REQ_WRITE_ACC );
+ 499              		.loc 2 244 0
+ 500              	@ 244 "../include/R_RTOS_services.h" 1
+ 501 002e 0DDF     		svc #13 
+ 502              	
+ 503              	@ 0 "" 2
+ 246:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 504              		.loc 2 246 0
+ 505              	@ 246 "../include/R_RTOS_services.h" 1
+ 506 0030 EFF30881 		mrs     r1,     msp 
+ 507 0034 0868     	 ldr r0, [r1] 
+ 508 0036 021C     	 movs r2, r0 
+ 509              	
+ 510              	@ 0 "" 2
+ 511              		.code	16
+ 512 0038 FB1C     		add	r3, r7, #3
+ 513 003a 1A70     		strb	r2, [r3]
+ 514              	.LBE59:
+ 515              	.LBE58:
+  45:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_HIGH( PIN_LED0 );
+ 516              		.loc 1 45 0
+ 517 003c 234B     		ldr	r3, .L35
+ 518 003e 5A69     		ldr	r2, [r3, #20]
+ 519 0040 8023     		mov	r3, #128
+ 520 0042 5B00     		lsl	r3, r3, #1
+ 521 0044 1340     		and	r3, r2
+ 522 0046 06D0     		beq	.L27
+ 523              		.loc 1 45 0 is_stmt 0 discriminator 1
+ 524 0048 204B     		ldr	r3, .L35
+ 525 004a 204A     		ldr	r2, .L35
+ 526 004c 5268     		ldr	r2, [r2, #4]
+ 527 004e 8021     		mov	r1, #128
+ 528 0050 4900     		lsl	r1, r1, #1
+ 529 0052 0A43     		orr	r2, r1
+ 530 0054 5A60     		str	r2, [r3, #4]
+ 531              	.L27:
+  46:../Tasks/MntrTest/RWR/Tasks.c **** 
+  47:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_LOW( PIN_LED2 );
+ 532              		.loc 1 47 0 is_stmt 1
+ 533 0056 1D4B     		ldr	r3, .L35
+ 534 0058 5A69     		ldr	r2, [r3, #20]
+ 535 005a 8023     		mov	r3, #128
+ 536 005c DB00     		lsl	r3, r3, #3
+ 537 005e 1340     		and	r3, r2
+ 538 0060 06D0     		beq	.L29
+ 539              		.loc 1 47 0 is_stmt 0 discriminator 1
+ 540 0062 1A4B     		ldr	r3, .L35
+ 541 0064 194A     		ldr	r2, .L35
+ 542 0066 9268     		ldr	r2, [r2, #8]
+ 543 0068 8021     		mov	r1, #128
+ 544 006a C900     		lsl	r1, r1, #3
+ 545 006c 0A43     		orr	r2, r1
+ 546 006e 9A60     		str	r2, [r3, #8]
+ 547              	.L29:
+ 548              	.LBB60:
+ 549              	.LBB61:
+ 288:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 550              		.loc 2 288 0 is_stmt 1
+ 551 0070 9623     		mov	r3, #150
+ 552 0072 5B00     		lsl	r3, r3, #1
+ 553              	@ 288 "../include/R_RTOS_services.h" 1
+ 554 0074 181C     		movs r0, r3 
+ 555              	
+ 556              	@ 0 "" 2
+ 289:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 557              		.loc 2 289 0
+ 558              		.code	16
+ 559 0076 174B     		ldr	r3, .L35+8
+ 560              	@ 289 "../include/R_RTOS_services.h" 1
+ 561 0078 191C     		movs r1, r3 
+ 562              	
+ 563              	@ 0 "" 2
+ 290:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 564              		.loc 2 290 0
+ 565              	@ 290 "../include/R_RTOS_services.h" 1
+ 566 007a 11DF     		svc #17 
+ 567              	
+ 568              	@ 0 "" 2
+ 569              		.loc 2 292 0
+ 570              	@ 292 "../include/R_RTOS_services.h" 1
+ 571 007c EFF30881 		mrs     r1,     msp 
+ 572 0080 0868     	 ldr r0, [r1] 
+ 573 0082 021C     	 movs r2, r0 
+ 574              	
+ 575              	@ 0 "" 2
+ 576              		.code	16
+ 577 0084 BB1C     		add	r3, r7, #2
+ 578 0086 1A70     		strb	r2, [r3]
+ 579              	.LBE61:
+ 580              	.LBE60:
+  48:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tmr_SetTimer( (WaitTime) 300, &tsk_AR[2] );
+  49:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_HIGH( PIN_LED2 );
+ 581              		.loc 1 49 0
+ 582 0088 104B     		ldr	r3, .L35
+ 583 008a 5A69     		ldr	r2, [r3, #20]
+ 584 008c 8023     		mov	r3, #128
+ 585 008e DB00     		lsl	r3, r3, #3
+ 586 0090 1340     		and	r3, r2
+ 587 0092 06D0     		beq	.L32
+ 588              		.loc 1 49 0 is_stmt 0 discriminator 1
+ 589 0094 0D4B     		ldr	r3, .L35
+ 590 0096 0D4A     		ldr	r2, .L35
+ 591 0098 5268     		ldr	r2, [r2, #4]
+ 592 009a 8021     		mov	r1, #128
+ 593 009c C900     		lsl	r1, r1, #3
+ 594 009e 0A43     		orr	r2, r1
+ 595 00a0 5A60     		str	r2, [r3, #4]
+ 596              	.L32:
+ 597              	.LBB62:
+ 598              	.LBB63:
+ 254:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+ 599              		.loc 2 254 0 is_stmt 1
+ 600 00a2 0023     		mov	r3, #0
+ 601              	@ 254 "../include/R_RTOS_services.h" 1
+ 602 00a4 181C     		movs r0, r3 
+ 603              	
+ 604              	@ 0 "" 2
+ 255:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REL_ACC );
+ 605              		.loc 2 255 0
+ 606              	@ 255 "../include/R_RTOS_services.h" 1
+ 607 00a6 0EDF     		svc #14 
+ 608              	
+ 609              	@ 0 "" 2
+ 257:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 610              		.loc 2 257 0
+ 611              	@ 257 "../include/R_RTOS_services.h" 1
+ 612 00a8 EFF30881 		mrs     r1,     msp 
+ 613 00ac 0868     	 ldr r0, [r1] 
+ 614 00ae 021C     	 movs r2, r0 
+ 615              	
+ 616              	@ 0 "" 2
+ 617              		.code	16
+ 618 00b0 7B1C     		add	r3, r7, #1
+ 619 00b2 1A70     		strb	r2, [r3]
+ 620              	.LBE63:
+ 621              	.LBE62:
+ 622              	.LBB64:
+ 623              	.LBB65:
  137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
- 685              		.loc 2 137 0
- 686 0106 064B     		ldr	r3, .L33
- 687              	@ 137 "../include/R_RTOS_services.h" 1
- 688 0108 181C     		movs r0, r3 
- 689              	
- 690              	@ 0 "" 2
+ 624              		.loc 2 137 0
+ 625 00b4 074B     		ldr	r3, .L35+8
+ 626              	@ 137 "../include/R_RTOS_services.h" 1
+ 627 00b6 181C     		movs r0, r3 
+ 628              	
+ 629              	@ 0 "" 2
  138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
- 691              		.loc 2 138 0
- 692              	@ 138 "../include/R_RTOS_services.h" 1
- 693 010a 04DF     		svc #4 
- 694              	
- 695              	@ 0 "" 2
+ 630              		.loc 2 138 0
+ 631              	@ 138 "../include/R_RTOS_services.h" 1
+ 632 00b8 04DF     		svc #4 
+ 633              	
+ 634              	@ 0 "" 2
  140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 696              		.loc 2 140 0
- 697              	@ 140 "../include/R_RTOS_services.h" 1
- 698 010c EFF30881 		mrs     r1,     msp 
- 699 0110 0868     	 ldr r0, [r1] 
- 700 0112 021C     	 movs r2, r0 
- 701              	
- 702              	@ 0 "" 2
- 703              		.code	16
- 704 0114 FB1D     		add	r3, r7, #7
- 705 0116 1A70     		strb	r2, [r3]
- 706              	.LBE79:
- 707              	.LBE78:
-  46:../Tasks/SemTest/Tasks.c **** 
-  47:../Tasks/SemTest/Tasks.c ****     svc_tsk_InitTsk( (TskID) 0x4u, &tsk4, &tsk_EndTheTask, MY_STACK_SIZE );
-  48:../Tasks/SemTest/Tasks.c ****     svc_tsk_SetTskPrio( (TskID) 0x4u, TSK_PRIO_ABOVMED );
-  49:../Tasks/SemTest/Tasks.c ****     svc_tsk_ActvTsk( (TskID) 0x4u );
-  50:../Tasks/SemTest/Tasks.c **** 
-  51:../Tasks/SemTest/Tasks.c ****     svc_tmr_SetTimer( (WaitTime) 200u, &tsk_AR[2] );
-  52:../Tasks/SemTest/Tasks.c **** 
-  53:../Tasks/SemTest/Tasks.c ****     svc_sem_signal( (SemNr) 0x0u, &tsk_AR[2] );
-  54:../Tasks/SemTest/Tasks.c **** 
-  55:../Tasks/SemTest/Tasks.c ****     svc_sem_signal( (SemNr) 0x1u, &tsk_AR[2] );
-  56:../Tasks/SemTest/Tasks.c **** 
-  57:../Tasks/SemTest/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[2] );
-  58:../Tasks/SemTest/Tasks.c **** }
- 708              		.loc 1 58 0
- 709 0118 BD46     		mov	sp, r7
- 710 011a 04B0     		add	sp, sp, #16
- 711              		@ sp needed
- 712 011c 80BD     		pop	{r7, pc}
- 713              	.L34:
- 714 011e C046     		.align	2
- 715              	.L33:
- 716 0120 48000000 		.word	tsk_AR+72
- 717 0124 00F00F40 		.word	1074786304
- 718 0128 00000000 		.word	tsk4
- 719 012c 00000000 		.word	tsk_EndTheTask
- 720              		.cfi_endproc
- 721              	.LFE65:
- 723              		.section	.text.tsk3,"ax",%progbits
- 724              		.align	2
- 725              		.global	tsk3
+ 635              		.loc 2 140 0
+ 636              	@ 140 "../include/R_RTOS_services.h" 1
+ 637 00ba EFF30881 		mrs     r1,     msp 
+ 638 00be 0868     	 ldr r0, [r1] 
+ 639 00c0 021C     	 movs r2, r0 
+ 640              	
+ 641              	@ 0 "" 2
+ 642              		.code	16
+ 643 00c2 3B1C     		mov	r3, r7
+ 644 00c4 1A70     		strb	r2, [r3]
+ 645              	.LBE65:
+ 646              	.LBE64:
+  50:../Tasks/MntrTest/RWR/Tasks.c **** 
+  51:../Tasks/MntrTest/RWR/Tasks.c ****     svc_mntr_RelAccs((const MntrNr)0x0u);
+  52:../Tasks/MntrTest/RWR/Tasks.c **** 
+  53:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[2] );
+  54:../Tasks/MntrTest/RWR/Tasks.c **** }
+ 647              		.loc 1 54 0
+ 648 00c6 BD46     		mov	sp, r7
+ 649 00c8 02B0     		add	sp, sp, #8
+ 650              		@ sp needed
+ 651 00ca 80BD     		pop	{r7, pc}
+ 652              	.L36:
+ 653              		.align	2
+ 654              	.L35:
+ 655 00cc 00F00F40 		.word	1074786304
+ 656 00d0 00000000 		.word	p_cur_tsk_tcb
+ 657 00d4 48000000 		.word	tsk_AR+72
+ 658              		.cfi_endproc
+ 659              	.LFE69:
+ 661              		.section	.text.tsk3,"ax",%progbits
+ 662              		.align	2
+ 663              		.global	tsk3
+ 664              		.code	16
+ 665              		.thumb_func
+ 667              	tsk3:
+ 668              	.LFB70:
+  55:../Tasks/MntrTest/RWR/Tasks.c **** 
+  56:../Tasks/MntrTest/RWR/Tasks.c **** void tsk3( void )
+  57:../Tasks/MntrTest/RWR/Tasks.c **** {
+ 669              		.loc 1 57 0
+ 670              		.cfi_startproc
+ 671 0000 80B5     		push	{r7, lr}
+ 672              		.cfi_def_cfa_offset 8
+ 673              		.cfi_offset 7, -8
+ 674              		.cfi_offset 14, -4
+ 675 0002 86B0     		sub	sp, sp, #24
+ 676              		.cfi_def_cfa_offset 32
+ 677 0004 00AF     		add	r7, sp, #0
+ 678              		.cfi_def_cfa_register 7
+  58:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_LOW( PIN_LED0 );
+ 679              		.loc 1 58 0
+ 680 0006 354B     		ldr	r3, .L50
+ 681 0008 5A69     		ldr	r2, [r3, #20]
+ 682 000a 8023     		mov	r3, #128
+ 683 000c 5B00     		lsl	r3, r3, #1
+ 684 000e 1340     		and	r3, r2
+ 685 0010 06D0     		beq	.L39
+ 686              		.loc 1 58 0 is_stmt 0 discriminator 1
+ 687 0012 324B     		ldr	r3, .L50
+ 688 0014 314A     		ldr	r2, .L50
+ 689 0016 9268     		ldr	r2, [r2, #8]
+ 690 0018 8021     		mov	r1, #128
+ 691 001a 4900     		lsl	r1, r1, #1
+ 692 001c 0A43     		orr	r2, r1
+ 693 001e 9A60     		str	r2, [r3, #8]
+ 694              	.L39:
+  59:../Tasks/MntrTest/RWR/Tasks.c ****     svc_mntr_ReqReadAccs((const MntrNr)0x0u, p_cur_tsk_tcb);
+ 695              		.loc 1 59 0 is_stmt 1
+ 696 0020 2F4B     		ldr	r3, .L50+4
+ 697 0022 1B68     		ldr	r3, [r3]
+ 698 0024 7B61     		str	r3, [r7, #20]
+ 699              	.LBB66:
+ 700              	.LBB67:
+ 230:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+ 701              		.loc 2 230 0
+ 702 0026 0023     		mov	r3, #0
+ 703              	@ 230 "../include/R_RTOS_services.h" 1
+ 704 0028 181C     		movs r0, r3 
+ 705              	
+ 706              	@ 0 "" 2
+ 231:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 707              		.loc 2 231 0
+ 708              		.code	16
+ 709 002a 7B69     		ldr	r3, [r7, #20]
+ 710              	@ 231 "../include/R_RTOS_services.h" 1
+ 711 002c 191C     		movs r1, r3 
+ 712              	
+ 713              	@ 0 "" 2
+ 232:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REQ_READ_ACC );
+ 714              		.loc 2 232 0
+ 715              	@ 232 "../include/R_RTOS_services.h" 1
+ 716 002e 0CDF     		svc #12 
+ 717              	
+ 718              	@ 0 "" 2
+ 234:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 719              		.loc 2 234 0
+ 720              	@ 234 "../include/R_RTOS_services.h" 1
+ 721 0030 EFF30881 		mrs     r1,     msp 
+ 722 0034 0868     	 ldr r0, [r1] 
+ 723 0036 021C     	 movs r2, r0 
+ 724              	
+ 725              	@ 0 "" 2
  726              		.code	16
- 727              		.thumb_func
- 729              	tsk3:
- 730              	.LFB66:
-  59:../Tasks/SemTest/Tasks.c **** void tsk3( void )
-  60:../Tasks/SemTest/Tasks.c **** {
- 731              		.loc 1 60 0
- 732              		.cfi_startproc
- 733 0000 80B5     		push	{r7, lr}
- 734              		.cfi_def_cfa_offset 8
- 735              		.cfi_offset 7, -8
- 736              		.cfi_offset 14, -4
- 737 0002 82B0     		sub	sp, sp, #8
- 738              		.cfi_def_cfa_offset 16
- 739 0004 00AF     		add	r7, sp, #0
- 740              		.cfi_def_cfa_register 7
-  61:../Tasks/SemTest/Tasks.c ****     SET_PIN_LOW( PIN_LED3 );//##
- 741              		.loc 1 61 0
- 742 0006 244B     		ldr	r3, .L44
- 743 0008 5A69     		ldr	r2, [r3, #20]
- 744 000a 8023     		mov	r3, #128
- 745 000c 1B01     		lsl	r3, r3, #4
- 746 000e 1340     		and	r3, r2
- 747 0010 06D0     		beq	.L37
- 748              		.loc 1 61 0 is_stmt 0 discriminator 1
- 749 0012 214B     		ldr	r3, .L44
- 750 0014 204A     		ldr	r2, .L44
- 751 0016 9268     		ldr	r2, [r2, #8]
- 752 0018 8021     		mov	r1, #128
- 753 001a 0901     		lsl	r1, r1, #4
- 754 001c 0A43     		orr	r2, r1
- 755 001e 9A60     		str	r2, [r3, #8]
- 756              	.L37:
- 757              	.LBB80:
- 758              	.LBB81:
- 193:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 759              		.loc 2 193 0 is_stmt 1
- 760 0020 0123     		mov	r3, #1
- 761              	@ 193 "../include/R_RTOS_services.h" 1
- 762 0022 181C     		movs r0, r3 
- 763              	
- 764              	@ 0 "" 2
- 194:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 765              		.loc 2 194 0
- 766              		.code	16
- 767 0024 1D4B     		ldr	r3, .L44+4
- 768              	@ 194 "../include/R_RTOS_services.h" 1
- 769 0026 191C     		movs r1, r3 
- 770              	
- 771              	@ 0 "" 2
- 195:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
- 772              		.loc 2 195 0
- 773              		.code	16
- 774 0028 6423     		mov	r3, #100
- 775              	@ 195 "../include/R_RTOS_services.h" 1
- 776 002a 1A1C     		movs r2, r3 
- 777              	
- 778              	@ 0 "" 2
- 196:../include/R_RTOS_services.h ****     SVC( SVC_SEM_WAIT );
- 779              		.loc 2 196 0
- 780              	@ 196 "../include/R_RTOS_services.h" 1
- 781 002c 09DF     		svc #9 
- 782              	
- 783              	@ 0 "" 2
- 198:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 784              		.loc 2 198 0
- 785              	@ 198 "../include/R_RTOS_services.h" 1
- 786 002e EFF30881 		mrs     r1,     msp 
- 787 0032 0868     	 ldr r0, [r1] 
- 788 0034 021C     	 movs r2, r0 
- 789              	
- 790              	@ 0 "" 2
- 791              		.code	16
- 792 0036 FB1D     		add	r3, r7, #7
- 793 0038 1A70     		strb	r2, [r3]
- 794              	.LBE81:
- 795              	.LBE80:
- 796              	.LBB82:
- 797              	.LBB83:
- 242:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
- 798              		.loc 2 242 0
- 799 003a C823     		mov	r3, #200
- 800              	@ 242 "../include/R_RTOS_services.h" 1
- 801 003c 181C     		movs r0, r3 
- 802              	
- 803              	@ 0 "" 2
- 243:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 804              		.loc 2 243 0
- 805              		.code	16
- 806 003e 174B     		ldr	r3, .L44+4
- 807              	@ 243 "../include/R_RTOS_services.h" 1
- 808 0040 191C     		movs r1, r3 
- 809              	
- 810              	@ 0 "" 2
- 244:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
- 811              		.loc 2 244 0
- 812              	@ 244 "../include/R_RTOS_services.h" 1
- 813 0042 0DDF     		svc #13 
- 814              	
- 815              	@ 0 "" 2
- 816              		.loc 2 246 0
- 817              	@ 246 "../include/R_RTOS_services.h" 1
- 818 0044 EFF30881 		mrs     r1,     msp 
- 819 0048 0868     	 ldr r0, [r1] 
- 820 004a 021C     	 movs r2, r0 
- 821              	
- 822              	@ 0 "" 2
- 823              		.code	16
- 824 004c BB1D     		add	r3, r7, #6
- 825 004e 1A70     		strb	r2, [r3]
- 826              	.LBE83:
- 827              	.LBE82:
-  62:../Tasks/SemTest/Tasks.c ****     svc_sem_wait( (SemNr) 0x1u, &tsk_AR[3], 100 );
-  63:../Tasks/SemTest/Tasks.c ****     svc_tmr_SetTimer( (WaitTime) 200u, &tsk_AR[3] ); //##
-  64:../Tasks/SemTest/Tasks.c ****     SET_PIN_HIGH( PIN_LED3 );
- 828              		.loc 1 64 0
- 829 0050 114B     		ldr	r3, .L44
- 830 0052 5A69     		ldr	r2, [r3, #20]
- 831 0054 8023     		mov	r3, #128
- 832 0056 1B01     		lsl	r3, r3, #4
- 833 0058 1340     		and	r3, r2
- 834 005a 06D0     		beq	.L41
- 835              		.loc 1 64 0 is_stmt 0 discriminator 1
- 836 005c 0E4B     		ldr	r3, .L44
- 837 005e 0E4A     		ldr	r2, .L44
- 838 0060 5268     		ldr	r2, [r2, #4]
- 839 0062 8021     		mov	r1, #128
- 840 0064 0901     		lsl	r1, r1, #4
- 841 0066 0A43     		orr	r2, r1
- 842 0068 5A60     		str	r2, [r3, #4]
- 843              	.L41:
- 844              	.LBB84:
- 845              	.LBB85:
- 206:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 846              		.loc 2 206 0 is_stmt 1
- 847 006a 0123     		mov	r3, #1
- 848              	@ 206 "../include/R_RTOS_services.h" 1
- 849 006c 181C     		movs r0, r3 
- 850              	
- 851              	@ 0 "" 2
- 207:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 852              		.loc 2 207 0
- 853              		.code	16
- 854 006e 0B4B     		ldr	r3, .L44+4
- 855              	@ 207 "../include/R_RTOS_services.h" 1
- 856 0070 191C     		movs r1, r3 
- 857              	
- 858              	@ 0 "" 2
- 208:../include/R_RTOS_services.h ****     SVC( SVC_SEM_SIGNAL );
- 859              		.loc 2 208 0
- 860              	@ 208 "../include/R_RTOS_services.h" 1
- 861 0072 0ADF     		svc #10 
- 862              	
- 863              	@ 0 "" 2
- 210:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 864              		.loc 2 210 0
- 865              	@ 210 "../include/R_RTOS_services.h" 1
- 866 0074 EFF30881 		mrs     r1,     msp 
- 867 0078 0868     	 ldr r0, [r1] 
- 868 007a 021C     	 movs r2, r0 
- 869              	
- 870              	@ 0 "" 2
- 871              		.code	16
- 872 007c 7B1D     		add	r3, r7, #5
- 873 007e 1A70     		strb	r2, [r3]
- 874              	.LBE85:
- 875              	.LBE84:
- 876              	.LBB86:
- 877              	.LBB87:
+ 727 0038 3B1C     		mov	r3, r7
+ 728 003a 1333     		add	r3, r3, #19
+ 729 003c 1A70     		strb	r2, [r3]
+ 730              	.LBE67:
+ 731              	.LBE66:
+  60:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_HIGH( PIN_LED0 );
+ 732              		.loc 1 60 0
+ 733 003e 274B     		ldr	r3, .L50
+ 734 0040 5A69     		ldr	r2, [r3, #20]
+ 735 0042 8023     		mov	r3, #128
+ 736 0044 5B00     		lsl	r3, r3, #1
+ 737 0046 1340     		and	r3, r2
+ 738 0048 06D0     		beq	.L42
+ 739              		.loc 1 60 0 is_stmt 0 discriminator 1
+ 740 004a 244B     		ldr	r3, .L50
+ 741 004c 234A     		ldr	r2, .L50
+ 742 004e 5268     		ldr	r2, [r2, #4]
+ 743 0050 8021     		mov	r1, #128
+ 744 0052 4900     		lsl	r1, r1, #1
+ 745 0054 0A43     		orr	r2, r1
+ 746 0056 5A60     		str	r2, [r3, #4]
+ 747              	.L42:
+  61:../Tasks/MntrTest/RWR/Tasks.c **** 
+  62:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_LOW(PIN_LED3);
+ 748              		.loc 1 62 0 is_stmt 1
+ 749 0058 204B     		ldr	r3, .L50
+ 750 005a 5A69     		ldr	r2, [r3, #20]
+ 751 005c 8023     		mov	r3, #128
+ 752 005e 1B01     		lsl	r3, r3, #4
+ 753 0060 1340     		and	r3, r2
+ 754 0062 06D0     		beq	.L44
+ 755              		.loc 1 62 0 is_stmt 0 discriminator 1
+ 756 0064 1D4B     		ldr	r3, .L50
+ 757 0066 1D4A     		ldr	r2, .L50
+ 758 0068 9268     		ldr	r2, [r2, #8]
+ 759 006a 8021     		mov	r1, #128
+ 760 006c 0901     		lsl	r1, r1, #4
+ 761 006e 0A43     		orr	r2, r1
+ 762 0070 9A60     		str	r2, [r3, #8]
+ 763              	.L44:
+  63:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tmr_SetTimer( (WaitTime)200u, p_cur_tsk_tcb);
+ 764              		.loc 1 63 0 is_stmt 1
+ 765 0072 1B4B     		ldr	r3, .L50+4
+ 766 0074 1B68     		ldr	r3, [r3]
+ 767 0076 FB60     		str	r3, [r7, #12]
+ 768              	.LBB68:
+ 769              	.LBB69:
+ 288:../include/R_RTOS_services.h ****     INPUT_ARG_1( msToWait );
+ 770              		.loc 2 288 0
+ 771 0078 C823     		mov	r3, #200
+ 772              	@ 288 "../include/R_RTOS_services.h" 1
+ 773 007a 181C     		movs r0, r3 
+ 774              	
+ 775              	@ 0 "" 2
+ 289:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
+ 776              		.loc 2 289 0
+ 777              		.code	16
+ 778 007c FB68     		ldr	r3, [r7, #12]
+ 779              	@ 289 "../include/R_RTOS_services.h" 1
+ 780 007e 191C     		movs r1, r3 
+ 781              	
+ 782              	@ 0 "" 2
+ 290:../include/R_RTOS_services.h ****     SVC( SVC_TMR_SET );
+ 783              		.loc 2 290 0
+ 784              	@ 290 "../include/R_RTOS_services.h" 1
+ 785 0080 11DF     		svc #17 
+ 786              	
+ 787              	@ 0 "" 2
+ 788              		.loc 2 292 0
+ 789              	@ 292 "../include/R_RTOS_services.h" 1
+ 790 0082 EFF30881 		mrs     r1,     msp 
+ 791 0086 0868     	 ldr r0, [r1] 
+ 792 0088 021C     	 movs r2, r0 
+ 793              	
+ 794              	@ 0 "" 2
+ 795              		.code	16
+ 796 008a 3B1C     		mov	r3, r7
+ 797 008c 0B33     		add	r3, r3, #11
+ 798 008e 1A70     		strb	r2, [r3]
+ 799              	.LBE69:
+ 800              	.LBE68:
+  64:../Tasks/MntrTest/RWR/Tasks.c ****     SET_PIN_HIGH(PIN_LED3);
+ 801              		.loc 1 64 0
+ 802 0090 124B     		ldr	r3, .L50
+ 803 0092 5A69     		ldr	r2, [r3, #20]
+ 804 0094 8023     		mov	r3, #128
+ 805 0096 1B01     		lsl	r3, r3, #4
+ 806 0098 1340     		and	r3, r2
+ 807 009a 06D0     		beq	.L47
+ 808              		.loc 1 64 0 is_stmt 0 discriminator 1
+ 809 009c 0F4B     		ldr	r3, .L50
+ 810 009e 0F4A     		ldr	r2, .L50
+ 811 00a0 5268     		ldr	r2, [r2, #4]
+ 812 00a2 8021     		mov	r1, #128
+ 813 00a4 0901     		lsl	r1, r1, #4
+ 814 00a6 0A43     		orr	r2, r1
+ 815 00a8 5A60     		str	r2, [r3, #4]
+ 816              	.L47:
+ 817              	.LBB70:
+ 818              	.LBB71:
+ 254:../include/R_RTOS_services.h ****     INPUT_ARG_1( mntrNr );
+ 819              		.loc 2 254 0 is_stmt 1
+ 820 00aa 0023     		mov	r3, #0
+ 821              	@ 254 "../include/R_RTOS_services.h" 1
+ 822 00ac 181C     		movs r0, r3 
+ 823              	
+ 824              	@ 0 "" 2
+ 255:../include/R_RTOS_services.h ****     SVC( SVC_MNTR_REL_ACC );
+ 825              		.loc 2 255 0
+ 826              	@ 255 "../include/R_RTOS_services.h" 1
+ 827 00ae 0EDF     		svc #14 
+ 828              	
+ 829              	@ 0 "" 2
+ 257:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
+ 830              		.loc 2 257 0
+ 831              	@ 257 "../include/R_RTOS_services.h" 1
+ 832 00b0 EFF30881 		mrs     r1,     msp 
+ 833 00b4 0868     	 ldr r0, [r1] 
+ 834 00b6 021C     	 movs r2, r0 
+ 835              	
+ 836              	@ 0 "" 2
+ 837              		.code	16
+ 838 00b8 3B1C     		mov	r3, r7
+ 839 00ba 0A33     		add	r3, r3, #10
+ 840 00bc 1A70     		strb	r2, [r3]
+ 841              	.LBE71:
+ 842              	.LBE70:
+  65:../Tasks/MntrTest/RWR/Tasks.c **** 
+  66:../Tasks/MntrTest/RWR/Tasks.c ****     svc_mntr_RelAccs((const MntrNr)0x0u);
+  67:../Tasks/MntrTest/RWR/Tasks.c **** 
+  68:../Tasks/MntrTest/RWR/Tasks.c ****     svc_tsk_KillTsk(p_cur_tsk_tcb);
+ 843              		.loc 1 68 0
+ 844 00be 084B     		ldr	r3, .L50+4
+ 845 00c0 1B68     		ldr	r3, [r3]
+ 846 00c2 7B60     		str	r3, [r7, #4]
+ 847              	.LBB72:
+ 848              	.LBB73:
  137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
- 878              		.loc 2 137 0
- 879 0080 064B     		ldr	r3, .L44+4
- 880              	@ 137 "../include/R_RTOS_services.h" 1
- 881 0082 181C     		movs r0, r3 
- 882              	
- 883              	@ 0 "" 2
+ 849              		.loc 2 137 0
+ 850 00c4 7B68     		ldr	r3, [r7, #4]
+ 851              	@ 137 "../include/R_RTOS_services.h" 1
+ 852 00c6 181C     		movs r0, r3 
+ 853              	
+ 854              	@ 0 "" 2
  138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
- 884              		.loc 2 138 0
- 885              	@ 138 "../include/R_RTOS_services.h" 1
- 886 0084 04DF     		svc #4 
- 887              	
- 888              	@ 0 "" 2
+ 855              		.loc 2 138 0
+ 856              	@ 138 "../include/R_RTOS_services.h" 1
+ 857 00c8 04DF     		svc #4 
+ 858              	
+ 859              	@ 0 "" 2
  140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 889              		.loc 2 140 0
- 890              	@ 140 "../include/R_RTOS_services.h" 1
- 891 0086 EFF30881 		mrs     r1,     msp 
- 892 008a 0868     	 ldr r0, [r1] 
- 893 008c 021C     	 movs r2, r0 
- 894              	
- 895              	@ 0 "" 2
- 896              		.code	16
- 897 008e 3B1D     		add	r3, r7, #4
- 898 0090 1A70     		strb	r2, [r3]
- 899              	.LBE87:
- 900              	.LBE86:
-  65:../Tasks/SemTest/Tasks.c ****     //SET_PIN_HIGH( PIN_LED2 );
-  66:../Tasks/SemTest/Tasks.c **** 
-  67:../Tasks/SemTest/Tasks.c ****     svc_sem_signal( (SemNr) 0x1u, &tsk_AR[3] );
-  68:../Tasks/SemTest/Tasks.c **** 
-  69:../Tasks/SemTest/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[3] );
-  70:../Tasks/SemTest/Tasks.c **** }
- 901              		.loc 1 70 0
- 902 0092 BD46     		mov	sp, r7
- 903 0094 02B0     		add	sp, sp, #8
- 904              		@ sp needed
- 905 0096 80BD     		pop	{r7, pc}
- 906              	.L45:
- 907              		.align	2
- 908              	.L44:
- 909 0098 00F00F40 		.word	1074786304
- 910 009c 6C000000 		.word	tsk_AR+108
- 911              		.cfi_endproc
- 912              	.LFE66:
- 914              		.section	.text.tsk4,"ax",%progbits
- 915              		.align	2
- 916              		.global	tsk4
- 917              		.code	16
- 918              		.thumb_func
- 920              	tsk4:
- 921              	.LFB67:
-  71:../Tasks/SemTest/Tasks.c **** void tsk4( void )
-  72:../Tasks/SemTest/Tasks.c **** {
- 922              		.loc 1 72 0
- 923              		.cfi_startproc
- 924 0000 80B5     		push	{r7, lr}
- 925              		.cfi_def_cfa_offset 8
- 926              		.cfi_offset 7, -8
- 927              		.cfi_offset 14, -4
- 928 0002 82B0     		sub	sp, sp, #8
- 929              		.cfi_def_cfa_offset 16
- 930 0004 00AF     		add	r7, sp, #0
- 931              		.cfi_def_cfa_register 7
- 932              	.LBB88:
- 933              	.LBB89:
- 193:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 934              		.loc 2 193 0
- 935 0006 0023     		mov	r3, #0
- 936              	@ 193 "../include/R_RTOS_services.h" 1
- 937 0008 181C     		movs r0, r3 
- 938              	
- 939              	@ 0 "" 2
- 194:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 940              		.loc 2 194 0
- 941              		.code	16
- 942 000a 1E4B     		ldr	r3, .L54
- 943              	@ 194 "../include/R_RTOS_services.h" 1
- 944 000c 191C     		movs r1, r3 
- 945              	
- 946              	@ 0 "" 2
- 195:../include/R_RTOS_services.h ****     INPUT_ARG_3( maxTimeToWait );
- 947              		.loc 2 195 0
- 948              		.code	16
- 949 000e 6423     		mov	r3, #100
- 950              	@ 195 "../include/R_RTOS_services.h" 1
- 951 0010 1A1C     		movs r2, r3 
- 952              	
- 953              	@ 0 "" 2
- 196:../include/R_RTOS_services.h ****     SVC( SVC_SEM_WAIT );
- 954              		.loc 2 196 0
- 955              	@ 196 "../include/R_RTOS_services.h" 1
- 956 0012 09DF     		svc #9 
- 957              	
- 958              	@ 0 "" 2
- 198:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 959              		.loc 2 198 0
- 960              	@ 198 "../include/R_RTOS_services.h" 1
- 961 0014 EFF30881 		mrs     r1,     msp 
- 962 0018 0868     	 ldr r0, [r1] 
- 963 001a 021C     	 movs r2, r0 
- 964              	
- 965              	@ 0 "" 2
- 966              		.code	16
- 967 001c FB1D     		add	r3, r7, #7
- 968 001e 1A70     		strb	r2, [r3]
- 969              	.LBE89:
- 970              	.LBE88:
-  73:../Tasks/SemTest/Tasks.c ****     svc_sem_wait( (SemNr) 0x0u, &tsk_AR[4], 100 );
-  74:../Tasks/SemTest/Tasks.c **** 
-  75:../Tasks/SemTest/Tasks.c ****     //SET_PIN_HIGH( PIN_LED3 );
-  76:../Tasks/SemTest/Tasks.c **** 
-  77:../Tasks/SemTest/Tasks.c ****     SET_PIN_LOW(PIN_LED1);
- 971              		.loc 1 77 0
- 972 0020 194B     		ldr	r3, .L54+4
- 973 0022 5A69     		ldr	r2, [r3, #20]
- 974 0024 8023     		mov	r3, #128
- 975 0026 9B00     		lsl	r3, r3, #2
- 976 0028 1340     		and	r3, r2
- 977 002a 06D0     		beq	.L49
- 978              		.loc 1 77 0 is_stmt 0 discriminator 1
- 979 002c 164B     		ldr	r3, .L54+4
- 980 002e 164A     		ldr	r2, .L54+4
- 981 0030 9268     		ldr	r2, [r2, #8]
- 982 0032 8021     		mov	r1, #128
- 983 0034 8900     		lsl	r1, r1, #2
- 984 0036 0A43     		orr	r2, r1
- 985 0038 9A60     		str	r2, [r3, #8]
- 986              	.L49:
- 987              	.LBB90:
- 988              	.LBB91:
- 206:../include/R_RTOS_services.h ****     INPUT_ARG_1( semNr );
- 989              		.loc 2 206 0 is_stmt 1
- 990 003a 0023     		mov	r3, #0
- 991              	@ 206 "../include/R_RTOS_services.h" 1
- 992 003c 181C     		movs r0, r3 
- 993              	
- 994              	@ 0 "" 2
- 207:../include/R_RTOS_services.h ****     INPUT_ARG_2( tsk );
- 995              		.loc 2 207 0
- 996              		.code	16
- 997 003e 114B     		ldr	r3, .L54
- 998              	@ 207 "../include/R_RTOS_services.h" 1
- 999 0040 191C     		movs r1, r3 
- 1000              	
- 1001              	@ 0 "" 2
- 208:../include/R_RTOS_services.h ****     SVC( SVC_SEM_SIGNAL );
- 1002              		.loc 2 208 0
- 1003              	@ 208 "../include/R_RTOS_services.h" 1
- 1004 0042 0ADF     		svc #10 
- 1005              	
- 1006              	@ 0 "" 2
- 210:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 1007              		.loc 2 210 0
- 1008              	@ 210 "../include/R_RTOS_services.h" 1
- 1009 0044 EFF30881 		mrs     r1,     msp 
- 1010 0048 0868     	 ldr r0, [r1] 
- 1011 004a 021C     	 movs r2, r0 
- 1012              	
- 1013              	@ 0 "" 2
- 1014              		.code	16
- 1015 004c BB1D     		add	r3, r7, #6
- 1016 004e 1A70     		strb	r2, [r3]
- 1017              	.LBE91:
- 1018              	.LBE90:
-  78:../Tasks/SemTest/Tasks.c ****     svc_sem_signal( (SemNr) 0x0u, &tsk_AR[4] );
-  79:../Tasks/SemTest/Tasks.c ****     SET_PIN_HIGH(PIN_LED1);
- 1019              		.loc 1 79 0
- 1020 0050 0D4B     		ldr	r3, .L54+4
- 1021 0052 5A69     		ldr	r2, [r3, #20]
- 1022 0054 8023     		mov	r3, #128
- 1023 0056 9B00     		lsl	r3, r3, #2
- 1024 0058 1340     		and	r3, r2
- 1025 005a 06D0     		beq	.L52
- 1026              		.loc 1 79 0 is_stmt 0 discriminator 1
- 1027 005c 0A4B     		ldr	r3, .L54+4
- 1028 005e 0A4A     		ldr	r2, .L54+4
- 1029 0060 5268     		ldr	r2, [r2, #4]
- 1030 0062 8021     		mov	r1, #128
- 1031 0064 8900     		lsl	r1, r1, #2
- 1032 0066 0A43     		orr	r2, r1
- 1033 0068 5A60     		str	r2, [r3, #4]
- 1034              	.L52:
- 1035              	.LBB92:
- 1036              	.LBB93:
- 137:../include/R_RTOS_services.h ****     INPUT_ARG_1( tsk );
- 1037              		.loc 2 137 0 is_stmt 1
- 1038 006a 064B     		ldr	r3, .L54
- 1039              	@ 137 "../include/R_RTOS_services.h" 1
- 1040 006c 181C     		movs r0, r3 
- 1041              	
- 1042              	@ 0 "" 2
- 138:../include/R_RTOS_services.h ****     SVC( SVC_TSK_KILL );
- 1043              		.loc 2 138 0
- 1044              	@ 138 "../include/R_RTOS_services.h" 1
- 1045 006e 04DF     		svc #4 
- 1046              	
- 1047              	@ 0 "" 2
- 140:../include/R_RTOS_services.h ****     OUTPUT_ARG( returnVal );
- 1048              		.loc 2 140 0
- 1049              	@ 140 "../include/R_RTOS_services.h" 1
- 1050 0070 EFF30881 		mrs     r1,     msp 
- 1051 0074 0868     	 ldr r0, [r1] 
- 1052 0076 021C     	 movs r2, r0 
- 1053              	
- 1054              	@ 0 "" 2
- 1055              		.code	16
- 1056 0078 7B1D     		add	r3, r7, #5
- 1057 007a 1A70     		strb	r2, [r3]
- 1058              	.LBE93:
- 1059              	.LBE92:
-  80:../Tasks/SemTest/Tasks.c **** 
-  81:../Tasks/SemTest/Tasks.c ****     svc_tsk_KillTsk( &tsk_AR[4] );
-  82:../Tasks/SemTest/Tasks.c **** }
- 1060              		.loc 1 82 0
- 1061 007c BD46     		mov	sp, r7
- 1062 007e 02B0     		add	sp, sp, #8
- 1063              		@ sp needed
- 1064 0080 80BD     		pop	{r7, pc}
- 1065              	.L55:
- 1066 0082 C046     		.align	2
- 1067              	.L54:
- 1068 0084 90000000 		.word	tsk_AR+144
- 1069 0088 00F00F40 		.word	1074786304
- 1070              		.cfi_endproc
- 1071              	.LFE67:
- 1073              		.section	.text.actvTsk1,"ax",%progbits
- 1074              		.align	2
- 1075              		.global	actvTsk1
- 1076              		.code	16
- 1077              		.thumb_func
- 1079              	actvTsk1:
- 1080              	.LFB68:
-  83:../Tasks/SemTest/Tasks.c **** 
-  84:../Tasks/SemTest/Tasks.c **** void actvTsk1( void )
-  85:../Tasks/SemTest/Tasks.c **** {
- 1081              		.loc 1 85 0
- 1082              		.cfi_startproc
- 1083 0000 80B5     		push	{r7, lr}
- 1084              		.cfi_def_cfa_offset 8
- 1085              		.cfi_offset 7, -8
- 1086              		.cfi_offset 14, -4
- 1087 0002 00AF     		add	r7, sp, #0
- 1088              		.cfi_def_cfa_register 7
-  86:../Tasks/SemTest/Tasks.c ****     tsk_tskInit( (TskID) 0x1u, &tsk1, &tsk_EndTheTask, MY_STACK_SIZE );
- 1089              		.loc 1 86 0
- 1090 0004 0A4A     		ldr	r2, .L57
- 1091 0006 0B4B     		ldr	r3, .L57+4
- 1092 0008 0120     		mov	r0, #1
- 1093 000a 111C     		mov	r1, r2
- 1094 000c 1A1C     		mov	r2, r3
- 1095 000e 8023     		mov	r3, #128
- 1096 0010 FFF7FEFF 		bl	tsk_tskInit
-  87:../Tasks/SemTest/Tasks.c ****     tsk_ChngePrio(&tsk_AR[0x1u],TSK_PRIO_ABOVMED);
- 1097              		.loc 1 87 0
- 1098 0014 084B     		ldr	r3, .L57+8
- 1099 0016 181C     		mov	r0, r3
- 1100 0018 0521     		mov	r1, #5
- 1101 001a FFF7FEFF 		bl	tsk_ChngePrio
-  88:../Tasks/SemTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x1u] );
- 1102              		.loc 1 88 0
- 1103 001e 064B     		ldr	r3, .L57+8
- 1104 0020 181C     		mov	r0, r3
- 1105 0022 FFF7FEFF 		bl	tsk_ActvTsk
-  89:../Tasks/SemTest/Tasks.c ****     os_SCHEDULE();
- 1106              		.loc 1 89 0
- 1107 0026 FFF7FEFF 		bl	os_SCHEDULE
-  90:../Tasks/SemTest/Tasks.c **** }
- 1108              		.loc 1 90 0
- 1109 002a BD46     		mov	sp, r7
- 1110              		@ sp needed
- 1111 002c 80BD     		pop	{r7, pc}
- 1112              	.L58:
- 1113 002e C046     		.align	2
- 1114              	.L57:
- 1115 0030 00000000 		.word	tsk1
- 1116 0034 00000000 		.word	tsk_EndTheTask
- 1117 0038 24000000 		.word	tsk_AR+36
- 1118              		.cfi_endproc
- 1119              	.LFE68:
- 1121              		.section	.text.actvTsk2,"ax",%progbits
- 1122              		.align	2
- 1123              		.global	actvTsk2
- 1124              		.code	16
- 1125              		.thumb_func
- 1127              	actvTsk2:
- 1128              	.LFB69:
-  91:../Tasks/SemTest/Tasks.c **** void actvTsk2( void )
-  92:../Tasks/SemTest/Tasks.c **** {
- 1129              		.loc 1 92 0
- 1130              		.cfi_startproc
- 1131 0000 80B5     		push	{r7, lr}
- 1132              		.cfi_def_cfa_offset 8
- 1133              		.cfi_offset 7, -8
- 1134              		.cfi_offset 14, -4
- 1135 0002 00AF     		add	r7, sp, #0
- 1136              		.cfi_def_cfa_register 7
-  93:../Tasks/SemTest/Tasks.c ****     tsk_tskInit( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
- 1137              		.loc 1 93 0
- 1138 0004 074A     		ldr	r2, .L60
- 1139 0006 084B     		ldr	r3, .L60+4
- 1140 0008 0220     		mov	r0, #2
- 1141 000a 111C     		mov	r1, r2
- 1142 000c 1A1C     		mov	r2, r3
- 1143 000e 8023     		mov	r3, #128
- 1144 0010 FFF7FEFF 		bl	tsk_tskInit
-  94:../Tasks/SemTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x2u] );
- 1145              		.loc 1 94 0
- 1146 0014 054B     		ldr	r3, .L60+8
- 1147 0016 181C     		mov	r0, r3
- 1148 0018 FFF7FEFF 		bl	tsk_ActvTsk
-  95:../Tasks/SemTest/Tasks.c ****     os_SCHEDULE();
- 1149              		.loc 1 95 0
- 1150 001c FFF7FEFF 		bl	os_SCHEDULE
-  96:../Tasks/SemTest/Tasks.c **** }
- 1151              		.loc 1 96 0
- 1152 0020 BD46     		mov	sp, r7
- 1153              		@ sp needed
- 1154 0022 80BD     		pop	{r7, pc}
- 1155              	.L61:
- 1156              		.align	2
- 1157              	.L60:
- 1158 0024 00000000 		.word	tsk2
- 1159 0028 00000000 		.word	tsk_EndTheTask
- 1160 002c 48000000 		.word	tsk_AR+72
- 1161              		.cfi_endproc
- 1162              	.LFE69:
- 1164              		.section	.text.actvTsk3,"ax",%progbits
- 1165              		.align	2
- 1166              		.global	actvTsk3
- 1167              		.code	16
- 1168              		.thumb_func
- 1170              	actvTsk3:
- 1171              	.LFB70:
-  97:../Tasks/SemTest/Tasks.c **** void actvTsk3( void )
-  98:../Tasks/SemTest/Tasks.c **** {
- 1172              		.loc 1 98 0
- 1173              		.cfi_startproc
- 1174 0000 80B5     		push	{r7, lr}
- 1175              		.cfi_def_cfa_offset 8
- 1176              		.cfi_offset 7, -8
- 1177              		.cfi_offset 14, -4
- 1178 0002 00AF     		add	r7, sp, #0
- 1179              		.cfi_def_cfa_register 7
-  99:../Tasks/SemTest/Tasks.c ****     tsk_tskInit( (TskID) 0x3u, &tsk3, &tsk_EndTheTask, MY_STACK_SIZE );
- 1180              		.loc 1 99 0
- 1181 0004 074A     		ldr	r2, .L63
- 1182 0006 084B     		ldr	r3, .L63+4
- 1183 0008 0320     		mov	r0, #3
- 1184 000a 111C     		mov	r1, r2
- 1185 000c 1A1C     		mov	r2, r3
- 1186 000e 8023     		mov	r3, #128
- 1187 0010 FFF7FEFF 		bl	tsk_tskInit
- 100:../Tasks/SemTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x3u] );
- 1188              		.loc 1 100 0
- 1189 0014 054B     		ldr	r3, .L63+8
- 1190 0016 181C     		mov	r0, r3
- 1191 0018 FFF7FEFF 		bl	tsk_ActvTsk
- 101:../Tasks/SemTest/Tasks.c ****     os_SCHEDULE();
- 1192              		.loc 1 101 0
- 1193 001c FFF7FEFF 		bl	os_SCHEDULE
- 102:../Tasks/SemTest/Tasks.c **** }
- 1194              		.loc 1 102 0
- 1195 0020 BD46     		mov	sp, r7
- 1196              		@ sp needed
- 1197 0022 80BD     		pop	{r7, pc}
- 1198              	.L64:
- 1199              		.align	2
- 1200              	.L63:
- 1201 0024 00000000 		.word	tsk3
- 1202 0028 00000000 		.word	tsk_EndTheTask
- 1203 002c 6C000000 		.word	tsk_AR+108
- 1204              		.cfi_endproc
- 1205              	.LFE70:
- 1207              		.section	.text.actvTsk4,"ax",%progbits
- 1208              		.align	2
- 1209              		.global	actvTsk4
- 1210              		.code	16
- 1211              		.thumb_func
- 1213              	actvTsk4:
- 1214              	.LFB71:
- 103:../Tasks/SemTest/Tasks.c **** void actvTsk4( void )
- 104:../Tasks/SemTest/Tasks.c **** {
- 1215              		.loc 1 104 0
- 1216              		.cfi_startproc
- 1217 0000 80B5     		push	{r7, lr}
- 1218              		.cfi_def_cfa_offset 8
- 1219              		.cfi_offset 7, -8
- 1220              		.cfi_offset 14, -4
- 1221 0002 00AF     		add	r7, sp, #0
- 1222              		.cfi_def_cfa_register 7
- 105:../Tasks/SemTest/Tasks.c ****     tsk_tskInit( (TskID) 0x4u, &tsk4, &tsk_EndTheTask, MY_STACK_SIZE );
- 1223              		.loc 1 105 0
- 1224 0004 074A     		ldr	r2, .L66
- 1225 0006 084B     		ldr	r3, .L66+4
- 1226 0008 0420     		mov	r0, #4
- 1227 000a 111C     		mov	r1, r2
- 1228 000c 1A1C     		mov	r2, r3
- 1229 000e 8023     		mov	r3, #128
- 1230 0010 FFF7FEFF 		bl	tsk_tskInit
- 106:../Tasks/SemTest/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x4u] );
- 1231              		.loc 1 106 0
- 1232 0014 054B     		ldr	r3, .L66+8
- 1233 0016 181C     		mov	r0, r3
- 1234 0018 FFF7FEFF 		bl	tsk_ActvTsk
- 107:../Tasks/SemTest/Tasks.c ****     os_SCHEDULE();
- 1235              		.loc 1 107 0
- 1236 001c FFF7FEFF 		bl	os_SCHEDULE
- 108:../Tasks/SemTest/Tasks.c **** }
- 1237              		.loc 1 108 0
- 1238 0020 BD46     		mov	sp, r7
- 1239              		@ sp needed
- 1240 0022 80BD     		pop	{r7, pc}
- 1241              	.L67:
- 1242              		.align	2
- 1243              	.L66:
- 1244 0024 00000000 		.word	tsk4
- 1245 0028 00000000 		.word	tsk_EndTheTask
- 1246 002c 90000000 		.word	tsk_AR+144
- 1247              		.cfi_endproc
- 1248              	.LFE71:
- 1250              		.section	.text.OS_START,"ax",%progbits
- 1251              		.align	2
- 1252              		.global	OS_START
- 1253              		.code	16
- 1254              		.thumb_func
- 1256              	OS_START:
- 1257              	.LFB72:
- 109:../Tasks/SemTest/Tasks.c **** 
- 110:../Tasks/SemTest/Tasks.c **** void OS_START( void )
- 111:../Tasks/SemTest/Tasks.c **** {
- 1258              		.loc 1 111 0
- 1259              		.cfi_startproc
- 1260 0000 80B5     		push	{r7, lr}
- 1261              		.cfi_def_cfa_offset 8
- 1262              		.cfi_offset 7, -8
- 1263              		.cfi_offset 14, -4
- 1264 0002 00AF     		add	r7, sp, #0
- 1265              		.cfi_def_cfa_register 7
- 112:../Tasks/SemTest/Tasks.c ****     sem_initBinSem((SemNr)0x0u);
- 1266              		.loc 1 112 0
- 1267 0004 0020     		mov	r0, #0
- 1268 0006 FFF7FEFF 		bl	sem_initBinSem
- 113:../Tasks/SemTest/Tasks.c ****     sem_initBinSem((SemNr)0x1u);
- 1269              		.loc 1 113 0
- 1270 000a 0120     		mov	r0, #1
- 1271 000c FFF7FEFF 		bl	sem_initBinSem
- 114:../Tasks/SemTest/Tasks.c ****     sys_SysFkt[0].fktCallType.tmrFktCall.sysFktCall = &actvTsk1;
- 1272              		.loc 1 114 0
- 1273 0010 074B     		ldr	r3, .L69
- 1274 0012 084A     		ldr	r2, .L69+4
- 1275 0014 1A60     		str	r2, [r3]
- 115:../Tasks/SemTest/Tasks.c ****     sys_SysFkt[1].fktCallType.tmrFktCall.sysFktCall = &actvTsk2;
- 1276              		.loc 1 115 0
- 1277 0016 064B     		ldr	r3, .L69
- 1278 0018 074A     		ldr	r2, .L69+8
- 1279 001a DA60     		str	r2, [r3, #12]
- 116:../Tasks/SemTest/Tasks.c ****     tmr_setSysTimer( 0, 1000u, 0x1u );
- 1280              		.loc 1 116 0
- 1281 001c FA23     		mov	r3, #250
- 1282 001e 9B00     		lsl	r3, r3, #2
- 1283 0020 0020     		mov	r0, #0
- 1284 0022 191C     		mov	r1, r3
- 1285 0024 0122     		mov	r2, #1
- 1286 0026 FFF7FEFF 		bl	tmr_setSysTimer
- 117:../Tasks/SemTest/Tasks.c ****     //tmr_setSysTimer( 1, 1200u, 0x1u );
- 118:../Tasks/SemTest/Tasks.c ****     //tmr_setSysTimer( &actvTsk3, 750u );
- 119:../Tasks/SemTest/Tasks.c ****     //tmr_setSysTimer( &actvTsk4, 200u );
- 120:../Tasks/SemTest/Tasks.c **** }
- 1287              		.loc 1 120 0
- 1288 002a BD46     		mov	sp, r7
- 1289              		@ sp needed
- 1290 002c 80BD     		pop	{r7, pc}
- 1291              	.L70:
- 1292 002e C046     		.align	2
- 1293              	.L69:
- 1294 0030 00000000 		.word	sys_SysFkt
- 1295 0034 00000000 		.word	actvTsk1
- 1296 0038 00000000 		.word	actvTsk2
- 1297              		.cfi_endproc
- 1298              	.LFE72:
- 1300              		.text
- 1301              	.Letext0:
- 1302              		.file 3 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1303              		.file 4 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\stdint.h"
- 1304              		.file 5 "../include/R_RTOS_inc.h"
- 1305              		.file 6 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h"
- 1306              		.file 7 "../hal/mcu/NXP_KL05/include/PortFunc.h"
+ 860              		.loc 2 140 0
+ 861              	@ 140 "../include/R_RTOS_services.h" 1
+ 862 00ca EFF30881 		mrs     r1,     msp 
+ 863 00ce 0868     	 ldr r0, [r1] 
+ 864 00d0 021C     	 movs r2, r0 
+ 865              	
+ 866              	@ 0 "" 2
+ 867              		.code	16
+ 868 00d2 FB1C     		add	r3, r7, #3
+ 869 00d4 1A70     		strb	r2, [r3]
+ 870              	.LBE73:
+ 871              	.LBE72:
+  69:../Tasks/MntrTest/RWR/Tasks.c **** }
+ 872              		.loc 1 69 0
+ 873 00d6 BD46     		mov	sp, r7
+ 874 00d8 06B0     		add	sp, sp, #24
+ 875              		@ sp needed
+ 876 00da 80BD     		pop	{r7, pc}
+ 877              	.L51:
+ 878              		.align	2
+ 879              	.L50:
+ 880 00dc 00F00F40 		.word	1074786304
+ 881 00e0 00000000 		.word	p_cur_tsk_tcb
+ 882              		.cfi_endproc
+ 883              	.LFE70:
+ 885              		.section	.text.actvTsk1,"ax",%progbits
+ 886              		.align	2
+ 887              		.global	actvTsk1
+ 888              		.code	16
+ 889              		.thumb_func
+ 891              	actvTsk1:
+ 892              	.LFB71:
+  70:../Tasks/MntrTest/RWR/Tasks.c **** 
+  71:../Tasks/MntrTest/RWR/Tasks.c **** void actvTsk1( void )
+  72:../Tasks/MntrTest/RWR/Tasks.c **** {
+ 893              		.loc 1 72 0
+ 894              		.cfi_startproc
+ 895 0000 80B5     		push	{r7, lr}
+ 896              		.cfi_def_cfa_offset 8
+ 897              		.cfi_offset 7, -8
+ 898              		.cfi_offset 14, -4
+ 899 0002 00AF     		add	r7, sp, #0
+ 900              		.cfi_def_cfa_register 7
+  73:../Tasks/MntrTest/RWR/Tasks.c ****     tsk_tskInit( (TskID) 0x1u, &tsk1, &tsk_EndTheTask, MY_STACK_SIZE );
+ 901              		.loc 1 73 0
+ 902 0004 0A4A     		ldr	r2, .L53
+ 903 0006 0B4B     		ldr	r3, .L53+4
+ 904 0008 0120     		mov	r0, #1
+ 905 000a 111C     		mov	r1, r2
+ 906 000c 1A1C     		mov	r2, r3
+ 907 000e 8023     		mov	r3, #128
+ 908 0010 FFF7FEFF 		bl	tsk_tskInit
+  74:../Tasks/MntrTest/RWR/Tasks.c ****     tsk_ChngePrio(&tsk_AR[0x1u],TSK_PRIO_MED);
+ 909              		.loc 1 74 0
+ 910 0014 084B     		ldr	r3, .L53+8
+ 911 0016 181C     		mov	r0, r3
+ 912 0018 0421     		mov	r1, #4
+ 913 001a FFF7FEFF 		bl	tsk_ChngePrio
+  75:../Tasks/MntrTest/RWR/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x1u] );
+ 914              		.loc 1 75 0
+ 915 001e 064B     		ldr	r3, .L53+8
+ 916 0020 181C     		mov	r0, r3
+ 917 0022 FFF7FEFF 		bl	tsk_ActvTsk
+  76:../Tasks/MntrTest/RWR/Tasks.c ****     os_SCHEDULE();
+ 918              		.loc 1 76 0
+ 919 0026 FFF7FEFF 		bl	os_SCHEDULE
+  77:../Tasks/MntrTest/RWR/Tasks.c **** }
+ 920              		.loc 1 77 0
+ 921 002a BD46     		mov	sp, r7
+ 922              		@ sp needed
+ 923 002c 80BD     		pop	{r7, pc}
+ 924              	.L54:
+ 925 002e C046     		.align	2
+ 926              	.L53:
+ 927 0030 00000000 		.word	tsk1
+ 928 0034 00000000 		.word	tsk_EndTheTask
+ 929 0038 24000000 		.word	tsk_AR+36
+ 930              		.cfi_endproc
+ 931              	.LFE71:
+ 933              		.section	.text.actvTsk2,"ax",%progbits
+ 934              		.align	2
+ 935              		.global	actvTsk2
+ 936              		.code	16
+ 937              		.thumb_func
+ 939              	actvTsk2:
+ 940              	.LFB72:
+  78:../Tasks/MntrTest/RWR/Tasks.c **** void actvTsk2( void )
+  79:../Tasks/MntrTest/RWR/Tasks.c **** {
+ 941              		.loc 1 79 0
+ 942              		.cfi_startproc
+ 943 0000 80B5     		push	{r7, lr}
+ 944              		.cfi_def_cfa_offset 8
+ 945              		.cfi_offset 7, -8
+ 946              		.cfi_offset 14, -4
+ 947 0002 00AF     		add	r7, sp, #0
+ 948              		.cfi_def_cfa_register 7
+  80:../Tasks/MntrTest/RWR/Tasks.c ****     tsk_tskInit( (TskID) 0x2u, &tsk2, &tsk_EndTheTask, MY_STACK_SIZE );
+ 949              		.loc 1 80 0
+ 950 0004 074A     		ldr	r2, .L56
+ 951 0006 084B     		ldr	r3, .L56+4
+ 952 0008 0220     		mov	r0, #2
+ 953 000a 111C     		mov	r1, r2
+ 954 000c 1A1C     		mov	r2, r3
+ 955 000e 8023     		mov	r3, #128
+ 956 0010 FFF7FEFF 		bl	tsk_tskInit
+  81:../Tasks/MntrTest/RWR/Tasks.c ****     tsk_ActvTsk( &tsk_AR[(TskID) 0x2u] );
+ 957              		.loc 1 81 0
+ 958 0014 054B     		ldr	r3, .L56+8
+ 959 0016 181C     		mov	r0, r3
+ 960 0018 FFF7FEFF 		bl	tsk_ActvTsk
+  82:../Tasks/MntrTest/RWR/Tasks.c ****     os_SCHEDULE();
+ 961              		.loc 1 82 0
+ 962 001c FFF7FEFF 		bl	os_SCHEDULE
+  83:../Tasks/MntrTest/RWR/Tasks.c **** }
+ 963              		.loc 1 83 0
+ 964 0020 BD46     		mov	sp, r7
+ 965              		@ sp needed
+ 966 0022 80BD     		pop	{r7, pc}
+ 967              	.L57:
+ 968              		.align	2
+ 969              	.L56:
+ 970 0024 00000000 		.word	tsk2
+ 971 0028 00000000 		.word	tsk_EndTheTask
+ 972 002c 48000000 		.word	tsk_AR+72
+ 973              		.cfi_endproc
+ 974              	.LFE72:
+ 976              		.section	.text.OS_START,"ax",%progbits
+ 977              		.align	2
+ 978              		.global	OS_START
+ 979              		.code	16
+ 980              		.thumb_func
+ 982              	OS_START:
+ 983              	.LFB73:
+  84:../Tasks/MntrTest/RWR/Tasks.c **** 
+  85:../Tasks/MntrTest/RWR/Tasks.c **** void OS_START( void )
+  86:../Tasks/MntrTest/RWR/Tasks.c **** {
+ 984              		.loc 1 86 0
+ 985              		.cfi_startproc
+ 986 0000 80B5     		push	{r7, lr}
+ 987              		.cfi_def_cfa_offset 8
+ 988              		.cfi_offset 7, -8
+ 989              		.cfi_offset 14, -4
+ 990 0002 00AF     		add	r7, sp, #0
+ 991              		.cfi_def_cfa_register 7
+  87:../Tasks/MntrTest/RWR/Tasks.c ****     sys_SysFkt[0].fktCallType.tmrFktCall.sysFktCall = &actvTsk1;
+ 992              		.loc 1 87 0
+ 993 0004 074B     		ldr	r3, .L59
+ 994 0006 084A     		ldr	r2, .L59+4
+ 995 0008 1A60     		str	r2, [r3]
+  88:../Tasks/MntrTest/RWR/Tasks.c ****     sys_SysFkt[1].fktCallType.tmrFktCall.sysFktCall = &actvTsk2;
+ 996              		.loc 1 88 0
+ 997 000a 064B     		ldr	r3, .L59
+ 998 000c 074A     		ldr	r2, .L59+8
+ 999 000e DA60     		str	r2, [r3, #12]
+  89:../Tasks/MntrTest/RWR/Tasks.c ****     tmr_setSysTimer( 0, 1000u, 0x1u );
+ 1000              		.loc 1 89 0
+ 1001 0010 FA23     		mov	r3, #250
+ 1002 0012 9B00     		lsl	r3, r3, #2
+ 1003 0014 0020     		mov	r0, #0
+ 1004 0016 191C     		mov	r1, r3
+ 1005 0018 0122     		mov	r2, #1
+ 1006 001a FFF7FEFF 		bl	tmr_setSysTimer
+  90:../Tasks/MntrTest/RWR/Tasks.c ****     //tmr_setSysTimer( 1, 200u, 0x1u );
+  91:../Tasks/MntrTest/RWR/Tasks.c **** }
+ 1007              		.loc 1 91 0
+ 1008 001e BD46     		mov	sp, r7
+ 1009              		@ sp needed
+ 1010 0020 80BD     		pop	{r7, pc}
+ 1011              	.L60:
+ 1012 0022 C046     		.align	2
+ 1013              	.L59:
+ 1014 0024 00000000 		.word	sys_SysFkt
+ 1015 0028 00000000 		.word	actvTsk1
+ 1016 002c 00000000 		.word	actvTsk2
+ 1017              		.cfi_endproc
+ 1018              	.LFE73:
+ 1020              		.text
+ 1021              	.Letext0:
+ 1022              		.file 3 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1023              		.file 4 "c:\\freescale\\kds_3.0.0\\toolchain\\arm-none-eabi\\include\\stdint.h"
+ 1024              		.file 5 "../include/R_RTOS_inc.h"
+ 1025              		.file 6 "../hal/mcu/NXP_KL05/BSP/include/MKL05Z4.h"
+ 1026              		.file 7 "../hal/mcu/NXP_KL05/include/PortFunc.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Tasks.c
              Tasks.s:18     .text.tsk1:00000000 $t
              Tasks.s:23     .text.tsk1:00000000 tsk1
-             Tasks.s:341    .text.tsk1:00000114 $d
-             Tasks.s:729    .text.tsk3:00000000 tsk3
-             Tasks.s:349    .text.tsk2:00000000 $t
-             Tasks.s:354    .text.tsk2:00000000 tsk2
-             Tasks.s:716    .text.tsk2:00000120 $d
-             Tasks.s:920    .text.tsk4:00000000 tsk4
-             Tasks.s:724    .text.tsk3:00000000 $t
-             Tasks.s:909    .text.tsk3:00000098 $d
-             Tasks.s:915    .text.tsk4:00000000 $t
-             Tasks.s:1068   .text.tsk4:00000084 $d
-             Tasks.s:1074   .text.actvTsk1:00000000 $t
-             Tasks.s:1079   .text.actvTsk1:00000000 actvTsk1
-             Tasks.s:1115   .text.actvTsk1:00000030 $d
-             Tasks.s:1122   .text.actvTsk2:00000000 $t
-             Tasks.s:1127   .text.actvTsk2:00000000 actvTsk2
-             Tasks.s:1158   .text.actvTsk2:00000024 $d
-             Tasks.s:1165   .text.actvTsk3:00000000 $t
-             Tasks.s:1170   .text.actvTsk3:00000000 actvTsk3
-             Tasks.s:1201   .text.actvTsk3:00000024 $d
-             Tasks.s:1208   .text.actvTsk4:00000000 $t
-             Tasks.s:1213   .text.actvTsk4:00000000 actvTsk4
-             Tasks.s:1244   .text.actvTsk4:00000024 $d
-             Tasks.s:1251   .text.OS_START:00000000 $t
-             Tasks.s:1256   .text.OS_START:00000000 OS_START
-             Tasks.s:1294   .text.OS_START:00000030 $d
+             Tasks.s:437    .text.tsk1:00000160 $d
+             Tasks.s:452    .text.tsk2:00000000 tsk2
+             Tasks.s:667    .text.tsk3:00000000 tsk3
+             Tasks.s:447    .text.tsk2:00000000 $t
+             Tasks.s:655    .text.tsk2:000000cc $d
+             Tasks.s:662    .text.tsk3:00000000 $t
+             Tasks.s:880    .text.tsk3:000000dc $d
+             Tasks.s:886    .text.actvTsk1:00000000 $t
+             Tasks.s:891    .text.actvTsk1:00000000 actvTsk1
+             Tasks.s:927    .text.actvTsk1:00000030 $d
+             Tasks.s:934    .text.actvTsk2:00000000 $t
+             Tasks.s:939    .text.actvTsk2:00000000 actvTsk2
+             Tasks.s:970    .text.actvTsk2:00000024 $d
+             Tasks.s:977    .text.OS_START:00000000 $t
+             Tasks.s:982    .text.OS_START:00000000 OS_START
+             Tasks.s:1014   .text.OS_START:00000024 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
                            .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
                            .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
-                           .group:00000000 wm4.R_RTOS_inc.h.33.737b3062ed8c29b36217f91bed19f771
+                           .group:00000000 wm4.R_RTOS_inc.h.33.91f64cd47dfb11276e9eb7711a2c519b
                            .group:00000000 wm4.R_RTOS_services.h.15.141ae7f3e634632683f7871b75760c07
                            .group:00000000 wm4.MKL05Z4.h.103.c5a242a6313ded8e4c7cb62acb8df21b
                            .group:00000000 wm4.core_cm0plus.h.43.8a4a713129c4559638c90873d349aea7
@@ -1779,15 +1487,15 @@ DEFINED SYMBOLS
                            .group:00000000 wm4.MKL05Z4.h.274.69d105c645fb54a4873c1961c705a2ed
                            .group:00000000 wm4.PortFunc.h.29.2889e345d9a6356c605a78c7f6468978
                            .group:00000000 wm4.TimerFunc.h.9.adbda7f7862aad2ad31a4542ce2fb01d
-                           .group:00000000 wm4.R_RTOS_timer.h.10.320a5c95a3ff82b6cc9c2ca1b54c86a1
+                           .group:00000000 wm4.R_RTOS_timer.h.10.77000de983d70bdbefa78cb9bc8d4caa
 
 UNDEFINED SYMBOLS
-tsk_AR
+p_cur_tsk_tcb
 tsk_EndTheTask
+tsk_AR
 tsk_tskInit
 tsk_ChngePrio
 tsk_ActvTsk
 os_SCHEDULE
-sem_initBinSem
 tmr_setSysTimer
 sys_SysFkt

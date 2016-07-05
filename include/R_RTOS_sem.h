@@ -16,7 +16,7 @@
  *
  *  \note User defined
  */
-#define MEM_OBJECTS_SEM (uint8_t)0x6u
+#define MEM_OBJECTS_SEM (uint8_t)0x4u
 
 #define SEM_GET_REF_BYTE_NR(tskID) (uint8_t)(((tskID) >> (uint8_t)3u ))
 

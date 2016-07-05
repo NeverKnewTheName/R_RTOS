@@ -211,6 +211,52 @@ __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_signal(
     return returnVal;
 }
 
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_init_mntr(
+                                                                         const MntrNr mntrNr,
+                                                                         const Data data )
+{
+    INPUT_ARG_1( mntrNr );
+    INPUT_ARG_2( data );
+    SVC( SVC_MNTR_INIT_MNTR );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_ReqReadAccs(
+                                                                         const MntrNr mntrNr,
+                                                                         PTskTCB const tsk )
+{
+    INPUT_ARG_1( mntrNr );
+    INPUT_ARG_2( tsk );
+    SVC( SVC_MNTR_REQ_READ_ACC );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_ReqWriteAccs(
+                                                                         const MntrNr mntrNr,
+                                                                         PTskTCB const tsk )
+{
+    INPUT_ARG_1( mntrNr );
+    INPUT_ARG_2( tsk );
+    SVC( SVC_MNTR_REQ_WRITE_ACC );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
+
+
+__attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_mntr_RelAccs(
+                                                                         const MntrNr mntrNr )
+{
+    INPUT_ARG_1( mntrNr );
+    SVC( SVC_MNTR_REL_ACC );
+    RetCode returnVal;
+    OUTPUT_ARG( returnVal );
+    return returnVal;
+}
 __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_evt_SendEvt(
                                                                          const EvtNr evt )
 {

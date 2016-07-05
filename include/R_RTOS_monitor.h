@@ -12,11 +12,10 @@
 #include "R_RTOS_inc.h"
 #include "R_RTOS_memMngr.h"
 
-#define MEM_OBJECTS_MNTR (uint8_t)0x10u
+#define MEM_OBJECTS_MNTR (uint8_t)0x4u
 
 #define NR_OF_MNTRS (uint8_t)0x2u
 
-typedef uint8_t MntrNr;
 
 /**
  * \typedef mntrFlgs
@@ -48,7 +47,8 @@ typedef enum mntrAccessState
     MNTR_LOCK_WRITE = (mntrFlgs) 0x42u, /* MNTR_LOCK | MNTR_WRITE */
 
     MNTR_RW = (mntrFlgs) 0x3u, /* MNTR_READ | MNTR_WRITE */
-    MNTR_RPW = (mntrFlgs) 0x33u, /* MNTR_FREE | MNTR_READ | MNTR_PENDING | MNTR_WRITE */
+    MNTR_RPW = (mntrFlgs) 0x72u, /* MNTR_FREE | MNTR_PENDING | MNTR_LOCK | MNTR_READ | MNTR_WRITE */
+    MNTR_WPW = (mntrFlgs) 0x62u /* MNTR_FREE | MNTR_PENDING | MNTR_WRITE */
 } MntrState;
 
 typedef uint8_t mntrRfrcCnt;
@@ -69,12 +69,10 @@ RetCode mntr_InitMntr( const MntrNr mntrNr, const Data const data /* = NULL */  
 
 RetCode mntr_DelMntr( const MntrNr mntrNr );
 
-RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, const TskID tskID );
+RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, PTskTCB const tsk );
 
-RetCode mntr_RelsReadAccssMntr( const MntrNr mntrNr );
+RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, PTskTCB const tsk );
 
-RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, const TskID tskID );
-
-RetCode mntr_RelsWriteAccssMntr( const MntrNr mntrNr );
+RetCode mntr_ReleaseAccssMntr( const MntrNr mntrNr );
 
 #endif /* HEADERS_R_RTOS_MONITOR_H_ */

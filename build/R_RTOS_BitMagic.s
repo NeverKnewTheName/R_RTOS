@@ -190,12 +190,12 @@ bitM_bitPos:
 	.uleb128 0x5
 	.4byte	.LASF529
 	.byte	0x4
-	.2byte	0x207
+	.2byte	0x20d
 	.4byte	0x85
 	.uleb128 0x5
 	.4byte	.LASF530
 	.byte	0x4
-	.2byte	0x20c
+	.2byte	0x212
 	.4byte	0x85
 	.uleb128 0x6
 	.4byte	.LASF534
@@ -1776,7 +1776,7 @@ bitM_bitPos:
 	.uleb128 0x1f5
 	.4byte	.LASF434
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.737b3062ed8c29b36217f91bed19f771,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.91f64cd47dfb11276e9eb7711a2c519b,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -1928,61 +1928,61 @@ bitM_bitPos:
 	.uleb128 0x150
 	.4byte	.LASF484
 	.byte	0x5
-	.uleb128 0x463
+	.uleb128 0x469
 	.4byte	.LASF485
 	.byte	0x5
-	.uleb128 0x580
+	.uleb128 0x587
 	.4byte	.LASF486
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x595
 	.4byte	.LASF487
 	.byte	0x5
-	.uleb128 0x593
+	.uleb128 0x59a
 	.4byte	.LASF488
 	.byte	0x5
-	.uleb128 0x59c
+	.uleb128 0x5a3
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x5a0
+	.uleb128 0x5a7
 	.4byte	.LASF490
 	.byte	0x5
-	.uleb128 0x5a4
+	.uleb128 0x5ab
 	.4byte	.LASF491
 	.byte	0x5
-	.uleb128 0x5a8
+	.uleb128 0x5af
 	.4byte	.LASF492
 	.byte	0x5
-	.uleb128 0x5ac
+	.uleb128 0x5b3
 	.4byte	.LASF493
 	.byte	0x5
-	.uleb128 0x5b0
+	.uleb128 0x5b7
 	.4byte	.LASF494
 	.byte	0x5
-	.uleb128 0x5b4
+	.uleb128 0x5bb
 	.4byte	.LASF495
 	.byte	0x5
-	.uleb128 0x5b8
+	.uleb128 0x5bf
 	.4byte	.LASF496
 	.byte	0x5
-	.uleb128 0x5bc
+	.uleb128 0x5c3
 	.4byte	.LASF497
 	.byte	0x5
-	.uleb128 0x5c0
+	.uleb128 0x5c7
 	.4byte	.LASF498
 	.byte	0x5
-	.uleb128 0x5c4
+	.uleb128 0x5cb
 	.4byte	.LASF499
 	.byte	0x5
-	.uleb128 0x5c8
+	.uleb128 0x5cf
 	.4byte	.LASF500
 	.byte	0x5
-	.uleb128 0x5cc
+	.uleb128 0x5d3
 	.4byte	.LASF501
 	.byte	0x5
-	.uleb128 0x5d0
+	.uleb128 0x5d7
 	.4byte	.LASF502
 	.byte	0x5
-	.uleb128 0x5d4
+	.uleb128 0x5db
 	.4byte	.LASF503
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_BitMagic.h.17.72a457c77e96472fa40c2495458f70b9,comdat
@@ -2040,8 +2040,6 @@ bitM_bitPos:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
 .LASF318:
 	.ascii	"__SIZEOF_WINT_T__ 4\000"
-.LASF357:
-	.ascii	"___int_least64_t_defined 1\000"
 .LASF361:
 	.ascii	"__have_long32 1\000"
 .LASF313:
@@ -2104,6 +2102,8 @@ bitM_bitPos:
 	.ascii	"t32_t)x)-(uint32_t)1u))\000"
 .LASF536:
 	.ascii	"bit32PosNrs\000"
+.LASF446:
+	.ascii	"AMOUNT_OF_MSGQ (QID)(0x2u)\000"
 .LASF4:
 	.ascii	"__GNUC_MINOR__ 8\000"
 .LASF525:
@@ -2139,6 +2139,8 @@ bitM_bitPos:
 	.ascii	"__DBL_MANT_DIG__ 53\000"
 .LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
+.LASF452:
+	.ascii	"AMOUNT_OF_EVTS (uint8_t)0x4u\000"
 .LASF10:
 	.ascii	"__ATOMIC_RELEASE 3\000"
 .LASF31:
@@ -2480,9 +2482,8 @@ bitM_bitPos:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF16:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
-.LASF533:
-	.ascii	"C:\\\\Users\\\\Christian\\\\Documents\\\\OHM\\\\MAP"
-	.ascii	"R\\\\Projekt\\\\WRKSPC\\\\R_RTOS\\\\build\000"
+.LASF357:
+	.ascii	"___int_least64_t_defined 1\000"
 .LASF463:
 	.ascii	"MAKE_SYS_ID(id) (uint16_t)((uint16_t)((uint8_t)id &"
 	.ascii	" (uint8_t)0xFFu) << (uint8_t)0x8u)\000"
@@ -2632,6 +2633,8 @@ bitM_bitPos:
 	.ascii	"__int_fast32_t_defined 1\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
+.LASF360:
+	.ascii	"__have_longlong64 1\000"
 .LASF15:
 	.ascii	"__SIZEOF_LONG__ 4\000"
 .LASF138:
@@ -2705,8 +2708,6 @@ bitM_bitPos:
 	.ascii	"__ULLFRACT_FBIT__ 64\000"
 .LASF317:
 	.ascii	"__SIZEOF_WCHAR_T__ 4\000"
-.LASF440:
-	.ascii	"NR_OF_TSKS ((uint8_t)0xBu)\000"
 .LASF28:
 	.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF236:
@@ -2820,8 +2821,6 @@ bitM_bitPos:
 	.ascii	"nt8_t)0x4u)\000"
 .LASF321:
 	.ascii	"__ARM_SIZEOF_WCHAR_T 32\000"
-.LASF452:
-	.ascii	"AMOUNT_OF_EVTS (uint8_t)0x6u\000"
 .LASF271:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF77:
@@ -2937,8 +2936,8 @@ bitM_bitPos:
 .LASF473:
 	.ascii	"TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )\000"
-.LASF79:
-	.ascii	"__UINTMAX_MAX__ 18446744073709551615ULL\000"
+.LASF533:
+	.ascii	"C:\\\\LabWrk\\\\WorkSpace\\\\R_RTOS_BUILD\\\\build\000"
 .LASF197:
 	.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
 .LASF2:
@@ -2966,6 +2965,8 @@ bitM_bitPos:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
 .LASF11:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
+.LASF440:
+	.ascii	"NR_OF_TSKS ((uint8_t)0x4u)\000"
 .LASF516:
 	.ascii	"unsigned char\000"
 .LASF163:
@@ -3013,8 +3014,6 @@ bitM_bitPos:
 	.ascii	"INT_FAST32_MAX __INT_FAST32_MAX__\000"
 .LASF309:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 1\000"
-.LASF446:
-	.ascii	"AMOUNT_OF_MSGQ (QID)(0x3u)\000"
 .LASF354:
 	.ascii	"___int_least8_t_defined 1\000"
 .LASF123:
@@ -3092,8 +3091,8 @@ bitM_bitPos:
 	.ascii	"__STRICT_ANSI__ 1\000"
 .LASF145:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
-.LASF360:
-	.ascii	"__have_longlong64 1\000"
+.LASF79:
+	.ascii	"__UINTMAX_MAX__ 18446744073709551615ULL\000"
 .LASF397:
 	.ascii	"UINT64_MAX __UINT64_MAX__\000"
 .LASF298:

@@ -126,10 +126,13 @@ RetCode __initOS( void )
 
     /* INITIALIZE EVENTS */
     evt_INIT();
+
     /* INITIALIZE MONITORS */
-    //mntr_INIT();
+    mntr_INIT();
+
     /* INITIALIZE MESSAGE QUEUING */
     //ToDO
+
     /* CONFIGURE SYSTICK TIMER */
     sysTck_resetSysTicks();
     sysTck_SetTimeSlice(
@@ -216,13 +219,15 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
             returnVal = tsk_ChngePrio(
                     (TskTCB * const ) ( &tsk_AR[(TskID) svc_args[0]] ),
                     (TskPrio) svc_args[1] );
-            if(returnVal == RET_OK) os_SCHEDULE();
+            //if(returnVal == RET_OK)
+                os_SCHEDULE();
             break;
         case SVC_TSK_ACTV:    // ACTIVATE TASK
             returnVal =  tsk_ActvTsk(
                     (TskTCB * const ) &( tsk_AR[(TskID) svc_args[0]] ) );
             gOS_FLAGS.g_needsScheduling = (uint8_t) 0x1u;
-            if(returnVal == RET_OK) os_SCHEDULE();
+            //if(returnVal == RET_OK)
+                os_SCHEDULE();
             break;
         case SVC_TSK_KILL:    // KILL THE TASK
             returnVal =  tsk_tskDestroy( (PTskTCB) svc_args[0] );
@@ -272,6 +277,24 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
                 return RET_NOK;
             }
             os_SCHEDULE();
+            break;
+        case SVC_MNTR_INIT_MNTR:
+            returnVal = mntr_InitMntr((const MntrNr) svc_args[0], (const Data) svc_args[1]);
+            break;
+        case SVC_MNTR_REQ_READ_ACC:
+            returnVal = mntr_ReqstReadAccssMntr((const MntrNr) svc_args[0], (PTskTCB const) svc_args[1]);
+//            if(returnVal == RET_OK)
+                os_SCHEDULE();
+            break;
+        case SVC_MNTR_REQ_WRITE_ACC:
+            returnVal = mntr_ReqstWriteAccssMntr((const MntrNr) svc_args[0], (PTskTCB const) svc_args[1]);
+//            if(returnVal == RET_OK)
+                os_SCHEDULE();
+            break;
+        case SVC_MNTR_REL_ACC:
+            returnVal = mntr_ReleaseAccssMntr((const MntrNr) svc_args[0]);
+//            if(returnVal == RET_OK)
+                os_SCHEDULE();
             break;
         case SVC_EVT_SEND:
             returnVal = evt_SendEvt( (EvtNr) svc_args[0] );

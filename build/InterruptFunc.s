@@ -1370,12 +1370,12 @@ setSensingForPin:
 	.uleb128 0x9
 	.4byte	.LASF4541
 	.byte	0x8
-	.2byte	0x207
+	.2byte	0x20d
 	.4byte	0x90
 	.uleb128 0x9
 	.4byte	.LASF4542
 	.byte	0x8
-	.2byte	0x20c
+	.2byte	0x212
 	.4byte	0x90
 	.uleb128 0x11
 	.4byte	.LASF4543
@@ -15186,7 +15186,7 @@ setSensingForPin:
 	.uleb128 0x7f
 	.4byte	.LASF4289
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.55ebedb3326d3ea1a2e00d95ba548a73,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.10.f6566f645606da713bca26b8fe83e1c8,comdat
 .Ldebug_macro14:
 	.2byte	0x4
 	.byte	0
@@ -15341,61 +15341,61 @@ setSensingForPin:
 	.uleb128 0x150
 	.4byte	.LASF4340
 	.byte	0x5
-	.uleb128 0x463
+	.uleb128 0x469
 	.4byte	.LASF4341
 	.byte	0x5
-	.uleb128 0x580
+	.uleb128 0x587
 	.4byte	.LASF4342
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x595
 	.4byte	.LASF4343
 	.byte	0x5
-	.uleb128 0x593
+	.uleb128 0x59a
 	.4byte	.LASF4344
 	.byte	0x5
-	.uleb128 0x59c
+	.uleb128 0x5a3
 	.4byte	.LASF4345
 	.byte	0x5
-	.uleb128 0x5a0
+	.uleb128 0x5a7
 	.4byte	.LASF4346
 	.byte	0x5
-	.uleb128 0x5a4
+	.uleb128 0x5ab
 	.4byte	.LASF4347
 	.byte	0x5
-	.uleb128 0x5a8
+	.uleb128 0x5af
 	.4byte	.LASF4348
 	.byte	0x5
-	.uleb128 0x5ac
+	.uleb128 0x5b3
 	.4byte	.LASF4349
 	.byte	0x5
-	.uleb128 0x5b0
+	.uleb128 0x5b7
 	.4byte	.LASF4350
 	.byte	0x5
-	.uleb128 0x5b4
+	.uleb128 0x5bb
 	.4byte	.LASF4351
 	.byte	0x5
-	.uleb128 0x5b8
+	.uleb128 0x5bf
 	.4byte	.LASF4352
 	.byte	0x5
-	.uleb128 0x5bc
+	.uleb128 0x5c3
 	.4byte	.LASF4353
 	.byte	0x5
-	.uleb128 0x5c0
+	.uleb128 0x5c7
 	.4byte	.LASF4354
 	.byte	0x5
-	.uleb128 0x5c4
+	.uleb128 0x5cb
 	.4byte	.LASF4355
 	.byte	0x5
-	.uleb128 0x5c8
+	.uleb128 0x5cf
 	.4byte	.LASF4356
 	.byte	0x5
-	.uleb128 0x5cc
+	.uleb128 0x5d3
 	.4byte	.LASF4357
 	.byte	0x5
-	.uleb128 0x5d0
+	.uleb128 0x5d7
 	.4byte	.LASF4358
 	.byte	0x5
-	.uleb128 0x5d4
+	.uleb128 0x5db
 	.4byte	.LASF4359
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_memMngr.h.20.3fa02398393232138c63718be3aa1b6e,comdat
@@ -17182,8 +17182,6 @@ setSensingForPin:
 	.ascii	"CMP_MUXCR_PSTM_MASK 0x80u\000"
 .LASF2997:
 	.ascii	"SIM_SOPT4_REG(base) ((base)->SOPT4)\000"
-.LASF4308:
-	.ascii	"AMOUNT_OF_EVTS (uint8_t)0x6u\000"
 .LASF3802:
 	.ascii	"UART0_S2_BRK13_SHIFT 2\000"
 .LASF779:
@@ -18945,6 +18943,8 @@ setSensingForPin:
 	.ascii	"DMA_DCR_AA_SHIFT 28\000"
 .LASF1999:
 	.ascii	"MCM_CPO_CPOACK_MASK 0x2u\000"
+.LASF4571:
+	.ascii	"C:\\\\LabWrk\\\\WorkSpace\\\\R_RTOS_BUILD\\\\build\000"
 .LASF2922:
 	.ascii	"RTC_CR_SC4P_SHIFT 12\000"
 .LASF1149:
@@ -19699,6 +19699,8 @@ setSensingForPin:
 	.ascii	"I2C_C1_TX_MASK 0x10u\000"
 .LASF1813:
 	.ascii	"MCG_C1_IRCLKEN_SHIFT 1\000"
+.LASF4308:
+	.ascii	"AMOUNT_OF_EVTS (uint8_t)0x4u\000"
 .LASF2456:
 	.ascii	"PIT_LTMR64L_LTL_WIDTH 32\000"
 .LASF2584:
@@ -20232,8 +20234,6 @@ setSensingForPin:
 	.ascii	"TSI_GENCS_MODE_WIDTH 4\000"
 .LASF1759:
 	.ascii	"LPTMR_CSR_TPS_WIDTH 2\000"
-.LASF4296:
-	.ascii	"NR_OF_TSKS ((uint8_t)0xBu)\000"
 .LASF969:
 	.ascii	"DMA_DSR_BCR_BSY(x) (((uint32_t)(((uint32_t)(x))<<DM"
 	.ascii	"A_DSR_BCR_BSY_SHIFT))&DMA_DSR_BCR_BSY_MASK)\000"
@@ -21489,6 +21489,8 @@ setSensingForPin:
 	.ascii	"TMS_SHIFT))&MCG_SC_ATMS_MASK)\000"
 .LASF1654:
 	.ascii	"LLWU_F1_WUF4_SHIFT 4\000"
+.LASF4302:
+	.ascii	"AMOUNT_OF_MSGQ (QID)(0x2u)\000"
 .LASF2851:
 	.ascii	"ROM_ENTRY(index) ROM_ENTRY_REG(ROM,index)\000"
 .LASF2122:
@@ -21552,6 +21554,8 @@ setSensingForPin:
 	.ascii	"LPTMR_PSR_PBYP_MASK 0x4u\000"
 .LASF3613:
 	.ascii	"TSI_GENCS_DVOLT_MASK 0x180000u\000"
+.LASF4296:
+	.ascii	"NR_OF_TSKS ((uint8_t)0x4u)\000"
 .LASF1327:
 	.ascii	"GPIO_PDOR_PDO_WIDTH 32\000"
 .LASF507:
@@ -22861,8 +22865,6 @@ setSensingForPin:
 	.ascii	"MTB_FLOW_WATERMARK_WIDTH 29\000"
 .LASF1939:
 	.ascii	"MCG_C2_EREFS_MASK (MCG_C2_EREFS0_MASK)\000"
-.LASF4302:
-	.ascii	"AMOUNT_OF_MSGQ (QID)(0x3u)\000"
 .LASF2813:
 	.ascii	"ROM_PERIPHID1_PERIPHID_MASK 0xFFFFFFFFu\000"
 .LASF29:
@@ -23133,9 +23135,8 @@ setSensingForPin:
 	.ascii	"sizetype\000"
 .LASF4007:
 	.ascii	"UARTLP_C1_PT_MASK UART0_C1_PT_MASK\000"
-.LASF4571:
-	.ascii	"C:\\\\Users\\\\Christian\\\\Documents\\\\OHM\\\\MAP"
-	.ascii	"R\\\\Projekt\\\\WRKSPC\\\\R_RTOS\\\\build\000"
+.LASF3865:
+	.ascii	"UART0_D_R2T2_MASK 0x4u\000"
 .LASF936:
 	.ascii	"DAC0_C1 DAC_C1_REG(DAC0)\000"
 .LASF135:
@@ -23486,8 +23487,6 @@ setSensingForPin:
 	.ascii	"DMA_DCR_DSIZE_MASK 0x60000u\000"
 .LASF1394:
 	.ascii	"I2C_C1_DMAEN_SHIFT 0\000"
-.LASF3865:
-	.ascii	"UART0_D_R2T2_MASK 0x4u\000"
 .LASF615:
 	.ascii	"ADC_CFG2_ADACKEN_SHIFT 3\000"
 .LASF1722:

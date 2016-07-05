@@ -56,7 +56,7 @@
 /** \def NR_OF_TSKS
  *  \brief Number of tasks in the system.
  */
-#define NR_OF_TSKS          ((uint8_t)0xBu) // max tasks
+#define NR_OF_TSKS          ((uint8_t)0x4u) // max tasks
 
 /** \def MAX_TASKS
  *  \brief Maximum number of tasks in the system.
@@ -90,7 +90,7 @@
  *  \brief Number of message queues in the system.
  *  \note user defined.
  */
-#define AMOUNT_OF_MSGQ  (QID)(0x3u)
+#define AMOUNT_OF_MSGQ  (QID)(0x2u)
 
 /** \def MSGQ_TSK_ID_POS
  *  \brief Position of the user/task id in PartiID.
@@ -124,7 +124,7 @@
 /** \def AMOUNT_OF_EVTS
  *  \brief  Defines the maximum amount of different events in the system.
  */
-#define     AMOUNT_OF_EVTS  (uint8_t)0x6u
+#define     AMOUNT_OF_EVTS  (uint8_t)0x4u
 
 /** \def EVT_QUEUE_SIZE
  *  \brief  Defines the maximum size of the event queues.
@@ -460,6 +460,12 @@ typedef uint8_t MtxNr;
  */
 typedef uint8_t SemCntr;
 /* END SEMAPHORES */
+
+/* MNTRS */
+
+typedef uint8_t MntrNr;
+
+/* END MNTRS */
 
 /* EVENTS */
 
@@ -1540,7 +1546,11 @@ typedef enum svcCode
     SVC_MTX_TAKE,                       //!< Attempt to take a mutex
     SVC_MTX_GIVE,                       //!< Give back an occupied mutex
     SVC_SEM_WAIT,                       //!< Take a semaphore
-    SVC_SEM_SIGNAL,                       //!< Release a semaphore
+    SVC_SEM_SIGNAL,                     //!< Release a semaphore
+    SVC_MNTR_INIT_MNTR,                 //!< Initialize Monitor
+    SVC_MNTR_REQ_READ_ACC,              //!< Request read access to monitor
+    SVC_MNTR_REQ_WRITE_ACC,             //!< Request write access to monitor
+    SVC_MNTR_REL_ACC,                   //!< Release current access to monitor
     SVC_EVT_SEND,                       //!< Send an event
     SVC_EVT_RECV,                       //!< Wait for an event
     SVC_TMR_SET,                        //!< Set up a timer

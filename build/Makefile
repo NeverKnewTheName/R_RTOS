@@ -68,7 +68,8 @@ POSTBUILD += $(SIZE) docu
 #-include ../Tasks/MessageQueueTest/source.mk
 #-include ../Tasks/SchedulerTest/source.mk
 #-include ../Tasks/MtxTest/source.mk
--include ../Tasks/SemTest/source.mk
+#-include ../Tasks/SemTest/source.mk
+-include ../Tasks/MntrTest/source.mk
 #-include ../Tasks/SysTickTest/source.mk
 #-include ../Tasks/TimerTest/source.mk
 

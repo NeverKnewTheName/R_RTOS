@@ -20,7 +20,7 @@ static RetCode mntr_appendToWaitrList(
                                        PMntr const mntr,
                                        PTskTCB const waitrTsk )
 {
-    if ( mntr->mntrWaitrsQEnd == TSK_ID_NO_TSK )
+    if ( mntr->mntrWaitrsQTskIDEnd == TSK_ID_NO_TSK )
     {
         // new list end and list start
         waitrTsk->prvTsk = TSK_ID_NO_TSK;
@@ -45,23 +45,58 @@ static RetCode mntr_appendToWaitrList(
 
 static RetCode mntr_getNextWaitr( PMntr const mntr )
 {
-    if(mntr->mntrWaitrsQTskIDEnd == TSK_ID_NO_TSK)
+    if ( mntr->refCntr )    // Reference counter should be zero!
         return RET_NOK;
-    while(mntr->mntrWaitrsQTskIDStrt != TSK_ID_NO_TSK)
+
+    mntr->curState = MNTR_FREE_NOOP;
+    if ( mntr->mntrWaitrsQTskIDEnd == TSK_ID_NO_TSK )
+    {
+        // there is no queue, thus the monitor is free
+        return RET_NOK;
+    }
+
+    while ( mntr->mntrWaitrsQTskIDStrt != TSK_ID_NO_TSK )
     {
         PTskTCB tsk = &tsk_AR[mntr->mntrWaitrsQTskIDStrt];
-        if((mntr->refCntr && (tsk->tskSync->SyncEleHandle.MntrSyncEle.mntrAccssType == MNTR_ACCESS_WRITE)))
-            break;
-        mntr->mntrWaitrsQTskIDStrt = tsk->prvTsk;
-        tsk_ClrEvt(tsk, tsk->tskSync);
-        memMngr_MemPoolFree(tsk->tskSync, memPoolID_MNTR);
+        ACCSSType accssType = tsk->tskSync->SyncEleHandle.MntrSyncEle.mntrAccssType;
+
+        if ( accssType == MNTR_ACCESS_WRITE )
+        {
+            /* if there is a waiter with write request
+             * evaluate whether there have already been released waiter with read requests
+             */
+            if ( mntr->curState == MNTR_FREE_READ )
+            {
+                // current monitor state is read, abort release of write waiter -> write pending
+                mntr->curState = MNTR_PENDING_WRITE;
+                break;
+            }
+        }
+        mntr->mntrWaitrsQTskIDStrt = tsk->prvTsk;    // advance in list
+        tsk_ClrEvt( tsk, tsk->tskSync );
+        memMngr_MemPoolFree( tsk->tskSync, memPoolID_MNTR );
+        tsk->tskSync = (PSyncEle)NULL;
         mntr->refCntr++;
+        if ( accssType == MNTR_ACCESS_WRITE )
+        {
+            mntr->curState = MNTR_LOCK_WRITE;
+            break;
+        }
+        mntr->curState = MNTR_FREE_READ;
     }
+    if(mntr->mntrWaitrsQTskIDStrt == TSK_ID_NO_TSK)
+        mntr->mntrWaitrsQTskIDEnd = TSK_ID_NO_TSK;
+
     return RET_OK;
 }
 
 RetCode mntr_INIT( void )
 {
+    uint8_t mntrCntr = NR_OF_MNTRS;
+    while(mntrCntr--)
+    {
+        mntr_InitMntr(mntrCntr, NULL);
+    }
     return memMngr_CreateMemPool(
             sizeof(SyncEle), MEM_OBJECTS_MNTR, &memPoolID_MNTR );
 }
@@ -77,6 +112,7 @@ RetCode mntr_InitMntr( const MntrNr mntrNr, const Data const data /* = NULL */)
     mntr->refCntr = (mntrRfrcCnt) 0x0u;
     mntr->mntrWaitrsQTskIDStrt = TSK_ID_NO_TSK;
     mntr->mntrWaitrsQTskIDEnd = TSK_ID_NO_TSK;
+    return RET_OK;
 }
 
 RetCode mntr_DelMntr( const MntrNr mntrNr )
@@ -100,14 +136,13 @@ RetCode mntr_DestrMntr( const MntrNr mntrNr )
     return RET_OK;
 }
 
-//DONE
-RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, const TskID tskID )
+RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, PTskTCB const tsk )
 {
     PMntr mntr = &ar_Mntr[mntrNr];
     /*
      * if monitor is currently free, grant read access
      * if monitor is currently being read, grant another read access
-     * if monitor is currently being written, deny read access
+     * if monitor is currently being written, deny read access -> queue into wait list
      *
      * monitor is blocking
      */
@@ -128,19 +163,19 @@ RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, const TskID tskID )
         /* Either Write is currently active or a write operation is pending,
          * thus put requesting task into the queue
          */
-        PTskTCB tsk = &tsk_AR[tskID];
         PSyncEle mntrWaitrRead;    // = (PMntrWaitr) malloc( sizeof(MntrWaitr) );
         memMngr_MemPoolMalloc( &mntrWaitrRead, memPoolID_MNTR );
-        if ( (uint32_t) mntrWaitrRead != ( uint32_t ) NULL )
+        if ( (uint32_t) mntrWaitrRead != (uint32_t) NULL )
         {
             mntrWaitrRead->syncEleType = SyncEle_TYPE_MNTR;
             mntrWaitrRead->syncEleID = mntrNr;
             mntrWaitrRead->SyncEleHandle.MntrSyncEle.mntrAccssType =
                     MNTR_ACCESS_READ;
 
+            tsk->tskSync = mntrWaitrRead;
             // append to the end of the monitor's waiter list
 
-            if ( tsk_SetInactive( tsk, TSK_STATE_WAITING_MNTR ) != RET_OK )
+            if ( tsk_SetInactive( tsk, TSK_STATE_WAITING_MNTR ) == RET_OK )
             {
                 return mntr_appendToWaitrList( mntr, tsk );
             }
@@ -155,51 +190,13 @@ RetCode mntr_ReqstReadAccssMntr( const MntrNr mntrNr, const TskID tskID )
     }
 }
 
-//DONE
-RetCode mntr_RelsReadAccssMntr( const MntrNr mntrNr )
-{
-    PMntr mntr = &ar_Mntr[mntrNr];
-    if ( mntr->curState == MNTR_LOCK_ERROR )
-    {
-        // MNTR IS IN ERROR STATE
-        return RET_NOK;
-    }
-    else if ( mntr->curState & MNTR_RPW )    // currently either read access or pending write
-    {
-        if ( !( mntr->refCntr ) )
-        {
-            // No references -> ERROR --- cannot release if no reference given!
-            return RET_NOK;
-        }
-        // Release read access possible -> decrement reference counter
-        if ( --( mntr->refCntr ) == (mntrRfrcCnt) 0x0u )
-        {
-            // no more read references
-            if ( mntr->curState == MNTR_PENDING_WRITE )
-            {
-                return mntr_getNextWaitr( mntr );
-            }
-            else
-            {
-                // Monitor is free
-                mntr->curState = MNTR_FREE;
-            }
-        }
-        // else more read accesses being serviced
-        return RET_OK;
-    }
-    else    // FAILURE
-    {
-        return RET_NOK;
-    }
-}
-
-RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, TskID tskID )
+RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, PTskTCB const tsk )
 {
     PMntr mntr = &ar_Mntr[mntrNr];
     /*
      * if monitor is currently free, grant write access
      * else if monitor is currently either being written or read, deny write access
+     * -> set write pending
      *
      * monitor is blocking
      */
@@ -208,7 +205,7 @@ RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, TskID tskID )
         // MNTR IS IN ERROR STATE
         return RET_NOK;
     }
-    else if ( mntr->curState & MNTR_FREE_NOOP )    // currently free
+    else if ( mntr->curState == MNTR_FREE_NOOP )    // currently free
     {
         // Write access possible -> increment reference counter
         if ( !( mntr->refCntr ) )
@@ -223,19 +220,18 @@ RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, TskID tskID )
         /* Either Write is currently active, a write operation is pending or,
          * thus put requesting task into the queue
          */
-        PTskTCB tsk = &tsk_AR[tskID];
         PSyncEle mntrWaitrWrite;    // = (MntrWaitr *) malloc( sizeof(MntrWaitr) );
         memMngr_MemPoolMalloc( &mntrWaitrWrite, memPoolID_MNTR );
-        if ( (uint32_t) mntrWaitrWrite != ( uint32_t ) NULL )
+        if ( (uint32_t) mntrWaitrWrite != (uint32_t) NULL )
         {
             mntrWaitrWrite->syncEleType = SyncEle_TYPE_MNTR;
             mntrWaitrWrite->syncEleID = mntrNr;
             mntrWaitrWrite->SyncEleHandle.MntrSyncEle.mntrAccssType =
                     MNTR_ACCESS_WRITE;
-
+            tsk->tskSync = mntrWaitrWrite;
             // append to the end of the monitor's waiter list
 
-            if ( tsk_SetInactive( tsk, TSK_STATE_WAITING_MNTR ) != RET_OK )
+            if ( tsk_SetInactive( tsk, TSK_STATE_WAITING_MNTR ) == RET_OK )
             {
                 mntr->curState = MNTR_PENDING_WRITE;
                 return mntr_appendToWaitrList( mntr, tsk );
@@ -246,36 +242,26 @@ RetCode mntr_ReqstWriteAccssMntr( const MntrNr mntrNr, TskID tskID )
     }
 }
 
-RetCode mntr_RelsWriteAccssMntr( const MntrNr mntrNr )
+RetCode mntr_ReleaseAccssMntr( const MntrNr mntrNr )
 {
     PMntr mntr = &ar_Mntr[mntrNr];
     if ( mntr->curState == MNTR_LOCK_ERROR )
     {
-        // MNTR IS IN ERROR STATE
-        return RET_NOK;
+        return RET_NOK;    // MNTR IS IN ERROR STATE
     }
-    else if( mntr->curState == MNTR_LOCK_WRITE )   // Has to be in write mode
+    else
     {
-        if(!(mntr->refCntr))
-            return RET_NOK;
-
-        // decrement reference counter
-        if ( --( mntr->refCntr ) == (mntrRfrcCnt) 0x0u )
+        if ( mntr->refCntr )
         {
-            if ( mntr->mntrWaitrsQStrt != TSK_ID_NO_TSK )    // There is a queue
+            // decrement reference counter
+            if ( --( mntr->refCntr ) == (mntrRfrcCnt) 0x0u )
             {
-                return mntr_getNextWaitr(mntr);
-            }
-            else
-            {
-                // MNTR is free
-                mntr->curState = MNTR_FREE;
+                // no more references -> grant access to entities in wait queue if any
+                return mntr_getNextWaitr( mntr );
             }
         }
-        else
-        {
-            return RET_NOK;    // reference counter mismatch!!!
-        }
-        return RET_OK;
+        //else // No references -> ERROR --- cannot release if no reference given!
     }
+    // FAILURE
+    return RET_NOK;
 }
