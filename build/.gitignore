@@ -1,4 +1,4 @@
-
+*.elf
 *.lst
 *.map
 *.i

@@ -461,6 +461,12 @@ typedef uint8_t MtxNr;
 typedef uint8_t SemCntr;
 /* END SEMAPHORES */
 
+/* MNTRS */
+
+typedef uint8_t MntrNr;
+
+/* END MNTRS */
+
 /* EVENTS */
 
 /** \typedef EvtNr
@@ -1540,7 +1546,11 @@ typedef enum svcCode
     SVC_MTX_TAKE,                       //!< Attempt to take a mutex
     SVC_MTX_GIVE,                       //!< Give back an occupied mutex
     SVC_SEM_WAIT,                       //!< Take a semaphore
-    SVC_SEM_SIGNAL,                       //!< Release a semaphore
+    SVC_SEM_SIGNAL,                     //!< Release a semaphore
+    SVC_MNTR_INIT_MNTR,                 //!< Initialize Monitor
+    SVC_MNTR_REQ_READ_ACC,              //!< Request read access to monitor
+    SVC_MNTR_REQ_WRITE_ACC,             //!< Request write access to monitor
+    SVC_MNTR_REL_ACC,                   //!< Release current access to monitor
     SVC_EVT_SEND,                       //!< Send an event
     SVC_EVT_RECV,                       //!< Wait for an event
     SVC_TMR_SET,                        //!< Set up a timer

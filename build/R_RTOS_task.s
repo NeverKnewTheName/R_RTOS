@@ -946,15 +946,15 @@ tsk_ChngePrio:
 	.file 4 "../include/R_RTOS_inc.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0xae3
+	.4byte	0xaf5
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF847
-	.byte	0x1
 	.4byte	.LASF848
+	.byte	0x1
 	.4byte	.LASF849
+	.4byte	.LASF850
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -1078,53 +1078,53 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF670
 	.byte	0x4
-	.2byte	0x1da
+	.2byte	0x1e0
 	.4byte	0xa6
 	.uleb128 0x5
 	.4byte	.LASF671
 	.byte	0x4
-	.2byte	0x1f0
+	.2byte	0x1f6
 	.4byte	0x90
 	.uleb128 0x5
 	.4byte	.LASF672
 	.byte	0x4
-	.2byte	0x1fa
+	.2byte	0x200
 	.4byte	0xa6
 	.uleb128 0x5
 	.4byte	.LASF673
 	.byte	0x4
-	.2byte	0x201
+	.2byte	0x207
 	.4byte	0x90
 	.uleb128 0x5
 	.4byte	.LASF674
 	.byte	0x4
-	.2byte	0x207
+	.2byte	0x20d
 	.4byte	0x90
 	.uleb128 0x5
 	.4byte	.LASF675
 	.byte	0x4
-	.2byte	0x20c
+	.2byte	0x212
 	.4byte	0x90
 	.uleb128 0x5
 	.4byte	.LASF676
 	.byte	0x4
-	.2byte	0x211
+	.2byte	0x217
 	.4byte	0xb1
 	.uleb128 0x5
 	.4byte	.LASF677
 	.byte	0x4
-	.2byte	0x216
+	.2byte	0x21c
 	.4byte	0xb1
 	.uleb128 0x5
 	.4byte	.LASF678
 	.byte	0x4
-	.2byte	0x223
+	.2byte	0x229
 	.4byte	0x90
 	.uleb128 0x9
 	.4byte	.LASF685
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x262
+	.2byte	0x268
 	.4byte	0x1b1
 	.uleb128 0xa
 	.4byte	.LASF679
@@ -1145,13 +1145,13 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF684
 	.byte	0x4
-	.2byte	0x269
+	.2byte	0x26f
 	.4byte	0x185
 	.uleb128 0x9
 	.4byte	.LASF686
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x298
+	.2byte	0x29e
 	.4byte	0x20d
 	.uleb128 0xa
 	.4byte	.LASF687
@@ -1190,13 +1190,13 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF698
 	.byte	0x4
-	.2byte	0x2a5
+	.2byte	0x2ab
 	.4byte	0x1bd
 	.uleb128 0x9
 	.4byte	.LASF699
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x2d6
+	.2byte	0x2dc
 	.4byte	0x2b1
 	.uleb128 0xa
 	.4byte	.LASF700
@@ -1265,13 +1265,13 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF721
 	.byte	0x4
-	.2byte	0x2ed
+	.2byte	0x2f3
 	.4byte	0x219
 	.uleb128 0x9
 	.4byte	.LASF722
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x30d
+	.2byte	0x313
 	.4byte	0x2fb
 	.uleb128 0xa
 	.4byte	.LASF723
@@ -1301,13 +1301,13 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF731
 	.byte	0x4
-	.2byte	0x317
+	.2byte	0x31d
 	.4byte	0x2bd
 	.uleb128 0x9
 	.4byte	.LASF732
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x330
+	.2byte	0x336
 	.4byte	0x33f
 	.uleb128 0xa
 	.4byte	.LASF733
@@ -1334,70 +1334,70 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF740
 	.byte	0x4
-	.2byte	0x339
+	.2byte	0x33f
 	.4byte	0x307
 	.uleb128 0xb
 	.4byte	.LASF774
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x343
+	.2byte	0x349
 	.4byte	0x371
 	.uleb128 0xc
 	.4byte	.LASF741
 	.byte	0x4
-	.2byte	0x345
+	.2byte	0x34b
 	.4byte	0x13d
 	.uleb128 0xc
 	.4byte	.LASF742
 	.byte	0x4
-	.2byte	0x346
+	.2byte	0x34c
 	.4byte	0xc4
 	.byte	0
 	.uleb128 0x5
 	.4byte	.LASF743
 	.byte	0x4
-	.2byte	0x347
+	.2byte	0x34d
 	.4byte	0x34b
 	.uleb128 0xd
 	.4byte	.LASF751
 	.byte	0xc
 	.byte	0x4
-	.2byte	0x352
+	.2byte	0x358
 	.4byte	0x3d9
 	.uleb128 0xe
 	.4byte	.LASF744
 	.byte	0x4
-	.2byte	0x354
+	.2byte	0x35a
 	.4byte	0x3d9
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF745
 	.byte	0x4
-	.2byte	0x355
+	.2byte	0x35b
 	.4byte	0x3d9
 	.byte	0x4
 	.uleb128 0xe
 	.4byte	.LASF746
 	.byte	0x4
-	.2byte	0x356
+	.2byte	0x35c
 	.4byte	0x33f
 	.byte	0x8
 	.uleb128 0xe
 	.4byte	.LASF747
 	.byte	0x4
-	.2byte	0x357
+	.2byte	0x35d
 	.4byte	0x371
 	.byte	0x9
 	.uleb128 0xe
 	.4byte	.LASF748
 	.byte	0x4
-	.2byte	0x358
+	.2byte	0x35e
 	.4byte	0x125
 	.byte	0xa
 	.uleb128 0xe
 	.4byte	.LASF749
 	.byte	0x4
-	.2byte	0x359
+	.2byte	0x35f
 	.4byte	0x125
 	.byte	0xb
 	.byte	0
@@ -1407,24 +1407,24 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF750
 	.byte	0x4
-	.2byte	0x35a
+	.2byte	0x360
 	.4byte	0x3d9
 	.uleb128 0xd
 	.4byte	.LASF752
 	.byte	0x2
 	.byte	0x4
-	.2byte	0x38b
+	.2byte	0x391
 	.4byte	0x413
 	.uleb128 0xe
 	.4byte	.LASF753
 	.byte	0x4
-	.2byte	0x38d
+	.2byte	0x393
 	.4byte	0xfa
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF754
 	.byte	0x4
-	.2byte	0x38e
+	.2byte	0x394
 	.4byte	0x413
 	.byte	0x1
 	.byte	0
@@ -1433,29 +1433,29 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF755
 	.byte	0x4
-	.2byte	0x38f
+	.2byte	0x395
 	.4byte	0x3eb
 	.uleb128 0x5
 	.4byte	.LASF756
 	.byte	0x4
-	.2byte	0x395
+	.2byte	0x39b
 	.4byte	0x90
 	.uleb128 0xd
 	.4byte	.LASF757
 	.byte	0x2
 	.byte	0x4
-	.2byte	0x3a4
+	.2byte	0x3aa
 	.4byte	0x458
 	.uleb128 0xe
 	.4byte	.LASF758
 	.byte	0x4
-	.2byte	0x3a6
+	.2byte	0x3ac
 	.4byte	0x458
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF759
 	.byte	0x4
-	.2byte	0x3a7
+	.2byte	0x3ad
 	.4byte	0x45d
 	.byte	0x1
 	.byte	0
@@ -1466,24 +1466,24 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF760
 	.byte	0x4
-	.2byte	0x3a8
+	.2byte	0x3ae
 	.4byte	0x430
 	.uleb128 0xd
 	.4byte	.LASF761
 	.byte	0x2
 	.byte	0x4
-	.2byte	0x3b8
+	.2byte	0x3be
 	.4byte	0x496
 	.uleb128 0xe
 	.4byte	.LASF762
 	.byte	0x4
-	.2byte	0x3ba
+	.2byte	0x3c0
 	.4byte	0x496
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF759
 	.byte	0x4
-	.2byte	0x3bb
+	.2byte	0x3c1
 	.4byte	0x45d
 	.byte	0x1
 	.byte	0
@@ -1492,37 +1492,37 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF763
 	.byte	0x4
-	.2byte	0x3bc
+	.2byte	0x3c2
 	.4byte	0x46e
 	.uleb128 0xd
 	.4byte	.LASF764
 	.byte	0x2
 	.byte	0x4
-	.2byte	0x3be
+	.2byte	0x3c4
 	.4byte	0x4cf
 	.uleb128 0xe
 	.4byte	.LASF765
 	.byte	0x4
-	.2byte	0x3c0
+	.2byte	0x3c6
 	.4byte	0x90
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF766
 	.byte	0x4
-	.2byte	0x3c1
+	.2byte	0x3c7
 	.4byte	0x90
 	.byte	0x1
 	.byte	0
 	.uleb128 0x5
 	.4byte	.LASF767
 	.byte	0x4
-	.2byte	0x3c2
+	.2byte	0x3c8
 	.4byte	0x4a7
 	.uleb128 0x9
 	.4byte	.LASF768
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x3cc
+	.2byte	0x3d2
 	.4byte	0x502
 	.uleb128 0xa
 	.4byte	.LASF769
@@ -1540,68 +1540,68 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF773
 	.byte	0x4
-	.2byte	0x3d2
+	.2byte	0x3d8
 	.4byte	0x4db
 	.uleb128 0xb
 	.4byte	.LASF775
 	.byte	0x2
 	.byte	0x4
-	.2byte	0x3dd
+	.2byte	0x3e3
 	.4byte	0x54c
 	.uleb128 0xc
 	.4byte	.LASF776
 	.byte	0x4
-	.2byte	0x3df
+	.2byte	0x3e5
 	.4byte	0x418
 	.uleb128 0xc
 	.4byte	.LASF777
 	.byte	0x4
-	.2byte	0x3e0
+	.2byte	0x3e6
 	.4byte	0x462
 	.uleb128 0xc
 	.4byte	.LASF778
 	.byte	0x4
-	.2byte	0x3e1
+	.2byte	0x3e7
 	.4byte	0x49b
 	.uleb128 0xc
 	.4byte	.LASF779
 	.byte	0x4
-	.2byte	0x3e2
+	.2byte	0x3e8
 	.4byte	0x4cf
 	.byte	0
 	.uleb128 0x5
 	.4byte	.LASF780
 	.byte	0x4
-	.2byte	0x3e3
+	.2byte	0x3e9
 	.4byte	0x50e
 	.uleb128 0xd
 	.4byte	.LASF781
 	.byte	0x8
 	.byte	0x4
-	.2byte	0x3f2
+	.2byte	0x3f8
 	.4byte	0x59a
 	.uleb128 0xe
 	.4byte	.LASF782
 	.byte	0x4
-	.2byte	0x3f4
+	.2byte	0x3fa
 	.4byte	0x59a
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF783
 	.byte	0x4
-	.2byte	0x3f7
+	.2byte	0x3fd
 	.4byte	0x90
 	.byte	0x4
 	.uleb128 0xe
 	.4byte	.LASF784
 	.byte	0x4
-	.2byte	0x3f8
+	.2byte	0x3fe
 	.4byte	0x502
 	.byte	0x5
 	.uleb128 0xe
 	.4byte	.LASF785
 	.byte	0x4
-	.2byte	0x3f9
+	.2byte	0x3ff
 	.4byte	0x54c
 	.byte	0x6
 	.byte	0
@@ -1613,7 +1613,7 @@ tsk_ChngePrio:
 	.uleb128 0x5
 	.4byte	.LASF786
 	.byte	0x4
-	.2byte	0x3fa
+	.2byte	0x400
 	.4byte	0x5b1
 	.uleb128 0x6
 	.byte	0x4
@@ -1624,29 +1624,29 @@ tsk_ChngePrio:
 	.4byte	.LASF787
 	.byte	0x1
 	.byte	0x4
-	.2byte	0x4f3
+	.2byte	0x4f9
 	.4byte	0x5e2
 	.uleb128 0xc
 	.4byte	.LASF685
 	.byte	0x4
-	.2byte	0x4f5
+	.2byte	0x4fb
 	.4byte	0x1b1
 	.uleb128 0xc
 	.4byte	.LASF788
 	.byte	0x4
-	.2byte	0x4f6
+	.2byte	0x4fc
 	.4byte	0x90
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF789
 	.byte	0x4
 	.byte	0x4
-	.2byte	0x4fc
+	.2byte	0x502
 	.4byte	0x5fd
 	.uleb128 0xe
 	.4byte	.LASF790
 	.byte	0x4
-	.2byte	0x4fe
+	.2byte	0x504
 	.4byte	0x119
 	.byte	0
 	.byte	0
@@ -1654,12 +1654,12 @@ tsk_ChngePrio:
 	.4byte	.LASF791
 	.byte	0x4
 	.byte	0x4
-	.2byte	0x501
+	.2byte	0x507
 	.4byte	0x618
 	.uleb128 0xe
 	.4byte	.LASF792
 	.byte	0x4
-	.2byte	0x503
+	.2byte	0x509
 	.4byte	0x131
 	.byte	0
 	.byte	0
@@ -1667,30 +1667,30 @@ tsk_ChngePrio:
 	.4byte	.LASF793
 	.byte	0x4
 	.byte	0x4
-	.2byte	0x506
+	.2byte	0x50c
 	.4byte	0x65a
 	.uleb128 0xe
 	.4byte	.LASF794
 	.byte	0x4
-	.2byte	0x508
+	.2byte	0x50e
 	.4byte	0x90
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF795
 	.byte	0x4
-	.2byte	0x509
+	.2byte	0x50f
 	.4byte	0x90
 	.byte	0x1
 	.uleb128 0xe
 	.4byte	.LASF796
 	.byte	0x4
-	.2byte	0x50a
+	.2byte	0x510
 	.4byte	0x90
 	.byte	0x2
 	.uleb128 0xe
 	.4byte	.LASF797
 	.byte	0x4
-	.2byte	0x50b
+	.2byte	0x511
 	.4byte	0x90
 	.byte	0x3
 	.byte	0
@@ -1698,217 +1698,225 @@ tsk_ChngePrio:
 	.4byte	.LASF798
 	.byte	0x4
 	.byte	0x4
-	.2byte	0x50d
+	.2byte	0x513
 	.4byte	0x69c
 	.uleb128 0xe
 	.4byte	.LASF794
 	.byte	0x4
-	.2byte	0x50f
+	.2byte	0x515
 	.4byte	0x90
 	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF795
 	.byte	0x4
-	.2byte	0x510
+	.2byte	0x516
 	.4byte	0x90
 	.byte	0x1
 	.uleb128 0xe
 	.4byte	.LASF796
 	.byte	0x4
-	.2byte	0x511
+	.2byte	0x517
 	.4byte	0x90
 	.byte	0x2
 	.uleb128 0xe
 	.4byte	.LASF797
 	.byte	0x4
-	.2byte	0x512
+	.2byte	0x518
 	.4byte	0x90
 	.byte	0x3
 	.byte	0
-	.uleb128 0x10
-	.4byte	.LASF850
-	.byte	0
-	.byte	0x4
-	.2byte	0x515
-	.uleb128 0xb
+	.uleb128 0xd
 	.4byte	.LASF799
+	.byte	0x1
 	.byte	0x4
+	.2byte	0x51b
+	.4byte	0x6b7
+	.uleb128 0xe
+	.4byte	.LASF685
 	.byte	0x4
-	.2byte	0x4f9
-	.4byte	0x6ef
-	.uleb128 0xc
+	.2byte	0x51d
+	.4byte	0x1b1
+	.byte	0
+	.byte	0
+	.uleb128 0xb
 	.4byte	.LASF800
 	.byte	0x4
+	.byte	0x4
 	.2byte	0x4ff
-	.4byte	0x5e2
+	.4byte	0x701
 	.uleb128 0xc
 	.4byte	.LASF801
 	.byte	0x4
-	.2byte	0x504
-	.4byte	0x5fd
+	.2byte	0x505
+	.4byte	0x5e2
 	.uleb128 0xc
 	.4byte	.LASF802
 	.byte	0x4
-	.2byte	0x50c
-	.4byte	0x618
+	.2byte	0x50a
+	.4byte	0x5fd
 	.uleb128 0xc
 	.4byte	.LASF803
 	.byte	0x4
-	.2byte	0x513
-	.4byte	0x65a
+	.2byte	0x512
+	.4byte	0x618
 	.uleb128 0xc
 	.4byte	.LASF804
 	.byte	0x4
-	.2byte	0x518
+	.2byte	0x519
+	.4byte	0x65a
+	.uleb128 0xc
+	.4byte	.LASF805
+	.byte	0x4
+	.2byte	0x51f
 	.4byte	0x69c
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF805
+	.4byte	.LASF806
 	.byte	0x8
 	.byte	0x4
-	.2byte	0x4ed
-	.4byte	0x731
+	.2byte	0x4f3
+	.4byte	0x743
 	.uleb128 0xe
 	.4byte	.LASF722
 	.byte	0x4
-	.2byte	0x4ef
+	.2byte	0x4f5
 	.4byte	0x2fb
 	.byte	0
 	.uleb128 0xe
-	.4byte	.LASF806
+	.4byte	.LASF807
 	.byte	0x4
-	.2byte	0x4f0
+	.2byte	0x4f6
 	.4byte	0x179
 	.byte	0x1
 	.uleb128 0xe
-	.4byte	.LASF807
+	.4byte	.LASF808
 	.byte	0x4
-	.2byte	0x4f7
+	.2byte	0x4fd
 	.4byte	0x5bc
 	.byte	0x2
 	.uleb128 0xe
-	.4byte	.LASF808
+	.4byte	.LASF809
 	.byte	0x4
-	.2byte	0x519
-	.4byte	0x6a5
+	.2byte	0x520
+	.4byte	0x6b7
 	.byte	0x4
 	.byte	0
 	.uleb128 0x5
-	.4byte	.LASF809
+	.4byte	.LASF810
 	.byte	0x4
-	.2byte	0x51a
-	.4byte	0x73d
+	.2byte	0x521
+	.4byte	0x74f
 	.uleb128 0x6
 	.byte	0x4
-	.4byte	0x6ef
+	.4byte	0x701
 	.uleb128 0xd
-	.4byte	.LASF810
+	.4byte	.LASF811
 	.byte	0x2
 	.byte	0x4
-	.2byte	0x527
-	.4byte	0x76b
-	.uleb128 0xe
-	.4byte	.LASF811
-	.byte	0x4
-	.2byte	0x529
-	.4byte	0x76b
-	.byte	0
+	.2byte	0x52e
+	.4byte	0x77d
 	.uleb128 0xe
 	.4byte	.LASF812
 	.byte	0x4
-	.2byte	0x52a
-	.4byte	0x76b
+	.2byte	0x530
+	.4byte	0x77d
+	.byte	0
+	.uleb128 0xe
+	.4byte	.LASF813
+	.byte	0x4
+	.2byte	0x531
+	.4byte	0x77d
 	.byte	0x1
 	.byte	0
 	.uleb128 0xf
 	.4byte	0x20d
 	.uleb128 0x5
-	.4byte	.LASF813
-	.byte	0x4
-	.2byte	0x52b
-	.4byte	0x743
-	.uleb128 0xd
 	.4byte	.LASF814
+	.byte	0x4
+	.2byte	0x532
+	.4byte	0x755
+	.uleb128 0xd
+	.4byte	.LASF815
 	.byte	0x24
 	.byte	0x4
-	.2byte	0x53a
-	.4byte	0x833
-	.uleb128 0xe
-	.4byte	.LASF815
-	.byte	0x4
-	.2byte	0x53c
-	.4byte	0x833
-	.byte	0
+	.2byte	0x541
+	.4byte	0x845
 	.uleb128 0xe
 	.4byte	.LASF816
 	.byte	0x4
-	.2byte	0x53d
-	.4byte	0xe8
-	.byte	0x4
+	.2byte	0x543
+	.4byte	0x845
+	.byte	0
 	.uleb128 0xe
 	.4byte	.LASF817
 	.byte	0x4
-	.2byte	0x53f
-	.4byte	0x161
-	.byte	0x8
+	.2byte	0x544
+	.4byte	0xe8
+	.byte	0x4
 	.uleb128 0xe
 	.4byte	.LASF818
 	.byte	0x4
-	.2byte	0x540
+	.2byte	0x546
+	.4byte	0x161
+	.byte	0x8
+	.uleb128 0xe
+	.4byte	.LASF819
+	.byte	0x4
+	.2byte	0x547
 	.4byte	0x16d
 	.byte	0xc
 	.uleb128 0xe
 	.4byte	.LASF781
 	.byte	0x4
-	.2byte	0x542
-	.4byte	0x838
+	.2byte	0x549
+	.4byte	0x84a
 	.byte	0x10
-	.uleb128 0xe
-	.4byte	.LASF819
-	.byte	0x4
-	.2byte	0x544
-	.4byte	0x5b7
-	.byte	0x14
 	.uleb128 0xe
 	.4byte	.LASF820
 	.byte	0x4
-	.2byte	0x545
-	.4byte	0x83d
-	.byte	0x18
+	.2byte	0x54b
+	.4byte	0x5b7
+	.byte	0x14
 	.uleb128 0xe
 	.4byte	.LASF821
 	.byte	0x4
-	.2byte	0x547
+	.2byte	0x54c
+	.4byte	0x84f
+	.byte	0x18
+	.uleb128 0xe
+	.4byte	.LASF822
+	.byte	0x4
+	.2byte	0x54e
 	.4byte	0xd0
 	.byte	0x1c
 	.uleb128 0xe
 	.4byte	.LASF686
 	.byte	0x4
-	.2byte	0x54b
-	.4byte	0x770
+	.2byte	0x552
+	.4byte	0x782
 	.byte	0x1e
 	.uleb128 0xe
 	.4byte	.LASF699
 	.byte	0x4
-	.2byte	0x54c
-	.4byte	0x842
+	.2byte	0x553
+	.4byte	0x854
 	.byte	0x20
 	.uleb128 0xe
 	.4byte	.LASF741
 	.byte	0x4
-	.2byte	0x54e
+	.2byte	0x555
 	.4byte	0x13d
 	.byte	0x21
 	.uleb128 0xe
-	.4byte	.LASF822
+	.4byte	.LASF823
 	.byte	0x4
-	.2byte	0x54f
+	.2byte	0x556
 	.4byte	0x458
 	.byte	0x22
 	.uleb128 0xe
-	.4byte	.LASF823
+	.4byte	.LASF824
 	.byte	0x4
-	.2byte	0x550
+	.2byte	0x557
 	.4byte	0x458
 	.byte	0x23
 	.byte	0
@@ -1917,28 +1925,28 @@ tsk_ChngePrio:
 	.uleb128 0xf
 	.4byte	0x5a5
 	.uleb128 0xf
-	.4byte	0x731
+	.4byte	0x743
 	.uleb128 0xf
 	.4byte	0x2b1
 	.uleb128 0x5
-	.4byte	.LASF824
-	.byte	0x4
-	.2byte	0x551
-	.4byte	0x77c
-	.uleb128 0x5
 	.4byte	.LASF825
 	.byte	0x4
-	.2byte	0x551
-	.4byte	0x85f
-	.uleb128 0x6
-	.byte	0x4
-	.4byte	0x77c
+	.2byte	0x558
+	.4byte	0x78e
 	.uleb128 0x5
 	.4byte	.LASF826
 	.byte	0x4
-	.2byte	0x598
+	.2byte	0x558
+	.4byte	0x871
+	.uleb128 0x6
+	.byte	0x4
+	.4byte	0x78e
+	.uleb128 0x5
+	.4byte	.LASF827
+	.byte	0x4
+	.2byte	0x59f
 	.4byte	0x90
-	.uleb128 0x11
+	.uleb128 0x10
 	.4byte	.LASF851
 	.byte	0x1
 	.byte	0x1b
@@ -1946,18 +1954,18 @@ tsk_ChngePrio:
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x12
-	.4byte	.LASF827
+	.uleb128 0x11
+	.4byte	.LASF828
 	.byte	0x1
 	.byte	0x33
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x8aa
-	.uleb128 0x13
-	.4byte	.LASF832
+	.4byte	0x8bc
+	.uleb128 0x12
+	.4byte	.LASF833
 	.byte	0x1
 	.byte	0x35
 	.4byte	0x13d
@@ -1965,186 +1973,186 @@ tsk_ChngePrio:
 	.byte	0x91
 	.sleb128 -9
 	.byte	0
-	.uleb128 0x14
-	.4byte	.LASF828
+	.uleb128 0x13
+	.4byte	.LASF829
 	.byte	0x1
 	.byte	0x50
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x90a
-	.uleb128 0x15
+	.4byte	0x91c
+	.uleb128 0x14
 	.4byte	.LASF741
 	.byte	0x1
 	.byte	0x51
-	.4byte	0x90a
+	.4byte	0x91c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -17
-	.uleb128 0x15
-	.4byte	.LASF829
+	.uleb128 0x14
+	.4byte	.LASF830
 	.byte	0x1
 	.byte	0x52
-	.4byte	0x90f
+	.4byte	0x921
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x15
-	.4byte	.LASF830
+	.uleb128 0x14
+	.4byte	.LASF831
 	.byte	0x1
 	.byte	0x53
-	.4byte	0x914
+	.4byte	0x926
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -28
-	.uleb128 0x15
-	.4byte	.LASF831
+	.uleb128 0x14
+	.4byte	.LASF832
 	.byte	0x1
 	.byte	0x54
-	.4byte	0x919
+	.4byte	0x92b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x16
+	.uleb128 0x15
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0x5a
-	.4byte	0x853
+	.4byte	0x865
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x16
 	.4byte	0x13d
-	.uleb128 0x17
+	.uleb128 0x16
 	.4byte	0x161
-	.uleb128 0x17
+	.uleb128 0x16
 	.4byte	0x16d
-	.uleb128 0x17
+	.uleb128 0x16
 	.4byte	0xd0
-	.uleb128 0x14
-	.4byte	.LASF833
+	.uleb128 0x13
+	.4byte	.LASF834
 	.byte	0x1
 	.byte	0x7b
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x946
-	.uleb128 0x15
-	.4byte	.LASF829
+	.4byte	0x958
+	.uleb128 0x14
+	.4byte	.LASF830
 	.byte	0x1
 	.byte	0x7b
-	.4byte	0x90f
+	.4byte	0x921
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x14
-	.4byte	.LASF834
+	.uleb128 0x13
+	.4byte	.LASF835
 	.byte	0x1
 	.byte	0x91
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x96e
-	.uleb128 0x18
+	.4byte	0x980
+	.uleb128 0x17
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0x91
-	.4byte	0x96e
+	.4byte	0x980
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x17
-	.4byte	0x973
+	.uleb128 0x16
+	.4byte	0x985
 	.uleb128 0x6
 	.byte	0x4
-	.4byte	0x847
-	.uleb128 0x14
-	.4byte	.LASF835
+	.4byte	0x859
+	.uleb128 0x13
+	.4byte	.LASF836
 	.byte	0x1
 	.byte	0xc0
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9af
-	.uleb128 0x18
+	.4byte	0x9c1
+	.uleb128 0x17
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0xc0
-	.4byte	0x9af
+	.4byte	0x9c1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x15
-	.4byte	.LASF836
+	.uleb128 0x14
+	.4byte	.LASF837
 	.byte	0x1
 	.byte	0xc0
-	.4byte	0x9b4
+	.4byte	0x9c6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
 	.byte	0
-	.uleb128 0x17
-	.4byte	0x853
-	.uleb128 0x17
-	.4byte	0x731
-	.uleb128 0x14
-	.4byte	.LASF837
+	.uleb128 0x16
+	.4byte	0x865
+	.uleb128 0x16
+	.4byte	0x743
+	.uleb128 0x13
+	.4byte	.LASF838
 	.byte	0x1
 	.byte	0xcd
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x9ef
-	.uleb128 0x18
+	.4byte	0xa01
+	.uleb128 0x17
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0xcd
-	.4byte	0x9af
+	.4byte	0x9c1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x15
-	.4byte	.LASF836
+	.uleb128 0x14
+	.4byte	.LASF837
 	.byte	0x1
 	.byte	0xcd
-	.4byte	0x9b4
+	.4byte	0x9c6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
 	.byte	0
-	.uleb128 0x14
-	.4byte	.LASF838
+	.uleb128 0x13
+	.4byte	.LASF839
 	.byte	0x1
 	.byte	0xd2
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa25
-	.uleb128 0x18
+	.4byte	0xa37
+	.uleb128 0x17
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0xd2
-	.4byte	0x9af
+	.4byte	0x9c1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x15
-	.4byte	.LASF839
+	.uleb128 0x14
+	.4byte	.LASF840
 	.byte	0x1
 	.byte	0xd2
 	.4byte	0x2b1
@@ -2152,94 +2160,94 @@ tsk_ChngePrio:
 	.byte	0x91
 	.sleb128 -13
 	.byte	0
-	.uleb128 0x14
-	.4byte	.LASF840
+	.uleb128 0x13
+	.4byte	.LASF841
 	.byte	0x1
 	.byte	0xdf
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa4d
-	.uleb128 0x18
+	.4byte	0xa5f
+	.uleb128 0x17
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0xdf
-	.4byte	0x9af
+	.4byte	0x9c1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x14
-	.4byte	.LASF841
+	.uleb128 0x13
+	.4byte	.LASF842
 	.byte	0x1
 	.byte	0xf1
-	.4byte	0x865
+	.4byte	0x877
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xa83
-	.uleb128 0x18
+	.4byte	0xa95
+	.uleb128 0x17
 	.ascii	"tsk\000"
 	.byte	0x1
 	.byte	0xf1
-	.4byte	0x9af
+	.4byte	0x9c1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x15
-	.4byte	.LASF842
+	.uleb128 0x14
+	.4byte	.LASF843
 	.byte	0x1
 	.byte	0xf1
-	.4byte	0xa83
+	.4byte	0xa95
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x16
 	.4byte	0x20d
-	.uleb128 0x19
-	.4byte	.LASF843
+	.uleb128 0x18
+	.4byte	.LASF844
 	.byte	0x1
 	.byte	0x16
-	.4byte	0x973
+	.4byte	0x985
+	.uleb128 0x19
+	.4byte	0x859
+	.4byte	0xab5
 	.uleb128 0x1a
-	.4byte	0x847
-	.4byte	0xaa3
-	.uleb128 0x1b
 	.4byte	0x112
 	.byte	0xa
 	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF844
+	.uleb128 0x1b
+	.4byte	.LASF845
 	.byte	0x1
 	.byte	0x18
-	.4byte	0xa93
+	.4byte	0xaa5
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	tsk_AR
-	.uleb128 0x1a
+	.uleb128 0x19
 	.4byte	0x90
-	.4byte	0xac4
-	.uleb128 0x1b
+	.4byte	0xad6
+	.uleb128 0x1a
 	.4byte	0x112
 	.byte	0x5f
 	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF845
+	.uleb128 0x1b
+	.4byte	.LASF846
 	.byte	0x1
 	.byte	0x19
-	.4byte	0xab4
+	.4byte	0xac6
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	IDLE_TSK_STCK
-	.uleb128 0x1c
-	.4byte	.LASF846
+	.uleb128 0x1b
+	.4byte	.LASF847
 	.byte	0x1
 	.byte	0x2c
-	.4byte	0x9af
+	.4byte	0x9c1
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	pIDLETsk
@@ -2434,19 +2442,6 @@ tsk_ChngePrio:
 	.byte	0
 	.byte	0
 	.uleb128 0x10
-	.uleb128 0x13
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x11
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3
@@ -2467,7 +2462,7 @@ tsk_ChngePrio:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x11
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -2494,7 +2489,7 @@ tsk_ChngePrio:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x13
+	.uleb128 0x12
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2509,7 +2504,7 @@ tsk_ChngePrio:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x14
+	.uleb128 0x13
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -2536,7 +2531,7 @@ tsk_ChngePrio:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x14
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -2551,7 +2546,7 @@ tsk_ChngePrio:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x15
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2566,14 +2561,14 @@ tsk_ChngePrio:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x16
 	.uleb128 0x26
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x17
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -2588,7 +2583,7 @@ tsk_ChngePrio:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x18
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2605,7 +2600,7 @@ tsk_ChngePrio:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x19
 	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x49
@@ -2614,7 +2609,7 @@ tsk_ChngePrio:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1b
+	.uleb128 0x1a
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -2623,7 +2618,7 @@ tsk_ChngePrio:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1b
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -4104,7 +4099,7 @@ tsk_ChngePrio:
 	.uleb128 0x1f5
 	.4byte	.LASF433
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.737b3062ed8c29b36217f91bed19f771,comdat
+	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_inc.h.33.36e72bb3967740da7c636d11072010d8,comdat
 .Ldebug_macro4:
 	.2byte	0x4
 	.byte	0
@@ -4256,61 +4251,61 @@ tsk_ChngePrio:
 	.uleb128 0x150
 	.4byte	.LASF483
 	.byte	0x5
-	.uleb128 0x463
+	.uleb128 0x469
 	.4byte	.LASF484
 	.byte	0x5
-	.uleb128 0x580
+	.uleb128 0x587
 	.4byte	.LASF485
 	.byte	0x5
-	.uleb128 0x58e
+	.uleb128 0x595
 	.4byte	.LASF486
 	.byte	0x5
-	.uleb128 0x593
+	.uleb128 0x59a
 	.4byte	.LASF487
 	.byte	0x5
-	.uleb128 0x59c
+	.uleb128 0x5a3
 	.4byte	.LASF488
 	.byte	0x5
-	.uleb128 0x5a0
+	.uleb128 0x5a7
 	.4byte	.LASF489
 	.byte	0x5
-	.uleb128 0x5a4
+	.uleb128 0x5ab
 	.4byte	.LASF490
 	.byte	0x5
-	.uleb128 0x5a8
+	.uleb128 0x5af
 	.4byte	.LASF491
 	.byte	0x5
-	.uleb128 0x5ac
+	.uleb128 0x5b3
 	.4byte	.LASF492
 	.byte	0x5
-	.uleb128 0x5b0
+	.uleb128 0x5b7
 	.4byte	.LASF493
 	.byte	0x5
-	.uleb128 0x5b4
+	.uleb128 0x5bb
 	.4byte	.LASF494
 	.byte	0x5
-	.uleb128 0x5b8
+	.uleb128 0x5bf
 	.4byte	.LASF495
 	.byte	0x5
-	.uleb128 0x5bc
+	.uleb128 0x5c3
 	.4byte	.LASF496
 	.byte	0x5
-	.uleb128 0x5c0
+	.uleb128 0x5c7
 	.4byte	.LASF497
 	.byte	0x5
-	.uleb128 0x5c4
+	.uleb128 0x5cb
 	.4byte	.LASF498
 	.byte	0x5
-	.uleb128 0x5c8
+	.uleb128 0x5cf
 	.4byte	.LASF499
 	.byte	0x5
-	.uleb128 0x5cc
+	.uleb128 0x5d3
 	.4byte	.LASF500
 	.byte	0x5
-	.uleb128 0x5d0
+	.uleb128 0x5d7
 	.4byte	.LASF501
 	.byte	0x5
-	.uleb128 0x5d4
+	.uleb128 0x5db
 	.4byte	.LASF502
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.R_RTOS_sem.h.10.c3efce0b76d377982bf469f80c2e779a,comdat
@@ -4775,7 +4770,7 @@ tsk_ChngePrio:
 	.ascii	"__INT_FAST32_MAX__ 2147483647\000"
 .LASF671:
 	.ascii	"SysTicks\000"
-.LASF806:
+.LASF807:
 	.ascii	"syncEleID\000"
 .LASF637:
 	.ascii	"MEM_FLG_SET_PREV_MEMSIZE(pMemMngrHead,newSize) do {"
@@ -4822,13 +4817,13 @@ tsk_ChngePrio:
 	.ascii	"someDummy\000"
 .LASF423:
 	.ascii	"WINT_MIN __WINT_MIN__\000"
-.LASF836:
+.LASF837:
 	.ascii	"syncEle\000"
 .LASF12:
 	.ascii	"__ATOMIC_CONSUME 1\000"
 .LASF205:
 	.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
-.LASF805:
+.LASF806:
 	.ascii	"syncEleStruc\000"
 .LASF774:
 	.ascii	"sysTickEleIDUnion\000"
@@ -4893,7 +4888,7 @@ tsk_ChngePrio:
 	.ascii	"Dummy_Prov\000"
 .LASF100:
 	.ascii	"__UINT8_C(c) c\000"
-.LASF827:
+.LASF828:
 	.ascii	"tsk_initTsks\000"
 .LASF40:
 	.ascii	"__INT16_TYPE__ short int\000"
@@ -4990,7 +4985,7 @@ tsk_ChngePrio:
 	.ascii	"MEM_FLG_SET_MERGED(pMemMngrHead) MEM_FLG_SET_BIT_MS"
 	.ascii	"K(pMemMngrHead, MEM_FLGS_MERGED_MSK, flagsForMemBlo"
 	.ascii	"ck)\000"
-.LASF838:
+.LASF839:
 	.ascii	"tsk_SetInactive\000"
 .LASF275:
 	.ascii	"__UHQ_FBIT__ 16\000"
@@ -5011,7 +5006,7 @@ tsk_ChngePrio:
 	.ascii	"__uint8_t\000"
 .LASF84:
 	.ascii	"__INT16_MAX__ 32767\000"
-.LASF847:
+.LASF848:
 	.ascii	"GNU C 4.8.4 20140725 (release) [ARM/embedded-4_8-br"
 	.ascii	"anch revision 213147] -fpreprocessed -mcpu=cortex-m"
 	.ascii	"0plus -mthumb -g3 -std=c99 -fmessage-length=0 -fsig"
@@ -5023,11 +5018,11 @@ tsk_ChngePrio:
 	.ascii	"Flags)\000"
 .LASF331:
 	.ascii	"__VFP_FP__ 1\000"
-.LASF811:
+.LASF812:
 	.ascii	"actualTskPrio\000"
 .LASF215:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
-.LASF814:
+.LASF815:
 	.ascii	"tskTCB\000"
 .LASF742:
 	.ascii	"sysFktID\000"
@@ -5148,7 +5143,7 @@ tsk_ChngePrio:
 	.ascii	"__SIZEOF_LONG__ 4\000"
 .LASF717:
 	.ascii	"TSK_STATE_UNINIT\000"
-.LASF808:
+.LASF809:
 	.ascii	"SyncEleHandle\000"
 .LASF123:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
@@ -5159,7 +5154,7 @@ tsk_ChngePrio:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
 .LASF396:
 	.ascii	"UINT64_MAX __UINT64_MAX__\000"
-.LASF824:
+.LASF825:
 	.ascii	"TskTCB\000"
 .LASF669:
 	.ascii	"sizetype\000"
@@ -5189,7 +5184,7 @@ tsk_ChngePrio:
 .LASF472:
 	.ascii	"TSK_STATE_IS_ACTIVE_CRITSEC(pTsk) (TskState)(TSK_GE"
 	.ascii	"TSTATE(pTsk) == TSK_STATE_ACTIVE_CRITSEC )\000"
-.LASF840:
+.LASF841:
 	.ascii	"tsk_ActvTsk\000"
 .LASF301:
 	.ascii	"__GNUC_STDC_INLINE__ 1\000"
@@ -5210,9 +5205,6 @@ tsk_ChngePrio:
 	.ascii	"TSK_PRIO_LOW\000"
 .LASF375:
 	.ascii	"UINTPTR_MAX __UINTPTR_MAX__\000"
-.LASF527:
-	.ascii	"MEM_MNGR_GET_PTRTOMEM(memMngrPtr) ((void *) ((uint3"
-	.ascii	"2_t) memMngrPtr + (uint32_t) sizeof(MemBlckHead)))\000"
 .LASF366:
 	.ascii	"__int_least32_t_defined 1\000"
 .LASF560:
@@ -5318,7 +5310,7 @@ tsk_ChngePrio:
 .LASF574:
 	.ascii	"MEM_FLG_NXTTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,MEM"
 	.ascii	"_FLGS_NXTTAKEN_SHFT)\000"
-.LASF829:
+.LASF830:
 	.ascii	"strtAddr\000"
 .LASF462:
 	.ascii	"MAKE_SYS_ID(id) (uint16_t)((uint16_t)((uint8_t)id &"
@@ -5335,7 +5327,7 @@ tsk_ChngePrio:
 	.ascii	"__uint16_t\000"
 .LASF157:
 	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
-.LASF844:
+.LASF845:
 	.ascii	"tsk_AR\000"
 .LASF190:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
@@ -5347,7 +5339,7 @@ tsk_ChngePrio:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
 .LASF341:
 	.ascii	"HEADERS_R_RTOS_SCHEDULER_H_ \000"
-.LASF816:
+.LASF817:
 	.ascii	"pStckTop\000"
 .LASF361:
 	.ascii	"__int8_t_defined 1\000"
@@ -5424,7 +5416,7 @@ tsk_ChngePrio:
 	.ascii	"__HQ_IBIT__ 0\000"
 .LASF228:
 	.ascii	"__USACCUM_FBIT__ 8\000"
-.LASF819:
+.LASF820:
 	.ascii	"sysTckTmr\000"
 .LASF313:
 	.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
@@ -5441,7 +5433,7 @@ tsk_ChngePrio:
 	.ascii	"TATE(pTsk) == TSK_STATE_ACTIVE_READY )\000"
 .LASF160:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
-.LASF833:
+.LASF834:
 	.ascii	"os_IDLETskInit\000"
 .LASF166:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
@@ -5472,7 +5464,7 @@ tsk_ChngePrio:
 	.ascii	"MIN_STACK_SIZE ((StackSize)0x40u)\000"
 .LASF416:
 	.ascii	"SIG_ATOMIC_MIN (-__STDINT_EXP(INT_MAX) - 1)\000"
-.LASF842:
+.LASF843:
 	.ascii	"newTskPrio\000"
 .LASF550:
 	.ascii	"MEM_FLGS_SPLT_128_MSK ((MemFlags)0x80u)\000"
@@ -5492,7 +5484,7 @@ tsk_ChngePrio:
 	.ascii	"__USFRACT_FBIT__ 8\000"
 .LASF256:
 	.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
-.LASF850:
+.LASF799:
 	.ascii	"mntrSyncEle\000"
 .LASF117:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
@@ -5574,7 +5566,7 @@ tsk_ChngePrio:
 	.ascii	"__int32_t_defined 1\000"
 .LASF164:
 	.ascii	"__DEC32_MAX_EXP__ 97\000"
-.LASF845:
+.LASF846:
 	.ascii	"IDLE_TSK_STCK\000"
 .LASF678:
 	.ascii	"SyncEleID\000"
@@ -5602,7 +5594,7 @@ tsk_ChngePrio:
 	.ascii	"__UINT8_MAX__ 255\000"
 .LASF438:
 	.ascii	"TIME_SLICE_AMOUNT (uint16_t)500u\000"
-.LASF799:
+.LASF800:
 	.ascii	"syncEleHandle\000"
 .LASF68:
 	.ascii	"__INT_MAX__ 2147483647\000"
@@ -5660,7 +5652,7 @@ tsk_ChngePrio:
 .LASF571:
 	.ascii	"MEM_FLG_PREVTAKEN(memFlgs) MEM_FLG_PARSE(memFlgs,ME"
 	.ascii	"M_FLGS_PREVTAKEN_SHFT)\000"
-.LASF822:
+.LASF823:
 	.ascii	"nxtTsk\000"
 .LASF561:
 	.ascii	"MEM_FLGS_MERGED_SHFT ((MemFlags)0xDu)\000"
@@ -5696,7 +5688,7 @@ tsk_ChngePrio:
 	.ascii	"__uint32_t\000"
 .LASF324:
 	.ascii	"__ARM_ARCH 6\000"
-.LASF809:
+.LASF810:
 	.ascii	"PSyncEle\000"
 .LASF700:
 	.ascii	"TSK_STATE_ERROR\000"
@@ -5743,13 +5735,13 @@ tsk_ChngePrio:
 .LASF6:
 	.ascii	"__VERSION__ \"4.8.4 20140725 (release) [ARM/embedde"
 	.ascii	"d-4_8-branch revision 213147]\"\000"
-.LASF815:
+.LASF816:
 	.ascii	"pStckPtr\000"
 .LASF351:
 	.ascii	"___int32_t_defined 1\000"
 .LASF42:
 	.ascii	"__INT64_TYPE__ long long int\000"
-.LASF843:
+.LASF844:
 	.ascii	"p_cur_tsk_tcb\000"
 .LASF557:
 	.ascii	"MEM_FLGS_MERGE2048_SHFT ((MemFlags)0xBu)\000"
@@ -5800,7 +5792,7 @@ tsk_ChngePrio:
 	.ascii	"UINT_FAST64_MAX __UINT_FAST64_MAX__\000"
 .LASF546:
 	.ascii	"MEM_FLGS_SPLT_32_MSK ((MemFlags)0x20u)\000"
-.LASF818:
+.LASF819:
 	.ascii	"pTskEnd\000"
 .LASF490:
 	.ascii	"RET_MEM_ALLOC_FAIL_TCB ((RetCode)0x1Au)\000"
@@ -5836,7 +5828,7 @@ tsk_ChngePrio:
 	.ascii	"UINT32_C(x) __UINT32_C(x)\000"
 .LASF724:
 	.ascii	"SyncEle_TYPE_TMR\000"
-.LASF821:
+.LASF822:
 	.ascii	"stckSze\000"
 .LASF229:
 	.ascii	"__USACCUM_IBIT__ 8\000"
@@ -5848,7 +5840,7 @@ tsk_ChngePrio:
 	.ascii	"__UINTPTR_MAX__ 4294967295U\000"
 .LASF121:
 	.ascii	"__FLT_DIG__ 6\000"
-.LASF832:
+.LASF833:
 	.ascii	"tskCntr\000"
 .LASF71:
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
@@ -5858,7 +5850,7 @@ tsk_ChngePrio:
 	.ascii	"MEM_FLGS_MERGE1024_SHFT ((MemFlags)0xAu)\000"
 .LASF357:
 	.ascii	"__EXP\000"
-.LASF812:
+.LASF813:
 	.ascii	"visibleTskPrio\000"
 .LASF675:
 	.ascii	"tskStateT\000"
@@ -5877,7 +5869,7 @@ tsk_ChngePrio:
 .LASF470:
 	.ascii	"TSK_STATE_IS_ACTIVE_SUSPENDED(pTsk) (TskState)(TSK_"
 	.ascii	"GETSTATE(pTsk) == TSK_STATE_ACTIVE_SUSPENDED )\000"
-.LASF826:
+.LASF827:
 	.ascii	"RetCode\000"
 .LASF386:
 	.ascii	"INT_LEAST16_MAX __INT_LEAST16_MAX__\000"
@@ -5949,7 +5941,7 @@ tsk_ChngePrio:
 	.ascii	"INT8_MAX __INT8_MAX__\000"
 .LASF162:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
-.LASF830:
+.LASF831:
 	.ascii	"endAddr\000"
 .LASF344:
 	.ascii	"_MACHINE__DEFAULT_TYPES_H \000"
@@ -5968,7 +5960,7 @@ tsk_ChngePrio:
 	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF599:
 	.ascii	"MEM_FLGS_PRV_SPLT_8_MSK MEM_FLGS_SPLT_8_MSK\000"
-.LASF802:
+.LASF803:
 	.ascii	"SemSyncEle\000"
 .LASF761:
 	.ascii	"sysMsgProvStruc\000"
@@ -6011,9 +6003,9 @@ tsk_ChngePrio:
 	.ascii	"__DEC64_MIN__ 1E-383DD\000"
 .LASF511:
 	.ascii	"TMR_PIT_DELAY (uint32_t)0x3u\000"
-.LASF820:
+.LASF821:
 	.ascii	"tskSync\000"
-.LASF800:
+.LASF801:
 	.ascii	"EvtSyncEle\000"
 .LASF352:
 	.ascii	"___int64_t_defined 1\000"
@@ -6045,7 +6037,7 @@ tsk_ChngePrio:
 	.ascii	"MEM_FLG_SET_PREV_SPLT(pMemMngrHead) MEM_FLG_SET_BIT"
 	.ascii	"_MSK(pMemMngrHead, MEM_FLGS_PREV_SPLT_MSK, addition"
 	.ascii	"alFlags)\000"
-.LASF803:
+.LASF804:
 	.ascii	"MtxSyncEle\000"
 .LASF24:
 	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
@@ -6057,7 +6049,7 @@ tsk_ChngePrio:
 	.ascii	"__DEC64_MANT_DIG__ 16\000"
 .LASF658:
 	.ascii	"long long unsigned int\000"
-.LASF823:
+.LASF824:
 	.ascii	"prvTsk\000"
 .LASF765:
 	.ascii	"dummyID\000"
@@ -6090,7 +6082,7 @@ tsk_ChngePrio:
 	.ascii	"long unsigned int\000"
 .LASF781:
 	.ascii	"tskMailBox\000"
-.LASF839:
+.LASF840:
 	.ascii	"tskInactvState\000"
 .LASF225:
 	.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
@@ -6112,7 +6104,7 @@ tsk_ChngePrio:
 	.ascii	"__UINT_LEAST16_MAX__ 65535\000"
 .LASF281:
 	.ascii	"__UTQ_FBIT__ 128\000"
-.LASF828:
+.LASF829:
 	.ascii	"tsk_tskInit\000"
 .LASF627:
 	.ascii	"MEM_FLG_ISBLCKLAST(memFlgs) MEM_FLG_PARSE(memFlgs,M"
@@ -6151,7 +6143,7 @@ tsk_ChngePrio:
 	.ascii	"__DQ_IBIT__ 0\000"
 .LASF506:
 	.ascii	"MEM_OBJECTS_SEM (uint8_t)0x6u\000"
-.LASF801:
+.LASF802:
 	.ascii	"TmrSyncEle\000"
 .LASF73:
 	.ascii	"__WINT_MAX__ 4294967295U\000"
@@ -6191,7 +6183,7 @@ tsk_ChngePrio:
 .LASF521:
 	.ascii	"BIGGEST_BLCK_MSK ((BlckSize)(BIGGEST_BLCK - (BlckSi"
 	.ascii	"ze)1u))\000"
-.LASF848:
+.LASF849:
 	.ascii	"../source/R_RTOS/R_RTOS_task.c\000"
 .LASF329:
 	.ascii	"__THUMBEL__ 1\000"
@@ -6274,7 +6266,7 @@ tsk_ChngePrio:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF212:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
-.LASF804:
+.LASF805:
 	.ascii	"MntrSyncEle\000"
 .LASF449:
 	.ascii	"TSK_ID_MSK (uint16_t)0x00FFu\000"
@@ -6286,7 +6278,7 @@ tsk_ChngePrio:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF391:
 	.ascii	"INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)\000"
-.LASF841:
+.LASF842:
 	.ascii	"tsk_ChngePrio\000"
 .LASF769:
 	.ascii	"MsgQ_Prov\000"
@@ -6335,7 +6327,7 @@ tsk_ChngePrio:
 	.ascii	"SyncEle_TYPE_EVT\000"
 .LASF340:
 	.ascii	"__USES_INITFINI__ 1\000"
-.LASF834:
+.LASF835:
 	.ascii	"tsk_tskDestroy\000"
 .LASF425:
 	.ascii	"UINT8_C(x) __UINT8_C(x)\000"
@@ -6418,11 +6410,11 @@ tsk_ChngePrio:
 	.ascii	"emFlgs)-(MemSize)1u))\000"
 .LASF677:
 	.ascii	"TskEndAddr\000"
-.LASF846:
+.LASF847:
 	.ascii	"pIDLETsk\000"
 .LASF617:
 	.ascii	"MEM_FLGS_NXT_SPLT_MSK ((MemFlags)0x1000u)\000"
-.LASF807:
+.LASF808:
 	.ascii	"MultiPurposeByte\000"
 .LASF45:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
@@ -6434,7 +6426,7 @@ tsk_ChngePrio:
 	.ascii	"MEM_FLGS_SPLT_32_SHFT ((MemFlags)0x5u)\000"
 .LASF220:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
-.LASF825:
+.LASF826:
 	.ascii	"PTskTCB\000"
 .LASF280:
 	.ascii	"__UDQ_IBIT__ 0\000"
@@ -6460,6 +6452,8 @@ tsk_ChngePrio:
 	.ascii	"MEM_FLGS_SPLT_8_SHFT ((MemFlags)0x3u)\000"
 .LASF227:
 	.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
+.LASF850:
+	.ascii	"C:\\\\LabWrk\\\\WorkSpace\\\\R_RTOS_BUILD\\\\build\000"
 .LASF515:
 	.ascii	"malloc rMalloc\000"
 .LASF785:
@@ -6470,15 +6464,15 @@ tsk_ChngePrio:
 	.ascii	"__UHA_IBIT__ 8\000"
 .LASF733:
 	.ascii	"SysTckObj_Err\000"
-.LASF813:
+.LASF814:
 	.ascii	"AdvTskPrio\000"
 .LASF237:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
-.LASF810:
+.LASF811:
 	.ascii	"advTskPrio_struc\000"
 .LASF149:
 	.ascii	"__LDBL_DIG__ 15\000"
-.LASF817:
+.LASF818:
 	.ascii	"pTskStrt\000"
 .LASF74:
 	.ascii	"__WINT_MIN__ 0U\000"
@@ -6516,7 +6510,7 @@ tsk_ChngePrio:
 	.ascii	"OS_DISPATCH_NEEDED ((OsCode)0x1u)\000"
 .LASF265:
 	.ascii	"__HQ_FBIT__ 15\000"
-.LASF835:
+.LASF836:
 	.ascii	"tsk_ClrEvt\000"
 .LASF716:
 	.ascii	"TSK_STATE_WAITING\000"
@@ -6554,7 +6548,7 @@ tsk_ChngePrio:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
 .LASF750:
 	.ascii	"PSysTickTMR\000"
-.LASF837:
+.LASF838:
 	.ascii	"tsk_SetEvt\000"
 .LASF443:
 	.ascii	"IDLE_TSK_STACK_SIZE ((StackSize)0x60u)\000"
@@ -6583,7 +6577,7 @@ tsk_ChngePrio:
 	.ascii	"__INT32_TYPE__ long int\000"
 .LASF137:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
-.LASF831:
+.LASF832:
 	.ascii	"stkSze\000"
 .LASF113:
 	.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
@@ -6596,9 +6590,9 @@ tsk_ChngePrio:
 .LASF478:
 	.ascii	"TSK_STATE_IS_WAITING_SEM(pTsk) (TskState)(TSK_GETST"
 	.ascii	"ATE(pTsk) == TSK_STATE_WAITING_SEM)\000"
-.LASF849:
-	.ascii	"C:\\\\Users\\\\Christian\\\\Documents\\\\OHM\\\\MAP"
-	.ascii	"R\\\\Projekt\\\\WRKSPC\\\\R_RTOS\\\\build\000"
+.LASF527:
+	.ascii	"MEM_MNGR_GET_PTRTOMEM(memMngrPtr) ((void *) ((uint3"
+	.ascii	"2_t) memMngrPtr + (uint32_t) sizeof(MemBlckHead)))\000"
 .LASF253:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
 .LASF337:
