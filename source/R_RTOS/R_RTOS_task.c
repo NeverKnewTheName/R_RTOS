@@ -3,7 +3,9 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    23.11.2015
  *
- * \brief Functions for creating, maintaining and handling tasks.
+ * \addtogroup TskMngmnt
+ * \{
+ *
  */
 
 #include "R_RTOS_scheduler.h"
@@ -261,3 +263,6 @@ RetCode tsk_ChngePrio( PTskTCB const tsk, const TskPrio newTskPrio )
     }
     return RET_NOK;
 }
+/**
+ * \}
+ */

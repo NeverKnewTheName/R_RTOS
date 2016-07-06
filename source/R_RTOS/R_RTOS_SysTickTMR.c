@@ -3,7 +3,9 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    06.04.2016
  *
+ * \addtogroup SystemTickTimer
  * \brief System Tick Timer handling and system time maintenance.
+ * \{
  */
 
 #include "PortFunc.h"
@@ -366,3 +368,6 @@ SysTime sysTck_SetTimeSlice( const SysTime newTimeSlice )
 {
     return os_TimeSlice = newTimeSlice;
 }
+/**
+ * \}
+ */

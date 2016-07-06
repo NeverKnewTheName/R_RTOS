@@ -3,7 +3,10 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    16.12.2015
  *
+ *
+ * \addtogroup StackedSoftwareTimer
  * \brief Functions for creating, initializing, maintaining and handling a task timers.
+ * \{
  */
 #include "TimerFunc.h"
 #include "InterruptFunc.h"
@@ -17,16 +20,22 @@ extern void os_SCHEDULE( void );
 extern TskTCB tsk_AR[];
 extern SysFkt sys_SysFkt[];
 
+/**
+ * \var memPoolID_TMR
+ * \brief Memory Pool ID for the timer's memory pool
+ *
+ * Allocation requests for \ref SyncEle for the Timer will be served from the memory pool corresponding to this \ref MemPoolID.
+ */
 static MemPoolID memPoolID_TMR;
 
-/** \var startTMRNode
+/** \var tskTMR
  *  \brief The start node for the task Timer queue.
  *
  *  Initialized to NULL.
  */
 static Timer tskTMR;
 
-/** \var startSysTMRNode
+/** \var sysTMR
  *  \brief The start node for the system Timer queue.
  *
  *  Initialized to NULL.
@@ -42,6 +51,19 @@ static void BREAK( void )
     };
 }
 
+/**
+ * \fn static RetCode tmr_InsertSysTmrQ( TmrFktCall * sysFktTmr, LifeTime expires )
+ * \brief Insert the given \ref TmrFktCall object into the system timer queue according to its expiration time
+ *
+ * \param[in] sysFktTmr Pointer to the \ref TmrFktCall object to insert
+ * \param[in] expires Expiration time
+ *
+ * \return RetCode
+ * \returns RET_OK
+ * \returns RET_NOK
+ *
+ * \note Entries are sorted according to their ascending timer expiration.
+ */
 static RetCode tmr_InsertSysTmrQ( TmrFktCall * sysFktTmr, LifeTime expires )
 {
     //Note: the first case is more likely to happen in most system, since system timers are likely to include task activation timers which are usually perdiodically triggered
@@ -77,8 +99,18 @@ static RetCode tmr_InsertSysTmrQ( TmrFktCall * sysFktTmr, LifeTime expires )
     return RET_OK;
 }
 
-/*
- * ENTRIES ARE SORTED ACCORDING TO THEIR ASCENDING TIMER DURATION
+/**
+ * \fn static RetCode tmr_InsertTskTmrQ( PTskTCB tsk, LifeTime expires )
+ * \brief Insert the given \ref TskTCB object into the task timer queue according to its expiration time
+ *
+ * \param[in] tsk Pointer to the \ref TskTCB object to insert
+ * \param[in] expires Expiration time
+ *
+ * \return RetCode
+ * \returns RET_OK
+ * \returns RET_NOK
+ *
+ * \note Entries are sorted according to their ascending timer expiration.
  */
 static RetCode tmr_InsertTskTmrQ( PTskTCB tsk, LifeTime expires )
 {
@@ -125,6 +157,7 @@ static RetCode tmr_InsertTskTmrQ( PTskTCB tsk, LifeTime expires )
 
 RetCode tmr_INIT( void )
 {
+    //ToDO replace with general HW Timer initialization call for portability
     __init_TPM( (uint8_t) 0x1u );
 
     sysTMR.timerType = SysTimerType;
@@ -194,7 +227,7 @@ RetCode tmr_setTskTimer( PTskTCB const tsk, TmrTime msToWait )
     memMngr_MemPoolMalloc( &tmrSync, memPoolID_TMR );
     if ( (uint32_t) tmrSync != (uint32_t) NULL )    // MALLOC FAILED ?
     {
-        //ToDO
+        //ToDO BLOCKING TIME
 //        tmrSync->maxBlckTime = (SysTicks) 0x0u;
         tmrSync->syncEleType = SyncEle_TYPE_TMR;
         tmrSync->syncEleID = (SyncEleID) TskTimerType;
@@ -448,3 +481,6 @@ RetCode tmr_GiveUpOnTMR( PTskTCB const tsk )
     tsk->tskSync = (PSyncEle) NULL;
     return RET_OK;
 }
+/**
+ * \}
+ */

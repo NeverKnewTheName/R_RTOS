@@ -3,7 +3,12 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    06.04.2016
  *
+ * \addtogroup Timer
+ * \brief Timer mechanisms
+ * \{
+ * \addtogroup SystemTickTimer
  * \brief System Tick Timer handling and system time maintenance.
+ * \{
  */
 
 
@@ -32,19 +37,19 @@ void SysTick_Handler( void );
  */
 RetCode sysTck_INIT( void );
 
-/** \fn RetCode sysTck_setSysTckTMR( const SysTicks sysTcksToWait, const SysTckEleType eleType, const uint8_t eleID );
- *  \brief Set a system tick timer for an object specified by eleType and eleID.
+/** \fn RetCode sysTck_setSysTckTMR( const SysTicks sysTcksToWait, const SysTckEleType objType, const uint8_t objID );
+ *  \brief Set a system tick timer for an object specified by objType and objID.
  *
  * \param [in] sysTcksToWait  Time until the timer expires in SysTicks
- * \param [in] eleType          Type of the Element requesting the SysTickTMR
- * \param [in] eleID            ID of the ELement requesting the SysTickTMR
+ * \param [in] objType          Type of the Element requesting the SysTickTMR
+ * \param [in] objID            ID of the Element requesting the SysTickTMR
  *
  * \return Returns the success of the operation.
  */
 RetCode sysTck_setSysTckTMR(
                              const SysTicks sysTcksToWait,
-                             const SysTckEleType eleType,
-                             const uint8_t eleID );
+                             const SysTckEleType objType,
+                             const uint8_t objID );
 
 /** \fn SysTime sysTck_getSysTicks( void );
  *  \brief Retrieve the currently passed global SysTicks since the timer was started.
@@ -74,5 +79,8 @@ SysTime sysTck_GetTimeSlice( void );
  * \return Returns the newly set time slice for the system tick timer
  */
 SysTime sysTck_SetTimeSlice( const SysTime newTimeSlice );
-
+/**
+ * \}
+ * \}
+ */
 #endif /* HEADERS_R_RTOS_SYSTICKTMR_H_ */

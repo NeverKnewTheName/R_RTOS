@@ -2,10 +2,35 @@
  *  \file    R_RTOS_mtx.h
  *  \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  *  \date    14.05.2016
- *
- *  \addtogroup Mutex
+ *  \addtogroup sync Synchronization
+ *  \brief Synchronization mechanisms
+ *  \{
+ *  \addtogroup mtx Mutex
  *  \brief Functions for creating, initializing, maintaining Mutexes.
  *
+ *  <h2>Priority Inheritance</h2>
+ *  When access to a specific resource is requested, but cannot be granted, the requesting consumer is put into a wait queue.
+ *  These wait queues are sorted according to the priority of their entities. Therefore a waiting high priority task will be granted
+ *  access to the resource before a waiting low priority task receives the resource. But if the resource is taken by a lower priority
+ *  task and a high priority task requests access, the resource remains at the lower priority task. Therefore the high priority task
+ *  is put into a waiting queue and its execution is suspended. If the lower priority task occupying the resource is suspended, because
+ *  e.g. a medium priority task is activated, this medium priority task would receive processor time before the high priority task, that
+ *  is currently waiting on the resource. This is called <i>Priority Inversion</i>.<br>
+ *  To avoid that a lower priority task is executed before a high priority task <i>Priority Inheritance</i> is introduced. If a lower priority
+ *  priority task is occupying a resource while a high priority task requests access to said resource the lower priority task inherits the priority
+ *  of the high priority task for the duration of the access to the protected resource. Hence a medium priority task cannot preempt the actually
+ *  lower priority task while it is occupying the resource and the high priority task is waiting for this resource.
+ *
+ *  <h2>Mutexes</h2>
+ *  Mutexes are a synchronization mechanism for mutual exclusion. As soon as a consumer accesses the mutex and therefore the
+ *  protected data, it is granted ownership of the mutex, if the mutex is still available. In case of the mutex being already
+ *  owned by another consumer, the current consumer is denied access and put into a wait queue until the currently owning consumer
+ *  gives the mutex back to the system. The next consumer in the waiting queue is now granted access and therefore it receives
+ *  ownership of the mutex.
+ *
+ *
+ *  <h2>Difference Mutex and Binary Semaphore</h2>
+ *  Since a Binary Semaphore only depends on signaling, it can be signaled from anywhere, whereas a mutex can only be released by the task that occupies it.
  *  \{
  */
 
@@ -80,6 +105,7 @@ RetCode mtx_GiveUpOnMtx( PTskTCB const tsk );
 //RetCode mtx_DeleteTskMtxFromQ( PTskTCB const tsk );
 
 /**
+ * \}
  * \}
  */
 #endif /* INCLUDE_R_RTOS_MTX_H_ */

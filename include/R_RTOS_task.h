@@ -3,7 +3,10 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    23.11.2015
  *
+ * \addtogroup TskMngmnt Task Management
+ * \{
  * \brief Functions for creating, maintaining and handling tasks.
+ *
  */
 
 #ifndef HEADERS_R_RTOS_TASK_H_
@@ -88,5 +91,7 @@ RetCode tsk_SetInactive( PTskTCB const tsk, TskState tskInactvState );
 RetCode tsk_ActvTsk( PTskTCB const tsk );
 
 RetCode tsk_ChngePrio( PTskTCB const tsk, const TskPrio newTskPrio );
-
+/**
+ * \}
+ */
 #endif /* HEADERS_R_RTOS_TASK_H_ */
