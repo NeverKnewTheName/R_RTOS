@@ -3,15 +3,9 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    02.02.2016
  *
- * \brief Services for creating, managing and maintaining message queues for IPC.
+ * \addtogroup MsgQ
+ * \{
  *
- * Based upon a publish/subscribe model queues are introduced.
- * Messages can be published to the queue and are then kept in a chronological order.
- * Upon the publishing of a new message all subscribers are notified. For system subscribers a callback function is executed on the data.
- * Task subscribers do have a mailbox which is maintained by the queue. The message counters within the mailbox are updated and the according event flag in the task is set.
- *
- * Messages can be read or taken. Whilst the first keeps the message in the queue for others to read, the latter destroys the message immediately.
- * The queue keeps track of its subscribers. If a message was read by all subscribers it is deleted automatically.
  */
 
 #include "R_RTOS_msgQueuing.h"
@@ -580,3 +574,7 @@ RetCode msgQ_takeDataFrmQ(
 {
     return msgQ_readDataFrmQ( msgQID, tskID, data );
 }
+
+/**
+ * \}
+ */

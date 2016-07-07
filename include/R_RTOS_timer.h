@@ -2,9 +2,9 @@
  * \file    R_RTOS_timer.h
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    16.12.2015
- * \addtogroup Timer
+ * \addtogroup tmr
  * \{
- * \addtogroup StackedSoftwareTimer
+ * \addtogroup StckdSWTmr Stacked Software Timer
  * \brief Functions for creating, initializing, maintaining and handling a task timers.
  * \{
  */
@@ -15,18 +15,16 @@
 #include "R_RTOS_inc.h"
 
 /**
- * \def MEM_OBJECTS_TMR
- * \brief Number of \ref SyncEle that can be allocated by the Timer mechanism
+ * \brief Number of #SyncEle that can be allocated by the Timer mechanism
  */
 #define MEM_OBJECTS_TMR (uint8_t)0x4u
 
 /**
- * \def TMR_INVALID_TIME
  * \brief Value for an invalid LifeTime
  */
 #define TMR_INVALID_TIME (LifeTime)0xFFFFFFFFu
 
-/** \def TMR_PIT_DELAY
+/**
  *  \brief  Delay compensation between PIT and TPM timers.
  *  \return Delay value
  *
@@ -37,7 +35,7 @@
 #define TMR_PIT_DELAY (uint32_t)0x3u // 3ms delay
 
 
-/** \fn RetCode tmr_INIT( void );
+/**
  *  \brief Calibrate the PIT Timer periodically.
  *
  *  Since the PIT timer is clocked by the Bus clock whereas the TPM module has various clock sources the two timers drift away from each other.
@@ -46,7 +44,7 @@
  */
 RetCode tmr_INIT( void );
 
-/** \fn RetCode tmr_setTskTimer( PTskTCB tsk, TmrTime msToWait )
+/**
  *  \brief Sets up a Timer for a task and queues it into the Timer queue according to its WaitTime relative to the current PIT value.
  *
  *  \param [in]     tsk                 Pointer to the task's TskTcb
@@ -62,7 +60,7 @@ RetCode tmr_INIT( void );
 RetCode tmr_setTskTimer( PTskTCB tsk, TmrTime msToWait );
 
 /**
- * \fn RetCode tmr_setSysTimer( SysFktID fktID, TmrTime msToWait, uint8_t periodicity )
+ *
  * \brief Sets up a Timer to call a SysFkt corresponding to the given SysFktID as soon as the timer expires
  *
  * \param[in] fktID         SysFktID of the function to call upon expiration
@@ -75,10 +73,16 @@ RetCode tmr_setTskTimer( PTskTCB tsk, TmrTime msToWait );
  */
 RetCode tmr_setSysTimer( SysFktID fktID, TmrTime msToWait, uint8_t periodicity );
 
+/**
+ *  \brief Function to be called as soon as a system Timer expires.
+ *
+ *  Calls the system function and re-sets it according to its periodicty settings.
+ *
+ */
 void tmr_SysTimerElapsed( void );
 
-/** \fn void tmr_TskTimerElapsed( void );
- *  \brief Function to be called as soon as a Timer expires.
+/**
+ *  \brief Function to be called as soon as a task Timer expires.
  *
  *  Adjusts the TskEvtFlags and sets the task ready (if it is not waiting on any other event).
  *  Also maintains the Timer queue and automatically scans for more Timers to be expired.
@@ -89,8 +93,8 @@ void tmr_SysTimerElapsed( void );
  */
 void tmr_TskTimerElapsed( void );
 
-/** \fn RetCode tmr_GiveUpOnTMR( TskTCB *tsk );
- *  \brief Forces the deletion of a task's Timer from the Timer queue and adjusts the queue accordingly.
+/**
+ * \brief Forces the deletion of a task's Timer from the Timer queue and adjusts the queue accordingly.
  *
  *  \param [in]     tsk                 Pointer to the task's TskTcb
  *  \return         RetCode             Return the success of the operation

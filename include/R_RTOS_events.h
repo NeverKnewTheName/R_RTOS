@@ -3,6 +3,10 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    02.02.2016
  *
+ * \addtogroup sync
+ * \{
+ * \addtogroup evt Events
+ * \{
  * \brief Event services for sending/receiving events in tasks.
  */
 
@@ -81,4 +85,8 @@ RetCode evt_SendEvt( const EvtNr evtNr );
  */
 RetCode evt_GiveUpOnEvts( PTskTCB const tsk );
 
+/**
+ * \}
+ * \}
+ */
 #endif /* HEADERS_R_RTOS_EVENTS_H_ */

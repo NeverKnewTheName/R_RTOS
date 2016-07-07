@@ -3,7 +3,9 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    18.12.2015
  *
- * \brief Functions for creating, initializing, maintaining and handling a task timers.
+ * \addtogroup bestBuddyAlloc
+ * \{
+ *
  */
 
 #include "R_RTOS_memMngr.h"
@@ -1138,3 +1140,7 @@ RetCode memMngr_MemPoolFree( void * ptrToMem, const MemPoolID memPoolID )
     }
     return RET_OK;
 }
+
+/**
+ * \}
+ */

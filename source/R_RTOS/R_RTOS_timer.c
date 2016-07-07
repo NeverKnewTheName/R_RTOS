@@ -3,9 +3,7 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    16.12.2015
  *
- *
- * \addtogroup StackedSoftwareTimer
- * \brief Functions for creating, initializing, maintaining and handling a task timers.
+ * \addtogroup StckdSWTmr
  * \{
  */
 #include "TimerFunc.h"
@@ -21,21 +19,20 @@ extern TskTCB tsk_AR[];
 extern SysFkt sys_SysFkt[];
 
 /**
- * \var memPoolID_TMR
  * \brief Memory Pool ID for the timer's memory pool
  *
  * Allocation requests for \ref SyncEle for the Timer will be served from the memory pool corresponding to this \ref MemPoolID.
  */
 static MemPoolID memPoolID_TMR;
 
-/** \var tskTMR
- *  \brief The start node for the task Timer queue.
+/**
+ * \brief The start node for the task Timer queue.
  *
  *  Initialized to NULL.
  */
 static Timer tskTMR;
 
-/** \var sysTMR
+/**
  *  \brief The start node for the system Timer queue.
  *
  *  Initialized to NULL.
@@ -52,7 +49,7 @@ static void BREAK( void )
 }
 
 /**
- * \fn static RetCode tmr_InsertSysTmrQ( TmrFktCall * sysFktTmr, LifeTime expires )
+ *
  * \brief Insert the given \ref TmrFktCall object into the system timer queue according to its expiration time
  *
  * \param[in] sysFktTmr Pointer to the \ref TmrFktCall object to insert
@@ -100,7 +97,7 @@ static RetCode tmr_InsertSysTmrQ( TmrFktCall * sysFktTmr, LifeTime expires )
 }
 
 /**
- * \fn static RetCode tmr_InsertTskTmrQ( PTskTCB tsk, LifeTime expires )
+ *
  * \brief Insert the given \ref TskTCB object into the task timer queue according to its expiration time
  *
  * \param[in] tsk Pointer to the \ref TskTCB object to insert

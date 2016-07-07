@@ -3,7 +3,7 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    23.11.2015
  *
- * \addtogroup TskMngmnt
+ * \addtogroup tsk
  * \{
  *
  */

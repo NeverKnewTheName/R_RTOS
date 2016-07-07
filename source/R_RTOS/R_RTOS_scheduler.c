@@ -3,7 +3,9 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    23.11.2015
  *
- * \brief Scheduler and related functions.
+ * \addtogroup sched
+ * \{
+ *
  */
 
 #include "MKL05Z4.h"
@@ -333,3 +335,7 @@ void os_SCHEDULE( void )
     }
     gOS_FLAGS.g_needsScheduling = 0x0u;    // reset scheduling flag
 }
+
+/**
+ * \}
+ */

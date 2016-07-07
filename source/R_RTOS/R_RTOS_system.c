@@ -3,7 +3,9 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    12.01.2016
  *
- * \brief Functions for system functionality (system maintenance).
+ * \addtogroup sysMntnc
+ * \{
+ *
  */
 
 #include "MKL05Z4.h"
@@ -464,3 +466,6 @@ void updateTimersAfterSleep( void )
 }
 #endif
 #endif
+/**
+ * \}
+ */

@@ -3,6 +3,10 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    12.01.2016
  *
+ * \addtogroup sys System Functions
+ * \{
+ * \addtogroup sysMntnc System Maintenance
+ * \{
  * \brief Functions for system functionality (system maintenance).
  */
 
@@ -54,5 +58,8 @@ RetCode SVC_HandlerMain( uint32_t *svc_args );
  */
 void updateTimersAfterSleep( void );
 
-
+/**
+ * \}
+ * \}
+ */
 #endif /* HEADERS_R_RTOS_SYSTEM_H_ */

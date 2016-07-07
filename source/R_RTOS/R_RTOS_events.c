@@ -3,7 +3,8 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    02.02.2016
  *
- * \brief Event services for sending/receiving events in tasks.
+ * \addtogroup evt
+ * \{
  */
 
 #include "R_RTOS_inc.h"
@@ -160,3 +161,7 @@ RetCode evt_GiveUpOnEvts( PTskTCB const tsk )
     tsk->tskSync = (PSyncEle) NULL;
     return RET_OK;
 }
+
+/**
+ * \}
+ */
