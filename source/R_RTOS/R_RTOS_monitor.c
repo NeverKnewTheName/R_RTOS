@@ -1,21 +1,44 @@
-/*
- * R_RTOS_monitor.c
+/**
+ * \file    R_RTOS_monitor.c
+ * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
+ * \date    21.02.2016
  *
- *  Created on: 20.02.2016
- *      Author: Christian
+ *  \addtogroup mntr
+ *
+ *  \{
+ *
  */
 
-//ToDO !!!
 #include "R_RTOS_monitor.h"
 #include "R_RTOS_memMngr.h"
 #include "R_RTOS_task.h"
 
 extern TskTCB tsk_AR[NR_OF_TSKS];
 
+/**
+ * \var memPoolID_MNTR
+ * \brief Memory pool ID for Monitors
+ *
+ * \ref SyncEle for blocked tasks are allocated from this memory pool
+ */
 static MemPoolID memPoolID_MNTR;
 
+/**
+ * \var ar_Mntr
+ * \brief Array that holds all available Monitors
+ */
 static Mntr ar_Mntr[NR_OF_MNTRS ];
 
+/**
+ * \fn static RetCode mntr_appendToWaitrList( PMntr const mntr, PTskTCB const waitrTsk )
+ * \brief Append the specified Task to the specified Monitor's wait queue
+ *
+ * \param [in] mntr Monitor the function is called for
+ * \param [in] waitrTsk Task that shall be appended to the monitor's wait queue
+ * \return RetCode
+ * \returns RET_OK
+ * \returns RET_NOK
+ */
 static RetCode mntr_appendToWaitrList(
                                        PMntr const mntr,
                                        PTskTCB const waitrTsk )
@@ -43,6 +66,16 @@ static RetCode mntr_appendToWaitrList(
     return RET_OK;
 }
 
+
+/**
+ * \fn static RetCode mntr_getNextWaitr( PMntr const mntr )
+ * \brief Examine the specified Monitor's wait queue and release the entities accordingly
+ *
+ * \param[in] mntr Monitors whose wait queue is examined
+ * \return RetCode
+ * \returns RET_OK
+ * \returns RET_NOK
+ */
 static RetCode mntr_getNextWaitr( PMntr const mntr )
 {
     if ( mntr->refCntr )    // Reference counter should be zero!
@@ -265,3 +298,7 @@ RetCode mntr_ReleaseAccssMntr( const MntrNr mntrNr )
     // FAILURE
     return RET_NOK;
 }
+
+/**
+ * \}
+ */

@@ -3,6 +3,10 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    26.11.2015
  *
+ * \addtogroup TskMngmnt Task Management
+ * \{
+ * \addtogroup stack Stack Management
+ * \{
  * \brief Functions for creating, initializing, maintaining and handling a task's stack.
  */
 
@@ -69,4 +73,8 @@ RetCode stk_TSTStck( PTskTCB const tsk );
  */
 RetCode stk_StackClear( PTskTCB const tsk );
 
+/**
+ * \}
+ * \}
+ */
 #endif /* HEADERS_R_RTOS_STACK_H_ */

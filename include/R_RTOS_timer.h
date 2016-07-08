@@ -2,8 +2,11 @@
  * \file    R_RTOS_timer.h
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    16.12.2015
- *
+ * \addtogroup tmr
+ * \{
+ * \addtogroup StckdSWTmr Stacked Software Timer
  * \brief Functions for creating, initializing, maintaining and handling a task timers.
+ * \{
  */
 
 #ifndef HEADERS_R_RTOS_TIMER_H_
@@ -11,11 +14,17 @@
 
 #include "R_RTOS_inc.h"
 
+/**
+ * \brief Number of #SyncEle that can be allocated by the Timer mechanism
+ */
 #define MEM_OBJECTS_TMR (uint8_t)0x4u
 
+/**
+ * \brief Value for an invalid LifeTime
+ */
 #define TMR_INVALID_TIME (LifeTime)0xFFFFFFFFu
 
-/** \def TMR_PIT_DELAY
+/**
  *  \brief  Delay compensation between PIT and TPM timers.
  *  \return Delay value
  *
@@ -26,7 +35,7 @@
 #define TMR_PIT_DELAY (uint32_t)0x3u // 3ms delay
 
 
-/** \fn RetCode tmr_INIT( void );
+/**
  *  \brief Calibrate the PIT Timer periodically.
  *
  *  Since the PIT timer is clocked by the Bus clock whereas the TPM module has various clock sources the two timers drift away from each other.
@@ -35,11 +44,12 @@
  */
 RetCode tmr_INIT( void );
 
-/** \fn RetCode tmr_setTskTimer( TskTCB* tsk, WaitTime ms );
+/**
  *  \brief Sets up a Timer for a task and queues it into the Timer queue according to its WaitTime relative to the current PIT value.
  *
  *  \param [in]     tsk                 Pointer to the task's TskTcb
- *  \param [in]     ms                  Period of time to wait in ms.
+ *  \param [in]     msToWait            Period of time to wait in ms.
+ *
  *  \return         RetCode             Return the success of the operation
  *
  *  Sets up a Timer for the given task and queues the Timer into the Timer queue.
@@ -49,12 +59,30 @@ RetCode tmr_INIT( void );
  */
 RetCode tmr_setTskTimer( PTskTCB tsk, TmrTime msToWait );
 
+/**
+ *
+ * \brief Sets up a Timer to call a SysFkt corresponding to the given SysFktID as soon as the timer expires
+ *
+ * \param[in] fktID         SysFktID of the function to call upon expiration
+ * \param[in] msToWait      Period of time to wait in ms
+ * \param[in] periodicity   Periodicity of the timer (if set to 1 the timer will reset itself)
+ *
+ * \return RetCode
+ * \returns RET_OK
+ * \returns RET_NOK
+ */
 RetCode tmr_setSysTimer( SysFktID fktID, TmrTime msToWait, uint8_t periodicity );
 
+/**
+ *  \brief Function to be called as soon as a system Timer expires.
+ *
+ *  Calls the system function and re-sets it according to its periodicty settings.
+ *
+ */
 void tmr_SysTimerElapsed( void );
 
-/** \fn void tmr_TskTimerElapsed( void );
- *  \brief Function to be called as soon as a Timer expires.
+/**
+ *  \brief Function to be called as soon as a task Timer expires.
  *
  *  Adjusts the TskEvtFlags and sets the task ready (if it is not waiting on any other event).
  *  Also maintains the Timer queue and automatically scans for more Timers to be expired.
@@ -65,8 +93,8 @@ void tmr_SysTimerElapsed( void );
  */
 void tmr_TskTimerElapsed( void );
 
-/** \fn RetCode tmr_GiveUpOnTMR( TskTCB *tsk );
- *  \brief Forces the deletion of a task's Timer from the Timer queue and adjusts the queue accordingly.
+/**
+ * \brief Forces the deletion of a task's Timer from the Timer queue and adjusts the queue accordingly.
  *
  *  \param [in]     tsk                 Pointer to the task's TskTcb
  *  \return         RetCode             Return the success of the operation
@@ -79,35 +107,8 @@ void tmr_TskTimerElapsed( void );
  */
 RetCode tmr_GiveUpOnTMR( PTskTCB const tsk );
 
-// /** \fn RetCode tmr_InsertNodeWthPrio( Timer **strtNode, Timer **newTmrLstNode );
-// *  \brief Inserts a task's Timer into the Timer queue according to its expiration time.
-// *
-// *  \param [in]     strtNode            Pointer to the Pointer to the current start of the Timer queue
-// *  \param [in]     newTmrLstNode       Pointer to the Pointer to the Timer to be inserted into the Timer queue
-// *  \return         RetCode             Return the success of the operation
-// *
-// *  Search the Timer queue for the place to fit the new Timer into.
-// *  Might adjust the startTMRNode.
-// *
-// */
-//RetCode tmr_InsertTmrWithExpiration( Timer *tmr, uint8_t id );
-
-// /** \fn RetCode tmr_DeleteNode( Timer **strtNode, TskTCB *nodeToDelete );
-// *  \brief Delete a Timer from the Timer queue.
-// *
-// *  \param [in]     strtNode            Pointer to the Pointer to the current start of the Timer queue
-// *  \param [in]     nodeToDelete        Pointer to the Timer to be deleted from the Timer queue
-// *  \return         RetCode             Return the success of the operation
-// *
-// *  Delete the given Timer from the Timer queue.
-// *  Might adjust the startTMRNode.
-// *
-// */
-//RetCode tmr_DeleteNode( Timer *tmr, PTskTCB tskToDelete );
-
-
-/* DEPRECATED
-RetCode tmr_CorrectTimerInLst( Timer ** strtNode);
-*/
-
+/**
+ * \}
+ * \}
+ */
 #endif /* HEADERS_R_RTOS_TIMER_H_ */

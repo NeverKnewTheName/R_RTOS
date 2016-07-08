@@ -3,6 +3,10 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    26.11.2015
  *
+ * \addtogroup TskMngmnt
+ * \{
+ * \addtogroup sched Multidimensional Priority-based Task Scheduler
+ * \{
  * \brief Scheduler and related functions.
  */
 
@@ -68,4 +72,8 @@ void os_INIT_Scheduler( void );
  */
 void os_SCHEDULE( void );
 
+/**
+ * \}
+ * \}
+ */
 #endif /* HEADERS_R_RTOS_SCHEDULER_H_ */

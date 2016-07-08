@@ -3,17 +3,22 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    18.12.2015
  *
+ * \addtogroup mem Memory Management
+ * \{
+ * \addtogroup bestBuddyAlloc Modified Best Buddy Memory Allocator
+ * \{
  * \brief Modified Best Buddy Memory Allocator.
  *
  *  Modified -> Can use adjacent blocks to fit memory needs -> reduce internal fragmentation
  *
- *  Objejt Cache -> Objects are put into an object cache upon freeing them -> alleviates frequent allocations of same size objects
+ *  Object Cache -> Objects are put into an object cache upon freeing them -> alleviates frequent allocations of same-size objects
  */
 
 #ifndef HEADERS_R_RTOS_MEMMNGR_H_
 #define HEADERS_R_RTOS_MEMMNGR_H_
 #include "R_RTOS_inc.h"
 #include <stdint.h>
+
 /** \def malloc
  *  \brief Redefine malloc to rMalloc in order not to have to alter the already existing code.
  */
@@ -495,6 +500,9 @@ void * rMalloc( MemSize desiredSize );
 /** \fn rCalloc( MemSize desiredSize );
  *  \warning DO NOT USE, UNFINISHED
  *  \param desiredSize
+ *
+ *
+ *  \warning UNTESTED!
  */
 void * rCalloc( MemSize desiredSize );
 
@@ -503,6 +511,8 @@ void * rCalloc( MemSize desiredSize );
  *
  *  \param ptrToExistingMem [in, out] Pointer to the already allocated memory.
  *  \param desiredSize [in] The size of the memory block needed.
+ *
+ *  \warning UNTESTED!
  */
 void * rRealloc( void * ptrToExistingMem, MemSize desiredSize );
 
@@ -555,5 +565,10 @@ RetCode memMngr_MemPoolMalloc( void ** ptrToMem, const MemPoolID memPoolID );
  *  \return Return the success of the operation
  */
 RetCode memMngr_MemPoolFree( void * ptrToMem, const MemPoolID memPoolID );
-#endif
-//#endif /* HEADERS_R_RTOS_MEMMNGR_H_ */
+
+/**
+ * \}
+ * \}
+ */
+#endif /* HEADERS_R_RTOS_MEMMNGR_H_ */
+

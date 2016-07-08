@@ -3,7 +3,8 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    26.11.2015
  *
- * \brief Functions for creating, initializing, maintaining and handling a task's stack.
+ * \addtogroup stack
+ * \{
  */
 
 #include "R_RTOS_stack.h"
@@ -164,3 +165,7 @@ RetCode stk_StackClear( PTskTCB const tsk )
     BREAK();
     return RET_OK;
 }
+
+/**
+ * \}
+ */

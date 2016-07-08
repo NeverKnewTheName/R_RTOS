@@ -3,7 +3,8 @@
  * \author  Christian Neuberger (NeubergerCh50344@th-nuernberg.de)
  * \date    06.04.2016
  *
- * \brief System Tick Timer handling and system time maintenance.
+ * \addtogroup SysTickTMR
+ * \{
  */
 
 #include "PortFunc.h"
@@ -20,7 +21,7 @@ extern SysFkt sys_SysFkt[];
 
 extern void os_SCHEDULE( void );
 
-/** \var os_SysTicks
+/**
  *  \brief Counts the number of SysTicks.
  *
  *  Holds the current number of SysTicks. The interval of SysTicks is influenced by the time slice.
@@ -28,7 +29,7 @@ extern void os_SCHEDULE( void );
  */
 static volatile SysTime os_SysTicks;
 
-/** \var os_TimeSlice
+/**
  *  \brief Current time slice in ms.
  *
  *  Holds the current value of the time slice.
@@ -36,7 +37,7 @@ static volatile SysTime os_SysTicks;
  */
 static volatile SysTime os_TimeSlice;
 
-/** \var ar_PSysTickTMR
+/**
  *  \brief System Tick Timer slot array.
  *
  *  To achieve a 'balanced' System Tick Timer the array provides
@@ -47,12 +48,21 @@ static volatile SysTime os_TimeSlice;
  */
 static volatile PSysTickTMR ar_PSysTickTMR[SYSTCK_AR_RES ];
 
-/** \var memPoolID_SysTckTMR
+/**
  *  \brief MemoryPoolID for the System Tick Timer memory pool.
  *
  */
 static MemPoolID memPoolID_SysTckTMR;
 
+/**
+ * \brief Update the System Tick Timer slot array
+ *
+ * \param[in] sysTcksDecr System Tick Timer slot array slot to update
+ *
+ * \return RetCode
+ * \returns RET_OK
+ * \returns RET_NOK
+ */
 static RetCode sysTck_UpdateSysTckTMRs( SysTicks sysTcksDecr )
 {
     PSysTickTMR tmpSysTckTMR = ar_PSysTickTMR[sysTcksDecr];
@@ -147,7 +157,10 @@ static RetCode sysTck_UpdateSysTckTMRs( SysTicks sysTcksDecr )
                             evt_GiveUpOnEvts( tmpTsk );
                             break;
                         case SyncEle_TYPE_SEM:
-                            sem_GiveUpOnSem( tmpTsk );
+                            //sem_GiveUpOnSem( tmpTsk );
+                            break;
+                        case SyncEle_TYPE_MTX:
+                            //sem_GiveUpOnMtx( tmpTsk );
                             break;
                         case SyncEle_TYPE_TMR:
                             tmr_GiveUpOnTMR( tmpTsk );
@@ -243,19 +256,19 @@ void SysTick_Handler( void )
 {
     __disable_irq();    // disable interrupts // no need to look for nested interrupts, because this is an interrupt..
     ++os_SysTicks;
-    //TOGGLE_PIN( PIN_LED3 );
+
     sysTck_UpdateSysTckTMRs( os_SysTicks & SYSTCK_AR_RES_MSK );
 
     SysTick_Config( (uint32_t) os_TimeSlice );
+
 #ifdef __DEBUG__
 #ifdef __DEBUG__FLOW__
     WRITE_TO_MSG_BUFF( gSysMsg, "TCK" );
 #endif
 #endif
-//#ifdef _RTOSUSED_
-//    gOS_FLAGS.gWokenUp = 0x1u;
-//#endif
-    os_SCHEDULE();
+
+    //ToDO
+    //os_SCHEDULE();
     __enable_irq();
 }
 
@@ -366,3 +379,6 @@ SysTime sysTck_SetTimeSlice( const SysTime newTimeSlice )
 {
     return os_TimeSlice = newTimeSlice;
 }
+/**
+ * \}
+ */
