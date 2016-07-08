@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['gstruc_5fos_5fflags',['gStruc_OS_FLAGS',['../structg_struc___o_s___f_l_a_g_s.html',1,'']]]
+  ['evtqueue',['evtQueue',['../structevtQueue.html',1,'']]],
+  ['evtstruc',['evtStruc',['../structevtStruc.html',1,'']]],
+  ['evtsyncele',['evtSyncEle',['../structsyncEleStruc_1_1syncEleHandle_1_1evtSyncEle.html',1,'syncEleStruc::syncEleHandle']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['cachesize',['cacheSize',['../_r___r_t_o_s__mem_mngr_8c.html#aa483a6d5225cf474c6d1a3ad97e0d662',1,'R_RTOS_memMngr.c']]]
+  ['cachesize',['cacheSize',['../group__bestBuddyAlloc.html#gaa483a6d5225cf474c6d1a3ad97e0d662',1,'R_RTOS_memMngr.c']]],
+  ['curstate',['curState',['../structmntr.html#a5f482da32a8d355bec9afe23ca5c93d2',1,'mntr']]]
 ];

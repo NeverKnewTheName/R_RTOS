@@ -1,24 +1,4 @@
 var searchData=
 [
-  ['sem',['Sem',['../_r___r_t_o_s__inc_8h.html#af4122a81b390d3c8725c7e151ecf9cfd',1,'R_RTOS_inc.h']]],
-  ['semcntr',['SemCntr',['../_r___r_t_o_s__inc_8h.html#a41f6d701fcd020604122af8bb1458b2a',1,'R_RTOS_inc.h']]],
-  ['semnr',['SemNr',['../_r___r_t_o_s__inc_8h.html#a0e91b259511e391ba8d7c6f0963c4888',1,'R_RTOS_inc.h']]],
-  ['stackptrt',['StackPtrT',['../_r___r_t_o_s__inc_8h.html#a3da7641461186165f7d1ad16df9f2d38',1,'R_RTOS_inc.h']]],
-  ['stacksize',['StackSize',['../_r___r_t_o_s__inc_8h.html#ada39144b6f8cd87b923b5bf2fad78bf1',1,'R_RTOS_inc.h']]],
-  ['stacktypet',['StackTypeT',['../_r___r_t_o_s__inc_8h.html#a3d8be0719c4d7373762a29d7109f8197',1,'R_RTOS_inc.h']]],
-  ['stdptr',['stdPtr',['../_r___r_t_o_s__mem_mngr_8h.html#a6ec0ea53f55f2ecffcafffdc7a0df532',1,'R_RTOS_memMngr.h']]],
-  ['svccode',['SVCCode',['../_r___r_t_o_s__inc_8h.html#ac0eabf8eafb11fbb293d90d7efd7e644',1,'R_RTOS_inc.h']]],
-  ['syncele',['SyncEle',['../_r___r_t_o_s__inc_8h.html#aa72470157b759af493760af90609835b',1,'R_RTOS_inc.h']]],
-  ['synceleid',['SyncEleID',['../_r___r_t_o_s__inc_8h.html#a78b7677ae549ecbc1128697ebd49bbe6',1,'R_RTOS_inc.h']]],
-  ['synceletype',['SyncEleType',['../_r___r_t_o_s__inc_8h.html#a960aa5ecfedf2603bc8f11b98e55775c',1,'R_RTOS_inc.h']]],
-  ['sysfkt',['SysFkt',['../_r___r_t_o_s__inc_8h.html#a827136f3233fd732876ecea0f2c81253',1,'R_RTOS_inc.h']]],
-  ['sysfktid',['SysFktID',['../_r___r_t_o_s__inc_8h.html#aad4b2141820674d80ce50eda2b38d594',1,'R_RTOS_inc.h']]],
-  ['sysmsgprov',['SysMsgProv',['../_r___r_t_o_s__inc_8h.html#a37e707f87e3d7e2c8502169b0dfd28fb',1,'R_RTOS_inc.h']]],
-  ['systckeletype',['SysTckEleType',['../_r___r_t_o_s__inc_8h.html#a82a8d04f5293623301d1bdd3b51e0079',1,'R_RTOS_inc.h']]],
-  ['systckfktcall',['SysTckFktCall',['../_r___r_t_o_s__inc_8h.html#a93e3138c0b6397cb6d05bb578979222e',1,'R_RTOS_inc.h']]],
-  ['systickeleid',['SysTickEleID',['../_r___r_t_o_s__inc_8h.html#a0945f54739a76a0cbae7d7754452c41a',1,'R_RTOS_inc.h']]],
-  ['systicks',['SysTicks',['../_r___r_t_o_s__inc_8h.html#aed568e9fa30417e4671c4932c04bdbae',1,'R_RTOS_inc.h']]],
-  ['systicktmr',['SysTickTMR',['../_r___r_t_o_s__inc_8h.html#a94c31cef912ba23e4f6f198e9f126d0b',1,'R_RTOS_inc.h']]],
-  ['systime',['SysTime',['../_r___r_t_o_s__inc_8h.html#a32c515e836c5ba97a86cd330061d3ffe',1,'R_RTOS_inc.h']]],
-  ['systimer',['SysTimer',['../_r___r_t_o_s__inc_8h.html#ac2231350d71cca57367f0bff64f7781b',1,'R_RTOS_inc.h']]]
+  ['retcode',['RetCode',['../R__RTOS__inc_8h.html#aa72989791cb0897faf8ff36202a4e07f',1,'R_RTOS_inc.h']]]
 ];

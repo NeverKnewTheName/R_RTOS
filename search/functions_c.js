@@ -1,11 +1,21 @@
 var searchData=
 [
-  ['tmr_5finit',['tmr_INIT',['../_r___r_t_o_s__timer_8c.html#a2d413cb64fe2c2179bd8b7565ffed132',1,'tmr_INIT(void):&#160;R_RTOS_timer.c'],['../_r___r_t_o_s__timer_8h.html#a2d413cb64fe2c2179bd8b7565ffed132',1,'tmr_INIT(void):&#160;R_RTOS_timer.c']]],
-  ['tmr_5ftsktimerelapsed',['tmr_TskTimerElapsed',['../_r___r_t_o_s__timer_8c.html#a708fdafe3d0d9260260f2b7b9384821d',1,'tmr_TskTimerElapsed(void):&#160;R_RTOS_timer.c'],['../_r___r_t_o_s__timer_8h.html#a708fdafe3d0d9260260f2b7b9384821d',1,'tmr_TskTimerElapsed(void):&#160;R_RTOS_timer.c']]],
-  ['tsk_5fendthetask',['tsk_EndTheTask',['../_r___r_t_o_s__system_8c.html#a8c2556285c4045dde975762003970f93',1,'tsk_EndTheTask(void):&#160;R_RTOS_system.c'],['../_r___r_t_o_s__system_8h.html#a8c2556285c4045dde975762003970f93',1,'tsk_EndTheTask(void):&#160;R_RTOS_system.c']]],
-  ['tsk_5finsrttskactvtsklst',['tsk_insrtTskActvTskLst',['../_r___r_t_o_s__scheduler_8c.html#a177ced3e248caef2d8dccf1b48651190',1,'tsk_insrtTskActvTskLst(PTskTCB const tsk):&#160;R_RTOS_scheduler.c'],['../_r___r_t_o_s__scheduler_8h.html#a177ced3e248caef2d8dccf1b48651190',1,'tsk_insrtTskActvTskLst(PTskTCB const tsk):&#160;R_RTOS_scheduler.c']]],
-  ['tsk_5frmvtskactvtsklst',['tsk_rmvTskActvTskLst',['../_r___r_t_o_s__scheduler_8c.html#a20857e80dc21af3794049054527893f3',1,'tsk_rmvTskActvTskLst(PTskTCB const tsk):&#160;R_RTOS_scheduler.c'],['../_r___r_t_o_s__scheduler_8h.html#a20857e80dc21af3794049054527893f3',1,'tsk_rmvTskActvTskLst(PTskTCB const tsk):&#160;R_RTOS_scheduler.c']]],
-  ['tsk_5ftskdestroy',['tsk_tskDestroy',['../_r___r_t_o_s__task_8c.html#a5129bd9579de1e955b48f0ef164b9241',1,'R_RTOS_task.c']]],
-  ['tsk_5ftskinit',['tsk_tskInit',['../_r___r_t_o_s__task_8c.html#ad0af359f43c10d537163606eab55037b',1,'tsk_tskInit(const TskID tskID, const TskStartAddr const strtAddr, const TskEndAddr const endAddr, const StackSize stkSze):&#160;R_RTOS_task.c'],['../_r___r_t_o_s__task_8h.html#ad0af359f43c10d537163606eab55037b',1,'tsk_tskInit(const TskID tskID, const TskStartAddr const strtAddr, const TskEndAddr const endAddr, const StackSize stkSze):&#160;R_RTOS_task.c']]],
-  ['tskidle',['tskIdle',['../_r___r_t_o_s__system_8c.html#ad2a22cccee9d18852ee265dc7b9982c5',1,'tskIdle(void):&#160;R_RTOS_system.c'],['../_r___r_t_o_s__system_8h.html#ad2a22cccee9d18852ee265dc7b9982c5',1,'tskIdle(void):&#160;R_RTOS_system.c']]]
+  ['tmr_5fgiveupontmr',['tmr_GiveUpOnTMR',['../group__StckdSWTmr.html#ga6ef66a898fb30539ae0a8e479240d444',1,'R_RTOS_timer.c']]],
+  ['tmr_5finit',['tmr_INIT',['../group__StckdSWTmr.html#ga2d413cb64fe2c2179bd8b7565ffed132',1,'R_RTOS_timer.c']]],
+  ['tmr_5finsertsystmrq',['tmr_InsertSysTmrQ',['../group__StckdSWTmr.html#ga83e4c9920aae26d3dc3d10dbd69e3576',1,'R_RTOS_timer.c']]],
+  ['tmr_5finserttsktmrq',['tmr_InsertTskTmrQ',['../group__StckdSWTmr.html#ga1ca469ffbe7b4a9051f7bc09461e51b4',1,'R_RTOS_timer.c']]],
+  ['tmr_5fsetsystimer',['tmr_setSysTimer',['../group__StckdSWTmr.html#gac3b1bc7a90a2bee533daf2e140df3336',1,'R_RTOS_timer.c']]],
+  ['tmr_5fsettsktimer',['tmr_setTskTimer',['../group__StckdSWTmr.html#ga66411c20180e5aadb54e22ef47d753ec',1,'R_RTOS_timer.c']]],
+  ['tmr_5fsystimerelapsed',['tmr_SysTimerElapsed',['../group__StckdSWTmr.html#gac57ee0e21320e67da428a400c70f3579',1,'R_RTOS_timer.c']]],
+  ['tmr_5ftsktimerelapsed',['tmr_TskTimerElapsed',['../group__StckdSWTmr.html#ga708fdafe3d0d9260260f2b7b9384821d',1,'R_RTOS_timer.c']]],
+  ['tsk_5fchngeprio',['tsk_ChngePrio',['../group__tsk.html#ga7b6338c4c15b682223a06bd80ad57d1e',1,'R_RTOS_task.c']]],
+  ['tsk_5fclrevt',['tsk_ClrEvt',['../group__tsk.html#ga7d4ebf8b217b200ad99dcf780fe53fe5',1,'R_RTOS_task.c']]],
+  ['tsk_5fendthetask',['tsk_EndTheTask',['../group__sysMntnc.html#ga8c2556285c4045dde975762003970f93',1,'R_RTOS_system.c']]],
+  ['tsk_5finsrttskactvtsklst',['tsk_insrtTskActvTskLst',['../group__sched.html#ga177ced3e248caef2d8dccf1b48651190',1,'R_RTOS_scheduler.c']]],
+  ['tsk_5frmvtskactvtsklst',['tsk_rmvTskActvTskLst',['../group__sched.html#ga20857e80dc21af3794049054527893f3',1,'R_RTOS_scheduler.c']]],
+  ['tsk_5fsetevt',['tsk_SetEvt',['../group__tsk.html#ga42d9ced4739e893e804b6a121e813db4',1,'R_RTOS_task.c']]],
+  ['tsk_5fsetinactive',['tsk_SetInactive',['../group__tsk.html#ga975cbc28167575d6a3e71df000734135',1,'R_RTOS_task.c']]],
+  ['tsk_5ftskdestroy',['tsk_tskDestroy',['../group__tsk.html#ga5129bd9579de1e955b48f0ef164b9241',1,'R_RTOS_task.c']]],
+  ['tsk_5ftskinit',['tsk_tskInit',['../group__tsk.html#gad0af359f43c10d537163606eab55037b',1,'R_RTOS_task.c']]],
+  ['tskidle',['tskIdle',['../group__sysMntnc.html#gad2a22cccee9d18852ee265dc7b9982c5',1,'R_RTOS_system.c']]]
 ];

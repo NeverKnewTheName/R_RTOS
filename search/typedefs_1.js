@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['callbackondatarecv',['CallBackOnDataRecv',['../_r___r_t_o_s__inc_8h.html#a06e460ff5c40c74f77ecabc3c7b17d7f',1,'R_RTOS_inc.h']]],
-  ['cdata',['CData',['../_r___r_t_o_s__inc_8h.html#a3a6defa6e3e6852e9bc2b9a0cf774741',1,'R_RTOS_inc.h']]]
+  ['bitsosflags',['BitsOSFlags',['../R__RTOS__inc_8h.html#a9d4ca32bfa7e2d1679fe7478963cb27e',1,'R_RTOS_inc.h']]],
+  ['blcksize',['BlckSize',['../group__bestBuddyAlloc.html#ga344bd71f9b6293a6f87a7c58de364fe8',1,'R_RTOS_memMngr.h']]]
 ];

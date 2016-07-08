@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['idle_5ftsk_5fstack_5fsize',['IDLE_TSK_STACK_SIZE',['../_r___r_t_o_s__inc_8h.html#acdbb973caac203a6aad5bc74a565e9ad',1,'R_RTOS_inc.h']]],
-  ['input_5farg_5f1',['INPUT_ARG_1',['../_r___r_t_o_s__services_8h.html#afc213537aeddd53034aae0c91373b4cb',1,'R_RTOS_services.h']]],
-  ['input_5farg_5f2',['INPUT_ARG_2',['../_r___r_t_o_s__services_8h.html#acca96ab3042498885e1438018e016eda',1,'R_RTOS_services.h']]],
-  ['input_5farg_5f3',['INPUT_ARG_3',['../_r___r_t_o_s__services_8h.html#a448a90c1053eafb27d0000740b2d1d11',1,'R_RTOS_services.h']]],
-  ['input_5farg_5f4',['INPUT_ARG_4',['../_r___r_t_o_s__services_8h.html#a403716bbc5063dcd5de3075fd30404e7',1,'R_RTOS_services.h']]]
+  ['svc',['SVC',['../R__RTOS__services_8h.html#a8df378d78deb90290bd58c6eb08168d6',1,'R_RTOS_services.h']]],
+  ['sysfkt_5finvalid_5fsysfkt_5fid',['SYSFKT_INVALID_SYSFKT_ID',['../R__RTOS__inc_8h.html#ae1bdf4c1eef45de6e8ee3c713b99d232',1,'R_RTOS_inc.h']]]
 ];

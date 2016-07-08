@@ -48,6 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -143,321 +145,364 @@ $(document).ready(function(){initNavTree('globals_s.html','');});
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>Sem
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#af4122a81b390d3c8725c7e151ecf9cfd">R_RTOS_inc.h</a>
+: <a class="el" href="group__sem.html#gad67f22f1d08172732b3eb1cdc1b6cdd7">R_RTOS_inc.h</a>
 </li>
 <li>sem_DeleteTskSemQ()
-: <a class="el" href="_r___r_t_o_s__sem_8c.html#a6cee1c0e25279b2f2042abcda28bf033">R_RTOS_sem.c</a>
-, <a class="el" href="_r___r_t_o_s__sem_8h.html#a6cee1c0e25279b2f2042abcda28bf033">R_RTOS_sem.h</a>
+: <a class="el" href="group__sem.html#ga6cee1c0e25279b2f2042abcda28bf033">R_RTOS_sem.c</a>
 </li>
-<li>sem_GiveSem()
-: <a class="el" href="_r___r_t_o_s__sem_8c.html#a0aceab8b14a7e485798ac329f74b52d8">R_RTOS_sem.c</a>
-, <a class="el" href="_r___r_t_o_s__sem_8h.html#a0aceab8b14a7e485798ac329f74b52d8">R_RTOS_sem.h</a>
+<li>sem_GetNextTskSemQ()
+: <a class="el" href="group__sem.html#gac50c9238cc16b7042a7f866be1bb2032">R_RTOS_sem.c</a>
+</li>
+<li>sem_initBinSem()
+: <a class="el" href="group__sem.html#ga6955bfcdc5df3530dc01a45f6d6f6760">R_RTOS_sem.c</a>
+</li>
+<li>sem_initCntSem()
+: <a class="el" href="group__sem.html#gaf5ce8b309b3da96b6e36859970b8ef26">R_RTOS_sem.c</a>
 </li>
 <li>sem_InitSems()
-: <a class="el" href="_r___r_t_o_s__sem_8c.html#a68b38763cc121b266a792122dc60349c">R_RTOS_sem.c</a>
-, <a class="el" href="_r___r_t_o_s__sem_8h.html#a68b38763cc121b266a792122dc60349c">R_RTOS_sem.h</a>
+: <a class="el" href="group__sem.html#ga68b38763cc121b266a792122dc60349c">R_RTOS_sem.c</a>
 </li>
-<li>sem_TakeSem()
-: <a class="el" href="_r___r_t_o_s__sem_8c.html#a62414039a6ce95e8208ebc4fe67d0610">R_RTOS_sem.c</a>
-, <a class="el" href="_r___r_t_o_s__sem_8h.html#a62414039a6ce95e8208ebc4fe67d0610">R_RTOS_sem.h</a>
+<li>sem_InsertTskSemQ()
+: <a class="el" href="group__sem.html#ga22d2d03ffdd34d836adc1da4e8f6754e">R_RTOS_sem.c</a>
+</li>
+<li>SEM_NR_OF_TSK_REF_BYTES
+: <a class="el" href="group__sem.html#ga8d3e6b1b7585be8b5d21f4512b794d36">R_RTOS_inc.h</a>
+</li>
+<li>sem_signal()
+: <a class="el" href="group__sem.html#ga76344fef65f6df5ed42de7854d23176e">R_RTOS_sem.c</a>
+</li>
+<li>sem_Tsksignal()
+: <a class="el" href="group__sem.html#ga8aec924d96c5625ea18ddf95aa877813">R_RTOS_sem.c</a>
+</li>
+<li>sem_wait()
+: <a class="el" href="group__sem.html#ga6f6000f027baffe60bb64562c7b78a7e">R_RTOS_sem.c</a>
+</li>
+<li>SemBin
+: <a class="el" href="group__sem.html#gga8b54b84aa57d6e1a067b08afeff3fdfda258f49f07337dccaf8b44ba1d71312c5">R_RTOS_inc.h</a>
+</li>
+<li>SemCnt
+: <a class="el" href="group__sem.html#gga8b54b84aa57d6e1a067b08afeff3fdfda9b45875b6990031f21e6cafabb88e917">R_RTOS_inc.h</a>
 </li>
 <li>SemCntr
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a41f6d701fcd020604122af8bb1458b2a">R_RTOS_inc.h</a>
+: <a class="el" href="group__sem.html#gab827a4c0ca14643edafdd2428f1435da">R_RTOS_inc.h</a>
 </li>
 <li>SemNr
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a0e91b259511e391ba8d7c6f0963c4888">R_RTOS_inc.h</a>
+: <a class="el" href="group__sem.html#ga552fb868449b0c70fbe87dee9ccb3ab4">R_RTOS_inc.h</a>
+</li>
+<li>SemType
+: <a class="el" href="group__sem.html#gaf2df5fff947be6e03a7f11406cbf03bf">R_RTOS_inc.h</a>
+</li>
+<li>semTypeEnum
+: <a class="el" href="group__sem.html#ga8b54b84aa57d6e1a067b08afeff3fdfd">R_RTOS_inc.h</a>
 </li>
 <li>shrinkCacheFIFO()
-: <a class="el" href="_r___r_t_o_s__mem_mngr_8c.html#a61407be52d8b17c8e4a0a353a23aaa8b">R_RTOS_memMngr.c</a>
+: <a class="el" href="group__bestBuddyAlloc.html#ga61407be52d8b17c8e4a0a353a23aaa8b">R_RTOS_memMngr.c</a>
 </li>
 <li>SMALLER_BLCK_DIVISOR
-: <a class="el" href="_r___r_t_o_s__mem_mngr_8h.html#adf59e67b443ce5f091d7c9b6be66db1c">R_RTOS_memMngr.h</a>
+: <a class="el" href="group__bestBuddyAlloc.html#gadf59e67b443ce5f091d7c9b6be66db1c">R_RTOS_memMngr.h</a>
 </li>
 <li>SMALLER_BLCK_MSK
-: <a class="el" href="_r___r_t_o_s__mem_mngr_8h.html#a9fa793b67a572377552189c6a7765185">R_RTOS_memMngr.h</a>
+: <a class="el" href="group__bestBuddyAlloc.html#ga9fa793b67a572377552189c6a7765185">R_RTOS_memMngr.h</a>
 </li>
 <li>SMALLEST_BLCK
-: <a class="el" href="_r___r_t_o_s__mem_mngr_8h.html#a359dc7027f36b533d6a4e00cb9be1287">R_RTOS_memMngr.h</a>
+: <a class="el" href="group__bestBuddyAlloc.html#ga359dc7027f36b533d6a4e00cb9be1287">R_RTOS_memMngr.h</a>
 </li>
 <li>splitMemBlck()
-: <a class="el" href="_r___r_t_o_s__mem_mngr_8c.html#a7289114e196270ab93c5dda852b324a2">R_RTOS_memMngr.c</a>
+: <a class="el" href="group__bestBuddyAlloc.html#ga7289114e196270ab93c5dda852b324a2">R_RTOS_memMngr.c</a>
 </li>
 <li>STACK_BLOCK_SIZE
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a76f35d0ad6fa660c3688a9347eaf525f">R_RTOS_inc.h</a>
+: <a class="el" href="group__stack.html#ga76f35d0ad6fa660c3688a9347eaf525f">R_RTOS_inc.h</a>
 </li>
 <li>StackPtrT
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a3da7641461186165f7d1ad16df9f2d38">R_RTOS_inc.h</a>
+: <a class="el" href="group__stack.html#ga0eeb5abeb11aac54ae5b0cc734b872cf">R_RTOS_inc.h</a>
 </li>
 <li>StackSize
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ada39144b6f8cd87b923b5bf2fad78bf1">R_RTOS_inc.h</a>
+: <a class="el" href="group__stack.html#ga3e1457c06562ee8b6d57e750489cfa7e">R_RTOS_inc.h</a>
 </li>
 <li>StackTypeT
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a3d8be0719c4d7373762a29d7109f8197">R_RTOS_inc.h</a>
+: <a class="el" href="group__stack.html#gaae42da8eba2aaca6a6a635beb3df6508">R_RTOS_inc.h</a>
 </li>
 <li>stdPtr
-: <a class="el" href="_r___r_t_o_s__mem_mngr_8h.html#a6ec0ea53f55f2ecffcafffdc7a0df532">R_RTOS_memMngr.h</a>
+: <a class="el" href="group__bestBuddyAlloc.html#ga6ec0ea53f55f2ecffcafffdc7a0df532">R_RTOS_memMngr.h</a>
 </li>
 <li>stk_StackClear()
-: <a class="el" href="_r___r_t_o_s__stack_8c.html#ad340d1552cd43b5b0fb105d5b8a24a28">R_RTOS_stack.c</a>
-, <a class="el" href="_r___r_t_o_s__stack_8h.html#ad340d1552cd43b5b0fb105d5b8a24a28">R_RTOS_stack.h</a>
+: <a class="el" href="group__stack.html#gad340d1552cd43b5b0fb105d5b8a24a28">R_RTOS_stack.c</a>
 </li>
 <li>stk_StackCreate()
-: <a class="el" href="_r___r_t_o_s__stack_8c.html#a65c893bc7a3a8a7a3d9c0356a500623f">R_RTOS_stack.c</a>
-, <a class="el" href="_r___r_t_o_s__stack_8h.html#a65c893bc7a3a8a7a3d9c0356a500623f">R_RTOS_stack.h</a>
+: <a class="el" href="group__stack.html#ga65c893bc7a3a8a7a3d9c0356a500623f">R_RTOS_stack.c</a>
 </li>
 <li>stk_StackDestroy()
-: <a class="el" href="_r___r_t_o_s__stack_8c.html#af81585c8f479dc83146027221c9e04cc">R_RTOS_stack.c</a>
-, <a class="el" href="_r___r_t_o_s__stack_8h.html#af81585c8f479dc83146027221c9e04cc">R_RTOS_stack.h</a>
+: <a class="el" href="group__stack.html#gaf81585c8f479dc83146027221c9e04cc">R_RTOS_stack.c</a>
 </li>
 <li>stk_StackInit()
-: <a class="el" href="_r___r_t_o_s__stack_8c.html#ab98f881562b4e512035e31cec2318a49">R_RTOS_stack.c</a>
-, <a class="el" href="_r___r_t_o_s__stack_8h.html#ab98f881562b4e512035e31cec2318a49">R_RTOS_stack.h</a>
+: <a class="el" href="group__stack.html#gab98f881562b4e512035e31cec2318a49">R_RTOS_stack.c</a>
 </li>
 <li>stk_TSTStck()
-: <a class="el" href="_r___r_t_o_s__stack_8c.html#a7f82c540b032b4afcd284a5109849e71">R_RTOS_stack.c</a>
-, <a class="el" href="_r___r_t_o_s__stack_8h.html#a7f82c540b032b4afcd284a5109849e71">R_RTOS_stack.h</a>
+: <a class="el" href="group__stack.html#ga7f82c540b032b4afcd284a5109849e71">R_RTOS_stack.c</a>
 </li>
 <li>SVC
-: <a class="el" href="_r___r_t_o_s__services_8h.html#a8df378d78deb90290bd58c6eb08168d6">R_RTOS_services.h</a>
+: <a class="el" href="R__RTOS__services_8h.html#a8df378d78deb90290bd58c6eb08168d6">R_RTOS_services.h</a>
 </li>
 <li>SVC_CALL_FKT_PRIV
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1adf282cb379f8d7655c9c6065c9d9233c">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1adf282cb379f8d7655c9c6065c9d9233c">R_RTOS_inc.h</a>
 </li>
 <li>SVC_EVT_RECV
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ac1283360328981e85252c08af015e5ad">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ac1283360328981e85252c08af015e5ad">R_RTOS_inc.h</a>
 </li>
 <li>SVC_EVT_SEND
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a8f34323f1688ee45a1cf736c523b7bdc">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a8f34323f1688ee45a1cf736c523b7bdc">R_RTOS_inc.h</a>
 </li>
 <li>svc_EXCReturn
-: <a class="el" href="_r___r_t_o_s__system_8c.html#ab17c3cded85dfa4ec0ad55ef9a41f655">R_RTOS_system.c</a>
+: <a class="el" href="group__sysMntnc.html#gab17c3cded85dfa4ec0ad55ef9a41f655">R_RTOS_system.c</a>
 </li>
 <li>SVC_HandlerMain()
-: <a class="el" href="_r___r_t_o_s__system_8c.html#a798c305a00b6015a810b87c9d4b8a66b">R_RTOS_system.c</a>
-, <a class="el" href="_r___r_t_o_s__system_8h.html#a798c305a00b6015a810b87c9d4b8a66b">R_RTOS_system.h</a>
+: <a class="el" href="group__sysMntnc.html#ga798c305a00b6015a810b87c9d4b8a66b">R_RTOS_system.c</a>
 </li>
 <li>SVC_LP_ENTER
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aab4724679ea4bde053cbe97415ac7a7d">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aab4724679ea4bde053cbe97415ac7a7d">R_RTOS_inc.h</a>
+</li>
+<li>SVC_MNTR_INIT_MNTR
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aa687973bbc182a7a95d9274493d7eafc">R_RTOS_inc.h</a>
+</li>
+<li>SVC_MNTR_REL_ACC
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ae7cdaf7a8cd0960adc62f21da59019af">R_RTOS_inc.h</a>
+</li>
+<li>SVC_MNTR_REQ_READ_ACC
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a672e06979b37c7793af18d8346aa3620">R_RTOS_inc.h</a>
+</li>
+<li>SVC_MNTR_REQ_WRITE_ACC
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aa648f960bdb2989246134727a75d328e">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_CRT_Q
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a588614b040dd2bfc8322fd6d6d16a71d">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a588614b040dd2bfc8322fd6d6d16a71d">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_DEL_Q
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a2fd0a32530337f121c59ed886cfa0419">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a2fd0a32530337f121c59ed886cfa0419">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_MSG_PUB
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a755dbbc6809d367f1be0d65b0c0c96a2">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a755dbbc6809d367f1be0d65b0c0c96a2">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_MSG_READ
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a09ef4ca2355c734624add5e5775f328c">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a09ef4ca2355c734624add5e5775f328c">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_MSG_READALL
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a5dbcef5d9cfefb93679724e177833a14">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a5dbcef5d9cfefb93679724e177833a14">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_MSG_READALLNEW
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a2eadb2263c68806299723c10b67440e2">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a2eadb2263c68806299723c10b67440e2">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_MSG_TAKE
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1af16fd000c7af8c5b73c5d83e28f2dcb7">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1af16fd000c7af8c5b73c5d83e28f2dcb7">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_MSG_TAKEALL
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a985376ff724c3d8fd7a94c7ed36defce">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a985376ff724c3d8fd7a94c7ed36defce">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_MSG_TAKEALLNEW
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ad3d4782db33c27213ee104858cc036a8">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ad3d4782db33c27213ee104858cc036a8">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_REG_PUB
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a181c131f4864882e35c937c9c5988011">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a181c131f4864882e35c937c9c5988011">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_REG_SYS_SUB
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a60805d524e7125798c8f65e9729f75b6">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a60805d524e7125798c8f65e9729f75b6">R_RTOS_inc.h</a>
 </li>
 <li>SVC_MSGQ_REG_TSK_SUB
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aafed64c200bea0410d98fb084aa81ea4">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aafed64c200bea0410d98fb084aa81ea4">R_RTOS_inc.h</a>
+</li>
+<li>SVC_MTX_GIVE
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aefe8322869d5d12d2a066861d79b113f">R_RTOS_inc.h</a>
+</li>
+<li>SVC_MTX_TAKE
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a8f6f0355fdc32967ff557a2b5bff9973">R_RTOS_inc.h</a>
 </li>
 <li>SVC_OS_ERROR
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a27882e15fed57a6fbbd03ca4837294c0">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a27882e15fed57a6fbbd03ca4837294c0">R_RTOS_inc.h</a>
 </li>
 <li>SVC_OS_SCHEDULE
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a5339dd6352eee91a0963872a15516bc5">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a5339dd6352eee91a0963872a15516bc5">R_RTOS_inc.h</a>
 </li>
 <li>SVC_OS_START
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1affe5b2fa05c9b87e5d558f9f647a0829">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1affe5b2fa05c9b87e5d558f9f647a0829">R_RTOS_inc.h</a>
 </li>
-<li>SVC_SEM_GIVE
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1aee5cb956310038f3ddef8b194df0f3ea">R_RTOS_inc.h</a>
+<li>SVC_SEM_SIGNAL
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1abb13796f2a686ce5bd743936ac1fba9b">R_RTOS_inc.h</a>
 </li>
-<li>SVC_SEM_TAKE
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1af008e4ef765bebf4124a27350828944f">R_RTOS_inc.h</a>
+<li>SVC_SEM_WAIT
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a6351fc4c0425bff50356a3e4ba9ecae5">R_RTOS_inc.h</a>
 </li>
 <li>SVC_SYSTCK_SET
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1acbb1ddc4c36d4d1bfcfdcf2433ff072b">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1acbb1ddc4c36d4d1bfcfdcf2433ff072b">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TMR_SET
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ae24a7bec8d5ef029b453a75a6039aa7a">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ae24a7bec8d5ef029b453a75a6039aa7a">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TRC_OUPUT
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ad354da6e44a7a09d953a334c3554fc43">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ad354da6e44a7a09d953a334c3554fc43">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TSK_ACTV
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1abf7811887efb90d8c87d6b3cd73dbbdb">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1abf7811887efb90d8c87d6b3cd73dbbdb">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TSK_INIT
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ab65a7ef853c0bd0b24425c271a935619">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ab65a7ef853c0bd0b24425c271a935619">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TSK_KILL
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a20422c4d00875995823e0541878d2be0">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a20422c4d00875995823e0541878d2be0">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TSK_RESET_CRIT
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1acc5a475941e612a9cfb92deee0ec5779">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1acc5a475941e612a9cfb92deee0ec5779">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TSK_SET_CRIT
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a93bddff870608ccbdc1c6140c4554616">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1a93bddff870608ccbdc1c6140c4554616">R_RTOS_inc.h</a>
 </li>
 <li>SVC_TSK_SETPRIO
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ae1ed18b4580e865eadb5fcfad0c95e07">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1ae1ed18b4580e865eadb5fcfad0c95e07">R_RTOS_inc.h</a>
 </li>
 <li>SVCCode
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ac0eabf8eafb11fbb293d90d7efd7e644">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#a0f3217b75316f553938f940b2112a6fe">R_RTOS_inc.h</a>
 </li>
 <li>svcCode
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa40ccc42962c3ec96027163f12efbff1">R_RTOS_inc.h</a>
 </li>
 <li>SyncEle
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aa72470157b759af493760af90609835b">R_RTOS_inc.h</a>
+: <a class="el" href="group__sync.html#gac2cb205c15d93994be988d6f233c19db">R_RTOS_inc.h</a>
+</li>
+<li>SyncEle_TYPE_BinSEM
+: <a class="el" href="group__sync.html#ggab0b4494e4381dea8f29fadc80f6f4a0fa10e019f71e1232bc64734a0fbe93e11f">R_RTOS_inc.h</a>
+</li>
+<li>SyncEle_TYPE_CntSEM
+: <a class="el" href="group__sync.html#ggab0b4494e4381dea8f29fadc80f6f4a0fa98d54980f852cb9a569b8e8c9f1f85a5">R_RTOS_inc.h</a>
 </li>
 <li>SyncEle_TYPE_EVT
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ab0b4494e4381dea8f29fadc80f6f4a0fa4f153449a7d4acecf869c56298dea749">R_RTOS_inc.h</a>
+: <a class="el" href="group__sync.html#ggab0b4494e4381dea8f29fadc80f6f4a0fa4f153449a7d4acecf869c56298dea749">R_RTOS_inc.h</a>
 </li>
 <li>SyncEle_TYPE_MNTR
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ab0b4494e4381dea8f29fadc80f6f4a0fa61f603ead376f2d19bb780fabd4ebfaf">R_RTOS_inc.h</a>
+: <a class="el" href="group__sync.html#ggab0b4494e4381dea8f29fadc80f6f4a0fa61f603ead376f2d19bb780fabd4ebfaf">R_RTOS_inc.h</a>
+</li>
+<li>SyncEle_TYPE_MTX
+: <a class="el" href="group__sync.html#ggab0b4494e4381dea8f29fadc80f6f4a0fafb650520541a51d97b14de5a7b983289">R_RTOS_inc.h</a>
 </li>
 <li>SyncEle_TYPE_NOID
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ab0b4494e4381dea8f29fadc80f6f4a0fa023e9789a853730d9a747ec1c281119a">R_RTOS_inc.h</a>
-</li>
-<li>SyncEle_TYPE_SEM
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ab0b4494e4381dea8f29fadc80f6f4a0fadaa67da946ce213637302f0876b616d9">R_RTOS_inc.h</a>
+: <a class="el" href="group__sync.html#ggab0b4494e4381dea8f29fadc80f6f4a0fa023e9789a853730d9a747ec1c281119a">R_RTOS_inc.h</a>
 </li>
 <li>SyncEle_TYPE_TMR
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ab0b4494e4381dea8f29fadc80f6f4a0fa06d3806ebed19590d68b494ac439bfd2">R_RTOS_inc.h</a>
+: <a class="el" href="group__sync.html#ggab0b4494e4381dea8f29fadc80f6f4a0fa06d3806ebed19590d68b494ac439bfd2">R_RTOS_inc.h</a>
 </li>
 <li>SyncEleID
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a78b7677ae549ecbc1128697ebd49bbe6">R_RTOS_inc.h</a>
-</li>
-<li>syncEleType
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ab0b4494e4381dea8f29fadc80f6f4a0f">R_RTOS_inc.h</a>
+: <a class="el" href="group__sync.html#gab046035b77a66809dc2d6b69fb8ee1d1">R_RTOS_inc.h</a>
 </li>
 <li>SyncEleType
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a960aa5ecfedf2603bc8f11b98e55775c">R_RTOS_inc.h</a>
+: <a class="el" href="group__sync.html#ga091353f8af0a6d9288d914e73312a93f">R_RTOS_inc.h</a>
+</li>
+<li>syncEleType
+: <a class="el" href="group__sync.html#gab0b4494e4381dea8f29fadc80f6f4a0f">R_RTOS_inc.h</a>
 </li>
 <li>SYS_ID_MSK
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a3de7ee31b53560bfd15f87e64c75ec86">R_RTOS_inc.h</a>
+: <a class="el" href="group__MsgQ.html#ga3de7ee31b53560bfd15f87e64c75ec86">R_RTOS_inc.h</a>
 </li>
 <li>Sys_Prov
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a709a4f548cbcadaf26689a424485d0e3ab5fbc24dda441b79864ec05d7bc43c3f">R_RTOS_inc.h</a>
+: <a class="el" href="group__MsgQ.html#gga709a4f548cbcadaf26689a424485d0e3ab5fbc24dda441b79864ec05d7bc43c3f">R_RTOS_inc.h</a>
 </li>
 <li>sys_SysFkt
-: <a class="el" href="_r___r_t_o_s__system_8c.html#a4a63c85ee4063bc95e297952b3644e16">R_RTOS_system.c</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#a810e17155c9fcffd90ad106948729e2a">R_RTOS_SysTickTMR.c</a>
-, <a class="el" href="_r___r_t_o_s__timer_8c.html#a810e17155c9fcffd90ad106948729e2a">R_RTOS_timer.c</a>
-, <a class="el" href="_r___r_t_o_s__msg_queuing_8c.html#a3cf8131d84914388e70065404cd30777">R_RTOS_msgQueuing.c</a>
+: <a class="el" href="group__MsgQ.html#ga3cf8131d84914388e70065404cd30777">R_RTOS_msgQueuing.c</a>
+, <a class="el" href="group__StckdSWTmr.html#ga810e17155c9fcffd90ad106948729e2a">R_RTOS_timer.c</a>
+, <a class="el" href="group__SysTickTMR.html#ga810e17155c9fcffd90ad106948729e2a">R_RTOS_SysTickTMR.c</a>
+, <a class="el" href="group__sysMntnc.html#ga4a63c85ee4063bc95e297952b3644e16">R_RTOS_system.c</a>
 </li>
 <li>SysFkt
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a827136f3233fd732876ecea0f2c81253">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#ad6eb37a0cd16771168ecad806f64dbd6">R_RTOS_inc.h</a>
 </li>
 <li>SYSFKT_INVALID_SYSFKT_ID
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ae1bdf4c1eef45de6e8ee3c713b99d232">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#ae1bdf4c1eef45de6e8ee3c713b99d232">R_RTOS_inc.h</a>
 </li>
 <li>SysFktID
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aad4b2141820674d80ce50eda2b38d594">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#aa6f4407ee460534210465850acb0703c">R_RTOS_inc.h</a>
 </li>
 <li>SysMsgProv
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a37e707f87e3d7e2c8502169b0dfd28fb">R_RTOS_inc.h</a>
+: <a class="el" href="group__MsgQ.html#ga19a8e5da366607b38a7232e122f43a77">R_RTOS_inc.h</a>
 </li>
 <li>SYSTCK_AR_RES
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#afce034f59710aa935b86b72d56296456">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gafce034f59710aa935b86b72d56296456">R_RTOS_UsrDefs.h</a>
 </li>
 <li>SYSTCK_AR_RES_MSK
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ae6e5ab0f046f9c96e16e4994f3842d96">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gae6e5ab0f046f9c96e16e4994f3842d96">R_RTOS_UsrDefs.h</a>
 </li>
 <li>sysTck_getSysTicks()
-: <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h.html#ab6555aaf83f89c0ebbdd4a8e62492ee2">R_RTOS_SysTickTMR.h</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#ab6555aaf83f89c0ebbdd4a8e62492ee2">R_RTOS_SysTickTMR.c</a>
+: <a class="el" href="group__SysTickTMR.html#gab6555aaf83f89c0ebbdd4a8e62492ee2">R_RTOS_SysTickTMR.c</a>
 </li>
 <li>sysTck_GetTimeSlice()
-: <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h.html#a131cbdbac1adffcf775e89dc1757f2a3">R_RTOS_SysTickTMR.h</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#a131cbdbac1adffcf775e89dc1757f2a3">R_RTOS_SysTickTMR.c</a>
+: <a class="el" href="group__SysTickTMR.html#ga131cbdbac1adffcf775e89dc1757f2a3">R_RTOS_SysTickTMR.c</a>
 </li>
 <li>sysTck_INIT()
-: <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h.html#ad46bbbbb45c7c69e9b31f5e24f50e036">R_RTOS_SysTickTMR.h</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#ad46bbbbb45c7c69e9b31f5e24f50e036">R_RTOS_SysTickTMR.c</a>
+: <a class="el" href="group__SysTickTMR.html#gad46bbbbb45c7c69e9b31f5e24f50e036">R_RTOS_SysTickTMR.c</a>
 </li>
 <li>sysTck_resetSysTicks()
-: <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#afb8bfac9b8be0164f99f0d59e5ac70fe">R_RTOS_SysTickTMR.c</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h.html#afb8bfac9b8be0164f99f0d59e5ac70fe">R_RTOS_SysTickTMR.h</a>
+: <a class="el" href="group__SysTickTMR.html#gafb8bfac9b8be0164f99f0d59e5ac70fe">R_RTOS_SysTickTMR.c</a>
 </li>
 <li>sysTck_setSysTckTMR()
-: <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h.html#a20a15c9b272c46b8bd0fd96c09e24ed5">R_RTOS_SysTickTMR.h</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#a1d042c717b2a5c194f30997faf893aa3">R_RTOS_SysTickTMR.c</a>
+: <a class="el" href="group__SysTickTMR.html#ga1d042c717b2a5c194f30997faf893aa3">R_RTOS_SysTickTMR.c</a>
 </li>
 <li>sysTck_SetTimeSlice()
-: <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#a343d77cd9f3574d2985af06f618ad7ab">R_RTOS_SysTickTMR.c</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h.html#a343d77cd9f3574d2985af06f618ad7ab">R_RTOS_SysTickTMR.h</a>
+: <a class="el" href="group__SysTickTMR.html#ga343d77cd9f3574d2985af06f618ad7ab">R_RTOS_SysTickTMR.c</a>
+</li>
+<li>sysTck_UpdateSysTckTMRs()
+: <a class="el" href="group__SysTickTMR.html#ga4627395af05f46ca1164ee8cd388ed45">R_RTOS_SysTickTMR.c</a>
 </li>
 <li>SysTckEleType
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a82a8d04f5293623301d1bdd3b51e0079">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#ga28cfb961aed4777871bbaa8cf0adf2f4">R_RTOS_inc.h</a>
 </li>
 <li>SysTckFktCall
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a93e3138c0b6397cb6d05bb578979222e">R_RTOS_inc.h</a>
+: <a class="el" href="R__RTOS__inc_8h.html#a9cf1005870f67e217c91227c00527a17">R_RTOS_inc.h</a>
 </li>
 <li>SysTckObj_Err
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65a0658f2104b9163c44000081aaee66ddb">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gga957d8e829b22a491d88554ce6eb8bd65a0658f2104b9163c44000081aaee66ddb">R_RTOS_inc.h</a>
 </li>
 <li>SysTckObj_SysFkt
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65ac90c7a0ca9dddd9d054828da6a7bb2a4">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gga957d8e829b22a491d88554ce6eb8bd65ac90c7a0ca9dddd9d054828da6a7bb2a4">R_RTOS_inc.h</a>
 </li>
 <li>SysTckObj_SysFktBlck
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65a86b998d2cbad1dd69a254fc3d2bde5a4">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gga957d8e829b22a491d88554ce6eb8bd65a86b998d2cbad1dd69a254fc3d2bde5a4">R_RTOS_inc.h</a>
 </li>
 <li>SysTckObj_SysFktWait
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65ad37f55745ffcd92fc2ae7257a3b7af0f">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gga957d8e829b22a491d88554ce6eb8bd65ad37f55745ffcd92fc2ae7257a3b7af0f">R_RTOS_inc.h</a>
 </li>
 <li>SysTckObj_Tsk
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65a356507b5d0900d1023603ca353ec4429">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gga957d8e829b22a491d88554ce6eb8bd65a356507b5d0900d1023603ca353ec4429">R_RTOS_inc.h</a>
 </li>
 <li>SysTckObj_TskBlck
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65ac7ba534cc7f1950900863c7a835b34a1">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gga957d8e829b22a491d88554ce6eb8bd65ac7ba534cc7f1950900863c7a835b34a1">R_RTOS_inc.h</a>
 </li>
 <li>SysTckObj_TskWait
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65ae896b32c985dd6886787a0718d051bee">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#gga957d8e829b22a491d88554ce6eb8bd65ae896b32c985dd6886787a0718d051bee">R_RTOS_inc.h</a>
 </li>
 <li>sysTckObjTypeEnum
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a957d8e829b22a491d88554ce6eb8bd65">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#ga957d8e829b22a491d88554ce6eb8bd65">R_RTOS_inc.h</a>
 </li>
 <li>SysTick_Handler()
-: <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8h.html#ab5e09814056d617c521549e542639b7e">R_RTOS_SysTickTMR.h</a>
-, <a class="el" href="_r___r_t_o_s___sys_tick_t_m_r_8c.html#ab5e09814056d617c521549e542639b7e">R_RTOS_SysTickTMR.c</a>
+: <a class="el" href="group__SysTickTMR.html#gab5e09814056d617c521549e542639b7e">R_RTOS_SysTickTMR.c</a>
 </li>
 <li>SysTickEleID
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a0945f54739a76a0cbae7d7754452c41a">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#ga24f9b899d69544e7a3bd84f4177c3e70">R_RTOS_inc.h</a>
 </li>
 <li>SysTicks
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#aed568e9fa30417e4671c4932c04bdbae">R_RTOS_inc.h</a>
+: <a class="el" href="group__StckdSWTmr.html#gaf2c0c3e9b8e4a13555c5910939e26b5b">R_RTOS_inc.h</a>
 </li>
 <li>SysTickTimerType
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a08b7e789a78004997abbdbc4fa9192eca8fefce57d92e70c5c3f442afbd273622">R_RTOS_inc.h</a>
+: <a class="el" href="group__StckdSWTmr.html#gga08b7e789a78004997abbdbc4fa9192eca8fefce57d92e70c5c3f442afbd273622">R_RTOS_inc.h</a>
 </li>
 <li>SysTickTMR
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a94c31cef912ba23e4f6f198e9f126d0b">R_RTOS_inc.h</a>
+: <a class="el" href="group__SysTickTMR.html#ga9de2aef88082f8cc78cd6fb0eef1c29c">R_RTOS_inc.h</a>
 </li>
 <li>SysTime
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a32c515e836c5ba97a86cd330061d3ffe">R_RTOS_inc.h</a>
+: <a class="el" href="group__StckdSWTmr.html#ga05a2f57f75bf404cd68694a072bfd5ba">R_RTOS_inc.h</a>
 </li>
 <li>SysTimer
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#ac2231350d71cca57367f0bff64f7781b">R_RTOS_inc.h</a>
+: <a class="el" href="group__StckdSWTmr.html#gae5a2eb2b95aab325e12ca6da65baf0fe">R_RTOS_inc.h</a>
 </li>
 <li>SysTimerType
-: <a class="el" href="_r___r_t_o_s__inc_8h.html#a08b7e789a78004997abbdbc4fa9192eca26990dcfad75427e151d80bb888f7477">R_RTOS_inc.h</a>
+: <a class="el" href="group__StckdSWTmr.html#gga08b7e789a78004997abbdbc4fa9192eca26990dcfad75427e151d80bb888f7477">R_RTOS_inc.h</a>
+</li>
+<li>sysTMR
+: <a class="el" href="group__StckdSWTmr.html#gac0896857eb5851126d4fe37b2b4a4bc0">R_RTOS_timer.c</a>
 </li>
 </ul>
 </div><!-- contents -->

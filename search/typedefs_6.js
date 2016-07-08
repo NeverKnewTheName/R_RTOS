@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['memblckhead',['MemBlckHead',['../_r___r_t_o_s__mem_mngr_8h.html#a1d1f0e9486b1c1ad87279460241c1d33',1,'R_RTOS_memMngr.h']]],
-  ['memflags',['MemFlags',['../_r___r_t_o_s__mem_mngr_8h.html#af4a88481e0625b4d3f7dcaf368e5a40b',1,'R_RTOS_memMngr.h']]],
-  ['memindex',['MemIndex',['../_r___r_t_o_s__mem_mngr_8h.html#ab59fbcd8b7379f49357e6f3ee03fd623',1,'R_RTOS_memMngr.h']]],
-  ['memmngrhead',['MemMngrHead',['../_r___r_t_o_s__mem_mngr_8h.html#a060a3e62e4e65a36938eb723871b107f',1,'R_RTOS_memMngr.h']]],
-  ['mempoolid',['MemPoolID',['../_r___r_t_o_s__mem_mngr_8h.html#a45bb5f14f010053b22d49b81e127e49c',1,'R_RTOS_memMngr.h']]],
-  ['memsize',['MemSize',['../_r___r_t_o_s__inc_8h.html#aabeb94fe480b56f48c0a3b3e977d3066',1,'R_RTOS_inc.h']]],
-  ['mntrflgs',['mntrFlgs',['../_r___r_t_o_s__monitor_8h.html#a5198a88f5e96832445e51106e63994d4',1,'R_RTOS_monitor.h']]],
-  ['mqdata',['MQData',['../_r___r_t_o_s__inc_8h.html#a00a69895b8560dbe3c9b0b2cfab7cb1e',1,'R_RTOS_inc.h']]],
-  ['mqdummyelmnt',['MQDummyElmnt',['../_r___r_t_o_s__msg_queuing_8h.html#aaedbb79340e7e997cff4a1aee24bd306',1,'R_RTOS_msgQueuing.h']]],
-  ['mqprtcpnt',['MQPrtcpnt',['../_r___r_t_o_s__msg_queuing_8h.html#aa780460ade444982cad1201c194e991b',1,'R_RTOS_msgQueuing.h']]],
-  ['mqprtcpnts',['MQPrtcpnts',['../_r___r_t_o_s__msg_queuing_8h.html#a5e6e412f1ef35f159ab8e724fa54206b',1,'R_RTOS_msgQueuing.h']]],
-  ['mqprtcpnttype',['MQPrtcpntType',['../_r___r_t_o_s__msg_queuing_8h.html#a07d93f2f73c682e01dca63d04fb39f96',1,'R_RTOS_msgQueuing.h']]],
-  ['mqpub',['MQPub',['../_r___r_t_o_s__msg_queuing_8h.html#aa6faeeed69c39c8077304dc67332d1dc',1,'R_RTOS_msgQueuing.h']]],
-  ['mqpubs',['MQPubs',['../_r___r_t_o_s__msg_queuing_8h.html#a8a155a6c08611c8f827a3f5a6c06e6d3',1,'R_RTOS_msgQueuing.h']]],
-  ['mqsub',['MQSub',['../_r___r_t_o_s__msg_queuing_8h.html#a94a4fefd144b86dc7c2dcf9816e0596d',1,'R_RTOS_msgQueuing.h']]],
-  ['mqsubs',['MQSubs',['../_r___r_t_o_s__msg_queuing_8h.html#a09949052999bf7232afe99d7632af567',1,'R_RTOS_msgQueuing.h']]],
-  ['mqsyssub',['MQSysSub',['../_r___r_t_o_s__msg_queuing_8h.html#a5844039cc20015f4dc6b317ccd0b1285',1,'R_RTOS_msgQueuing.h']]],
-  ['mqtsksub',['MQTskSub',['../_r___r_t_o_s__msg_queuing_8h.html#a3844f832cae7a5b3598aa5c307744beb',1,'R_RTOS_msgQueuing.h']]],
-  ['msgcntr',['MsgCntr',['../_r___r_t_o_s__inc_8h.html#aada8678a45a6076ea2b7263d88316ec0',1,'R_RTOS_inc.h']]],
-  ['msgfktcall',['MsgFktCall',['../_r___r_t_o_s__inc_8h.html#a03a25321b28ca0dcdf4799b258206755',1,'R_RTOS_inc.h']]],
-  ['msgid',['MsgID',['../_r___r_t_o_s__inc_8h.html#a7520ddc16cc58451e2b4a0ecdfb5fd69',1,'R_RTOS_inc.h']]],
-  ['msgprovtype',['MsgProvType',['../_r___r_t_o_s__inc_8h.html#ab9e1a45255f0ed2ef9b2cc9ae1a1bbed',1,'R_RTOS_inc.h']]],
-  ['msgprvdrs',['MsgPrvdrs',['../_r___r_t_o_s__inc_8h.html#a79653450b89d6a3b3b445c7b19c2da18',1,'R_RTOS_inc.h']]],
-  ['msgq',['MsgQ',['../_r___r_t_o_s__msg_queuing_8h.html#a75abf121236559e6faf113d8ef3b656b',1,'R_RTOS_msgQueuing.h']]],
-  ['msgqmsgprov',['MsgQMsgProv',['../_r___r_t_o_s__inc_8h.html#a103d23e7aee1c9ea2b10c778f152b356',1,'R_RTOS_inc.h']]]
+  ['lifetime',['LifeTime',['../group__StckdSWTmr.html#ga90181c52a6a66acb121d6533084927b5',1,'R_RTOS_inc.h']]]
 ];

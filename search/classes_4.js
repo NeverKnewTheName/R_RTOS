@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['partid',['partID',['../unionpart_i_d.html',1,'']]]
+  ['gstruc_5fos_5fflags',['gStruc_OS_FLAGS',['../structgStruc__OS__FLAGS.html',1,'']]]
 ];

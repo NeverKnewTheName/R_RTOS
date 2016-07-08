@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['element',['element',['../structmq_dummy_elmnt.html#a1696434313e41ab14d024b0eafacebad',1,'mqDummyElmnt']]],
-  ['evtobjs',['evtObjs',['../structevt_struc.html#a2d9126a6748d7dd001dd80c7a0913bf5',1,'evtStruc']]],
-  ['evtq_5fslots',['evtQ_Slots',['../structevt_struc.html#aa557f4ad3ca4ebbbb440afce71b3a94b',1,'evtStruc']]],
-  ['evtsyncele',['EvtSyncEle',['../unionsync_ele_struc_1_1sync_ele_handle.html#a7bd0bbf46a6d98a3cba66adfe1e6a914',1,'syncEleStruc::syncEleHandle']]],
-  ['expirationtime',['expirationTime',['../structtmr_fkt_call_struc.html#a57e15c65371692927e68912f05333983',1,'tmrFktCallStruc::expirationTime()'],['../structtimer_struc.html#adf184bd4a92558c47914dbcf93b326a8',1,'timerStruc::expirationTime()']]]
+  ['element',['element',['../structmqDummyElmnt.html#a1696434313e41ab14d024b0eafacebad',1,'mqDummyElmnt']]],
+  ['evtmsk',['evtMsk',['../structsyncEleStruc_1_1syncEleHandle_1_1evtSyncEle.html#a6bd1b60be707b25f9271a86bff3f4f3d',1,'syncEleStruc::syncEleHandle::evtSyncEle']]],
+  ['evtobjs',['evtObjs',['../structevtStruc.html#a2d9126a6748d7dd001dd80c7a0913bf5',1,'evtStruc']]],
+  ['evtq_5fslots',['evtQ_Slots',['../structevtStruc.html#aa557f4ad3ca4ebbbb440afce71b3a94b',1,'evtStruc']]],
+  ['expirationtime',['expirationTime',['../structtmrFktCallStruc.html#a57e15c65371692927e68912f05333983',1,'tmrFktCallStruc::expirationTime()'],['../structtimerStruc.html#adf184bd4a92558c47914dbcf93b326a8',1,'timerStruc::expirationTime()']]],
+  ['expiretime',['expireTime',['../structsyncEleStruc_1_1syncEleHandle_1_1tmrSyncEle.html#aa3fa16056a47fb6e1356add5ffcf9033',1,'syncEleStruc::syncEleHandle::tmrSyncEle']]]
 ];

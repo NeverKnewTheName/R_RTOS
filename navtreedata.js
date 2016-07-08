@@ -2,20 +2,8 @@ var NAVTREE =
 [
   [ "R_RTOS", "index.html", [
     [ "Introduction", "index.html#intro_sec", null ],
-    [ "Tasks", "index.html#task_sec", null ],
-    [ "Creating a task", "index.html#task_creation", null ],
-    [ "Activating a task", "index.html#task_activation", null ],
-    [ "Layout of a task", "index.html#task_layout", null ],
-    [ "Task states", "index.html#task_states", [
-      [ "Description of Task states", "index.html#task_states_descrip", null ],
-      [ "Task events", "index.html#task_states_events", null ]
-    ] ],
-    [ "Services", "index.html#service_sec", [
-      [ "Service Calls", "index.html#service_service_calls", null ],
-      [ "Semaphores", "index.html#service_semaphore", null ],
-      [ "Timers", "index.html#service_timer", null ]
-    ] ],
-    [ "Insight", "index.html#insight", null ],
+    [ "Todo List", "todo.html", null ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -41,9 +29,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_r___r_t_o_s___bit_magic_8c.html",
-"_r___r_t_o_s__inc_8h.html#ad38bc4fc43ab09486657afb937cac5f7",
-"_r___r_t_o_s__task_8c.html#ad0af359f43c10d537163606eab55037b"
+"R__RTOS__BitMagic_8c.html",
+"group__MsgQ.html#ga8c0a915b44f84ada590bb95c9a7c99ea",
+"group__bestBuddyAlloc.html#ga68b69c7cf2857ba17ceaa63769baa560",
+"group__sem.html#ga8aec924d96c5625ea18ddf95aa877813",
+"group__tsk.html#ggabab56168c7f951419389eee328473725acb1528b0807789e5419b211fdb85f46b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
