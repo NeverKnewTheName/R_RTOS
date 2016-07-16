@@ -17,13 +17,8 @@
 #include "R_RTOS_inc.h"
 #include "R_RTOS_memMngr.h"
 
-#define MEM_OBJECTS_MNTR (uint8_t)0x4u
-
-#define NR_OF_MNTRS (uint8_t)0x2u
-
 
 /**
- * \typedef mntrFlgs
  * \brief 8 bit representation of the current monitor access type
  */
 typedef uint8_t mntrFlgs;

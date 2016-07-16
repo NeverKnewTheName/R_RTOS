@@ -22,7 +22,6 @@
 #define HEADERS_R_RTOS_MSGQUEUING_H_
 
 #include "R_RTOS_inc.h"
-#include "R_RTOS_monitor.h"
 
 /** \def MAX_MSGQ_SIZE
  *  \brief Maximum size of one single message queue.
@@ -172,13 +171,7 @@ typedef struct mqPrtcpnt
  */
 typedef PMQPrtcpnt MQPrtcpnts;
 
-/** \def MAX_QUEUE_DATA_ELEMENT_SIZE
- *  \brief Defines the amount of data one queue can hold.
- *  \warning CHOOSE WITH CAUTION! MEMORY IS EXPENSIVE!
- */
-#define MAX_QUEUE_DATA_ELEMENT_SIZE (uint8_t)0x10u
-
-/** \struct msgQ
+/**
  *  \brief Message queue which contains publishers, subscribers, data as well as information about the queue.
  *
  *  A message queue keeps track of its publishers and subscribers.
@@ -186,12 +179,6 @@ typedef PMQPrtcpnt MQPrtcpnts;
  *  Therefore the Queue keeps track of the buffer start and end.
  *  The start of the buffer is therefore the offset to the index of the array.
  *  The queue keeps track of the number of subscribers.
- */
-/** \typedef MsgQ
- *  \brief msgQ
- */
-/** \typedef PMsgQ
- *  \brief Pointer to a msgQ
  */
 typedef struct msgQ
 {
@@ -205,24 +192,23 @@ typedef struct msgQ
     //uint8_t msgQSize; //Dynamic message queue sizing... instead of subscrbrCnt
 } MsgQ, *PMsgQ;
 
-/** \fn RetCode msgQ_initQueue( QID msgQID);
- *  \brief Initialize the message queue with the given QID.
+/**
+ * \brief Initialize the message queue with the given QID.
  *
  *  \param [in] msgQID QID of the message queue to initialize
  *  \return Return the success of the operation.
  */
 RetCode msgQ_initQueue( QID msgQID);
 
-/** \fn RetCode msgQ_delQueue( const QID msgQID );
- *  \brief Delete the message queue with the given QID.
+/** \brief Delete the message queue with the given QID.
  *
  *  \param [in] msgQID QID of the message queue to delete.
  *  \return Return the success of the operation.
  */
 RetCode msgQ_delQueue( const QID msgQID );
 
-/** \fn RetCode msgQ_regTskPub( PTskTCB const pubTsk, const QID msgQID );
- *  \brief Register a task to the message queue related to the QID as a publisher.
+/**
+ * \brief Register a task to the message queue related to the QID as a publisher.
  *
  *  \param [in] pubTsk Task to register to the message queue
  *  \param [in] msgQID QID of the message queue the task shall be registered to
@@ -230,7 +216,7 @@ RetCode msgQ_delQueue( const QID msgQID );
  */
 RetCode msgQ_regTskPub( PTskTCB const pubTsk, const QID msgQID );
 
-/** \fn RetCode msgQ_regSysPub( const uint8_t participant, const QID msgQID );
+/**
  * \brief Register a system function to the message queue related to the QID as a publisher
  *
  *  //ToDO change participant argument to SysFktID
@@ -241,7 +227,7 @@ RetCode msgQ_regTskPub( PTskTCB const pubTsk, const QID msgQID );
  */
 RetCode msgQ_regSysPub( const uint8_t participant, const QID msgQID );
 
-/** \fn RetCode msgQ_regTskSub( PTskTCB const subTsk, const QID msgQID );
+/**
  * \brief Register a task to the message queue related to the QID as a subscriber.
  *
  * \param [in] subTsk Task to register to the message queue
@@ -252,7 +238,7 @@ RetCode msgQ_regTskSub(
                         PTskTCB const subTsk,
                         const QID msgQID);
 
-/** \fn RetCode msgQ_regSysSub( const SysFktID subSysFktID, const QID msgQID );
+/**
  *  \brief Register a system function to the message queue related to the QID as a subscriber
  *
  * \param [in] subSysFktID SysFktID of the system function to register to the message queue
@@ -261,7 +247,7 @@ RetCode msgQ_regTskSub(
  */
 RetCode msgQ_regSysSub( const SysFktID subSysFktID, const QID msgQID );
 
-/** \fn RetCode msgQ_unSub( const QID msgQID, const uint16_t id );
+/**
  *  \brief Unsubscribe the participant specified by id from the message queue related to the QID.
  *
  * \param [in] msgQID QID of the message queue to unsubscribe from
@@ -270,7 +256,7 @@ RetCode msgQ_regSysSub( const SysFktID subSysFktID, const QID msgQID );
  */
 RetCode msgQ_unSub( const QID msgQID, const uint16_t id );
 
-/** \fn RetCode msgQ_pubDataToQ( const QID msgQID, const DataSize size, const DataType type, CData const data );
+/**
  *  \brief Publish constant data of a given size and type to the message queue related to the QID.
  *
  * \param [in] msgQID QID of the message queue to publish to
@@ -286,7 +272,7 @@ RetCode msgQ_pubDataToQ(
                          const DataSize size,
                          const DataType type,
                          CData const data );
-/** \fn RetCode msgQ_readDataFrmQ( const QID msgQID, const TskID tskID, PMQData *data);
+/**
  *  \brief Read the most recent unread data from the message queue related to QID.
  *
  * \param [in] msgQID QID of the message queue to read from
@@ -301,7 +287,7 @@ RetCode msgQ_readDataFrmQ(
                            const TskID tskID,
                            PMQData * data );
 
-/** \fn RetCode msgQ_takeDataFrmQ( const QID msgQID, const TskID tskID, PMQData * data );
+/**
  * \warning DO NOT USE!
  *
  * \param [in] msgQID QID of the message queue to take the data from

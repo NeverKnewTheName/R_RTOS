@@ -88,6 +88,12 @@ static void BREAK( void )
 //
 //}
 
+/**
+ * \brief Sets the size of a memory block
+ * @param[in] blckToSetSizeOf Memory block to set the size of
+ * @param[in] newSize Size to set
+ * @return MemSize Returns newSize
+ */
 static MemSize setBlckMemSize(
                                MemMngrHead * const blckToSetSizeOf,
                                MemSize newSize )
@@ -116,6 +122,12 @@ static MemSize setBlckMemSize(
 //
 //}
 
+/**
+ * \brief Set the previous block size property of blckToSetSizeOfPrvBlck
+ * @param[in] blckToSetSizeOfPrvBlck Block whose previous block siez property shall be set
+ * @param[in] newSize Size to set
+ * @return MemSize newSize
+ */
 static MemSize setPRVBlckMemSize(
                                   MemMngrHead * const blckToSetSizeOfPrvBlck,
                                   MemSize newSize )
@@ -267,6 +279,11 @@ static MemMngrHead *getBuddyBlck( MemMngrHead * const curBlck )
                              + (uint32_t) buddyOffset );
 }
 
+/**
+ * \brief Get the index in the heap array of the given memory block
+ * @param[in] memBlck Memory block to retrieve the index of
+ * @return MemIndex Index of the given memory block in the heap array
+ */
 static MemIndex getIndex( MemMngrHead * const memBlck )
 {
     if ( ( memBlck < &__HeapBase ) || ( memBlck > &__HeapLimit ) )

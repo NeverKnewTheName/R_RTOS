@@ -78,7 +78,7 @@ static RetCode mtx_GetNextTskMtxQ( PMtx pMtx )
     {
         PTskTCB nxtTsk = &tsk_AR[pMtx->mtxQStrtTskID];
         pMtx->mtxQStrtTskID = nxtTsk->nxtTsk;
-        pMtx->svdTskPrio = nxtTsk->tskPrio.visibleTskPrio;
+        //pMtx->svdTskPrio = nxtTsk->tskPrio.visibleTskPrio;
         tsk_ClrEvt( nxtTsk, nxtTsk->tskSync );
         memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_MTX );    // FREE CURRENT TskSyncEle
         nxtTsk->tskSync = (PSyncEle) NULL;
@@ -94,7 +94,6 @@ RetCode mtx_InitMtxs( void )
     {
         ar_Mtxs[i].mtxOccTskID = TSK_ID_NO_TSK;
         ar_Mtxs[i].mtxQStrtTskID = TSK_ID_NO_TSK;
-        ar_Mtxs[i].svdTskPrio = TSK_PRIO_ERROR;
     }
     memMngr_CreateMemPool( sizeof(SyncEle), MEM_OBJECTS_MTX, &memPoolID_MTX );
     return RET_OK;
@@ -149,7 +148,6 @@ RetCode mtx_TakeMtx(
     else
     {
         pMtx->mtxOccTskID = tsk->tskID; // current task is now the occupying task
-        pMtx->svdTskPrio = tsk->tskPrio.visibleTskPrio; // save the task priority for the priority inversion protocol
         // If the mutex is free, there is also no waiting queue; to make sure, set the Q start to TSK_ID_NO_TSK; COULD BE OPTIMIZED OUT
         pMtx->mtxQStrtTskID = TSK_ID_NO_TSK;
         return RET_OK;
@@ -168,9 +166,9 @@ RetCode mtx_GiveMtx( PTskTCB const tsk, const MtxNr mtxNr )
     if ( pMtx->mtxOccTskID != tsk->tskID )    // ONLY THE OCCUPYING TASK CAN GIVE THE MUTEX
         return RET_NOK;
 
-    if ( tsk->tskPrio.visibleTskPrio != pMtx->svdTskPrio )
+    if ( tsk->tskPrio.visibleTskPrio != tsk->tskPrio.actualTskPrio )
     {
-        tsk_ChngePrio( tsk, pMtx->svdTskPrio );
+        tsk_ChngePrio( tsk, tsk->tskPrio.actualTskPrio );
     }
 
     return mtx_GetNextTskMtxQ( pMtx );

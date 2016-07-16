@@ -15,11 +15,6 @@
 #include "R_RTOS_inc.h"
 
 /**
- * \brief Number of #SyncEle that can be allocated by the Timer mechanism
- */
-#define MEM_OBJECTS_TMR (uint8_t)0x4u
-
-/**
  * \brief Value for an invalid LifeTime
  */
 #define TMR_INVALID_TIME (LifeTime)0xFFFFFFFFu
