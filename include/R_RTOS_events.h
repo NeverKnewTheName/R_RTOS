@@ -15,10 +15,6 @@
 
 #include "R_RTOS_inc.h"
 
-/** \def MEM_OBJECTS_EVT
- *  \brief Number of objects to allocate for the evt memory pool.
- */
-#define MEM_OBJECTS_EVT (uint8_t)0x4u
 
 /** \struct evtQueue
  *  \brief A simple singly linked list serving as one event queue.

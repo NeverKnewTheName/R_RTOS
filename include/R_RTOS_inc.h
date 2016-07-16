@@ -16,6 +16,7 @@
  */
 
 #include <stdint.h>
+#include "R_RTOS_UsrDefs.h"
 
 /*
  * ##################################################
@@ -45,25 +46,15 @@
  */
 #define ABS(x)  (((x)<0) ? (-1*(x)) : (x))
 
-/* END HELPER */
-
-//SYSCTRL
-/** \addtogroup SysTickTMR
- * \{
- */
 /**
- *  \brief Period of time between two SysTicks in ms.
+ *  \brief Implementation of the OFFSETOF makro to retrieve the offset of a structure member
  */
-#define TIME_SLICE_AMOUNT                  (uint16_t)500u  // Time slice in ms
-/** \} */
+#define OFFSETOF(type, field)    ((uint8_t) &(((type *) 0)->field))
+/* END HELPER */
 
 /** \addtogroup tsk
  * \{
  */
-/**
- *  \brief Number of tasks in the system.
- */
-#define NR_OF_TSKS          ((uint8_t)0x4u) // max tasks
 
 /**
  *  \brief Maximum number of tasks in the system.
@@ -101,12 +92,6 @@
  * \{
  */
 /**
- *  \brief Number of message queues in the system.
- *  \note user defined.
- */
-#define AMOUNT_OF_MSGQ  (QID)(0x2u)
-
-/**
  *  \brief Position of the user/task id in PartiID.
  */
 #define MSGQ_TSK_ID_POS (uint8_t)0x0u
@@ -129,49 +114,15 @@
 /* END MESSAGE QUEUE */
 
 /* SEMAPHORES */
-/** \addtogroup sem
- * \{
- */
-/**
- *  \brief  Defines the maximum amount of different semaphores in the system.
- */
-#define     AMOUNT_OF_SEMS  (uint8_t)0x2u
-/**\}*/
+
 /* END SEMAPHORES */
 
 /* EVENTS */
-/** \addtogroup evt
- * \{
- */
-/**
- *  \brief  Defines the maximum amount of different events in the system.
- */
-#define     AMOUNT_OF_EVTS  (uint8_t)0x4u
 
-/**
- *  \brief  Defines the maximum size of the event queues.
- *
- *  \note Multiples of four are recommended.
- */
-#define     EVT_QUEUE_SIZE  (uint8_t)0x4u
-/** \}*/
 /* END EVENTS */
 
 /* SYSTICKTMR */
-/** \addtogroup SysTickTMR
- * \{
- */
-/**
- *  \brief Number of slots for the system tick slot array.
- *  \note The more slots the more memory will be need,
- *  but therefore the distribution of elements to the slots will be better.
- */
-#define SYSTCK_AR_RES (uint8_t)0x8u
-/**
- *  \brief Mask used to keep a counter within the range of SYSTCK_AR_RES
- */
-#define SYSTCK_AR_RES_MSK (uint8_t)(SYSTCK_AR_RES - (uint8_t)0x1u)
-/**\}*/
+
 /* END SYSTICKTMR */
 
 /* TIMER */
@@ -197,13 +148,7 @@
  */
 #define TSK_ID_NO_TSK                       TSK_ID_IDLE//((TskID)0xfu)
 
-/**
- *  \brief Number of available priority levels in the system.
- *
- *  \note User defined.
- *  \note Maximum 256, minimum 2
- */
-#define TSK_PRIO_LEVELS_NR (TskPrioLvl)0xFu
+
 /**\}*/
 /* END TASK */
 
@@ -237,10 +182,6 @@
  * ##################################################
  */
 /* HELPER */
-/**
- *  \brief Implementation of the OFFSETOF makro to retrieve the offset of a structure member
- */
-#define OFFSETOF(type, field)    ((uint8_t) &(((type *) 0)->field))
 /* END HELPER */
 /* STACK */
 /* END STACK */
@@ -459,7 +400,7 @@ typedef uint8_t DataSize;    // Size of Data
 typedef uint32_t *Data;         // pointer to Data
 
 /**
- * \typedef QPrio
+ *
  * \brief Priority of a message queue.
  */
 typedef uint8_t QPrio;      // priority of a message queue
@@ -474,7 +415,7 @@ typedef void (*CallBackOnDataRecv)( Data );
  */
 typedef uint8_t QID;        // identifier for a message queue
 
-/** \typedef MsgCntr
+/**
  *  \brief Counter for messages.
  */
 typedef uint8_t MsgCntr;
@@ -1028,11 +969,12 @@ typedef enum msgProvTypeEnum
  */
 typedef union msgPrvdrsUnion
 {
-    MsgQMsgProv msgQMsgProv;    //!< Message Queue message provider
-    TskMsgProv tskMsgProv;    //!< Task message provider
-    SysMsgProv sysMsgProv;     //!< System message provider
-    DummyMsgProv dummyMsgProv;    //!< Dummy message provider
+    /*2*/MsgQMsgProv msgQMsgProv;    //!< Message Queue message provider
+    /*2*/TskMsgProv tskMsgProv;    //!< Task message provider
+    /*2*/SysMsgProv sysMsgProv;     //!< System message provider
+    /*2*/DummyMsgProv dummyMsgProv;    //!< Dummy message provider
 } MsgPrvdrs, *PMsgPrvdrs;
+/**\}*/
 
 /** \addtogroup tsk
  * \{
@@ -1046,14 +988,11 @@ typedef union msgPrvdrsUnion
  */
 typedef struct tskMailBox
 {
-    volatile struct tskMailBox *nxtTskMB;    //!< pointer to next TskMB
-//    volatile uint16_t msgMntnr;    //!< flags to keep track of which messages have been read and which haven't been read yet
-//    MsgCntr msgsNew;          //!< amount of new messages since the subscription
+    /*4*/volatile struct tskMailBox *nxtTskMB;    //!< pointer to next TskMB
+    /*2*/MsgPrvdrs msgProv;          //!< specific message provider
+    /*1*/MsgProvType msgProvType;    //!< type of the provider linked with this TskMB
     uint8_t dummyByte;
-    MsgProvType msgProvType;    //!< type of the provider linked with this TskMB
-    MsgPrvdrs msgProv;    //!< specific message provider
 } TskMB, *PTskMB;
-/**\}*/
 /**\}*/
 /* END MESSAGE QUEUE */
 /* FKT */
@@ -1185,8 +1124,6 @@ typedef struct mtxStruc
 {
     TskID mtxQStrtTskID;    //!< TskID of the first task in the waiting queue
     TskID mtxOccTskID;    //!< TskID of the task currently occupying the Mutex
-    TskPrio svdTskPrio;     //!< Saved task priority of the occupying task
-    uint8_t isOcc;    //ToDO Do we really need this? might as well check mtxOccTskID for valid task ID...
 } Mtx, *PMtx;
 /**\}*/
 /* END MUTEXES */

@@ -42,10 +42,6 @@
  */
 typedef uint16_t BlckSize;
 
-/** \def BLCK_LIMIT
- *  \brief Biggest block of memory allocateable.
- */
-#define BLCK_LIMIT      ((BlckSize)0x800u)//2048 Byte
 
 /** \def BIGGEST_BLCK
  *  \brief Size of the biggest possible buddy.
@@ -80,7 +76,7 @@ typedef uint16_t BlckSize;
 /** \def SMALLER_BLCK_DIVISOR
  *  \brief Bit shifts needed for a division through SMALLEST_BLCK.
  *
- *  \note Actually log2(SMALLEST_BLCK).
+ *  \note log2(SMALLEST_BLCK).
  */
 #define SMALLER_BLCK_DIVISOR (MemIndex)(0x3u)
 
@@ -481,7 +477,7 @@ typedef struct memBlckhead
 
 // END MEMORY_MANAGEMENT //
 
-/** \fn initMEM( void );
+/**
  *  \brief Initialize the memory manager.
  *
  * \return Return the success of the operation.
@@ -490,14 +486,14 @@ typedef struct memBlckhead
  */
 RetCode initMEM( void );
 
-/** \fn rMalloc( MemSize desiredSize );
+/**
  *  \brief Allocate a block of memory satisfying the desiredSize property.
  *
  *  \param desiredSize [in] The size of the memory block needed.
  */
 void * rMalloc( MemSize desiredSize );
 
-/** \fn rCalloc( MemSize desiredSize );
+/**
  *  \warning DO NOT USE, UNFINISHED
  *  \param desiredSize
  *
@@ -506,7 +502,7 @@ void * rMalloc( MemSize desiredSize );
  */
 void * rCalloc( MemSize desiredSize );
 
-/** \fn rRealloc( void * ptrToExistingMem, MemSize desiredSize );
+/**
  *  \brief Allocate a block of memory satisfying the desiredSize property.
  *
  *  \param ptrToExistingMem [in, out] Pointer to the already allocated memory.
@@ -516,32 +512,40 @@ void * rCalloc( MemSize desiredSize );
  */
 void * rRealloc( void * ptrToExistingMem, MemSize desiredSize );
 
-/** \fn rFree( void *pToBeFreed );
+/**
  *  \brief The provided block of memory will be added to the memory block cache.
  *  \param pToBeFreed [in] Pointer to the block of memory to free.
  */
 void rFree( void *pToBeFreed );
 
-/** \fn rFullyFree( MemMngrHead *blckToFullyFree );
+/**
  *  \brief Free a block of memory previously allocated with either rMalloc, rCalloc or rRealloc.
  *
- *  \param blckToFullyFree [in] Pointer to the block of memory to free and put back onto the free memory blocks list.
+ *  \param blckToFullyFree [in] Pointer to the block of memory (#MemMngrHead) to free and put back onto the free memory blocks list.
  */
 void rFullyFree( MemMngrHead * blckToFullyFree );
 
-/** \fn memMngr_CreateMemPool( const MemSize sizeOfElements, const uint8_t elements, MemPoolID *const memPoolID );
+/**
+ * \brief Creates a memory pool with the given #MemPoolID
  *
  * \param [in] sizeOfElements Size of one element
- * \param [in] elements Numer of elements to allocate the pool for
- * \param [out] memPoolID Pointer to a MemPoolID that receives the ID of the created memory pool
+ * \param [in] elements Number of elements to allocate the pool for
+ * \param [out] memPoolID Pointer to a #MemPoolID that receives the ID of the created memory pool
+ *
  * \return Returns the success of the operation
+ *
+ * This function allocates elements number of memory block with the size sizeOfElements and assigns its #MemPoolID to memPoolID.
+ *
+ * \warning This function must have been called before the memory pool can be used!
  */
 RetCode memMngr_CreateMemPool(
                                const MemSize sizeOfElements,
                                const uint8_t elements,
                                MemPoolID * const memPoolID );
 
-/** \fn memMngr_DeleteMemPool( const MemPoolID memPoolID );
+/**
+ *  \todo Implement!
+ *  \warning DO NOT USE!
  *  \brief Delete a previously created memory pool linked to the provided MemPoolID.
  *
  *  \param [in] memPoolID Memory pool ID of the memory pool to be deleted.
@@ -549,20 +553,28 @@ RetCode memMngr_CreateMemPool(
  */
 RetCode memMngr_DeleteMemPool( const MemPoolID memPoolID );
 
-/** \fn memMngr_MemPoolMalloc( void ** ptrToMem, const MemPoolID memPoolID );
+/**
  *  \brief Allocate an element from the memory pool specified by the provided MemPoolID.
  *
  *  \param [out] ptrToMem Pointer to pointer that will receive the address of the allocated block
- *  \param [in] memPoolID ID of the memory pool to allocate the block of memory from
+ *  \param [in] memPoolID #MemPoolID of the memory pool to allocate the block of memory from
+ *
  *  \return Return the success of the operation
+ *
+ *  \warning The memory pool must have been initialized upfront!
  */
 RetCode memMngr_MemPoolMalloc( void ** ptrToMem, const MemPoolID memPoolID );
 
-/** \fn memMngr_MemPoolFree( void * ptrToMem, const MemPoolID memPoolID );
+/**
+ *  \brief Free a previously allocated block of memory from a memory pool and put it back into the memory pool.
  *
  *  \param [in] ptrToMem Pointer to the block of memory to free
- *  \param [in] memPoolID ID of the memory pool the block of memory was allocated from
+ *  \param [in] memPoolID #MemPoolID of the memory pool the block of memory was allocated from
+ *
  *  \return Return the success of the operation
+ *
+ *  \warning The block must have been allocated from the memory pool corresponding to the given MemPoolID!
+ *  \note The block is prepended to the memory pool's available block list.
  */
 RetCode memMngr_MemPoolFree( void * ptrToMem, const MemPoolID memPoolID );
 

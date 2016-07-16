@@ -37,10 +37,6 @@
 #ifndef INCLUDE_R_RTOS_MTX_H_
 #define INCLUDE_R_RTOS_MTX_H_
 
-#define MEM_OBJECTS_MTX (uint8_t)0x4u
-
-#define AMOUNT_OF_MTXS (uint8_t)0x2u
-
 #include "R_RTOS_inc.h"
 
 /** \fn RetCode mtx_InitMtxs( void );
