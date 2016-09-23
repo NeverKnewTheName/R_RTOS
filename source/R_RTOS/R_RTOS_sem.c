@@ -14,7 +14,6 @@
 #include "R_RTOS_BitMagic.h"
 #include "R_RTOS_memMngr.h"
 
-//extern void os_SCHEDULE( void );
 extern TskTCB tsk_AR[NR_OF_TSKS];
 
 /** \var ar_Sems
@@ -25,7 +24,7 @@ static Sem ar_Sems[AMOUNT_OF_SEMS ];
 /** \var ar_SemsWaitQueue
  *  \brief Contains the \ref TskID of the start of the respective semaphore's wait queue.
  */
-static volatile TskID ar_SemsWaitQueue[AMOUNT_OF_SEMS ];
+static volatile TskID ar_SemsWaitQueue[AMOUNT_OF_SEMS];
 
 /** \var memPoolID_SEM
  *  \brief ID of the memory pool memory allocation request of semaphores are served from.
@@ -34,15 +33,6 @@ static volatile MemPoolID memPoolID_SEM;
 
 RetCode sem_InitSems( void )
 {
-    uint8_t i = (uint8_t) 0x0u;
-    for ( ; i < AMOUNT_OF_SEMS ; ++i )
-    {
-        //ToDO
-//        ar_Sems[i].semOccTskID = TSK_ID_NO_TSK;
-//        ar_Sems[i].semQTskID = TSK_ID_NO_TSK;
-//        ar_Sems[i].svdPrio = TSK_PRIO_ERROR;
-//        ar_Sems[i].takenCntr = (SemCntr) 0x0u;
-    }
     memMngr_CreateMemPool( sizeof(SyncEle), MEM_OBJECTS_SEM, &memPoolID_SEM );
     return RET_OK;
 }
@@ -84,6 +74,7 @@ static RetCode sem_InsertTskSemQ( PSem const pSem, const SemNr semNr, PTskTCB co
         {
             if ( curTsk->nxtTsk == TSK_ID_NO_TSK )
             {
+                //End of list reached... append task!
                 break;
             }
             curTsk = &tsk_AR[curTsk->nxtTsk];    // advance in the list
@@ -115,12 +106,12 @@ static TskID sem_GetNextTskSemQ( PSem const pSem, const SemNr semNr )
     }
     //\DEBUG
 
-    if ( ar_SemsWaitQueue[semNr] != TSK_ID_NO_TSK )
+    if ( ar_SemsWaitQueue[semNr] != TSK_ID_NO_TSK ) // If there is a task in the queue -> IF NOT: ERROR!
     {
         PTskTCB const nxtTsk = &tsk_AR[ar_SemsWaitQueue[semNr]];
-        ar_SemsWaitQueue[semNr] = nxtTsk->nxtTsk;
+        ar_SemsWaitQueue[semNr] = nxtTsk->nxtTsk; // advance in list -- end is NULL, therefore no problem here!
         tsk_ClrEvt( nxtTsk, nxtTsk->tskSync );
-        memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_SEM );    // FREE CURRENT TskSyncEle
+        memMngr_MemPoolFree( nxtTsk->tskSync, memPoolID_SEM );    // FREE CURRENT TskSyncEle -- return to MemPool
         nxtTsk->tskSync = (PSyncEle) NULL;
         return nxtTsk->tskID;
     }
@@ -134,14 +125,7 @@ RetCode sem_initBinSem( const SemNr semNr )
 
     sem->semSignal.semBinSig = (uint8_t) 1u;
     sem->maxCntrVal = (uint8_t) 1u;
-    uint8_t nrTskRefBytes = SEM_NR_OF_TSK_REF_BYTES;
-    while ( nrTskRefBytes-- )    // search through semaphore's task reference bytes
-    {
-        sem->tskReferences[nrTskRefBytes] = (uint8_t) 0x0u;    // Clear task references
-    }
-
     sem->semType = SemBin;
-    sem->prioInheritPrio = 0x0u;
     ar_SemsWaitQueue[semNr] = TSK_ID_NO_TSK;
     return RET_OK;
 }
@@ -152,47 +136,8 @@ RetCode sem_initCntSem( const SemNr semNr, const SemCntr ressourceCntr )
 
     sem->semSignal.semCntrSig = ressourceCntr;
     sem->maxCntrVal = ressourceCntr;
-    uint8_t nrTskRefBytes = SEM_NR_OF_TSK_REF_BYTES;
-    while ( nrTskRefBytes-- )    // search through semaphore's task reference bytes
-    {
-        sem->tskReferences[nrTskRefBytes] = (uint8_t) 0x0u;    // Clear task references
-    }
     sem->semType = SemCnt;
-    sem->prioInheritPrio = 0x0u;
     ar_SemsWaitQueue[semNr] = TSK_ID_NO_TSK;
-    return RET_OK;
-}
-
-static RetCode sem_UpdateTskReferencedPriorities(
-                                                  PSem const sem,
-                                                  const TskPrio newPriority )
-{
-    sem->prioInheritPrio = newPriority;
-    uint8_t nrTskRefBytes = SEM_NR_OF_TSK_REF_BYTES;
-    while ( nrTskRefBytes-- )    // search through semaphore's task reference bytes
-    {
-        uint8_t curTskRefByte = sem->tskReferences[nrTskRefBytes];
-        while ( curTskRefByte )    // search through set flags in current semaphore's task reference byte
-        {
-            volatile uint8_t curTskRef = (uint8_t) BITM_RMB_ISOLT_ON(
-                    (uint32_t) curTskRefByte );
-            curTskRefByte &= (uint8_t)(~curTskRef);
-            TskID curTskID = (TskID)bitM_bitPos( (uint32_t) curTskRef );
-            if ( tsk_AR[curTskID].tskPrio.visibleTskPrio < newPriority )
-            {
-                /* change task priority only if it has lower priority than the task at hand
-                 *
-                 * This makes sure, that tasks that do not wait on the semaphore are only
-                 * adjusted of they have lower priority than the blocked task
-                 * Thus the priority scheme is kept for non-blocked tasks of higher priority
-                 */
-                tsk_ChngePrio( &tsk_AR[curTskID], newPriority );
-                //                        tsk_AR[curTskID].tskPrio.visibleTskPrio =
-                //                                tsk->tskPrio.visibleTskPrio;
-            }
-        }
-    }
-
     return RET_OK;
 }
 
@@ -239,18 +184,7 @@ RetCode sem_wait(
     if ( semOcc )
     {
         // Semaphore is currently occupied, thus put task in wait queue
-
-        if ( tsk->tskPrio.visibleTskPrio > sem->prioInheritPrio )
-        {
-            //sem->prioInheritPrio = tsk->tskPrio.visibleTskPrio;
-            // Task's priority supersedes the current highest priority of the semaphore's tasks
-            if ( sem_UpdateTskReferencedPriorities(
-                    sem, tsk->tskPrio.visibleTskPrio )
-                 != RET_OK )
-                return RET_NOK;    //ToDO ERROR EVALUATION
-        }
-        // queue task into wait queue
-
+        //DEBUG
         if ( (uint32_t) tsk->tskSync != ( uint32_t ) NULL )
             return RET_NOK;
         //\DEBUG
@@ -270,44 +204,13 @@ RetCode sem_wait(
         semSync->syncEleType =
                 ( sem->semType == SemCnt ) ?
                         SyncEle_TYPE_CntSEM : SyncEle_TYPE_BinSEM;
-        //semSync->SyncEleHandle.MtxSyncEle.dummy1
         tsk->tskSync = semSync;
         tsk_SetEvt( tsk, semSync );
 
         sem_InsertTskSemQ( sem, semNr, tsk );
     }
-    else
-    {
-        //ToDO... set initial prio inherit prio of sem
-        if(!sem->prioInheritPrio)
-            sem->prioInheritPrio = tsk->tskPrio.visibleTskPrio;
-    }
-
-//        return RET_NOK;
-
-    // mark task as using the semaphore in the semaphore reference bit flags
-    sem->tskReferences[SEM_GET_REF_BYTE_NR( tsk->tskID )] |= (uint8_t)(0x1u << ( tsk->tskID & 0x3u ));
 
     return RET_OK;
-}
-RetCode sem_Tsksignal( const SemNr semNr, PTskTCB const tsk )
-{
-    // Priority inheritance protocol... reevaluate task priority for promotion
-    if ( tsk->tskPrio.actualTskPrio == ar_Sems[semNr].prioInheritPrio )
-    {
-        // Task was leading the priority inheritance
-        // First task in the waiting queue now has highest priority of waiting tasks
-    }
-    if ( tsk->tskPrio.actualTskPrio != tsk->tskPrio.visibleTskPrio )
-    {
-        //Priority has been changed -> change back
-        tsk_ChngePrio( tsk, tsk->tskPrio.actualTskPrio );
-        //tsk->tskPrio.visibleTskPrio = tsk->tskPrio.actualTskPrio;
-    }
-    // Remove reference of task
-    ar_Sems[semNr].tskReferences[SEM_GET_REF_BYTE_NR( tsk->tskID )] &= (uint8_t)(~( 0x1u
-            << ( tsk->tskID & 0x3u ) ) );
-    return sem_signal( semNr );
 }
 
 RetCode sem_signal( const SemNr semNr )
@@ -352,16 +255,6 @@ RetCode sem_signal( const SemNr semNr )
         {
             return RET_NOK;
         }
-        PTskTCB const tsk = &tsk_AR[nxtTskID];
-
-        // task was setting the prio inherit prio
-        // no longer needed -> next higher prio task sets the new prio inherit prio
-        if ( sem_UpdateTskReferencedPriorities(
-                sem, tsk_AR[nxtTskID].tskPrio.actualTskPrio )
-             != RET_OK )
-            return RET_NOK;    //ToDO ERROR EVALUATION
-    } else {
-        sem->prioInheritPrio = 0x0u;
     }
     return RET_OK;
 }

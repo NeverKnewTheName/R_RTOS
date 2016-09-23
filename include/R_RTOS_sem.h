@@ -106,24 +106,6 @@ RetCode sem_initCntSem( const SemNr semNr, const SemCntr ressourceCntr );
 RetCode sem_wait(const SemNr semNr, PTskTCB const tsk, const SysTicks maxSysTicksToWait);
 
 /**
- * \fn RetCode sem_Tsksignal( const SemNr semNr, PTskTCB const tsk )
- * \brief Signal the Semaphore from Task context. See \ref sem_signal
- *
- * \param[in] semNr Number of the Semaphore
- * \param[in] tsk Task which signals the Semaphore
- *
- * \return RetCode
- * \returns RET_OK
- * \returns RET_NOK
- *
- * \note Tasks should use this function to signal a Semaphore!
- * \note Can be called for binary as well as counting Semaphores
- * \warning The specified Task has to have made a wait request to the specified Semaphore beforehand!
- *
- */
-RetCode sem_Tsksignal( const SemNr semNr, PTskTCB const tsk );
-
-/**
  * \fn RetCode sem_signal(const SemNr semNr)
  * \brief Signal the Semaphore to make its resources available again
  *

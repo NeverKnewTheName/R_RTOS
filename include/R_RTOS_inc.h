@@ -1073,7 +1073,7 @@ typedef struct sysFkt
  */
 
 /**
- * \brief Enumeartion of Semaphore types
+ * \brief Enumeration of Semaphore types
  */
 typedef enum semTypeEnum
 {
@@ -1084,7 +1084,7 @@ typedef enum semTypeEnum
 /**
  * \brief Bytes needed to create a mask for all available tasks.
  */
-#define SEM_NR_OF_TSK_REF_BYTES (uint8_t)((NR_OF_TSKS >> 3) + 1) // NR_OF_TSKS / 8 + 1 gives the number of bits needed for all tasks
+//#define SEM_NR_OF_TSK_REF_BYTES (uint8_t)((NR_OF_TSKS >> 3) + 1) // NR_OF_TSKS / 8 + 1 gives the number of bits needed for all tasks
 
 /**
  *  \brief Struct for semaphore maintenance.
@@ -1093,12 +1093,12 @@ typedef enum semTypeEnum
  */
 typedef struct semStruc
 {
-    uint8_t tskReferences[SEM_NR_OF_TSK_REF_BYTES]; //!< Mask for all tasks referenced by the semaphore
+    //uint8_t tskReferences[SEM_NR_OF_TSK_REF_BYTES]; //!< Mask for all tasks referenced by the semaphore
     //TskID semQStrtTskID;        //!< TskID of the first task in the waiting queue
-    TskPrio prioInheritPrio;    //!< Initial priority of the task currently occupying the semaphore
+    //TskPrio prioInheritPrio;    //!< Initial priority of the task currently occupying the semaphore
     SemType semType;    //!< Indicates the type of semaphore (binary or counting)
     SemCntr maxCntrVal; //!< Maximum Counter value assigned at the initialization of the Semaphore
-    /**
+   /**
      * \union semStruc::semSignalUnion
      * \brief Signaling counter for each type of semaphore
      */

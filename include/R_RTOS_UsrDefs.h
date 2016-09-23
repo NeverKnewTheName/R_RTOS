@@ -30,7 +30,7 @@
  *  \brief Number of tasks in the system.
  *  \note User Defined
  */
-#define NR_OF_TSKS          ((uint8_t)0x4u) // max tasks
+#define NR_OF_TSKS          ((uint8_t)0x5u) // max tasks
 
 /**
  *  \brief Number of available priority levels in the system.

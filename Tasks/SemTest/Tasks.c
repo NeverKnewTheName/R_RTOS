@@ -38,7 +38,7 @@ void tsk1( void )
 
     SET_PIN_HIGH(PIN_LED2);//##
     //SET_PIN_LOW( PIN_LED3 );
-    svc_sem_signal( (SemNr) 0x0u, &tsk_AR[1] );
+    svc_sem_signal( (SemNr) 0x0u);
 
     svc_tsk_KillTsk( &tsk_AR[1] );
 }
@@ -58,9 +58,9 @@ void tsk2( void )
 
     svc_tmr_SetTimer( (WaitTime) 200u, &tsk_AR[2] );
 
-    svc_sem_signal( (SemNr) 0x0u, &tsk_AR[2] );
+    svc_sem_signal( (SemNr) 0x0u );
 
-    svc_sem_signal( (SemNr) 0x1u, &tsk_AR[2] );
+    svc_sem_signal( (SemNr) 0x1u );
 
     svc_tsk_KillTsk( &tsk_AR[2] );
 }
@@ -72,7 +72,7 @@ void tsk3( void )
     //SET_PIN_HIGH( PIN_LED3 );
     //SET_PIN_HIGH( PIN_LED2 );
 
-    svc_sem_signal( (SemNr) 0x0u, &tsk_AR[3] );
+    svc_sem_signal( (SemNr) 0x0u );
 
     svc_tsk_KillTsk( &tsk_AR[3] );
 }
@@ -83,7 +83,7 @@ void tsk4( void )
     SET_PIN_HIGH( PIN_LED3 );
 
     SET_PIN_LOW(PIN_LED1);
-    svc_sem_signal( (SemNr) 0x0u, &tsk_AR[4] );
+    svc_sem_signal( (SemNr) 0x0u );
     SET_PIN_HIGH(PIN_LED1);
 
     svc_tsk_KillTsk( &tsk_AR[4] );
@@ -92,7 +92,7 @@ void tsk4( void )
 void actvTsk1( void )
 {
     tsk_tskInit( (TskID) 0x1u, &tsk1, &tsk_EndTheTask, MY_STACK_SIZE );
-    tsk_ChngePrio(&tsk_AR[0x1u],TSK_PRIO_ABOVMED);
+    tsk_ChngePrio(&tsk_AR[0x1u],TSK_PRIO_MED);
     tsk_ActvTsk( &tsk_AR[(TskID) 0x1u] );
     os_SCHEDULE();
 }

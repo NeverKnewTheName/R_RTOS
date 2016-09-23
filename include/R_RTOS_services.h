@@ -132,7 +132,7 @@ __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_ActvTsk(
 }
 
 __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_tsk_KillTsk(
-                                                                         TskTCB* const tsk )
+                                                                         PTskTCB const tsk )
 {
     INPUT_ARG_1( tsk );
     SVC( SVC_TSK_KILL );
@@ -200,11 +200,9 @@ __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_wait(
 }
 
 __attribute__( ( always_inline ))  __STATIC_INLINE RetCode svc_sem_signal(
-                                                                         const SemNr semNr,
-                                                                         PTskTCB const tsk )
+                                                                         const SemNr semNr )
 {
     INPUT_ARG_1( semNr );
-    INPUT_ARG_2( tsk );
     SVC( SVC_SEM_SIGNAL );
     RetCode returnVal;
     OUTPUT_ARG( returnVal );

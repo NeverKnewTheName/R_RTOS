@@ -272,8 +272,8 @@ RetCode SVC_HandlerMain( uint32_t *svc_args )
             os_SCHEDULE();
             break;
         case SVC_SEM_SIGNAL:
-            if ( sem_Tsksignal(
-                     (const SemNr) svc_args[0] , (PTskTCB const ) svc_args[1])
+            if ( sem_signal(
+                     (const SemNr) svc_args[0])
                  != RET_OK )
             {
                 return RET_NOK;
